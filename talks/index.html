@@ -5,8 +5,10 @@ title: Charlas
 
 <div>
   <ul>
+    {% for talk in site.data.talks %}
     <li>
-      <a href="https://stsewd.github.io/charla-comprension-de-listas">Comprensión de listas, meetup Python Ecuador</a>
+      <a href="{{ talk.url }}">{{ talk.title }}</a>
     </li>
+    {% endfor %}
   </ul>
 </div>
