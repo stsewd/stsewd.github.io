@@ -9,8 +9,7 @@ section: about
 Soy estudiante de Ingeniería en Sistemas en la Universidad de Cuenca (2014, -).
 
 Me gusta el desarrollado web, algorimos, entusiasta de python, neovim y open source. Siempre
-tratando de aprender nuevas tecnologías. Y dibujante de vez en cuando
-([mi deviantart](http://stsewd.deviantart.com/gallery/)).
+tratando de aprender nuevas tecnologías. [Y dibujante de vez en cuando](http://stsewd.deviantart.com/gallery/).
 
 ## Idiomas
 
