@@ -15,16 +15,20 @@
         <div class="navbar-header">
           <a class="navbar-brand" href="/">{{ site.title }}</a>
         </div>
+
         <ul class="nav navbar-nav">
-          <li>
-            <a href="/blog">Blog</a>
+        {% for section in site.data.sections %}
+          {% assign class = nil %}
+          {% assign current_section = section.name | downcase %}
+          {% if current_section == page.section %}
+            {% assign class = 'active' %}
+          {% endif %}
+          <li class="{{ class }}">
+            <a href="{{ section.url }}">
+              {{ section.title }}
+            </a>
           </li>
-          <li>
-            <a href="/talks">Charlas</a>
-          </li>
-          <li>
-            <a href="/about">Acerca de</a>
-          </li>
+        {% endfor %}
         </ul>
       </div>
     </nav>
