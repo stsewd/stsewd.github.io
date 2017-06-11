@@ -1,6 +1,7 @@
 ---
 layout: default
 title: Acerca de
+section: about
 ---
  
 ## Acerca de mi
