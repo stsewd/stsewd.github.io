@@ -4,19 +4,22 @@ title: Blog
 section: blog
 ---
 
-<h2>Posts</h2>
-<ul class="posts">
-  {% for post in site.posts %}
-  <div class="list-group">
-    <a href="{{ post.url }}" class="list-group-item">
-      <h4 class="list-group-item-heading">{{ post.title }}</h4>
-      <p class="list-group-item-text">
-        <small>
-          <span class="glyphicon glyphicon-time"></span>
-          {{ post.date | date_to_string }}
-        </small>
-      </p>
-    </a>
+<div class="panel panel-default">
+  <div class="panel-heading">
+    Posts
   </div>
-  {% endfor %}
-</ul>
+
+  <ul class="list-group">
+    {% for post in site.posts %}
+      <a href="{{ post.url }}" class="list-group-item">
+        <h4 class="list-group-item-heading">{{ post.title }}</h4>
+        <p class="list-group-item-text">
+          <small>
+            <span class="glyphicon glyphicon-time"></span>
+            {{ post.date | date_to_string }}
+          </small>
+        </p>
+      </a>
+    {% endfor %}
+  </ul>
+</div>
