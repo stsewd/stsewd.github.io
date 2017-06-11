@@ -37,4 +37,4 @@ tratando de aprender nuevas tecnologías. [Y dibujante de vez en cuando](http://
 - [Twitter](http://twitter.com/stsewd)
 - O escribeme a <santos_g@outlook.com>
 
-## Notas
+---
