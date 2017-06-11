@@ -4,12 +4,32 @@ title: Charlas
 section: talks
 ---
 
-<div>
-  <ul>
-    {% for talk in site.data.talks %}
-    <li>
-      <a href="{{ talk.url }}">{{ talk.title }}</a>
-    </li>
-    {% endfor %}
-  </ul>
+<div class="row">
+  {% for talk in site.data.talks %}
+    <div class="col-sm-6">
+      <div class="thumbnail">
+        {% if talk.imgage %}
+          <img src="{{ talk.image }}" alt="talk">
+        {% endif %}
+        <div class="caption">
+          <h3>{{ talk.title }}</h3>
+          <p>
+            <small>
+              <span class="glyphicon glyphicon-time"></span>
+              {{ talk.date | date_to_string }}
+            </small>
+          </p>
+          <p>
+            {{ talk.description }}
+          </p>
+          <p>
+            <a href="{{ talk.url }}" class="btn btn-primary" role="button">
+              Ver
+            </a>
+          </p>
+          </p>
+        </div>
+      </div>
+    </div>
+  {% endfor %}
 </div>
