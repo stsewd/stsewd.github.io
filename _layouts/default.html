@@ -17,19 +17,24 @@
         </div>
 
         <ul class="nav navbar-nav">
-        {% for section in site.data.sections %}
-          {% assign class = nil %}
-          {% assign current_section = section.name | downcase %}
-          {% if current_section == page.section %}
-            {% assign class = 'active' %}
-          {% endif %}
-          <li class="{{ class }}">
-            <a href="{{ section.url }}">
-              {{ section.title }}
-            </a>
-          </li>
-        {% endfor %}
+          {% for section in site.data.sections %}
+            {% assign class = nil %}
+            {% assign current_section = section.name | downcase %}
+            {% if current_section == page.section %}
+              {% assign class = 'active' %}
+            {% endif %}
+            <li class="{{ class }}">
+              <a href="{{ section.url }}">
+                {{ section.title }}
+              </a>
+            </li>
+          {% endfor %}
         </ul>
+        <p class="navbar-right navbar-text">
+          <a class="navbar-link" href="https://github.com/stsewd/stsewd.github.io" target="_blank">
+            Fork me on GitHub <i class="fa fa-github"></i>
+          </a>
+        </p>
       </div>
     </nav>
 

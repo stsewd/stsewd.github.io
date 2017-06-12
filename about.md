@@ -19,7 +19,7 @@ tratando de aprender nuevas tecnologías. [Y dibujante de vez en cuando](http://
 
 ## Eventos y concursos donde he participado
 
-- **Guía en Django Girls Cuenca** [^1].
+- **Guía en Django Girls Cuenca**. [^1]
 - **IEEEXtreme Programming Competition 10.0** - Primer lugar a nivel nacional con el equipo _trivialbox_. [^2]
 - **Rally Latinoamericano de Innovación 2016** - Primer lugar a nivel local y nacional en la categoría de innovación con el equipo _Atuk Maskhay_. [^3]
 - **Hackaton 2016 - UPS** - Segundo lugar con el equipo _trivialbox_. [^4]
