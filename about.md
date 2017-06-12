@@ -17,7 +17,7 @@ tratando de aprender nuevas tecnologías. [Y dibujante de vez en cuando](http://
 - Inglés (intermedio)
 - Python (intermedio)
 
-## Eventos y concursos donde he participado
+## Eventos y concursos
 
 - **Guía en Django Girls Cuenca**. [^1]
 - **IEEEXtreme Programming Competition 10.0** - Primer lugar a nivel nacional con el equipo _trivialbox_. [^2]
