@@ -38,3 +38,5 @@ tratando de aprender nuevas tecnologías. [Y dibujante de vez en cuando](http://
 - O escríbeme a <santos_g@outlook.com>
 
 ---
+
+{% include anchor-js.html %}
