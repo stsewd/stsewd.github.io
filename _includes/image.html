@@ -1,5 +1,5 @@
 <div class="thumbnail">
-  <a href="{{ include.url }}">
+<a href="{% if include.href %}{{ include.href }}{% else %}{{ include.url }}{% endif %}">
     <img src="{{ include.url }}" alt="{{ include.alt }}" class="img-responsive" style="width:100%">
   </a>
   <div class="caption">
