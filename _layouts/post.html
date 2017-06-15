@@ -8,7 +8,8 @@ section: blog
   <p class="">
     <small>
       <span class="glyphicon glyphicon-calendar"></span>
-      {{ page.date | date_to_string }}
+      {{ page.date | date_to_string }}, por
+      {{ page.author }}
     </small>
   </p>
 </div>
@@ -16,5 +17,9 @@ section: blog
 <div class="post">
   {{ content }}
 </div>
+
+{% if page.comments %}
+  {% include disqus.html %}
+{% endif %}
 
 {% include anchor-js.html %}
