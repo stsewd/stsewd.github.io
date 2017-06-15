@@ -6,12 +6,10 @@ En este post daré una pequeña introducción a Neovim, un editor de texto muy
 diferente a los que estás acostumbrado a usar, el cuál llevo usándolo alrededor
 de un año.
 
-<div class="thumbnail">
-  <img src="/assets/img/nvim/neovim-logo.png" alt="Logo de Neovim" class="img-responsive" style="width:100%">
-  <div class="caption">
-    <i>Logo de Neovim</i>
-  </div>
-</div>
+{% include image.html
+  alt="logo de neovim"
+  url="/assets/img/nvim/neovim-logo.png" 
+  caption="Logo de Neovim" %}
 
 ## ¿Qué es Neovim?
 
