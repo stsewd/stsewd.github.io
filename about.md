@@ -35,7 +35,7 @@ tratando de aprender nuevas tecnologías. [Y dibujante de vez en cuando](http://
 - [Hackerrank](https://www.hackerrank.com/stsewd)
 - [Stack Overflow](http://stackoverflow.com/users/5689214/)
 - [Twitter](http://twitter.com/stsewd)
-- O escríbeme a <santos_g@outlook.com>
+- O escríbeme a <{{ site.mail }}>
 
 ---
 
