@@ -17,4 +17,8 @@ section: blog
   {{ content }}
 </div>
 
+{% if page.comments %}
+  {% include disqus.html %}
+{% endif %}
+
 {% include anchor-js.html %}
