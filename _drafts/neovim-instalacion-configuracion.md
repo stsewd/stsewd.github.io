@@ -25,7 +25,6 @@ instrucciones para su instalación en Fedora y Ubuntu; y cómo configurarlo.
 
 ## Instalación
 
-<!-- hacer paro a paso para Ubuntu y fedora -->
 Para la instalación de Neovim he usado dos máquinas virtuales (Fedora y
 Ubuntu), cada una con una instalación _limpia_. La versión de Ubuntu es
 16.04.02, y la de Fedora es 25.1.3.
@@ -34,9 +33,8 @@ Si usas otra distro que no sea Ubuntu ni Fedora o usas Windows, puedes seguir
 el proceso de instalación en la [documentación oficial de
 Neovim](https://github.com/neovim/neovim/wiki/Installing-Neovim).
 
-### Neovim
 
-#### Ubuntu
+### Ubuntu
 
 Primero debemos agregar la [PPA de
 Neovim](https://launchpad.net/%7Eneovim-ppa/+archive/ubuntu/unstable) para así
@@ -54,7 +52,7 @@ sudo apt-get update
 sudo apt-get install neovim
 ```
 
-#### Fedora
+### Fedora
 
 Para instalar la última versión de Neovim en Fedora, debemos ejecutar el
 siguiente comando.
@@ -63,7 +61,7 @@ siguiente comando.
 sudo dnf install neovim
 ```
 
-### Comprobando la instalación
+## Comprobando la instalación
 
 Para comprobar que todo ha salido bien, iniciamos Neovim. En la terminal ejecutamos el comando `nvim`.
 
