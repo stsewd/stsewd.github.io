@@ -3,9 +3,10 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width" />
-    <title>{{ page.title }}</title>
+    <title>{{ page.title }} - {{ site.title }}</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="/assets/css/syntax/github.css" type="text/css" media="all" />
     <link rel="stylesheet" href="/assets/css/custom.css" type="text/css" media="all" />
   </head>
 
@@ -13,7 +14,9 @@
     <nav class="navbar navbar-inverse navbar-static-top">
       <div class="container">
         <div class="navbar-header">
-          <a class="navbar-brand" href="/">{{ site.title }}</a>
+          <a class="navbar-brand" href="/">
+            {{ site.title }}
+          </a>
         </div>
 
         <ul class="nav navbar-nav">
@@ -25,7 +28,7 @@
             {% endif %}
             <li class="{{ class }}">
               <a href="{{ section.url }}">
-                {{ section.title }}
+                <strong>{{ section.title }}</strong>
               </a>
             </li>
           {% endfor %}
@@ -40,11 +43,11 @@
 
     <div class="container">
       <div class="row">
-        <div class="col-sm-8 col-sm-offset-1">
+        <div class="col-sm-8 col-sm-offset-2">
           {{ content }}
         </div>
 
-        <div class="col-sm-3">
+        <div class="col-sm-2">
           <!-- Sidebar here -->
         </div>
       </div>
@@ -55,7 +58,7 @@
         <hr>
         <div>
           <small class="text-muted">
-            Hosted on GitHub Pages
+            Hosted on <a href="https://pages.github.com/">GitHub Pages</a>
             -
             &copy; 2017 {{ site.name }}
           </small>

@@ -6,10 +6,12 @@ section: about
  
 ## Acerca de mi
 
-Soy estudiante de Ingeniería en Sistemas en la Universidad de Cuenca (2014, -).
+Mi nombre es Santos Gallegos, vivo en Cuenca - Ecuador. Soy estudiante de
+Ingeniería en Sistemas en la Universidad de Cuenca (2014, -).
 
-Me gusta el desarrollo web, algoritmos, entusiasta de python, neovim y open source. Siempre
-tratando de aprender nuevas tecnologías. [Y dibujante de vez en cuando](http://stsewd.deviantart.com/gallery/).
+Me gusta el desarrollo web, algoritmos, entusiasta de python, neovim y open
+source. Siempre tratando de aprender nuevas tecnologías, [y dibujante de vez en
+cuando](http://stsewd.deviantart.com/gallery/).
 
 ## Idiomas
 
@@ -35,7 +37,7 @@ tratando de aprender nuevas tecnologías. [Y dibujante de vez en cuando](http://
 - [Hackerrank](https://www.hackerrank.com/stsewd)
 - [Stack Overflow](http://stackoverflow.com/users/5689214/)
 - [Twitter](http://twitter.com/stsewd)
-- O escríbeme a <santos_g@outlook.com>
+- O escríbeme a <{{ site.mail }}>
 
 ---
 
