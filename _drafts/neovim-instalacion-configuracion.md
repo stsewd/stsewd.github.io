@@ -10,7 +10,9 @@ en Fedora y Ubuntu; y cómo configurarlo.
 {% include image.html
   alt="logo de neovim"
   url="/assets/img/nvim/neovim-logo.png" 
-  caption="Logo de Neovim" %}
+  href="http://neovim.io"
+  caption="Logo de Neovim"
+%}
 
 ## ¿Qué es Neovim?
 
