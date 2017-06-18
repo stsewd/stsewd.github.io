@@ -3,9 +3,8 @@ title: Neovim, instalación y configuración
 ---
 
 En este post daré una pequeña introducción a Neovim, un editor de texto muy
-diferente a los que estás acostumbrado a usar, el cuál llevo usando alrededor
-de un año. Además detallaré paso a paso las instrucciones para su instalación
-en Fedora y Ubuntu; y cómo configurarlo.
+diferente a los que estás acostumbrado a usar. Además detallaré paso a paso las
+instrucciones para su instalación en Fedora y Ubuntu; y cómo configurarlo.
 
 {% include image.html
   alt="logo de neovim"
