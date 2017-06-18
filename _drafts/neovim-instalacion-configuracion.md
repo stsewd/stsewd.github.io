@@ -96,14 +96,16 @@ envidiar al resto.
   normal=true
 %}
 
-Si no estás familiarizado con Vim, te recomiendo que antes de seguir te
-acostumbres con lo básico de Vim/Neovim, para ello puedes seguir un tutorial
-interactivo que viene incluido en Neovim, teclea dos puntos en Neovim (`:`), en
-la parte inferior estará el cursor esperando a que ingreses un comando. Escribe
-`Tutor` (con la `T` mayúscula), y luego presiona la tecla Enter. Se abrirá un
-tutorial interactivo, te recomiendo que al menos leas la lección número 1 o hasta que te
-sientas familiarizado con lo básico (moverte en un archivo; abrir y escribir un
-archivo; y salir de Neovim).
+### Advertencia
+
+> Si no estás familiarizado con Vim, te recomiendo que antes de seguir te
+> acostumbres con lo básico de Vim/Neovim, para ello puedes seguir un tutorial
+> interactivo que viene incluido en Neovim, teclea dos puntos en Neovim (`:`), en
+> la parte inferior estará el cursor esperando a que ingreses un comando; escribe
+> `Tutor` (con la `T` mayúscula), y luego presiona la tecla Enter. Se abrirá un
+> tutorial interactivo, te recomiendo que al menos leas la lección número 1 o hasta que te
+> sientas familiarizado con lo básico (moverte en un archivo; abrir y escribir un
+> archivo; y salir de Neovim).
 
 Si deseas aprender más sobre Vim/Neovim, al final de este post dejaré algunos
 recursos para hacerlo.
