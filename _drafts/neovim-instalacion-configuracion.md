@@ -36,7 +36,7 @@ Neovim](https://github.com/neovim/neovim/wiki/Installing-Neovim).
 
 ### Neovim
 
-### Ubuntu
+#### Ubuntu
 
 Primero debemos agregar la [PPA de
 Neovim](https://launchpad.net/%7Eneovim-ppa/+archive/ubuntu/unstable) para así
@@ -54,7 +54,7 @@ sudo apt-get update
 sudo apt-get install neovim
 ```
 
-### Fedora
+#### Fedora
 
 Para instalar la última versión de Neovim en Fedora, debemos ejecutar el
 siguiente comando.
@@ -62,6 +62,52 @@ siguiente comando.
 ```sh
 sudo dnf install neovim
 ```
+
+### Comprobando la instalación
+
+Para comprobar que todo ha salido bien, iniciamos Neovim. En la terminal ejecutamos el comando `nvim`.
+
+```sh
+nvim
+```
+
+Y podremos ver la pantalla de bienvenida de Neovim.
+
+{% include image.html
+  alt="Neovim en Ubuntu"
+  url="/assets/img/nvim/neovim-ubuntu.jpg" 
+  caption="Neovim en Ubuntu"
+  normal=true
+%}
+
+{% include image.html
+  alt="Neovim en Fedora"
+  url="/assets/img/nvim/neovim-fedora.png" 
+  caption="Neovim en Fedora"
+  normal=true
+%}
+
+Tal vez no luzca tan _moderno_ ni con un gran diseño, pero al finalizar
+tutorial tendrás un editor sin mucho que envidiar al resto.
+
+{% include image.html
+  alt="Mi Neovim"
+  url="/assets/img/nvim/my-neovim.png" 
+  caption="Mi Neovim ahora"
+  normal=true
+%}
+
+Si no estás familiarizado con Vim, te recomiendo que antes de seguir te
+acostumbres con lo básico de Vim/Neovim, para ello puedes seguir un tutorial
+interactivo que viene incluido en Neovim, teclea dos puntos en Neovim (`:`), en
+la parte inferior estará el cursor esperando a que ingreses un comando. Escribe
+`Tutor` (con la `T` mayúscula), y luego presiona la tecla Enter. Se abrirá un
+tutorial interactivo, te recomiendo que al menos leas la lección número 1 o hasta que te
+sientas familiarizado con lo básico (moverte en un archivo; abrir y escribir un
+archivo; y salir de Neovim).
+
+Si deseas aprender más sobre Vim/Neovim, al final de este post dejaré algunos
+recursos para hacerlo.
 
 ## Configuración
 
