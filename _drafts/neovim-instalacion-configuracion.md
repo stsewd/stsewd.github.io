@@ -110,6 +110,14 @@ envidiar al resto.
 Si deseas aprender más sobre Vim/Neovim, al final de este post dejaré algunos
 recursos para hacerlo.
 
+## Dependencias adicionales
+
+> A este punto, espero que ya estés familiarizado con lo básico de Neovim (leer
+> nota de arriba).
+
+Acabamos de instalar Neovim, pero aún nos falta instalar algunas dependencias
+(opcionales) para sacarle más provecho a Neovim y no tener ningún problema al
+instalar plugins.
 ## Configuración
 
 <!-- Mostrar un init.vim minimal -->
