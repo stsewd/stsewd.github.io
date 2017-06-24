@@ -150,6 +150,27 @@ instalar plugins.
 
 ## Recursos adicionales
 
+### Tutoriales online
+
+- [Learn vim progressively](http://yannesposito.com/Scratch/en/blog/Learn-Vim-Progressively/)
+- [Vim Tips & Tricks](https://bluz71.github.io/2017/05/15/vim-tips-tricks.html)
+- [Graphical vi-vim Cheat Sheet and Tutorial](http://www.viemu.com/a_vi_vim_graphical_cheat_sheet_tutorial.html)
+- [Learn X in Y minutes](https://learnxinyminutes.com/docs/vim/)
+
+### Videos
+
+- [Vim casts](http://vimcasts.org/)
+- [Vim meetups](https://www.youtube.com/watch?v=XA2WjJbmmoM&list=PL8tzorAO7s0jy7DQ3Q0FwF3BnXGQnDirs)
+
+### Libros
+
+- [Vim for humans](https://vimebook.com/)
+- [Vim Galore](https://github.com/mhinz/vim-galore)
+
+### Vídeo juegos
+
+- [Vim adventures](https://vim-adventures.com/)
+
 <!-- links de lugares donde aprender más, mis dotfiles, etc -->
 
 ---
