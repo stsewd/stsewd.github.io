@@ -48,6 +48,38 @@ código más limpio?
 
 ## ¿Por qué usar Neovim?
 
+Antes de describir las ventajas de usar Neovim, tengo que aclarar que las
+mismas **son válidas para Vim**, ya que Neovim es un reemplazo directo de Vim,
+así que si ya eres un usuario de Vim, te recomiendo que pruebes Neovim.
+
+En Neovim puedes **controlar todo con el teclado** a través de comandos, puede
+sonar un poco complicado tratar de recordar un montón de comandos (y al
+principio lo es), pero con práctica podrás recordarlos de manera casi natural.
+Y no tires tu mouse, aún puedes usarlo para un par de cosas en Neovim.
+
+Neovim te facilita la edición de texto, permitiéndote **automatizar tareas
+repetitivas**, y varias tareas tediosas las puedes lograr con un par de teclas.
+Con el tiempo, sentirás que el **teclado es una extension más de tus manos**.
+
+Neovim es **altamente configurable**, es como si construyeras tu propio editor,
+al final tendrás un editor de texto **hecho a tu medida** que cubre tus
+necesidades específicas.
+
+Además Neovim te permite expandir su comportamiento a través de **plugins**, si
+usas Vim, aún **puedes seguir usando los mismos plugins de Vim**, más los que
+la comunidad ha desarrollado para Neovim. Y si te animas puedes **crear tu
+propio plugin** en tu lenguaje favorito (hace poco hice mi [primer
+plugin](https://github.com/stsewd/open-plugin-page.nvim) en python), gracias a
+la API que provee Neovim.
+
+Y por último, Neovim trae **las mismas características que cualquier otro
+editor de código**, como: auto completado, corrector ortográfico, pestañas
+(buffers en Neovim), coloreado de sintaxis, búsqueda y reemplazo con
+expresiones regulares, etc.
+
+Con todas las características mencionadas Neovim será _el único editor_ que
+necesites para programar en cualquier lenguaje, o editar texto en general.
+
 ## Instalación
 
 Para la instalación de Neovim he usado dos máquinas virtuales (Fedora y
