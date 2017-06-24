@@ -151,3 +151,5 @@ instalar plugins.
 ## Recursos adicionales
 
 <!-- links de lugares donde aprender más, mis dotfiles, etc -->
+
+---
