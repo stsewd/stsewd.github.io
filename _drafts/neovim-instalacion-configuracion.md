@@ -16,7 +16,15 @@ instrucciones para su instalación en Fedora y Ubuntu; y cómo configurarlo.
 
 ## ¿Qué es Neovim?
 
-<!-- Hacer un copy paste de la pagina oficial -->
+[Neovim](https://neovim.io/charter/) es una refactorización del código de
+[Vim](http://www.vim.org/), trata de ser un super-conjunto de este, llevando lo
+bueno de Vim y dando una mejor experiencia _fuera de la caja_ al usuario.
+
+**¿Entonces qué es Vim?** Vim es un editor de texto basado en modos (un lugar
+para escribir, otro para insertar comandos, y así). Nació como mejora de Vi
+(1976).  Su interfaz no es gráfica, sino basada en texto (aunque existen varias
+implementaciones con interfaz gráfica, como gVim). Una característica muy
+importante es que puede ser controlado totalmente con el **teclado**.
 
 ## Neovim vs Vim
 
