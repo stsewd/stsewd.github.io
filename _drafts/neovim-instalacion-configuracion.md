@@ -1,5 +1,6 @@
 ---
-title: Neovim, instalación y configuración
+title: Neovim, instalación y configuración básica
+tags: neovim vim
 ---
 
 En este post daré una pequeña introducción a Neovim, un editor de texto muy
