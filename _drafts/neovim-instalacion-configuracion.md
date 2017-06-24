@@ -28,7 +28,20 @@ importante es que puede ser controlado totalmente con el **teclado**.
 
 ## Neovim vs Vim
 
-<!-- resaltas las mejoras con respecto a vim -->
+Así que Neovim es un super-conjunto de Vim, e intenta dar una mejor experiencia
+al usuario. ¿Qué realmente ofrece Neovim frente a Vim, además de tener un
+código más limpio?
+
+- Neovim viene con algunas configuraciones por defecto, que hacen que puedas
+  usarlo de manera inmediata. [^1] [^2]
+- Incluye un emulador de terminal.
+- Mejor integración con características de terminales modernos (estilo del
+  cursor, _truecolor_).
+- Una mejor API que permite la comunicación con Neovim desde cualquier lenguaje
+  de programación (de manera segura y asíncrona).
+
+[^1]: <https://github.com/neovim/neovim/issues/2676>
+[^2]: <https://github.com/neovim/neovim/issues/6289>
 
 ## ¿Por qué usar Neovim?
 
