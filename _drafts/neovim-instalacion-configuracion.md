@@ -185,6 +185,8 @@ instalar plugins.
 
 ## Recursos adicionales
 
+¿Interesado en aprender más?
+
 ### Tutoriales online
 
 - [Learn vim progressively](http://yannesposito.com/Scratch/en/blog/Learn-Vim-Progressively/)
@@ -205,6 +207,19 @@ instalar plugins.
 ### Vídeo juegos
 
 - [Vim adventures](https://vim-adventures.com/)
+
+### Artículos
+
+- [Moving to Neovim from Vim](https://jacky.wtf/weblog/moving-to-neovim/)
+
+### Dotfiles
+
+Los dotfiles no son más que archivos de configuración (que usualmente empiezan
+con un `.`, de ahí su nombre). En varios dotfiles podrás encontrar
+configuraciones para Vim/Neovim que podrían serte útiles.
+
+- [Dotfiles en GitHub](https://github.com/search?utf8=%E2%9C%93&q=dotfiles&type=)
+- [Mis dotfiles](https://github.com/stsewd/dotfiles)
 
 <!-- links de lugares donde aprender más, mis dotfiles, etc -->
 
