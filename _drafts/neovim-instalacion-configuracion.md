@@ -167,15 +167,39 @@ editor sin nada que envidiar al resto.
 Si deseas aprender más sobre Vim/Neovim, al final de este post dejaré algunos
 recursos para hacerlo.
 
-## Dependencias adicionales
-
-> A este punto, espero que ya estés familiarizado con lo básico de Neovim (leer
-> nota de arriba).
+## Instalando dependencias adicionales
 
 Acabamos de instalar Neovim, pero aún nos falta instalar algunas dependencias
 (opcionales) para sacarle más provecho a Neovim y no tener ningún problema al
 instalar plugins.
-## Configuración
+
+### Proveedor de porta-papeles
+
+Para que Neovim pueda copiar o pegar desde el porta-papeles de nuestro sistema,
+necesitamos instalar un _proveedor_.
+
+Tenemos dos alternativas `xclip` y `xsel`, ambas muy buenas. A continuación
+tienes los comandos para instalar alguna de ellas.
+
+#### Ubuntu
+
+```sh
+sudo apt install xclip
+```
+
+```sh
+sudo apt install xsel
+```
+
+#### Fedora
+
+```sh
+sudo dnf install xclip
+```
+
+```sh
+sudo dnf install xsel
+```
 
 <!-- Mostrar un init.vim minimal -->
 
