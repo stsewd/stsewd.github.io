@@ -39,6 +39,7 @@ código más limpio?
   cursor, _truecolor_).
 - Una mejor API que permite la comunicación con Neovim desde cualquier lenguaje
   de programación (de manera segura y asíncrona).
+- Mejor integración con el mouse.
 
 [^1]: <https://github.com/neovim/neovim/issues/2676>
 [^2]: <https://github.com/neovim/neovim/issues/6289>
