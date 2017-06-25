@@ -48,7 +48,7 @@ código más limpio?
 ## ¿Por qué usar Neovim?
 
 Antes de describir las ventajas de usar Neovim, debo aclarar que las mismas
-**son válidas para Vim**, ya que es un reemplazo directo de Vim, si eres
+**son válidas para Vim**, ya que es un reemplazo directo de Vim. Si eres
 usuario de Vim, te recomiendo que pruebes Neovim.
 
 Puedes **controlar todo con el teclado** a través de comandos, puede parecer un
@@ -141,8 +141,8 @@ Y podremos ver la pantalla de bienvenida de Neovim.
   normal=true
 %}
 
-**Nota:** Tal vez ahora mismo nuestro editor luzca aburrido y no tan _moderno_
-ni con un gran diseño, pero al finalizar esta serie de tutoriales tendrás un
+**Nota:** Tal vez ahora mismo nuestro editor luzca aburrido, nada _moderno_ ni
+con un gran diseño, pero al finalizar esta serie de tutoriales tendrás un
 editor sin nada que envidiar al resto.
 
 {% include image.html
