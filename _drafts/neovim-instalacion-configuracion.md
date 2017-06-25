@@ -200,7 +200,37 @@ sudo dnf install xclip
 sudo dnf install xsel
 ```
 
-<!-- Mostrar un init.vim minimal -->
+### Interfaces de Python
+
+### Interfaces de Ruby
+
+## Comprobando las dependencias adicionales
+
+<!-- Correr CheckHealth -->
+
+## Primeros pasos con Neovim
+
+- Abrir un archivo
+- Guardar
+- Salir
+- Moverse por el archivo
+- Modo normal e insertar
+- Copiar
+- Pegar
+- Cortar
+- Deshacer y rehacer
+- Modo visual
+- Buscar
+- Ayuda
+
+## Configuración básica
+
+- Configuraciones desde el exmode
+- Crear un archivo `init.vim`
+- Poner un par de configuraciones
+- Source so % para recargar las configuraciones
+- Más configuraciones
+- Cambiar de tema
 
 ## Alternativas
 
