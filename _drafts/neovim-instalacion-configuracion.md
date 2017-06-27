@@ -3,6 +3,8 @@ title: Neovim, instalación y configuración básica
 tags: neovim vim
 ---
 
+{% assign sudo_msg = "Puede que necesites ejecutar estos comandos anteponiendo <strong>sudo</strong>." %}
+
 En este post daré una pequeña introducción a Neovim, un editor de texto muy
 diferente a los que estás acostumbrado a usar. Además detallaré paso a paso las
 instrucciones para su instalación en Fedora y Ubuntu; y cómo configurarlo.
@@ -88,7 +90,6 @@ Ubuntu), cada una con una instalación _limpia_. La versión de Ubuntu es
 Si usas otra distro que no sea Ubuntu ni Fedora o usas Windows, puedes seguir
 el proceso de instalación en la [documentación oficial de
 Neovim](https://github.com/neovim/neovim/wiki/Installing-Neovim).
-
 
 ### Ubuntu
 
@@ -201,6 +202,86 @@ sudo dnf install xsel
 ```
 
 ### Interfaces de Python
+
+Algunos plugins hacen uso de la [interfaz de
+python](https://github.com/neovim/python-client) que Neovim provee.
+
+Vamos a instalarlas para las dos versiones de Python (2 y 3), aunque todos los
+plugins que instalemos usen Python 3.
+
+### Ubuntu
+
+Ubuntu ya incluye ambas versiones de Python, pero antes de instalar las
+interfaces de Python, debemos instalar `pip` (una herramienta que nos ayuda a
+descargar librerías de Python). Para ello ejecutamos los siguientes comandos:
+
+```sh
+sudo apt install python3-pip
+```
+
+```sh
+sudo apt install python-pip
+```
+
+Ahora ya podemos instalar las interfaces de Neovim.
+
+{% include alert.html
+  type="warning"
+  text=sudo_msg
+%}
+
+```sh
+python3 -m pip install neovim
+```
+
+```sh
+python -m pip install neovim
+```
+
+### Fedora
+
+Las versiones actuales de Fedora sólo incluyen Python 3, así que debemos
+instalar Python 2 (es opcional, como dije antes, todo lo que usemos será con
+Python 3).
+
+```sh
+sudo dnf install python
+```
+
+Ahora ya podemos instalar las interfaces de Neovim, aunque puede Fedora ya lo
+haya hecho cuando instalaste Neovim (actualizar con los comandos de la
+siguiente sección si es el caso).
+
+{% include alert.html
+  type="warning"
+  text=sudo_msg
+%}
+
+```sh
+python3 -m pip install neovim
+```
+
+```sh
+python -m pip install neovim
+```
+
+### Manteniendo las interfaces de Python al día
+
+Es recomendable que cada cierto tiempo actualices las interfaces Python, así
+estarás al día con lo último que Neovim ofrece a través de su API.
+
+{% include alert.html
+  type="warning"
+  text=sudo_msg
+%}
+
+```sh
+python3 -m pip install --upgrade neovim
+```
+
+```sh
+python -m pip install --upgrade neovim
+```
 
 ### Interfaces de Ruby
 
