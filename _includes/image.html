@@ -1,12 +1,12 @@
 <div class="thumbnail">
-<a href="{% if include.href %}{{ include.href }}{% else %}{{ include.url }}{% endif %}">
+  <a href="{% if include.href %}{{ include.href }}{% else %}{{ include.url }}{% endif %}">
     <img src="{{ include.url }}"
          alt="{{ include.alt }}"
          class="img-responsive"
          style="{% if include.normal %}{% else %}width:100%{% endif %}">
   </a>
+
   <div class="caption">
-    
     <i class="text-muted">
       <i class="fa fa-angle-double-right" aria-hidden="true"></i>
       {{ include.caption }}
