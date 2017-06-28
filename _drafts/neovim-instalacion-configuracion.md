@@ -163,9 +163,9 @@ espacio donde podrás ingresar texto, ingresa `q!` y luego presiona
 
 ## Instalando dependencias adicionales
 
-Acabamos de instalar Neovim, pero aún nos falta instalar algunas dependencias
-(opcionales) para sacarle más provecho a Neovim y no tener ningún problema al
-instalar plugins.
+Acabamos de instalar Neovim, pero aún nos hace falta instalar algunas
+dependencias (opcionales) para sacarle más provecho a Neovim y no tener ningún
+problema al instalar plugins.
 
 ### Proveedor de porta-papeles
 
