@@ -334,7 +334,24 @@ gem install neovim
 
 ## Comprobando las dependencias adicionales
 
-<!-- Correr CheckHealth -->
+Hemos instalado varias dependencias para Neovim, pero ¿cómo sabemos que todo
+salió bien?. Neovim viene con una herramienta que nos permite comprobar que
+todo esté correcto, `CheckHealth`. Para hacer uso de esta herramienta vamos a
+iniciar Neovim con un parámetro algo especial.
+
+```sh
+nvim +CheckHealth
+```
+
+Esperamos unos segundos a que Neovim haga sus comprobaciones, si todo salió
+bien debe aparecernos algo como esto:
+
+{% include image.html
+  alt="resultado de correr CheckHealth en Neovim"
+  url="/assets/img/nvim/checkhealth.png" 
+  caption="Resultado de correr CheckHealth en Neovim"
+  normal=true
+%}
 
 ## Primeros pasos con Neovim
 
