@@ -150,19 +150,16 @@ editor sin nada que envidiar al resto.
   normal=true
 %}
 
-### Advertencia
+## ¿Y ahora qué?
 
-> Si no estás familiarizado con Vim, te recomiendo que antes de seguir te
-> acostumbres con lo básico de Vim/Neovim, para ello puedes seguir un tutorial
-> interactivo que viene incluido en Neovim, teclea dos puntos en Neovim (`:`), en
-> la parte inferior estará el cursor esperando a que ingreses un comando; escribe
-> `Tutor` (con la `T` mayúscula), y luego presiona la tecla Enter. Se abrirá un
-> tutorial interactivo, te recomiendo que al menos leas la lección número 1 o hasta que te
-> sientas familiarizado con lo básico (moverte en un archivo; abrir y escribir un
-> archivo; y salir de Neovim).
-
-Si deseas aprender más sobre Vim/Neovim, al final de este post dejaré algunos
-recursos para hacerlo.
+Hemos abierto Neovim por primera vez, si no has usado Vim antes, puede que te
+estés haciendo algunas preguntas: ¿dónde están los menús? ¿cómo empiezo a
+escribir? o ¿cómo #@!?$# salgo? Más adelante veremos todo esto, por ahora lo
+que necesitas saber es que puedes moverte usando las teclas direccionales; y
+para salir, presiona al menos tres veces la tecla <kbd>Esc</kbd>, luego
+presiona la tecla <kbd>:</kbd>, en la parte inferior aparecerá un pequeño
+espacio donde podrás ingresar texto, ingresa `q!` y luego presiona
+<kbd>Enter</kbd>, y así habrás salido de Neovim.
 
 ## Instalando dependencias adicionales
 
