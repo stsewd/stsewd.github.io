@@ -285,6 +285,53 @@ python -m pip install --upgrade neovim
 
 ### Interfaces de Ruby
 
+Al igual que algunos plugins hacen uso de la interfaz de Python, otros usan la
+interfaz de [Ruby](https://rubygems.org/gems/neovim/).
+
+#### Ubuntu
+
+Ubuntu no trae Ruby por defecto, así que tendremos que instalarlo con los
+siguientes comandos.
+
+```sh
+sudo apt install ruby
+sudo apt install ruby-dev
+```
+
+Ahora si podemos instalar la interfaz de Ruby.
+
+{% include alert.html
+  type="warning"
+  text=sudo_msg
+%}
+
+```
+gem install neovim
+```
+
+#### Fedora
+
+Fedora no trae Ruby por defecto, así que tendremos que instalarlo con los
+siguientes comandos.
+
+```sh
+sudo dnf install ruby
+sudo dnf install ruby-devel
+sudo dnf install gcc-c++
+sudo dnf install redhat-rpm-config
+```
+
+Ahora si podemos instalar la interfaz de Ruby.
+
+{% include alert.html
+  type="warning"
+  text=sudo_msg
+%}
+
+```
+gem install neovim
+```
+
 ## Comprobando las dependencias adicionales
 
 <!-- Correr CheckHealth -->
