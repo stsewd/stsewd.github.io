@@ -54,9 +54,8 @@ Antes de describir las ventajas de usar Neovim, debo aclarar que las mismas
 usuario de Vim, te recomiendo que pruebes Neovim.
 
 Puedes **controlar todo con el teclado** a través de comandos, puede parecer un
-poco complicado recordarlos (y al principio lo es), pero con práctica podrás
-hacerlo de manera casi natural. Y no tires tu mouse, aún puedes usarlo para un
-par de cosas en Neovim.
+poco complicado recordarlos (y al principio lo es), pero están organizados de
+una manera lógica, y con el tiempo se vuelven predecibles.
 
 Te facilita la edición de texto, permitiéndote **automatizar tareas
 repetitivas**, y las tareas tediosas las puedes lograr con un par de teclas.
@@ -69,14 +68,12 @@ específicas.
 Además te permite expandir su comportamiento a través de **plugins**, si
 usas Vim, aún **puedes seguir usando los mismos plugins de Vim**, más los que
 la comunidad ha desarrollado para Neovim. Y si te animas, puedes **crear tu
-propio plugin** en tu lenguaje favorito (hace poco hice mi [primer
-plugin](https://github.com/stsewd/open-plugin-page.nvim) en python), gracias a
-la API que provee Neovim.
+propio plugin en tu lenguaje favorito** (hace poco hice mi [primer
+plugin](https://github.com/stsewd/open-plugin-page.nvim) en python).
 
 Y por último, trae **las mismas características que cualquier otro editor de
-código**, como: auto completado, corrector ortográfico, pestañas (buffers en
-Neovim), coloreado de sintaxis, búsqueda y reemplazo con expresiones regulares,
-etc.
+código**, como: auto completado, corrector ortográfico, pestañas, coloreado de
+sintaxis, búsqueda y reemplazo con expresiones regulares, etc.
 
 Con todas las características mencionadas Neovim será _el único editor_ que
 necesites para programar en cualquier lenguaje, o editar texto en general.
