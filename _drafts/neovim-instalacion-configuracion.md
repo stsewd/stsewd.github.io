@@ -203,7 +203,7 @@ python](https://github.com/neovim/python-client) que Neovim provee.
 Vamos a instalarlas para las dos versiones de Python (2 y 3), aunque todos los
 plugins que instalemos usen Python 3.
 
-### Ubuntu
+#### Ubuntu
 
 Ubuntu ya incluye ambas versiones de Python, pero antes de instalar las
 interfaces de Python, debemos instalar `pip` (una herramienta que nos ayuda a
@@ -232,7 +232,7 @@ python3 -m pip install neovim
 python -m pip install neovim
 ```
 
-### Fedora
+#### Fedora
 
 Las versiones actuales de Fedora sólo incluyen Python 3, así que debemos
 instalar Python 2 (es opcional, como dije antes, todo lo que usemos será con
