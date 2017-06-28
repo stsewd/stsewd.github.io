@@ -377,7 +377,8 @@ bien debe aparecernos algo como esto:
 
 ## Recursos adicionales
 
-¿Interesado en aprender más?
+¿Interesado en aprender más? Neovim es un reemplazo directo de Vim, así que
+todo lo que aprendas para Vim podrás aplicarlo en Neovim.
 
 ### Tutoriales online
 
