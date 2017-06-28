@@ -3,11 +3,11 @@ title: Neovim, instalación y configuración básica
 tags: neovim vim
 ---
 
-{% assign sudo_msg = "Puede que necesites ejecutar estos comandos anteponiendo <strong>sudo</strong>." %}
-
 En este post daré una pequeña introducción a Neovim, un editor de texto muy
 diferente a los que estás acostumbrado a usar. Además detallaré paso a paso las
 instrucciones para su instalación en Fedora y Ubuntu; y cómo configurarlo.
+
+{% assign sudo_msg = "Puede que necesites ejecutar estos comandos anteponiendo <strong>sudo</strong>." %}
 
 {% include image.html
   alt="logo de neovim"
@@ -267,7 +267,7 @@ python -m pip install neovim
 
 ### Manteniendo las interfaces de Python al día
 
-Es recomendable que cada cierto tiempo actualices las interfaces Python, así
+Es recomendable que cada cierto tiempo actualices las interfaces de Python, así
 estarás al día con lo último que Neovim ofrece a través de su API.
 
 {% include alert.html
