@@ -34,18 +34,18 @@ usuario, pero ¿qué realmente ofrece Neovim frente a Vim, además de tener un
 código más limpio?
 
 - Trae algunas configuraciones por defecto, que hacen que puedas usarlo de
-  manera inmediata. [^1] [^2]
-- Incluye un emulador de terminal. [^3]
+  manera inmediata. [^configuraciones-defecto] [^configuraciones-defecto-2]
+- Incluye un emulador de terminal. [^emulador-terminal]
 - Mejor integración con características de terminales modernos (estilo del
   cursor, _truecolor_).
 - Una API que permite la comunicación con Neovim desde cualquier lenguaje de
-  programación (de manera segura y asíncrona). [^4]
+  programación (de manera segura y asíncrona). [^api-neovim]
 - Mejor integración con el mouse.
 
-[^1]: <https://github.com/neovim/neovim/issues/2676>
-[^2]: <https://github.com/neovim/neovim/issues/6289>
-[^3]: <https://neovim.io/doc/user/nvim_terminal_emulator.html>
-[^4]: <https://neovim.io/doc/user/api.html>
+[^configuraciones-defecto]: <https://github.com/neovim/neovim/issues/2676>
+[^configuraciones-defecto-2]: <https://github.com/neovim/neovim/issues/6289>
+[^emulador-terminal]: <https://neovim.io/doc/user/nvim_terminal_emulator.html>
+[^api-neovim]: <https://neovim.io/doc/user/api.html>
 
 ## ¿Por qué usar Neovim?
 
