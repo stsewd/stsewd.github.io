@@ -154,12 +154,13 @@ editor sin nada que envidiar al resto.
 
 Hemos abierto Neovim por primera vez, si no has usado Vim antes, puede que te
 estés haciendo algunas preguntas: ¿dónde están los menús? ¿cómo empiezo a
-escribir? o ¿cómo #@!?$# salgo? Más adelante veremos todo esto, por ahora lo
-que necesitas saber es que puedes moverte usando las teclas direccionales; y
-para salir, presiona al menos tres veces la tecla <kbd>Esc</kbd>, luego
-presiona la tecla <kbd>:</kbd>, en la parte inferior aparecerá un pequeño
-espacio donde podrás ingresar texto, ingresa `q!` y luego presiona
-<kbd>Enter</kbd>, y así habrás salido de Neovim.
+escribir? o ¿cómo #@!?$# salgo?
+
+Más adelante veremos todo esto, por ahora lo que necesitas saber es que puedes
+moverte usando las teclas direccionales; y para salir, presiona al menos tres
+veces la tecla <kbd>Esc</kbd>, luego presiona la tecla <kbd>:</kbd>, en la
+parte inferior aparecerá un pequeño espacio donde podrás ingresar texto,
+ingresa `q!` y luego presiona <kbd>Enter</kbd>, y así habrás salido de Neovim.
 
 ## Instalando dependencias adicionales
 
@@ -169,8 +170,8 @@ problema al instalar plugins.
 
 ### Proveedor de porta-papeles
 
-Para que Neovim pueda copiar o pegar desde el porta-papeles de nuestro sistema,
-necesitamos instalar un _proveedor_.
+Para que Neovim pueda copiar o pegar desde el porta-papeles de nuestro sistema
+operativo, necesitamos instalar un _proveedor_.
 
 Tenemos dos alternativas `xclip` y `xsel`, ambas muy buenas. A continuación
 tienes los comandos para instalar alguna de ellas.
