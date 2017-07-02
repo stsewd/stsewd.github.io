@@ -350,20 +350,174 @@ debe aparecer algo como esto:
 
 ## Primeros pasos con Neovim
 
-- Abrir un archivo
-- Guardar
-- Salir
-- Moverse por el archivo
-- Modo normal e insertar
-- Copiar
-- Pegar
-- Cortar
-- Deshacer y rehacer
-- Modo visual
-- Buscar
-- Ayuda
+A continuación aprenderás lo básico para empezar a usar Neovim como un editor
+de texto. Al principio parecerá que es contra-productivo, y que hay que teclear
+demasiado para realizar una simple acción; existen otras maneras más eficientes
+de hacerlo, pero el objetivo es que te sientas cómodo con la edición de texto
+antes de pasar a cosas más avanzadas. Al final del post encontrarás varios
+recursos para aprender más sobre Neovim/Vim.
 
-## Configuración básica
+{% include alert.html
+  type="info"
+  text="Todo lo que aprendas en esta sección también es válido para Vim."
+%}
+
+### Modos
+
+Antes de ir con lo básico, debes saber que Neovim tiene 3 modos principales:
+
+- **Modo normal** - Donde todas las teclas son interpretadas como comandos.
+- **Modo insertar** - Donde puedes escribir todo lo que teclees.
+- **Modo visual** - Donde puedes seleccionar bloques de texto.
+
+Para entrar y salir de cada modo:
+
+- Para entrar al modo insertar, presiona <kbd>i</kbd>.
+- Para salir del modo insertar, presiona <kbd>Esc</kbd>
+- Para entrar al modo visual, presiona <kbd>v</kbd>.
+- Para salir del modo visual, presiona <kbd>Esc</kbd>
+
+**Cuando abres Neovim, el modo por defecto es el normal.**
+
+{% include alert.html
+  type="info"
+  text="Cada vez que sientas que te perdiste en un paso, presiona
+        <kbd>Esc</kbd> al menos tres veces, así podrás regresar al modo normal
+        y empezar de nuevo."
+%}
+
+### Abrir un archivo
+
+Puedes abrir un archivo desde la terminal con:
+
+```sh
+nvim mi-archivo.txt
+```
+
+### Moviéndote por el editor
+
+Antes había dicho que puedes usar las teclas direccionales para moverte, pero
+no es lo más eficiente cuando usas Neovim, las teclas direccionales están lejos
+de tu _home row_ [^home-row]. Puedes usar las siguientes teclas para moverte
+mientras estás en modo normal.
+
+[^home-row]: <http://www.dictionary.com/browse/home-row>
+
+- <kbd>h</kbd> - izquierda
+- <kbd>j</kbd> - abajo
+- <kbd>k</kbd> - arriba
+- <kbd>l</kbd> - derecha
+
+También puedes usar <kbd>w</kbd> y <kbd>b</kbd> para moverte entre palabras.
+
+Al principio va a ser duro no hacerlo con las teclas direccionales, intenta
+practicar hasta que te sientas cómodo, y no llegar a perder la cabeza o [_las
+teclas_](https://twitter.com/MasteringVim/status/879294993659310080).
+
+{% include alert.html
+  type="info"
+  text="Puedes practicar en este blog, usa <kbd>j</kbd> y <kbd>k</kbd> para moverte."
+%}
+
+### Escribir sobre un archivo
+
+Para empezar a escribir debes ingresar al modo insertar con <kbd>i</kbd>.
+Observa como la forma del cursor ha cambiado, ingresa algún texto y cuando
+termines presiona <kbd>Esc</kbd> para volver al modo normal.
+
+### Guardar
+
+En modo normal presiona <kbd>:</kbd>, escribe `w` y presiona enter.
+
+### Salir
+
+En modo normal presiona <kbd>:</kbd>, luego escribe `q` y presiona enter. Para
+salir sin guardar los cambios, debes escribir `q!`.
+
+### Seleccionar texto
+
+Presiona <kbd>v</kbd> para entrar al modo visual, mueve el cursor con
+<kbd>h</kbd>, <kbd>j</kbd>, <kbd>k</kbd> y <kbd>l</kbd>. Presiona
+<kbd>Esc</kbd> para regresar al modo normal.
+
+### Copiar
+
+Selecciona un texto usando el modo visual, luego presiona <kbd>y</kbd>. Para
+copiar una palabra, en modo normal presiona <kbd>yiw</kbd> o para copiar la
+línea actual presiona <kbd>yy</kbd>.
+
+### Pegar
+
+En modo normal presiona <kbd>p</kbd> para pegar después del cursor o
+<kbd>P</kbd> para pegar antes del cursor.
+
+### Cortar
+
+Selecciona un texto usando el modo visual, luego presiona <kbd>d</kbd>. Para
+cortar una palabra, en modo normal presiona <kbd>diw</kbd> o para cortar la
+línea actual presiona <kbd>dd</kbd>.
+
+Para pegar el texto cortado, presiona <kbd>p</kbd>.
+
+### Copiar y pegar desde el portapapeles
+
+Si intentaste pegar texto fuera de Neovim, o pegar algo que habías copiado al
+portapapeles, te habrás dado cuenta que no funciona. Para usar el portapapeles
+hay que copiar usando <kbd>"+y</kbd> y para pegar desde el portapapeles
+<kbd>"+p</kbd>.
+
+### Deshacer y rehacer
+
+Para deshacer, en modo normal presiona <kbd>u</kbd>; y para rehacer, en modo
+normal presiona <kbd>Ctrl</kbd> + <kbd>r</kbd>.
+
+{% include alert.html
+  type="warning"
+  text="<span class=\"glyphicon glyphicon-alert\"></span> Tal vez te veas tentado
+        a usar <kbd>Ctrl</kbd> + <kbd>z</kbd>, si lo hiciste y tu editor se
+        <i>cerró</i> no te preocupes, sólo escribe fg en la terminal y tendrás
+        de regreso tu editor."
+%}
+
+### Modo línea de comandos
+
+En Neovim existe otro modo, el modo línea de comandos. Aparece debajo del
+editor donde puedes ingresar un comando, luego de ejecutarlo el editor retorna
+al modo normal.
+
+¿Te suena familiar, no?, ¡ya lo haz usado para guardar y salir! Para ingresar a
+este modo teclea <kbd>:</kbd> desde el modo normal.
+
+De ahora en adelante cuando veas caracteres precedidos de `:` sabrás que me
+refiero a que ejecutes un comando en el modo línea de comandos. Por ejemplo
+para guardar `:w`.
+
+{% include alert.html
+  type="info"
+  text="Mientra estás en el modo línea de comandos puedes usar <kbd>Tab</kbd> para autocompletar."
+%}
+
+{% include alert.html
+  type="info"
+  text="El comando :w es una abreviación de :write ¡pruébalo!"
+%}
+
+### Obteniendo ayuda
+
+Para obtener ayuda puedes usar el comando `:help [tema]`, por ejemplo `:help
+:w` para obtener ayuda sobre el comando `:w`.
+
+{% include alert.html
+  type="info"
+  text="El comando :help puede ser abreviado como :h"
+%}
+
+### Aprendiendo desde Neovim
+
+Neovim incluye un tutorial interactivo, ejecuta el comando `:Tutor` para
+empezarlo.
+
+## Configurando Neovim
 
 - Configuraciones desde el exmode
 - Crear un archivo `init.vim`
@@ -414,7 +568,5 @@ configuraciones para Vim/Neovim que podrían serte útiles.
 
 - [Dotfiles en GitHub](https://github.com/search?utf8=%E2%9C%93&q=dotfiles&type=)
 - [Mis dotfiles](https://github.com/stsewd/dotfiles)
-
-<!-- links de lugares donde aprender más, mis dotfiles, etc -->
 
 ---
