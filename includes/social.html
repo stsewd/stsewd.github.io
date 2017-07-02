@@ -1,0 +1,13 @@
+<hr>
+
+<div class="btn-group pull-right social">
+  <a class="btn btn-link" target="_blank" href="https://twitter.com/share?
+    url={{ site.url }}{{ page.url }}&text={{ page.title | cgi_escape }} {% if page.author.twitter %} - @{{ page.author.twitter | cgi_escape }}{% else %}{% endif %}">
+    <i class="fa fa-twitter fa-2x"></i>
+  </a>
+
+  <a class="btn btn-link" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u={{ site.url }}{{ page.url }}">
+    <i class="fa fa-facebook-official fa-2x"></i>
+  </a>
+</div>
+

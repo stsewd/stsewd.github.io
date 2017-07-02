@@ -17,6 +17,10 @@ section: blog
   {{ content }}
 </div>
 
+{% if page.social %}
+  {% include social.html %}
+{% endif %}
+
 {% if page.comments %}
   {% include disqus.html %}
 {% endif %}
