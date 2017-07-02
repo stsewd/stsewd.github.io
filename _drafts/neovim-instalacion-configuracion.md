@@ -139,9 +139,9 @@ Y podrás ver la pantalla de bienvenida de Neovim.
   normal=true
 %}
 
-**Nota:** Tal vez ahora mismo Neovim luzca aburrido, nada _moderno_ ni
-con un gran diseño, pero al finalizar esta serie de tutoriales tendrás un
-editor sin nada que envidiar al resto.
+**Nota:** Tal vez ahora mismo Neovim luzca aburrido, nada _moderno_ ni con un
+gran diseño, pero al finalizar esta serie de posts tendrás un editor sin nada
+que envidiarle al resto.
 
 {% include image.html
   alt="Mi Neovim"
