@@ -519,12 +519,64 @@ empezarlo.
 
 ## Configurando Neovim
 
-- Configuraciones desde el exmode
-- Crear un archivo `init.vim`
-- Poner un par de configuraciones
-- Source so % para recargar las configuraciones
-- Más configuraciones
-- Cambiar de tema
+Neovim puede ser configurado desde el modo línea de comandos, prueba mostrando
+los números de las líneas con `:set number`. ¿Quieres ver el nombre del archivo
+que estás editando en la ventana de la terminal? `:set title`.
+
+Si cierras Neovim, todas las configuraciones se perderán, para mantenerlas se
+usa un archivo `init.vim`, el cual es cargado cada vez que se inicia Neovim.
+
+### init.vim
+
+{% include alert.html
+  type="info"
+  text="Si usas Vim, este archivo cumple la misma función que el archivo <code>.vimrc</code>."
+%}
+
+Este archivo se localiza en `~/.config/nvim/init.vim`, si no existe, créalo.
+
+```sh
+cd ~/.config/
+mkdir nvim
+touch nvim/init.vim
+```
+
+Abre el archivo y agrega la línea:
+
+```vim
+set number
+```
+
+Para que los cambios tengan efecto debes volver a abrir Neovim, o puedes
+ejecutar el commando `:so ~/.config/nvim/init.vim`.
+
+El archivo de configuraciones puede llegar a ser muy grande, así que trata de
+documentar todo lo que pongas sobre este (puedes agregar comentarios con `"`),
+y no copies y pegues cualquier configuración sin entenderla, así tendrás un
+`init.vim` limpio.
+
+{% include alert.html
+  type="info"
+  text="Es recomendable poner tu <code>init.vim</code> sobre un sistema de
+        control de versiones, como <a href=\"http://www.git-scm.com\">git</a>."
+%}
+
+A continuación tienes un `init.vim` con configuraciones que podrían interesarte.
+
+<script src="https://gist.github.com/stsewd/abeb79100eba64184668fd3b1b13bff9.js"></script>
+
+{% include alert.html
+  type="info"
+  text="Para que los cambios de <code>set termguicolors</code> tomen efecto
+        debes volver a abrir Neovim."
+%}
+
+{% include alert.html
+  type="info"
+  text="Para ver todos los temas que trae Neovim escribe
+        <code>:colorscheme</code> espacio y luego usa Tab para ver los temas."
+%}
+
 
 ## Alternativas
 
