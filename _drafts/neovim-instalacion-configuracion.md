@@ -603,6 +603,7 @@ todo lo que aprendas para Vim podrás aplicarlo en Neovim.
 
 - [Vim for humans](https://vimebook.com/)
 - [Vim Galore](https://github.com/mhinz/vim-galore)
+- [Learn Vimscript the Hard Way](http://learnvimscriptthehardway.stevelosh.com/)
 
 ### Vídeo juegos
 
