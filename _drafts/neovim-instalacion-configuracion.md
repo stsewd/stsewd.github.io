@@ -20,8 +20,8 @@ tags: neovim vim
 ## ¿Qué es Neovim?
 
 [Neovim](https://neovim.io/charter/) es una refactorización del código de
-[Vim](http://www.vim.org/), trata de ser un super-conjunto de este, llevando lo
-bueno de Vim y dando una mejor experiencia _fuera de la caja_ al usuario.
+[Vim](http://www.vim.org/), es un fork, no un clon de este. Trae lo bueno de
+Vim con una mejor experiencia _fuera de caja_ para el usuario.
 
 **¿Entonces qué es Vim?** Vim es un editor de texto basado en modos (un lugar
 para escribir, otro para insertar comandos, y así). Nació como mejora de Vi
