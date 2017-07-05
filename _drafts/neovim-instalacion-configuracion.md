@@ -20,13 +20,15 @@ tags: neovim vim
 ## ¿Qué es Neovim?
 
 [Neovim](https://neovim.io/charter/) es una refactorización del código de
-[Vim](http://www.vim.org/), es un fork, no un clon de este. Trae lo bueno de
-Vim con una mejor experiencia _fuera de caja_ para el usuario.
+[Vim](http://www.vim.org/), es un fork, no un clon de este[^fork-no-clone].
+Trae lo bueno de Vim con una mejor experiencia _fuera de caja_ para el usuario.
 
 **¿Entonces qué es Vim?** Vim es un editor de texto basado en modos (un lugar
 para escribir, otro para insertar comandos, y así). Nació como mejora de Vi
 (1976).  Su interfaz no es gráfica, sino basada en texto (aunque existen varias
 implementaciones con interfaz gráfica, como gVim).
+
+[^fork-no-clone]: <https://neovim.io/doc/user/nvim.html#nvim>
 
 ## Neovim vs Vim
 
@@ -37,7 +39,7 @@ limpio?
   [^configuraciones-defecto] [^configuraciones-defecto-documentacion]
 - Un emulador de terminal. [^emulador-terminal]
 - Mejor integración con características de terminales modernos (estilo del
-  cursor, _truecolor_).
+  cursor, _truecolor_ [^true-color]).
 - Una API que permite la comunicación con Neovim desde cualquier lenguaje de
   programación (de manera segura y asíncrona). [^api-neovim]
 - Mejor integración con el mouse.
@@ -45,6 +47,7 @@ limpio?
 [^configuraciones-defecto]: <https://github.com/neovim/neovim/issues/2676>
 [^configuraciones-defecto-documentacion]: <https://neovim.io/doc/user/vim_diff.html#nvim-defaults>
 [^emulador-terminal]: <https://neovim.io/doc/user/nvim_terminal_emulator.html>
+[^true-color]: <https://github.com/neovim/neovim/pull/2198>
 [^api-neovim]: <https://neovim.io/doc/user/api.html>
 
 ## ¿Por qué usar Neovim?
