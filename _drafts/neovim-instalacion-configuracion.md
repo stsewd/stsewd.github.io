@@ -591,8 +591,12 @@ todo lo que aprendas para Vim podrás aplicarlo en Neovim.
 
 - [Learn vim progressively](http://yannesposito.com/Scratch/en/blog/Learn-Vim-Progressively/)
 - [Vim Tips & Tricks](https://bluz71.github.io/2017/05/15/vim-tips-tricks.html)
-- [Graphical vi-vim Cheat Sheet and Tutorial](http://www.viemu.com/a_vi_vim_graphical_cheat_sheet_tutorial.html)
 - [Learn X in Y minutes](https://learnxinyminutes.com/docs/vim/)
+
+### Cheat Sheets
+
+- [Graphical vi-vim Cheat Sheet and Tutorial](http://www.viemu.com/a_vi_vim_graphical_cheat_sheet_tutorial.html)
+- [A Great Vim Cheat Sheet](http://vimsheet.com/)
 
 ### Vídeos
 
