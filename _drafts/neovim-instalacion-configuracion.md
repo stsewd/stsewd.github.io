@@ -30,13 +30,12 @@ implementaciones con interfaz gráfica, como gVim).
 
 ## Neovim vs Vim
 
-Así que Neovim es un reemplazo de Vim con una mejor experiencia para el
-usuario, pero ¿qué realmente ofrece Neovim frente a Vim, además de tener un
-código más limpio?
+¿Qué realmente ofrece Neovim frente a Vim, además de tener un código más
+limpio?
 
-- Trae algunas configuraciones por defecto, que hacen que puedas usarlo de
-  manera inmediata. [^configuraciones-defecto] [^configuraciones-defecto-2]
-- Incluye un emulador de terminal. [^emulador-terminal]
+- Configuraciones por defecto, que hacen que puedas usarlo de manera inmediata.
+  [^configuraciones-defecto] [^configuraciones-defecto-2]
+- Un emulador de terminal. [^emulador-terminal]
 - Mejor integración con características de terminales modernos (estilo del
   cursor, _truecolor_).
 - Una API que permite la comunicación con Neovim desde cualquier lenguaje de
@@ -58,18 +57,18 @@ Puedes **controlar todo con el teclado** a través de comandos, puede parecer un
 poco complicado recordarlos (y al principio lo es), pero están organizados de
 una manera lógica, y con el tiempo se vuelven predecibles.
 
-Te facilita la edición de texto, permitiéndote **automatizar tareas
-repetitivas**, y las tareas tediosas las puedes lograr con un par de teclas.
-Con el tiempo, sentirás que el **teclado es una extension más de tus manos**.
+Facilita la edición de texto, permitiéndote **automatizar tareas repetitivas**,
+y las tareas tediosas las puedes lograr con un par de teclas. Con el tiempo,
+sentirás que el **teclado es una extension más de tus manos**.
 
 Es **altamente configurable**, es como si construyeras tu propio editor,
 al final tendrás un editor **hecho a tu medida** que cubre tus necesidades
 específicas.
 
-Además te permite expandir su comportamiento a través de **plugins**, si
-usas Vim, aún **puedes seguir usando los mismos plugins de Vim**, más los que
-la comunidad ha desarrollado para Neovim. Y si te animas, puedes **crear tu
-propio plugin en tu lenguaje favorito** (hace poco hice mi [primer
+Su comportamiento es expandible a través de **plugins**, si usas Vim, **puedes
+seguir usando los mismos plugins de Vim**, más los que la comunidad ha
+desarrollado para Neovim. Y si te animas, puedes **crear tu propio plugin en tu
+lenguaje favorito** (hace poco hice mi [primer
 plugin](https://github.com/stsewd/open-plugin-page.nvim) en python).
 
 Y por último, trae **las mismas características que cualquier otro editor de
