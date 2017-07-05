@@ -34,7 +34,7 @@ implementaciones con interfaz gráfica, como gVim).
 limpio?
 
 - Configuraciones por defecto, que hacen que puedas usarlo de manera inmediata.
-  [^configuraciones-defecto] [^configuraciones-defecto-2]
+  [^configuraciones-defecto] [^configuraciones-defecto-documentacion]
 - Un emulador de terminal. [^emulador-terminal]
 - Mejor integración con características de terminales modernos (estilo del
   cursor, _truecolor_).
@@ -43,7 +43,7 @@ limpio?
 - Mejor integración con el mouse.
 
 [^configuraciones-defecto]: <https://github.com/neovim/neovim/issues/2676>
-[^configuraciones-defecto-2]: <https://github.com/neovim/neovim/issues/6289>
+[^configuraciones-defecto-documentacion]: <https://neovim.io/doc/user/vim_diff.html#nvim-defaults>
 [^emulador-terminal]: <https://neovim.io/doc/user/nvim_terminal_emulator.html>
 [^api-neovim]: <https://neovim.io/doc/user/api.html>
 
