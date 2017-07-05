@@ -595,7 +595,17 @@ A continuación tienes un `init.vim` con configuraciones que podrían interesart
 
 ## Alternativas
 
-<!-- mencionar otros editores e ides con modo vim (atom, idea, etc) -->
+¿Te gustaron ciertas características de Neovim pero no te atreves a abandonar
+tu actual editor? Puedes hacerlo de manera progresiva o disfrutar varias de las
+características de Neovim sin usarlo de manera directa.
+
+La mayoría de de editores e IDEs incluyen plugins para asemejarse a Vim/Neovim.
+Los que recomiendo son:
+
+- [Atom](http://atom.io) - [Atom Vim mode plus](https://github.com/t9md/atom-vim-mode-plus)
+- [IntelliJ IDEA](https://www.jetbrains.com/idea/) y derivados (pycharm, webstorm, android studio, etc) - [IdeaVim](https://github.com/JetBrains/ideavim)
+- [Eclipse](https://www.eclipse.org/) - [Vrapper](https://marketplace.eclipse.org/content/vrapper-vim)
+
 
 ## Recursos adicionales
 
