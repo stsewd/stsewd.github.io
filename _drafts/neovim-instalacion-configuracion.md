@@ -350,11 +350,11 @@ debe aparecer algo como esto:
 ## Primeros pasos con Neovim
 
 A continuación aprenderás lo básico para empezar a usar Neovim como un editor
-de texto. Al principio parecerá que es contra-productivo, y que hay que teclear
-demasiado para realizar una simple acción; existen otras maneras más eficientes
-de hacerlo, pero el objetivo es que te sientas cómodo con la edición de texto
-antes de pasar a cosas más avanzadas. Al final del post encontrarás varios
-recursos para aprender más sobre Neovim/Vim.
+de código. Al principio parecerá que es contra-productivo, y que hay que
+teclear demasiado para realizar una simple acción; existen otras maneras más
+eficientes de hacerlo, pero el objetivo es que te sientas cómodo con la edición
+de texto antes de pasar a cosas más avanzadas. Al final del post encontrarás
+varios recursos para aprender más sobre Neovim/Vim.
 
 {% include alert.html
   type="info"
@@ -363,7 +363,7 @@ recursos para aprender más sobre Neovim/Vim.
 
 ### Modos
 
-Antes de ir con lo básico, debes saber que Neovim tiene 3 modos principales:
+Neovim tiene 3 modos principales:
 
 - **Modo normal** - Donde todas las teclas son interpretadas como comandos.
 - **Modo insertar** - Donde puedes escribir todo lo que teclees.
@@ -398,7 +398,7 @@ nvim mi-archivo.txt
 Antes había dicho que puedes usar las teclas direccionales para moverte, pero
 no es lo más eficiente cuando usas Neovim, las teclas direccionales están lejos
 de tu _home row_ [^home-row]. Puedes usar las siguientes teclas para moverte
-mientras estás en modo normal.
+dentro del modo normal.
 
 [^home-row]: <http://www.dictionary.com/browse/home-row>
 
@@ -421,7 +421,7 @@ teclas_](https://twitter.com/MasteringVim/status/879294993659310080).
 
 {% include alert.html
   type="info"
-  text="Puedes practicar en este blog, usa <kbd>j</kbd> y <kbd>k</kbd> para moverte."
+  text="Puedes usar <kbd>j</kbd> y <kbd>k</kbd> para moverte en este blog."
 %}
 
 ### Escribir sobre un archivo
@@ -441,20 +441,17 @@ salir sin guardar los cambios, debes escribir `q!`.
 
 ### Seleccionar texto
 
-Presiona <kbd>v</kbd> para entrar al modo visual, mueve el cursor con
-<kbd>h</kbd>, <kbd>j</kbd>, <kbd>k</kbd> y <kbd>l</kbd>. Presiona
-<kbd>Esc</kbd> para regresar al modo normal.
+Presiona <kbd>v</kbd> para entrar al modo visual, mueve el cursor para realizar
+la selección. Presiona <kbd>Esc</kbd> para regresar al modo normal.
 
-### Copiar
+### Copiar & pegar
 
-Selecciona un texto usando el modo visual, luego presiona <kbd>y</kbd>. Para
-copiar una palabra, en modo normal presiona <kbd>yiw</kbd> o para copiar la
-línea actual presiona <kbd>yy</kbd>.
+Selecciona un texto usando el modo visual, luego presiona <kbd>y</kbd>.
+Presiona <kbd>p</kbd> para pegar después del cursor o <kbd>P</kbd> para pegar
+antes del cursor.
 
-### Pegar
-
-En modo normal presiona <kbd>p</kbd> para pegar después del cursor o
-<kbd>P</kbd> para pegar antes del cursor.
+Para copiar una palabra, en modo normal presiona <kbd>yiw</kbd> o para copiar
+la línea actual presiona <kbd>yy</kbd>.
 
 ### Cortar
 
@@ -467,16 +464,16 @@ Para pegar el texto cortado, presiona <kbd>p</kbd>.
 ### Copiar y pegar desde el portapapeles
 
 Si intentaste pegar texto fuera de Neovim, o pegar algo que habías copiado al
-portapapeles[^portapapeles], te habrás dado cuenta que no funciona. Para usar el portapapeles
-debes copiar usando <kbd>"+y</kbd> y para pegar desde el portapapeles
-<kbd>"+p</kbd>.
+portapapeles[^portapapeles], te habrás dado cuenta que no funciona. Para usar
+el portapapeles debes copiar usando <kbd>"+y</kbd> y para pegar desde el
+portapapeles <kbd>"+p</kbd>.
 
 [^portapapeles]: El lugar donde se almacena lo que copias con <kbd>Ctrl</kbd> + <kbd>c</kbd>.
 
 ### Deshacer y rehacer
 
-Para deshacer, en modo normal presiona <kbd>u</kbd>; y para rehacer, en modo
-normal presiona <kbd>Ctrl</kbd> + <kbd>r</kbd>.
+Para deshacer, en modo normal presiona <kbd>u</kbd>; y para rehacer
+<kbd>Ctrl</kbd> + <kbd>r</kbd>.
 
 {% include alert.html
   type="warning"
@@ -494,11 +491,11 @@ sobre las sugerencias.
 
 ### Modo línea de comandos
 
-En Neovim existe otro modo, el modo línea de comandos. Aparece debajo del
-editor donde puedes ingresar un comando, luego de ejecutarlo el editor retorna
-al modo normal.
+Neovim tiene otro modo, el modo línea de comandos. Aparece debajo del editor
+donde puedes ingresar un comando, luego de ejecutarlo (con <kbd>Enter</kbd>) el
+editor retorna al modo normal.
 
-¿Te suena familiar, no?, ¡ya lo haz usado para guardar y salir! Para ingresar a
+¿Te suena familiar, no?, ¡ya lo has usado para guardar y salir! Para ingresar a
 este modo teclea <kbd>:</kbd> desde el modo normal.
 
 De ahora en adelante cuando veas caracteres precedidos de `:` sabrás que me
