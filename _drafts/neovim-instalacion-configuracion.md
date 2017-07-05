@@ -531,8 +531,8 @@ empezarlo.
 ## Configurando Neovim
 
 Neovim puede ser configurado desde el modo línea de comandos, prueba mostrando
-los números de las líneas con `:set number`. ¿Quieres ver el nombre del archivo
-que estás editando en la ventana de la terminal? `:set title`.
+los números de las líneas ejecutando `:set number`. ¿Quieres ver el nombre del
+archivo que estás editando en la ventana de la terminal? `:set title`.
 
 Si cierras Neovim, todas las configuraciones se perderán, para mantenerlas se
 usa un archivo `init.vim`, el cual es cargado cada vez que se inicia Neovim.
@@ -564,7 +564,7 @@ ejecutar el commando `:so ~/.config/nvim/init.vim`.
 El archivo de configuraciones puede llegar a ser muy grande, así que trata de
 documentar todo lo que pongas sobre este (puedes agregar comentarios con `"`),
 y no copies y pegues cualquier configuración sin entenderla, así tendrás un
-`init.vim` limpio.
+`init.vim` ordenado.
 
 {% include alert.html
   type="info"
@@ -572,7 +572,7 @@ y no copies y pegues cualquier configuración sin entenderla, así tendrás un
         control de versiones, como <a href=\"http://www.git-scm.com\">git</a>."
 %}
 
-A continuación tienes un `init.vim` con configuraciones que podrían interesarte.
+A continuación tienes un `init.vim` con algunas configuraciones mínimas.
 
 <script src="https://gist.github.com/stsewd/abeb79100eba64184668fd3b1b13bff9.js"></script>
 
@@ -584,8 +584,8 @@ A continuación tienes un `init.vim` con configuraciones que podrían interesart
 
 {% include alert.html
   type="info"
-  text="Para ver todos los temas que trae Neovim escribe
-        <code>:colorscheme</code> espacio y luego usa Tab para ver los temas."
+  text="Para ver todos los temas escribe <code>:colorscheme</code> da un
+        espacio y luego usa <kbd>Tab</kbd> para iterar sobre estos."
 %}
 
 
