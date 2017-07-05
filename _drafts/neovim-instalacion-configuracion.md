@@ -408,6 +408,12 @@ mientras estás en modo normal.
 - <kbd>k</kbd> - arriba
 - <kbd>l</kbd> - derecha
 
+{% include image.html
+  url="http://vimsheet.com/images/hjkl.png"
+  href="http://vimsheet.com/"
+  normal=true
+%}
+
 También puedes usar <kbd>w</kbd> y <kbd>b</kbd> para moverte entre palabras.
 
 Al principio va a ser duro no hacerlo con las teclas direccionales, intenta
