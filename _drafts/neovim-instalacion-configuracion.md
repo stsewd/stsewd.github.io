@@ -588,6 +588,89 @@ A continuación tienes un `init.vim` con algunas configuraciones mínimas.
         espacio y luego usa <kbd>Tab</kbd> para iterar sobre estos."
 %}
 
+## Configurando la terminal
+
+¿Sientes que tu terminal no encaja del todo con Neovim?
+
+### Ocultar la barra de menú
+
+La barra de menú que ves es la de tú terminal, no la de Neovim.
+
+Accede al menú `Edit` y selecciona `Preferences`. En la pestaña `General`
+desmarca `Show menubar by default in new terminals`.
+
+{% include image.html
+  alt="Ocultar la barra de menú de la terminal en Ubuntu"
+  url="/assets/img/nvim/hide-menu-bar.png"
+  caption="Ocultar la barra de menú de la terminal en Ubuntu"
+  normal=true
+%}
+
+{% include alert.html
+  type="warning"
+  text="Tendrás de volver a abrir la terminal para ver los cambios."
+%}
+
+{% include alert.html
+  type="info"
+  text="Si quieres ver las opciones para configurar tu terminal, presiona
+        <kbd>Shift</kbd> y luego da clic derecho sobre la terminal o si
+        prefieres hacerlo sin el mouse <kbd>Shift</kbd> + <kbd>F10</kbd>."
+%}
+
+### Ocultar las barras de scroll
+
+Cuando abres Neovim verás las barras de scroll horizontal y vertical de tu
+terminal, pero si intentas usarlas, podrás darte cuenta que no funcionan como
+esperas.
+
+Abre el menú de opciones de tú terminal y ve a `Perfiles` -> `Preferencias`.
+Dirígete a la pestaña `Scrolling` y desmarca la opción `Show scrollbar`.
+
+{% include image.html
+  alt="Ocultar la barra de scroll de la terminal en Ubuntu"
+  url="/assets/img/nvim/hide-scroll-bar.png"
+  caption="Ocultar la barra de scroll de la terminal en Ubuntu"
+  normal=true
+%}
+
+{% include alert.html
+  type="info"
+  text="Puedes moverte rápidamente hacia arriba o hacia abajo con
+        <kbd>Ctrl</kbd> + <kbd>u</kbd> y <kbd>Ctrl</kbd> + <kbd>d</kbd>."
+%}
+
+### Tipo y tamaño de letra
+
+Para cambiar el tipo y tamaño de la letra de Neovim, basta con cambiarla en la
+terminal.
+
+Abre el menú de opciones de tú terminal y ve a `Perfiles` -> `Preferencias`. En
+la pestaña `General` marca `Custom font`, y selecciona el tipo y tamaño de
+letra.
+
+{% include image.html
+  alt="Configurar el tipo y tamaño de letra de la terminal en Ubuntu"
+  url="/assets/img/nvim/custom-font.png"
+  caption="Configurar el tipo y tamaño de letra de la terminal en Ubuntu"
+  normal=true
+%}
+
+## Resultado final
+
+{% include image.html
+  alt="Neovim final en Ubuntu"
+  url="/assets/img/nvim/final-nvim-ubuntu.png"
+  caption="Neovim final en Ubuntu"
+  normal=true
+%}
+
+{% include image.html
+  alt="Neovim final en Fedora"
+  url="/assets/img/nvim/final-nvim-fedora.png"
+  caption="Neovim final en Fedora"
+  normal=true
+%}
 
 ## Alternativas
 
