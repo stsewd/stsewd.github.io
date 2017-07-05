@@ -524,7 +524,7 @@ Para obtener ayuda puedes usar el comando `:help [tema]`, por ejemplo `:help
 
 {% include alert.html
   type="info"
-  text="El comando :help puede ser abreviado como :h"
+  text="El comando <code>:help</code> puede ser abreviado como <code>:h</code>."
 %}
 
 ### Aprendiendo desde Neovim
