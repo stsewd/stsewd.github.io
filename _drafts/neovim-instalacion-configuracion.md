@@ -80,9 +80,10 @@ necesites para programar en cualquier lenguaje, o editar texto en general.
 
 ## Instalación
 
-Para la instalación de Neovim he usado dos máquinas virtuales (Fedora y
-Ubuntu), cada una con una instalación _limpia_. La versión de Ubuntu es
-16.04.02, y la de Fedora es 25.1.3.
+Para la instalación de Neovim he usado dos máquinas virtuales:
+ 
+- Ubuntu 16.04.02
+- Fedora 25.1.3
 
 Si usas otra distro que no sea Ubuntu ni Fedora o usas Windows, puedes seguir
 el proceso de instalación en la [documentación oficial de
@@ -90,9 +91,9 @@ Neovim](https://github.com/neovim/neovim/wiki/Installing-Neovim).
 
 ### Ubuntu
 
-Primero hay que agregar la [PPA de
-Neovim](https://launchpad.net/%7Eneovim-ppa/+archive/ubuntu/unstable) para así
-poder instalar la última versión. Ejecuta el siguiente comando en la terminal.
+Para tener la última versión hay que agregar la [PPA de
+Neovim](https://launchpad.net/%7Eneovim-ppa/+archive/ubuntu/unstable). Ejecuta
+el siguiente comando en la terminal.
 
 ```sh
 sudo add-apt-repository ppa:neovim-ppa/unstable
@@ -123,7 +124,7 @@ Para comprobar que todo ha salido bien, en la terminal ejecuta el comando
 nvim
 ```
 
-Y podrás ver la pantalla de bienvenida de Neovim.
+Podrás ver la pantalla de bienvenida de Neovim.
 
 {% include image.html
   alt="Neovim en Ubuntu"
@@ -154,27 +155,27 @@ que envidiarle al resto.
 
 Has abierto Neovim por primera vez, si no has usado Vim antes, puede que te
 estés haciendo algunas preguntas: ¿dónde están los menús? ¿cómo empiezo a
-escribir? o ¿cómo #@!?$# salgo?
+escribir? o ¿cómo ~~#@!?$#~~ salgo?
 
 Más adelante te mostraré todo esto, por ahora lo que necesitas saber es que
 puedes moverte usando las teclas direccionales; y para salir, presiona al menos
 tres veces la tecla <kbd>Esc</kbd>, luego presiona la tecla <kbd>:</kbd>, en la
 parte inferior aparecerá un pequeño espacio donde podrás ingresar texto,
-ingresa `q!` y luego presiona <kbd>Enter</kbd>, y así habrás salido de Neovim.
+ingresa `q!` y luego presiona <kbd>Enter</kbd>.
 
 ## Instalando dependencias adicionales
 
-Haz instalado Neovim, pero aún hace falta instalar algunas dependencias
+Has instalado Neovim, pero aún hace falta instalar algunas dependencias
 (opcionales) para sacarle más provecho y no tener ningún problema al instalar
 plugins.
 
-### Proveedor de porta-papeles
+### Proveedor de portapapeles
 
-Para que Neovim pueda copiar o pegar desde el porta-papeles del sistema
-operativo, hay que instalar un _proveedor_.
+Para que Neovim pueda copiar o pegar desde el portapapeles [^portapapeles] del
+sistema operativo, hay que instalar un _proveedor_.
 
-Hay dos alternativas `xclip` y `xsel`, ambas muy buenas. A continuación tienes
-los comandos para instalar alguna de ellas.
+Existen dos alternativas `xclip` y `xsel`, ambas muy buenas. A continuación
+tienes los comandos para instalar alguna de ellas.
 
 #### Ubuntu
 
@@ -201,15 +202,15 @@ sudo dnf install xsel
 Algunos plugins hacen uso de la [interfaz de
 python](https://github.com/neovim/python-client) que Neovim provee.
 
-Se va a instalar para las dos versiones de Python (2 y 3), aunque es seguro no
-instalar las interfaces de Python 2 porque todos los plugins que se instalarán
-usan Python 3.
+Se hará la instalación para las dos versiones de Python (2 y 3), aunque es
+seguro no instalar las interfaces de Python 2 porque todos los plugins que se
+instalarán usan Python 3.
 
 #### Ubuntu
 
-Ubuntu ya incluye ambas versiones de Python, pero antes de instalar las
-interfaces de Python, hay que instalar `pip` (una herramienta para descargar y
-administrar librerías de Python). Para ello ejecuta los siguientes comandos:
+Ubuntu ya incluye ambas versiones de Python, pero antes hay que instalar `pip`
+(una herramienta para descargar y administrar librerías de Python). Para ello
+ejecuta los siguientes comandos:
 
 ```sh
 sudo apt install python3-pip
@@ -236,8 +237,8 @@ python -m pip install neovim
 
 #### Fedora
 
-Las versiones actuales de Fedora sólo incluyen Python 3, así que hay instalar
-Python 2 (es opcional, como dije antes, todo lo que se use será con Python 3).
+Las versiones actuales de Fedora sólo incluyen Python 3, así que si necesitas
+instalar Python 2, puedes hacerlo con:
 
 ```sh
 sudo dnf install python
@@ -285,8 +286,7 @@ interfaz de [Ruby](https://rubygems.org/gems/neovim/).
 
 #### Ubuntu
 
-Ubuntu no trae Ruby por defecto, así que hay que instalarlo con los siguientes
-comandos.
+Ubuntu no trae Ruby por defecto, instálalo con los siguientes comandos.
 
 ```sh
 sudo apt install ruby
@@ -306,8 +306,7 @@ gem install neovim
 
 #### Fedora
 
-Fedora no trae Ruby por defecto, así que hay que instalarlo con los siguientes
-comandos.
+Fedora no trae Ruby por defecto, instálalo con los siguientes comandos.
 
 ```sh
 sudo dnf install ruby
@@ -330,7 +329,7 @@ gem install neovim
 ## Comprobando las dependencias adicionales
 
 Has instalado las dependencias adicionales para Neovim, pero ¿cómo saber que
-todo salió bien?. Neovim trae una herramienta que permite comprobarlo,
+todo salió bien? Neovim trae una herramienta que permite comprobarlo,
 `CheckHealth`. Para hacer uso de esta herramienta hay que iniciar Neovim con un
 parámetro algo especial.
 
