@@ -479,6 +479,12 @@ normal presiona <kbd>Ctrl</kbd> + <kbd>r</kbd>.
         de regreso tu editor."
 %}
 
+### Auto completado
+
+Mientras estás en modo insertar, escribe el inicio de una palabra y presiona
+<kbd>Crtl</kbd> + <kbd>p</kbd> o <kbd>Ctrl</kbd> + <kbd>n</kbd> para iterar
+sobre las sugerencias.
+
 ### Modo línea de comandos
 
 En Neovim existe otro modo, el modo línea de comandos. Aparece debajo del
