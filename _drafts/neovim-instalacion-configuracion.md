@@ -462,9 +462,11 @@ Para pegar el texto cortado, presiona <kbd>p</kbd>.
 ### Copiar y pegar desde el portapapeles
 
 Si intentaste pegar texto fuera de Neovim, o pegar algo que habías copiado al
-portapapeles, te habrás dado cuenta que no funciona. Para usar el portapapeles
-hay que copiar usando <kbd>"+y</kbd> y para pegar desde el portapapeles
+portapapeles[^portapapeles], te habrás dado cuenta que no funciona. Para usar el portapapeles
+debes copiar usando <kbd>"+y</kbd> y para pegar desde el portapapeles
 <kbd>"+p</kbd>.
+
+[^portapapeles]: El lugar donde se almacena lo que copias con <kbd>Ctrl</kbd> + <kbd>c</kbd>.
 
 ### Deshacer y rehacer
 
