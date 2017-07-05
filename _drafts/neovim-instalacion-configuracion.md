@@ -477,8 +477,8 @@ normal presiona <kbd>Ctrl</kbd> + <kbd>r</kbd>.
   type="warning"
   text="<span class=\"glyphicon glyphicon-alert\"></span> Tal vez te veas tentado
         a usar <kbd>Ctrl</kbd> + <kbd>z</kbd>, si lo hiciste y tu editor se
-        <i>cerró</i> no te preocupes, sólo escribe fg en la terminal y tendrás
-        de regreso tu editor."
+        <i>cerró</i> no te preocupes, sólo escribe <code>fg</code> en la
+        terminal y tendrás de regreso tu editor."
 %}
 
 ### Auto completado
@@ -507,7 +507,8 @@ para guardar `:w`.
 
 {% include alert.html
   type="info"
-  text="El comando :w es una abreviación de :write ¡pruébalo!"
+  text="El comando <code>:w</code> es una abreviación de <code>:write</code>
+        ¡pruébalo!"
 %}
 
 ### Obteniendo ayuda
