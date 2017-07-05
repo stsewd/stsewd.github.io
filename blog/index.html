@@ -18,9 +18,12 @@ section: blog
           <small>
             <span class="glyphicon glyphicon-calendar"></span>
             {{ post.date | date_to_string }}
-            <p>
-              {{ post.intro }}
-            </p>
+
+            {% if post.intro %}
+              <p>{{ post.intro }}</p>
+            {% else %}
+              {{ post.excerpt }}
+            {% endif %}
           </small>
         </p>
       </a>
