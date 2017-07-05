@@ -685,6 +685,20 @@ Los que recomiendo son:
 - [IntelliJ IDEA](https://www.jetbrains.com/idea/) y derivados (pycharm, webstorm, android studio, etc) + [IdeaVim](https://github.com/JetBrains/ideavim)
 - [Eclipse](https://www.eclipse.org/) + [Vrapper](https://marketplace.eclipse.org/content/vrapper-vim)
 
+## Conclusión y recomendaciones
+
+Aprender a usar Neovim es duro, pasará algún tiempo hasta que te sientas
+cómodo, y para hacerlo, debes empezar desde ahora a usarlo.
+
+No trates de memorizar todos los comandos que veas, apréndelos conforme los
+necesites.
+
+No llenes tu `init.vim` con configuraciones que no sabes lo que hacen, ni
+copies totalmente las configuraciones de otras personas, toma lo que vas a
+estar seguro que usarás.
+
+Luego de aprender lo básico, el siguiente paso es empezar a usar plugins. Haré
+un futuro post sobre esto.
 
 ## Recursos adicionales
 
