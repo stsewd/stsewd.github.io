@@ -750,8 +750,9 @@ No llenes tu `init.vim` con configuraciones que no sabes lo que hacen, ni
 copies totalmente las configuraciones de otras personas, toma lo que vas a
 estar seguro que usarás.
 
-Luego de aprender lo básico, el siguiente paso es empezar a usar plugins. Haré
-un futuro post sobre esto.
+Luego de aprender lo básico, el siguiente paso es empezar a usar plugins y a
+aprender desde la documentación oficial de Neovim. Pronto haré posts sobre
+plugins y cosas más avanzadas de Neovim.
 
 ## Recursos adicionales
 
