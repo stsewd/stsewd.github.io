@@ -1,14 +1,27 @@
 ---
-layout: default
+layout: default-no-division
+main: true
 title: Santos Gallegos
 ---
 
-<div class="alert alert-warning">
-  <strong>Sitio en construcción.</strong> Pronto empezaré a subir contenidos, ¡estáte atento!
+<div class="main-container container-fluid">
+  <div class="section">
+    <div class="row text-center">
+      <h1 class="shadow">
+        Hello
+      </h1>
+      <p class="col-sm-8 col-sm-offset-2">
+        I'm Santos. I'm living in Cuenca, Ecuador. I love the open source and
+        Neovim. Python enthusiast.
+      </p>
+    </div>
+    <div class="text-center">
+      <a href="http://github.com/stsewd">
+        <i class="fa fa-github fa-3x"></i>
+      </a>
+      <a href="http://twitter.com/stsewd">
+        <i class="fa fa-twitter fa-3x"></i>
+      </a>
+    </div>
+  </div>
 </div>
-
-{% include image.html
-  alt="batman coding"
-  url="/assets/batman-coding.jpg" 
-  caption="Tu código es un desastre Alfred, mejor sigue haciendo el café."
-%}
