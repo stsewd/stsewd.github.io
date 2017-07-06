@@ -1,5 +1,6 @@
 ---
 title: Neovim, instalación y configuración básica
+date: 2017-07-06
 tags: neovim vim
 intro: >
   En este post daré una introducción a Neovim, un editor de texto muy diferente
