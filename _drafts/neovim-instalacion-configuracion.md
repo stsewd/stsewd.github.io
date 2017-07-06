@@ -515,6 +515,33 @@ para guardar `:w`.
         ¡pruébalo!"
 %}
 
+### Trabajando con varios archivos
+
+Para trabajar con varios archivos solemos usar pestañas, Neovim tiene pestañas,
+pero no son exactamente lo mismo que en los demás editores[^vim-buffers], en su
+lugar usaremos `buffers`.
+
+Podemos abrir varios archivos desde la terminal con:
+
+```sh
+nvim archivo-uno.txt archivo-dos.txt
+```
+
+O si ya tienes Neovim abierto, puedes usar el comando `:e <archivo>`, por
+ejemplo `:e archivo-uno.txt`.
+
+Podrá parecer que no hay otro archivo abierto, pero lo hay. Puedes listar todos
+los buffers con `:ls`; para cambiar al siguiente buffer usa `:bnext` y para el
+anterior `:bprevious`; para cerrar el buffer actual `:bdelete`.
+
+[^vim-buffers]: <http://joshldavis.com/2014/04/05/vim-tab-madness-buffers-vs-tabs/>
+
+{% include alert.html
+  type="info"
+  text="Los comandos <code>:bn</code> y <code>:bp</code> son una abreviación de
+        <code>:bnext</code> y <code>:bprevious</code>."
+%}
+
 ### Obteniendo ayuda
 
 Para obtener ayuda puedes usar el comando `:help [tema]`, por ejemplo `:help
