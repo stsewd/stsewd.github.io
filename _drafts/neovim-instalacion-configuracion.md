@@ -617,6 +617,29 @@ A continuación tienes un `init.vim` con algunas configuraciones mínimas.
         espacio y luego usa <kbd>Tab</kbd> para iterar sobre estos."
 %}
 
+## Mappings
+
+Se ha usado varios comandos para interactuar con Neovim, pero no parece ser tan
+productivo tener que escribirlos cada vez para cambiar de buffer o guardar un
+archivo.
+
+Neovim nos permite definir nuestros propios atajos de teclado (mappings). Por
+ejemplo, si quisiéramos usar <kbd>Ctrl</kbd> + <kbd>s</kbd> para guardar,
+bastaría con poner esta línea en el archivo `init.vim`.
+
+```vim
+nnoremap <C-s> :w<CR>
+```
+
+A menudo verás combinaciones que usan `<leader>`, nos referiremos a esta como
+la tecla líder, está reservada para atajos definidos por el usuario. Por
+defecto la tecla líder es <kbd>\</kbd>, pero es un poco difícil de teclear, por
+lo que se suele usar la tecla <kbd>Espacio</kbd> o <kbd>,</kbd> como sustituto.
+
+A continuación un par de mappings que te podrían ser de utilidad.
+
+<script src="https://gist.github.com/stsewd/4a02ce40968bf16050d96c4f8ec9e7cb.js"></script>
+
 ## Configurando la terminal
 
 ¿Sientes que tu terminal no encaja del todo con Neovim?
