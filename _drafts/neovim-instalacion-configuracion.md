@@ -648,8 +648,8 @@ A continuación un par de mappings que te podrían ser de utilidad.
 
 La barra de menú que ves es la de tú terminal, no la de Neovim.
 
-Accede al menú `Edit` y selecciona `Preferences`. En la pestaña `General`
-desmarca `Show menubar by default in new terminals`.
+Accede al menú `Editar` y selecciona `Preferencias`. En la pestaña `General`
+desmarca `Mostrar la barra de menús en las terminales nuevas por omisión`.
 
 {% include image.html
   alt="Ocultar la barra de menú de la terminal en Ubuntu"
@@ -676,8 +676,9 @@ Cuando abres Neovim verás las barras de scroll horizontal y vertical de tu
 terminal, pero si intentas usarlas, podrás darte cuenta que no funcionan como
 esperas.
 
-Abre el menú de opciones de tú terminal y ve a `Perfiles` -> `Preferencias`.
-Dirígete a la pestaña `Scrolling` y desmarca la opción `Show scrollbar`.
+Abre el menú de opciones de tú terminal y ve a `Perfiles` y a `Preferencias del
+perfil`. Dirígete a la pestaña `Desplazamiento` y desmarca la opción `Mostrar
+barra de desplazamiento`.
 
 {% include image.html
   alt="Ocultar la barra de scroll de la terminal en Ubuntu"
@@ -697,9 +698,9 @@ Dirígete a la pestaña `Scrolling` y desmarca la opción `Show scrollbar`.
 Para cambiar el tipo y tamaño de la letra de Neovim, basta con cambiarla en la
 terminal.
 
-Abre el menú de opciones de tú terminal y ve a `Perfiles` -> `Preferencias`. En
-la pestaña `General` marca `Custom font`, y selecciona el tipo y tamaño de
-letra.
+Abre el menú de opciones de tú terminal y ve a `Perfiles` y a `Preferencias del
+perfil`. En la pestaña `General` marca `Tipo de letra personalizado`, y
+selecciona el tipo y tamaño de letra.
 
 {% include image.html
   alt="Configurar el tipo y tamaño de letra de la terminal en Ubuntu"
