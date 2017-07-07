@@ -411,7 +411,7 @@ dentro del modo normal.
 - <kbd>l</kbd> - derecha
 
 {% include image.html
-  url="http://vimsheet.com/images/hjkl.png"
+  url="/assets/img/nvim/hjkl.png"
   href="http://vimsheet.com/"
   normal=true
 %}
