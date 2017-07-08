@@ -543,6 +543,12 @@ anterior `:bprevious`; para cerrar el buffer actual `:bdelete`.
         <code>:bnext</code> y <code>:bprevious</code>."
 %}
 
+### Buscar
+
+En modo normal presiona <kbd>/</kbd>, ingresa la palabra a buscar y presiona
+<kbd>Enter</kbd>. Muévete a la siguiente o anterior coincidencia con
+<kbd>n</kbd> y <kbd>N</kbd>.
+
 ### Obteniendo ayuda
 
 Para obtener ayuda puedes usar el comando `:help [tema]`, por ejemplo `:help
