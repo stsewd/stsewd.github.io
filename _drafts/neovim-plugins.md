@@ -29,10 +29,10 @@ nos facilitan realizar ciertas acciones.
 ## Administrador de plugins
 
 Los archivos que conforman un plugin deben estar en directorios específicos
-para que este funcione. En los primeros inicios de Vim, bastaba con copiar y
-pegar estos archivos en cada directorio (lo cual se puede seguir haciendo en
-Neovim), pero conforme tu lista de plugins crece, se hace difícil mantener al
-día todos los plugins.
+para que este funcione. En los inicios de Vim, bastaba con copiar y pegar estos
+archivos en cada directorio (lo cual se puede seguir haciendo en Neovim), pero
+conforme tu lista de plugins crece, se hace difícil mantener al día todos los
+plugins.
 
 Para solucionar este problema nacen los administradores de plugins, que se
 encargan de mantener los plugins y sus dependencias al día con un par de
@@ -48,7 +48,7 @@ Los administradores de plugins más populares son:
 
 Todos a excepción de pathogen administran los plugins de manera similar,
 pones los nombres de los plugins en tu `init.vim`, ejecutas un comando y estos
-se descargan (usualmente desde GitHub) e instalan.
+se descargan (usualmente desde [GitHub](https://github.com)) e instalan.
 
 El administrador de plugins que usaré para el resto del post es
 [vim-plug](https://github.com/junegunn/vim-plug), porque es el que menos
@@ -88,7 +88,7 @@ Al inicio agrega lo siguiente:
 " Especifíca el directorio para los plugins
 call plug#begin('~/.local/share/nvim/plugged')
 
-" Aquí iran los nombres de los plugins a instalar
+" Aquí irán los nombres de los plugins a instalar
 
 call plug#end()
 
