@@ -1,0 +1,2 @@
+server:
+	jekyll server --drafts
