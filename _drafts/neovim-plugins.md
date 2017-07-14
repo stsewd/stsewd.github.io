@@ -64,6 +64,38 @@ plugins.
         gist</a>."
 %}
 
+## Instalando vim-plug
+
+Ejecuta el siguiente comando de la terminal:
+
+```sh
+curl -fLo ~/.local/share/nvim/site/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+```
+
+O si prefieres, descarga [este
+archivo](https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim) y
+guárdalo en `~/.local/share/nvim/site/autoload/plug.vim`.
+
+Ahora abre tu `init.vim`.
+
+```sh
+nvim ~/.config/nvim/init.vim
+```
+
+Al inicio agrega lo siguiente:
+
+```vim
+" Especifíca el directorio para los plugins
+call plug#begin('~/.local/share/nvim/plugged')
+
+" Aquí iran los nombres de los plugins a instalar
+
+call plug#end()
+
+" Luego de esta línea puedes agregar tus configuraciones
+" y mappings de Neovim
+```
+
 ## Instalando plugins con vim-plug
 
 Explicar vim-plug
