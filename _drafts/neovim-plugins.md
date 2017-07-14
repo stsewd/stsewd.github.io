@@ -118,14 +118,14 @@ call plug#end()
 ```
 
 Pero con esto el plugin no está aún instalado, debes recargar tu `init.vim`
-ejecutando `:so ~/.config/nvim/init.vim`. Y luego, ejecuta `:PlugIntall`.
+ejecutando `:so ~/.config/nvim/init.vim`. Y luego, ejecuta `:PlugInstall`.
 Aparecerá una ventana con el progreso de Instalación, cuando se termine de
 instalar el plugin, ciérrala presionando <kbd>q</kbd>.
 
 {% include image.html
-  alt="Ejecución del comando :PlugIntall"
+  alt="Ejecución del comando :PlugInstall"
   url="https://raw.githubusercontent.com/junegunn/i/master/vim-plug/installer.gif" 
-  caption="Ejecución del comando :PlugIntall"
+  caption="Ejecución del comando :PlugInstall"
   normal=true
 %}
 
