@@ -98,7 +98,46 @@ call plug#end()
 
 ## Instalando plugins con vim-plug
 
-Explicar vim-plug
+Vim-plug tiene soporte directo con los plugins alojados en GitHub (pero también
+se puede instalar los que estén alojados en otros sitios, un repositorio git, o
+de manera local).
+
+En este post usaré plugins alojados en GitHub, para instalarlos sólo basta con
+poner el nombre del usuario y del repositorio en el `init.vim`.
+
+Por ejemplo, para instalar [este
+plugin](https://github.com/tpope/vim-surround), agrega lo siguiente en tu
+`init.vim`.
+
+```vim
+call plug#begin('~/.local/share/nvim/plugged')
+
+Plug 'tpope/vim-surround'  " Es buena idea agregar un comentario con una descripción del plugin
+
+call plug#end()
+```
+
+Pero con esto el plugin no está aún instalado, debes recargar tu `init.vim`
+ejecutando `:so ~/.config/nvim/init.vim`. Y luego, ejecuta `:PlugIntall`.
+Aparecerá una ventana con el progreso de Instalación, cuando se termine de
+instalar el plugin, ciérrala presionando <kbd>q</kbd>.
+
+{% include image.html
+  alt="Ejecución del comando :PlugIntall"
+  url="https://raw.githubusercontent.com/junegunn/i/master/vim-plug/installer.gif" 
+  caption="Ejecución del comando :PlugIntall"
+  normal=true
+%}
+
+Ahora si, el plugin se encontrará instalado, si deseas des-habilitarlo, basta
+con comentar o eliminar esa línea. Pero esto no eliminará el plugin de tu
+disco, para eliminarlo ejecuta el comando `:PlugClean`.
+
+Es importante mantener tus plugins al día, así que de vez en cuando ejecuta
+`:PlugUpdate` para actualizarlos.
+
+Y además de los plugins, mantener al día tu _administrador de plugins_ también
+es importante, puedes hacerlo con `:PlugUpgrade`.
 
 ## Cómo usar y configurar los plugins
 
