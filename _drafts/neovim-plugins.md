@@ -6,6 +6,13 @@ intro: >
   una lista de plugins esenciales.
 ---
 
+{% include image.html
+  alt="logo de neovim"
+  url="/assets/img/nvim/neovim-logo.png" 
+  href="http://neovim.io"
+  caption="Logo de Neovim"
+%}
+
 ## Plugins
 
 Los plugins de Vim/Neovim no son más que archivos `.vim`
