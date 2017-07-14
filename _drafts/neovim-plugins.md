@@ -28,13 +28,41 @@ nos facilitan realizar ciertas acciones.
 
 ## Administrador de plugins
 
-Los archivos de un plugin deben estar en directorios específicos para que
-funcionen. En los primeros inicios de Vim, bastaba con copiar y pegar estos
-archivos en la ruta de instalación de Vim (lo cual se puede seguir haciendo en
-Neovim), pero conforme tu lista de plugins crece, se hace un poco difícil
-mantener al día todos los plugins.
+Los archivos que conforman un plugin deben estar en directorios específicos
+para que este funcione. En los primeros inicios de Vim, bastaba con copiar y
+pegar estos archivos en cada directorio (lo cual se puede seguir haciendo en
+Neovim), pero conforme tu lista de plugins crece, se hace difícil mantener al
+día todos los plugins.
 
-Explicar lo que hace un plugin manager, la extructura común de los plugins
+Para solucionar este problema nacen los administradores de plugins, que se
+encargan de mantener los plugins y sus dependencias al día con un par de
+comandos y sin la necesidad de copiar cada archivo en cada directorio
+correspondiente.
+
+Los administradores de plugins más populares son:
+
+- [pathogen](https://github.com/tpope/vim-pathogen)
+- [Vundle](https://github.com/VundleVim/Vundle.vim)
+- [dein](https://github.com/Shougo/dein.vim)
+- [vim-plug](https://github.com/junegunn/vim-plug)
+
+Todos a excepción de pathogen administran los plugins de manera similar,
+pones los nombres de los plugins en tu `init.vim`, ejecutas un comando y estos
+se descargan (usualmente desde GitHub) e instalan.
+
+El administrador de plugins que usaré para el resto del post es
+[vim-plug](https://github.com/junegunn/vim-plug), porque es el que menos
+configuraciones requiere y se integra muy bien con Neovim. Tú puedes escoger el
+que desees, los plugins pueden ser instalados con cualquier administrador de
+plugins.
+
+{% include alert.html
+  type="info"
+  text="Si quieres saber más sobre la estructura de directorios de los plugins
+        de Vim/Neovim puedes leer <a
+        href=\"https://gist.github.com/nelstrom/1056049/784e252c3de653e204e9e128653010e19fbd493f\">este
+        gist</a>."
+%}
 
 ## Instalando plugins con vim-plug
 
