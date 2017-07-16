@@ -141,6 +141,20 @@ es importante, puedes hacerlo con `:PlugUpgrade`.
 
 ## Cómo usar y configurar los plugins
 
+Cada plugin tiene su propia documentación y dependencias, asegúrate de leerlas,
+no hace falta hacerlo a profundidad. La mayoría provee en su página de inicio
+algunas configuraciones suficientes para comenzar a usarlo.
+
+Si necesitas configurar algo específico, busca en su documentación
+(`:h <nombre-del-plugin>`). Si notas un error, asegúrate de estar usando la
+última versión (`:PlugUpdate`), si el problema continúa revisa si ya está
+reportado en su página de GitHub
+([_issues_](https://guides.github.com/features/issues/)).
+
+Las configuraciones de cada plugin van en tu `init.vim` luego de toda la lista
+de plugins. Al igual que las demás configuraciones, trata de ser organizado y
+documenta todo.
+
 ## Plugins esenciales
 
 Describir como se van a describir los plugins
