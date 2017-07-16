@@ -264,7 +264,7 @@ colorscheme NeoSolarized  " Activa tema NeoSolarized
 
 ---
 
-#### Más
+#### Otros
 
 - [Documentación de Neovim](https://github.com/neovim/neovim/wiki/Related-projects#colorschemes)
 
@@ -274,7 +274,13 @@ colorscheme NeoSolarized  " Activa tema NeoSolarized
 
 #### NerdTree
 
-> Explorador de archivos
+> Explorador de archivos, útil para ver la estructura de tu proyecto.
+
+{% include image.html
+  alt="NERDTree"
+  url="/assets/img/nvim/plugins/nerdtree.png" 
+  normal=true
+%}
 
 ```vim
 Plug 'scrooloose/nerdtree'
@@ -290,12 +296,21 @@ let g:NERDTreeIgnore = [
     \]
 
 let g:NERDTreeMinimalUI = 1  " Oculta texto de ayuda de la interfaz
+
+" Abrir/cerrar NerdTree con F2
+map <F2> :NERDTreeToggle<CR>
 ```
 
 {% include nvim/info.html
   commands=":NERDTree"
   web='https://github.com/scrooloose/nerdtree'
   info_cmd=':h NERDTree'
+%}
+
+{% include alert.html
+  type="info"
+  text="Para cambiar entre paneles (NERDTree y tu buffer actual) presiona
+        <kbd>Ctrl</kbd> + <kbd>ww</kbd>."
 %}
 
 ---
