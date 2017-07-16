@@ -317,12 +317,84 @@ map <F2> :NERDTreeToggle<CR>
 
 ### Barra de estado
 
-- lightline
-- airline
+#### Airline
 
-### Explorador de archivos
+> Barra de estado, con integración con varios plugins y herramientas externas
+> como git.
 
-- nerdtree
+{% include image.html
+  alt="Airline"
+  url="https://raw.githubusercontent.com/wiki/vim-airline/vim-airline/screenshots/demo.gif" 
+  normal=true
+%}
+
+```vim
+Plug 'vim-airline/vim-airline'
+Plug 'vim-airline/vim-airline-themes'  " Temas para airline
+
+...
+
+let g:airline#extensions#tabline#enabled = 1  " Mostrar buffers abiertos
+let g:airline#extensions#tabline#fnamemod = ':t'  " Mostrar sólo el nombre del archivo
+
+" Cargar fuente Powerline y símbolos
+let g:airline_powerline_fonts = 1
+
+set noshowmode  " No mostrar el modo actual (ya lo muestra la barra de estado)
+```
+
+Para hacer uso de la fuente Powerline, necesitas instalar una de
+[estas fuentes](https://github.com/ryanoasis/nerd-fonts)
+([la que uso](https://github.com/ryanoasis/nerd-fonts/blob/master/patched-fonts/DejaVuSansMono/Regular/complete/DejaVu%20Sans%20Mono%20Nerd%20Font%20Complete%20Mono.ttf))
+y seleccionarla en tu terminal.
+
+{% include nvim/info.html
+  web='https://github.com/vim-airline/vim-airline'
+  info_cmd=':h airline'
+%}
+
+---
+
+#### Otros
+
+- [Lightline](https://github.com/itchyny/lightline.vim)
+
+---
+
+### Guías de indentación
+
+#### IndentLine
+
+> Muestra los niveles de indentación con líneas verticales.
+
+{% include image.html
+  alt="IndentLine"
+  url="https://camo.githubusercontent.com/77b20e2e707ac1d85fd8bc12f16b5b7b7e72e186/687474703a2f2f692e696d6775722e636f6d2f4b566930542e6a7067" 
+  normal=true
+%}
+
+```vim
+Plug 'Yggdroot/indentLine'
+
+...
+
+" No mostrar en ciertos tipos de buffers y archivos
+let g:indentLine_fileTypeExclude = ['text', 'sh', 'help', 'terminal']
+let g:indentLine_bufNameExclude = ['NERD_tree.*', 'term:.*']
+```
+
+{% include nvim/info.html
+  web="https://github.com/Yggdroot/indentLine"
+  info_cmd=":h indentLine.txt"
+%}
+
+---
+
+#### Otros
+
+- [Indent guides](https://github.com/nathanaelkane/vim-indent-guides)
+
+---
 
 ### Auto completado
 
