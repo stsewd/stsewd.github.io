@@ -157,7 +157,34 @@ documenta todo.
 
 ## Plugins esenciales
 
-Describir como se van a describir los plugins
+A continuación describiré algunos plugins que considero esenciales para
+aumentar tu productividad, tu editor luzca bien y se asemeje a un _IDE
+liviano_.
+
+Para cada plugin presentaré una breve descripción, la página, y de ser el caso,
+algunas configuraciones necesarias para empezar a usarlo. Para ello usaré un
+`init.vim` _abreviado_ de la siguiente manera.
+
+```vim
+Plug 'usuario/plugin'  " Comentario
+
+...
+
+let g:configuracion_del_plugin = 1
+```
+
+Recuerda que los nombres de los plugins deben ir entre las funciones de
+vim-plug, como se indicó al principio. Y las configuraciones deben ir luego de
+`call plug#end()`. Y por si acaso, los `...` son sólo un separador visual, no
+necesitas ponerlos en tu `init.vim`.
+
+{% include alert.html
+  type="warning"
+  text="<span class=\"glyphicon glyphicon-alert\"></span>
+        No instales cada plugin que veas en este post, lee con cuidado su
+        descripción y toma los que realmente vayas a utilizar o mejoren tu
+        productividad."
+%}
 
 ### Temas
 

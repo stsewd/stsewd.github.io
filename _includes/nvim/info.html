@@ -1,0 +1,30 @@
+{% if include.commands %}
+<i class="fa fa-terminal"></i>
+<ul>
+{% assign commands = include.commands | split: " " %}
+{% for command in commands %}
+  <li>
+    <code>{{ command }}</code>
+  </li>
+{% endfor%}
+</ul>
+{% endif %}
+
+<i class="fa fa-external-link"></i>
+<a href="{{ include.web }}">
+  {{ include.web }}
+</a>
+
+{% if include.info_link %}
+  <i class="fa fa-info-circle"></i>
+  <a href="{{ include.info_link }}">
+    {{ include.info_link }}
+  </a>
+{% endif %}
+
+{% if include.info_cmd %}
+  <i class="fa fa-info-circle"></i>
+  <code>
+    {{ include.info_cmd }}
+  </code>
+{% endif %}
