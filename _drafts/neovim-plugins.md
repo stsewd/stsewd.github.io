@@ -72,9 +72,16 @@ Ejecuta el siguiente comando de la terminal:
 curl -fLo ~/.local/share/nvim/site/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
 ```
 
-O si prefieres, descarga [este
-archivo](https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim) y
-guárdalo en `~/.local/share/nvim/site/autoload/plug.vim`.
+{% include alert.html
+  type="info"
+  text="Debes tener instalado <code>curl</code> previamente, instálalo en
+        Ubuntu con <code>sudo apt install curl</code>, o en Fedora con <code>sudo dnf
+        install curl</code>."
+%}
+
+O si prefieres, descarga
+[este archivo](https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim)
+y guárdalo en `~/.local/share/nvim/site/autoload/plug.vim`.
 
 Ahora abre tu `init.vim`.
 
@@ -95,6 +102,13 @@ call plug#end()
 " Luego de esta línea puedes agregar tus configuraciones
 " y mappings de Neovim
 ```
+
+{% include alert.html
+  type="info"
+  text="Si ocurre un error al abrir Neovim, asegúrate de tener instalado
+        <code>git</code>, instálalo en Ubuntu con <code>sudo apt install git</code> o
+        en Fedora con <code>sudo dnf install git</code>."
+%}
 
 ## Instalando plugins con vim-plug
 
