@@ -238,6 +238,36 @@ colorscheme NeoSolarized  " Activa tema NeoSolarized
 
 ---
 
+### Explorador de archivos
+
+#### NerdTree
+
+> Explorador de archivos
+
+```vim
+Plug 'scrooloose/nerdtree'
+
+...
+
+let g:NERDTreeChDirMode = 2  " Cambia el directorio actual al nodo padre actual
+
+" Archivos a ignorar
+let g:NERDTreeIgnore = [
+    \ '\.pyc$', '^__pycache__$', '^venv$',
+    \ '^tags$'
+    \]
+
+let g:NERDTreeMinimalUI = 1  " Oculta texto de ayuda de la interfaz
+```
+
+{% include nvim/info.html
+  commands=":NERDTree"
+  web='https://github.com/scrooloose/nerdtree'
+  info_cmd=':h NERDTree'
+%}
+
+---
+
 ### Barra de estado
 
 - lightline
