@@ -208,6 +208,12 @@ Dentro de los plugins tenemos _color schemes_, o temas para tu Neovim.
 
 > Color scheme inspirado por el tema One Dark de Atom.
 
+{% include image.html
+  alt="One Dark"
+  url="/assets/img/nvim/plugins/onedark.png" 
+  normal=true
+%}
+
 ```vim
 Plug 'joshdick/onedark.vim'
 
@@ -228,6 +234,18 @@ colorscheme onedark  " Activa tema onedark
 
 > Paleta de colores [Solarized](http://ethanschoonover.com/solarized) para
 > Neovim.
+
+{% include image.html
+  alt="NeoSolarized light"
+  url="/assets/img/nvim/plugins/neosolarized-light.png" 
+  normal=true
+%}
+
+{% include image.html
+  alt="NeoSolarized dark"
+  url="/assets/img/nvim/plugins/neosolarized-dark.png" 
+  normal=true
+%}
 
 ```vim
 Plug 'iCyMind/NeoSolarized'
