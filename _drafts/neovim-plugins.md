@@ -188,9 +188,55 @@ necesitas ponerlos en tu `init.vim`.
 
 ### Temas
 
-- one dark
-- Neosolarized
-- Documentación oficial de Neovim
+Dentro de los plugins tenemos _color schemes_, o temas para tu Neovim.
+
+#### One Dark
+
+> Color scheme inspirado por el tema One Dark de Atom.
+
+```vim
+Plug 'joshdick/onedark.vim'
+
+...
+
+set termguicolors  " Activa true colors en la terminal
+colorscheme onedark  " Activa tema onedark
+```
+
+{% include nvim/info.html
+  web='https://github.com/joshdick/onedark.vim'
+  info_link='https://github.com/joshdick/onedark.vim#options'
+%}
+
+---
+
+#### NeoSolarized
+
+> Paleta de colores [Solarized](http://ethanschoonover.com/solarized) para
+> Neovim.
+
+```vim
+Plug 'iCyMind/NeoSolarized'
+
+...
+
+set termguicolors  " Activa true colors en la terminal
+set background=dark  " Fondo del tema: dark/light
+colorscheme NeoSolarized  " Activa tema NeoSolarized
+```
+
+{% include nvim/info.html
+  web='https://github.com/iCyMind/NeoSolarized'
+  info_link='https://github.com/iCyMind/NeoSolarized#options'
+%}
+
+---
+
+#### Más
+
+- [Documentación de Neovim](https://github.com/neovim/neovim/wiki/Related-projects#colorschemes)
+
+---
 
 ### Barra de estado
 
