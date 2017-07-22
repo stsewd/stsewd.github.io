@@ -532,8 +532,8 @@ let g:echodoc_enable_at_startup = 1
 
 ## Buscando plugins
 
-- Github
-- Vim awesome
-- Docs oficial de Neovim: https://github.com/neovim/neovim/wiki/Related-projects#plugins
+- [GitHub](https://github.com/)
+- [Vim awesome](http://vimawesome.com/)
+- [Documentación de Neovim](https://github.com/neovim/neovim/wiki/Related-projects#plugins)
 
 ---
