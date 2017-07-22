@@ -398,7 +398,85 @@ let g:indentLine_bufNameExclude = ['NERD_tree.*', 'term:.*']
 
 ### Auto completado
 
-- deoplete
+#### Deoplete
+
+> Auto completado asíncrono para Neovim.
+
+{% include image.html
+  alt="Deoplete"
+  url="https://raw.githubusercontent.com/mhartington/nvim-typescript/master/deoplete-tss.gif" 
+  normal=true
+%}
+
+```vim
+Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
+
+...
+
+" Activar deoplete al iniciar Neovim
+let g:deoplete#enable_at_startup = 1
+
+" Cerrar automaticamente la ventana de vista previa (donde se muestra documentación, si existe)
+augroup deoplete
+  autocmd!
+  autocmd CompleteDone * silent! pclose!
+augroup END
+```
+
+{% include nvim/info.html
+  web="https://github.com/Shougo/deoplete.nvim"
+  info_cmd=":h deoplete"
+%}
+
+##### Supertab
+
+> Permite navegar entre las sugerencias de deoplete usando <kbd>Tab</kbd>.
+
+```vim
+Plug 'ervandew/supertab'
+
+...
+
+" Invertir direccion de navegacion (de arriba a abajo)
+let g:SuperTabDefaultCompletionType = '<c-n>'
+```
+
+{% include nvim/info.html
+  web="https://github.com/ervandew/supertab"
+  info_cmd=":h supertab"
+%}
+
+##### Echodoc
+
+> Muestra la firma de la función
+
+{% include image.html
+  alt="echodoc"
+  url="https://cloud.githubusercontent.com/assets/111942/19444981/a076d748-9460-11e6-851c-f249f8110b3b.gif" 
+  normal=true
+%}
+
+```vim
+Plug 'Shougo/echodoc.vim'
+
+...
+
+" Activar echodoc al iniciar Neovim
+let g:echodoc_enable_at_startup = 1
+```
+
+{% include nvim/info.html
+  web="https://github.com/Shougo/echodoc.vim"
+  info_cmd=":h echodoc"
+%}
+
+---
+
+#### Otros
+
+- [YouCompleteMe](https://github.com/Valloric/YouCompleteMe)
+
+---
 
 ### Snippets
 
