@@ -2,8 +2,9 @@
 title: Neovim, instalación de plugins
 tags: neovim vim plugins
 intro: >
-  En este post mostraré cómo instalar y administrar plugins en Neovim, además
-  una lista de plugins esenciales.
+  Para ser más productivo con Neovim los plugins son tus aliados, en este post
+  mostraré cómo instalarlos y administrarlos, además una lista de plugins
+  esenciales para hacer de tu editor un IDE muy liviano.
 ---
 
 {% include image.html
