@@ -413,6 +413,7 @@ let g:indentLine_bufNameExclude = ['NERD_tree.*', 'term:.*']
 
 ```vim
 Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
+Plug 'Shougo/neco-syntax'  " Fuente general de auto completado
 
 ...
 
@@ -429,6 +430,15 @@ augroup END
 {% include nvim/info.html
   web="https://github.com/Shougo/deoplete.nvim"
   info_cmd=":h deoplete"
+%}
+
+{% include alert.html
+  type="info"
+  text="Para tener auto completado para un leguaje específico debes instalar
+        una <i>fuente</i>, puedes encontrar una lista de varias fuentes
+        <a href=\"https://github.com/Shougo/deoplete.nvim/wiki/Completion-Sources\">
+          aquí
+        </a>."
 %}
 
 ##### Supertab
