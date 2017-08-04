@@ -130,7 +130,7 @@ Por ejemplo, para instalar
 ```vim
 call plug#begin('~/.local/share/nvim/plugged')
 
-Plug 'tpope/vim-surround'  " Es buena idea agregar un comentario con una descripción del plugin
+Plug 'tpope/vim-surround'  " Es buena idea agregar una descripción del plugin
 
 call plug#end()
 ```
@@ -149,7 +149,7 @@ instalar el plugin, ciérrala presionando <kbd>q</kbd>.
 
 Ahora si, el plugin se encontrará instalado, si deseas des-habilitarlo, basta
 con comentar o eliminar esa línea. Pero esto no eliminará el plugin de tu
-disco, para eliminarlo ejecuta el comando `:PlugClean`.
+disco, para hacerlo ejecuta el comando `:PlugClean`.
 
 Es importante mantener tus plugins al día, así que de vez en cuando ejecuta
 `:PlugUpdate` para actualizarlos.
@@ -160,14 +160,12 @@ es importante, puedes hacerlo con `:PlugUpgrade`.
 ## Cómo usar y configurar los plugins
 
 Cada plugin tiene su propia documentación y dependencias, asegúrate de leerlas,
-no hace falta hacerlo a profundidad. La mayoría provee en su página de inicio
-algunas configuraciones suficientes para comenzar a usarlo.
+no hace falta hacerlo a profundidad. La mayoría provee en su página algunas
+configuraciones suficientes para comenzar a usarlo.
 
 Si necesitas configurar algo específico, busca en su documentación
 (`:h <nombre-del-plugin>`). Si notas un error, asegúrate de estar usando la
-última versión (`:PlugUpdate`), si el problema continúa revisa si ya está
-reportado en su página de GitHub
-([_issues_](https://guides.github.com/features/issues/)).
+última versión (`:PlugUpdate`).
 
 Las configuraciones de cada plugin van en tu `init.vim` luego de toda la lista
 de plugins. Al igual que las demás configuraciones, trata de ser organizado y
@@ -179,9 +177,9 @@ A continuación describiré algunos plugins que considero esenciales para
 aumentar tu productividad, tu editor luzca bien y se asemeje a un _IDE
 liviano_.
 
-Para cada plugin presentaré una breve descripción, la página, y de ser el caso,
-algunas configuraciones necesarias para empezar a usarlo. Para ello usaré un
-`init.vim` _abreviado_ de la siguiente manera.
+Para cada plugin presentaré una breve descripción, su página, una lista de
+comandos y de ser el caso, algunas configuraciones necesarias para empezar a
+usarlo. Para ello usaré un `init.vim` _abreviado_ de la siguiente manera.
 
 ```vim
 Plug 'usuario/plugin'  " Comentario
@@ -338,19 +336,20 @@ Plug 'vim-airline/vim-airline-themes'  " Temas para airline
 
 ...
 
-let g:airline#extensions#tabline#enabled = 1  " Mostrar buffers abiertos
+let g:airline#extensions#tabline#enabled = 1  " Mostrar buffers abiertos (como pestañas)
 let g:airline#extensions#tabline#fnamemod = ':t'  " Mostrar sólo el nombre del archivo
 
-" Cargar fuente Powerline y símbolos
+" Cargar fuente Powerline y símbolos (ver nota)
 let g:airline_powerline_fonts = 1
 
 set noshowmode  " No mostrar el modo actual (ya lo muestra la barra de estado)
 ```
 
-Para hacer uso de la fuente Powerline, necesitas instalar una de
+**Nota**: Para que tu barra de estado luzca como en la imagen, necesitas hacer
+uso de la fuente Powerline, puedes instalar una de
 [estas fuentes](https://github.com/ryanoasis/nerd-fonts)
-([la que uso](https://github.com/ryanoasis/nerd-fonts/blob/master/patched-fonts/DejaVuSansMono/Regular/complete/DejaVu%20Sans%20Mono%20Nerd%20Font%20Complete%20Mono.ttf))
-y seleccionarla en tu terminal.
+([recomiendo esta](https://github.com/ryanoasis/nerd-fonts/blob/master/patched-fonts/DejaVuSansMono/Regular/complete/DejaVu%20Sans%20Mono%20Nerd%20Font%20Complete%20Mono.ttf))
+y seleccionarla en las configuraciones de tu terminal.
 
 {% include nvim/info.html
   web='https://github.com/vim-airline/vim-airline'
@@ -452,7 +451,7 @@ let g:SuperTabDefaultCompletionType = '<c-n>'
 
 ##### Echodoc
 
-> Muestra la firma de la función
+> Muestra la firma de la función.
 
 {% include image.html
   alt="echodoc"
@@ -464,6 +463,8 @@ let g:SuperTabDefaultCompletionType = '<c-n>'
 Plug 'Shougo/echodoc.vim'
 
 ...
+
+set noshowmode  " No mostrar el modo actual (echodoc hace uso de este espacio)
 
 " Activar echodoc al iniciar Neovim
 let g:echodoc_enable_at_startup = 1
