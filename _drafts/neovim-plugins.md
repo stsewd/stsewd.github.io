@@ -67,7 +67,17 @@ plugins.
 
 ## Instalando vim-plug
 
-Ejecuta el siguiente comando de la terminal:
+Vim-plug depende de git, si no lo tienes instalado, ejecuta el siguiente comando:
+
+```sh
+# Ubuntu
+sudo apt install git
+
+# Fedora
+sudo dnf install git
+```
+
+Para instalar vim-plug ejecuta el siguiente comando en la terminal:
 
 ```sh
 curl -fLo ~/.local/share/nvim/site/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
@@ -104,24 +114,17 @@ call plug#end()
 " y mappings de Neovim
 ```
 
-{% include alert.html
-  type="info"
-  text="Si ocurre un error al abrir Neovim, asegúrate de tener instalado
-        <code>git</code>, instálalo en Ubuntu con <code>sudo apt install git</code> o
-        en Fedora con <code>sudo dnf install git</code>."
-%}
-
 ## Instalando plugins con vim-plug
 
-Vim-plug tiene soporte directo con los plugins alojados en GitHub (pero también
-se puede instalar los que estén alojados en otros sitios, un repositorio git, o
+Vim-plug tiene soporte directo con plugins alojados en GitHub (pero también se
+puede instalar los que estén alojados en otros sitios, un repositorio git, o
 de manera local).
 
 En este post usaré plugins alojados en GitHub, para instalarlos sólo basta con
-poner el nombre del usuario y del repositorio en el `init.vim`.
+poner el nombre del usuario y del repositorio en el archivo `init.vim`.
 
-Por ejemplo, para instalar [este
-plugin](https://github.com/tpope/vim-surround), agrega lo siguiente en tu
+Por ejemplo, para instalar
+[este plugin](https://github.com/tpope/vim-surround), agrega lo siguiente en tu
 `init.vim`.
 
 ```vim
