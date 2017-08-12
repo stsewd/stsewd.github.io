@@ -495,7 +495,37 @@ let g:echodoc_enable_at_startup = 1
 
 ### Snippets
 
-- utilsnippets
+#### Ultisnips
+
+> Provee porciones de código reusables.
+
+{% include image.html
+  alt="Ultisnips"
+  url="https://camo.githubusercontent.com/296aecf30e1607233814196db6bd3f5f47e70c73/68747470733a2f2f7261772e6769746875622e636f6d2f5369725665722f756c7469736e6970732f6d61737465722f646f632f64656d6f2e676966" 
+  normal=true
+%}
+
+```vim
+Plug 'sirver/ultisnips'
+Plug 'honza/vim-snippets'
+
+...
+
+" Expandir snippet con Ctrl + j
+let g:UltiSnipsExpandTrigger = '<c-j>'
+
+" Ir a siguiente ubicacion con Ctrl + j
+let g:UltiSnipsJumpForwardTrigger = '<c-j>'
+" Ir a anterior ubicacion con Ctrl + k
+let g:UltiSnipsJumpBackwardTrigger = '<c-k>'
+```
+
+{% include nvim/info.html
+  web="https://github.com/sirver/ultisnips"
+  info_cmd=":h UltiSnips"
+%}
+
+---
 
 ### Analizador estático de código
 
