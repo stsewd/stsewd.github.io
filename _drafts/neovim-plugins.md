@@ -529,36 +529,38 @@ let g:UltiSnipsJumpBackwardTrigger = '<c-k>'
 
 ### Analizador estático de código
 
-#### Neomake
+#### ALE
 
 > Analizador estático asíncrono.
 
 {% include image.html
-  alt="Neomake"
-  url="https://raw.githubusercontent.com/dojoteef/neomake-autolint/master/doc/neomake-autolint.gif" 
+  alt="ALE"
+  url="https://github.com/w0rp/ale/raw/master/img/example.gif?raw=true" 
   normal=true
 %}
 
 ```vim
-Plug 'neomake/neomake'
-Plug 'dojoteef/neomake-autolint'
+Plug 'w0rp/ale'
 
 ...
 
-" Comprobar errores cada 1000 milisegundos de inactividad
-let g:neomake_autolint_updatetime = 1000
+" Mostrar mejor mensajes de error
+let g:ale_echo_msg_error_str = 'E'
+let g:ale_echo_msg_warning_str = 'W'
+let g:ale_echo_msg_format = '[%linter%] %s [%severity%]'
 ```
 
 {% include nvim/info.html
-  web="https://github.com/neomake/neomake"
-  info_cmd=":h Neomake"
+  commands=":ALEFixSuggest :ALEFix"
+  web="https://github.com/w0rp/ale"
+  info_cmd=":h ale.txt"
 %}
 
 ---
 
 #### Otros
 
-- [ALE](https://github.com/w0rp/ale)
+- [Neomake](https://github.com/neomake/neomake)
 
 ---
 
