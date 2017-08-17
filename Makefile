@@ -1,2 +1,2 @@
-server:
-	jekyll server --drafts
+serve:
+	jekyll serve --drafts
