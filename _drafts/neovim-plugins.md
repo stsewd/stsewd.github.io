@@ -566,7 +566,47 @@ let g:ale_echo_msg_format = '[%linter%] %s [%severity%]'
 
 ### Resaltado de sintaxis
 
-- General y algunos específicos
+#### Polyglot
+
+> Colección de varios plugins de resaltado de sintaxis.
+
+```vim
+Plug 'sheerun/vim-polyglot'
+```
+
+{% include nvim/info.html
+  web="https://github.com/sheerun/vim-polyglot"
+  info_link="https://github.com/sheerun/vim-polyglot#troubleshooting"
+%}
+
+#### Otros
+
+Alternativamente puedes instalar un plugin específico para cada lenguaje.
+Por ejemplo:
+
+##### [CSS](https://github.com/hail2u/vim-css3-syntax)
+
+```vim
+Plug 'hail2u/vim-css3-syntax', { 'for': 'css' }
+```
+
+##### [Html](https://github.com/othree/html5.vim)
+
+```vim
+Plug 'othree/html5.vim', { 'for': 'html' }
+```
+
+##### [JavaScript](https://github.com/pangloss/vim-javascript)
+
+```vim
+Plug 'pangloss/vim-javascript', { 'for': 'javascript' }
+```
+
+##### [Markdown](https://github.com/plasticboy/vim-markdown)
+
+```vim
+Plug 'plasticboy/vim-markdown', { 'for': 'markdown' }
+```
 
 ### Saltar a función
 
