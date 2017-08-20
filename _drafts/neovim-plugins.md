@@ -421,7 +421,7 @@ Plug 'Shougo/neco-syntax'  " Fuente general de auto completado
 let g:deoplete#enable_at_startup = 1
 
 " Cerrar automaticamente la ventana de vista previa (donde se muestra documentación, si existe)
-augroup deoplete
+augroup deopleteCompleteDoneAu
   autocmd!
   autocmd CompleteDone * silent! pclose!
 augroup END
