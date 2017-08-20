@@ -673,38 +673,101 @@ let g:gutentags_ctags_tagfile = '.tags'
 
 ### Utilidades
 
-- Repeat
-- Ennuch
-- Surround
-- Auto pair
-- matchit
+#### Surround
 
-### Pantalla de inicio
+> Facilita poner/quitar/cambiar comillas, paréntesis, tags, etc sobre un texto.
 
-- startify
+```vim
+Plug 'tpope/vim-surround'
+```
+
+{% include nvim/info.html
+  web="https://github.com/tpope/vim-surround"
+  info_cmd=":h surround"
+%}
+
+---
+
+#### Repeat
+
+> Repetir acciones de plugins con <kbd>.</kbd>.
+
+```vim
+Plug 'tpope/vim-repeat'
+```
+
+{% include nvim/info.html
+  web="https://github.com/tpope/vim-repeat"
+  info_link="https://github.com/tpope/vim-repeat#repeatvim"
+%}
+
+---
+
+#### Eunuch
+
+> Provee comandos de sistemas UNIX.
+
+```vim
+Plug 'tpope/vim-eunuch'
+```
+
+{% include nvim/info.html
+  commands=":Delete :Move :Rename :Chmod :Mkdir"
+  web="https://github.com/tpope/vim-eunuch"
+  info_cmd=":h eunuch"
+%}
+
+---
+
+#### Auto-pairs
+
+> Inserta pares de comillas y paréntesis.
+
+```vim
+Plug 'jiangmiao/auto-pairs'
+```
+
+{% include nvim/info.html
+  web="https://github.com/jiangmiao/auto-pairs"
+  info_cmd=":h AutoPairs.txt"
+%}
+
+---
+
+#### Nerdcommenter
+
+> Facilita agregar y quitar comentarios.
+
+```vim
+Plug 'scrooloose/nerdcommenter'
+
+...
+
+let g:NERDSpaceDelims = 1  " Agregar un espacio después del delimitador del comentario
+let g:NERDTrimTrailingWhitespace = 1  " Quitar espacios al quitar comentario
+```
+
+{% include nvim/info.html
+  web="https://github.com/scrooloose/nerdcommenter"
+  info_cmd=":h NERDCommenter"
+%}
+
+---
 
 ### Buscador de archivos
 
 - ctrl-p
 
-### Listar métodos y funciones
-
-- tagbar
-
-### Guías de indentación
-
-- indent line
-
 ### Búsqueda y reemplazo
 
 - Far
-- search index
-- visual start
+- Incsearch
 
 ### Git
 
 - fugitive
 - gitgutter
+- nerd-tree-git
 
 ## Buscando plugins
 
