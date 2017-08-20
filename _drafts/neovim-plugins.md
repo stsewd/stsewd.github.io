@@ -9,7 +9,7 @@ intro: >
 
 {% include image.html
   alt="logo de neovim"
-  url="/assets/img/nvim/neovim-logo.png" 
+  url="/assets/img/nvim/neovim-logo.png"
   href="http://neovim.io"
   caption="Logo de Neovim"
 %}
@@ -61,8 +61,8 @@ plugins.
   type="info"
   text="Si quieres saber más sobre la estructura de directorios de los plugins
         de Vim/Neovim puedes leer <a
-        href=\"https://gist.github.com/nelstrom/1056049/784e252c3de653e204e9e128653010e19fbd493f\">este
-        gist</a>."
+        href=\"https://gist.github.com/nelstrom/1056049/784e252c3de653e204e9e128653010e19fbd493f\">
+        este gist</a>."
 %}
 
 ## Instalando vim-plug
@@ -137,17 +137,17 @@ call plug#end()
 
 Pero con esto el plugin no está aún instalado, debes recargar tu `init.vim`
 ejecutando `:so ~/.config/nvim/init.vim`. Y luego, ejecuta `:PlugInstall`.
-Aparecerá una ventana con el progreso de Instalación, cuando se termine de
+Aparecerá una ventana con el progreso de instalación, cuando se termine de
 instalar el plugin, ciérrala presionando <kbd>q</kbd>.
 
 {% include image.html
   alt="Ejecución del comando :PlugInstall"
-  url="https://raw.githubusercontent.com/junegunn/i/master/vim-plug/installer.gif" 
+  url="https://raw.githubusercontent.com/junegunn/i/master/vim-plug/installer.gif"
   caption="Ejecución del comando :PlugInstall"
   normal=true
 %}
 
-Ahora si, el plugin se encontrará instalado, si deseas des-habilitarlo, basta
+Ahora si, el plugin se encontrará instalado, si deseas deshabilitarlo, basta
 con comentar o eliminar esa línea. Pero esto no eliminará el plugin de tu
 disco, para hacerlo ejecuta el comando `:PlugClean`.
 
@@ -280,7 +280,7 @@ colorscheme NeoSolarized  " Activa tema NeoSolarized
 
 {% include image.html
   alt="NERDTree"
-  url="/assets/img/nvim/plugins/nerdtree.png" 
+  url="/assets/img/nvim/plugins/nerdtree.png"
   normal=true
 %}
 
@@ -326,7 +326,7 @@ map <F2> :NERDTreeToggle<CR>
 
 {% include image.html
   alt="Airline"
-  url="https://raw.githubusercontent.com/wiki/vim-airline/vim-airline/screenshots/demo.gif" 
+  url="https://raw.githubusercontent.com/wiki/vim-airline/vim-airline/screenshots/demo.gif"
   normal=true
 %}
 
@@ -372,7 +372,7 @@ y seleccionarla en las configuraciones de tu terminal.
 
 {% include image.html
   alt="IndentLine"
-  url="https://camo.githubusercontent.com/77b20e2e707ac1d85fd8bc12f16b5b7b7e72e186/687474703a2f2f692e696d6775722e636f6d2f4b566930542e6a7067" 
+  url="https://camo.githubusercontent.com/77b20e2e707ac1d85fd8bc12f16b5b7b7e72e186/687474703a2f2f692e696d6775722e636f6d2f4b566930542e6a7067"
   normal=true
 %}
 
@@ -407,7 +407,7 @@ let g:indentLine_bufNameExclude = ['NERD_tree.*', 'term:.*']
 
 {% include image.html
   alt="Deoplete"
-  url="https://raw.githubusercontent.com/mhartington/nvim-typescript/master/deoplete-tss.gif" 
+  url="https://raw.githubusercontent.com/mhartington/nvim-typescript/master/deoplete-tss.gif"
   normal=true
 %}
 
