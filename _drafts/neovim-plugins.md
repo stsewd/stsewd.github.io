@@ -785,8 +785,58 @@ let g:ctrlp_user_command = ['.git', 'cd %s && git ls-files -co --exclude-standar
 
 ### Búsqueda y reemplazo
 
-- Far
-- Incsearch
+#### FAR
+
+> Búsqueda y reemplazo en varios archivos.
+
+{% include image.html
+  alt="far"
+  url="https://cloud.githubusercontent.com/assets/9823254/20861878/77dd1882-b9b4-11e6-9b48-8bc60f3d7ec0.gif" 
+  normal=true
+%}
+
+```vim
+Plug 'brooth/far.vim'
+```
+
+{% include nvim/info.html
+  commands=":F :Far"
+  web="https://github.com/brooth/far.vim"
+  info_cmd=":h far.vim"
+%}
+
+---
+
+#### Incsearch
+
+> Búsqueda incremental mejorada.
+
+{% include image.html
+  alt="incsearch"
+  url="https://cloud.githubusercontent.com/assets/3797062/3866152/40e11c48-1fc4-11e4-8cfd-ace452a19f90.gif" 
+  normal=true
+%}
+
+```vim
+Plug 'haya14busa/incsearch.vim'
+
+...
+
+" Maps requeridos
+map /  <Plug>(incsearch-forward)
+map ?  <Plug>(incsearch-backward)
+map g/ <Plug>(incsearch-stay)
+
+" Quitar resaltado luego de buscar
+let g:incsearch#auto_nohlsearch = 1
+```
+
+{% include nvim/info.html
+  web="https://github.com/haya14busa/incsearch.vim"
+  info_cmd=":h incsearch.txt"
+%}
+
+---
 
 ### Git
 
