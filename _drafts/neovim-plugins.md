@@ -840,9 +840,68 @@ let g:incsearch#auto_nohlsearch = 1
 
 ### Git
 
-- fugitive
-- gitgutter
-- nerd-tree-git
+#### Fugitive
+
+> Provee comandos de git.
+
+```vim
+Plug 'tpope/vim-fugitive'
+```
+
+{% include nvim/info.html
+  commands=":Gstatus :Gcommit :Gdiff"
+  web="https://github.com/tpope/vim-fugitive"
+  info_cmd=":h fugitive"
+%}
+
+---
+
+#### Gitgutter
+
+> Muestra cambios hechos en el archivo en la columna de signos.
+
+{% include image.html
+  alt="incsearch"
+  url="https://camo.githubusercontent.com/f88161827e0cbb3144455b9e5c7582fdd5b5fc83/68747470733a2f2f7261772e6769746875622e636f6d2f616972626c6164652f76696d2d6769746775747465722f6d61737465722f73637265656e73686f742e706e67" 
+  normal=true
+%}
+
+```vim
+Plug 'airblade/vim-gitgutter'
+
+...
+
+" Actualizar barra cada 250 mili segundos
+set updatetime=250
+```
+
+{% include nvim/info.html
+  web="https://github.com/airblade/vim-gitgutter"
+  info_cmd=":h gitgutter.txt"
+%}
+
+---
+
+#### Nerdtree git plugin
+
+> Muestra el estado de los archivos en Nerdtree.
+
+{% include image.html
+  alt="nerdtree git plugin"
+  url="https://camo.githubusercontent.com/3fe0388df11cb787f36e1fa108398fd3f757eef4/687474703a2f2f692e696d6775722e636f6d2f6a534377476a552e6769663f31" 
+  normal=true
+%}
+
+```vim
+Plug 'xuyuanp/nerdtree-git-plugin'
+```
+
+{% include nvim/info.html
+  web="https://github.com/xuyuanp/nerdtree-git-plugin"
+  info_link="https://github.com/xuyuanp/nerdtree-git-plugin#faq"
+%}
+
+---
 
 ## Buscando plugins
 
