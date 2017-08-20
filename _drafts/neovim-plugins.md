@@ -905,8 +905,26 @@ Plug 'xuyuanp/nerdtree-git-plugin'
 
 ## Buscando plugins
 
-- [GitHub](https://github.com/)
-- [Vim awesome](http://vimawesome.com/)
-- [Documentación de Neovim](https://github.com/neovim/neovim/wiki/Related-projects#plugins)
+No existe un repositorio oficial de plugins para Neovim, por lo que hace que la
+búsqueda de nuevos plugins (bien mantenidos y sin errores) sea un poco difícil.
+
+### [GitHub](https://github.com/search)
+
+Como habrás observado, la mayoría de plugins están alojados en GitHub, así que
+es un buen lugar para buscar. 
+
+Trata de buscar repositorios con la palabra `vim`, `neovim`, `nvim` o que
+terminen en `.vim` (los que son sólo compatibles con Neovim tienen la extensión
+`.nvim`).
+
+### [Vim awesome](http://vimawesome.com/)
+
+Colección de plugins más usados. Ten en cuenta que la mayor parte (todos en
+realidad) son plugins para Vim, así que tal vez no encuentres mejores
+alternativas para Neovim.
+
+### [Documentación de Neovim](https://github.com/neovim/neovim/wiki/Related-projects#plugins)
+
+Lista de varios plugins que hacen uso de las características de Neovim.
 
 ---
