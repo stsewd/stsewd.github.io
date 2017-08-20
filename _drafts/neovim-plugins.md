@@ -916,6 +916,11 @@ Trata de buscar repositorios con la palabra `vim`, `neovim`, `nvim` o que
 terminen en `.vim` (los que son sólo compatibles con Neovim tienen la extensión
 `.nvim`).
 
+### [Dotfiles](https://github.com/search?l=Vim+script&q=dotfiles&type=Repositories&utf8=%E2%9C%93)
+
+Otra manera de buscar plugins es buscando en los `dotfiles` de varios usuarios
+([mis dotfiles](https://github.com/stsewd/dotfiles)).
+
 ### [Vim awesome](http://vimawesome.com/)
 
 Colección de plugins más usados. Ten en cuenta que la mayor parte (todos en
