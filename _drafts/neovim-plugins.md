@@ -42,6 +42,7 @@ correspondiente.
 
 Los administradores de plugins más populares son:
 
+- [Vim packages](https://neovim.io/doc/user/repeat.html#packages) (administrador nativo)
 - [pathogen](https://github.com/tpope/vim-pathogen)
 - [Vundle](https://github.com/VundleVim/Vundle.vim)
 - [dein](https://github.com/Shougo/dein.vim)
