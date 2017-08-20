@@ -1,5 +1,6 @@
 ---
 title: Neovim, instalación de plugins
+date: 2017-08-20
 tags: neovim vim plugins
 intro: >
   Para ser más productivo con Neovim los plugins son tus aliados, en este post
