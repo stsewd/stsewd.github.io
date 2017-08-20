@@ -756,7 +756,32 @@ let g:NERDTrimTrailingWhitespace = 1  " Quitar espacios al quitar comentario
 
 ### Buscador de archivos
 
-- ctrl-p
+#### CtrlP
+
+> Buscador de archivos y buffers.
+
+```vim
+Plug 'ctrlpvim/ctrlp.vim'
+
+...
+
+" Archivos ignorados
+set wildignore+=*/tmp/*,*.so,*.swp,*.zip
+let g:ctrlp_custom_ignore = {
+  \ 'dir':  '\v[\/](\.(git|hg|svn)|node_modules)$',
+  \ 'file': '\v\.(exe|so|dll)$',
+  \ }
+
+" Ignorar archivos en .gitignore
+let g:ctrlp_user_command = ['.git', 'cd %s && git ls-files -co --exclude-standard']
+```
+
+{% include nvim/info.html
+  web="https://github.com/ctrlpvim/ctrlp.vim"
+  info_cmd=":h ctrlp"
+%}
+
+---
 
 ### Búsqueda y reemplazo
 
