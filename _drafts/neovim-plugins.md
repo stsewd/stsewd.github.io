@@ -54,9 +54,8 @@ se descargan (usualmente desde [GitHub](https://github.com)) e instalan.
 
 El administrador de plugins que usaré para el resto del post es
 [vim-plug](https://github.com/junegunn/vim-plug), porque es el que menos
-configuraciones requiere y se integra muy bien con Neovim. Tú puedes escoger el
-que desees, los plugins pueden ser instalados con cualquier administrador de
-plugins.
+configuraciones requiere y se integra muy bien con Neovim. Puedes escoger el
+que desees, los plugins pueden ser instalados con cualquier administrador.
 
 {% include alert.html
   type="info"
@@ -95,7 +94,7 @@ O si prefieres, descarga
 [este archivo](https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim)
 y guárdalo en `~/.local/share/nvim/site/autoload/plug.vim`.
 
-Ahora abre tu `init.vim`.
+Ahora abre tu archivo `init.vim`.
 
 ```sh
 nvim ~/.config/nvim/init.vim
@@ -104,15 +103,14 @@ nvim ~/.config/nvim/init.vim
 Al inicio agrega lo siguiente:
 
 ```vim
-" Especifíca el directorio para los plugins
+" Especifíca el directorio de plugins
 call plug#begin('~/.local/share/nvim/plugged')
 
-" Aquí irán los nombres de los plugins a instalar
+" Aquí irán los plugins a instalar
 
 call plug#end()
 
-" Luego de esta línea puedes agregar tus configuraciones
-" y mappings de Neovim
+" Luego de esta línea puedes agregar tus configuraciones y mappings
 ```
 
 ## Instalando plugins con vim-plug
@@ -125,8 +123,8 @@ En este post usaré plugins alojados en GitHub, para instalarlos sólo basta con
 poner el nombre del usuario y del repositorio en el archivo `init.vim`.
 
 Por ejemplo, para instalar
-[este plugin](https://github.com/tpope/vim-surround), agrega lo siguiente en tu
-`init.vim`.
+[este plugin](https://github.com/tpope/vim-surround), sólo se necesita agregar
+lo siguiente en el archivo `init.vim`.
 
 ```vim
 call plug#begin('~/.local/share/nvim/plugged')
@@ -155,8 +153,8 @@ disco, para hacerlo ejecuta el comando `:PlugClean`.
 Es importante mantener tus plugins al día, así que de vez en cuando ejecuta
 `:PlugUpdate` para actualizarlos.
 
-Y además de los plugins, mantener al día tu _administrador de plugins_ también
-es importante, puedes hacerlo con `:PlugUpgrade`.
+Mantener al día tu _administrador de plugins_ también es importante, puedes
+hacerlo con `:PlugUpgrade`.
 
 ## Cómo usar y configurar los plugins
 
