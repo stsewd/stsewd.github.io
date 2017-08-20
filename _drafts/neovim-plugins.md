@@ -579,6 +579,8 @@ Plug 'sheerun/vim-polyglot'
   info_link="https://github.com/sheerun/vim-polyglot#troubleshooting"
 %}
 
+---
+
 #### Otros
 
 Alternativamente puedes instalar un plugin específico para cada lenguaje.
@@ -608,9 +610,66 @@ Plug 'pangloss/vim-javascript', { 'for': 'javascript' }
 Plug 'plasticboy/vim-markdown', { 'for': 'markdown' }
 ```
 
-### Saltar a función
+---
 
-- gutemtags
+### Ir a definición
+
+Varios IDEs ofrecen la funcionalidad de "ir a definición" (go to ...). Neovim
+también lo hace, y para ello almacena un índice de identificadores con su
+localización en un archivo `tag`.
+
+Ir a definición de la palabra sobre el cursor:
+
+- <kbd>Ctrl</kbd> + <kbd>]</kbd>.
+- <kbd>Ctrl</kbd> + click izquierdo.
+
+Para generar este archivo haremos uso de un programa llamado `ctags`.
+
+```sh
+# Instalar en ctags en Ubuntu
+sudo apt install exuberant-ctags
+
+# Instalar ctags en Fedora
+sudo dnf install ctags
+```
+
+[Lista de lenguajes soportados por `ctags`](http://ctags.sourceforge.net/languages.html).
+Si tu lenguaje no está en la lista, hay varios plugins que ofrecen esta
+funcionalidad a modo de funciones, como
+[tern for vim](https://github.com/ternjs/tern_for_vim#tern-for-vim),
+[jedi-vim](https://github.com/davidhalter/jedi-vim#features).
+
+{% include alert.html
+  type="info"
+  text="Puedes leer más sobre los archivos tag y vim
+        <a href=\"http://vim.wikia.com/wiki/Browsing_programs_with_tags\">aquí</a>."
+%}
+
+{% include alert.html
+  type="warning"
+  text="Neovim no genera este archivo de manera automática, sólo se encarga de
+        leerlo, pero existen plugins que nos facilitan esta tarea."
+%}
+
+#### Gutentags
+
+> Administrador de archivos `tag`.
+
+```vim
+Plug 'ludovicchabant/vim-gutentags'
+
+...
+
+" Nombre del archivo generado
+let g:gutentags_ctags_tagfile = '.tags'
+```
+
+{% include nvim/info.html
+  web="https://github.com/ludovicchabant/vim-gutentags"
+  info_cmd=":h gutentags"
+%}
+
+---
 
 ### Utilidades
 
