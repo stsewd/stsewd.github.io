@@ -22,16 +22,16 @@ software libre y open source. Siempre tratando de aprender nuevas tecnologías,
 ## Eventos y concursos
 
 - **IEEEXtreme Programming Competition 11.0** - Primer lugar a nivel nacional con el equipo _trivialbox_. [^xtreme-11]
-- **Guía en Django Girls Cuenca**. [^1]
-- **IEEEXtreme Programming Competition 10.0** - Primer lugar a nivel nacional con el equipo _trivialbox_. [^2]
-- **Rally Latinoamericano de Innovación 2016** - Primer lugar a nivel local y nacional en la categoría de innovación con el equipo _Atuk Maskhay_. [^3]
-- **Hackaton 2016 - UPS** - Segundo lugar con el equipo _trivialbox_. [^4]
+- **Guía en Django Girls Cuenca**. [^django-girls]
+- **IEEEXtreme Programming Competition 10.0** - Primer lugar a nivel nacional con el equipo _trivialbox_. [^xtreme-10]
+- **Rally Latinoamericano de Innovación 2016** - Primer lugar a nivel local y nacional en la categoría de innovación con el equipo _Atuk Maskhay_. [^rally]
+- **Hackaton 2016 - UPS** - Segundo lugar con el equipo _trivialbox_. [^hackaton-ups]
 
 [^xtreme-11]: <https://www.facebook.com/ucuenca/photos/a.134108766662641.27219.130917710315080/1682865555120280/?type=3&theater>
-[^1]: <https://argentinaenpython.com/django-girls/2017/03/cuenca/>
-[^2]: <https://www.facebook.com/ieeextreme.ec/photos/a.1636849713258143.1073741828.1635728650036916/1810646239211822/?type=3&theater>
-[^3]: <http://www.eltiempo.com.ec/noticias/novedades/23/399091/universidades-destacan-en-el-rally-de-innovacion>
-[^4]: <http://www.ups.edu.ec/noticias?articleId=6408165>
+[^django-girls]: <https://argentinaenpython.com/django-girls/2017/03/cuenca/>
+[^xtreme-10]: <https://www.facebook.com/ieeextreme.ec/photos/a.1636849713258143.1073741828.1635728650036916/1810646239211822/?type=3&theater>
+[^rally]: <http://www.eltiempo.com.ec/noticias/novedades/23/399091/universidades-destacan-en-el-rally-de-innovacion>
+[^hackaton-ups]: <http://www.ups.edu.ec/noticias?articleId=6408165>
 
 ## Encuentrame en
 
