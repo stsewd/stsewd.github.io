@@ -7,11 +7,11 @@ section: about
 ## Acerca de mi
 
 Mi nombre es Santos Gallegos, vivo en Cuenca - Ecuador. Soy estudiante de
-Ingeniería en Sistemas en la Universidad de Cuenca (2014, -).
+Ingeniería en Sistemas en la Universidad de Cuenca.
 
-Me gusta el desarrollo web, algoritmos, entusiasta de python, neovim y open
-source. Siempre tratando de aprender nuevas tecnologías, [y dibujante de vez en
-cuando](http://stsewd.deviantart.com/gallery/).
+Me gusta el desarrollo web, algoritmos, entusiasta de Python, Neovim, y
+software libre y open source. Siempre tratando de aprender nuevas tecnologías,
+[y dibujante de vez en cuando](http://stsewd.deviantart.com/gallery/).
 
 ## Idiomas
 
