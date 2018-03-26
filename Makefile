@@ -1,8 +1,10 @@
 clean:
 	rm -rf cache output 
 
-clean-build: clean
+build:
 	nikola build
 	nikola serve
 
-.PHONY: clean clean-build
+clean-build: clean build
+
+.PHONY: clean build clean-build
