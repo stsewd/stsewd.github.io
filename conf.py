@@ -134,14 +134,14 @@ TRANSLATIONS_PATTERN = "{path}.{lang}.{ext}"
 NAVIGATION_LINKS = {
     DEFAULT_LANG: (
         ("/archive.html", "Archive"),
-        ("/categories/", "Tags"),
-        ("/rss.xml", "RSS feed"),
+        ("/talks/", "Talks"),
+        ("/about/", "About"),
     ),
 
     "es": (
         ("/es/archive.html", "Archivo"),
-        ("/es/categories/", "Etiquetas"),
-        ("/es/rss.xml", "Canal RSS"),
+        ("/es/talks/", "Charlas"),
+        ("/es/about/", "Acerca de"),
     ),
 }
 
@@ -193,10 +193,10 @@ POSTS = (
     ("posts/*.html", "posts", "post-custom.tmpl"),
 )
 PAGES = (
-    ("pages/*.rst", "pages", "page.tmpl"),
-    ("pages/*.md", "pages", "page.tmpl"),
-    ("pages/*.txt", "pages", "page.tmpl"),
-    ("pages/*.html", "pages", "page.tmpl"),
+    ("pages/*.rst", "", "page.tmpl"),
+    ("pages/*.md", "", "page.tmpl"),
+    ("pages/*.txt", "", "page.tmpl"),
+    ("pages/*.html", "", "page.tmpl"),
 )
 
 
