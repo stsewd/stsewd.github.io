@@ -1,2 +1,0 @@
-serve:
-	jekyll serve --drafts
