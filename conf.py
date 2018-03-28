@@ -193,7 +193,7 @@ POSTS = (
     ("posts/*.html", "posts", "post-custom.tmpl"),
 )
 PAGES = (
-    ("pages/*.rst", "", "page.tmpl"),
+    ("pages/*.rst", "", "page-custom.tmpl"),
     ("pages/*.md", "", "page.tmpl"),
     ("pages/*.txt", "", "page.tmpl"),
     ("pages/*.html", "", "page.tmpl"),
