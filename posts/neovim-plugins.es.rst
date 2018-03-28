@@ -10,6 +10,7 @@
 .. role:: raw-html(raw)
    :format: html
 
+.. |icon-cmd| replace:: :raw-html:`<i class="fa fa-terminal"></i>`
 .. |icon-link| replace:: :raw-html:`<i class="fa fa-external-link"></i>`
 .. |icon-info| replace:: :raw-html:`<i class="fa fa-info-circle"></i>`
 
@@ -202,6 +203,10 @@ no necesitas ponerlos en tu ``init.vim``.
    lee con cuidado su descripción y toma los que realmente vayas a utilizar
    o crees que mejoren tu productividad.
 
+.. contents:: Lista
+   :depth: 2
+   :local:
+
 Temas
 ~~~~~
 
@@ -210,7 +215,7 @@ Dentro de los plugins tenemos *color schemes*, o temas para tu Neovim.
 One Dark
 """"""""
 
-Color scheme inspirado por el tema One Dark de Atom.
+  Color scheme inspirado por el tema One Dark de Atom.
 
 .. figure:: /images/nvim/plugins/onedark.png
    :target: /images/nvim/plugins/onedark.png
@@ -229,6 +234,245 @@ Color scheme inspirado por el tema One Dark de Atom.
 
 - |icon-link| https://github.com/joshdick/onedark.vim
 - |icon-info| https://github.com/joshdick/onedark.vim#options
+
+NeoSolarized
+""""""""""""
+
+  Paleta de colores `Solarized <http://ethanschoonover.com/solarized>`_ para Neovim.
+
+.. figure:: /images/nvim/plugins/neosolarized-light.png
+   :target: /images/nvim/plugins/neosolarized-light.png
+   :alt: NeoSolarized light
+
+   NeoSolarized light
+
+.. figure:: /images/nvim/plugins/neosolarized-dark.png
+   :target: /images/nvim/plugins/neosolarized-dark.png
+   :alt: NeoSolarized dark
+
+   NeoSolarized dark
+
+.. code:: vim
+
+   Plug 'iCyMind/NeoSolarized'
+
+   ...
+
+   set termguicolors  " Activa true colors en la terminal
+   set background=dark  " Fondo del tema: dark/light
+   colorscheme NeoSolarized  " Activa tema NeoSolarized
+
+- |icon-link| https://github.com/iCyMind/NeoSolarized
+- |icon-info| https://github.com/iCyMind/NeoSolarized#options
+
+Nova
+""""
+
+  Foto de Nova
+
+Más
+"""
+
+- `Documentación de Neovim <https://github.com/neovim/neovim/wiki/Related-projects#colorschemes>`_
+
+Explorador de archivos
+~~~~~~~~~~~~~~~~~~~~~~
+
+NerdTree
+""""""""
+
+  Explorador de archivos, útil para ver la estructura de tu proyecto.
+
+.. figure:: /images/nvim/plugins/nerdtree.png
+   :target: /images/nvim/plugins/nerdtree.png
+   :alt: NERDTree
+
+   NERDTree
+
+.. code:: vim
+
+   Plug 'scrooloose/nerdtree'
+   
+   ...
+   
+   let g:NERDTreeChDirMode = 2  " Cambia el directorio actual al nodo padre actual
+   
+   " Abrir/cerrar NERDTree con F2
+   map <F2> :NERDTreeToggle<CR>
+
+- |icon-cmd|
+
+  - ``:NERDTree``
+- |icon-link| https://github.com/scrooloose/nerdtree
+- |icon-info| ``:h NERDTree``
+
+.. note::
+
+  Para cambiar entre ventanas (NERDTree y tu buffer actual)
+  presiona :kbd:`Ctrl` + :kbd:`ww`.
+
+Barra de estado
+~~~~~~~~~~~~~~~
+
+Airline
+"""""""
+
+  Barra de estado, con integración con varios plugins y herramientas externas como git.  
+
+.. figure:: https://raw.githubusercontent.com/wiki/vim-airline/vim-airline/screenshots/demo.gif
+   :target: https://raw.githubusercontent.com/wiki/vim-airline/vim-airline/screenshots/demo.gif
+   :alt: Airline
+
+   Airline
+
+.. code:: vim
+
+   Plug 'vim-airline/vim-airline'
+   Plug 'vim-airline/vim-airline-themes'  " Temas para airline
+   
+   ...
+   
+   let g:airline#extensions#tabline#enabled = 1  " Mostrar buffers abiertos (como pestañas)
+   let g:airline#extensions#tabline#fnamemod = ':t'  " Mostrar sólo el nombre del archivo
+   
+   " Cargar fuente Powerline y símbolos (ver nota)
+   let g:airline_powerline_fonts = 1
+   
+   set noshowmode  " No mostrar el modo actual (ya lo muestra la barra de estado)
+
+.. note::
+
+   Para que tu barra de estado luzca como en la imagen,
+   necesitas hacer uso de la fuente ``Powerline``,
+   puedes instalar una de `estas fuentes <https://github.com/ryanoasis/nerd-fonts>`_
+   (`recomiendo esta`__) y seleccionarla en las configuraciones de tu terminal.
+
+__ https://github.com/ryanoasis/nerd-fonts/blob/master/patched-fonts/DejaVuSansMono/Regular/complete/DejaVu%20Sans%20Mono%20Nerd%20Font%20Complete%20Mono.ttf
+
+- |icon-link| https://github.com/vim-airline/vim-airline
+- |icon-info| ``:h airline``
+
+Más
+"""
+
+- `Lightline <https://github.com/itchyny/lightline.vim>`_
+
+Guías de indentación
+~~~~~~~~~~~~~~~~~~~~
+
+IndentLine
+""""""""""
+
+  Muestra los niveles de indentación con líneas verticales.
+
+.. figure:: https://camo.githubusercontent.com/77b20e2e707ac1d85fd8bc12f16b5b7b7e72e186/687474703a2f2f692e696d6775722e636f6d2f4b566930542e6a7067
+   :target: https://camo.githubusercontent.com/77b20e2e707ac1d85fd8bc12f16b5b7b7e72e186/687474703a2f2f692e696d6775722e636f6d2f4b566930542e6a7067
+   :alt: IndentLine
+
+   IndentLine
+
+.. code:: vim
+
+   Plug 'Yggdroot/indentLine'
+   
+   ...
+   
+   " No mostrar en ciertos tipos de buffers y archivos
+   let g:indentLine_fileTypeExclude = ['text', 'sh', 'help', 'terminal']
+   let g:indentLine_bufNameExclude = ['NERD_tree.*', 'term:.*']
+
+- |icon-link| https://github.com/Yggdroot/indentLine
+- |icon-info| ``:h indentLine.txt``
+
+Más
+"""
+
+- `Indent guides <https://github.com/nathanaelkane/vim-indent-guides>`_
+
+Auto completado
+~~~~~~~~~~~~~~~
+
+Deoplete
+""""""""
+
+  Auto completado asíncrono para Neovim.
+
+.. figure:: https://raw.githubusercontent.com/mhartington/nvim-typescript/master/deoplete-tss.gif
+   :target: https://raw.githubusercontent.com/mhartington/nvim-typescript/master/deoplete-tss.gif
+   :alt: Deoplete
+
+   Deoplete
+
+.. code:: vim
+
+   Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
+   Plug 'Shougo/neco-syntax'  " Fuente general de auto completado
+   
+   ...
+   
+   " Activar deoplete al iniciar Neovim
+   let g:deoplete#enable_at_startup = 1
+   
+   " Cerrar automaticamente la ventana de vista previa (donde se muestra documentación, si existe)
+   augroup deopleteCompleteDoneAu
+     autocmd!
+     autocmd CompleteDone * silent! pclose!
+   augroup END
+
+- |icon-link| https://github.com/Shougo/deoplete.nvim"
+- |icon-info| ``:h deoplete``
+
+.. note::
+   
+   Para tener auto completado para un leguaje específico debes instalar una *fuente*,
+   puedes encontrar una lista de varias fuentes `aquí`__.
+
+__ https://github.com/Shougo/deoplete.nvim/wiki/Completion-Sources\
+
+**Supertab**
+
+  Permite navegar entre las sugerencias de deoplete usando :kbd:`Tab`.
+
+.. code:: vim
+
+   Plug 'ervandew/supertab'
+   
+   ...
+   
+   " Invertir direccion de navegacion (de arriba a abajo)
+   let g:SuperTabDefaultCompletionType = '<c-n>'
+
+- |icon-link| https://github.com/ervandew/supertab
+- |icon-info| ``h supertab``
+
+**Echodoc**
+
+  Muestra la firma de la función.
+
+.. figure:: https://cloud.githubusercontent.com/assets/111942/19444981/a076d748-9460-11e6-851c-f249f8110b3b.gif
+   :target: https://cloud.githubusercontent.com/assets/111942/19444981/a076d748-9460-11e6-851c-f249f8110b3b.gif
+   :alt: echodoc
+
+   echodoc
+
+.. code:: vim
+   
+   Plug 'Shougo/echodoc.vim'
+   
+   ...
+   
+   set noshowmode  " No mostrar el modo actual (echodoc hace uso de este espacio)
+   
+   " Activar echodoc al iniciar Neovim
+   let g:echodoc_enable_at_startup = 1
+
+- |icon-link| https://github.com/Shougo/echodoc.vim"
+- |icon-info| ``:h echodoc``
+
+Más
+"""
+
+- `YouCompleteMe <https://github.com/Valloric/YouCompleteMe>`_
 
 ----
 
