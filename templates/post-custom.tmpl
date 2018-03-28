@@ -2,27 +2,10 @@
 
 <%block name="extra_head">
   ${parent.extra_head()}
-  <link rel="stylesheet" href="/css/custom.css" type="text/css" media="all" />
+  <%include file="includes/header.tmpl"/>
 </%block>
 
 <%block name="content">
-<div class="container padding-top margin-bottom">
-  <div class="row">
-    <div class="col-sm-8 col-sm-offset-2">
-      ${parent.content()}
-    </div>
-
-    <div class="col-sm-2">
-      <!-- Sidebar here -->
-    </div>
-  </div>
-</div>
-
-<script src="https://craig.global.ssl.fastly.net/js/mousetrap/mousetrap.min.js"></script>
-<script src="/js/keybindings.js"></script>
-
-<script src="https://cdnjs.cloudflare.com/ajax/libs/anchor-js/4.1.0/anchor.min.js"></script>
-<script>
-  anchors.add();
-</script>
+  <%include file="includes/content.tmpl" args="content=parent.content"/>
+  <%include file="includes/js.tmpl"/>
 </%block>
