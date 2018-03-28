@@ -7,6 +7,10 @@
 .. description: En este post daré una introducción a Neovim, un editor de texto muy diferente a los que estás acostumbrado a usar. Además detallaré paso a paso las instrucciones para su instalación en Fedora y Ubuntu; y cómo configurarlo.
 .. type: text
 
+.. |sudo-msg| replace::
+
+   Puede que necesites ejecutar estos comandos anteponiendo **sudo**. 
+
 .. image:: /images/nvim/neovim-logo.png
    :target: /images/nvim/neovim-logo.png
    :alt: Logo de Neovim
@@ -250,7 +254,7 @@ Ahora ya puedes instalar las interfaces de Neovim.
 
 .. warning::
 
-   Puede que necesites ejecutar estos comandos anteponiendo **sudo**. 
+   |sudo-msg|
 
 .. code:: sh
 
@@ -274,6 +278,10 @@ Ahora ya puedes instalar las interfaces de Neovim,
 aunque puede que Fedora ya lo haya hecho cuando instalaste Neovim
 (actualizar con los comandos de la siguiente sección si es el caso).
 
+.. warning::
+
+   |sudo-msg|
+
 .. code:: sh
 
    python3 -m pip install neovim
@@ -287,6 +295,10 @@ Manteniendo las interfaces de Python al día
 
 Es recomendable que cada cierto tiempo actualices las interfaces de Python,
 así estarás al día con lo último que Neovim ofrece a través de su API.
+
+.. warning::
+
+   |sudo-msg|
 
 .. code:: sh
 
@@ -317,6 +329,9 @@ instálalo con los siguientes comandos.
 
 Ahora si podrás instalar la interfaz de Ruby.
 
+.. warning::
+
+   |sudo-msg|
 
 .. code:: sh
 
@@ -336,6 +351,10 @@ instálalo con los siguientes comandos.
    sudo dnf install redhat-rpm-config
 
 Ahora si podrás instalar la interfaz de Ruby.
+
+.. warning::
+
+   |sudo-msg|
 
 .. code:: sh
 
