@@ -474,6 +474,120 @@ Más
 
 - `YouCompleteMe <https://github.com/Valloric/YouCompleteMe>`_
 
+Snippets
+~~~~~~~~
+
+Ultisnips
+"""""""""
+
+  Provee porciones de código reusables.
+
+.. figure:: https://camo.githubusercontent.com/296aecf30e1607233814196db6bd3f5f47e70c73/68747470733a2f2f7261772e6769746875622e636f6d2f5369725665722f756c7469736e6970732f6d61737465722f646f632f64656d6f2e676966
+   :target: https://camo.githubusercontent.com/296aecf30e1607233814196db6bd3f5f47e70c73/68747470733a2f2f7261772e6769746875622e636f6d2f5369725665722f756c7469736e6970732f6d61737465722f646f632f64656d6f2e676966
+   :alt: Ultisnips
+
+   Ultisnips
+
+.. code:: vim
+
+   Plug 'sirver/ultisnips'
+   Plug 'honza/vim-snippets'
+
+   ...
+
+   " Expandir snippet con Ctrl + j
+   let g:UltiSnipsExpandTrigger = '<c-j>'
+
+   " Ir a siguiente ubicacion con Ctrl + j
+   let g:UltiSnipsJumpForwardTrigger = '<c-j>'
+   " Ir a anterior ubicacion con Ctrl + k
+   let g:UltiSnipsJumpBackwardTrigger = '<c-k>'
+
+- |icon-link| https://github.com/sirver/ultisnips
+- |icon-info| ``:h UltiSnips``
+
+Analizador estático de código
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+ALE
+"""
+
+  Analizador estático asíncrono.
+
+.. figure:: https://github.com/w0rp/ale/raw/master/img/example.gif?raw=true
+   :target: https://github.com/w0rp/ale/raw/master/img/example.gif?raw=true
+   :alt: ALE
+
+   ALE
+
+.. code:: vim
+
+   Plug 'w0rp/ale'
+
+   ...
+
+   " Mostrar mejor mensajes de error
+   let g:ale_echo_msg_error_str = 'E'
+   let g:ale_echo_msg_warning_str = 'W'
+   let g:ale_echo_msg_format = '[%linter%] %s [%severity%]'
+
+- |icon-cmd|
+  
+  - ``:ALEFixSuggest``
+  - ``:ALEFix``
+- |icon-link| https://github.com/w0rp/ale
+- |icon-info| ``:h ale.txt``
+
+Otros
+"""""
+
+- `Neomake <https://github.com/neomake/neomake>`_
+
+Resaltado de sintaxis
+~~~~~~~~~~~~~~~~~~~~~
+
+Polyglot
+""""""""
+
+  Colección de varios plugins de resaltado de sintaxis.
+
+.. code:: vim
+
+   Plug 'sheerun/vim-polyglot'
+
+- |icon-link| https://github.com/sheerun/vim-polyglot
+- |icon-info| https://github.com/sheerun/vim-polyglot#troubleshooting
+
+Otros
+"""""
+
+Alternativamente puedes instalar un plugin específico para cada lenguaje.
+Por ejemplo:
+
+- `CSS <https://github.com/hail2u/vim-css3-syntax>`_
+
+.. code:: vim
+
+   Plug 'hail2u/vim-css3-syntax', { 'for': 'css' }
+
+- `Html <https://github.com/othree/html5.vim>`_
+
+.. code:: vim
+
+   Plug 'othree/html5.vim', { 'for': 'html' }
+
+- `JavaScript <https://github.com/pangloss/vim-javascript>`_
+
+.. code:: vim
+
+   Plug 'pangloss/vim-javascript', { 'for': 'javascript' }
+
+- `Markdown <https://github.com/plasticboy/vim-markdown>`_
+
+.. code:: vim
+
+   Plug 'plasticboy/vim-markdown', { 'for': 'markdown' }
+
 ----
 
 .. [#vimscript] https://en.wikipedia.org/wiki/Vim_(text_editor)%23Vim_script
