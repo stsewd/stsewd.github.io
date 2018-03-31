@@ -588,6 +588,144 @@ Por ejemplo:
 
    Plug 'plasticboy/vim-markdown', { 'for': 'markdown' }
 
+Ir a definición
+~~~~~~~~~~~~~~~
+
+Varios IDEs ofrecen la funcionalidad de "ir a definición" (go to ...).
+Neovim también lo hace, y para ello almacena un índice de identificadores con su localización en un archivo `tag`.
+
+Ir a definición de la palabra sobre el cursor:
+
+- :kbd:`Ctrl` + :kbd:`]`
+- :kbd:`Ctrl` + click izquierdo
+
+Para generar este archivo haremos uso de un programa llamado `ctags`.
+
+.. code:: bash
+
+   # Instalar en ctags en Ubuntu
+   sudo apt install exuberant-ctags
+   
+   # Instalar ctags en Fedora
+   sudo dnf install ctags
+
+`Lista de lenguajes soportados por ``ctags`` <http://ctags.sourceforge.net/languages.html>`_.
+Si tu lenguaje no está en la lista, hay varios plugins que ofrecen esta funcionalidad a modo de funciones,
+como `tern for vim <https://github.com/ternjs/tern_for_vim#tern-for-vim>`_, `jedi-vim <https://github.com/davidhalter/jedi-vim#features>`_.
+
+.. note::
+
+   Puedes leer más sobre los archivos tag y vim `aquí <http://vim.wikia.com/wiki/Browsing_programs_with_tags>`_
+
+.. warning::
+
+   Neovim no genera este archivo de manera automática,
+   sólo se encarga de leerlo, pero existen plugins que nos facilitan esta tarea.
+
+Gutentags
+"""""""""
+
+  Administrador de archivos ``tag``.
+
+.. code:: vim
+
+   Plug 'ludovicchabant/vim-gutentags'
+
+   ...
+  
+   " Nombre del archivo generado
+   let g:gutentags_ctags_tagfile = '.tags'
+
+- |icon-link| https://github.com/ludovicchabant/vim-gutentags
+- |icon-info| ``:h gutentags``
+
+Buscador de archivos
+~~~~~~~~~~~~~~~~~~~~
+
+FZF
+"""
+
+  Wrapper de FZF buscador de archivos, buffers, grep, etc.
+
+.. code:: vim
+
+   Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
+   Plug 'junegunn/fzf.vim'
+
+   ...
+
+   " Ejecutar comandos con alt-enter :Commands
+   let g:fzf_commands_expect = 'alt-enter'
+   " Guardar historial de búsquedas
+   let g:fzf_history_dir = '~/.local/share/fzf-history'
+
+   " Empezar a buscar presionando Ctrl + p
+   nnoremap <C-p> :Files<CR>
+
+- |icon-cmd|
+  
+  - ``:Files``
+  - ``:Buffers``
+  - ``:BLines``
+  - ``:Ag``
+  - ``:Colors``
+- |icon-link| https://github.com/junegunn/fzf.vim
+- |icon-info| ``:h fzf-vim``
+
+CtrlP
+"""""
+
+  Buscador de archivos y buffers.
+
+.. code:: vim
+
+   Plug 'ctrlpvim/ctrlp.vim'
+
+   ...
+   
+   " Archivos ignorados
+   set wildignore+=*/tmp/*,*.so,*.swp,*.zip
+   let g:ctrlp_custom_ignore = {
+     \ 'dir':  '\v[\/](\.(git|hg|svn)|node_modules)$',
+     \ 'file': '\v\.(exe|so|dll)$',
+     \ }
+   
+   " Ignorar archivos en .gitignore
+   let g:ctrlp_user_command = ['.git', 'cd %s && git ls-files -co --exclude-standard']
+
+- |icon-link| https://github.com/ctrlpvim/ctrlp.vim
+- |icon-info| ``:h ctrlp``
+
+Búsqueda
+~~~~~~~~
+
+Incsearch
+"""""""""
+
+  Búsqueda incremental mejorada.
+
+.. figure:: https://cloud.githubusercontent.com/assets/3797062/3866152/40e11c48-1fc4-11e4-8cfd-ace452a19f90.gif
+   :target: https://cloud.githubusercontent.com/assets/3797062/3866152/40e11c48-1fc4-11e4-8cfd-ace452a19f90.gif
+   :alt: incsearch
+
+   incsearch
+
+.. code:: vim
+
+   Plug 'haya14busa/incsearch.vim'
+
+   ...
+   
+   " Maps requeridos
+   map /  <Plug>(incsearch-forward)
+   map ?  <Plug>(incsearch-backward)
+   
+   " Quitar resaltado luego de buscar
+   let g:incsearch#auto_nohlsearch = 1
+
+- |icon-link| https://github.com/haya14busa/incsearch.vim
+- |icon-info| ``:h incsearch.txt``
+
 ----
 
 .. [#vimscript] https://en.wikipedia.org/wiki/Vim_(text_editor)%23Vim_script
