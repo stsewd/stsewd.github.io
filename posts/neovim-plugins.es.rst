@@ -203,7 +203,7 @@ no necesitas ponerlos en tu ``init.vim``.
    lee con cuidado su descripción y toma los que realmente vayas a utilizar
    o crees que mejoren tu productividad.
 
-.. contents:: Lista
+.. contents:: Lista de plugins
    :depth: 2
    :local:
 
@@ -273,7 +273,9 @@ Nova
 Más
 """
 
-- `Documentación de Neovim <https://github.com/neovim/neovim/wiki/Related-projects#colorschemes>`_
+- `Documentación de Neovim`__
+  
+__ https://github.com/neovim/neovim/wiki/Related-projects#colorschemes
 
 Explorador de archivos
 ~~~~~~~~~~~~~~~~~~~~~~
@@ -725,6 +727,177 @@ Incsearch
 
 - |icon-link| https://github.com/haya14busa/incsearch.vim
 - |icon-info| ``:h incsearch.txt``
+
+Utilidades
+~~~~~~~~~~
+
+Surround
+""""""""
+
+  Facilita poner/quitar/cambiar comillas, paréntesis, tags, etc sobre un texto.
+
+.. code:: vim
+
+   Plug 'tpope/vim-surround'
+
+- |icon-link| https://github.com/tpope/vim-surround
+- |icon-info| ``:h surround``
+
+Repeat
+""""""
+
+  Repetir acciones de plugins con :kbd:`.`.
+
+.. code:: vim
+
+   Plug 'tpope/vim-repeat'
+
+- |icon-link| https://github.com/tpope/vim-repeat
+- |icon-info| https://github.com/tpope/vim-repeat#repeatvim
+
+Eunuch
+""""""
+
+  Provee comandos de sistemas UNIX.
+
+.. code:: vim
+
+   Plug 'tpope/vim-eunuch'
+
+
+- |icon-cmd|
+
+  - ``:Delete``
+  - ``:Move``
+  - ``:Rename``
+  - ``:Chmod``
+  - ``:Mkdir``
+- |icon-link| https://github.com/tpope/vim-eunuch
+- |icon-info| ``:h eunuch``
+ 
+Auto-pairs
+""""""""""
+
+  Inserta pares de comillas y paréntesis.
+
+.. code:: vim
+
+   Plug 'jiangmiao/auto-pairs'
+
+- |icon-link| https://github.com/jiangmiao/auto-pairs
+- |icon-info| ``:h AutoPairs.txt``
+
+Nerdcommenter
+"""""""""""""
+
+  Facilita agregar y quitar comentarios.
+
+.. code:: vim
+
+   Plug 'scrooloose/nerdcommenter'
+
+   ...
+   
+   let g:NERDSpaceDelims = 1  " Agregar un espacio después del delimitador del comentario
+   let g:NERDTrimTrailingWhitespace = 1  " Quitar espacios al quitar comentario
+
+- |icon-link| https://github.com/scrooloose/nerdcommenter
+- |icon-info| ``:h NERDCommenter``
+
+Git
+~~~
+
+Fugitive
+""""""""
+
+  Provee comandos de git.
+
+.. code:: vim
+
+   Plug 'tpope/vim-fugitive'
+
+- |icon-cmd|
+  
+  - ``:Gstatus``
+  - ``:Gcommit``
+  - ``:Gdiff``
+- |icon-link| https://github.com/tpope/vim-fugitive
+- |icon-info| ``:h fugitive``
+
+Gitgutter
+"""""""""
+
+  Muestra cambios hechos en el archivo en la columna de signos.
+
+.. figure:: https://camo.githubusercontent.com/f88161827e0cbb3144455b9e5c7582fdd5b5fc83/68747470733a2f2f7261772e6769746875622e636f6d2f616972626c6164652f76696d2d6769746775747465722f6d61737465722f73637265656e73686f742e706e67
+   :target: https://camo.githubusercontent.com/f88161827e0cbb3144455b9e5c7582fdd5b5fc83/68747470733a2f2f7261772e6769746875622e636f6d2f616972626c6164652f76696d2d6769746775747465722f6d61737465722f73637265656e73686f742e706e67
+   :alt: incsearch
+
+   incsearch
+
+.. code:: vim
+
+   Plug 'airblade/vim-gitgutter'
+
+   ...
+   
+   " Actualizar barra cada 250 mili segundos
+   set updatetime=250
+
+- |icon-link| https://github.com/airblade/vim-gitgutter
+- |icon-info| ``:h gitgutter.txt``
+
+Nerdtree git plugin
+"""""""""""""""""""
+
+  Muestra el estado de los archivos en Nerdtree.
+
+.. figure:: https://camo.githubusercontent.com/3fe0388df11cb787f36e1fa108398fd3f757eef4/687474703a2f2f692e696d6775722e636f6d2f6a534377476a552e6769663f31
+   :target: https://camo.githubusercontent.com/3fe0388df11cb787f36e1fa108398fd3f757eef4/687474703a2f2f692e696d6775722e636f6d2f6a534377476a552e6769663f31
+   :alt: nerdtree git plugin
+
+   Nerdtree git plugin
+
+.. code:: vim
+
+   Plug 'xuyuanp/nerdtree-git-plugin'
+
+- |icon-link| https://github.com/xuyuanp/nerdtree-git-plugin
+- |icon-info| https://github.com/xuyuanp/nerdtree-git-plugin#faq
+
+Buscando plugins
+----------------
+
+No existe un repositorio oficial de plugins para Neovim,
+por lo que hace que la búsqueda de nuevos plugins
+(bien mantenidos y sin errores) sea un poco difícil.
+
+`GitHub`_
+~~~~~~~~~
+
+Como habrás observado, la mayoría de plugins están alojados en GitHub,
+así que es un buen lugar para buscar. 
+
+Trata de buscar repositorios con la palabra `vim`, `neovim`, `nvim` o que terminen en `.vim`
+(los que son sólo compatibles con Neovim tienen la extensión `.nvim`).
+
+`Dotfiles <https://github.com/search?l=Vim+script&q=dotfiles&type=Repositories&utf8=%E2%9C%93>`_
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Otra manera de buscar plugins es buscando en los `dotfiles` de varios usuarios
+(`mis dotfiles <https://github.com/stsewd/dotfiles>`_).
+
+`Vim awesome <http://vimawesome.com/>`_
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Colección de plugins más usados.
+Ten en cuenta que la mayor parte (todos en realidad) son plugins para Vim,
+así que tal vez no encuentres mejores alternativas para Neovim.
+
+`Documentación de Neovim <https://github.com/neovim/neovim/wiki/Related-projects#plugins>`_
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Lista de varios plugins que hacen uso de las características de Neovim.
 
 ----
 
