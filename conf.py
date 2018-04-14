@@ -622,7 +622,10 @@ USE_BASE_TAG = False
 # relative URL.
 #
 # If you don't need any of these, just set to []
-REDIRECTIONS = []
+REDIRECTIONS = [
+    ('blog/2017/07/06/neovim-instalacion-configuracion/index.html', '/posts/neovim-installation-configuration'),
+    ('blog/2017/08/20/neovim-plugins/index.html', '/posts/neovim-plugins'),
+]
 
 # Presets of commands to execute to deploy. Can be anything, for
 # example, you may use rsync:
