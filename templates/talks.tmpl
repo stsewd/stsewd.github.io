@@ -1,0 +1,38 @@
+<%inherit file="page.tmpl"/>
+
+<%block name="my_content">
+  <div class="row">
+    % for talk in post.data('talks'):
+      <div class="col-sm-6">
+        <div class="thumbnail">
+          % if talk.get('image'):
+            <img src="${talk['image']}" alt="talk">
+          % endif
+          <div class="caption">
+            <h3>${talk['title']}</h3>
+            <p>
+              <small>
+                <span class="glyphicon glyphicon-calendar"></span>
+                ${talk['date']}
+              </small>
+            </p>
+            <p>
+              ${talk['description']}
+            </p>
+            <p>
+              <a href="${talk['url']}" class="btn btn-primary" role="button">
+                Ver
+              </a>
+            </p>
+            </p>
+          </div>
+        </div>
+      </div>
+    % endfor
+  </div>
+</%block>
+
+<%block name="content">
+  <%include file="includes/content.tmpl" args="content=self.my_content"/>
+  <%include file="includes/js/keybindings.tmpl"/>
+</%block>

@@ -1,6 +1,5 @@
 .. title: Charlas
 .. slug: talks
-.. link:
+.. template: talks.tmpl
+.. data: data/talks.es.yml
 .. type: text
-
-Write your page here.
