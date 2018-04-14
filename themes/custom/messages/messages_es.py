@@ -1,0 +1,3 @@
+MESSAGES = {
+    'View': 'Ver',
+}

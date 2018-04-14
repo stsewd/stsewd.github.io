@@ -1,0 +1,21 @@
+<%page args="content"/>
+
+<div class="container padding-top margin-bottom">
+  <div class="row">
+    <div class="col-sm-8 col-sm-offset-2">
+      ## When a parent block is called
+      ## it insert its content just there
+      ## so we pass a function as content
+      ## to called here.
+      % if callable(content):
+        ${content()}
+      % else:
+        ${content}
+      % endif
+    </div>
+
+    <div class="col-sm-2">
+      <!-- Sidebar here -->
+    </div>
+  </div>
+</div>

@@ -1,0 +1,11 @@
+<%inherit file="post.tmpl"/>
+
+<%block name="extra_head">
+  ${parent.extra_head()}
+  <%include file="includes/header.tmpl"/>
+</%block>
+
+<%block name="content">
+  <%include file="includes/content.tmpl" args="content=parent.content"/>
+  <%include file="includes/js/common.tmpl"/>
+</%block>
