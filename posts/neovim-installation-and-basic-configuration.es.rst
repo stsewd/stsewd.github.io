@@ -651,9 +651,7 @@ así tendrás un ``init.vim`` ordenado.
 
 A continuación tienes un ``init.vim`` con algunas configuraciones mínimas.
 
-.. raw:: html
-
-   <script src="https://gist.github.com/stsewd/abeb79100eba64184668fd3b1b13bff9.js"></script>
+.. gist:: abeb79100eba64184668fd3b1b13bff9
 
 .. note::
    
@@ -688,9 +686,7 @@ por lo que se suele usar la tecla :kbd:`Espacio` o :kbd:`,` como sustituto.
 
 A continuación un par de mappings que te podrían ser de utilidad.
 
-.. raw:: html
-
-   <script src="https://gist.github.com/stsewd/4a02ce40968bf16050d96c4f8ec9e7cb.js"></script>
+.. gist:: 4a02ce40968bf16050d96c4f8ec9e7cb
 
 Configurando la terminal
 ------------------------
