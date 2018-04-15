@@ -146,7 +146,7 @@ cuando se termine de instalar el plugin, ciérrala presionando :kbd:`q`.
 
 .. figure:: https://raw.githubusercontent.com/junegunn/i/master/vim-plug/installer.gif
    :target: https://raw.githubusercontent.com/junegunn/i/master/vim-plug/installer.gif
-   :alt: Ejecución del comando :PlugInstall
+   :alt: Ejecución del comando ``:PlugInstall``
 
    Ejecución del comando ``:PlugInstall``
 
