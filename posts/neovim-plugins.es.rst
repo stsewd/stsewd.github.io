@@ -145,7 +145,7 @@ Y luego, ejecuta ``:PlugInstall``. Aparecerá una ventana con el progreso de ins
 cuando se termine de instalar el plugin, ciérrala presionando :kbd:`q`.
 
 .. figure:: https://raw.githubusercontent.com/junegunn/i/master/vim-plug/installer.gif
-   :target:https://raw.githubusercontent.com/junegunn/i/master/vim-plug/installer.gif
+   :target: https://raw.githubusercontent.com/junegunn/i/master/vim-plug/installer.gif
    :alt: Ejecución del comando :PlugInstall
 
    Ejecución del comando ``:PlugInstall``
