@@ -149,7 +149,7 @@ que empiece a mirar más allá, que todo eso que pensamos que es un sueño es po
 Y así lo que me parecía que sólo pasaba en las grandes ciudades, me estaba pasando a mi.
 Esos meses que *trabajé para Manuel* aprendí mucho, y conocí a varias personas,
 y otras personas me conocieron a mi. Así a un mes de terminarse mi trato con Manuel,
-me dijo que `Eric Holscher <http://ericholscher.com/>`,
+me dijo que `Eric Holscher <http://ericholscher.com/>`_,
 el dueño del proyecto Read the Docs me estaba ofreciendo hacer pasantías.
 Y luego recibí este email:
 
