@@ -22,8 +22,8 @@
 - ¿¡Programar!? No, eso no hacen los ingenieros.
   Los ingenieros no programamos, eso es como ser los albañiles de la ingeniera civil.
 
-Hello World
------------
+``Hello World``
+---------------
 
 Antes de empezar con esta historia,
 quisiera contar un poco sobre mi.
@@ -82,8 +82,8 @@ Y nadie hace nada al respecto, todo lo cool seguía en las grandes ciudades
 como Quito (traído gracias a empresas extranjeras) o en otros países.
 Me sentí decepcionado, otra vez.
 
-main.py
--------
+``main.py``
+-----------
 
 No recuerdo exactamente dónde, creo que fue en Facebook.
 Vi una publicidad sobre que se iba a hacer un Django Girls en Cuenca.
@@ -161,8 +161,8 @@ Espero esto no estarlo alucinando.
 Si antes tenía una gran deuda con la comunidad de software libre,
 ahora tengo una deuda mucho más grande.
 
-open('mind.txt', 'r+')
-----------------------
+``open('mind.txt', 'r+')``
+--------------------------
 
 ¿Haber asistido a un Django Girls me llevó a esta oportunidad?
 Varias cosas locas pasaron desde ese momento, muchas no tan buenas.
@@ -176,8 +176,8 @@ sino para mostrarte que esto es una realidad. Participar en el software libre,
 en la comunidad, compartiendo el conocimiento, te abre muchas oportunidades,
 conoces a muchas personas, aprendes un montón. Te abre la mente.
 
-exit(1)
--------
+``exit(1)``
+-----------
 
 - Cool, voy a inscribirme como guía de un Django Girls en la próxima
   para hacerme famoso y ganar mucho dinero desde mi casa.
