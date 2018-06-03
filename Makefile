@@ -1,10 +1,10 @@
 clean:
-	rm -rf cache output 
+	rm -rf cache output .doit.db .doit.db.*
 
-build:
-	nikola build
-	nikola serve
+serve:
+	nikola auto
 
-clean-build: clean build
+deploy:
+	nikola github_deploy
 
-.PHONY: clean build clean-build
+.PHONY: clean serve deploy
