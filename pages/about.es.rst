@@ -36,6 +36,7 @@ Encuentrame en
 - `Hackerrank <https://www.hackerrank.com/stsewd>`_
 - `Stack Overflow <http://stackoverflow.com/users/5689214/>`_
 - `Twitter <http://twitter.com/stsewd>`_
+- `LinkedIn <https://www.linkedin.com/in/stsewd/>`_
 - O escríbeme a santos_g@outlook.com
 
 ----
