@@ -1,7 +1,7 @@
 .. title: Mi Configuración de Neovim para Python
 .. slug: my-neovim-setup-for-python
 .. date: 2018-07-19
-.. tags: neovim, python
+.. tags: neovim, python, draft
 .. category: neovim
 .. link:
 .. description: Colección de plugins y configuraciones que uso en mi día a día con Python.
