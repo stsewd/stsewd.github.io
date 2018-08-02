@@ -15,6 +15,13 @@
                 <span class="glyphicon glyphicon-calendar"></span>
                 ${talk['date']}
               </small>
+              % if talk.get('lang'):
+                -
+                <small>
+                  <span class="glyphicon glyphicon-comment"></span>
+                  ${talk['lang']}
+                </small>
+              % endif
             </p>
             <p>
               ${talk['description']}
