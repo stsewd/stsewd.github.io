@@ -1,4 +1,4 @@
-.. title: Mi Configuración de Neovim para Python
+.. title: Mi Neovim Setup for Python Development
 .. slug: my-neovim-setup-for-python
 .. date: 2018-07-19
 .. tags: neovim, python
@@ -12,11 +12,10 @@
    :alt: Logo de Neovim
    :align: center
 
-.. contents:: Contenidos
-   :depth: 2
+Neovim?
+-------
 
-¿Neovim?
---------
+English
 
 Si eres nuevo en Neovim, puedes leer :doc:`neovim-installation-configuration`.
 
@@ -50,39 +49,9 @@ Este archivo se encuentra en ``after/ftplugin/python.vim``.
 
 
 ¿Sólo eso? ¡Si! uso otras configuraciones, pero son generales.
-Puedes encontrarlas en mis `dotfiles <https://github.com/stsewd/dotfiles/blob/master/config/nvim/init.vim>`__.
+Puedes encontrarlas en
 
 Plugins
 -------
 
 Si eres nuevos con plugins en Neovim, puedes leer :doc:`neovim-plugins`.
-
-Resaltado de syntaxis
-~~~~~~~~~~~~~~~~~~~~~
-
-fdsafds
-
-Objetos y movimientos
-~~~~~~~~~~~~~~~~~~~~~
-
-fdsafds
-
-Autocompletado
-~~~~~~~~~~~~~~
-
-fdsafds
-
-Ir a
-~~~~
-
-fdsafds
-
-Tests
-~~~~~
-
-fdsafds
-
-Django
-~~~~~~
-
-asfdaf
