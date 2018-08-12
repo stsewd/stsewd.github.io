@@ -1,8 +1,12 @@
 <%inherit file="page.tmpl"/>
 
+<%! from itertools import cycle %>
+
 <%block name="my_content">
-  <div class="row">
-    % for talk in post.data('talks'):
+  % for index, talk in zip(cycle(range(2)), post.data('talks')):
+    % if index == 0:
+      <div class="row">
+    % endif
       <div class="col-sm-6">
         <div class="thumbnail">
           % if talk.get('image'):
@@ -35,8 +39,13 @@
           </div>
         </div>
       </div>
-    % endfor
-  </div>
+    % if index == 1:
+      </div>
+    % endif
+  % endfor
+  % if index != 1:
+    </div>
+  % endif
 </%block>
 
 <%block name="content">
