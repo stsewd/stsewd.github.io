@@ -1,6 +1,8 @@
 # -*- coding: utf-8 -*-
 
 from __future__ import unicode_literals
+
+import os
 import time
 
 # !! This is the configuration of Nikola. !! #
@@ -21,7 +23,11 @@ BLOG_AUTHOR = "Santos Gallegos"  # (translatable)
 BLOG_TITLE = "Santos Gallegos"  # (translatable)
 # This is the main URL for your site. It will be used
 # in a prominent link. Don't forget the protocol (http/https)!
-SITE_URL = "https://stsewd.github.io/"
+deploy_site = os.environ.get('NIKOLA_DEPLOY')
+if deploy_site:
+    SITE_URL = f'https://{deploy_site}'
+else:
+    SITE_URL = 'http://localhost:8000'
 # This is the URL where Nikola's output will be deployed.
 # If not set, defaults to SITE_URL
 # BASE_URL = "https://stsewd.github.io/"
