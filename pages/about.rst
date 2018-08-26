@@ -11,7 +11,7 @@ I love web development, algorithms, Python enthusiastic, Neovim, and free and op
 Always trying to learn something new,
 and `artist occasionally <https://stsewd.deviantart.com/gallery/>`_.
 
-Also I help to organize events in my local `Python community <https://pythonecuador.org/>`_.
+I also help to organize events in my local `Python community <https://pythonecuador.org/>`_.
 
 Languages
 ---------
