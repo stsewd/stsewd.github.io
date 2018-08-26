@@ -8,9 +8,10 @@ Quién soy
 
 Soy Santos Gallegos, vivo en Cuenca - Ecuador.
 Me gusta el desarrollo web, algoritmos, entusiasta de Python, Neovim, y software libre y open source.
-Siempre tratando de aprender nuevas tecnologías, `y dibujante de vez en cuando`__.
+Siempre tratando de aprender nuevas tecnologías,
+`y dibujante de vez en cuando <https://stsewd.deviantart.com/gallery/>`__.
 
-__ http://stsewd.deviantart.com/gallery/
+Además ayudo a organizar enventos en la comunidad de `Python Ecuador <https://pythonecuador.org/>`__.
 
 Idiomas
 -------
