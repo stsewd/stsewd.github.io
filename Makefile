@@ -5,6 +5,6 @@ serve:
 	nikola auto
 
 deploy:
-	NIKOLA_DEPLOY=stsewd.github.io/ nikola github_deploy
+	NIKOLA_DEPLOY=stsewd.dev nikola github_deploy
 
 .PHONY: clean serve deploy
