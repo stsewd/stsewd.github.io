@@ -117,7 +117,6 @@ which has community-driven simplified man pages with common usage examples.
 
 Did you always forget the correct options to untar a file?
 
-
 .. code:: bash
 
    tldr tar
@@ -171,6 +170,23 @@ For a general and *nicer* solution I use the `coc plugin <https://github.com/neo
 Online documentation
 ~~~~~~~~~~~~~~~~~~~~
 
+Some libraries or programs don't include their documentation when you downloaded it,
+but probably they have their documentation online.
+Note that I'm not referring to a blog post or a tutorial.
+
+How do you know where to find the online documentation?
+
+- Most of the time you can find a link to the documentation in the web site of the library or project.
+- Some times you can find a link to the online documentation in the repository page
+  (like in the ``README`` file).
+- You can also find a link to their documentation in the package page
+  (like npm or pypi).
+- If everything else fails, you can just use Google to find it.
+
+By the way,
+for Python packages,
+most of the time they have their documentation hosted in https://readthedocs.org/.
+
 Python docs
 ~~~~~~~~~~~
 
@@ -210,11 +226,6 @@ The official online docs
 For a more extensive documentation,
 with several common usage examples.
 See the online docs in https://docs.python.org/.
-
-Online documentation
-~~~~~~~~~~~~~~~~~~~~
-
-Read the Docs
 
 Conclusions
 ~~~~~~~~~~~
