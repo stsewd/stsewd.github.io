@@ -74,8 +74,8 @@ Example
    man ls
 
 But not only commands have man pages,
-it also includes documentation of the format used in some configuration files.
-Kernel functions, libraries (usually the ones used in C).
+it also includes documentation of the format used in some configuration files,
+kernel functions, libraries (usually the ones used in C).
 
 How to access to those man pages?
 Each man page belongs to a section,
@@ -91,7 +91,7 @@ each section is represented by a number::
   8   System administration commands (usually only for root)
   9   Kernel routines [Non standard]
 
-Knowing the section you can use the get the man page with:
+Knowing the section you can get the man page with:
 
 .. code:: bash
 
