@@ -1,3 +1,0 @@
-MESSAGES = {
-    'View': 'View',
-}

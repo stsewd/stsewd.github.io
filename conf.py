@@ -140,14 +140,12 @@ TRANSLATIONS_PATTERN = '{path}.{lang}.{ext}'
 
 NAVIGATION_LINKS = {
     DEFAULT_LANG: (
-        ("/archive.html", "Archive"),
-        ("/talks/", "Talks"),
+        ("/archive.html", "Posts"),
         ("/about/", "About"),
     ),
 
     "es": (
-        ("/es/archive.html", "Archivo"),
-        ("/es/talks/", "Charlas"),
+        ("/es/archive.html", "Posts"),
         ("/es/about/", "Acerca de"),
     ),
 }
@@ -164,7 +162,7 @@ THEME = "custom"
 
 # Primary color of your theme. This will be used to customize your theme.
 # Must be a HEX value.
-THEME_COLOR = '#5670d4'
+THEME_COLOR = '#222222'
 
 # Theme configuration. Fully theme-dependent. (translatable)
 # Examples below are for bootblog4.
@@ -933,23 +931,29 @@ LICENSE = ""
 # A small copyright notice for the page footer (in HTML).
 # (translatable)
 CONTENT_FOOTER = """
-<div>
-  <small>
-    Contents &copy; {date} <a href="mailto:{email}">{author}</a> -
-    Powered by <a href="https://getnikola.com" rel="nofollow">Nikola</a> -
-    Hosted on <a href="https://pages.github.com/" rel="nofollow">GitHub Pages</a>
-    {license}
-  </small>
-</div>
-<div>
-  <small>
-    <a href="http://github.com/stsewd">
-      <i class="fa fa-github fa-2x"></i>
-    </a>
-    <a href="http://twitter.com/stsewd">
-      <i class="fa fa-twitter fa-2x"></i>
-    </a>
-  </small>
+<div class="container">
+    <div class="row text-center">
+        <div class="col">
+            <small>
+                Contents &copy; {date} <a href="mailto:{email}">{author}</a> -
+                Powered by <a href="https://getnikola.com" rel="nofollow">Nikola</a> -
+                Hosted on <a href="https://pages.github.com/" rel="nofollow">GitHub Pages</a>
+                {license}
+            </small>
+        </div>
+    </div>
+    <div class="row text-center">
+        <div class="col">
+            <small>
+                <a href="http://github.com/stsewd">
+                <i class="fa fa-github fa-2x"></i>
+                </a>
+                <a href="http://twitter.com/stsewd">
+                <i class="fa fa-twitter fa-2x"></i>
+                </a>
+            </small>
+        </div>
+    </div>
 </div>
 """
 
@@ -1128,10 +1132,10 @@ MARKDOWN_EXTENSIONS = ['markdown.extensions.fenced_code', 'markdown.extensions.c
 # """
 
 # Show link to source for the posts?
-# SHOW_SOURCELINK = True
+SHOW_SOURCELINK = False
 # Copy the source files for your pages?
 # Setting it to False implies SHOW_SOURCELINK = False
-# COPY_SOURCES = True
+COPY_SOURCES = False
 
 # Modify the number of Post per Index Page
 # Defaults to 10
@@ -1222,7 +1226,21 @@ MARKDOWN_EXTENSIONS = ['markdown.extensions.fenced_code', 'markdown.extensions.c
 # Extra things you want in the pages HEAD tag. This will be added right
 # before </head>
 # (translatable)
-# EXTRA_HEAD_DATA = ""
+EXTRA_HEAD_DATA = """
+<!-- Custom css -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="stylesheet" href="/assets/css/custom.css" type="text/css" media="all" />
+
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-100772829-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-100772829-1');
+</script>
+"""
 # Google Analytics or whatever else you use. Added to the bottom of <body>
 # in the default template (base.tmpl).
 # (translatable)

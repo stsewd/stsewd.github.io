@@ -1,8 +1,8 @@
 <%page args="content"/>
 
-<div class="container padding-top margin-bottom">
-  <div class="row">
-    <div class="col-sm-8 col-sm-offset-2">
+<div class="container mb-3">
+  <div class="row justify-content-sm-center">
+    <div class="col col-sm-8">
       ## When a parent block is called
       ## it insert its content just there
       ## so we pass a function as content
@@ -12,10 +12,6 @@
       % else:
         ${content}
       % endif
-    </div>
-
-    <div class="col-sm-2">
-      <!-- Sidebar here -->
     </div>
   </div>
 </div>
