@@ -27,7 +27,7 @@ else:
 # This is the URL where Nikola's output will be deployed.
 # If not set, defaults to SITE_URL
 # BASE_URL = "https://stsewd.dev/"
-BLOG_EMAIL = "santos_g@outlook.com"
+BLOG_EMAIL = "stsewd@protonmail.com"
 BLOG_DESCRIPTION = {"en": "Personal blog", "es": "Blog personal"}  # (translatable)
 
 # Nikola is multilingual!

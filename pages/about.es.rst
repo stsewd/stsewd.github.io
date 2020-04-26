@@ -27,4 +27,4 @@ Encuentrame en
 - `Stack Overflow <http://stackoverflow.com/users/5689214/>`__
 - `Twitter <http://twitter.com/stsewd>`__
 - `LinkedIn <https://www.linkedin.com/in/stsewd/>`__
-- O escríbeme a santos_g@outlook.com
+- O escríbeme a stsewd@protonmail.com
