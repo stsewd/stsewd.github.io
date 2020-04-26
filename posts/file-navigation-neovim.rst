@@ -1,5 +1,6 @@
 .. title: File navigation in Neovim and more
 .. date: 2019-09-06
+.. updated: 2020-04-26
 .. category: neovim, fzf, plugins, nerdtree, navigation
 .. description: How to navigate files and more in Neovim
 
@@ -151,7 +152,6 @@ red the manual ``:help altr.txt``.
 Git
 ===
 
-This is the *and more* part from the title.
 FZF allows you to pass any list and filter those elements.
 When you find yourself in big projects with several branches is easy to get lost.
 
@@ -162,29 +162,10 @@ When you find yourself in big projects with several branches is easy to get lost
 
 |
 
-I wrote this little script that list all your branches on a FZF window.
+I wrote `this plugin <https://github.com/stsewd/fzf-checkout.vim>`__ that list all your branches using ``fzf.vim``.
 
 .. code-block:: vim
 
-   function! s:open_branch_fzf(line)
-     let l:branch = a:line
-     execute 'terminal git checkout ' . l:branch
-     call feedkeys('i', 'n')
-   endfunction
-   
-   function! s:show_branches_fzf(bang)
-     let l:current = system('git symbolic-ref --short HEAD')
-     let l:current = substitute(l:current, '\n', '', '')
-     let l:current_scaped = substitute(l:current, '/', '\\/', '')
-     call fzf#vim#grep(
-       \ "git branch -r --no-color | sed -r -e 's/^[^/]*\\///' -e '/^" . l:current_scaped . "$/d' -e '/^HEAD/d' | sort -u", 0,
-       \ { 'sink': function('s:open_branch_fzf'), 'options': ['--no-multi', '--header='.l:current] }, a:bang)
-   endfunction
-   
-   command! -bang -nargs=0 FzGCheckout call <SID>show_branches_fzf(<bang>0)
+   Plug 'stsewd/fzf-checkout.vim'
 
-Execute the ``:FzGCheckout`` command to use it.
-
-.. note::
-
-   I may write this script as a plugin or send a pull request to fzf.vim in the future.
+Use ``:GCheckout`` or ``:GCheckoutTag``.
