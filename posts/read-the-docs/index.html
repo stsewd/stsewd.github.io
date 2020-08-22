@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+<html prefix="og: http://ogp.me/ns# article: http://ogp.me/ns/article#
+" lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="description" content="When we write software, people tell us to write docs for it, but we forgot to read the docs very often">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Read the docs | Santos Gallegos</title>
+<link href="../../assets/css/all-nocdn.css" rel="stylesheet" type="text/css">
+<meta name="theme-color" content="#222222">
+<meta name="generator" content="Nikola (getnikola.com)">
+<link rel="alternate" type="application/rss+xml" title="RSS (en)" href="../../rss.xml">
+<link rel="alternate" type="application/rss+xml" title="RSS (es)" href="../../es/rss.xml">
+<link rel="canonical" href="https://stsewd.dev/posts/read-the-docs/">
+<!--[if lt IE 9]><script src="../../assets/js/html5.js"></script><![endif]--><!-- Custom css --><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="stylesheet" href="../../assets/css/custom.css" type="text/css" media="all">
+<!-- Global site tag (gtag.js) - Google Analytics --><script async src="https://www.googletagmanager.com/gtag/js?id=UA-100772829-1"></script><script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-100772829-1');
+</script><meta name="author" content="Santos Gallegos">
+<link rel="prev" href="../historia-django-girls-rtd/" title="De guía en Django Girls a pasante en Read the Docs" type="text/html">
+<link rel="next" href="../file-navigation-neovim/" title="File navigation in Neovim and more" type="text/html">
+<meta property="og:site_name" content="Santos Gallegos">
+<meta property="og:title" content="Read the docs">
+<meta property="og:url" content="https://stsewd.dev/posts/read-the-docs/">
+<meta property="og:description" content="When we write software, people tell us to write docs for it, but we forgot to read the docs very often">
+<meta property="og:type" content="article">
+<meta property="article:published_time" content="2019-07-06T00:00:00-05:00">
+<meta property="article:tag" content="documentation">
+<meta property="article:tag" content="read the docs">
+<link rel="alternate" hreflang="es" href="../../es/posts/read-the-docs/">
+</head>
+<body>
+<a href="#content" class="sr-only sr-only-focusable">Skip to main content</a>
+
+<!-- Menubar -->
+
+<nav class="navbar navbar-expand-md static-top mb-4
+navbar-dark bg-dark
+"><div class="container">
+<!-- This keeps the margins nice -->
+        <a class="navbar-brand" href="https://stsewd.dev/">
+
+            <span id="blog-title">Santos Gallegos</span>
+        </a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#bs-navbar" aria-controls="bs-navbar" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="bs-navbar">
+            <ul class="navbar-nav mr-auto">
+<li class="nav-item">
+<a href="../../archive.html" class="nav-link">Posts</a>
+                </li>
+<li class="nav-item">
+<a href="../../about/" class="nav-link">About</a>
+
+                
+            </li>
+</ul>
+<ul class="navbar-nav navbar-right">
+<li>
+            </li>
+<li class="nav-item"><a href="https://stsewd.dev/es/" rel="alternate" hreflang="es" class="nav-link">Español</a></li>
+
+                
+                
+            </ul>
+</div>
+<!-- /.navbar-collapse -->
+    </div>
+<!-- /.container -->
+</nav><!-- End of Menubar --><div class="container" id="content" role="main">
+    <div class="body-content">
+        <!--Body content-->
+        
+        
+  
+
+<div class="container mb-3">
+  <div class="row justify-content-sm-center">
+    <div class="col col-sm-8">
+        
+<article class="post-text h-entry hentry postpage" itemscope="itemscope" itemtype="http://schema.org/Article"><header><h1 class="p-name entry-title" itemprop="headline name"><a href="." class="u-url">Read the docs</a></h1>
+
+        <div class="metadata">
+            <p class="byline author vcard"><span class="byline-name fn" itemprop="author">
+                    Santos Gallegos
+            </span></p>
+            <p class="dateline">
+            <a href="." rel="bookmark">
+            <time class="published dt-published" datetime="2019-07-06T00:00:00-05:00" itemprop="datePublished" title="2019-07-06">2019-07-06</time></a>
+            </p>
+                <p class="commentline">
+        
+    <a href="#disqus_thread" data-disqus-identifier="cache/posts/read-the-docs.html">Comments</a>
+
+
+            
+
+        </p>
+</div>
+        
+
+    </header><div class="e-content entry-content" itemprop="articleBody text">
+    <div>
+<p>When we write software,
+people tell us to write docs for it.
+But when we use software,
+we forgot to read their docs very often.</p>
+<p>A couple of days ago,
+I was struggling to remember what the format in <tt class="docutils literal">/etc/passwd</tt> means.
+Immediately I search for it in Google and found a blog post about it.
+Then I stopped to ask myself: why are you searching this on Google and reading it from a blog post?
+This should be documented in Linux itself!</p>
+<p>After a minutes, I found the <a class="reference external" href="https://en.wikipedia.org/wiki/Man_page">manpage</a> for it
+(it was the same content of the blog post!).
+Then I realized that so many times I search for things in other sites
+but their official documentation.</p>
+<p>So, in the next paragraphs I'm going to tell you (or remind you)
+where you can search for the official docs of common development tools.</p>
+<div class="section" id="linux-command-docs">
+<h2>Linux command docs</h2>
+<p><tt class="docutils literal"><span class="pre">--help</span></tt> or <tt class="docutils literal"><span class="pre">-h</span></tt>,
+probably one fo the most obvious options that we check before executing a command in the terminal,
+and that most of the tools have.
+Here you can see the list of options and a short description of what that option does.</p>
+<p>Its common usage is:</p>
+<pre class="code bash"><a name="rest_code_c65b539545954a7996fda850a62d1434-1"></a><span class="nb">command</span> --help
+</pre>
+<p>Example:</p>
+<pre class="code bash"><a name="rest_code_76f89810a4494784b29d6f9611c41264-1"></a>ls --help
+</pre>
+<p>or</p>
+<pre class="code bash"><a name="rest_code_7515a90d16f049989ae7ef147297b5bf-1"></a><span class="nb">command</span> subcommand --help
+</pre>
+<p>Example:</p>
+<pre class="code bash"><a name="rest_code_7e0d5bee20e24d43a17776f45d19ac2a-1"></a>git add --help
+</pre>
+<p>Man pages,
+most of the Linux tools has a respective man page (apart from the <tt class="docutils literal"><span class="pre">--help</span></tt> option).
+Man pages have a more detailed documentation than the <tt class="docutils literal"><span class="pre">--help</span></tt> option from the command.</p>
+<p>Most of the time you'll need to run:</p>
+<pre class="code bash"><a name="rest_code_2c271d1be74c4f08a3256d3012eaebf4-1"></a>man <span class="nb">command</span>
+</pre>
+<p>Example</p>
+<pre class="code bash"><a name="rest_code_943bcf8da46e488c9ecbadb6cf7d40e3-1"></a>man ls
+</pre>
+<p>But not only commands have man pages,
+it also includes documentation of the format used in some configuration files,
+kernel functions, libraries (usually the ones used in C).</p>
+<p>How to access to those man pages?
+Each man page belongs to a section,
+each section is represented by a number:</p>
+<pre class="literal-block">
+1   Executable programs or shell commands
+2   System calls (functions provided by the kernel)
+3   Library calls (functions within program libraries)
+4   Special files (usually found in /dev)
+5   File formats and conventions eg /etc/passwd
+6   Games
+7   Miscellaneous (including macro packages and conventions), e.g. man(7), groff(7)
+8   System administration commands (usually only for root)
+9   Kernel routines [Non standard]
+</pre>
+<p>Knowing the section you can get the man page with:</p>
+<pre class="code bash"><a name="rest_code_83601c06e9dc4e959d2f4096af8a2d5f-1"></a>man &lt;section&gt; keyword
+</pre>
+<p>Example:</p>
+<pre class="code bash"><a name="rest_code_8fc67547307c4a8e919329953ed182d9-1"></a>man <span class="m">1</span> ls
+<a name="rest_code_8fc67547307c4a8e919329953ed182d9-2"></a>man <span class="m">2</span> fork
+<a name="rest_code_8fc67547307c4a8e919329953ed182d9-3"></a>man <span class="m">3</span> <span class="nb">printf</span>
+<a name="rest_code_8fc67547307c4a8e919329953ed182d9-4"></a>man <span class="m">5</span> /etc/passwd
+</pre>
+<p>Some times the result from the <tt class="docutils literal"><span class="pre">--help</span></tt> option or
+from the man pages can be very extensive,
+and difficult to extract what you need,
+or missing clear examples.</p>
+<p>Fortunately there is the <a class="reference external" href="https://github.com/tldr-pages/tldr">tldr</a> project,
+which has community-driven simplified man pages with common usage examples.</p>
+<p>Did you always forget the correct options to untar a file?</p>
+<pre class="code bash"><a name="rest_code_e7be9883fdfa49139e2e855d7321aec1-1"></a>tldr tar
+<a name="rest_code_e7be9883fdfa49139e2e855d7321aec1-2"></a>
+<a name="rest_code_e7be9883fdfa49139e2e855d7321aec1-3"></a>  Archiving utility.
+<a name="rest_code_e7be9883fdfa49139e2e855d7321aec1-4"></a>  Often combined with a compression method, such as gzip or bzip.
+<a name="rest_code_e7be9883fdfa49139e2e855d7321aec1-5"></a>  More information: &lt;https://www.gnu.org/software/tar&gt;.
+<a name="rest_code_e7be9883fdfa49139e2e855d7321aec1-6"></a>
+<a name="rest_code_e7be9883fdfa49139e2e855d7321aec1-7"></a>- Create an archive from files:
+<a name="rest_code_e7be9883fdfa49139e2e855d7321aec1-8"></a>
+<a name="rest_code_e7be9883fdfa49139e2e855d7321aec1-9"></a>  tar -cf target.tar file1 file2 file3
+<a name="rest_code_e7be9883fdfa49139e2e855d7321aec1-10"></a>
+<a name="rest_code_e7be9883fdfa49139e2e855d7321aec1-11"></a>- Extract an archive in a target directory:
+<a name="rest_code_e7be9883fdfa49139e2e855d7321aec1-12"></a>
+<a name="rest_code_e7be9883fdfa49139e2e855d7321aec1-13"></a>  tar -xf source.tar -C directory
+<a name="rest_code_e7be9883fdfa49139e2e855d7321aec1-14"></a>
+<a name="rest_code_e7be9883fdfa49139e2e855d7321aec1-15"></a>...
+</pre>
+<p>If you use Python,
+you can install it using <tt class="docutils literal">pip install tldr</tt>.</p>
+</div>
+<div class="section" id="from-your-editor">
+<h2>From your editor</h2>
+<p>It's useful to setup your editor to show you the documentation from the name that your cursor is under.
+Take a look at <a class="reference external" href="https://langserver.org/">langserver</a> for a <em>global</em> solution and
+install the proper plugin for your editor.</p>
+<p>I use <a class="reference external" href="https://neovim.io/">Neovim</a> as my main editor.
+So I'm going to tell you what I currently use in Neovim.</p>
+<p>First, in Neovim you have the <tt class="docutils literal">:help</tt> command to get the help of the editor itself.
+Neovim also offers the <tt class="docutils literal">K</tt> command,
+which runs a program to lookup the keyword under the cursor.
+This program can be setup for different file types,
+see <tt class="docutils literal">:help K</tt>.</p>
+<p>For instance, try this C code and press <tt class="docutils literal">K</tt> under the <tt class="docutils literal">printf</tt> function.</p>
+<pre class="code c"><a name="rest_code_727304f15a1b47e79fb4c2f469684048-1"></a><span class="cp">#import &lt;stdio.h&gt;</span>
+<a name="rest_code_727304f15a1b47e79fb4c2f469684048-2"></a>
+<a name="rest_code_727304f15a1b47e79fb4c2f469684048-3"></a><span class="kt">int</span> <span class="nf">main</span><span class="p">()</span> <span class="p">{</span>
+<a name="rest_code_727304f15a1b47e79fb4c2f469684048-4"></a>    <span class="n">printf</span><span class="p">(</span><span class="s">"Hello, world</span><span class="se">\n</span><span class="s">"</span><span class="p">);</span>
+<a name="rest_code_727304f15a1b47e79fb4c2f469684048-5"></a>    <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
+<a name="rest_code_727304f15a1b47e79fb4c2f469684048-6"></a><span class="p">}</span>
+</pre>
+<p>For a general and <em>nicer</em> solution I use the <a class="reference external" href="https://github.com/neoclide/coc.nvim">coc plugin</a>.</p>
+</div>
+<div class="section" id="online-documentation">
+<h2>Online documentation</h2>
+<p>Some libraries or programs don't include their documentation when you downloaded it,
+but probably they have their documentation online.
+Note that I'm not referring to a blog post or a tutorial.</p>
+<p>How do you know where to find the online documentation?</p>
+<ul class="simple">
+<li>Most of the time you can find a link to the documentation in the web site of the library or project.</li>
+<li>Some times you can find a link to the online documentation in the repository page
+(like in the <tt class="docutils literal">README</tt> file).</li>
+<li>You can also find a link to their documentation in the package page
+(like npm or pypi).</li>
+<li>If everything else fails, you can just use Google to find it.</li>
+</ul>
+<p>By the way,
+for Python packages,
+most of the time they have their documentation hosted in <a class="reference external" href="https://readthedocs.org/">https://readthedocs.org/</a>.</p>
+</div>
+<div class="section" id="python-docs">
+<h2>Python docs</h2>
+<p>I'm a Python developer,
+so searching for docs from methods and functions is my daily task.</p>
+<p>When I'm not inside my editor, I use these methods:</p>
+<div class="section" id="the-help-function">
+<h3>The help function</h3>
+<p>Python has a built in function called <tt class="docutils literal">help</tt>,
+you can use it inside the interpreter like this:</p>
+<pre class="code python"><a name="rest_code_935255ebe75e43eaa1d066a56eae7121-1"></a><span class="o">&gt;&gt;&gt;</span> <span class="n">help</span><span class="p">(</span><span class="nb">open</span><span class="p">)</span>
+<a name="rest_code_935255ebe75e43eaa1d066a56eae7121-2"></a><span class="o">&gt;&gt;&gt;</span> <span class="n">my_string</span> <span class="o">=</span> <span class="s1">'hello world'</span>
+<a name="rest_code_935255ebe75e43eaa1d066a56eae7121-3"></a><span class="o">&gt;&gt;&gt;</span> <span class="n">help</span><span class="p">(</span><span class="n">my_string</span><span class="o">.</span><span class="n">upper</span><span class="p">)</span>
+</pre>
+<p>The argument can be any function, method, object or module.</p>
+</div>
+<div class="section" id="pydoc">
+<h3>pydoc</h3>
+<p><a class="reference external" href="https://docs.python.org/3/library/pydoc.html">pydoc</a> is a command line tool shipped with Python.
+It's what the <tt class="docutils literal">help</tt> function uses under it.
+You can use it from your terminal like this:</p>
+<pre class="code bash"><a name="rest_code_745408cb527a4ce4b4cb9d0e76ddb7d1-1"></a>pydoc open
+</pre>
+</div>
+<div class="section" id="the-official-online-docs">
+<h3>The official online docs</h3>
+<p>For a more extensive documentation,
+with several common usage examples.
+See the online docs in <a class="reference external" href="https://docs.python.org/">https://docs.python.org/</a>.</p>
+</div>
+</div>
+<div class="section" id="conclusions">
+<h2>Conclusions</h2>
+<p>If you ever find yourself reading the usage instructions for a tool or method/function from another site having the official docs at hand,
+probably is because:</p>
+<ol class="arabic simple">
+<li>The project doesn't have docs (not so common) -- Help to written if it's the case!</li>
+<li>The project doesn't have good documentation (a little more common) -- Help to improve it if it's the case!</li>
+<li>The documentation isn't written in the language you know (very common) -- Help to translate it if it's the case!</li>
+</ol>
+</div>
+</div>
+    </div>
+    <aside class="postpromonav"><nav><ul itemprop="keywords" class="tags">
+<li><a class="tag p-category" href="../../categories/documentation/" rel="tag">documentation</a></li>
+            <li><a class="tag p-category" href="../../categories/read-the-docs/" rel="tag">read the docs</a></li>
+        </ul>
+<ul class="pager hidden-print">
+<li class="previous">
+                <a href="../historia-django-girls-rtd/" rel="prev" title="De guía en Django Girls a pasante en Read the Docs">Previous post</a>
+            </li>
+            <li class="next">
+                <a href="../file-navigation-neovim/" rel="next" title="File navigation in Neovim and more">Next post</a>
+            </li>
+        </ul></nav></aside><section class="comments hidden-print"><h2>Comments</h2>
+        
+        
+        <div id="disqus_thread"></div>
+        <script>
+        var disqus_shortname ="stsewd",
+            disqus_url="https://stsewd.dev/posts/read-the-docs/",
+        disqus_title="Read the docs",
+        disqus_identifier="cache/posts/read-the-docs.html",
+        disqus_config = function () {
+            this.language = "en";
+        };
+        (function() {
+            var dsq = document.createElement('script'); dsq.async = true;
+            dsq.src = 'https://' + disqus_shortname + '.disqus.com/embed.js';
+            (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+        })();
+    </script><noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a>
+</noscript>
+    <a href="https://disqus.com" class="dsq-brlink" rel="nofollow">Comments powered by <span class="logo-disqus">Disqus</span></a>
+
+
+        </section></article><script>var disqus_shortname="stsewd";(function(){var a=document.createElement("script");a.async=true;a.src="https://"+disqus_shortname+".disqus.com/count.js";(document.getElementsByTagName("head")[0]||document.getElementsByTagName("body")[0]).appendChild(a)}());</script>
+</div>
+  </div>
+</div>
+
+  <script src="https://craig.global.ssl.fastly.net/js/mousetrap/mousetrap.min.js"></script><script src="../../assets/js/keybindings.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/anchor-js/4.1.0/anchor.min.js"></script><script>
+  anchors.add();
+</script><!--End of body content--><footer id="footer"><div class="container">
+    <div class="row text-center">
+        <div class="col">
+            <small>
+                Contents © 2020 <a href="mailto:stsewd@protonmail.com">Santos Gallegos</a> -
+                Powered by <a href="https://getnikola.com" rel="nofollow">Nikola</a> -
+                Hosted on <a href="https://pages.github.com/" rel="nofollow">GitHub Pages</a>
+                
+            </small>
+        </div>
+    </div>
+    <div class="row text-center">
+        <div class="col">
+            <small>
+                <a href="http://github.com/stsewd">
+                <i class="fa fa-github fa-2x"></i>
+                </a>
+                <a href="http://twitter.com/stsewd">
+                <i class="fa fa-twitter fa-2x"></i>
+                </a>
+            </small>
+        </div>
+    </div>
+</div>
+
+            
+        </footer>
+</div>
+</div>
+
+
+        <script src="../../assets/js/all-nocdn.js"></script><script>
+    baguetteBox.run('div#content', {
+        ignoreClass: 'islink',
+        captions: function(element) {
+            return element.getElementsByTagName('img')[0].alt;
+    }});
+    </script>
+</body>
+</html>

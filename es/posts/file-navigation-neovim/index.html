@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html prefix="og: http://ogp.me/ns# article: http://ogp.me/ns/article#
+" lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="description" content="How to navigate files and more in Neovim">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>File navigation in Neovim and more | Santos Gallegos</title>
+<link href="../../../assets/css/all-nocdn.css" rel="stylesheet" type="text/css">
+<meta name="theme-color" content="#222222">
+<meta name="generator" content="Nikola (getnikola.com)">
+<link rel="alternate" type="application/rss+xml" title="RSS (en)" href="../../../rss.xml">
+<link rel="alternate" type="application/rss+xml" title="RSS (es)" href="../../rss.xml">
+<link rel="canonical" href="https://stsewd.dev/es/posts/file-navigation-neovim/">
+<!--[if lt IE 9]><script src="../../../assets/js/html5.js"></script><![endif]--><!-- Custom css --><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="stylesheet" href="../../../assets/css/custom.css" type="text/css" media="all">
+<!-- Global site tag (gtag.js) - Google Analytics --><script async src="https://www.googletagmanager.com/gtag/js?id=UA-100772829-1"></script><script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-100772829-1');
+</script><meta name="author" content="Santos Gallegos">
+<link rel="prev" href="../read-the-docs/" title="Read the docs" type="text/html">
+<meta property="og:site_name" content="Santos Gallegos">
+<meta property="og:title" content="File navigation in Neovim and more">
+<meta property="og:url" content="https://stsewd.dev/es/posts/file-navigation-neovim/">
+<meta property="og:description" content="How to navigate files and more in Neovim">
+<meta property="og:type" content="article">
+<meta property="article:published_time" content="2019-09-06T00:00:00-05:00">
+<link rel="alternate" hreflang="en" href="../../../posts/file-navigation-neovim/">
+</head>
+<body>
+<a href="#content" class="sr-only sr-only-focusable">Ir al contenido principal</a>
+
+<!-- Menubar -->
+
+<nav class="navbar navbar-expand-md static-top mb-4
+navbar-dark bg-dark
+"><div class="container">
+<!-- This keeps the margins nice -->
+        <a class="navbar-brand" href="https://stsewd.dev/es/">
+
+            <span id="blog-title">Santos Gallegos</span>
+        </a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#bs-navbar" aria-controls="bs-navbar" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="bs-navbar">
+            <ul class="navbar-nav mr-auto">
+<li class="nav-item">
+<a href="../../archive.html" class="nav-link">Posts</a>
+                </li>
+<li class="nav-item">
+<a href="../../about/" class="nav-link">Acerca de</a>
+
+                
+            </li>
+</ul>
+<ul class="navbar-nav navbar-right">
+<li>
+            </li>
+<li class="nav-item"><a href="https://stsewd.dev/" rel="alternate" hreflang="en" class="nav-link">English</a></li>
+
+                
+                
+            </ul>
+</div>
+<!-- /.navbar-collapse -->
+    </div>
+<!-- /.container -->
+</nav><!-- End of Menubar --><div class="container" id="content" role="main">
+    <div class="body-content">
+        <!--Body content-->
+        
+        
+  
+
+<div class="container mb-3">
+  <div class="row justify-content-sm-center">
+    <div class="col col-sm-8">
+        
+<article class="post-text h-entry hentry postpage" itemscope="itemscope" itemtype="http://schema.org/Article"><header><h1 class="p-name entry-title" itemprop="headline name"><a href="." class="u-url">File navigation in Neovim and more</a></h1>
+
+        <div class="metadata">
+            <p class="byline author vcard"><span class="byline-name fn" itemprop="author">
+                    Santos Gallegos
+            </span></p>
+            <p class="dateline">
+            <a href="." rel="bookmark">
+            <time class="published dt-published" datetime="2019-09-06T00:00:00-05:00" itemprop="datePublished" title="2019-09-06">2019-09-06</time><span class="updated"> (updated
+                    <time class="updated dt-updated" datetime="2020-04-26T00:00:00-05:00" itemprop="dateUpdated" title="2020-04-26">2020-04-26</time>)</span>
+            </a>
+            </p>
+                <p class="commentline">
+        
+    <a href="#disqus_thread" data-disqus-identifier="cache/posts/file-navigation-neovim.html">Comments</a>
+
+
+            
+
+        </p>
+</div>
+        
+
+    </header><div class="e-content entry-content" itemprop="articleBody text">
+    <div>
+<p>If you work in a project with more than one file,
+probably you'll be changing files very frequently or
+search for a file that contains the code or text you are interested in.</p>
+<p>Or when you are new in a project, you want to know:</p>
+<ul class="simple">
+<li>How it's organized</li>
+<li>Where the current file is located</li>
+<li>What other files are around the file you are right now</li>
+<li>Where is the test of the current file</li>
+<li>Or if you are a C/Cpp programmer, where the header file is</li>
+</ul>
+<p>I'll show you some plugins I use navigate in files from a project in Neovim and more.</p>
+<div class="section" id="nerdtree">
+<h2>NerdTree</h2>
+<p>If you need to know the structure of a project you can use the <tt class="docutils literal">tree</tt> command.
+But, if you are already in Neovim, you can use the <a class="reference external" href="https://github.com/scrooloose/nerdtree">NerdTree plugin</a>.</p>
+<a class="reference external image-reference" href="../../../images/file-navigation-neovim/nerdtree.gif"><img alt="NerdTree" class="align-center" src="../../../images/file-navigation-neovim/nerdtree.gif"></a>
+<div class="line-block">
+<div class="line"><br></div>
+</div>
+<p>You can install it with <a class="reference external" href="https://github.com/junegunn/vim-plug">vim-plug</a>:</p>
+<pre class="code vim"><a name="rest_code_ca54c7eb5f8e4d1b9156c9445beb8f84-1"></a>Plug <span class="s1">'scrooloose/nerdtree'</span>
+</pre>
+<p>I have these settings for NerdTree:</p>
+<pre class="code vim"><a name="rest_code_cb9bbc892b884b5fa6dbc4616a11f0da-1"></a><span class="k">let</span> <span class="k">g</span>:NERDTreeChDirMode <span class="p">=</span> <span class="m">2</span>  <span class="c">" Change cwd to parent node</span>
+<a name="rest_code_cb9bbc892b884b5fa6dbc4616a11f0da-2"></a>
+<a name="rest_code_cb9bbc892b884b5fa6dbc4616a11f0da-3"></a><span class="k">let</span> <span class="k">g</span>:NERDTreeMinimalUI <span class="p">=</span> <span class="m">1</span>  <span class="c">" Hide help text</span>
+<a name="rest_code_cb9bbc892b884b5fa6dbc4616a11f0da-4"></a><span class="k">let</span> <span class="k">g</span>:NERDTreeAutoDeleteBuffer <span class="p">=</span> <span class="m">1</span>
+<a name="rest_code_cb9bbc892b884b5fa6dbc4616a11f0da-5"></a>
+<a name="rest_code_cb9bbc892b884b5fa6dbc4616a11f0da-6"></a><span class="nb">nnoremap</span> <span class="p">&lt;</span>leader<span class="p">&gt;</span><span class="k">n</span> :NERDTreeToggle<span class="p">&lt;</span>CR<span class="p">&gt;</span>
+<a name="rest_code_cb9bbc892b884b5fa6dbc4616a11f0da-7"></a><span class="nb">nnoremap</span> <span class="p">&lt;</span>leader<span class="p">&gt;</span>N :NERDTreeFind<span class="p">&lt;</span>CR<span class="p">&gt;</span>
+</pre>
+<p>So, if I want to see the project structure I just press <tt class="kbd docutils literal">&lt;leader&gt; + n</tt>.
+If I want to see the files that are around the current file, I just press <tt class="kbd docutils literal">&lt;leader&gt; + N</tt>.</p>
+<p>If you like icons, you can get it in NerdTree with <a class="reference external" href="https://github.com/ryanoasis/vim-devicons">Vim devicons</a>.</p>
+<p>You can navigate on NerdTree like any other buffer.
+For more information, read the manual <tt class="docutils literal">:help NerdTree.txt</tt>.</p>
+</div>
+<div class="section" id="fzf-ripgrep">
+<h2>FZF &amp; Ripgrep</h2>
+<p><a class="reference external" href="https://github.com/junegunn/fzf">FZF</a> is an interactive fuzzy finder for the command line that can be used with any list.</p>
+<p><a class="reference external" href="https://github.com/BurntSushi/ripgrep">Ripgrep</a> is an alternative to <tt class="docutils literal">grep</tt>,
+it respects your <tt class="docutils literal">.gitignore</tt> file by default.
+And it's super fast.
+Ripgrep can be used together with FZF.</p>
+<a class="reference external image-reference" href="../../../images/file-navigation-neovim/fzf.gif"><img alt="NerdTree" class="align-center" src="../../../images/file-navigation-neovim/fzf.gif"></a>
+<div class="line-block">
+<div class="line"><br></div>
+</div>
+<p>You can install ripgrep with:</p>
+<pre class="code bash"><a name="rest_code_d83385eb913443e8aaed5ed73757fb76-1"></a><span class="c1"># Ubuntu</span>
+<a name="rest_code_d83385eb913443e8aaed5ed73757fb76-2"></a>sudo apt install ripgrep
+<a name="rest_code_d83385eb913443e8aaed5ed73757fb76-3"></a>
+<a name="rest_code_d83385eb913443e8aaed5ed73757fb76-4"></a><span class="c1"># Fedora</span>
+<a name="rest_code_d83385eb913443e8aaed5ed73757fb76-5"></a>sudo dnf install ripgrep
+</pre>
+<p>For other OSs, <a class="reference external" href="https://github.com/BurntSushi/ripgrep#installation">read this</a>.</p>
+<p>FZF has a <a class="reference external" href="https://github.com/junegunn/fzf.vim">plugin for Neovim</a>
+(it installs the binary package too),
+you can install it with:</p>
+<pre class="code vim"><a name="rest_code_3a062f33bf1545fbb918a1c046a619d1-1"></a>Plug <span class="s1">'junegunn/fzf'</span><span class="p">,</span> { <span class="s1">'dir'</span>: <span class="s1">'~/.fzf'</span><span class="p">,</span> <span class="s1">'do'</span>: <span class="s1">'./install --all'</span> }
+<a name="rest_code_3a062f33bf1545fbb918a1c046a619d1-2"></a>Plug <span class="s1">'junegunn/fzf.vim'</span>  <span class="c">" General fuzzy finder</span>
+</pre>
+<p>Now you can use the commands:</p>
+<ul class="simple">
+<li>
+<tt class="docutils literal">:Files</tt> to fuzzy search all files in the current directory.</li>
+<li>
+<tt class="docutils literal">:Rg</tt> to fuzzy search across all files using ripgrep.</li>
+<li>
+<tt class="docutils literal">:BLines</tt> to fuzzy search on all lines of the current buffer.</li>
+<li>
+<tt class="docutils literal">:Buffers</tt> to fuzzy search all open buffers.</li>
+</ul>
+<p>I have these settings for FZF:</p>
+<pre class="code vim"><a name="rest_code_04249d9067094c01aa9e2bd70ab3751e-1"></a><span class="c">" Prefix all commands with Fz,</span>
+<a name="rest_code_04249d9067094c01aa9e2bd70ab3751e-2"></a><span class="c">" so Files is Fzfiles, Rg is FzRg, etc.</span>
+<a name="rest_code_04249d9067094c01aa9e2bd70ab3751e-3"></a><span class="c">" It's useful to autocomplete all fzf commands using :Fz&lt;tab&gt;</span>
+<a name="rest_code_04249d9067094c01aa9e2bd70ab3751e-4"></a><span class="k">let</span> <span class="k">g</span>:fzf_command_prefix <span class="p">=</span> <span class="s1">'Fz'</span>
+<a name="rest_code_04249d9067094c01aa9e2bd70ab3751e-5"></a>
+<a name="rest_code_04249d9067094c01aa9e2bd70ab3751e-6"></a><span class="c">" Keeps the history of previous searches.</span>
+<a name="rest_code_04249d9067094c01aa9e2bd70ab3751e-7"></a><span class="c">" You can use ctrl-n or ctr-p to navigate the history on a FZF window</span>
+<a name="rest_code_04249d9067094c01aa9e2bd70ab3751e-8"></a><span class="k">let</span> <span class="k">g</span>:fzf_history_dir <span class="p">=</span> <span class="s1">'~/.local/share/fzf-history'</span>
+</pre>
+<p>For more commands and options, read the manual <tt class="docutils literal">:help <span class="pre">fzf-vim</span></tt>.</p>
+</div>
+<div class="section" id="vim-altr">
+<h2>Vim-altr</h2>
+<p>When you are editing a file, you may want to check its tests.
+Or if you are a C/Cpp programmer, you may find yourself changing between the source and header file.</p>
+<p><a class="reference external" href="https://github.com/kana/vim-altr">Vim-altr</a> can help you with these tasks.</p>
+<a class="reference external image-reference" href="../../../images/file-navigation-neovim/vim-altr.gif"><img alt="NerdTree" class="align-center" src="../../../images/file-navigation-neovim/vim-altr.gif"></a>
+<div class="line-block">
+<div class="line"><br></div>
+</div>
+<p>You can install it with:</p>
+<pre class="code vim"><a name="rest_code_74a0b3a5c10948fa8e879f352410502a-1"></a>Plug <span class="s1">'kana/vim-altr'</span>  <span class="c">" Altern between files</span>
+</pre>
+<p>I have these settings for vim-altr:</p>
+<pre class="code vim"><a name="rest_code_19839e01af1d4e01bf51c67951b30b68-1"></a>nmap <span class="p">&lt;</span>leader<span class="p">&gt;</span><span class="k">a</span> <span class="p">&lt;</span>Plug<span class="p">&gt;(</span>altr<span class="p">-</span>forward<span class="p">)</span>
+<a name="rest_code_19839e01af1d4e01bf51c67951b30b68-2"></a>nmap <span class="p">&lt;</span>leader<span class="p">&gt;</span>A <span class="p">&lt;</span>Plug<span class="p">&gt;(</span>altr<span class="p">-</span>back<span class="p">)</span>
+</pre>
+<p>To altern between files I just press <tt class="kbd docutils literal">&lt;leader&gt; + a</tt>.
+To see more options and how to define your own rules,
+red the manual <tt class="docutils literal">:help altr.txt</tt>.</p>
+</div>
+<div class="section" id="git">
+<h2>Git</h2>
+<p>FZF allows you to pass any list and filter those elements.
+When you find yourself in big projects with several branches is easy to get lost.</p>
+<a class="reference external image-reference" href="../../../images/file-navigation-neovim/gcheckout.gif"><img alt="NerdTree" class="align-center" src="../../../images/file-navigation-neovim/gcheckout.gif"></a>
+<div class="line-block">
+<div class="line"><br></div>
+</div>
+<p>I wrote <a class="reference external" href="https://github.com/stsewd/fzf-checkout.vim">this plugin</a> that list all your branches using <tt class="docutils literal">fzf.vim</tt>.</p>
+<pre class="code vim"><a name="rest_code_846ed12f9e544e33bf2643a3cdf0acee-1"></a>Plug <span class="s1">'stsewd/fzf-checkout.vim'</span>
+</pre>
+<p>Use <tt class="docutils literal">:GCheckout</tt> or <tt class="docutils literal">:GCheckoutTag</tt>.</p>
+</div>
+</div>
+    </div>
+    <aside class="postpromonav"><nav><ul class="pager hidden-print">
+<li class="previous">
+                <a href="../read-the-docs/" rel="prev" title="Read the docs">Publicación anterior</a>
+            </li>
+        </ul></nav></aside><section class="comments hidden-print"><h2>Comentarios</h2>
+        
+        
+        <div id="disqus_thread"></div>
+        <script>
+        var disqus_shortname ="stsewd",
+            disqus_url="https://stsewd.dev/es/posts/file-navigation-neovim/",
+        disqus_title="File navigation in Neovim and more",
+        disqus_identifier="cache/posts/file-navigation-neovim.html",
+        disqus_config = function () {
+            this.language = "es_ES";
+        };
+        (function() {
+            var dsq = document.createElement('script'); dsq.async = true;
+            dsq.src = 'https://' + disqus_shortname + '.disqus.com/embed.js';
+            (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+        })();
+    </script><noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a>
+</noscript>
+    <a href="https://disqus.com" class="dsq-brlink" rel="nofollow">Comments powered by <span class="logo-disqus">Disqus</span></a>
+
+
+        </section></article><script>var disqus_shortname="stsewd";(function(){var a=document.createElement("script");a.async=true;a.src="https://"+disqus_shortname+".disqus.com/count.js";(document.getElementsByTagName("head")[0]||document.getElementsByTagName("body")[0]).appendChild(a)}());</script>
+</div>
+  </div>
+</div>
+
+  <script src="https://craig.global.ssl.fastly.net/js/mousetrap/mousetrap.min.js"></script><script src="../../../assets/js/keybindings.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/anchor-js/4.1.0/anchor.min.js"></script><script>
+  anchors.add();
+</script><!--End of body content--><footer id="footer"><div class="container">
+    <div class="row text-center">
+        <div class="col">
+            <small>
+                Contents © 2020 <a href="mailto:stsewd@protonmail.com">Santos Gallegos</a> -
+                Powered by <a href="https://getnikola.com" rel="nofollow">Nikola</a> -
+                Hosted on <a href="https://pages.github.com/" rel="nofollow">GitHub Pages</a>
+                
+            </small>
+        </div>
+    </div>
+    <div class="row text-center">
+        <div class="col">
+            <small>
+                <a href="http://github.com/stsewd">
+                <i class="fa fa-github fa-2x"></i>
+                </a>
+                <a href="http://twitter.com/stsewd">
+                <i class="fa fa-twitter fa-2x"></i>
+                </a>
+            </small>
+        </div>
+    </div>
+</div>
+
+            
+        </footer>
+</div>
+</div>
+
+
+        <script src="../../../assets/js/all-nocdn.js"></script><script>
+    baguetteBox.run('div#content', {
+        ignoreClass: 'islink',
+        captions: function(element) {
+            return element.getElementsByTagName('img')[0].alt;
+    }});
+    </script>
+</body>
+</html>
