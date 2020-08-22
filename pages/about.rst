@@ -7,7 +7,7 @@ About me
 
 I'm Santos Gallegos, I live in Cuenca - Ecuador.
 I love web development, algorithms, Python enthusiastic, Neovim, and free and open source software.
-Always trying to learn something new,
+Always trying to learn new things,
 and `artist occasionally <https://stsewd.deviantart.com/gallery/>`__.
 
 I also help to organize events in my local `Python community <https://python.ec/>`__.
@@ -18,6 +18,11 @@ Languages
 - Español (native)
 - Inglés (fluent)
 - Python (fluent)
+- VimScript
+- C
+- JavaScript
+- Rust
+- Lua
 
 Find me on
 ----------
