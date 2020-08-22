@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<?xml-stylesheet type="text/xsl" href="../assets/xml/rss.xsl" media="all"?><rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Santos Gallegos (Posts about documentation)</title><link>https://stsewd.dev/</link><description></description><atom:link href="https://stsewd.dev/categories/cat_documentation.xml" rel="self" type="application/rss+xml"></atom:link><language>en</language><copyright>Contents © 2020 &lt;a href="mailto:stsewd@protonmail.com"&gt;Santos Gallegos&lt;/a&gt; </copyright><lastBuildDate>Sat, 22 Aug 2020 18:34:54 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Read the docs</title><link>https://stsewd.dev/posts/read-the-docs/</link><dc:creator>Santos Gallegos</dc:creator><description>&lt;div&gt;&lt;p&gt;When we write software,
+<?xml-stylesheet type="text/xsl" href="../assets/xml/rss.xsl" media="all"?><rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Santos Gallegos (Posts about documentation)</title><link>https://stsewd.dev/</link><description></description><atom:link href="https://stsewd.dev/categories/cat_documentation.xml" rel="self" type="application/rss+xml"></atom:link><language>en</language><copyright>Contents © 2020 &lt;a href="mailto:stsewd@protonmail.com"&gt;Santos Gallegos&lt;/a&gt; </copyright><lastBuildDate>Sat, 22 Aug 2020 18:43:47 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Read the docs</title><link>https://stsewd.dev/posts/read-the-docs/</link><dc:creator>Santos Gallegos</dc:creator><description>&lt;div&gt;&lt;p&gt;When we write software,
 people tell us to write docs for it.
 But when we use software,
 we forgot to read their docs very often.&lt;/p&gt;
@@ -21,20 +21,20 @@ probably one fo the most obvious options that we check before executing a comman
 and that most of the tools have.
 Here you can see the list of options and a short description of what that option does.&lt;/p&gt;
 &lt;p&gt;Its common usage is:&lt;/p&gt;
-&lt;pre class="code bash"&gt;&lt;a name="rest_code_d8291399c6044d6080b5c1d3ff73b456-1"&gt;&lt;/a&gt;&lt;span class="nb"&gt;command&lt;/span&gt; --help
+&lt;pre class="code bash"&gt;&lt;a name="rest_code_6101581b5cf44749b8f7c5702ba5ec25-1"&gt;&lt;/a&gt;&lt;span class="nb"&gt;command&lt;/span&gt; --help
 &lt;/pre&gt;&lt;p&gt;Example:&lt;/p&gt;
-&lt;pre class="code bash"&gt;&lt;a name="rest_code_a25c96d05a0346bcbacbf9630b7b9c0c-1"&gt;&lt;/a&gt;ls --help
+&lt;pre class="code bash"&gt;&lt;a name="rest_code_517d9fe6e9f94d75a8a019e80664a0fc-1"&gt;&lt;/a&gt;ls --help
 &lt;/pre&gt;&lt;p&gt;or&lt;/p&gt;
-&lt;pre class="code bash"&gt;&lt;a name="rest_code_15ba0085786f41c08ce573aefb56e67a-1"&gt;&lt;/a&gt;&lt;span class="nb"&gt;command&lt;/span&gt; subcommand --help
+&lt;pre class="code bash"&gt;&lt;a name="rest_code_a0b55bcc103947a99ee71798894d5b7d-1"&gt;&lt;/a&gt;&lt;span class="nb"&gt;command&lt;/span&gt; subcommand --help
 &lt;/pre&gt;&lt;p&gt;Example:&lt;/p&gt;
-&lt;pre class="code bash"&gt;&lt;a name="rest_code_245bea1b3f9f45ec9fad78d5a718a222-1"&gt;&lt;/a&gt;git add --help
+&lt;pre class="code bash"&gt;&lt;a name="rest_code_799f6cf622e04312ac04286b56737f65-1"&gt;&lt;/a&gt;git add --help
 &lt;/pre&gt;&lt;p&gt;Man pages,
 most of the Linux tools has a respective man page (apart from the &lt;tt class="docutils literal"&gt;&lt;span class="pre"&gt;--help&lt;/span&gt;&lt;/tt&gt; option).
 Man pages have a more detailed documentation than the &lt;tt class="docutils literal"&gt;&lt;span class="pre"&gt;--help&lt;/span&gt;&lt;/tt&gt; option from the command.&lt;/p&gt;
 &lt;p&gt;Most of the time you'll need to run:&lt;/p&gt;
-&lt;pre class="code bash"&gt;&lt;a name="rest_code_42c66f3713024681b68d314bbc379245-1"&gt;&lt;/a&gt;man &lt;span class="nb"&gt;command&lt;/span&gt;
+&lt;pre class="code bash"&gt;&lt;a name="rest_code_a2a1a498ff084c60957c2c18faa947aa-1"&gt;&lt;/a&gt;man &lt;span class="nb"&gt;command&lt;/span&gt;
 &lt;/pre&gt;&lt;p&gt;Example&lt;/p&gt;
-&lt;pre class="code bash"&gt;&lt;a name="rest_code_7e1fd63dbd5f4bf0bf0efc2805d40da0-1"&gt;&lt;/a&gt;man ls
+&lt;pre class="code bash"&gt;&lt;a name="rest_code_e1121c0b30364ce28188a839faadd651-1"&gt;&lt;/a&gt;man ls
 &lt;/pre&gt;&lt;p&gt;But not only commands have man pages,
 it also includes documentation of the format used in some configuration files,
 kernel functions, libraries (usually the ones used in C).&lt;/p&gt;
@@ -53,12 +53,12 @@ each section is represented by a number:&lt;/p&gt;
 9   Kernel routines [Non standard]
 &lt;/pre&gt;
 &lt;p&gt;Knowing the section you can get the man page with:&lt;/p&gt;
-&lt;pre class="code bash"&gt;&lt;a name="rest_code_ad873c5863dc4e65a6ad0c4c80209354-1"&gt;&lt;/a&gt;man &amp;lt;section&amp;gt; keyword
+&lt;pre class="code bash"&gt;&lt;a name="rest_code_75e09b0da4cd4298babc57e1e207bf2c-1"&gt;&lt;/a&gt;man &amp;lt;section&amp;gt; keyword
 &lt;/pre&gt;&lt;p&gt;Example:&lt;/p&gt;
-&lt;pre class="code bash"&gt;&lt;a name="rest_code_20e9621da49f44c38139e1872dfb4957-1"&gt;&lt;/a&gt;man &lt;span class="m"&gt;1&lt;/span&gt; ls
-&lt;a name="rest_code_20e9621da49f44c38139e1872dfb4957-2"&gt;&lt;/a&gt;man &lt;span class="m"&gt;2&lt;/span&gt; fork
-&lt;a name="rest_code_20e9621da49f44c38139e1872dfb4957-3"&gt;&lt;/a&gt;man &lt;span class="m"&gt;3&lt;/span&gt; &lt;span class="nb"&gt;printf&lt;/span&gt;
-&lt;a name="rest_code_20e9621da49f44c38139e1872dfb4957-4"&gt;&lt;/a&gt;man &lt;span class="m"&gt;5&lt;/span&gt; /etc/passwd
+&lt;pre class="code bash"&gt;&lt;a name="rest_code_dfc192698d54420b996b42cc81f196b7-1"&gt;&lt;/a&gt;man &lt;span class="m"&gt;1&lt;/span&gt; ls
+&lt;a name="rest_code_dfc192698d54420b996b42cc81f196b7-2"&gt;&lt;/a&gt;man &lt;span class="m"&gt;2&lt;/span&gt; fork
+&lt;a name="rest_code_dfc192698d54420b996b42cc81f196b7-3"&gt;&lt;/a&gt;man &lt;span class="m"&gt;3&lt;/span&gt; &lt;span class="nb"&gt;printf&lt;/span&gt;
+&lt;a name="rest_code_dfc192698d54420b996b42cc81f196b7-4"&gt;&lt;/a&gt;man &lt;span class="m"&gt;5&lt;/span&gt; /etc/passwd
 &lt;/pre&gt;&lt;p&gt;Some times the result from the &lt;tt class="docutils literal"&gt;&lt;span class="pre"&gt;--help&lt;/span&gt;&lt;/tt&gt; option or
 from the man pages can be very extensive,
 and difficult to extract what you need,
@@ -66,21 +66,21 @@ or missing clear examples.&lt;/p&gt;
 &lt;p&gt;Fortunately there is the &lt;a class="reference external" href="https://github.com/tldr-pages/tldr"&gt;tldr&lt;/a&gt; project,
 which has community-driven simplified man pages with common usage examples.&lt;/p&gt;
 &lt;p&gt;Did you always forget the correct options to untar a file?&lt;/p&gt;
-&lt;pre class="code bash"&gt;&lt;a name="rest_code_1860e1296f5f48c7aaa77ac850fc47c4-1"&gt;&lt;/a&gt;tldr tar
-&lt;a name="rest_code_1860e1296f5f48c7aaa77ac850fc47c4-2"&gt;&lt;/a&gt;
-&lt;a name="rest_code_1860e1296f5f48c7aaa77ac850fc47c4-3"&gt;&lt;/a&gt;  Archiving utility.
-&lt;a name="rest_code_1860e1296f5f48c7aaa77ac850fc47c4-4"&gt;&lt;/a&gt;  Often combined with a compression method, such as gzip or bzip.
-&lt;a name="rest_code_1860e1296f5f48c7aaa77ac850fc47c4-5"&gt;&lt;/a&gt;  More information: &amp;lt;https://www.gnu.org/software/tar&amp;gt;.
-&lt;a name="rest_code_1860e1296f5f48c7aaa77ac850fc47c4-6"&gt;&lt;/a&gt;
-&lt;a name="rest_code_1860e1296f5f48c7aaa77ac850fc47c4-7"&gt;&lt;/a&gt;- Create an archive from files:
-&lt;a name="rest_code_1860e1296f5f48c7aaa77ac850fc47c4-8"&gt;&lt;/a&gt;
-&lt;a name="rest_code_1860e1296f5f48c7aaa77ac850fc47c4-9"&gt;&lt;/a&gt;  tar -cf target.tar file1 file2 file3
-&lt;a name="rest_code_1860e1296f5f48c7aaa77ac850fc47c4-10"&gt;&lt;/a&gt;
-&lt;a name="rest_code_1860e1296f5f48c7aaa77ac850fc47c4-11"&gt;&lt;/a&gt;- Extract an archive in a target directory:
-&lt;a name="rest_code_1860e1296f5f48c7aaa77ac850fc47c4-12"&gt;&lt;/a&gt;
-&lt;a name="rest_code_1860e1296f5f48c7aaa77ac850fc47c4-13"&gt;&lt;/a&gt;  tar -xf source.tar -C directory
-&lt;a name="rest_code_1860e1296f5f48c7aaa77ac850fc47c4-14"&gt;&lt;/a&gt;
-&lt;a name="rest_code_1860e1296f5f48c7aaa77ac850fc47c4-15"&gt;&lt;/a&gt;...
+&lt;pre class="code bash"&gt;&lt;a name="rest_code_7caf17c1b2614e7484abc6172b54eb3e-1"&gt;&lt;/a&gt;tldr tar
+&lt;a name="rest_code_7caf17c1b2614e7484abc6172b54eb3e-2"&gt;&lt;/a&gt;
+&lt;a name="rest_code_7caf17c1b2614e7484abc6172b54eb3e-3"&gt;&lt;/a&gt;  Archiving utility.
+&lt;a name="rest_code_7caf17c1b2614e7484abc6172b54eb3e-4"&gt;&lt;/a&gt;  Often combined with a compression method, such as gzip or bzip.
+&lt;a name="rest_code_7caf17c1b2614e7484abc6172b54eb3e-5"&gt;&lt;/a&gt;  More information: &amp;lt;https://www.gnu.org/software/tar&amp;gt;.
+&lt;a name="rest_code_7caf17c1b2614e7484abc6172b54eb3e-6"&gt;&lt;/a&gt;
+&lt;a name="rest_code_7caf17c1b2614e7484abc6172b54eb3e-7"&gt;&lt;/a&gt;- Create an archive from files:
+&lt;a name="rest_code_7caf17c1b2614e7484abc6172b54eb3e-8"&gt;&lt;/a&gt;
+&lt;a name="rest_code_7caf17c1b2614e7484abc6172b54eb3e-9"&gt;&lt;/a&gt;  tar -cf target.tar file1 file2 file3
+&lt;a name="rest_code_7caf17c1b2614e7484abc6172b54eb3e-10"&gt;&lt;/a&gt;
+&lt;a name="rest_code_7caf17c1b2614e7484abc6172b54eb3e-11"&gt;&lt;/a&gt;- Extract an archive in a target directory:
+&lt;a name="rest_code_7caf17c1b2614e7484abc6172b54eb3e-12"&gt;&lt;/a&gt;
+&lt;a name="rest_code_7caf17c1b2614e7484abc6172b54eb3e-13"&gt;&lt;/a&gt;  tar -xf source.tar -C directory
+&lt;a name="rest_code_7caf17c1b2614e7484abc6172b54eb3e-14"&gt;&lt;/a&gt;
+&lt;a name="rest_code_7caf17c1b2614e7484abc6172b54eb3e-15"&gt;&lt;/a&gt;...
 &lt;/pre&gt;&lt;p&gt;If you use Python,
 you can install it using &lt;tt class="docutils literal"&gt;pip install tldr&lt;/tt&gt;.&lt;/p&gt;
 &lt;/div&gt;
@@ -97,12 +97,12 @@ which runs a program to lookup the keyword under the cursor.
 This program can be setup for different file types,
 see &lt;tt class="docutils literal"&gt;:help K&lt;/tt&gt;.&lt;/p&gt;
 &lt;p&gt;For instance, try this C code and press &lt;tt class="docutils literal"&gt;K&lt;/tt&gt; under the &lt;tt class="docutils literal"&gt;printf&lt;/tt&gt; function.&lt;/p&gt;
-&lt;pre class="code c"&gt;&lt;a name="rest_code_4efe9aabd99b417084fdd68a32cae5d7-1"&gt;&lt;/a&gt;&lt;span class="cp"&gt;#import &amp;lt;stdio.h&amp;gt;&lt;/span&gt;
-&lt;a name="rest_code_4efe9aabd99b417084fdd68a32cae5d7-2"&gt;&lt;/a&gt;
-&lt;a name="rest_code_4efe9aabd99b417084fdd68a32cae5d7-3"&gt;&lt;/a&gt;&lt;span class="kt"&gt;int&lt;/span&gt; &lt;span class="nf"&gt;main&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt;
-&lt;a name="rest_code_4efe9aabd99b417084fdd68a32cae5d7-4"&gt;&lt;/a&gt;    &lt;span class="n"&gt;printf&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s"&gt;"Hello, world&lt;/span&gt;&lt;span class="se"&gt;\n&lt;/span&gt;&lt;span class="s"&gt;"&lt;/span&gt;&lt;span class="p"&gt;);&lt;/span&gt;
-&lt;a name="rest_code_4efe9aabd99b417084fdd68a32cae5d7-5"&gt;&lt;/a&gt;    &lt;span class="k"&gt;return&lt;/span&gt; &lt;span class="mi"&gt;0&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
-&lt;a name="rest_code_4efe9aabd99b417084fdd68a32cae5d7-6"&gt;&lt;/a&gt;&lt;span class="p"&gt;}&lt;/span&gt;
+&lt;pre class="code c"&gt;&lt;a name="rest_code_7d9af214747349678619a930843bb911-1"&gt;&lt;/a&gt;&lt;span class="cp"&gt;#import &amp;lt;stdio.h&amp;gt;&lt;/span&gt;
+&lt;a name="rest_code_7d9af214747349678619a930843bb911-2"&gt;&lt;/a&gt;
+&lt;a name="rest_code_7d9af214747349678619a930843bb911-3"&gt;&lt;/a&gt;&lt;span class="kt"&gt;int&lt;/span&gt; &lt;span class="nf"&gt;main&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt;
+&lt;a name="rest_code_7d9af214747349678619a930843bb911-4"&gt;&lt;/a&gt;    &lt;span class="n"&gt;printf&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s"&gt;"Hello, world&lt;/span&gt;&lt;span class="se"&gt;\n&lt;/span&gt;&lt;span class="s"&gt;"&lt;/span&gt;&lt;span class="p"&gt;);&lt;/span&gt;
+&lt;a name="rest_code_7d9af214747349678619a930843bb911-5"&gt;&lt;/a&gt;    &lt;span class="k"&gt;return&lt;/span&gt; &lt;span class="mi"&gt;0&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+&lt;a name="rest_code_7d9af214747349678619a930843bb911-6"&gt;&lt;/a&gt;&lt;span class="p"&gt;}&lt;/span&gt;
 &lt;/pre&gt;&lt;p&gt;For a general and &lt;em&gt;nicer&lt;/em&gt; solution I use the &lt;a class="reference external" href="https://github.com/neoclide/coc.nvim"&gt;coc plugin&lt;/a&gt;.&lt;/p&gt;
 &lt;/div&gt;
 &lt;div class="section" id="online-documentation"&gt;
@@ -132,9 +132,9 @@ so searching for docs from methods and functions is my daily task.&lt;/p&gt;
 &lt;h3&gt;The help function&lt;/h3&gt;
 &lt;p&gt;Python has a built in function called &lt;tt class="docutils literal"&gt;help&lt;/tt&gt;,
 you can use it inside the interpreter like this:&lt;/p&gt;
-&lt;pre class="code python"&gt;&lt;a name="rest_code_39533f81c0244f58be5849f0fc7854d9-1"&gt;&lt;/a&gt;&lt;span class="o"&gt;&amp;gt;&amp;gt;&amp;gt;&lt;/span&gt; &lt;span class="n"&gt;help&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nb"&gt;open&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
-&lt;a name="rest_code_39533f81c0244f58be5849f0fc7854d9-2"&gt;&lt;/a&gt;&lt;span class="o"&gt;&amp;gt;&amp;gt;&amp;gt;&lt;/span&gt; &lt;span class="n"&gt;my_string&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="s1"&gt;'hello world'&lt;/span&gt;
-&lt;a name="rest_code_39533f81c0244f58be5849f0fc7854d9-3"&gt;&lt;/a&gt;&lt;span class="o"&gt;&amp;gt;&amp;gt;&amp;gt;&lt;/span&gt; &lt;span class="n"&gt;help&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;my_string&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;upper&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;pre class="code python"&gt;&lt;a name="rest_code_48f365e6931843d5b4943450bda4a0e4-1"&gt;&lt;/a&gt;&lt;span class="o"&gt;&amp;gt;&amp;gt;&amp;gt;&lt;/span&gt; &lt;span class="n"&gt;help&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nb"&gt;open&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;a name="rest_code_48f365e6931843d5b4943450bda4a0e4-2"&gt;&lt;/a&gt;&lt;span class="o"&gt;&amp;gt;&amp;gt;&amp;gt;&lt;/span&gt; &lt;span class="n"&gt;my_string&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="s1"&gt;'hello world'&lt;/span&gt;
+&lt;a name="rest_code_48f365e6931843d5b4943450bda4a0e4-3"&gt;&lt;/a&gt;&lt;span class="o"&gt;&amp;gt;&amp;gt;&amp;gt;&lt;/span&gt; &lt;span class="n"&gt;help&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;my_string&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;upper&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
 &lt;/pre&gt;&lt;p&gt;The argument can be any function, method, object or module.&lt;/p&gt;
 &lt;/div&gt;
 &lt;div class="section" id="pydoc"&gt;
@@ -142,7 +142,7 @@ you can use it inside the interpreter like this:&lt;/p&gt;
 &lt;p&gt;&lt;a class="reference external" href="https://docs.python.org/3/library/pydoc.html"&gt;pydoc&lt;/a&gt; is a command line tool shipped with Python.
 It's what the &lt;tt class="docutils literal"&gt;help&lt;/tt&gt; function uses under it.
 You can use it from your terminal like this:&lt;/p&gt;
-&lt;pre class="code bash"&gt;&lt;a name="rest_code_273ad888a4614f998fd0bc224f93ff8f-1"&gt;&lt;/a&gt;pydoc open
+&lt;pre class="code bash"&gt;&lt;a name="rest_code_176913396b0f46b683a96d51e7fee31a-1"&gt;&lt;/a&gt;pydoc open
 &lt;/pre&gt;&lt;/div&gt;
 &lt;div class="section" id="the-official-online-docs"&gt;
 &lt;h3&gt;The official online docs&lt;/h3&gt;
