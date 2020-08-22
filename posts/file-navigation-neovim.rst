@@ -141,7 +141,7 @@ You can install it with:
 I have these settings for vim-altr:
 
 .. code-block:: vim
-   
+
    nmap <leader>a <Plug>(altr-forward)
    nmap <leader>A <Plug>(altr-back)
 
