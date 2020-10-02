@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html prefix="og: http://ogp.me/ns# article: http://ogp.me/ns/article#
+" lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="description" content="Solutions to some problems from the Devsu codejam 2019 contest and my experience.">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Devsu Code Jam 2019 - solutions and my experience | Santos Gallegos</title>
+<link href="../../assets/css/all-nocdn.css" rel="stylesheet" type="text/css">
+<meta name="theme-color" content="#222222">
+<meta name="generator" content="Nikola (getnikola.com)">
+<link rel="alternate" type="application/rss+xml" title="RSS (en)" href="../../rss.xml">
+<link rel="alternate" type="application/rss+xml" title="RSS (es)" href="../../es/rss.xml">
+<link rel="canonical" href="https://stsewd.dev/posts/devsucodejam-2019/">
+<!--[if lt IE 9]><script src="../../assets/js/html5.js"></script><![endif]--><!-- Custom css --><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="stylesheet" href="../../assets/css/custom.css" type="text/css" media="all">
+<!-- Global site tag (gtag.js) - Google Analytics --><script async src="https://www.googletagmanager.com/gtag/js?id=UA-100772829-1"></script><script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-100772829-1');
+</script><meta name="author" content="Santos Gallegos">
+<link rel="prev" href="../file-navigation-neovim/" title="File navigation in Neovim and more" type="text/html">
+<meta property="og:site_name" content="Santos Gallegos">
+<meta property="og:title" content="Devsu Code Jam 2019 - solutions and my experience">
+<meta property="og:url" content="https://stsewd.dev/posts/devsucodejam-2019/">
+<meta property="og:description" content="Solutions to some problems from the Devsu codejam 2019 contest and my experience.">
+<meta property="og:type" content="article">
+<meta property="article:published_time" content="2020-10-02T00:00:00-05:00">
+<link rel="alternate" hreflang="es" href="../../es/posts/devsucodejam-2019/">
+</head>
+<body>
+<a href="#content" class="sr-only sr-only-focusable">Skip to main content</a>
+
+<!-- Menubar -->
+
+<nav class="navbar navbar-expand-md static-top mb-4
+navbar-dark bg-dark
+"><div class="container">
+<!-- This keeps the margins nice -->
+        <a class="navbar-brand" href="https://stsewd.dev/">
+
+            <span id="blog-title">Santos Gallegos</span>
+        </a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#bs-navbar" aria-controls="bs-navbar" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="bs-navbar">
+            <ul class="navbar-nav mr-auto">
+<li class="nav-item">
+<a href="../../archive.html" class="nav-link">Posts</a>
+                </li>
+<li class="nav-item">
+<a href="../../projects/" class="nav-link">Projects</a>
+                </li>
+<li class="nav-item">
+<a href="../../about/" class="nav-link">About</a>
+
+                
+            </li>
+</ul>
+<ul class="navbar-nav navbar-right">
+<li>
+            </li>
+<li class="nav-item"><a href="https://stsewd.dev/es/" rel="alternate" hreflang="es" class="nav-link">Español</a></li>
+
+                
+                
+            </ul>
+</div>
+<!-- /.navbar-collapse -->
+    </div>
+<!-- /.container -->
+</nav><!-- End of Menubar --><div class="container" id="content" role="main">
+    <div class="body-content">
+        <!--Body content-->
+        
+        
+  
+
+<div class="container mb-3">
+  <div class="row justify-content-sm-center">
+    <div class="col col-sm-8">
+        
+<article class="post-text h-entry hentry postpage" itemscope="itemscope" itemtype="http://schema.org/Article"><header><h1 class="p-name entry-title" itemprop="headline name"><a href="." class="u-url">Devsu Code Jam 2019 - solutions and my experience</a></h1>
+
+        <div class="metadata">
+            <p class="byline author vcard"><span class="byline-name fn" itemprop="author">
+                    Santos Gallegos
+            </span></p>
+            <p class="dateline">
+            <a href="." rel="bookmark">
+            <time class="published dt-published" datetime="2020-10-02T00:00:00-05:00" itemprop="datePublished" title="2020-10-02">2020-10-02</time></a>
+            </p>
+                <p class="commentline">
+        
+    <a href="#disqus_thread" data-disqus-identifier="cache/posts/devsucodejam-2019.html">Comments</a>
+
+
+            
+
+        </p>
+</div>
+        
+
+    </header><div class="e-content entry-content" itemprop="articleBody text">
+    <div>
+<p>Last year I participated in the <a class="reference external" href="https://www.devsucodejam.com/">Devsu Codejam 2019</a> contest,
+which is about solving programming problems.
+The first place? A car 🚗.</p>
+<p>The contest was for all developers from Ecuador,
+this is the first time I have heard about this type of contests being organized in Ecuador,
+so it caught my attention (well, the car a little too).</p>
+<div class="figure align-center">
+<img alt="/images/devsucodejam-2019/web.png" src="../../images/devsucodejam-2019/web.png"><p class="caption">Devsu Codejam front page</p>
+</div>
+<p>First, a little of background about myself.
+I have participated in some contests about problem solving in the past:
+three times in the <a class="reference external" href="https://ieeextreme.org/">IEEEXtreme programming</a> (before the university kicked me out),
+and a couple on <a class="reference external" href="https://www.hackerrank.com/stsewd">Hackerrank</a>, so I'm kind of familiar with them.
+I stopped participating in these kind of contests for a while,
+so this was a good opportunity to get back into the game.</p>
+<p>The contest was split into two categories (students and professionals), and it had two rounds.
+The first round was online (November 23th), and was around ~4 hours with 16 problems.
+The first 50 of each category from the first round could go the second round held in Quito,
+the capital of Ecuador (November 30th), this phase was around 3 hours with 10 problems.
+.
+I participated in the professionals category.
+And got the 10th place in the first round, and the 7th place in the final round.
+What? Did you think I won the car? Sorry friend, I didn't mean to disappoint you.</p>
+<p>Anyway, I arrived at Quito the day before the contest,
+met some friends and got drunk, and didn't get much sleep.
+And the day of the contest my allergies didn't play nice...
+so I had a running nose during the whole contest.
+And yes, those are silly excuses, but a 7th place isn't bad 😃
+(and they gave some prizes to the first 10 of each category).</p>
+<p>That was my experience, now let's get back to the problems.
+I uploaded my solutions from the first round here
+<a class="reference external" href="https://github.com/stsewd/devsucodejam-2019">https://github.com/stsewd/devsucodejam-2019</a> and from the final round here <a class="reference external" href="https://github.com/stsewd/devsucodejam-2019-final">https://github.com/stsewd/devsucodejam-2019-final</a>.</p>
+<p>I don't have access to the platform with all the test cases,
+so I can't guarantee all the solutions are correct,
+but I believe most of them are :).</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">First I was planning in writting the explanation for all solutions,
+but then I realized the posts would be too long to read <em>and write</em>...
+So I'm just linking to my solutions instead,
+if you have any questions about one of them let me know,
+maybe I'll do another post explaining those solutions.</p>
+</div>
+<p>Some final words, I encourage you keep solving problems in platforms like <a class="reference external" href="https://www.hackerrank.com/">hackerrank</a> and <a class="reference external" href="https://hackerearth.com/">hackerearth</a>.
+You'll realize how using a different algorithm or data structure will make your programs faster,
+how some small optimizations can make a big difference when handling large amounts of data,
+start thinking outside the box when solving real-life problems,
+and see math as your best friend when solving problems.</p>
+<p>And there is another plus,
+when solving problems, at the same time you'll be building your portfolio,
+and showing your <em>real skills</em> to the world.</p>
+<p><em>If you want to master a programming language, solving problems is a fun way to do it!</em></p>
+</div>
+    </div>
+    <aside class="postpromonav"><nav><ul class="pager hidden-print">
+<li class="previous">
+                <a href="../file-navigation-neovim/" rel="prev" title="File navigation in Neovim and more">Previous post</a>
+            </li>
+        </ul></nav></aside><section class="comments hidden-print"><h2>Comments</h2>
+        
+        
+        <div id="disqus_thread"></div>
+        <script>
+        var disqus_shortname ="stsewd",
+            disqus_url="https://stsewd.dev/posts/devsucodejam-2019/",
+        disqus_title="Devsu Code Jam 2019 - solutions and my experience",
+        disqus_identifier="cache/posts/devsucodejam-2019.html",
+        disqus_config = function () {
+            this.language = "en";
+        };
+        (function() {
+            var dsq = document.createElement('script'); dsq.async = true;
+            dsq.src = 'https://' + disqus_shortname + '.disqus.com/embed.js';
+            (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+        })();
+    </script><noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a>
+</noscript>
+    <a href="https://disqus.com" class="dsq-brlink" rel="nofollow">Comments powered by <span class="logo-disqus">Disqus</span></a>
+
+
+        </section></article><script>var disqus_shortname="stsewd";(function(){var a=document.createElement("script");a.async=true;a.src="https://"+disqus_shortname+".disqus.com/count.js";(document.getElementsByTagName("head")[0]||document.getElementsByTagName("body")[0]).appendChild(a)}());</script>
+</div>
+  </div>
+</div>
+
+  <script src="https://craig.global.ssl.fastly.net/js/mousetrap/mousetrap.min.js"></script><script src="../../assets/js/keybindings.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/anchor-js/4.1.0/anchor.min.js"></script><script>
+  anchors.add();
+</script><!--End of body content--><footer id="footer"><div class="container">
+    <div class="row text-center">
+        <div class="col">
+            <small>
+                Contents © 2020 <a href="mailto:stsewd@protonmail.com">Santos Gallegos</a> -
+                Powered by <a href="https://getnikola.com" rel="nofollow">Nikola</a> -
+                Hosted on <a href="https://pages.github.com/" rel="nofollow">GitHub Pages</a>
+                
+            </small>
+        </div>
+    </div>
+    <div class="row text-center">
+        <div class="col">
+            <small>
+                <a href="http://github.com/stsewd">
+                <i class="fa fa-github fa-2x"></i>
+                </a>
+                <a href="http://twitter.com/stsewd">
+                <i class="fa fa-twitter fa-2x"></i>
+                </a>
+            </small>
+        </div>
+    </div>
+</div>
+
+            
+        </footer>
+</div>
+</div>
+
+
+        <script src="../../assets/js/all-nocdn.js"></script><script>
+    baguetteBox.run('div#content', {
+        ignoreClass: 'islink',
+        captions: function(element) {
+            return element.getElementsByTagName('img')[0].alt;
+    }});
+    </script>
+</body>
+</html>
