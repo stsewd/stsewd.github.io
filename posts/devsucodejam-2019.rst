@@ -31,7 +31,7 @@ The contest was split into two categories (students and professionals), and it h
 The first round was online (November 23th), and was around ~4 hours with 16 problems.
 The first 50 of each category from the first round could go the second round held in Quito,
 the capital of Ecuador (November 30th), this phase was around 3 hours with 10 problems.
-.
+
 I participated in the professionals category.
 And got the 10th place in the first round, and the 7th place in the final round.
 What? Did you think I won the car? Sorry friend, I didn't mean to disappoint you.
