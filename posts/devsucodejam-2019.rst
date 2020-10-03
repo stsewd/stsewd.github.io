@@ -59,7 +59,7 @@ but I believe most of them are :).
    if you have any questions about one of them let me know,
    maybe I'll do another post explaining those solutions.
 
-Some final words, I encourage you keep solving problems in platforms like hackerrank_ and hackerearth_.
+Some final words, I encourage **you** to keep solving problems in platforms like hackerrank_ and hackerearth_.
 You'll realize how using a different algorithm or data structure will make your programs faster,
 how some small optimizations can make a big difference when handling large amounts of data,
 start thinking outside the box when solving real-life problems,
