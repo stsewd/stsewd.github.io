@@ -1,6 +1,6 @@
 # Santos Gallegos
 
-![me](/images/me.jpg)
+<img src="../images/me.jpg" height="250px" />
 
 ## Experiencia Laboral
 
