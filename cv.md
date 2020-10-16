@@ -4,15 +4,15 @@
 
 ## Experiencia Laboral
 
-- Read the Docs, Inc (2018 - presente): Software developer
-- Auditoría de seguridad informática en Cooperativa CB (2019)
+- Read the Docs, Inc: Software developer (2018 - presente)
+- Auditoría de seguridad informática en Cooperativa CB (2020)
 
 ## Competencias
 
 - Devsu Code Jam (2019): Séptimo lugar categoría de profesionales
 - IEEEXtreme Programming 11.0 (2018): Primer lugar a nivel nacional con el equipo trivialbox
 - IEEEXtreme Programming 10.0 (2017): Primer lugar a nivel nacional con el equipo trivialbox
-- Rally Latinoamericano de Innovación 2016:
+- Rally Latinoamericano de Innovación (2016):
   Primer lugar a nivel local y nacional en la categoría de innovación con el equipo Atuk Maskhay
 - Hackaton UPS (2016): Segundo lugar con el equipo trivialbox
 - IEEEXtreme Programming 9.0 (2016): Tercer lugar a nivel nacional con el equipo trivialbox
