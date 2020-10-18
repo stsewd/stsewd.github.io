@@ -15,7 +15,7 @@
 - Rally Latinoamericano de Innovación (2016):
   Primer lugar a nivel local y nacional en la categoría de innovación con el equipo Atuk Maskhay
 - Hackaton UPS (2016): Segundo lugar con el equipo trivialbox
-- IEEEXtreme Programming 9.0 (2015): Tercer lugar a nivel nacional con el equipo trivialbox
+- IEEEXtreme Programming 9.0 (2015): Tercer lugar a nivel nacional con el equipo EnigmaT
 
 ## Habilidades y conocimientos
 
