@@ -1,3 +1,3 @@
 # Personal blog
 
-[![Build Status](https://travis-ci.org/stsewd/stsewd.github.io.svg?branch=master)](https://travis-ci.org/stsewd/stsewd.github.io)
+[![CI](https://github.com/stsewd/stsewd.github.io/workflows/CI/badge.svg)](https://github.com/stsewd/stsewd.github.io/actions?query=workflow%3ACI+branch%3Amaster)
