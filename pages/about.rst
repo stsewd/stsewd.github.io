@@ -33,3 +33,8 @@ Find me on
 - `Twitter <http://twitter.com/stsewd>`__
 - `LinkedIn <https://www.linkedin.com/in/stsewd/>`__
 - Or write me at stsewd@protonmail.com
+
+CV
+--
+
+Old fashioned and looking for a CV? `Here you go </cv.pdf>`__.
