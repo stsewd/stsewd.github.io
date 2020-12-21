@@ -1,0 +1,28 @@
+name: CI
+on: push
+
+jobs:
+  build:
+    runs-on: ubuntu-18.04
+    env:
+      NIKOLA_DEPLOY: stsewd.dev
+    steps:
+      - uses: actions/checkout@v2
+      - name: Setup Python
+        uses: actions/setup-python@v2
+        with:
+          python-version: '3.9'
+      - name: Install requirements
+        run: |
+          python3 -m pip install --upgrade pip
+          python3 -m pip install -r requirements.txt
+      - name: Linter
+        run: rstcheck -r .
+      - name: Build
+        run: nikola build --strict
+      - name: Deploy
+        if: ${{ github.ref == "refs/heads/master" }}
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./output
