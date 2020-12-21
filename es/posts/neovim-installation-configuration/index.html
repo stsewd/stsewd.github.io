@@ -179,33 +179,33 @@ para programar en cualquier lenguaje, o editar texto en general.</p>
 puedes seguir el proceso de instalación en la
 <a class="reference external" href="https://github.com/neovim/neovim/wiki/Installing-Neovim">documentación oficial de Neovim</a>.</p>
 <p>Si no deseas instalar nada en tu sistema, puedes hacer uso de la <tt class="docutils literal">Appimage</tt> de Neovim.</p>
-<pre class="code sh"><a name="rest_code_9074225beb084465889b05c4e5c2676d-1"></a>curl -LO https://github.com/neovim/neovim/releases/download/nightly/nvim.appimage
-<a name="rest_code_9074225beb084465889b05c4e5c2676d-2"></a>chmod u+x nvim.appimage
+<pre class="code sh"><a name="rest_code_de27f37254064e2299ab09de1c7f65fe-1"></a>curl -LO https://github.com/neovim/neovim/releases/download/nightly/nvim.appimage
+<a name="rest_code_de27f37254064e2299ab09de1c7f65fe-2"></a>chmod u+x nvim.appimage
 </pre>
 <div class="section" id="ubuntu">
 <h3>Ubuntu</h3>
 <p>Para tener la última versión hay que agregar la
 <a class="reference external" href="https://launchpad.net/%7Eneovim-ppa/+archive/ubuntu/unstable">PPA de Neovim</a>.
 Ejecuta el siguiente comando en la terminal.</p>
-<pre class="code sh"><a name="rest_code_50e8d0a5b8ac482183b609319db4317c-1"></a>sudo add-apt-repository ppa:neovim-ppa/unstable
+<pre class="code sh"><a name="rest_code_5e8a3f8705dd4c898a4b5f17b0fea531-1"></a>sudo add-apt-repository ppa:neovim-ppa/unstable
 </pre>
 <p>Luego, hay que actualizar los paquetes e instalar Neovim.</p>
-<pre class="code sh"><a name="rest_code_ace5e355823048f2a6cb3b535c38f450-1"></a>sudo apt-get update
-<a name="rest_code_ace5e355823048f2a6cb3b535c38f450-2"></a>sudo apt-get install neovim
+<pre class="code sh"><a name="rest_code_845cb59d2a10458bb54a16504777ab2f-1"></a>sudo apt-get update
+<a name="rest_code_845cb59d2a10458bb54a16504777ab2f-2"></a>sudo apt-get install neovim
 </pre>
 </div>
 <div class="section" id="fedora">
 <h3>Fedora</h3>
 <p>Para instalar la última versión de Neovim en Fedora,
 ejecuta el siguiente comando.</p>
-<pre class="code sh"><a name="rest_code_f10c6fb4856a409ab293c5eb1ee3b4ea-1"></a>sudo dnf install neovim
+<pre class="code sh"><a name="rest_code_288b14b579ee4d438de687eabf41b149-1"></a>sudo dnf install neovim
 </pre>
 </div>
 <div class="section" id="comprobando-la-instalacion">
 <h3>Comprobando la instalación</h3>
 <p>Para comprobar que todo ha salido bien,
 en la terminal ejecuta el comando <tt class="docutils literal">nvim</tt>.</p>
-<pre class="code sh"><a name="rest_code_deba0b89d4cb4c9f875ffeb9c3046af4-1"></a>nvim
+<pre class="code sh"><a name="rest_code_07bd171f4caa43eeade4b7abe6f36dc6-1"></a>nvim
 </pre>
 <div class="admonition note">
 <p class="first admonition-title">Nota</p>
@@ -258,14 +258,14 @@ hay que instalar un <em>proveedor</em>.</p>
 <p>Existen dos alternativas <tt class="docutils literal">xclip</tt> y <tt class="docutils literal">xsel</tt>, ambas muy buenas.
 A continuación tienes los comandos para instalar alguna de ellas.</p>
 <p>Ubuntu:</p>
-<pre class="code sh"><a name="rest_code_5d36375e45bc404fa5ba8010987cd250-1"></a>sudo apt install xclip
+<pre class="code sh"><a name="rest_code_677c9e4c7d1240b8901259a2111513cb-1"></a>sudo apt install xclip
 </pre>
-<pre class="code sh"><a name="rest_code_b33ff87d856248fe869051b214edc03e-1"></a>sudo apt install xsel
+<pre class="code sh"><a name="rest_code_8f3b07d5129e40cbb7c59e2f4c2751c6-1"></a>sudo apt install xsel
 </pre>
 <p>Fedora:</p>
-<pre class="code sh"><a name="rest_code_5c5946b7b5bc42b88c5e67432af7c8f1-1"></a>sudo dnf install xclip
+<pre class="code sh"><a name="rest_code_5c03c6ee0fa348e49fc8efc84b7ef5c5-1"></a>sudo dnf install xclip
 </pre>
-<pre class="code sh"><a name="rest_code_3983d111ce914240b65aa43ea9e16d70-1"></a>sudo dnf install xsel
+<pre class="code sh"><a name="rest_code_79a729ebecd840a7bf4b63523b638aff-1"></a>sudo dnf install xsel
 </pre>
 </div>
 <div class="section" id="interfaces-de-python">
@@ -280,25 +280,25 @@ porque todos los plugins que se instalarán usan Python 3.</p>
 pero antes hay que instalar <tt class="docutils literal">pip</tt>
 (una herramienta para descargar y administrar librerías de Python).
 Para ello ejecuta los siguientes comandos:</p>
-<pre class="code sh"><a name="rest_code_3aff6238996c4b72964f14ec725b85f0-1"></a>sudo apt install python3-pip
+<pre class="code sh"><a name="rest_code_88b2bb0569714232b809de9062a2365b-1"></a>sudo apt install python3-pip
 </pre>
-<pre class="code sh"><a name="rest_code_7bf23fa0a0554a738f8053c025b79dbd-1"></a>sudo apt install python-pip
+<pre class="code sh"><a name="rest_code_0cbc5df5c40a4dd7b602a73dffa645cf-1"></a>sudo apt install python-pip
 </pre>
 <p>Ahora ya puedes instalar las interfaces de Neovim.</p>
 <div class="admonition warning">
 <p class="first admonition-title">Advertencia</p>
 <p class="last">Puede que necesites ejecutar estos comandos anteponiendo <strong>sudo</strong>.</p>
 </div>
-<pre class="code sh"><a name="rest_code_4e5ca38c4bbb452f97b1b2e0797d13e8-1"></a>python3 -m pip install neovim
+<pre class="code sh"><a name="rest_code_99cea8a012a14a7198f7c328c8a33194-1"></a>python3 -m pip install neovim
 </pre>
-<pre class="code sh"><a name="rest_code_2d13cc042f7c4c9ab9168fd2687e399f-1"></a>python -m pip install neovim
+<pre class="code sh"><a name="rest_code_ffd7ec53286e49c5ab94228eeeb79939-1"></a>python -m pip install neovim
 </pre>
 </div>
 <div class="section" id="id9">
 <h4>Fedora</h4>
 <p>Las versiones actuales de Fedora sólo incluyen Python 3,
 así que si necesitas instalar Python 2, puedes hacerlo con:</p>
-<pre class="code sh"><a name="rest_code_f3c2eeaef22445b98468998435bfc88a-1"></a>sudo dnf install python
+<pre class="code sh"><a name="rest_code_50cbf8049c7a468c93c1b0738701c518-1"></a>sudo dnf install python
 </pre>
 <p>Ahora ya puedes instalar las interfaces de Neovim,
 aunque puede que Fedora ya lo haya hecho cuando instalaste Neovim
@@ -307,9 +307,9 @@ aunque puede que Fedora ya lo haya hecho cuando instalaste Neovim
 <p class="first admonition-title">Advertencia</p>
 <p class="last">Puede que necesites ejecutar estos comandos anteponiendo <strong>sudo</strong>.</p>
 </div>
-<pre class="code sh"><a name="rest_code_4446d536944e4d71a4b3189c4a8a7594-1"></a>python3 -m pip install neovim
+<pre class="code sh"><a name="rest_code_289a0e218ac34020973b3f5b12005be9-1"></a>python3 -m pip install neovim
 </pre>
-<pre class="code sh"><a name="rest_code_cde8789617ca42e2945ec1ac4a55d1bc-1"></a>python -m pip install neovim
+<pre class="code sh"><a name="rest_code_9137804a60a14463ad1e258b730f1926-1"></a>python -m pip install neovim
 </pre>
 </div>
 </div>
@@ -321,9 +321,9 @@ así estarás al día con lo último que Neovim ofrece a través de su API.</p>
 <p class="first admonition-title">Advertencia</p>
 <p class="last">Puede que necesites ejecutar estos comandos anteponiendo <strong>sudo</strong>.</p>
 </div>
-<pre class="code sh"><a name="rest_code_586308688b884a67b246e1b82074b6f5-1"></a>python3 -m pip install --upgrade neovim
+<pre class="code sh"><a name="rest_code_d0da582a4ee94c7bb0b7b6e8c8a9cfac-1"></a>python3 -m pip install --upgrade neovim
 </pre>
-<pre class="code sh"><a name="rest_code_345ffdd8f55f4d1aa7a125f6062bb850-1"></a>python -m pip install --upgrade neovim
+<pre class="code sh"><a name="rest_code_65415dfbbb024f0a9ab9928d01752bfb-1"></a>python -m pip install --upgrade neovim
 </pre>
 </div>
 <div class="section" id="interfaces-de-ruby">
@@ -334,32 +334,32 @@ otros usan la interfaz de <a class="reference external" href="https://rubygems.o
 <h4>Ubuntu</h4>
 <p>Ubuntu no trae Ruby por defecto,
 instálalo con los siguientes comandos.</p>
-<pre class="code sh"><a name="rest_code_d102d62fe6c944729990cecb6ff14367-1"></a>sudo apt install ruby
-<a name="rest_code_d102d62fe6c944729990cecb6ff14367-2"></a>sudo apt install ruby-dev
+<pre class="code sh"><a name="rest_code_eb0c60c6d9b3432f80ddcadc4824db14-1"></a>sudo apt install ruby
+<a name="rest_code_eb0c60c6d9b3432f80ddcadc4824db14-2"></a>sudo apt install ruby-dev
 </pre>
 <p>Ahora si podrás instalar la interfaz de Ruby.</p>
 <div class="admonition warning">
 <p class="first admonition-title">Advertencia</p>
 <p class="last">Puede que necesites ejecutar estos comandos anteponiendo <strong>sudo</strong>.</p>
 </div>
-<pre class="code sh"><a name="rest_code_752f945db84a4f0c99bbec725a4a7f7d-1"></a>gem install neovim
+<pre class="code sh"><a name="rest_code_d4d3c3a5b9a84cb8ae3641dff317412b-1"></a>gem install neovim
 </pre>
 </div>
 <div class="section" id="id11">
 <h4>Fedora</h4>
 <p>Fedora no trae Ruby por defecto,
 instálalo con los siguientes comandos.</p>
-<pre class="code sh"><a name="rest_code_b0a892381edd498e9adb5badbfc6bd89-1"></a>sudo dnf install ruby
-<a name="rest_code_b0a892381edd498e9adb5badbfc6bd89-2"></a>sudo dnf install ruby-devel
-<a name="rest_code_b0a892381edd498e9adb5badbfc6bd89-3"></a>sudo dnf install gcc-c++
-<a name="rest_code_b0a892381edd498e9adb5badbfc6bd89-4"></a>sudo dnf install redhat-rpm-config
+<pre class="code sh"><a name="rest_code_b47456b3f4504500a76e17547c8d1f53-1"></a>sudo dnf install ruby
+<a name="rest_code_b47456b3f4504500a76e17547c8d1f53-2"></a>sudo dnf install ruby-devel
+<a name="rest_code_b47456b3f4504500a76e17547c8d1f53-3"></a>sudo dnf install gcc-c++
+<a name="rest_code_b47456b3f4504500a76e17547c8d1f53-4"></a>sudo dnf install redhat-rpm-config
 </pre>
 <p>Ahora si podrás instalar la interfaz de Ruby.</p>
 <div class="admonition warning">
 <p class="first admonition-title">Advertencia</p>
 <p class="last">Puede que necesites ejecutar estos comandos anteponiendo <strong>sudo</strong>.</p>
 </div>
-<pre class="code sh"><a name="rest_code_4bca202b64654b5a8f410e4d61597852-1"></a>gem install neovim
+<pre class="code sh"><a name="rest_code_742b863462dd43e39244118d696de792-1"></a>gem install neovim
 </pre>
 </div>
 </div>
@@ -370,7 +370,7 @@ instálalo con los siguientes comandos.</p>
 pero ¿cómo saber que todo salió bien?
 Neovim trae una herramienta que permite comprobarlo, <tt class="docutils literal">checkhealth</tt>.
 Para hacer uso de esta herramienta hay que iniciar Neovim con un parámetro algo especial.</p>
-<pre class="code sh"><a name="rest_code_ead91ca46de348db86036212c5c46ee3-1"></a>nvim +checkhealth
+<pre class="code sh"><a name="rest_code_ffbe057859b64d8698e7f9c361d59ccf-1"></a>nvim +checkhealth
 </pre>
 <p>Espera unos segundos a que Neovim haga las comprobaciones,
 si todo salió bien debe aparecer algo como esto:</p>
@@ -422,7 +422,7 @@ así podrás regresar al modo normal y empezar de nuevo.</p>
 <div class="section" id="abrir-un-archivo">
 <h3>Abrir un archivo</h3>
 <p>Puedes abrir un archivo desde la terminal con:</p>
-<pre class="code sh"><a name="rest_code_97f0647952dc48a983c23bd042ee26d7-1"></a>nvim mi-archivo.txt
+<pre class="code sh"><a name="rest_code_b47e86da3fe14b72a072c47df11216ee-1"></a>nvim mi-archivo.txt
 </pre>
 </div>
 <div class="section" id="moviendote-por-el-editor">
@@ -539,7 +539,7 @@ Por ejemplo para guardar <tt class="docutils literal">:w</tt>.</p>
 pero no son exactamente lo mismo que en los demás editores <a class="footnote-reference" href="#vim-buffers" id="id13">[9]</a>,
 en su lugar usaremos <tt class="docutils literal">buffers</tt>.</p>
 <p>Podemos abrir varios archivos desde la terminal con:</p>
-<pre class="code sh"><a name="rest_code_73dfb709e94f4d2dbd70b922cc5e064e-1"></a>nvim archivo-uno.txt archivo-dos.txt
+<pre class="code sh"><a name="rest_code_1924b693b5f14dc3aff1f7ed94c2b69f-1"></a>nvim archivo-uno.txt archivo-dos.txt
 </pre>
 <p>O si ya tienes Neovim abierto,
 puedes usar el comando <tt class="docutils literal">:e &lt;archivo&gt;</tt>,
@@ -589,12 +589,12 @@ el cual es cargado cada vez que se inicia Neovim.</p>
 <p class="last">Si usas Vim, este archivo cumple la misma función que el archivo <tt class="docutils literal">.vimrc</tt>.</p>
 </div>
 <p>Este archivo se localiza en <tt class="docutils literal"><span class="pre">~/.config/nvim/init.vim</span></tt>, si no existe, créalo.</p>
-<pre class="code sh"><a name="rest_code_cbe3634d062c48c7b00ea235945afc8e-1"></a><span class="nb">cd</span> ~/.config/
-<a name="rest_code_cbe3634d062c48c7b00ea235945afc8e-2"></a>mkdir nvim
-<a name="rest_code_cbe3634d062c48c7b00ea235945afc8e-3"></a>touch nvim/init.vim
+<pre class="code sh"><a name="rest_code_ff7ee358a0114d25b2d9fe331ed0fc6c-1"></a><span class="nb">cd</span> ~/.config/
+<a name="rest_code_ff7ee358a0114d25b2d9fe331ed0fc6c-2"></a>mkdir nvim
+<a name="rest_code_ff7ee358a0114d25b2d9fe331ed0fc6c-3"></a>touch nvim/init.vim
 </pre>
 <p>Abre el archivo y agrega la línea:</p>
-<pre class="code vim"><a name="rest_code_0e639e5c98844b9eb5737b627b62a870-1"></a><span class="k">set</span> <span class="k">number</span>
+<pre class="code vim"><a name="rest_code_116ae83b28594e0180eae42d64e0e7ae-1"></a><span class="k">set</span> <span class="k">number</span>
 </pre>
 <p>Para que los cambios tengan efecto debes volver a abrir Neovim,
 o puedes ejecutar el commando <tt class="docutils literal">:so <span class="pre">~/.config/nvim/init.vim</span></tt>.</p>
@@ -657,7 +657,7 @@ archivo.</p>
 <p>Neovim nos permite definir nuestros propios atajos de teclado (mappings). Por
 ejemplo, si quisiéramos usar <tt class="kbd docutils literal">Ctrl</tt> + <tt class="kbd docutils literal">s</tt> para guardar,
 bastaría con poner esta línea en el archivo <cite>init.vim</cite>.</p>
-<pre class="code vim"><a name="rest_code_e78ae0326219491693a2688a32f00955-1"></a><span class="nb">nnoremap</span> <span class="p">&lt;</span>C<span class="p">-</span>s<span class="p">&gt;</span> :<span class="k">w</span><span class="p">&lt;</span>CR<span class="p">&gt;</span>
+<pre class="code vim"><a name="rest_code_459d1ae198c54d558435b482d52a8f26-1"></a><span class="nb">nnoremap</span> <span class="p">&lt;</span>C<span class="p">-</span>s<span class="p">&gt;</span> :<span class="k">w</span><span class="p">&lt;</span>CR<span class="p">&gt;</span>
 </pre>
 <p>A menudo verás combinaciones que usan <tt class="docutils literal">&lt;leader&gt;</tt>,
 nos referiremos a esta como la tecla líder,
