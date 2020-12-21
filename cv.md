@@ -1,23 +1,23 @@
 # Santos Gallegos
 
-<img src="../images/me.jpg" height="250px" />
+![me](../images/me.jpg){ width=150px }
 
-## Experiencia Laboral
+## Laboral experience
 
-- Read the Docs, Inc: Software developer (2018 - presente)
-- Auditoría de seguridad informática en Cooperativa CB (2020)
+- Read the Docs, Inc: Software developer (2018 - present)
+- Computer security audit at Cooperativa CB (2020)
 
-## Competencias
+## Contests
 
-- Devsu Code Jam (2019): Séptimo lugar categoría de profesionales
-- IEEEXtreme Programming 11.0 (2017): Primer lugar a nivel nacional con el equipo trivialbox
-- IEEEXtreme Programming 10.0 (2016): Primer lugar a nivel nacional con el equipo trivialbox
+- Devsu Code Jam (2019): 7th place, professionals category
+- IEEEXtreme Programming 11.0 (2017): 1st place nationally (trivialbox team)
+- IEEEXtreme Programming 10.0 (2016): 1st place nationally (trivialbox team)
 - Rally Latinoamericano de Innovación (2016):
-  Primer lugar a nivel local y nacional en la categoría de innovación con el equipo Atuk Maskhay
-- Hackaton UPS (2016): Segundo lugar con el equipo trivialbox
-- IEEEXtreme Programming 9.0 (2015): Tercer lugar a nivel nacional con el equipo EnigmaT
+  1st place locally (Cuenca) and nationally in the innovation category (Atuk Maskhay team)
+- Hackaton UPS (2016): 2nd place (trivialbox team)
+- IEEEXtreme Programming 9.0 (2015): 3rd place nationally (EnigmaT team)
 
-## Habilidades y conocimientos
+## Programming languages and skills
 
 - Python
 - C
@@ -33,16 +33,17 @@
 - Linux
 - Open Source maintainer
 
-## Idiomas
+## Languages
 
-- Español (nativo)
-- Inglés (fluente)
+- Spanish (native)
+- English (fluent)
 
-## Redes
+## Social
 
-- GitHub: http://github.com/stsewd
-- Hackerrank: https://www.hackerrank.com/stsewd
-- Stack Overflow: http://stackoverflow.com/users/5689214/
-- LinkedIn https://www.linkedin.com/in/stsewd/
-- Blog personal: https://stsewd.dev
+- GitHub: <https://github.com/stsewd>
+- Hackerrank: <https://www.hackerrank.com/stsewd>
+- HackerEarth: <https://www.hackerearth.com/@stsewd>
+- Stack Overflow: <http://stackoverflow.com/users/5689214/>
+- LinkedIn <https://www.linkedin.com/in/stsewd/>
+- Personal blog: <https://stsewd.dev>
 - Email: stsewd@protonmail.com
