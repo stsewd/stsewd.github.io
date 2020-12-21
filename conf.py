@@ -145,7 +145,7 @@ NAVIGATION_LINKS = {
 
     "es": (
         ("/es/archive.html", "Posts"),
-        ("/es/projects/", "Projectos"),
+        ("/es/projects/", "Proyectos"),
         ("/es/about/", "Acerca de"),
     ),
 }
