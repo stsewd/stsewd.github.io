@@ -9,8 +9,8 @@
 <link href="../../../assets/css/all-nocdn.css" rel="stylesheet" type="text/css">
 <meta name="theme-color" content="#222222">
 <meta name="generator" content="Nikola (getnikola.com)">
-<link rel="alternate" type="application/rss+xml" title="RSS (en)" href="../../../rss.xml">
-<link rel="alternate" type="application/rss+xml" title="RSS (es)" href="../../rss.xml">
+<link rel="alternate" type="application/rss+xml" title="RSS (es)" hreflang="es" href="../../rss.xml">
+<link rel="alternate" type="application/rss+xml" title="RSS (en)" hreflang="en" href="../../../rss.xml">
 <link rel="canonical" href="https://stsewd.dev/es/posts/historia-django-girls-rtd/">
 <!--[if lt IE 9]><script src="../../../assets/js/html5.js"></script><![endif]--><!-- Custom css --><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 <link rel="stylesheet" href="../../../assets/css/custom.css" type="text/css" media="all">
@@ -31,10 +31,11 @@
 <!-- Menubar -->
 
 <nav class="navbar navbar-expand-md static-top mb-4
-navbar-dark bg-dark
+navbar-dark
+bg-dark
 "><div class="container">
 <!-- This keeps the margins nice -->
-        <a class="navbar-brand" href="https://stsewd.dev/es/">
+        <a class="navbar-brand" href="../../">
 
             <span id="blog-title">Santos Gallegos</span>
         </a>
@@ -59,7 +60,7 @@ navbar-dark bg-dark
 <ul class="navbar-nav navbar-right">
 <li>
             </li>
-<li class="nav-item"><a href="https://stsewd.dev/" rel="alternate" hreflang="en" class="nav-link">English</a></li>
+<li class="nav-item"><a href="../../../" rel="alternate" hreflang="en" class="nav-link">English</a></li>
 
                 
                 
@@ -73,6 +74,7 @@ navbar-dark bg-dark
         <!--Body content-->
         
         
+        
   
 
 <div class="container mb-3">
@@ -82,7 +84,7 @@ navbar-dark bg-dark
 <article class="post-text h-entry hentry postpage" itemscope="itemscope" itemtype="http://schema.org/Article"><header><h1 class="p-name entry-title" itemprop="headline name"><a href="." class="u-url">De guía en Django Girls a pasante en Read the Docs</a></h1>
 
         <div class="metadata">
-            <p class="byline author vcard"><span class="byline-name fn" itemprop="author">
+            <p class="byline author vcard p-author h-card"><span class="byline-name fn p-name" itemprop="author">
                     Santos Gallegos
             </span></p>
             <p class="dateline">
@@ -91,7 +93,7 @@ navbar-dark bg-dark
             </p>
                 <p class="commentline">
         
-    <a href="#disqus_thread" data-disqus-identifier="cache/posts/historia-django-girls-rtd.es.html">Comments</a>
+    <a href="#disqus_thread" data-disqus-identifier="cache/posts/historia-django-girls-rtd.es.html">Comentarios</a>
 
 
             
@@ -103,23 +105,23 @@ navbar-dark bg-dark
     </header><div class="e-content entry-content" itemprop="articleBody text">
     <div>
 <ul class="simple">
-<li>¿Entonces, qué les interesa a las personas acá? ¿Qué te interesa a ti?</li>
-<li>¡Graduarme!</li>
-<li>¿Para qué?</li>
-<li>Para obtener mi título, por supuesto, todos me van a llamar ingeniera/o.</li>
-<li>¿Para qué quieres eso?</li>
-<li>Para tener un trabajo y ganar mucho dinero</li>
-<li>¿Para qué?</li>
-<li>Pues para tener un carro de lujo y una gran casa. Los ingenieros cambiamos el mundo.</li>
-<li>Entonces ¿Estás estudiando cómo construir grandes cosas para el beneficio de la comunidad?
-¿Así como un proyecto de software libre?</li>
-<li>No, eso del software libre no da plata.</li>
-<li>Entonces ¿estás aprendiendo cómo programar mejor que nadie para hacer algo grandioso?</li>
-<li>¿¡Programar!? No, eso no hacen los ingenieros.
-Los ingenieros no programamos, eso es como ser los albañiles de la ingeniera civil.</li>
+<li><p>¿Entonces, qué les interesa a las personas acá? ¿Qué te interesa a ti?</p></li>
+<li><p>¡Graduarme!</p></li>
+<li><p>¿Para qué?</p></li>
+<li><p>Para obtener mi título, por supuesto, todos me van a llamar ingeniera/o.</p></li>
+<li><p>¿Para qué quieres eso?</p></li>
+<li><p>Para tener un trabajo y ganar mucho dinero</p></li>
+<li><p>¿Para qué?</p></li>
+<li><p>Pues para tener un carro de lujo y una gran casa. Los ingenieros cambiamos el mundo.</p></li>
+<li><p>Entonces ¿Estás estudiando cómo construir grandes cosas para el beneficio de la comunidad?
+¿Así como un proyecto de software libre?</p></li>
+<li><p>No, eso del software libre no da plata.</p></li>
+<li><p>Entonces ¿estás aprendiendo cómo programar mejor que nadie para hacer algo grandioso?</p></li>
+<li><p>¿¡Programar!? No, eso no hacen los ingenieros.
+Los ingenieros no programamos, eso es como ser los albañiles de la ingeniera civil.</p></li>
 </ul>
 <div class="section" id="hello-world">
-<h2><tt class="docutils literal">Hello World</tt></h2>
+<h2><code class="docutils literal">Hello World</code></h2>
 <p>Antes de empezar con esta historia,
 quisiera contar un poco sobre mi.
 Soy de Machala, una pequeña ciudad de Ecuador.</p>
@@ -170,7 +172,7 @@ como Quito (traído gracias a empresas extranjeras) o en otros países.
 Me sentí decepcionado, otra vez.</p>
 </div>
 <div class="section" id="main-py">
-<h2><tt class="docutils literal">main.py</tt></h2>
+<h2><code class="docutils literal">main.py</code></h2>
 <p>No recuerdo exactamente dónde, creo que fue en Facebook.
 Vi una publicidad sobre que se iba a hacer un Django Girls en Cuenca.
 La mayoría de eventos tecnológicos sólo pasaban en Quito,
@@ -234,7 +236,7 @@ Si antes tenía una gran deuda con la comunidad de software libre,
 ahora tengo una deuda mucho más grande.</p>
 </div>
 <div class="section" id="open-mind-txt-r">
-<h2><tt class="docutils literal"><span class="pre">open('mind.txt',</span> <span class="pre">'r+')</span></tt></h2>
+<h2><code class="docutils literal"><span class="pre">open('mind.txt',</span> <span class="pre">'r+')</span></code></h2>
 <p>¿Haber asistido a un Django Girls me llevó a esta oportunidad?
 Varias cosas locas pasaron desde ese momento, muchas no tan buenas.
 Pero también me trajo nuevos amigos, personas que comparten mi
@@ -247,11 +249,11 @@ en la comunidad, compartiendo el conocimiento, te abre muchas oportunidades,
 conoces a muchas personas, aprendes un montón. Te abre la mente.</p>
 </div>
 <div class="section" id="exit-1">
-<h2><tt class="docutils literal">exit(1)</tt></h2>
+<h2><code class="docutils literal">exit(1)</code></h2>
 <ul class="simple">
-<li>Cool, voy a inscribirme como guía de un Django Girls en la próxima
-para hacerme famoso y ganar mucho dinero desde mi casa.</li>
-<li>Creo que deberías leer el post nuevamente.</li>
+<li><p>Cool, voy a inscribirme como guía de un Django Girls en la próxima
+para hacerme famoso y ganar mucho dinero desde mi casa.</p></li>
+<li><p>Creo que deberías leer el post nuevamente.</p></li>
 </ul>
 </div>
 </div>
@@ -318,6 +320,7 @@ para hacerme famoso y ganar mucho dinero desde mi casa.</li>
 </div>
 
             
+            
         </footer>
 </div>
 </div>
@@ -326,9 +329,7 @@ para hacerme famoso y ganar mucho dinero desde mi casa.</li>
         <script src="../../../assets/js/all-nocdn.js"></script><script>
     baguetteBox.run('div#content', {
         ignoreClass: 'islink',
-        captions: function(element) {
-            return element.getElementsByTagName('img')[0].alt;
-    }});
+        captions: function(element){var i=element.getElementsByTagName('img')[0];return i===undefined?'':i.alt;}});
     </script>
 </body>
 </html>

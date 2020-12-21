@@ -8,8 +8,8 @@
 <link href="../../assets/css/all-nocdn.css" rel="stylesheet" type="text/css">
 <meta name="theme-color" content="#222222">
 <meta name="generator" content="Nikola (getnikola.com)">
-<link rel="alternate" type="application/rss+xml" title="RSS (en)" href="../../rss.xml">
-<link rel="alternate" type="application/rss+xml" title="RSS (es)" href="../../es/rss.xml">
+<link rel="alternate" type="application/rss+xml" title="RSS (en)" hreflang="en" href="../../rss.xml">
+<link rel="alternate" type="application/rss+xml" title="RSS (es)" hreflang="es" href="../../es/rss.xml">
 <link rel="canonical" href="https://stsewd.dev/categories/documentation/">
 <!--[if lt IE 9]><script src="../../assets/js/html5.js"></script><![endif]--><!-- Custom css --><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 <link rel="stylesheet" href="../../assets/css/custom.css" type="text/css" media="all">
@@ -21,10 +21,11 @@
 <!-- Menubar -->
 
 <nav class="navbar navbar-expand-md static-top mb-4
-navbar-dark bg-dark
+navbar-dark
+bg-dark
 "><div class="container">
 <!-- This keeps the margins nice -->
-        <a class="navbar-brand" href="https://stsewd.dev/">
+        <a class="navbar-brand" href="../../">
 
             <span id="blog-title">Santos Gallegos</span>
         </a>
@@ -49,7 +50,7 @@ navbar-dark bg-dark
 <ul class="navbar-nav navbar-right">
 <li>
             </li>
-<li class="nav-item"><a href="https://stsewd.dev/es/" rel="alternate" hreflang="es" class="nav-link">Español</a></li>
+<li class="nav-item"><a href="../../es/" rel="alternate" hreflang="es" class="nav-link">Español</a></li>
 
                 
                 
@@ -61,6 +62,7 @@ navbar-dark bg-dark
 </nav><!-- End of Menubar --><div class="container" id="content" role="main">
     <div class="body-content">
         <!--Body content-->
+        
         
         
 <article class="tagpage"><header><h1>Posts about documentation</h1>
@@ -105,6 +107,7 @@ navbar-dark bg-dark
 </div>
 
             
+            
         </footer>
 </div>
 </div>
@@ -113,9 +116,7 @@ navbar-dark bg-dark
         <script src="../../assets/js/all-nocdn.js"></script><script>
     baguetteBox.run('div#content', {
         ignoreClass: 'islink',
-        captions: function(element) {
-            return element.getElementsByTagName('img')[0].alt;
-    }});
+        captions: function(element){var i=element.getElementsByTagName('img')[0];return i===undefined?'':i.alt;}});
     </script>
 </body>
 </html>

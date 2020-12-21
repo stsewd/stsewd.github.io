@@ -9,8 +9,8 @@
 <link href="../../assets/css/all-nocdn.css" rel="stylesheet" type="text/css">
 <meta name="theme-color" content="#222222">
 <meta name="generator" content="Nikola (getnikola.com)">
-<link rel="alternate" type="application/rss+xml" title="RSS (en)" href="../../rss.xml">
-<link rel="alternate" type="application/rss+xml" title="RSS (es)" href="../../es/rss.xml">
+<link rel="alternate" type="application/rss+xml" title="RSS (en)" hreflang="en" href="../../rss.xml">
+<link rel="alternate" type="application/rss+xml" title="RSS (es)" hreflang="es" href="../../es/rss.xml">
 <link rel="canonical" href="https://stsewd.dev/posts/devsucodejam-2019/">
 <!--[if lt IE 9]><script src="../../assets/js/html5.js"></script><![endif]--><!-- Custom css --><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 <link rel="stylesheet" href="../../assets/css/custom.css" type="text/css" media="all">
@@ -30,10 +30,11 @@
 <!-- Menubar -->
 
 <nav class="navbar navbar-expand-md static-top mb-4
-navbar-dark bg-dark
+navbar-dark
+bg-dark
 "><div class="container">
 <!-- This keeps the margins nice -->
-        <a class="navbar-brand" href="https://stsewd.dev/">
+        <a class="navbar-brand" href="../../">
 
             <span id="blog-title">Santos Gallegos</span>
         </a>
@@ -58,7 +59,7 @@ navbar-dark bg-dark
 <ul class="navbar-nav navbar-right">
 <li>
             </li>
-<li class="nav-item"><a href="https://stsewd.dev/es/" rel="alternate" hreflang="es" class="nav-link">Español</a></li>
+<li class="nav-item"><a href="../../es/" rel="alternate" hreflang="es" class="nav-link">Español</a></li>
 
                 
                 
@@ -72,6 +73,7 @@ navbar-dark bg-dark
         <!--Body content-->
         
         
+        
   
 
 <div class="container mb-3">
@@ -81,7 +83,7 @@ navbar-dark bg-dark
 <article class="post-text h-entry hentry postpage" itemscope="itemscope" itemtype="http://schema.org/Article"><header><h1 class="p-name entry-title" itemprop="headline name"><a href="." class="u-url">Devsu Code Jam 2019 - solutions and my experience</a></h1>
 
         <div class="metadata">
-            <p class="byline author vcard"><span class="byline-name fn" itemprop="author">
+            <p class="byline author vcard p-author h-card"><span class="byline-name fn p-name" itemprop="author">
                     Santos Gallegos
             </span></p>
             <p class="dateline">
@@ -136,8 +138,8 @@ I uploaded my solutions from the first round here
 so I can't guarantee all the solutions are correct,
 but I believe most of them are :).</p>
 <div class="admonition note">
-<p class="first admonition-title">Note</p>
-<p class="last">First I was planning in writting the explanation for all solutions,
+<p class="admonition-title">Note</p>
+<p>First I was planning in writting the explanation for all solutions,
 but then I realized the posts would be too long to read <em>and write</em>...
 So I'm just linking to my solutions instead,
 if you have any questions about one of them let me know,
@@ -213,6 +215,7 @@ and showing your <em>real skills</em> to the world.</p>
 </div>
 
             
+            
         </footer>
 </div>
 </div>
@@ -221,9 +224,7 @@ and showing your <em>real skills</em> to the world.</p>
         <script src="../../assets/js/all-nocdn.js"></script><script>
     baguetteBox.run('div#content', {
         ignoreClass: 'islink',
-        captions: function(element) {
-            return element.getElementsByTagName('img')[0].alt;
-    }});
+        captions: function(element){var i=element.getElementsByTagName('img')[0];return i===undefined?'':i.alt;}});
     </script>
 </body>
 </html>

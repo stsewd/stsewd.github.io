@@ -9,8 +9,8 @@
 <link href="../../assets/css/all-nocdn.css" rel="stylesheet" type="text/css">
 <meta name="theme-color" content="#222222">
 <meta name="generator" content="Nikola (getnikola.com)">
-<link rel="alternate" type="application/rss+xml" title="RSS (en)" href="../../rss.xml">
-<link rel="alternate" type="application/rss+xml" title="RSS (es)" href="../../es/rss.xml">
+<link rel="alternate" type="application/rss+xml" title="RSS (en)" hreflang="en" href="../../rss.xml">
+<link rel="alternate" type="application/rss+xml" title="RSS (es)" hreflang="es" href="../../es/rss.xml">
 <link rel="canonical" href="https://stsewd.dev/posts/read-the-docs/">
 <!--[if lt IE 9]><script src="../../assets/js/html5.js"></script><![endif]--><!-- Custom css --><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 <link rel="stylesheet" href="../../assets/css/custom.css" type="text/css" media="all">
@@ -33,10 +33,11 @@
 <!-- Menubar -->
 
 <nav class="navbar navbar-expand-md static-top mb-4
-navbar-dark bg-dark
+navbar-dark
+bg-dark
 "><div class="container">
 <!-- This keeps the margins nice -->
-        <a class="navbar-brand" href="https://stsewd.dev/">
+        <a class="navbar-brand" href="../../">
 
             <span id="blog-title">Santos Gallegos</span>
         </a>
@@ -61,7 +62,7 @@ navbar-dark bg-dark
 <ul class="navbar-nav navbar-right">
 <li>
             </li>
-<li class="nav-item"><a href="https://stsewd.dev/es/" rel="alternate" hreflang="es" class="nav-link">Español</a></li>
+<li class="nav-item"><a href="../../es/" rel="alternate" hreflang="es" class="nav-link">Español</a></li>
 
                 
                 
@@ -75,6 +76,7 @@ navbar-dark bg-dark
         <!--Body content-->
         
         
+        
   
 
 <div class="container mb-3">
@@ -84,7 +86,7 @@ navbar-dark bg-dark
 <article class="post-text h-entry hentry postpage" itemscope="itemscope" itemtype="http://schema.org/Article"><header><h1 class="p-name entry-title" itemprop="headline name"><a href="." class="u-url">Read the docs</a></h1>
 
         <div class="metadata">
-            <p class="byline author vcard"><span class="byline-name fn" itemprop="author">
+            <p class="byline author vcard p-author h-card"><span class="byline-name fn p-name" itemprop="author">
                     Santos Gallegos
             </span></p>
             <p class="dateline">
@@ -109,7 +111,7 @@ people tell us to write docs for it.
 But when we use software,
 we forgot to read their docs very often.</p>
 <p>A couple of days ago,
-I was struggling to remember what the format in <tt class="docutils literal">/etc/passwd</tt> means.
+I was struggling to remember what the format in <code class="docutils literal">/etc/passwd</code> means.
 Immediately I search for it in Google and found a blog post about it.
 Then I stopped to ask myself: why are you searching this on Google and reading it from a blog post?
 This should be documented in Linux itself!</p>
@@ -121,30 +123,30 @@ but their official documentation.</p>
 where you can search for the official docs of common development tools.</p>
 <div class="section" id="linux-command-docs">
 <h2>Linux command docs</h2>
-<p><tt class="docutils literal"><span class="pre">--help</span></tt> or <tt class="docutils literal"><span class="pre">-h</span></tt>,
+<p><code class="docutils literal"><span class="pre">--help</span></code> or <code class="docutils literal"><span class="pre">-h</span></code>,
 probably one fo the most obvious options that we check before executing a command in the terminal,
 and that most of the tools have.
 Here you can see the list of options and a short description of what that option does.</p>
 <p>Its common usage is:</p>
-<pre class="code bash"><a name="rest_code_e399ef780e4d433da370a8115a601ba3-1"></a><span class="nb">command</span> --help
+<pre class="code bash"><a name="rest_code_08a7aaf5f8dd4ce68a73dd06b47129c2-1"></a><span class="nb">command</span> --help
 </pre>
 <p>Example:</p>
-<pre class="code bash"><a name="rest_code_fa0f1dee1de64da89e43bd2659f6783c-1"></a>ls --help
+<pre class="code bash"><a name="rest_code_156b1f6041cd4937937cfb3f5632456c-1"></a>ls --help
 </pre>
 <p>or</p>
-<pre class="code bash"><a name="rest_code_4f3b3562285d400eb1c4b5873cd42c86-1"></a><span class="nb">command</span> subcommand --help
+<pre class="code bash"><a name="rest_code_54af9c6b77aa486ca686f0a05b947398-1"></a><span class="nb">command</span> subcommand --help
 </pre>
 <p>Example:</p>
-<pre class="code bash"><a name="rest_code_f58d5fcbb8e444ebb69d20fee6c250d1-1"></a>git add --help
+<pre class="code bash"><a name="rest_code_e27d5806153241669ccaabca1209a203-1"></a>git add --help
 </pre>
 <p>Man pages,
-most of the Linux tools has a respective man page (apart from the <tt class="docutils literal"><span class="pre">--help</span></tt> option).
-Man pages have a more detailed documentation than the <tt class="docutils literal"><span class="pre">--help</span></tt> option from the command.</p>
+most of the Linux tools has a respective man page (apart from the <code class="docutils literal"><span class="pre">--help</span></code> option).
+Man pages have a more detailed documentation than the <code class="docutils literal"><span class="pre">--help</span></code> option from the command.</p>
 <p>Most of the time you'll need to run:</p>
-<pre class="code bash"><a name="rest_code_45dc3fcf6c684e63ad4bc59e380e6ed3-1"></a>man <span class="nb">command</span>
+<pre class="code bash"><a name="rest_code_e4951c2567954933b0e7ad55dd3543b3-1"></a>man <span class="nb">command</span>
 </pre>
 <p>Example</p>
-<pre class="code bash"><a name="rest_code_fa8069632a8842fba2147f8e4eb41a40-1"></a>man ls
+<pre class="code bash"><a name="rest_code_f7d41b646fa54b1a90207e201ca0ed87-1"></a>man ls
 </pre>
 <p>But not only commands have man pages,
 it also includes documentation of the format used in some configuration files,
@@ -152,8 +154,7 @@ kernel functions, libraries (usually the ones used in C).</p>
 <p>How to access to those man pages?
 Each man page belongs to a section,
 each section is represented by a number:</p>
-<pre class="literal-block">
-1   Executable programs or shell commands
+<pre class="literal-block">1   Executable programs or shell commands
 2   System calls (functions provided by the kernel)
 3   Library calls (functions within program libraries)
 4   Special files (usually found in /dev)
@@ -161,42 +162,41 @@ each section is represented by a number:</p>
 6   Games
 7   Miscellaneous (including macro packages and conventions), e.g. man(7), groff(7)
 8   System administration commands (usually only for root)
-9   Kernel routines [Non standard]
-</pre>
+9   Kernel routines [Non standard]</pre>
 <p>Knowing the section you can get the man page with:</p>
-<pre class="code bash"><a name="rest_code_d65adf9de9f74ecc9c2ae83ec4e1a0bc-1"></a>man &lt;section&gt; keyword
+<pre class="code bash"><a name="rest_code_e715fcae29e74d6499c4d3f3230b0b3c-1"></a>man &lt;section&gt; keyword
 </pre>
 <p>Example:</p>
-<pre class="code bash"><a name="rest_code_3541ae7c1c34447aa7648a9aa993f780-1"></a>man <span class="m">1</span> ls
-<a name="rest_code_3541ae7c1c34447aa7648a9aa993f780-2"></a>man <span class="m">2</span> fork
-<a name="rest_code_3541ae7c1c34447aa7648a9aa993f780-3"></a>man <span class="m">3</span> <span class="nb">printf</span>
-<a name="rest_code_3541ae7c1c34447aa7648a9aa993f780-4"></a>man <span class="m">5</span> /etc/passwd
+<pre class="code bash"><a name="rest_code_f83b74d4786349e693184278f758aa3b-1"></a>man <span class="m">1</span> ls
+<a name="rest_code_f83b74d4786349e693184278f758aa3b-2"></a>man <span class="m">2</span> fork
+<a name="rest_code_f83b74d4786349e693184278f758aa3b-3"></a>man <span class="m">3</span> <span class="nb">printf</span>
+<a name="rest_code_f83b74d4786349e693184278f758aa3b-4"></a>man <span class="m">5</span> /etc/passwd
 </pre>
-<p>Some times the result from the <tt class="docutils literal"><span class="pre">--help</span></tt> option or
+<p>Some times the result from the <code class="docutils literal"><span class="pre">--help</span></code> option or
 from the man pages can be very extensive,
 and difficult to extract what you need,
 or missing clear examples.</p>
 <p>Fortunately there is the <a class="reference external" href="https://github.com/tldr-pages/tldr">tldr</a> project,
 which has community-driven simplified man pages with common usage examples.</p>
 <p>Did you always forget the correct options to untar a file?</p>
-<pre class="code bash"><a name="rest_code_54d163f2f7e644fb80430ed1c1d19205-1"></a>tldr tar
-<a name="rest_code_54d163f2f7e644fb80430ed1c1d19205-2"></a>
-<a name="rest_code_54d163f2f7e644fb80430ed1c1d19205-3"></a>  Archiving utility.
-<a name="rest_code_54d163f2f7e644fb80430ed1c1d19205-4"></a>  Often combined with a compression method, such as gzip or bzip.
-<a name="rest_code_54d163f2f7e644fb80430ed1c1d19205-5"></a>  More information: &lt;https://www.gnu.org/software/tar&gt;.
-<a name="rest_code_54d163f2f7e644fb80430ed1c1d19205-6"></a>
-<a name="rest_code_54d163f2f7e644fb80430ed1c1d19205-7"></a>- Create an archive from files:
-<a name="rest_code_54d163f2f7e644fb80430ed1c1d19205-8"></a>
-<a name="rest_code_54d163f2f7e644fb80430ed1c1d19205-9"></a>  tar -cf target.tar file1 file2 file3
-<a name="rest_code_54d163f2f7e644fb80430ed1c1d19205-10"></a>
-<a name="rest_code_54d163f2f7e644fb80430ed1c1d19205-11"></a>- Extract an archive in a target directory:
-<a name="rest_code_54d163f2f7e644fb80430ed1c1d19205-12"></a>
-<a name="rest_code_54d163f2f7e644fb80430ed1c1d19205-13"></a>  tar -xf source.tar -C directory
-<a name="rest_code_54d163f2f7e644fb80430ed1c1d19205-14"></a>
-<a name="rest_code_54d163f2f7e644fb80430ed1c1d19205-15"></a>...
+<pre class="code bash"><a name="rest_code_e52a1c2109dc45a59eca42e5cb4f8114-1"></a>tldr tar
+<a name="rest_code_e52a1c2109dc45a59eca42e5cb4f8114-2"></a>
+<a name="rest_code_e52a1c2109dc45a59eca42e5cb4f8114-3"></a>  Archiving utility.
+<a name="rest_code_e52a1c2109dc45a59eca42e5cb4f8114-4"></a>  Often combined with a compression method, such as gzip or bzip.
+<a name="rest_code_e52a1c2109dc45a59eca42e5cb4f8114-5"></a>  More information: &lt;https://www.gnu.org/software/tar&gt;.
+<a name="rest_code_e52a1c2109dc45a59eca42e5cb4f8114-6"></a>
+<a name="rest_code_e52a1c2109dc45a59eca42e5cb4f8114-7"></a>- Create an archive from files:
+<a name="rest_code_e52a1c2109dc45a59eca42e5cb4f8114-8"></a>
+<a name="rest_code_e52a1c2109dc45a59eca42e5cb4f8114-9"></a>  tar -cf target.tar file1 file2 file3
+<a name="rest_code_e52a1c2109dc45a59eca42e5cb4f8114-10"></a>
+<a name="rest_code_e52a1c2109dc45a59eca42e5cb4f8114-11"></a>- Extract an archive in a target directory:
+<a name="rest_code_e52a1c2109dc45a59eca42e5cb4f8114-12"></a>
+<a name="rest_code_e52a1c2109dc45a59eca42e5cb4f8114-13"></a>  tar -xf source.tar -C directory
+<a name="rest_code_e52a1c2109dc45a59eca42e5cb4f8114-14"></a>
+<a name="rest_code_e52a1c2109dc45a59eca42e5cb4f8114-15"></a>...
 </pre>
 <p>If you use Python,
-you can install it using <tt class="docutils literal">pip install tldr</tt>.</p>
+you can install it using <code class="docutils literal">pip install tldr</code>.</p>
 </div>
 <div class="section" id="from-your-editor">
 <h2>From your editor</h2>
@@ -205,18 +205,18 @@ Take a look at <a class="reference external" href="https://langserver.org/">lang
 install the proper plugin for your editor.</p>
 <p>I use <a class="reference external" href="https://neovim.io/">Neovim</a> as my main editor.
 So I'm going to tell you what I currently use in Neovim.</p>
-<p>First, in Neovim you have the <tt class="docutils literal">:help</tt> command to get the help of the editor itself.
-Neovim also offers the <tt class="docutils literal">K</tt> command,
+<p>First, in Neovim you have the <code class="docutils literal">:help</code> command to get the help of the editor itself.
+Neovim also offers the <code class="docutils literal">K</code> command,
 which runs a program to lookup the keyword under the cursor.
 This program can be setup for different file types,
-see <tt class="docutils literal">:help K</tt>.</p>
-<p>For instance, try this C code and press <tt class="docutils literal">K</tt> under the <tt class="docutils literal">printf</tt> function.</p>
-<pre class="code c"><a name="rest_code_ea1c6644c0644144a68a23e47f2f5a49-1"></a><span class="cp">#import &lt;stdio.h&gt;</span>
-<a name="rest_code_ea1c6644c0644144a68a23e47f2f5a49-2"></a>
-<a name="rest_code_ea1c6644c0644144a68a23e47f2f5a49-3"></a><span class="kt">int</span> <span class="nf">main</span><span class="p">()</span> <span class="p">{</span>
-<a name="rest_code_ea1c6644c0644144a68a23e47f2f5a49-4"></a>    <span class="n">printf</span><span class="p">(</span><span class="s">"Hello, world</span><span class="se">\n</span><span class="s">"</span><span class="p">);</span>
-<a name="rest_code_ea1c6644c0644144a68a23e47f2f5a49-5"></a>    <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
-<a name="rest_code_ea1c6644c0644144a68a23e47f2f5a49-6"></a><span class="p">}</span>
+see <code class="docutils literal">:help K</code>.</p>
+<p>For instance, try this C code and press <code class="docutils literal">K</code> under the <code class="docutils literal">printf</code> function.</p>
+<pre class="code c"><a name="rest_code_7873e2d472c3434ebc54c3119d74de7c-1"></a><span class="cp">#import &lt;stdio.h&gt;</span>
+<a name="rest_code_7873e2d472c3434ebc54c3119d74de7c-2"></a>
+<a name="rest_code_7873e2d472c3434ebc54c3119d74de7c-3"></a><span class="kt">int</span> <span class="nf">main</span><span class="p">()</span> <span class="p">{</span>
+<a name="rest_code_7873e2d472c3434ebc54c3119d74de7c-4"></a>    <span class="n">printf</span><span class="p">(</span><span class="s">"Hello, world</span><span class="se">\n</span><span class="s">"</span><span class="p">);</span>
+<a name="rest_code_7873e2d472c3434ebc54c3119d74de7c-5"></a>    <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
+<a name="rest_code_7873e2d472c3434ebc54c3119d74de7c-6"></a><span class="p">}</span>
 </pre>
 <p>For a general and <em>nicer</em> solution I use the <a class="reference external" href="https://github.com/neoclide/coc.nvim">coc plugin</a>.</p>
 </div>
@@ -227,12 +227,12 @@ but probably they have their documentation online.
 Note that I'm not referring to a blog post or a tutorial.</p>
 <p>How do you know where to find the online documentation?</p>
 <ul class="simple">
-<li>Most of the time you can find a link to the documentation in the web site of the library or project.</li>
-<li>Some times you can find a link to the online documentation in the repository page
-(like in the <tt class="docutils literal">README</tt> file).</li>
-<li>You can also find a link to their documentation in the package page
-(like npm or pypi).</li>
-<li>If everything else fails, you can just use Google to find it.</li>
+<li><p>Most of the time you can find a link to the documentation in the web site of the library or project.</p></li>
+<li><p>Some times you can find a link to the online documentation in the repository page
+(like in the <code class="docutils literal">README</code> file).</p></li>
+<li><p>You can also find a link to their documentation in the package page
+(like npm or pypi).</p></li>
+<li><p>If everything else fails, you can just use Google to find it.</p></li>
 </ul>
 <p>By the way,
 for Python packages,
@@ -245,20 +245,20 @@ so searching for docs from methods and functions is my daily task.</p>
 <p>When I'm not inside my editor, I use these methods:</p>
 <div class="section" id="the-help-function">
 <h3>The help function</h3>
-<p>Python has a built in function called <tt class="docutils literal">help</tt>,
+<p>Python has a built in function called <code class="docutils literal">help</code>,
 you can use it inside the interpreter like this:</p>
-<pre class="code python"><a name="rest_code_e85b2b4af4e74248809166915a418a7d-1"></a><span class="o">&gt;&gt;&gt;</span> <span class="n">help</span><span class="p">(</span><span class="nb">open</span><span class="p">)</span>
-<a name="rest_code_e85b2b4af4e74248809166915a418a7d-2"></a><span class="o">&gt;&gt;&gt;</span> <span class="n">my_string</span> <span class="o">=</span> <span class="s1">'hello world'</span>
-<a name="rest_code_e85b2b4af4e74248809166915a418a7d-3"></a><span class="o">&gt;&gt;&gt;</span> <span class="n">help</span><span class="p">(</span><span class="n">my_string</span><span class="o">.</span><span class="n">upper</span><span class="p">)</span>
+<pre class="code python"><a name="rest_code_068aba3488c2443ea5a607c7e6f4d0bc-1"></a><span class="o">&gt;&gt;&gt;</span> <span class="n">help</span><span class="p">(</span><span class="nb">open</span><span class="p">)</span>
+<a name="rest_code_068aba3488c2443ea5a607c7e6f4d0bc-2"></a><span class="o">&gt;&gt;&gt;</span> <span class="n">my_string</span> <span class="o">=</span> <span class="s1">'hello world'</span>
+<a name="rest_code_068aba3488c2443ea5a607c7e6f4d0bc-3"></a><span class="o">&gt;&gt;&gt;</span> <span class="n">help</span><span class="p">(</span><span class="n">my_string</span><span class="o">.</span><span class="n">upper</span><span class="p">)</span>
 </pre>
 <p>The argument can be any function, method, object or module.</p>
 </div>
 <div class="section" id="pydoc">
 <h3>pydoc</h3>
 <p><a class="reference external" href="https://docs.python.org/3/library/pydoc.html">pydoc</a> is a command line tool shipped with Python.
-It's what the <tt class="docutils literal">help</tt> function uses under it.
+It's what the <code class="docutils literal">help</code> function uses under it.
 You can use it from your terminal like this:</p>
-<pre class="code bash"><a name="rest_code_d1f84432342b4b15bad23624f0362021-1"></a>pydoc open
+<pre class="code bash"><a name="rest_code_8c6402407f364b7cb03eb07ac5414bda-1"></a>pydoc open
 </pre>
 </div>
 <div class="section" id="the-official-online-docs">
@@ -273,9 +273,9 @@ See the online docs in <a class="reference external" href="https://docs.python.o
 <p>If you ever find yourself reading the usage instructions for a tool or method/function from another site having the official docs at hand,
 probably is because:</p>
 <ol class="arabic simple">
-<li>The project doesn't have docs (not so common) -- Help to written if it's the case!</li>
-<li>The project doesn't have good documentation (a little more common) -- Help to improve it if it's the case!</li>
-<li>The documentation isn't written in the language you know (very common) -- Help to translate it if it's the case!</li>
+<li><p>The project doesn't have docs (not so common) -- Help to written if it's the case!</p></li>
+<li><p>The project doesn't have good documentation (a little more common) -- Help to improve it if it's the case!</p></li>
+<li><p>The documentation isn't written in the language you know (very common) -- Help to translate it if it's the case!</p></li>
 </ol>
 </div>
 </div>
@@ -346,6 +346,7 @@ probably is because:</p>
 </div>
 
             
+            
         </footer>
 </div>
 </div>
@@ -354,9 +355,7 @@ probably is because:</p>
         <script src="../../assets/js/all-nocdn.js"></script><script>
     baguetteBox.run('div#content', {
         ignoreClass: 'islink',
-        captions: function(element) {
-            return element.getElementsByTagName('img')[0].alt;
-    }});
+        captions: function(element){var i=element.getElementsByTagName('img')[0];return i===undefined?'':i.alt;}});
     </script>
 </body>
 </html>

@@ -9,8 +9,8 @@
 <link href="../../assets/css/all-nocdn.css" rel="stylesheet" type="text/css">
 <meta name="theme-color" content="#222222">
 <meta name="generator" content="Nikola (getnikola.com)">
-<link rel="alternate" type="application/rss+xml" title="RSS (en)" href="../../rss.xml">
-<link rel="alternate" type="application/rss+xml" title="RSS (es)" href="../../es/rss.xml">
+<link rel="alternate" type="application/rss+xml" title="RSS (en)" hreflang="en" href="../../rss.xml">
+<link rel="alternate" type="application/rss+xml" title="RSS (es)" hreflang="es" href="../../es/rss.xml">
 <link rel="canonical" href="https://stsewd.dev/posts/neovim-installation-configuration/">
 <!--[if lt IE 9]><script src="../../assets/js/html5.js"></script><![endif]--><!-- Custom css --><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 <link rel="stylesheet" href="../../assets/css/custom.css" type="text/css" media="all">
@@ -30,10 +30,11 @@
 <!-- Menubar -->
 
 <nav class="navbar navbar-expand-md static-top mb-4
-navbar-dark bg-dark
+navbar-dark
+bg-dark
 "><div class="container">
 <!-- This keeps the margins nice -->
-        <a class="navbar-brand" href="https://stsewd.dev/">
+        <a class="navbar-brand" href="../../">
 
             <span id="blog-title">Santos Gallegos</span>
         </a>
@@ -58,7 +59,7 @@ navbar-dark bg-dark
 <ul class="navbar-nav navbar-right">
 <li>
             </li>
-<li class="nav-item"><a href="https://stsewd.dev/es/" rel="alternate" hreflang="es" class="nav-link">Español</a></li>
+<li class="nav-item"><a href="../../es/" rel="alternate" hreflang="es" class="nav-link">Español</a></li>
 
                 
                 
@@ -72,6 +73,7 @@ navbar-dark bg-dark
         <!--Body content-->
         
         
+        
   
 
 <div class="container mb-3">
@@ -81,7 +83,7 @@ navbar-dark bg-dark
 <article class="post-text h-entry hentry postpage" itemscope="itemscope" itemtype="http://schema.org/Article"><header><h1 class="p-name entry-title" itemprop="headline name"><a href="." class="u-url">Neovim, Instalación y Configuración Básica</a></h1>
 
         <div class="metadata">
-            <p class="byline author vcard"><span class="byline-name fn" itemprop="author">
+            <p class="byline author vcard p-author h-card"><span class="byline-name fn p-name" itemprop="author">
                     Santos Gallegos
             </span></p>
             <p class="dateline">
@@ -105,7 +107,7 @@ navbar-dark bg-dark
 <div class="section" id="que-es-neovim">
 <h2>¿Qué es Neovim?</h2>
 <p><a class="reference external" href="https://neovim.io/charter/">Neovim</a> es una refactorización del código de <a class="reference external" href="http://www.vim.org/">Vim</a>,
-es un fork, no un clon de este <a class="footnote-reference" href="#fork-no-clone" id="id1">[1]</a>.
+es un fork, no un clon de este <a class="footnote-reference brackets" href="#fork-no-clone" id="id1">1</a>.
 Trae lo bueno de Vim con una mejor experiencia <em>fuera de caja</em> para el usuario.</p>
 <p><strong>¿Entonces qué es Vim?</strong> Vim es un editor de texto basado en modos
 (un lugar para escribir, otro para insertar comandos, y así).
@@ -118,17 +120,14 @@ Su interfaz no es gráfica, sino basada en texto
 <p>¿Qué realmente ofrece Neovim frente a Vim,
 además de tener un código más limpio?</p>
 <ul class="simple">
-<li>Configuraciones por defecto, que hacen que puedas usarlo de manera inmediata.
-<a class="footnote-reference" href="#configuraciones-defecto" id="id2">[2]</a> <a class="footnote-reference" href="#configuraciones-defecto-documentacion" id="id3">[3]</a>
-</li>
-<li>Un emulador de terminal. <a class="footnote-reference" href="#emulador-terminal" id="id4">[4]</a>
-</li>
-<li>Mejor integración con características de terminales modernos
-(estilo del cursor, <em>truecolor</em> <a class="footnote-reference" href="#true-color" id="id5">[5]</a>).</li>
-<li>Una API que permite la comunicación con Neovim desde cualquier lenguaje de programación
-(de manera segura y asíncrona). <a class="footnote-reference" href="#api-neovim" id="id6">[6]</a>
-</li>
-<li>Mejor integración con el mouse.</li>
+<li><p>Configuraciones por defecto, que hacen que puedas usarlo de manera inmediata.
+<a class="footnote-reference brackets" href="#configuraciones-defecto" id="id2">2</a> <a class="footnote-reference brackets" href="#configuraciones-defecto-documentacion" id="id3">3</a></p></li>
+<li><p>Un emulador de terminal. <a class="footnote-reference brackets" href="#emulador-terminal" id="id4">4</a></p></li>
+<li><p>Mejor integración con características de terminales modernos
+(estilo del cursor, <em>truecolor</em> <a class="footnote-reference brackets" href="#true-color" id="id5">5</a>).</p></li>
+<li><p>Una API que permite la comunicación con Neovim desde cualquier lenguaje de programación
+(de manera segura y asíncrona). <a class="footnote-reference brackets" href="#api-neovim" id="id6">6</a></p></li>
+<li><p>Mejor integración con el mouse.</p></li>
 </ul>
 </div>
 <div class="section" id="por-que-usar-neovim">
@@ -165,44 +164,44 @@ para programar en cualquier lenguaje, o editar texto en general.</p>
 <h2>Instalación</h2>
 <p>Para la instalación de Neovim he usado dos máquinas virtuales:</p>
 <ul class="simple">
-<li>Ubuntu 16.04.02</li>
-<li>Fedora 25.1.3</li>
+<li><p>Ubuntu 16.04.02</p></li>
+<li><p>Fedora 25.1.3</p></li>
 </ul>
 <p>Si usas otra distro que no sea Ubuntu ni Fedora o usas Windows,
 puedes seguir el proceso de instalación en la
 <a class="reference external" href="https://github.com/neovim/neovim/wiki/Installing-Neovim">documentación oficial de Neovim</a>.</p>
-<p>Si no deseas instalar nada en tu sistema, puedes hacer uso de la <tt class="docutils literal">Appimage</tt> de Neovim.</p>
-<pre class="code sh"><a name="rest_code_567d93df3eef407d83f6713b536cf71d-1"></a>curl -LO https://github.com/neovim/neovim/releases/download/nightly/nvim.appimage
-<a name="rest_code_567d93df3eef407d83f6713b536cf71d-2"></a>chmod u+x nvim.appimage
+<p>Si no deseas instalar nada en tu sistema, puedes hacer uso de la <code class="docutils literal">Appimage</code> de Neovim.</p>
+<pre class="code sh"><a name="rest_code_4987f4b247b64d858285ed190f3ddc16-1"></a>curl -LO https://github.com/neovim/neovim/releases/download/nightly/nvim.appimage
+<a name="rest_code_4987f4b247b64d858285ed190f3ddc16-2"></a>chmod u+x nvim.appimage
 </pre>
 <div class="section" id="ubuntu">
 <h3>Ubuntu</h3>
 <p>Para tener la última versión hay que agregar la
 <a class="reference external" href="https://launchpad.net/%7Eneovim-ppa/+archive/ubuntu/unstable">PPA de Neovim</a>.
 Ejecuta el siguiente comando en la terminal.</p>
-<pre class="code sh"><a name="rest_code_74086e6abf734f8ab780a7c9cbc606e4-1"></a>sudo add-apt-repository ppa:neovim-ppa/unstable
+<pre class="code sh"><a name="rest_code_af1344a639cf4468bb67cdcd525c623a-1"></a>sudo add-apt-repository ppa:neovim-ppa/unstable
 </pre>
 <p>Luego, hay que actualizar los paquetes e instalar Neovim.</p>
-<pre class="code sh"><a name="rest_code_01426f5d92ca4a00a1a3a5ab5f320bd5-1"></a>sudo apt-get update
-<a name="rest_code_01426f5d92ca4a00a1a3a5ab5f320bd5-2"></a>sudo apt-get install neovim
+<pre class="code sh"><a name="rest_code_d9af6dd512104294a71552cda977adf2-1"></a>sudo apt-get update
+<a name="rest_code_d9af6dd512104294a71552cda977adf2-2"></a>sudo apt-get install neovim
 </pre>
 </div>
 <div class="section" id="fedora">
 <h3>Fedora</h3>
 <p>Para instalar la última versión de Neovim en Fedora,
 ejecuta el siguiente comando.</p>
-<pre class="code sh"><a name="rest_code_c53770b415ca4183be1c7926a276789c-1"></a>sudo dnf install neovim
+<pre class="code sh"><a name="rest_code_4c017bbc6cb0469abc8f115b34ea04ac-1"></a>sudo dnf install neovim
 </pre>
 </div>
 <div class="section" id="comprobando-la-instalacion">
 <h3>Comprobando la instalación</h3>
 <p>Para comprobar que todo ha salido bien,
-en la terminal ejecuta el comando <tt class="docutils literal">nvim</tt>.</p>
-<pre class="code sh"><a name="rest_code_f682afb3776b4f3f8abb9170aa037005-1"></a>nvim
+en la terminal ejecuta el comando <code class="docutils literal">nvim</code>.</p>
+<pre class="code sh"><a name="rest_code_dd3be1a3e396459790fc76711713f547-1"></a>nvim
 </pre>
 <div class="admonition note">
-<p class="first admonition-title">Nota</p>
-<p class="last">Si usaste la <tt class="docutils literal">Appimage</tt>, debes ejecutar <tt class="docutils literal">./nvim.appimage</tt>
+<p class="admonition-title">Nota</p>
+<p>Si usaste la <code class="docutils literal">Appimage</code>, debes ejecutar <code class="docutils literal">./nvim.appimage</code>
 sobre el directorio donde la descargaste.</p>
 </div>
 <p>Podrás ver la pantalla de bienvenida de Neovim.</p>
@@ -215,8 +214,8 @@ sobre el directorio donde la descargaste.</p>
 <p class="caption">Neovim en Fedora</p>
 </div>
 <div class="admonition note">
-<p class="first admonition-title">Nota</p>
-<p class="last">Tal vez ahora mismo Neovim luzca aburrido,
+<p class="admonition-title">Nota</p>
+<p>Tal vez ahora mismo Neovim luzca aburrido,
 nada <em>moderno</em> ni con un gran diseño,
 pero al finalizar esta serie de posts
 tendrás un editor sin nada que envidiarle al resto.</p>
@@ -234,10 +233,10 @@ puede que te estés haciendo algunas preguntas:
 ¿dónde están los menús? ¿cómo empiezo a escribir? o ¿cómo #@!?$# salgo?</p>
 <p>Más adelante te mostraré todo esto,
 por ahora lo que necesitas saber es que puedes moverte usando las teclas direccionales;
-y para salir, presiona al menos tres veces la tecla <tt class="kbd docutils literal">Esc</tt>,
-luego presiona la tecla <tt class="kbd docutils literal">:</tt>,
+y para salir, presiona al menos tres veces la tecla <code class="kbd docutils literal">Esc</code>,
+luego presiona la tecla <code class="kbd docutils literal">:</code>,
 en la parte inferior aparecerá un pequeño espacio donde podrás ingresar texto,
-ingresa <tt class="docutils literal">q!</tt> y luego presiona <tt class="kbd docutils literal">Enter</tt>.</p>
+ingresa <code class="docutils literal">q!</code> y luego presiona <code class="kbd docutils literal">Enter</code>.</p>
 </div>
 <div class="section" id="instalando-dependencias-adicionales">
 <h2>Instalando dependencias adicionales</h2>
@@ -246,19 +245,19 @@ pero aún hace falta instalar algunas dependencias (opcionales)
 para sacarle más provecho y no tener ningún problema al instalar plugins.</p>
 <div class="section" id="proveedor-de-portapapeles">
 <h3>Proveedor de portapapeles</h3>
-<p>Para que Neovim pueda copiar o pegar desde el portapapeles <a class="footnote-reference" href="#portapapeles" id="id7">[8]</a> del sistema operativo,
+<p>Para que Neovim pueda copiar o pegar desde el portapapeles <a class="footnote-reference brackets" href="#portapapeles" id="id7">8</a> del sistema operativo,
 hay que instalar un <em>proveedor</em>.</p>
-<p>Existen dos alternativas <tt class="docutils literal">xclip</tt> y <tt class="docutils literal">xsel</tt>, ambas muy buenas.
+<p>Existen dos alternativas <code class="docutils literal">xclip</code> y <code class="docutils literal">xsel</code>, ambas muy buenas.
 A continuación tienes los comandos para instalar alguna de ellas.</p>
 <p>Ubuntu:</p>
-<pre class="code sh"><a name="rest_code_cada72f65dec40f88bd816172a2cb46b-1"></a>sudo apt install xclip
+<pre class="code sh"><a name="rest_code_ac96da434bf342e9b92cf2511c343be4-1"></a>sudo apt install xclip
 </pre>
-<pre class="code sh"><a name="rest_code_5010b11363d6464397672eb99f7a1724-1"></a>sudo apt install xsel
+<pre class="code sh"><a name="rest_code_1d0975b17b06416686e3659f995908af-1"></a>sudo apt install xsel
 </pre>
 <p>Fedora:</p>
-<pre class="code sh"><a name="rest_code_b65fcffe351e4b91a33bb597435e903b-1"></a>sudo dnf install xclip
+<pre class="code sh"><a name="rest_code_d90b4af81f3b4bc6b246834a92dfa47e-1"></a>sudo dnf install xclip
 </pre>
-<pre class="code sh"><a name="rest_code_ba0adb4cb6894bc0b080b57b53ec6c60-1"></a>sudo dnf install xsel
+<pre class="code sh"><a name="rest_code_48551601f87d4b55b5bc9cb9c6d70a24-1"></a>sudo dnf install xsel
 </pre>
 </div>
 <div class="section" id="interfaces-de-python">
@@ -270,39 +269,39 @@ porque todos los plugins que se instalarán usan Python 3.</p>
 <div class="section" id="id8">
 <h4>Ubuntu</h4>
 <p>Ubuntu ya incluye ambas versiones de Python,
-pero antes hay que instalar <tt class="docutils literal">pip</tt>
+pero antes hay que instalar <code class="docutils literal">pip</code>
 (una herramienta para descargar y administrar librerías de Python).
 Para ello ejecuta los siguientes comandos:</p>
-<pre class="code sh"><a name="rest_code_89f8165781494c70888335ade5ff02a1-1"></a>sudo apt install python3-pip
+<pre class="code sh"><a name="rest_code_40f8bb0667184001975dcea07c928344-1"></a>sudo apt install python3-pip
 </pre>
-<pre class="code sh"><a name="rest_code_3696c7891b33424989c03408b93acfcf-1"></a>sudo apt install python-pip
+<pre class="code sh"><a name="rest_code_17052fda2adb4369b75cb474161f4e8d-1"></a>sudo apt install python-pip
 </pre>
 <p>Ahora ya puedes instalar las interfaces de Neovim.</p>
 <div class="admonition warning">
-<p class="first admonition-title">Advertencia</p>
-<p class="last">Puede que necesites ejecutar estos comandos anteponiendo <strong>sudo</strong>.</p>
+<p class="admonition-title">Advertencia</p>
+<p>Puede que necesites ejecutar estos comandos anteponiendo <strong>sudo</strong>.</p>
 </div>
-<pre class="code sh"><a name="rest_code_c19e68c758a548b6aa637da05169f32e-1"></a>python3 -m pip install neovim
+<pre class="code sh"><a name="rest_code_ebd0f38b1678492c9edac81f6fdb5ec7-1"></a>python3 -m pip install neovim
 </pre>
-<pre class="code sh"><a name="rest_code_efa66d2200c240618ebbe07451745ec0-1"></a>python -m pip install neovim
+<pre class="code sh"><a name="rest_code_c7f377b7a84b4e37bbc7d8a05617a7a0-1"></a>python -m pip install neovim
 </pre>
 </div>
 <div class="section" id="id9">
 <h4>Fedora</h4>
 <p>Las versiones actuales de Fedora sólo incluyen Python 3,
 así que si necesitas instalar Python 2, puedes hacerlo con:</p>
-<pre class="code sh"><a name="rest_code_8157024ed3844a0cada0e98a03c11ef3-1"></a>sudo dnf install python
+<pre class="code sh"><a name="rest_code_f51507f530cf45468cb30e00dfadeecc-1"></a>sudo dnf install python
 </pre>
 <p>Ahora ya puedes instalar las interfaces de Neovim,
 aunque puede que Fedora ya lo haya hecho cuando instalaste Neovim
 (actualizar con los comandos de la siguiente sección si es el caso).</p>
 <div class="admonition warning">
-<p class="first admonition-title">Advertencia</p>
-<p class="last">Puede que necesites ejecutar estos comandos anteponiendo <strong>sudo</strong>.</p>
+<p class="admonition-title">Advertencia</p>
+<p>Puede que necesites ejecutar estos comandos anteponiendo <strong>sudo</strong>.</p>
 </div>
-<pre class="code sh"><a name="rest_code_c43fc7ac13524e808daebf91811325a8-1"></a>python3 -m pip install neovim
+<pre class="code sh"><a name="rest_code_e98780c95be744f68b0d6c28249f5880-1"></a>python3 -m pip install neovim
 </pre>
-<pre class="code sh"><a name="rest_code_df59c43c44bb4937b0ed088406e811ca-1"></a>python -m pip install neovim
+<pre class="code sh"><a name="rest_code_4351217870f54f3a878eb3d0998a8962-1"></a>python -m pip install neovim
 </pre>
 </div>
 </div>
@@ -311,12 +310,12 @@ aunque puede que Fedora ya lo haya hecho cuando instalaste Neovim
 <p>Es recomendable que cada cierto tiempo actualices las interfaces de Python,
 así estarás al día con lo último que Neovim ofrece a través de su API.</p>
 <div class="admonition warning">
-<p class="first admonition-title">Advertencia</p>
-<p class="last">Puede que necesites ejecutar estos comandos anteponiendo <strong>sudo</strong>.</p>
+<p class="admonition-title">Advertencia</p>
+<p>Puede que necesites ejecutar estos comandos anteponiendo <strong>sudo</strong>.</p>
 </div>
-<pre class="code sh"><a name="rest_code_d517672c26ce4b0b8e142940103670d9-1"></a>python3 -m pip install --upgrade neovim
+<pre class="code sh"><a name="rest_code_742ed2afce3648e4a425b91f960cfe5a-1"></a>python3 -m pip install --upgrade neovim
 </pre>
-<pre class="code sh"><a name="rest_code_c2256288150a41c096dc2de550b888ce-1"></a>python -m pip install --upgrade neovim
+<pre class="code sh"><a name="rest_code_52ce5bc461004b6baa24428aed0dc14b-1"></a>python -m pip install --upgrade neovim
 </pre>
 </div>
 <div class="section" id="interfaces-de-ruby">
@@ -327,32 +326,32 @@ otros usan la interfaz de <a class="reference external" href="https://rubygems.o
 <h4>Ubuntu</h4>
 <p>Ubuntu no trae Ruby por defecto,
 instálalo con los siguientes comandos.</p>
-<pre class="code sh"><a name="rest_code_8cf13138f8284cf4ac61044c611f7cea-1"></a>sudo apt install ruby
-<a name="rest_code_8cf13138f8284cf4ac61044c611f7cea-2"></a>sudo apt install ruby-dev
+<pre class="code sh"><a name="rest_code_2ab11118ca6342348af7b2826e7086ea-1"></a>sudo apt install ruby
+<a name="rest_code_2ab11118ca6342348af7b2826e7086ea-2"></a>sudo apt install ruby-dev
 </pre>
 <p>Ahora si podrás instalar la interfaz de Ruby.</p>
 <div class="admonition warning">
-<p class="first admonition-title">Advertencia</p>
-<p class="last">Puede que necesites ejecutar estos comandos anteponiendo <strong>sudo</strong>.</p>
+<p class="admonition-title">Advertencia</p>
+<p>Puede que necesites ejecutar estos comandos anteponiendo <strong>sudo</strong>.</p>
 </div>
-<pre class="code sh"><a name="rest_code_07369f2ea7a5403cb628d209cd1d1ca9-1"></a>gem install neovim
+<pre class="code sh"><a name="rest_code_f5534bca9ba34fa7846ebc721eb40261-1"></a>gem install neovim
 </pre>
 </div>
 <div class="section" id="id11">
 <h4>Fedora</h4>
 <p>Fedora no trae Ruby por defecto,
 instálalo con los siguientes comandos.</p>
-<pre class="code sh"><a name="rest_code_fd20ea2110e34f9383c9ba20a3c94ec9-1"></a>sudo dnf install ruby
-<a name="rest_code_fd20ea2110e34f9383c9ba20a3c94ec9-2"></a>sudo dnf install ruby-devel
-<a name="rest_code_fd20ea2110e34f9383c9ba20a3c94ec9-3"></a>sudo dnf install gcc-c++
-<a name="rest_code_fd20ea2110e34f9383c9ba20a3c94ec9-4"></a>sudo dnf install redhat-rpm-config
+<pre class="code sh"><a name="rest_code_57a98a9cfe594c67bf3d1a5c6625590f-1"></a>sudo dnf install ruby
+<a name="rest_code_57a98a9cfe594c67bf3d1a5c6625590f-2"></a>sudo dnf install ruby-devel
+<a name="rest_code_57a98a9cfe594c67bf3d1a5c6625590f-3"></a>sudo dnf install gcc-c++
+<a name="rest_code_57a98a9cfe594c67bf3d1a5c6625590f-4"></a>sudo dnf install redhat-rpm-config
 </pre>
 <p>Ahora si podrás instalar la interfaz de Ruby.</p>
 <div class="admonition warning">
-<p class="first admonition-title">Advertencia</p>
-<p class="last">Puede que necesites ejecutar estos comandos anteponiendo <strong>sudo</strong>.</p>
+<p class="admonition-title">Advertencia</p>
+<p>Puede que necesites ejecutar estos comandos anteponiendo <strong>sudo</strong>.</p>
 </div>
-<pre class="code sh"><a name="rest_code_2924f9c1828e445284855dddb364e0ba-1"></a>gem install neovim
+<pre class="code sh"><a name="rest_code_1cd8839630d54ddb824667a928adac8e-1"></a>gem install neovim
 </pre>
 </div>
 </div>
@@ -361,9 +360,9 @@ instálalo con los siguientes comandos.</p>
 <h2>Comprobando las dependencias adicionales</h2>
 <p>Has instalado las dependencias adicionales para Neovim,
 pero ¿cómo saber que todo salió bien?
-Neovim trae una herramienta que permite comprobarlo, <tt class="docutils literal">checkhealth</tt>.
+Neovim trae una herramienta que permite comprobarlo, <code class="docutils literal">checkhealth</code>.
 Para hacer uso de esta herramienta hay que iniciar Neovim con un parámetro algo especial.</p>
-<pre class="code sh"><a name="rest_code_f3d34047f5ed49eeb405a6be4ae45827-1"></a>nvim +checkhealth
+<pre class="code sh"><a name="rest_code_863bac9d91d54e28be2d33eb754814f7-1"></a>nvim +checkhealth
 </pre>
 <p>Espera unos segundos a que Neovim haga las comprobaciones,
 si todo salió bien debe aparecer algo como esto:</p>
@@ -381,230 +380,220 @@ existen otras maneras más eficientes de hacerlo,
 pero el objetivo es que te sientas cómodo con la edición de texto antes de pasar a cosas más avanzadas.
 Al final del post encontrarás varios recursos para aprender más sobre Neovim/Vim.</p>
 <div class="admonition note">
-<p class="first admonition-title">Nota</p>
-<p class="last">Todo lo que aprendas en esta sección también es válido para Vim.</p>
+<p class="admonition-title">Nota</p>
+<p>Todo lo que aprendas en esta sección también es válido para Vim.</p>
 </div>
 <div class="section" id="modos">
 <h3>Modos</h3>
 <p>Neovim tiene 3 modos principales:</p>
 <ul class="simple">
-<li>
-<strong>Modo normal</strong> - Donde todas las teclas son interpretadas como comandos.</li>
-<li>
-<strong>Modo insertar</strong> - Donde puedes escribir todo lo que teclees.</li>
-<li>
-<strong>Modo visual</strong> - Donde puedes seleccionar bloques de texto.</li>
+<li><p><strong>Modo normal</strong> - Donde todas las teclas son interpretadas como comandos.</p></li>
+<li><p><strong>Modo insertar</strong> - Donde puedes escribir todo lo que teclees.</p></li>
+<li><p><strong>Modo visual</strong> - Donde puedes seleccionar bloques de texto.</p></li>
 </ul>
 <p>Para entrar y salir de cada modo:</p>
 <ul class="simple">
-<li>Para entrar al modo insertar, presiona <tt class="kbd docutils literal">i</tt>.</li>
-<li>Para salir del modo insertar, presiona <tt class="kbd docutils literal">Esc</tt>
-</li>
-<li>Para entrar al modo visual, presiona <tt class="kbd docutils literal">v</tt>.</li>
-<li>Para salir del modo visual, presiona <tt class="kbd docutils literal">Esc</tt>
-</li>
+<li><p>Para entrar al modo insertar, presiona <code class="kbd docutils literal">i</code>.</p></li>
+<li><p>Para salir del modo insertar, presiona <code class="kbd docutils literal">Esc</code></p></li>
+<li><p>Para entrar al modo visual, presiona <code class="kbd docutils literal">v</code>.</p></li>
+<li><p>Para salir del modo visual, presiona <code class="kbd docutils literal">Esc</code></p></li>
 </ul>
 <p><strong>Cuando abres Neovim, el modo por defecto es el normal.</strong></p>
 <div class="admonition note">
-<p class="first admonition-title">Nota</p>
-<p class="last">Cada vez que sientas que te perdiste en un paso,
-presiona <tt class="kbd docutils literal">Esc</tt> al menos tres veces,
+<p class="admonition-title">Nota</p>
+<p>Cada vez que sientas que te perdiste en un paso,
+presiona <code class="kbd docutils literal">Esc</code> al menos tres veces,
 así podrás regresar al modo normal y empezar de nuevo.</p>
 </div>
 </div>
 <div class="section" id="abrir-un-archivo">
 <h3>Abrir un archivo</h3>
 <p>Puedes abrir un archivo desde la terminal con:</p>
-<pre class="code sh"><a name="rest_code_147c7086a878464db6182c272e77dba6-1"></a>nvim mi-archivo.txt
+<pre class="code sh"><a name="rest_code_704912c3eee3415f87d840bbabe479f3-1"></a>nvim mi-archivo.txt
 </pre>
 </div>
 <div class="section" id="moviendote-por-el-editor">
 <h3>Moviéndote por el editor</h3>
 <p>Antes había dicho que puedes usar las teclas direccionales para moverte,
 pero no es lo más eficiente cuando usas Neovim,
-las teclas direccionales están lejos de tu <em>home row</em> <a class="footnote-reference" href="#home-row" id="id12">[7]</a>.
+las teclas direccionales están lejos de tu <em>home row</em> <a class="footnote-reference brackets" href="#home-row" id="id12">7</a>.
 Puedes usar las siguientes teclas para moverte dentro del modo normal.</p>
 <ul class="simple">
-<li>
-<tt class="kbd docutils literal">h</tt> - izquierda</li>
-<li>
-<tt class="kbd docutils literal">j</tt> - abajo</li>
-<li>
-<tt class="kbd docutils literal">k</tt> - arriba</li>
-<li>
-<tt class="kbd docutils literal">l</tt> - derecha</li>
+<li><p><code class="kbd docutils literal">h</code> - izquierda</p></li>
+<li><p><code class="kbd docutils literal">j</code> - abajo</p></li>
+<li><p><code class="kbd docutils literal">k</code> - arriba</p></li>
+<li><p><code class="kbd docutils literal">l</code> - derecha</p></li>
 </ul>
 <div class="figure align-center">
 <a class="reference external image-reference" href="../../images/nvim/hjkl.png"><img alt="/images/nvim/hjkl.png" src="../../images/nvim/hjkl.png"></a>
 <p class="caption">Cheatsheet <a class="reference external" href="http://vimsheet.com/">http://vimsheet.com/</a></p>
 </div>
-<p>También puedes usar <tt class="kbd docutils literal">w</tt> y <tt class="kbd docutils literal">b</tt> para moverte entre palabras.</p>
+<p>También puedes usar <code class="kbd docutils literal">w</code> y <code class="kbd docutils literal">b</code> para moverte entre palabras.</p>
 <p>Al principio va a ser duro no hacerlo con las teclas direccionales,
 intenta practicar hasta que te sientas cómodo,
 y no llegar a perder la cabeza o <a class="reference external" href="https://twitter.com/MasteringVim/status/879294993659310080">las teclas</a>.</p>
 <div class="admonition note">
-<p class="first admonition-title">Nota</p>
-<p class="last">Puedes usar <tt class="kbd docutils literal">j</tt> y <tt class="kbd docutils literal">k</tt> para moverte en este blog.</p>
+<p class="admonition-title">Nota</p>
+<p>Puedes usar <code class="kbd docutils literal">j</code> y <code class="kbd docutils literal">k</code> para moverte en este blog.</p>
 </div>
 </div>
 <div class="section" id="escribir-sobre-un-archivo">
 <h3>Escribir sobre un archivo</h3>
-<p>Para empezar a escribir debes ingresar al modo insertar con <tt class="kbd docutils literal">i</tt>.
+<p>Para empezar a escribir debes ingresar al modo insertar con <code class="kbd docutils literal">i</code>.
 Observa como la forma del cursor ha cambiado,
-ingresa algún texto y cuando termines presiona <tt class="kbd docutils literal">Esc</tt> para volver al modo normal.</p>
+ingresa algún texto y cuando termines presiona <code class="kbd docutils literal">Esc</code> para volver al modo normal.</p>
 </div>
 <div class="section" id="guardar">
 <h3>Guardar</h3>
-<p>En modo normal presiona <tt class="kbd docutils literal">:</tt>, escribe <cite>w</cite> y presiona enter.</p>
+<p>En modo normal presiona <code class="kbd docutils literal">:</code>, escribe <cite>w</cite> y presiona enter.</p>
 </div>
 <div class="section" id="salir">
 <h3>Salir</h3>
-<p>En modo normal presiona <tt class="kbd docutils literal">:</tt>, luego escribe <tt class="docutils literal">q</tt> y presiona enter
-(para salir sin guardar los cambios, debes escribir <tt class="docutils literal">q!</tt>).</p>
+<p>En modo normal presiona <code class="kbd docutils literal">:</code>, luego escribe <code class="docutils literal">q</code> y presiona enter
+(para salir sin guardar los cambios, debes escribir <code class="docutils literal">q!</code>).</p>
 </div>
 <div class="section" id="seleccionar-texto">
 <h3>Seleccionar texto</h3>
-<p>Presiona <tt class="kbd docutils literal">v</tt> para entrar al modo visual,
+<p>Presiona <code class="kbd docutils literal">v</code> para entrar al modo visual,
 mueve el cursor para realizar la selección.
-Presiona <tt class="kbd docutils literal">Esc</tt> para regresar al modo normal.</p>
+Presiona <code class="kbd docutils literal">Esc</code> para regresar al modo normal.</p>
 </div>
 <div class="section" id="copiar-pegar">
 <h3>Copiar &amp; pegar</h3>
-<p>Selecciona un texto usando el modo visual, luego presiona <tt class="kbd docutils literal">y</tt>.
-Presiona <tt class="kbd docutils literal">p</tt> para pegar después del cursor o <tt class="kbd docutils literal">P</tt> para pegar antes del cursor.</p>
+<p>Selecciona un texto usando el modo visual, luego presiona <code class="kbd docutils literal">y</code>.
+Presiona <code class="kbd docutils literal">p</code> para pegar después del cursor o <code class="kbd docutils literal">P</code> para pegar antes del cursor.</p>
 <p>Para copiar una palabra,
-en modo normal presiona <tt class="kbd docutils literal">yiw</tt> o para copiar la línea actual presiona <tt class="kbd docutils literal">yy</tt>.</p>
+en modo normal presiona <code class="kbd docutils literal">yiw</code> o para copiar la línea actual presiona <code class="kbd docutils literal">yy</code>.</p>
 </div>
 <div class="section" id="cortar">
 <h3>Cortar</h3>
-<p>Selecciona un texto usando el modo visual, luego presiona <tt class="kbd docutils literal">d</tt>.
+<p>Selecciona un texto usando el modo visual, luego presiona <code class="kbd docutils literal">d</code>.
 Para cortar una palabra,
-en modo normal presiona <tt class="kbd docutils literal">diw</tt> o para cortar la línea actual presiona <tt class="kbd docutils literal">dd</tt>.</p>
-<p>Para pegar el texto cortado, presiona <tt class="kbd docutils literal">p</tt>.</p>
+en modo normal presiona <code class="kbd docutils literal">diw</code> o para cortar la línea actual presiona <code class="kbd docutils literal">dd</code>.</p>
+<p>Para pegar el texto cortado, presiona <code class="kbd docutils literal">p</code>.</p>
 </div>
 <div class="section" id="copiar-y-pegar-desde-el-portapapeles">
 <h3>Copiar y pegar desde el portapapeles</h3>
 <p>Si intentaste pegar texto fuera de Neovim,
 o pegar algo que habías copiado al portapapeles,
 te habrás dado cuenta que no funciona.
-Para usar el portapapeles debes copiar usando <tt class="kbd docutils literal">"+y</tt>,
-y para pegar desde el portapapeles <tt class="kbd docutils literal">"+p</tt>.</p>
+Para usar el portapapeles debes copiar usando <code class="kbd docutils literal">"+y</code>,
+y para pegar desde el portapapeles <code class="kbd docutils literal">"+p</code>.</p>
 </div>
 <div class="section" id="deshacer-y-rehacer">
 <h3>Deshacer y rehacer</h3>
-<p>Para deshacer, en modo normal presiona <tt class="kbd docutils literal">u</tt>;
-y para rehacer <tt class="kbd docutils literal">Ctrl</tt> + <tt class="kbd docutils literal">r</tt>.</p>
+<p>Para deshacer, en modo normal presiona <code class="kbd docutils literal">u</code>;
+y para rehacer <code class="kbd docutils literal">Ctrl</code> + <code class="kbd docutils literal">r</code>.</p>
 <div class="admonition warning">
-<p class="first admonition-title">Advertencia</p>
-<p class="last">Tal vez te veas tentado a usar <tt class="kbd docutils literal">Ctrl</tt> + <tt class="kbd docutils literal">z</tt>,
+<p class="admonition-title">Advertencia</p>
+<p>Tal vez te veas tentado a usar <code class="kbd docutils literal">Ctrl</code> + <code class="kbd docutils literal">z</code>,
 si lo hiciste y tu editor se <em>cerró</em> no te preocupes,
-sólo escribe <tt class="kbd docutils literal">fg</tt> en la terminal y tendrás de regreso tu editor.</p>
+sólo escribe <code class="kbd docutils literal">fg</code> en la terminal y tendrás de regreso tu editor.</p>
 </div>
 </div>
 <div class="section" id="auto-completado">
 <h3>Auto completado</h3>
 <p>Mientras estás en modo insertar,
-escribe el inicio de una palabra y presiona <tt class="kbd docutils literal">Crtl</tt> + <tt class="kbd docutils literal">p</tt> o <tt class="kbd docutils literal">Ctrl</tt> + <tt class="kbd docutils literal">n</tt> para iterar sobre las sugerencias.</p>
+escribe el inicio de una palabra y presiona <code class="kbd docutils literal">Crtl</code> + <code class="kbd docutils literal">p</code> o <code class="kbd docutils literal">Ctrl</code> + <code class="kbd docutils literal">n</code> para iterar sobre las sugerencias.</p>
 </div>
 <div class="section" id="modo-linea-de-comandos">
 <h3>Modo línea de comandos</h3>
 <p>Neovim tiene otro modo, el modo línea de comandos.
 Aparece debajo del editor donde puedes ingresar un comando,
-luego de ejecutarlo (con <tt class="kbd docutils literal">Enter</tt>) el editor retorna al modo normal.</p>
+luego de ejecutarlo (con <code class="kbd docutils literal">Enter</code>) el editor retorna al modo normal.</p>
 <p>¿Te suena familiar, no?,
 ¡ya lo has usado para guardar y salir!
-Para ingresar a este modo teclea <tt class="kbd docutils literal">:</tt> desde el modo normal.</p>
-<p>De ahora en adelante cuando veas caracteres precedidos de <tt class="docutils literal">:</tt>
+Para ingresar a este modo teclea <code class="kbd docutils literal">:</code> desde el modo normal.</p>
+<p>De ahora en adelante cuando veas caracteres precedidos de <code class="docutils literal">:</code>
 sabrás que me refiero a que ejecutes un comando en el modo línea de comandos.
-Por ejemplo para guardar <tt class="docutils literal">:w</tt>.</p>
+Por ejemplo para guardar <code class="docutils literal">:w</code>.</p>
 <div class="admonition note">
-<p class="first admonition-title">Nota</p>
-<p class="last">Mientra estás en el modo línea de comandos puedes usar <tt class="kbd docutils literal">Tab</tt> para autocompletar.</p>
+<p class="admonition-title">Nota</p>
+<p>Mientra estás en el modo línea de comandos puedes usar <code class="kbd docutils literal">Tab</code> para autocompletar.</p>
 </div>
 <div class="admonition note">
-<p class="first admonition-title">Nota</p>
-<p class="last">El comando <tt class="docutils literal">:w</tt> es una abreviación de <tt class="docutils literal">:write</tt> ¡pruébalo!</p>
+<p class="admonition-title">Nota</p>
+<p>El comando <code class="docutils literal">:w</code> es una abreviación de <code class="docutils literal">:write</code> ¡pruébalo!</p>
 </div>
 </div>
 <div class="section" id="trabajando-con-varios-archivos">
 <h3>Trabajando con varios archivos</h3>
 <p>Para trabajar con varios archivos solemos usar pestañas, Neovim tiene pestañas,
-pero no son exactamente lo mismo que en los demás editores <a class="footnote-reference" href="#vim-buffers" id="id13">[9]</a>,
-en su lugar usaremos <tt class="docutils literal">buffers</tt>.</p>
+pero no son exactamente lo mismo que en los demás editores <a class="footnote-reference brackets" href="#vim-buffers" id="id13">9</a>,
+en su lugar usaremos <code class="docutils literal">buffers</code>.</p>
 <p>Podemos abrir varios archivos desde la terminal con:</p>
-<pre class="code sh"><a name="rest_code_3d4a2b94c6ec40d3a938cdf3eedc4bfe-1"></a>nvim archivo-uno.txt archivo-dos.txt
+<pre class="code sh"><a name="rest_code_d404b3ab1dae476db0b54abdca949df4-1"></a>nvim archivo-uno.txt archivo-dos.txt
 </pre>
 <p>O si ya tienes Neovim abierto,
-puedes usar el comando <tt class="docutils literal">:e &lt;archivo&gt;</tt>,
-por ejemplo <tt class="docutils literal">:e <span class="pre">archivo-uno.txt</span></tt>.</p>
+puedes usar el comando <code class="docutils literal">:e &lt;archivo&gt;</code>,
+por ejemplo <code class="docutils literal">:e <span class="pre">archivo-uno.txt</span></code>.</p>
 <p>Podrá parecer que no hay otro archivo abierto, pero lo hay.
-Puedes listar todos los buffers con <tt class="docutils literal">:ls</tt>;
-para cambiar al siguiente buffer usa <tt class="docutils literal">:bnext</tt> y para el anterior <tt class="docutils literal">:bprevious</tt>;
-para cerrar el buffer actual <tt class="docutils literal">:bdelete</tt>.</p>
+Puedes listar todos los buffers con <code class="docutils literal">:ls</code>;
+para cambiar al siguiente buffer usa <code class="docutils literal">:bnext</code> y para el anterior <code class="docutils literal">:bprevious</code>;
+para cerrar el buffer actual <code class="docutils literal">:bdelete</code>.</p>
 <div class="admonition note">
-<p class="first admonition-title">Nota</p>
-<p class="last">Los comandos <tt class="docutils literal">:bn</tt> y <tt class="docutils literal">:bp</tt> son una abreviación de <tt class="docutils literal">:bnext</tt> y <tt class="docutils literal">:bprevious</tt>.</p>
+<p class="admonition-title">Nota</p>
+<p>Los comandos <code class="docutils literal">:bn</code> y <code class="docutils literal">:bp</code> son una abreviación de <code class="docutils literal">:bnext</code> y <code class="docutils literal">:bprevious</code>.</p>
 </div>
 </div>
 <div class="section" id="buscar">
 <h3>Buscar</h3>
-<p>En modo normal presiona <tt class="kbd docutils literal">/</tt>,
-ingresa la palabra a buscar y presiona <tt class="kbd docutils literal">Enter</tt>.
-Muévete a la siguiente o anterior coincidencia con <tt class="kbd docutils literal">n</tt> y <tt class="kbd docutils literal">N</tt>.</p>
+<p>En modo normal presiona <code class="kbd docutils literal">/</code>,
+ingresa la palabra a buscar y presiona <code class="kbd docutils literal">Enter</code>.
+Muévete a la siguiente o anterior coincidencia con <code class="kbd docutils literal">n</code> y <code class="kbd docutils literal">N</code>.</p>
 </div>
 <div class="section" id="obteniendo-ayuda">
 <h3>Obteniendo ayuda</h3>
-<p>Para obtener ayuda puedes usar el comando <tt class="docutils literal">:help [tema]</tt>,
-por ejemplo <tt class="docutils literal">:help :w</tt> para obtener ayuda sobre el comando <tt class="docutils literal">:w</tt>.</p>
+<p>Para obtener ayuda puedes usar el comando <code class="docutils literal">:help [tema]</code>,
+por ejemplo <code class="docutils literal">:help :w</code> para obtener ayuda sobre el comando <code class="docutils literal">:w</code>.</p>
 <div class="admonition note">
-<p class="first admonition-title">Nota</p>
-<p class="last">El comando <tt class="docutils literal">:help</tt> puede ser abreviado como <tt class="docutils literal">:h</tt>.</p>
+<p class="admonition-title">Nota</p>
+<p>El comando <code class="docutils literal">:help</code> puede ser abreviado como <code class="docutils literal">:h</code>.</p>
 </div>
 </div>
 <div class="section" id="aprendiendo-desde-neovim">
 <h3>Aprendiendo desde Neovim</h3>
 <p>Neovim incluye un tutorial interactivo,
-ejecuta el comando <tt class="docutils literal">:Tutor</tt> para empezarlo.</p>
+ejecuta el comando <code class="docutils literal">:Tutor</code> para empezarlo.</p>
 </div>
 </div>
 <div class="section" id="configurando-neovim">
 <h2>Configurando Neovim</h2>
 <p>Neovim puede ser configurado desde el modo línea de comandos,
-prueba mostrando los números de las líneas ejecutando <tt class="docutils literal">:set number</tt>.
-¿Quieres ver el nombre del archivo que estás editando en la ventana de la terminal? <tt class="docutils literal">:set title</tt>.</p>
+prueba mostrando los números de las líneas ejecutando <code class="docutils literal">:set number</code>.
+¿Quieres ver el nombre del archivo que estás editando en la ventana de la terminal? <code class="docutils literal">:set title</code>.</p>
 <p>Si cierras Neovim, todas las configuraciones se perderán,
-para mantenerlas se usa un archivo <tt class="docutils literal">init.vim</tt>,
+para mantenerlas se usa un archivo <code class="docutils literal">init.vim</code>,
 el cual es cargado cada vez que se inicia Neovim.</p>
 <div class="section" id="init-vim">
 <h3>init.vim</h3>
 <div class="admonition note">
-<p class="first admonition-title">Nota</p>
-<p class="last">Si usas Vim, este archivo cumple la misma función que el archivo <tt class="docutils literal">.vimrc</tt>.</p>
+<p class="admonition-title">Nota</p>
+<p>Si usas Vim, este archivo cumple la misma función que el archivo <code class="docutils literal">.vimrc</code>.</p>
 </div>
-<p>Este archivo se localiza en <tt class="docutils literal"><span class="pre">~/.config/nvim/init.vim</span></tt>, si no existe, créalo.</p>
-<pre class="code sh"><a name="rest_code_92b50e3fe3db40769da398e9b29aaba0-1"></a><span class="nb">cd</span> ~/.config/
-<a name="rest_code_92b50e3fe3db40769da398e9b29aaba0-2"></a>mkdir nvim
-<a name="rest_code_92b50e3fe3db40769da398e9b29aaba0-3"></a>touch nvim/init.vim
+<p>Este archivo se localiza en <code class="docutils literal"><span class="pre">~/.config/nvim/init.vim</span></code>, si no existe, créalo.</p>
+<pre class="code sh"><a name="rest_code_8876dc9434df48699ab09f75d60d420d-1"></a><span class="nb">cd</span> ~/.config/
+<a name="rest_code_8876dc9434df48699ab09f75d60d420d-2"></a>mkdir nvim
+<a name="rest_code_8876dc9434df48699ab09f75d60d420d-3"></a>touch nvim/init.vim
 </pre>
 <p>Abre el archivo y agrega la línea:</p>
-<pre class="code vim"><a name="rest_code_7f8480481626410aa84a2539df0423ae-1"></a><span class="k">set</span> <span class="k">number</span>
+<pre class="code vim"><a name="rest_code_aebc6c73580c4783a4d6c2e53077ce4c-1"></a><span class="k">set</span> <span class="k">number</span>
 </pre>
 <p>Para que los cambios tengan efecto debes volver a abrir Neovim,
-o puedes ejecutar el commando <tt class="docutils literal">:so <span class="pre">~/.config/nvim/init.vim</span></tt>.</p>
+o puedes ejecutar el commando <code class="docutils literal">:so <span class="pre">~/.config/nvim/init.vim</span></code>.</p>
 <p>El archivo de configuraciones puede llegar a ser muy grande,
 así que trata de documentar todo lo que pongas sobre este
-(puedes agregar comentarios con <tt class="docutils literal">"</tt>),
+(puedes agregar comentarios con <code class="docutils literal">"</code>),
 y no copies y pegues cualquier configuración sin entenderla,
-así tendrás un <tt class="docutils literal">init.vim</tt> ordenado.</p>
+así tendrás un <code class="docutils literal">init.vim</code> ordenado.</p>
 <div class="admonition note">
-<p class="first admonition-title">Nota</p>
-<p class="last">Es recomendable poner tu <tt class="docutils literal">init.vim</tt> sobre un sistema de control de versiones,
+<p class="admonition-title">Nota</p>
+<p>Es recomendable poner tu <code class="docutils literal">init.vim</code> sobre un sistema de control de versiones,
 como <a class="reference external" href="http://www.git-scm.com">git</a>.</p>
 </div>
-<p>A continuación tienes un <tt class="docutils literal">init.vim</tt> con algunas configuraciones mínimas.</p>
+<p>A continuación tienes un <code class="docutils literal">init.vim</code> con algunas configuraciones mínimas.</p>
 <script src="https://gist.github.com/abeb79100eba64184668fd3b1b13bff9.js"></script><noscript>
-<pre class="literal-block">
-set title  " Muestra el nombre del archivo en la ventana de la terminal
+<pre class="literal-block">set title  " Muestra el nombre del archivo en la ventana de la terminal
 set number  " Muestra los números de las líneas
 set mouse=a  " Permite la integración del mouse (seleccionar texto, mover el cursor)
 
@@ -629,16 +618,15 @@ set spelllang=en,es  " Corregir palabras usando diccionarios en inglés y españ
 
 set termguicolors  " Activa true colors en la terminal
 set background=light  " Fondo del tema: light o dark
-colorscheme zellner  " Nombre del tema
-</pre>
+colorscheme zellner  " Nombre del tema</pre>
 </noscript>
 <div class="admonition note">
-<p class="first admonition-title">Nota</p>
-<p class="last">Para que los cambios de <tt class="docutils literal">set termguicolors</tt> tomen efecto debes volver a abrir Neovim.</p>
+<p class="admonition-title">Nota</p>
+<p>Para que los cambios de <code class="docutils literal">set termguicolors</code> tomen efecto debes volver a abrir Neovim.</p>
 </div>
 <div class="admonition note">
-<p class="first admonition-title">Nota</p>
-<p class="last">Para ver todos los temas escribe <tt class="docutils literal">:colorscheme</tt> da un espacio y luego usa <tt class="kbd docutils literal">Tab</tt> para iterar sobre estos.</p>
+<p class="admonition-title">Nota</p>
+<p>Para ver todos los temas escribe <code class="docutils literal">:colorscheme</code> da un espacio y luego usa <code class="kbd docutils literal">Tab</code> para iterar sobre estos.</p>
 </div>
 </div>
 </div>
@@ -648,20 +636,19 @@ colorscheme zellner  " Nombre del tema
 productivo tener que escribirlos cada vez para cambiar de buffer o guardar un
 archivo.</p>
 <p>Neovim nos permite definir nuestros propios atajos de teclado (mappings). Por
-ejemplo, si quisiéramos usar <tt class="kbd docutils literal">Ctrl</tt> + <tt class="kbd docutils literal">s</tt> para guardar,
+ejemplo, si quisiéramos usar <code class="kbd docutils literal">Ctrl</code> + <code class="kbd docutils literal">s</code> para guardar,
 bastaría con poner esta línea en el archivo <cite>init.vim</cite>.</p>
-<pre class="code vim"><a name="rest_code_6e09dfa527e1477393545c8c34891761-1"></a><span class="nb">nnoremap</span> <span class="p">&lt;</span>C<span class="p">-</span>s<span class="p">&gt;</span> :<span class="k">w</span><span class="p">&lt;</span>CR<span class="p">&gt;</span>
+<pre class="code vim"><a name="rest_code_e722f5bedc664a8d8c8a347d6add6f34-1"></a><span class="nb">nnoremap</span> <span class="p">&lt;</span>C<span class="p">-</span>s<span class="p">&gt;</span> :<span class="k">w</span><span class="p">&lt;</span>CR<span class="p">&gt;</span>
 </pre>
-<p>A menudo verás combinaciones que usan <tt class="docutils literal">&lt;leader&gt;</tt>,
+<p>A menudo verás combinaciones que usan <code class="docutils literal">&lt;leader&gt;</code>,
 nos referiremos a esta como la tecla líder,
 está reservada para atajos definidos por el usuario.
-Por defecto la tecla líder es <tt class="kbd docutils literal">\</tt>,
+Por defecto la tecla líder es <code class="kbd docutils literal">\</code>,
 pero es un poco difícil de teclear,
-por lo que se suele usar la tecla <tt class="kbd docutils literal">Espacio</tt> o <tt class="kbd docutils literal">,</tt> como sustituto.</p>
+por lo que se suele usar la tecla <code class="kbd docutils literal">Espacio</code> o <code class="kbd docutils literal">,</code> como sustituto.</p>
 <p>A continuación un par de mappings que te podrían ser de utilidad.</p>
 <script src="https://gist.github.com/4a02ce40968bf16050d96c4f8ec9e7cb.js"></script><noscript>
-<pre class="literal-block">
-let g:mapleader = ' '  " Definir espacio como la tecla líder
+<pre class="literal-block">let g:mapleader = ' '  " Definir espacio como la tecla líder
 
 nnoremap &lt;leader&gt;s :w&lt;CR&gt;  " Guardar con &lt;líder&gt; + s
 
@@ -688,8 +675,7 @@ nnoremap &lt;leader&gt;l :bnext&lt;CR&gt;
 nnoremap &lt;leader&gt;j :bprevious&lt;CR&gt;
 
 " Cerrar el buffer actual con &lt;líder&gt; + q
-nnoremap &lt;leader&gt;q :bdelete&lt;CR&gt;
-</pre>
+nnoremap &lt;leader&gt;q :bdelete&lt;CR&gt;</pre>
 </noscript>
 </div>
 <div class="section" id="configurando-la-terminal">
@@ -698,44 +684,44 @@ nnoremap &lt;leader&gt;q :bdelete&lt;CR&gt;
 <div class="section" id="ocultar-la-barra-de-menu">
 <h3>Ocultar la barra de menú</h3>
 <p>La barra de menú que ves es la de tú terminal, no la de Neovim.</p>
-<p>Accede al menú <tt class="docutils literal">Editar</tt> y selecciona <tt class="docutils literal">Preferencias</tt>.
-En la pestaña <tt class="docutils literal">General</tt> desmarca <tt class="docutils literal">Mostrar la barra de menús en las terminales nuevas por omisión</tt>.</p>
+<p>Accede al menú <code class="docutils literal">Editar</code> y selecciona <code class="docutils literal">Preferencias</code>.
+En la pestaña <code class="docutils literal">General</code> desmarca <code class="docutils literal">Mostrar la barra de menús en las terminales nuevas por omisión</code>.</p>
 <div class="figure">
 <a class="reference external image-reference" href="../../images/nvim/hide-menu-bar.png"><img alt="Ocultar la barra de menú de la terminal en Ubuntu" src="../../images/nvim/hide-menu-bar.png"></a>
 <p class="caption">Ocultar la barra de menú de la terminal en Ubuntu</p>
 </div>
 <div class="admonition warning">
-<p class="first admonition-title">Advertencia</p>
-<p class="last">Tendrás de volver a abrir la terminal para ver los cambios.</p>
+<p class="admonition-title">Advertencia</p>
+<p>Tendrás de volver a abrir la terminal para ver los cambios.</p>
 </div>
 <div class="admonition note">
-<p class="first admonition-title">Nota</p>
-<p class="last">Si quieres ver las opciones para configurar tu terminal,
-presiona <tt class="kbd docutils literal">Shift</tt> y luego da clic derecho sobre la terminal,
-o si prefieres hacerlo sin el mouse <tt class="kbd docutils literal">Shift</tt> + <tt class="kbd docutils literal">F10</tt>.</p>
+<p class="admonition-title">Nota</p>
+<p>Si quieres ver las opciones para configurar tu terminal,
+presiona <code class="kbd docutils literal">Shift</code> y luego da clic derecho sobre la terminal,
+o si prefieres hacerlo sin el mouse <code class="kbd docutils literal">Shift</code> + <code class="kbd docutils literal">F10</code>.</p>
 </div>
 </div>
 <div class="section" id="ocultar-las-barras-de-scroll">
 <h3>Ocultar las barras de scroll</h3>
 <p>Cuando abres Neovim verás las barras de scroll horizontal y vertical de tu terminal,
 pero si intentas usarlas, podrás darte cuenta que no funcionan como esperas.</p>
-<p>Abre el menú de opciones de tú terminal y ve a <tt class="docutils literal">Perfiles</tt> y a <tt class="docutils literal">Preferencias del perfil</tt>.
-Dirígete a la pestaña <tt class="docutils literal">Desplazamiento</tt> y desmarca la opción <tt class="docutils literal">Mostrar barra de desplazamiento</tt>.</p>
+<p>Abre el menú de opciones de tú terminal y ve a <code class="docutils literal">Perfiles</code> y a <code class="docutils literal">Preferencias del perfil</code>.
+Dirígete a la pestaña <code class="docutils literal">Desplazamiento</code> y desmarca la opción <code class="docutils literal">Mostrar barra de desplazamiento</code>.</p>
 <div class="figure">
 <a class="reference external image-reference" href="../../images/nvim/hide-scroll-bar.png"><img alt="Ocultar la barra de scroll de la terminal en Ubuntu" src="../../images/nvim/hide-scroll-bar.png"></a>
 <p class="caption">Ocultar la barra de scroll de la terminal en Ubuntu</p>
 </div>
 <div class="admonition note">
-<p class="first admonition-title">Nota</p>
-<p class="last">Puedes moverte rápidamente hacia arriba o hacia abajo con <tt class="kbd docutils literal">Ctrl</tt> + <tt class="kbd docutils literal">u</tt> y <tt class="kbd docutils literal">Ctrl</tt> + <tt class="kbd docutils literal">d</tt>.</p>
+<p class="admonition-title">Nota</p>
+<p>Puedes moverte rápidamente hacia arriba o hacia abajo con <code class="kbd docutils literal">Ctrl</code> + <code class="kbd docutils literal">u</code> y <code class="kbd docutils literal">Ctrl</code> + <code class="kbd docutils literal">d</code>.</p>
 </div>
 </div>
 <div class="section" id="tipo-y-tamano-de-letra">
 <h3>Tipo y tamaño de letra</h3>
 <p>Para cambiar el tipo y tamaño de la letra de Neovim,
 basta con cambiarla en la terminal.</p>
-<p>Abre el menú de opciones de tú terminal y ve a <tt class="docutils literal">Perfiles</tt> y a <tt class="docutils literal">Preferencias del perfil</tt>.
-En la pestaña <tt class="docutils literal">General</tt> marca <tt class="docutils literal">Tipo de letra personalizado</tt>,
+<p>Abre el menú de opciones de tú terminal y ve a <code class="docutils literal">Perfiles</code> y a <code class="docutils literal">Preferencias del perfil</code>.
+En la pestaña <code class="docutils literal">General</code> marca <code class="docutils literal">Tipo de letra personalizado</code>,
 y selecciona el tipo y tamaño de letra.</p>
 <div class="figure">
 <a class="reference external image-reference" href="../../images/nvim/custom-font.png"><img alt="Configurar el tipo y tamaño de letra de la terminal en Ubuntu" src="../../images/nvim/custom-font.png"></a>
@@ -761,15 +747,9 @@ Puedes hacerlo de manera progresiva o disfrutar varias de las características d
 <p>La mayoría de de editores e IDEs incluyen plugins para asemejarse a Vim/Neovim.
 Los que recomiendo son:</p>
 <ul class="simple">
-<li>
-<a class="reference external" href="http://atom.io">Atom</a> + <a class="reference external" href="https://github.com/t9md/atom-vim-mode-plus">Atom Vim mode plus</a>
-</li>
-<li>
-<a class="reference external" href="https://www.jetbrains.com/idea/">IntelliJ IDEA</a> y derivados (pycharm, webstorm, android studio, etc) + <a class="reference external" href="https://github.com/JetBrains/ideavim">IdeaVim</a>
-</li>
-<li>
-<a class="reference external" href="https://www.eclipse.org/">Eclipse</a> + <a class="reference external" href="https://marketplace.eclipse.org/content/vrapper-vim">Vrapper</a>
-</li>
+<li><p><a class="reference external" href="http://atom.io">Atom</a> + <a class="reference external" href="https://github.com/t9md/atom-vim-mode-plus">Atom Vim mode plus</a></p></li>
+<li><p><a class="reference external" href="https://www.jetbrains.com/idea/">IntelliJ IDEA</a> y derivados (pycharm, webstorm, android studio, etc) + <a class="reference external" href="https://github.com/JetBrains/ideavim">IdeaVim</a></p></li>
+<li><p><a class="reference external" href="https://www.eclipse.org/">Eclipse</a> + <a class="reference external" href="https://marketplace.eclipse.org/content/vrapper-vim">Vrapper</a></p></li>
 </ul>
 </div>
 <div class="section" id="conclusion-y-recomendaciones">
@@ -779,7 +759,7 @@ pasará algún tiempo hasta que te sientas cómodo,
 y para hacerlo, debes empezar desde ahora a usarlo.</p>
 <p>No trates de memorizar todos los comandos que veas,
 apréndelos conforme los necesites.</p>
-<p>No llenes tu <tt class="docutils literal">init.vim</tt> con configuraciones que no sabes lo que hacen,
+<p>No llenes tu <code class="docutils literal">init.vim</code> con configuraciones que no sabes lo que hacen,
 ni copies totalmente las configuraciones de otras personas,
 toma lo que vas a estar seguro que usarás.</p>
 <p>Luego de aprender lo básico,
@@ -793,145 +773,93 @@ así que todo lo que aprendas para Vim podrás aplicarlo en Neovim.</p>
 <div class="section" id="tutoriales-online">
 <h3>Tutoriales online</h3>
 <ul class="simple">
-<li><a class="reference external" href="http://yannesposito.com/Scratch/en/blog/Learn-Vim-Progressively/">Learn vim progressively</a></li>
-<li><a class="reference external" href="https://bluz71.github.io/2017/05/15/vim-tips-tricks.html">Vim Tips &amp; Tricks</a></li>
-<li><a class="reference external" href="https://learnxinyminutes.com/docs/vim/">Learn X in Y minutes</a></li>
+<li><p><a class="reference external" href="http://yannesposito.com/Scratch/en/blog/Learn-Vim-Progressively/">Learn vim progressively</a></p></li>
+<li><p><a class="reference external" href="https://bluz71.github.io/2017/05/15/vim-tips-tricks.html">Vim Tips &amp; Tricks</a></p></li>
+<li><p><a class="reference external" href="https://learnxinyminutes.com/docs/vim/">Learn X in Y minutes</a></p></li>
 </ul>
 </div>
 <div class="section" id="cheat-sheets">
 <h3>Cheat Sheets</h3>
 <ul class="simple">
-<li><a class="reference external" href="http://www.viemu.com/a_vi_vim_graphical_cheat_sheet_tutorial.html">Graphical vi-vim Cheat Sheet and Tutorial</a></li>
-<li><a class="reference external" href="http://vimsheet.com/">A Great Vim Cheat Sheet</a></li>
+<li><p><a class="reference external" href="http://www.viemu.com/a_vi_vim_graphical_cheat_sheet_tutorial.html">Graphical vi-vim Cheat Sheet and Tutorial</a></p></li>
+<li><p><a class="reference external" href="http://vimsheet.com/">A Great Vim Cheat Sheet</a></p></li>
 </ul>
 </div>
 <div class="section" id="videos">
 <h3>Vídeos</h3>
 <ul class="simple">
-<li><a class="reference external" href="http://vimcasts.org/">Vim casts</a></li>
-<li><a class="reference external" href="https://www.youtube.com/watch?v=XA2WjJbmmoM&amp;list=PL8tzorAO7s0jy7DQ3Q0FwF3BnXGQnDirs">Vim meetups</a></li>
+<li><p><a class="reference external" href="http://vimcasts.org/">Vim casts</a></p></li>
+<li><p><a class="reference external" href="https://www.youtube.com/watch?v=XA2WjJbmmoM&amp;list=PL8tzorAO7s0jy7DQ3Q0FwF3BnXGQnDirs">Vim meetups</a></p></li>
 </ul>
 </div>
 <div class="section" id="libros">
 <h3>Libros</h3>
 <ul class="simple">
-<li><a class="reference external" href="https://vimebook.com/">Vim for humans</a></li>
-<li><a class="reference external" href="https://github.com/mhinz/vim-galore">Vim Galore</a></li>
-<li><a class="reference external" href="http://learnvimscriptthehardway.stevelosh.com/">Learn Vimscript the Hard Way</a></li>
+<li><p><a class="reference external" href="https://vimebook.com/">Vim for humans</a></p></li>
+<li><p><a class="reference external" href="https://github.com/mhinz/vim-galore">Vim Galore</a></p></li>
+<li><p><a class="reference external" href="http://learnvimscriptthehardway.stevelosh.com/">Learn Vimscript the Hard Way</a></p></li>
 </ul>
 </div>
 <div class="section" id="video-juegos">
 <h3>Vídeo juegos</h3>
 <ul class="simple">
-<li><a class="reference external" href="https://vim-adventures.com/">Vim adventures</a></li>
+<li><p><a class="reference external" href="https://vim-adventures.com/">Vim adventures</a></p></li>
 </ul>
 </div>
 <div class="section" id="articulos">
 <h3>Artículos</h3>
 <ul class="simple">
-<li><a class="reference external" href="https://jacky.wtf/weblog/moving-to-neovim/">Moving to Neovim from Vim</a></li>
+<li><p><a class="reference external" href="https://jacky.wtf/weblog/moving-to-neovim/">Moving to Neovim from Vim</a></p></li>
 </ul>
 </div>
 <div class="section" id="dotfiles">
 <h3>Dotfiles</h3>
 <p>Los dotfiles no son más que archivos de configuración
-(que usualmente empiezan con un <tt class="docutils literal">.</tt>, de ahí su nombre).
+(que usualmente empiezan con un <code class="docutils literal">.</code>, de ahí su nombre).
 En varios dotfiles podrás encontrar configuraciones para Vim/Neovim que podrían serte útiles.</p>
 <ul class="simple">
-<li><a class="reference external" href="https://github.com/search?utf8=%E2%9C%93&amp;q=dotfiles&amp;type=">Dotfiles en GitHub</a></li>
-<li><a class="reference external" href="https://github.com/stsewd/dotfiles">Mis dotfiles</a></li>
+<li><p><a class="reference external" href="https://github.com/search?utf8=%E2%9C%93&amp;q=dotfiles&amp;type=">Dotfiles en GitHub</a></p></li>
+<li><p><a class="reference external" href="https://github.com/stsewd/dotfiles">Mis dotfiles</a></p></li>
 </ul>
 <hr class="docutils">
-<table class="docutils footnote" frame="void" id="fork-no-clone" rules="none">
-<colgroup>
-<col class="label">
-<col>
-</colgroup>
-<tbody valign="top"><tr>
-<td class="label"><a class="fn-backref" href="#id1">[1]</a></td>
-<td><a class="reference external" href="https://neovim.io/doc/user/nvim.html#nvim">https://neovim.io/doc/user/nvim.html#nvim</a></td>
-</tr></tbody>
-</table>
-<table class="docutils footnote" frame="void" id="configuraciones-defecto" rules="none">
-<colgroup>
-<col class="label">
-<col>
-</colgroup>
-<tbody valign="top"><tr>
-<td class="label"><a class="fn-backref" href="#id2">[2]</a></td>
-<td><a class="reference external" href="https://github.com/neovim/neovim/issues/2676">https://github.com/neovim/neovim/issues/2676</a></td>
-</tr></tbody>
-</table>
-<table class="docutils footnote" frame="void" id="configuraciones-defecto-documentacion" rules="none">
-<colgroup>
-<col class="label">
-<col>
-</colgroup>
-<tbody valign="top"><tr>
-<td class="label"><a class="fn-backref" href="#id3">[3]</a></td>
-<td><a class="reference external" href="https://neovim.io/doc/user/vim_diff.html#nvim-defaults">https://neovim.io/doc/user/vim_diff.html#nvim-defaults</a></td>
-</tr></tbody>
-</table>
-<table class="docutils footnote" frame="void" id="emulador-terminal" rules="none">
-<colgroup>
-<col class="label">
-<col>
-</colgroup>
-<tbody valign="top"><tr>
-<td class="label"><a class="fn-backref" href="#id4">[4]</a></td>
-<td><a class="reference external" href="https://neovim.io/doc/user/nvim_terminal_emulator.html">https://neovim.io/doc/user/nvim_terminal_emulator.html</a></td>
-</tr></tbody>
-</table>
-<table class="docutils footnote" frame="void" id="true-color" rules="none">
-<colgroup>
-<col class="label">
-<col>
-</colgroup>
-<tbody valign="top"><tr>
-<td class="label"><a class="fn-backref" href="#id5">[5]</a></td>
-<td><a class="reference external" href="https://github.com/neovim/neovim/pull/2198">https://github.com/neovim/neovim/pull/2198</a></td>
-</tr></tbody>
-</table>
-<table class="docutils footnote" frame="void" id="api-neovim" rules="none">
-<colgroup>
-<col class="label">
-<col>
-</colgroup>
-<tbody valign="top"><tr>
-<td class="label"><a class="fn-backref" href="#id6">[6]</a></td>
-<td><a class="reference external" href="https://neovim.io/doc/user/api.html">https://neovim.io/doc/user/api.html</a></td>
-</tr></tbody>
-</table>
-<table class="docutils footnote" frame="void" id="home-row" rules="none">
-<colgroup>
-<col class="label">
-<col>
-</colgroup>
-<tbody valign="top"><tr>
-<td class="label"><a class="fn-backref" href="#id12">[7]</a></td>
-<td><a class="reference external" href="http://www.dictionary.com/browse/home-row">http://www.dictionary.com/browse/home-row</a></td>
-</tr></tbody>
-</table>
-<table class="docutils footnote" frame="void" id="portapapeles" rules="none">
-<colgroup>
-<col class="label">
-<col>
-</colgroup>
-<tbody valign="top"><tr>
-<td class="label"><a class="fn-backref" href="#id7">[8]</a></td>
-<td>El lugar donde se almacena lo que copias con <tt class="kbd docutils literal"><span class="pre">Ctrl-c</span></tt>.</td>
-</tr></tbody>
-</table>
-<table class="docutils footnote" frame="void" id="vim-buffers" rules="none">
-<colgroup>
-<col class="label">
-<col>
-</colgroup>
-<tbody valign="top"><tr>
-<td class="label"><a class="fn-backref" href="#id13">[9]</a></td>
-<td><a class="reference external" href="http://joshldavis.com/2014/04/05/vim-tab-madness-buffers-vs-tabs/">http://joshldavis.com/2014/04/05/vim-tab-madness-buffers-vs-tabs/</a></td>
-</tr></tbody>
-</table>
+<dl class="footnote brackets">
+<dt class="label" id="fork-no-clone"><span class="brackets"><a class="fn-backref" href="#id1">1</a></span></dt>
+<dd>
+<p><a class="reference external" href="https://neovim.io/doc/user/nvim.html#nvim">https://neovim.io/doc/user/nvim.html#nvim</a></p>
+</dd>
+<dt class="label" id="configuraciones-defecto"><span class="brackets"><a class="fn-backref" href="#id2">2</a></span></dt>
+<dd>
+<p><a class="reference external" href="https://github.com/neovim/neovim/issues/2676">https://github.com/neovim/neovim/issues/2676</a></p>
+</dd>
+<dt class="label" id="configuraciones-defecto-documentacion"><span class="brackets"><a class="fn-backref" href="#id3">3</a></span></dt>
+<dd>
+<p><a class="reference external" href="https://neovim.io/doc/user/vim_diff.html#nvim-defaults">https://neovim.io/doc/user/vim_diff.html#nvim-defaults</a></p>
+</dd>
+<dt class="label" id="emulador-terminal"><span class="brackets"><a class="fn-backref" href="#id4">4</a></span></dt>
+<dd>
+<p><a class="reference external" href="https://neovim.io/doc/user/nvim_terminal_emulator.html">https://neovim.io/doc/user/nvim_terminal_emulator.html</a></p>
+</dd>
+<dt class="label" id="true-color"><span class="brackets"><a class="fn-backref" href="#id5">5</a></span></dt>
+<dd>
+<p><a class="reference external" href="https://github.com/neovim/neovim/pull/2198">https://github.com/neovim/neovim/pull/2198</a></p>
+</dd>
+<dt class="label" id="api-neovim"><span class="brackets"><a class="fn-backref" href="#id6">6</a></span></dt>
+<dd>
+<p><a class="reference external" href="https://neovim.io/doc/user/api.html">https://neovim.io/doc/user/api.html</a></p>
+</dd>
+<dt class="label" id="home-row"><span class="brackets"><a class="fn-backref" href="#id12">7</a></span></dt>
+<dd>
+<p><a class="reference external" href="http://www.dictionary.com/browse/home-row">http://www.dictionary.com/browse/home-row</a></p>
+</dd>
+<dt class="label" id="portapapeles"><span class="brackets"><a class="fn-backref" href="#id7">8</a></span></dt>
+<dd>
+<p>El lugar donde se almacena lo que copias con <code class="kbd docutils literal"><span class="pre">Ctrl-c</span></code>.</p>
+</dd>
+<dt class="label" id="vim-buffers"><span class="brackets"><a class="fn-backref" href="#id13">9</a></span></dt>
+<dd>
+<p><a class="reference external" href="http://joshldavis.com/2014/04/05/vim-tab-madness-buffers-vs-tabs/">http://joshldavis.com/2014/04/05/vim-tab-madness-buffers-vs-tabs/</a></p>
+</dd>
+</dl>
 </div>
 </div>
 </div>
@@ -995,6 +923,7 @@ En varios dotfiles podrás encontrar configuraciones para Vim/Neovim que podría
 </div>
 
             
+            
         </footer>
 </div>
 </div>
@@ -1003,9 +932,7 @@ En varios dotfiles podrás encontrar configuraciones para Vim/Neovim que podría
         <script src="../../assets/js/all-nocdn.js"></script><script>
     baguetteBox.run('div#content', {
         ignoreClass: 'islink',
-        captions: function(element) {
-            return element.getElementsByTagName('img')[0].alt;
-    }});
+        captions: function(element){var i=element.getElementsByTagName('img')[0];return i===undefined?'':i.alt;}});
     </script>
 </body>
 </html>
