@@ -132,25 +132,25 @@ probably one fo the most obvious options that we check before executing a comman
 and that most of the tools have.
 Here you can see the list of options and a short description of what that option does.</p>
 <p>Its common usage is:</p>
-<pre class="code bash"><a name="rest_code_3906c1ceb78144a793806d7672f20e47-1"></a><span class="nb">command</span> --help
+<pre class="code bash"><a name="rest_code_74ca9a8acb83478ead1af89077c0a27a-1"></a><span class="nb">command</span> --help
 </pre>
 <p>Example:</p>
-<pre class="code bash"><a name="rest_code_1cc10db8235f42cbb29fb2eb76d42a60-1"></a>ls --help
+<pre class="code bash"><a name="rest_code_c28eeb228f66448ea05aaf74fac40aa2-1"></a>ls --help
 </pre>
 <p>or</p>
-<pre class="code bash"><a name="rest_code_d49ad54efa534fb98d89c65c32e2f692-1"></a><span class="nb">command</span> subcommand --help
+<pre class="code bash"><a name="rest_code_08068e69b56e494b96d868e01802eb7a-1"></a><span class="nb">command</span> subcommand --help
 </pre>
 <p>Example:</p>
-<pre class="code bash"><a name="rest_code_612153c6c7e74c0ea7452d82e128d52b-1"></a>git add --help
+<pre class="code bash"><a name="rest_code_b75f4c75fc724c34bece707a5308d261-1"></a>git add --help
 </pre>
 <p>Man pages,
 most of the Linux tools has a respective man page (apart from the <tt class="docutils literal"><span class="pre">--help</span></tt> option).
 Man pages have a more detailed documentation than the <tt class="docutils literal"><span class="pre">--help</span></tt> option from the command.</p>
 <p>Most of the time you'll need to run:</p>
-<pre class="code bash"><a name="rest_code_2057a9b7000a43ac99414a32b498348a-1"></a>man <span class="nb">command</span>
+<pre class="code bash"><a name="rest_code_b0b80af5f2184d5e8851dae95aba4124-1"></a>man <span class="nb">command</span>
 </pre>
 <p>Example</p>
-<pre class="code bash"><a name="rest_code_2bdfac42606f412b81c6a5191b55887e-1"></a>man ls
+<pre class="code bash"><a name="rest_code_48f512bf2c8f482586aa4d268806032e-1"></a>man ls
 </pre>
 <p>But not only commands have man pages,
 it also includes documentation of the format used in some configuration files,
@@ -170,13 +170,13 @@ each section is represented by a number:</p>
 9   Kernel routines [Non standard]
 </pre>
 <p>Knowing the section you can get the man page with:</p>
-<pre class="code bash"><a name="rest_code_67391adf13e041aea439280f7d314527-1"></a>man &lt;section&gt; keyword
+<pre class="code bash"><a name="rest_code_63f3d15d15714b3685f681c815ac5e96-1"></a>man &lt;section&gt; keyword
 </pre>
 <p>Example:</p>
-<pre class="code bash"><a name="rest_code_4248631db166413a8c33ea72ea93c62b-1"></a>man <span class="m">1</span> ls
-<a name="rest_code_4248631db166413a8c33ea72ea93c62b-2"></a>man <span class="m">2</span> fork
-<a name="rest_code_4248631db166413a8c33ea72ea93c62b-3"></a>man <span class="m">3</span> <span class="nb">printf</span>
-<a name="rest_code_4248631db166413a8c33ea72ea93c62b-4"></a>man <span class="m">5</span> /etc/passwd
+<pre class="code bash"><a name="rest_code_4de42a9ae0c44212bbd9be9f152586df-1"></a>man <span class="m">1</span> ls
+<a name="rest_code_4de42a9ae0c44212bbd9be9f152586df-2"></a>man <span class="m">2</span> fork
+<a name="rest_code_4de42a9ae0c44212bbd9be9f152586df-3"></a>man <span class="m">3</span> <span class="nb">printf</span>
+<a name="rest_code_4de42a9ae0c44212bbd9be9f152586df-4"></a>man <span class="m">5</span> /etc/passwd
 </pre>
 <p>Some times the result from the <tt class="docutils literal"><span class="pre">--help</span></tt> option or
 from the man pages can be very extensive,
@@ -185,21 +185,21 @@ or missing clear examples.</p>
 <p>Fortunately there is the <a class="reference external" href="https://github.com/tldr-pages/tldr">tldr</a> project,
 which has community-driven simplified man pages with common usage examples.</p>
 <p>Did you always forget the correct options to untar a file?</p>
-<pre class="code bash"><a name="rest_code_5a9e9aa2d79c4d32a570a4500af093ae-1"></a>tldr tar
-<a name="rest_code_5a9e9aa2d79c4d32a570a4500af093ae-2"></a>
-<a name="rest_code_5a9e9aa2d79c4d32a570a4500af093ae-3"></a>  Archiving utility.
-<a name="rest_code_5a9e9aa2d79c4d32a570a4500af093ae-4"></a>  Often combined with a compression method, such as gzip or bzip.
-<a name="rest_code_5a9e9aa2d79c4d32a570a4500af093ae-5"></a>  More information: &lt;https://www.gnu.org/software/tar&gt;.
-<a name="rest_code_5a9e9aa2d79c4d32a570a4500af093ae-6"></a>
-<a name="rest_code_5a9e9aa2d79c4d32a570a4500af093ae-7"></a>- Create an archive from files:
-<a name="rest_code_5a9e9aa2d79c4d32a570a4500af093ae-8"></a>
-<a name="rest_code_5a9e9aa2d79c4d32a570a4500af093ae-9"></a>  tar -cf target.tar file1 file2 file3
-<a name="rest_code_5a9e9aa2d79c4d32a570a4500af093ae-10"></a>
-<a name="rest_code_5a9e9aa2d79c4d32a570a4500af093ae-11"></a>- Extract an archive in a target directory:
-<a name="rest_code_5a9e9aa2d79c4d32a570a4500af093ae-12"></a>
-<a name="rest_code_5a9e9aa2d79c4d32a570a4500af093ae-13"></a>  tar -xf source.tar -C directory
-<a name="rest_code_5a9e9aa2d79c4d32a570a4500af093ae-14"></a>
-<a name="rest_code_5a9e9aa2d79c4d32a570a4500af093ae-15"></a>...
+<pre class="code bash"><a name="rest_code_6b3c17e78e9f416faa694516ffdba9df-1"></a>tldr tar
+<a name="rest_code_6b3c17e78e9f416faa694516ffdba9df-2"></a>
+<a name="rest_code_6b3c17e78e9f416faa694516ffdba9df-3"></a>  Archiving utility.
+<a name="rest_code_6b3c17e78e9f416faa694516ffdba9df-4"></a>  Often combined with a compression method, such as gzip or bzip.
+<a name="rest_code_6b3c17e78e9f416faa694516ffdba9df-5"></a>  More information: &lt;https://www.gnu.org/software/tar&gt;.
+<a name="rest_code_6b3c17e78e9f416faa694516ffdba9df-6"></a>
+<a name="rest_code_6b3c17e78e9f416faa694516ffdba9df-7"></a>- Create an archive from files:
+<a name="rest_code_6b3c17e78e9f416faa694516ffdba9df-8"></a>
+<a name="rest_code_6b3c17e78e9f416faa694516ffdba9df-9"></a>  tar -cf target.tar file1 file2 file3
+<a name="rest_code_6b3c17e78e9f416faa694516ffdba9df-10"></a>
+<a name="rest_code_6b3c17e78e9f416faa694516ffdba9df-11"></a>- Extract an archive in a target directory:
+<a name="rest_code_6b3c17e78e9f416faa694516ffdba9df-12"></a>
+<a name="rest_code_6b3c17e78e9f416faa694516ffdba9df-13"></a>  tar -xf source.tar -C directory
+<a name="rest_code_6b3c17e78e9f416faa694516ffdba9df-14"></a>
+<a name="rest_code_6b3c17e78e9f416faa694516ffdba9df-15"></a>...
 </pre>
 <p>If you use Python,
 you can install it using <tt class="docutils literal">pip install tldr</tt>.</p>
@@ -217,12 +217,12 @@ which runs a program to lookup the keyword under the cursor.
 This program can be setup for different file types,
 see <tt class="docutils literal">:help K</tt>.</p>
 <p>For instance, try this C code and press <tt class="docutils literal">K</tt> under the <tt class="docutils literal">printf</tt> function.</p>
-<pre class="code c"><a name="rest_code_330420d1a8d74b718649b94e7d62983f-1"></a><span class="cp">#import &lt;stdio.h&gt;</span>
-<a name="rest_code_330420d1a8d74b718649b94e7d62983f-2"></a>
-<a name="rest_code_330420d1a8d74b718649b94e7d62983f-3"></a><span class="kt">int</span> <span class="nf">main</span><span class="p">()</span> <span class="p">{</span>
-<a name="rest_code_330420d1a8d74b718649b94e7d62983f-4"></a>    <span class="n">printf</span><span class="p">(</span><span class="s">"Hello, world</span><span class="se">\n</span><span class="s">"</span><span class="p">);</span>
-<a name="rest_code_330420d1a8d74b718649b94e7d62983f-5"></a>    <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
-<a name="rest_code_330420d1a8d74b718649b94e7d62983f-6"></a><span class="p">}</span>
+<pre class="code c"><a name="rest_code_b75827470fef4acebc47f1aa4ecbeb9a-1"></a><span class="cp">#import &lt;stdio.h&gt;</span>
+<a name="rest_code_b75827470fef4acebc47f1aa4ecbeb9a-2"></a>
+<a name="rest_code_b75827470fef4acebc47f1aa4ecbeb9a-3"></a><span class="kt">int</span> <span class="nf">main</span><span class="p">()</span> <span class="p">{</span>
+<a name="rest_code_b75827470fef4acebc47f1aa4ecbeb9a-4"></a>    <span class="n">printf</span><span class="p">(</span><span class="s">"Hello, world</span><span class="se">\n</span><span class="s">"</span><span class="p">);</span>
+<a name="rest_code_b75827470fef4acebc47f1aa4ecbeb9a-5"></a>    <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
+<a name="rest_code_b75827470fef4acebc47f1aa4ecbeb9a-6"></a><span class="p">}</span>
 </pre>
 <p>For a general and <em>nicer</em> solution I use the <a class="reference external" href="https://github.com/neoclide/coc.nvim">coc plugin</a>.</p>
 </div>
@@ -253,9 +253,9 @@ so searching for docs from methods and functions is my daily task.</p>
 <h3>The help function</h3>
 <p>Python has a built in function called <tt class="docutils literal">help</tt>,
 you can use it inside the interpreter like this:</p>
-<pre class="code python"><a name="rest_code_8a11852440274258a7cc5b2673fbe8ec-1"></a><span class="o">&gt;&gt;&gt;</span> <span class="n">help</span><span class="p">(</span><span class="nb">open</span><span class="p">)</span>
-<a name="rest_code_8a11852440274258a7cc5b2673fbe8ec-2"></a><span class="o">&gt;&gt;&gt;</span> <span class="n">my_string</span> <span class="o">=</span> <span class="s1">'hello world'</span>
-<a name="rest_code_8a11852440274258a7cc5b2673fbe8ec-3"></a><span class="o">&gt;&gt;&gt;</span> <span class="n">help</span><span class="p">(</span><span class="n">my_string</span><span class="o">.</span><span class="n">upper</span><span class="p">)</span>
+<pre class="code python"><a name="rest_code_23edf948aa73438d87901edfedf5366f-1"></a><span class="o">&gt;&gt;&gt;</span> <span class="n">help</span><span class="p">(</span><span class="nb">open</span><span class="p">)</span>
+<a name="rest_code_23edf948aa73438d87901edfedf5366f-2"></a><span class="o">&gt;&gt;&gt;</span> <span class="n">my_string</span> <span class="o">=</span> <span class="s1">'hello world'</span>
+<a name="rest_code_23edf948aa73438d87901edfedf5366f-3"></a><span class="o">&gt;&gt;&gt;</span> <span class="n">help</span><span class="p">(</span><span class="n">my_string</span><span class="o">.</span><span class="n">upper</span><span class="p">)</span>
 </pre>
 <p>The argument can be any function, method, object or module.</p>
 </div>
@@ -264,7 +264,7 @@ you can use it inside the interpreter like this:</p>
 <p><a class="reference external" href="https://docs.python.org/3/library/pydoc.html">pydoc</a> is a command line tool shipped with Python.
 It's what the <tt class="docutils literal">help</tt> function uses under it.
 You can use it from your terminal like this:</p>
-<pre class="code bash"><a name="rest_code_8f63bb6170934936a3f0c3d63c4a7d30-1"></a>pydoc open
+<pre class="code bash"><a name="rest_code_d06e9b32e80e44f8a2698973318af907-1"></a>pydoc open
 </pre>
 </div>
 <div class="section" id="the-official-online-docs">
