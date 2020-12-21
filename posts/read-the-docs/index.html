@@ -14,13 +14,7 @@
 <link rel="canonical" href="https://stsewd.dev/posts/read-the-docs/">
 <!--[if lt IE 9]><script src="../../assets/js/html5.js"></script><![endif]--><!-- Custom css --><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 <link rel="stylesheet" href="../../assets/css/custom.css" type="text/css" media="all">
-<!-- Global site tag (gtag.js) - Google Analytics --><script async src="https://www.googletagmanager.com/gtag/js?id=UA-100772829-1"></script><script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'UA-100772829-1');
-</script><meta name="author" content="Santos Gallegos">
+<!-- Cloudflare Web Analytics --><script defer src="https://static.cloudflareinsights.com/beacon.min.js" data-cf-beacon='{"token": "f0bcc690290a454ab2e555da28759807"}'></script><!-- End Cloudflare Web Analytics --><meta name="author" content="Santos Gallegos">
 <link rel="prev" href="../historia-django-girls-rtd/" title="De guía en Django Girls a pasante en Read the Docs" type="text/html">
 <link rel="next" href="../file-navigation-neovim/" title="File navigation in Neovim and more" type="text/html">
 <meta property="og:site_name" content="Santos Gallegos">
@@ -132,25 +126,25 @@ probably one fo the most obvious options that we check before executing a comman
 and that most of the tools have.
 Here you can see the list of options and a short description of what that option does.</p>
 <p>Its common usage is:</p>
-<pre class="code bash"><a name="rest_code_41136d25a8fe4ecbb4ec4b0217bd9123-1"></a><span class="nb">command</span> --help
+<pre class="code bash"><a name="rest_code_e399ef780e4d433da370a8115a601ba3-1"></a><span class="nb">command</span> --help
 </pre>
 <p>Example:</p>
-<pre class="code bash"><a name="rest_code_5141722a13fb4f52bfedac8dcd9776f0-1"></a>ls --help
+<pre class="code bash"><a name="rest_code_fa0f1dee1de64da89e43bd2659f6783c-1"></a>ls --help
 </pre>
 <p>or</p>
-<pre class="code bash"><a name="rest_code_35c0b01a6cdc413eaebe69d9cd3578b1-1"></a><span class="nb">command</span> subcommand --help
+<pre class="code bash"><a name="rest_code_4f3b3562285d400eb1c4b5873cd42c86-1"></a><span class="nb">command</span> subcommand --help
 </pre>
 <p>Example:</p>
-<pre class="code bash"><a name="rest_code_1b94bc2445e040299c4939637be6f381-1"></a>git add --help
+<pre class="code bash"><a name="rest_code_f58d5fcbb8e444ebb69d20fee6c250d1-1"></a>git add --help
 </pre>
 <p>Man pages,
 most of the Linux tools has a respective man page (apart from the <tt class="docutils literal"><span class="pre">--help</span></tt> option).
 Man pages have a more detailed documentation than the <tt class="docutils literal"><span class="pre">--help</span></tt> option from the command.</p>
 <p>Most of the time you'll need to run:</p>
-<pre class="code bash"><a name="rest_code_5aefdfaa57804971b0a834b6b1bf5a22-1"></a>man <span class="nb">command</span>
+<pre class="code bash"><a name="rest_code_45dc3fcf6c684e63ad4bc59e380e6ed3-1"></a>man <span class="nb">command</span>
 </pre>
 <p>Example</p>
-<pre class="code bash"><a name="rest_code_b985ef1702d34469b80abb85c034ae47-1"></a>man ls
+<pre class="code bash"><a name="rest_code_fa8069632a8842fba2147f8e4eb41a40-1"></a>man ls
 </pre>
 <p>But not only commands have man pages,
 it also includes documentation of the format used in some configuration files,
@@ -170,13 +164,13 @@ each section is represented by a number:</p>
 9   Kernel routines [Non standard]
 </pre>
 <p>Knowing the section you can get the man page with:</p>
-<pre class="code bash"><a name="rest_code_1687aec4c7a240338cdf388db39f45e4-1"></a>man &lt;section&gt; keyword
+<pre class="code bash"><a name="rest_code_d65adf9de9f74ecc9c2ae83ec4e1a0bc-1"></a>man &lt;section&gt; keyword
 </pre>
 <p>Example:</p>
-<pre class="code bash"><a name="rest_code_1f132ac073954fc9b478b6d2b4733d6c-1"></a>man <span class="m">1</span> ls
-<a name="rest_code_1f132ac073954fc9b478b6d2b4733d6c-2"></a>man <span class="m">2</span> fork
-<a name="rest_code_1f132ac073954fc9b478b6d2b4733d6c-3"></a>man <span class="m">3</span> <span class="nb">printf</span>
-<a name="rest_code_1f132ac073954fc9b478b6d2b4733d6c-4"></a>man <span class="m">5</span> /etc/passwd
+<pre class="code bash"><a name="rest_code_3541ae7c1c34447aa7648a9aa993f780-1"></a>man <span class="m">1</span> ls
+<a name="rest_code_3541ae7c1c34447aa7648a9aa993f780-2"></a>man <span class="m">2</span> fork
+<a name="rest_code_3541ae7c1c34447aa7648a9aa993f780-3"></a>man <span class="m">3</span> <span class="nb">printf</span>
+<a name="rest_code_3541ae7c1c34447aa7648a9aa993f780-4"></a>man <span class="m">5</span> /etc/passwd
 </pre>
 <p>Some times the result from the <tt class="docutils literal"><span class="pre">--help</span></tt> option or
 from the man pages can be very extensive,
@@ -185,21 +179,21 @@ or missing clear examples.</p>
 <p>Fortunately there is the <a class="reference external" href="https://github.com/tldr-pages/tldr">tldr</a> project,
 which has community-driven simplified man pages with common usage examples.</p>
 <p>Did you always forget the correct options to untar a file?</p>
-<pre class="code bash"><a name="rest_code_71d5f8844735443894ceb61cc1a1e748-1"></a>tldr tar
-<a name="rest_code_71d5f8844735443894ceb61cc1a1e748-2"></a>
-<a name="rest_code_71d5f8844735443894ceb61cc1a1e748-3"></a>  Archiving utility.
-<a name="rest_code_71d5f8844735443894ceb61cc1a1e748-4"></a>  Often combined with a compression method, such as gzip or bzip.
-<a name="rest_code_71d5f8844735443894ceb61cc1a1e748-5"></a>  More information: &lt;https://www.gnu.org/software/tar&gt;.
-<a name="rest_code_71d5f8844735443894ceb61cc1a1e748-6"></a>
-<a name="rest_code_71d5f8844735443894ceb61cc1a1e748-7"></a>- Create an archive from files:
-<a name="rest_code_71d5f8844735443894ceb61cc1a1e748-8"></a>
-<a name="rest_code_71d5f8844735443894ceb61cc1a1e748-9"></a>  tar -cf target.tar file1 file2 file3
-<a name="rest_code_71d5f8844735443894ceb61cc1a1e748-10"></a>
-<a name="rest_code_71d5f8844735443894ceb61cc1a1e748-11"></a>- Extract an archive in a target directory:
-<a name="rest_code_71d5f8844735443894ceb61cc1a1e748-12"></a>
-<a name="rest_code_71d5f8844735443894ceb61cc1a1e748-13"></a>  tar -xf source.tar -C directory
-<a name="rest_code_71d5f8844735443894ceb61cc1a1e748-14"></a>
-<a name="rest_code_71d5f8844735443894ceb61cc1a1e748-15"></a>...
+<pre class="code bash"><a name="rest_code_54d163f2f7e644fb80430ed1c1d19205-1"></a>tldr tar
+<a name="rest_code_54d163f2f7e644fb80430ed1c1d19205-2"></a>
+<a name="rest_code_54d163f2f7e644fb80430ed1c1d19205-3"></a>  Archiving utility.
+<a name="rest_code_54d163f2f7e644fb80430ed1c1d19205-4"></a>  Often combined with a compression method, such as gzip or bzip.
+<a name="rest_code_54d163f2f7e644fb80430ed1c1d19205-5"></a>  More information: &lt;https://www.gnu.org/software/tar&gt;.
+<a name="rest_code_54d163f2f7e644fb80430ed1c1d19205-6"></a>
+<a name="rest_code_54d163f2f7e644fb80430ed1c1d19205-7"></a>- Create an archive from files:
+<a name="rest_code_54d163f2f7e644fb80430ed1c1d19205-8"></a>
+<a name="rest_code_54d163f2f7e644fb80430ed1c1d19205-9"></a>  tar -cf target.tar file1 file2 file3
+<a name="rest_code_54d163f2f7e644fb80430ed1c1d19205-10"></a>
+<a name="rest_code_54d163f2f7e644fb80430ed1c1d19205-11"></a>- Extract an archive in a target directory:
+<a name="rest_code_54d163f2f7e644fb80430ed1c1d19205-12"></a>
+<a name="rest_code_54d163f2f7e644fb80430ed1c1d19205-13"></a>  tar -xf source.tar -C directory
+<a name="rest_code_54d163f2f7e644fb80430ed1c1d19205-14"></a>
+<a name="rest_code_54d163f2f7e644fb80430ed1c1d19205-15"></a>...
 </pre>
 <p>If you use Python,
 you can install it using <tt class="docutils literal">pip install tldr</tt>.</p>
@@ -217,12 +211,12 @@ which runs a program to lookup the keyword under the cursor.
 This program can be setup for different file types,
 see <tt class="docutils literal">:help K</tt>.</p>
 <p>For instance, try this C code and press <tt class="docutils literal">K</tt> under the <tt class="docutils literal">printf</tt> function.</p>
-<pre class="code c"><a name="rest_code_0b106377fb8749b38fdff3d1f9cc7342-1"></a><span class="cp">#import &lt;stdio.h&gt;</span>
-<a name="rest_code_0b106377fb8749b38fdff3d1f9cc7342-2"></a>
-<a name="rest_code_0b106377fb8749b38fdff3d1f9cc7342-3"></a><span class="kt">int</span> <span class="nf">main</span><span class="p">()</span> <span class="p">{</span>
-<a name="rest_code_0b106377fb8749b38fdff3d1f9cc7342-4"></a>    <span class="n">printf</span><span class="p">(</span><span class="s">"Hello, world</span><span class="se">\n</span><span class="s">"</span><span class="p">);</span>
-<a name="rest_code_0b106377fb8749b38fdff3d1f9cc7342-5"></a>    <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
-<a name="rest_code_0b106377fb8749b38fdff3d1f9cc7342-6"></a><span class="p">}</span>
+<pre class="code c"><a name="rest_code_ea1c6644c0644144a68a23e47f2f5a49-1"></a><span class="cp">#import &lt;stdio.h&gt;</span>
+<a name="rest_code_ea1c6644c0644144a68a23e47f2f5a49-2"></a>
+<a name="rest_code_ea1c6644c0644144a68a23e47f2f5a49-3"></a><span class="kt">int</span> <span class="nf">main</span><span class="p">()</span> <span class="p">{</span>
+<a name="rest_code_ea1c6644c0644144a68a23e47f2f5a49-4"></a>    <span class="n">printf</span><span class="p">(</span><span class="s">"Hello, world</span><span class="se">\n</span><span class="s">"</span><span class="p">);</span>
+<a name="rest_code_ea1c6644c0644144a68a23e47f2f5a49-5"></a>    <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
+<a name="rest_code_ea1c6644c0644144a68a23e47f2f5a49-6"></a><span class="p">}</span>
 </pre>
 <p>For a general and <em>nicer</em> solution I use the <a class="reference external" href="https://github.com/neoclide/coc.nvim">coc plugin</a>.</p>
 </div>
@@ -253,9 +247,9 @@ so searching for docs from methods and functions is my daily task.</p>
 <h3>The help function</h3>
 <p>Python has a built in function called <tt class="docutils literal">help</tt>,
 you can use it inside the interpreter like this:</p>
-<pre class="code python"><a name="rest_code_fc97aa85554e4fd9a74533672bae29c7-1"></a><span class="o">&gt;&gt;&gt;</span> <span class="n">help</span><span class="p">(</span><span class="nb">open</span><span class="p">)</span>
-<a name="rest_code_fc97aa85554e4fd9a74533672bae29c7-2"></a><span class="o">&gt;&gt;&gt;</span> <span class="n">my_string</span> <span class="o">=</span> <span class="s1">'hello world'</span>
-<a name="rest_code_fc97aa85554e4fd9a74533672bae29c7-3"></a><span class="o">&gt;&gt;&gt;</span> <span class="n">help</span><span class="p">(</span><span class="n">my_string</span><span class="o">.</span><span class="n">upper</span><span class="p">)</span>
+<pre class="code python"><a name="rest_code_e85b2b4af4e74248809166915a418a7d-1"></a><span class="o">&gt;&gt;&gt;</span> <span class="n">help</span><span class="p">(</span><span class="nb">open</span><span class="p">)</span>
+<a name="rest_code_e85b2b4af4e74248809166915a418a7d-2"></a><span class="o">&gt;&gt;&gt;</span> <span class="n">my_string</span> <span class="o">=</span> <span class="s1">'hello world'</span>
+<a name="rest_code_e85b2b4af4e74248809166915a418a7d-3"></a><span class="o">&gt;&gt;&gt;</span> <span class="n">help</span><span class="p">(</span><span class="n">my_string</span><span class="o">.</span><span class="n">upper</span><span class="p">)</span>
 </pre>
 <p>The argument can be any function, method, object or module.</p>
 </div>
@@ -264,7 +258,7 @@ you can use it inside the interpreter like this:</p>
 <p><a class="reference external" href="https://docs.python.org/3/library/pydoc.html">pydoc</a> is a command line tool shipped with Python.
 It's what the <tt class="docutils literal">help</tt> function uses under it.
 You can use it from your terminal like this:</p>
-<pre class="code bash"><a name="rest_code_893f0d66ea874348b50d88896dc65572-1"></a>pydoc open
+<pre class="code bash"><a name="rest_code_d1f84432342b4b15bad23624f0362021-1"></a>pydoc open
 </pre>
 </div>
 <div class="section" id="the-official-online-docs">
