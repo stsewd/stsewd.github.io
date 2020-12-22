@@ -40,7 +40,7 @@ Anyway, I arrived at Quito the day before the contest,
 met some friends and got drunk, and didn't get much sleep.
 And the day of the contest my allergies didn't play nice...
 so I had a running nose during the whole contest.
-And yes, those are silly excuses, but a 7th place isn't bad 😃 
+And yes, those are silly excuses, but a 7th place isn't bad 😃
 (and they gave some prizes to the first 10 of each category).
 
 That was my experience, now let's get back to the problems.

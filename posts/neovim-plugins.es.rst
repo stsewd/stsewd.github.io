@@ -3,7 +3,7 @@
 .. date: 2017-08-20
 .. tags: neovim
 .. category: neovim
-.. link: 
+.. link:
 .. description: Para ser más productivo con Neovim los plugins son tus aliados, en este post mostraré cómo instalarlos y administrarlos, además una lista de plugins esenciales para hacer de tu editor un IDE muy liviano.
 .. type: text
 
@@ -111,11 +111,11 @@ Al inicio agrega lo siguiente:
 
    " Directorio de plugins
    call plug#begin('~/.local/share/nvim/plugged')
-   
+
    " Aquí irán los plugins a instalar
-   
+
    call plug#end()
-   
+
    " Luego de esta línea puedes agregar tus configuraciones y mappings
 
 Instalando plugins con vim-plug
@@ -134,9 +134,9 @@ sólo se necesita agregar lo siguiente en el archivo ``init.vim``.
 .. code:: vim
 
    call plug#begin('~/.local/share/nvim/plugged')
-   
+
    Plug 'tpope/vim-surround'  " Es buena idea agregar una descripción del plugin
-   
+
    call plug#end()
 
 Pero con esto el plugin no está aún instalado,
@@ -155,7 +155,7 @@ si deseas deshabilitarlo, basta con comentar o eliminar esa línea.
 Pero esto no eliminará el plugin de tu disco,
 para hacerlo ejecuta el comando ``:PlugClean``.
 
-Es importante mantener tus plugins al día, 
+Es importante mantener tus plugins al día,
 sí que de vez en cuando ejecuta ``:PlugUpdate`` para actualizarlos.
 
 Mantener al día tu *administrador de plugins* también es importante,
@@ -220,7 +220,7 @@ One Dark
 .. figure:: /images/nvim/plugins/onedark.png
    :target: /images/nvim/plugins/onedark.png
    :alt: One Dark
-   
+
    One Dark
 
 .. code:: vim
@@ -274,7 +274,7 @@ Más
 """
 
 - `Documentación de Neovim`__
-  
+
 __ https://github.com/neovim/neovim/wiki/Related-projects#colorschemes
 
 Explorador de archivos
@@ -294,11 +294,11 @@ NerdTree
 .. code:: vim
 
    Plug 'scrooloose/nerdtree'
-   
+
    ...
-   
+
    let g:NERDTreeChDirMode = 2  " Cambia el directorio actual al nodo padre actual
-   
+
    " Abrir/cerrar NERDTree con F2
    map <F2> :NERDTreeToggle<CR>
 
@@ -319,7 +319,7 @@ Barra de estado
 Airline
 """""""
 
-  Barra de estado, con integración con varios plugins y herramientas externas como git.  
+  Barra de estado, con integración con varios plugins y herramientas externas como git.
 
 .. figure:: https://raw.githubusercontent.com/wiki/vim-airline/vim-airline/screenshots/demo.gif
    :target: https://raw.githubusercontent.com/wiki/vim-airline/vim-airline/screenshots/demo.gif
@@ -331,15 +331,15 @@ Airline
 
    Plug 'vim-airline/vim-airline'
    Plug 'vim-airline/vim-airline-themes'  " Temas para airline
-   
+
    ...
-   
+
    let g:airline#extensions#tabline#enabled = 1  " Mostrar buffers abiertos (como pestañas)
    let g:airline#extensions#tabline#fnamemod = ':t'  " Mostrar sólo el nombre del archivo
-   
+
    " Cargar fuente Powerline y símbolos (ver nota)
    let g:airline_powerline_fonts = 1
-   
+
    set noshowmode  " No mostrar el modo actual (ya lo muestra la barra de estado)
 
 .. note::
@@ -376,9 +376,9 @@ IndentLine
 .. code:: vim
 
    Plug 'Yggdroot/indentLine'
-   
+
    ...
-   
+
    " No mostrar en ciertos tipos de buffers y archivos
    let g:indentLine_fileTypeExclude = ['text', 'sh', 'help', 'terminal']
    let g:indentLine_bufNameExclude = ['NERD_tree.*', 'term:.*']
@@ -409,12 +409,12 @@ Deoplete
 
    Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
    Plug 'Shougo/neco-syntax'  " Fuente general de auto completado
-   
+
    ...
-   
+
    " Activar deoplete al iniciar Neovim
    let g:deoplete#enable_at_startup = 1
-   
+
    " Cerrar automaticamente la ventana de vista previa (donde se muestra documentación, si existe)
    augroup deopleteCompleteDoneAu
      autocmd!
@@ -425,7 +425,7 @@ Deoplete
 - |icon-info| ``:h deoplete``
 
 .. note::
-   
+
    Para tener auto completado para un leguaje específico debes instalar una *fuente*,
    puedes encontrar una lista de varias fuentes `aquí`__.
 
@@ -438,9 +438,9 @@ __ https://github.com/Shougo/deoplete.nvim/wiki/Completion-Sources\
 .. code:: vim
 
    Plug 'ervandew/supertab'
-   
+
    ...
-   
+
    " Invertir direccion de navegacion (de arriba a abajo)
    let g:SuperTabDefaultCompletionType = '<c-n>'
 
@@ -458,13 +458,13 @@ __ https://github.com/Shougo/deoplete.nvim/wiki/Completion-Sources\
    echodoc
 
 .. code:: vim
-   
+
    Plug 'Shougo/echodoc.vim'
-   
+
    ...
-   
+
    set noshowmode  " No mostrar el modo actual (echodoc hace uso de este espacio)
-   
+
    " Activar echodoc al iniciar Neovim
    let g:echodoc_enable_at_startup = 1
 
@@ -534,7 +534,7 @@ ALE
    let g:ale_echo_msg_format = '[%linter%] %s [%severity%]'
 
 - |icon-cmd|
-  
+
   - ``:ALEFixSuggest``
   - ``:ALEFix``
 - |icon-link| https://github.com/w0rp/ale
@@ -607,7 +607,7 @@ Para generar este archivo haremos uso de un programa llamado `ctags`.
 
    # Instalar en ctags en Ubuntu
    sudo apt install exuberant-ctags
-   
+
    # Instalar ctags en Fedora
    sudo dnf install ctags
 
@@ -634,7 +634,7 @@ Gutentags
    Plug 'ludovicchabant/vim-gutentags'
 
    ...
-  
+
    " Nombre del archivo generado
    let g:gutentags_ctags_tagfile = '.tags'
 
@@ -665,7 +665,7 @@ FZF
    nnoremap <C-p> :Files<CR>
 
 - |icon-cmd|
-  
+
   - ``:Files``
   - ``:Buffers``
   - ``:BLines``
@@ -684,14 +684,14 @@ CtrlP
    Plug 'ctrlpvim/ctrlp.vim'
 
    ...
-   
+
    " Archivos ignorados
    set wildignore+=*/tmp/*,*.so,*.swp,*.zip
    let g:ctrlp_custom_ignore = {
      \ 'dir':  '\v[\/](\.(git|hg|svn)|node_modules)$',
      \ 'file': '\v\.(exe|so|dll)$',
      \ }
-   
+
    " Ignorar archivos en .gitignore
    let g:ctrlp_user_command = ['.git', 'cd %s && git ls-files -co --exclude-standard']
 
@@ -717,11 +717,11 @@ Incsearch
    Plug 'haya14busa/incsearch.vim'
 
    ...
-   
+
    " Maps requeridos
    map /  <Plug>(incsearch-forward)
    map ?  <Plug>(incsearch-backward)
-   
+
    " Quitar resaltado luego de buscar
    let g:incsearch#auto_nohlsearch = 1
 
@@ -774,7 +774,7 @@ Eunuch
   - ``:Mkdir``
 - |icon-link| https://github.com/tpope/vim-eunuch
 - |icon-info| ``:h eunuch``
- 
+
 Auto-pairs
 """"""""""
 
@@ -797,7 +797,7 @@ Nerdcommenter
    Plug 'scrooloose/nerdcommenter'
 
    ...
-   
+
    let g:NERDSpaceDelims = 1  " Agregar un espacio después del delimitador del comentario
    let g:NERDTrimTrailingWhitespace = 1  " Quitar espacios al quitar comentario
 
@@ -817,7 +817,7 @@ Fugitive
    Plug 'tpope/vim-fugitive'
 
 - |icon-cmd|
-  
+
   - ``:Gstatus``
   - ``:Gcommit``
   - ``:Gdiff``
@@ -840,7 +840,7 @@ Gitgutter
    Plug 'airblade/vim-gitgutter'
 
    ...
-   
+
    " Actualizar barra cada 250 mili segundos
    set updatetime=250
 
@@ -876,7 +876,7 @@ por lo que hace que la búsqueda de nuevos plugins
 ~~~~~~~~~
 
 Como habrás observado, la mayoría de plugins están alojados en GitHub,
-así que es un buen lugar para buscar. 
+así que es un buen lugar para buscar.
 
 Trata de buscar repositorios con la palabra `vim`, `neovim`, `nvim` o que terminen en `.vim`
 (los que son sólo compatibles con Neovim tienen la extensión `.nvim`).

@@ -3,13 +3,13 @@
 .. date: 2017-07-06
 .. tags: neovim
 .. category: neovim
-.. link: 
+.. link:
 .. description: En este post daré una introducción a Neovim, un editor de texto muy diferente a los que estás acostumbrado a usar. Además detallaré paso a paso las instrucciones para su instalación en Fedora y Ubuntu; y cómo configurarlo.
 .. type: text
 
 .. |sudo-msg| replace::
 
-   Puede que necesites ejecutar estos comandos anteponiendo **sudo**. 
+   Puede que necesites ejecutar estos comandos anteponiendo **sudo**.
 
 .. image:: /images/nvim/neovim-logo.png
    :target: /images/nvim/neovim-logo.png
@@ -88,7 +88,7 @@ Instalación
 -----------
 
 Para la instalación de Neovim he usado dos máquinas virtuales:
- 
+
 - Ubuntu 16.04.02
 - Fedora 25.1.3
 
@@ -378,7 +378,7 @@ si todo salió bien debe aparecer algo como esto:
 .. figure:: /images/nvim/checkhealth.png
    :target: /images/nvim/checkhealth.png
    :alt: resultado de correr checkhealth en Neovim
-  
+
    Resultado de correr checkhealth en Neovim
 
 Primeros pasos con Neovim
@@ -575,7 +575,7 @@ para cambiar al siguiente buffer usa ``:bnext`` y para el anterior ``:bprevious`
 para cerrar el buffer actual ``:bdelete``.
 
 .. note::
-  
+
    Los comandos ``:bn`` y ``:bp`` son una abreviación de ``:bnext`` y ``:bprevious``.
 
 Buscar
@@ -654,7 +654,7 @@ A continuación tienes un ``init.vim`` con algunas configuraciones mínimas.
 .. gist:: abeb79100eba64184668fd3b1b13bff9
 
 .. note::
-   
+
    Para que los cambios de ``set termguicolors`` tomen efecto debes volver a abrir Neovim.
 
 .. note::
@@ -704,15 +704,15 @@ En la pestaña ``General`` desmarca ``Mostrar la barra de menús en las terminal
 .. figure:: /images/nvim/hide-menu-bar.png
    :target: /images/nvim/hide-menu-bar.png
    :alt: Ocultar la barra de menú de la terminal en Ubuntu
-    
+
    Ocultar la barra de menú de la terminal en Ubuntu
 
 .. warning::
-  
+
    Tendrás de volver a abrir la terminal para ver los cambios.
 
 .. note::
-   
+
    Si quieres ver las opciones para configurar tu terminal,
    presiona :kbd:`Shift` y luego da clic derecho sobre la terminal,
    o si prefieres hacerlo sin el mouse :kbd:`Shift` + :kbd:`F10`.
@@ -729,11 +729,11 @@ Dirígete a la pestaña ``Desplazamiento`` y desmarca la opción ``Mostrar barra
 .. figure:: /images/nvim/hide-scroll-bar.png
    :target: /images/nvim/hide-scroll-bar.png
    :alt: Ocultar la barra de scroll de la terminal en Ubuntu
-  
+
    Ocultar la barra de scroll de la terminal en Ubuntu
 
 .. note::
-   
+
    Puedes moverte rápidamente hacia arriba o hacia abajo con :kbd:`Ctrl` + :kbd:`u` y :kbd:`Ctrl` + :kbd:`d`.
 
 Tipo y tamaño de letra

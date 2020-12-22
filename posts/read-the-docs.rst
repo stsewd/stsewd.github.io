@@ -216,7 +216,7 @@ It's what the ``help`` function uses under it.
 You can use it from your terminal like this:
 
 .. code:: bash
-    
+
    pydoc open
 
 The official online docs
