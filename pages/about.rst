@@ -10,6 +10,10 @@ I love web development, algorithms, Python, Neovim, and free and open source sof
 Always trying to learn new things,
 and `artist occasionally <https://stsewd.deviantart.com/gallery/>`__.
 
+Currently writting bugs at `Read the Docs <https://readthedocs.org>`__,
+and helping in computer security audits.
+I'm open for consulting about software development.
+
 I also help to organize events in my local `Python community <https://python.ec/>`__.
 
 Languages

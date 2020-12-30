@@ -10,6 +10,10 @@ Me gusta el desarrollo web, algoritmos, Python, Neovim, y software libre y open 
 Siempre tratando de aprender nuevas cosas,
 `y dibujante de vez en cuando <https://stsewd.deviantart.com/gallery/>`__.
 
+Actualmente codeando bugs en `Read the Docs <https://readthedocs.org>`__,
+y ayudando en auditorías de seguridad informática.
+También estoy disponible para consultorías sobre desarrollo de software.
+
 Además ayudo a organizar enventos en la comunidad de `Python Ecuador <https://python.ec/>`__.
 
 Idiomas
