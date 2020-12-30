@@ -43,8 +43,13 @@ Projects I help to maintain
 
 |
 
+.. image:: https://github-readme-stats.vercel.app/api/pin/?username=pythonecuador&repo=lira
+   :target: https://github.com/pythonecuador/lira
+
+|
+
 .. image:: https://github-readme-stats.vercel.app/api/pin/?username=pythonecuador&repo=pythonecuador.github.io
-   :target: https://github.com/PythonEcuador/PythonEcuador.github.io
+   :target: https://github.com/pythonecuador/pythonecuador.github.io
 
 |
 
