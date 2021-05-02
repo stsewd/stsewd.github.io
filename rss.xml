@@ -1,14 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
-<?xml-stylesheet type="text/xsl" href="assets/xml/rss.xsl" media="all"?><rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Santos Gallegos</title><link>https://stsewd.dev/</link><description>Personal blog</description><atom:link href="https://stsewd.dev/rss.xml" rel="self" type="application/rss+xml"></atom:link><language>en</language><copyright>Contents © 2021 &lt;a href="mailto:stsewd@protonmail.com"&gt;Santos Gallegos&lt;/a&gt; </copyright><lastBuildDate>Fri, 12 Mar 2021 20:01:42 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Devsu Code Jam 2019 - solutions and my experience</title><link>https://stsewd.dev/posts/devsucodejam-2019/</link><dc:creator>Santos Gallegos</dc:creator><description>&lt;div&gt;&lt;p&gt;Last year I participated in the &lt;a class="reference external" href="https://www.devsucodejam.com/"&gt;Devsu Codejam 2019&lt;/a&gt; contest,
+<?xml-stylesheet type="text/xsl" href="assets/xml/rss.xsl" media="all"?><rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Santos Gallegos</title><link>https://stsewd.dev/</link><description>Personal blog</description><atom:link href="https://stsewd.dev/rss.xml" rel="self" type="application/rss+xml"></atom:link><language>en</language><copyright>Contents © 2021 &lt;a href="mailto:stsewd@protonmail.com"&gt;Santos Gallegos&lt;/a&gt; </copyright><lastBuildDate>Sun, 02 May 2021 16:59:44 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Devsu Code Jam 2019 - solutions and my experience</title><link>https://stsewd.dev/posts/devsucodejam-2019/</link><dc:creator>Santos Gallegos</dc:creator><description>&lt;div&gt;&lt;p&gt;Last year I participated in the &lt;a class="reference external" href="https://www.devsucodejam.com/"&gt;Devsu Codejam 2019&lt;/a&gt; contest,
 which is about solving programming problems.
 The first place? A car 🚗.&lt;/p&gt;
 &lt;p&gt;The contest was for all developers from Ecuador,
 this is the first time I have heard about this type of contests being organized in Ecuador,
 so it caught my attention (well, the car a little too).&lt;/p&gt;
-&lt;div class="figure align-center"&gt;
+&lt;figure class="align-center"&gt;
 &lt;img alt="/images/devsucodejam-2019/web.png" src="https://stsewd.dev/images/devsucodejam-2019/web.png"&gt;
-&lt;p class="caption"&gt;Devsu Codejam front page&lt;/p&gt;
-&lt;/div&gt;
+&lt;figcaption&gt;
+&lt;p&gt;Devsu Codejam front page&lt;/p&gt;
+&lt;/figcaption&gt;
+&lt;/figure&gt;
 &lt;p&gt;First, a little of background about myself.
 I have participated in some contests about problem solving in the past:
 three times in the &lt;a class="reference external" href="https://ieeextreme.org/"&gt;IEEEXtreme programming&lt;/a&gt; (before the university kicked me out),
@@ -62,7 +64,7 @@ search for a file that contains the code or text you are interested in.&lt;/p&gt
 &lt;li&gt;&lt;p&gt;Or if you are a C/Cpp programmer, where the header file is&lt;/p&gt;&lt;/li&gt;
 &lt;/ul&gt;
 &lt;p&gt;I'll show you some plugins I use navigate in files from a project in Neovim and more.&lt;/p&gt;
-&lt;div class="section" id="nerdtree"&gt;
+&lt;section id="nerdtree"&gt;
 &lt;h2&gt;NerdTree&lt;/h2&gt;
 &lt;p&gt;If you need to know the structure of a project you can use the &lt;code class="docutils literal"&gt;tree&lt;/code&gt; command.
 But, if you are already in Neovim, you can use the &lt;a class="reference external" href="https://github.com/scrooloose/nerdtree"&gt;NerdTree plugin&lt;/a&gt;.&lt;/p&gt;
@@ -71,22 +73,22 @@ But, if you are already in Neovim, you can use the &lt;a class="reference extern
 &lt;div class="line"&gt;&lt;br&gt;&lt;/div&gt;
 &lt;/div&gt;
 &lt;p&gt;You can install it with &lt;a class="reference external" href="https://github.com/junegunn/vim-plug"&gt;vim-plug&lt;/a&gt;:&lt;/p&gt;
-&lt;pre class="code vim"&gt;&lt;a name="rest_code_695e6ef806914dc5a9e72d003e9b3e22-1"&gt;&lt;/a&gt;Plug &lt;span class="s1"&gt;'scrooloose/nerdtree'&lt;/span&gt;
+&lt;pre class="code vim"&gt;&lt;a name="rest_code_922cc27f69664475bd47e04449397b1a-1"&gt;&lt;/a&gt;Plug &lt;span class="s1"&gt;'scrooloose/nerdtree'&lt;/span&gt;
 &lt;/pre&gt;&lt;p&gt;I have these settings for NerdTree:&lt;/p&gt;
-&lt;pre class="code vim"&gt;&lt;a name="rest_code_16338ce87dda4fea9db9993d40f9986a-1"&gt;&lt;/a&gt;&lt;span class="k"&gt;let&lt;/span&gt; &lt;span class="k"&gt;g&lt;/span&gt;:NERDTreeChDirMode &lt;span class="p"&gt;=&lt;/span&gt; &lt;span class="m"&gt;2&lt;/span&gt;  &lt;span class="c"&gt;" Change cwd to parent node&lt;/span&gt;
-&lt;a name="rest_code_16338ce87dda4fea9db9993d40f9986a-2"&gt;&lt;/a&gt;
-&lt;a name="rest_code_16338ce87dda4fea9db9993d40f9986a-3"&gt;&lt;/a&gt;&lt;span class="k"&gt;let&lt;/span&gt; &lt;span class="k"&gt;g&lt;/span&gt;:NERDTreeMinimalUI &lt;span class="p"&gt;=&lt;/span&gt; &lt;span class="m"&gt;1&lt;/span&gt;  &lt;span class="c"&gt;" Hide help text&lt;/span&gt;
-&lt;a name="rest_code_16338ce87dda4fea9db9993d40f9986a-4"&gt;&lt;/a&gt;&lt;span class="k"&gt;let&lt;/span&gt; &lt;span class="k"&gt;g&lt;/span&gt;:NERDTreeAutoDeleteBuffer &lt;span class="p"&gt;=&lt;/span&gt; &lt;span class="m"&gt;1&lt;/span&gt;
-&lt;a name="rest_code_16338ce87dda4fea9db9993d40f9986a-5"&gt;&lt;/a&gt;
-&lt;a name="rest_code_16338ce87dda4fea9db9993d40f9986a-6"&gt;&lt;/a&gt;&lt;span class="nb"&gt;nnoremap&lt;/span&gt; &lt;span class="p"&gt;&amp;lt;&lt;/span&gt;leader&lt;span class="p"&gt;&amp;gt;&lt;/span&gt;&lt;span class="k"&gt;n&lt;/span&gt; :NERDTreeToggle&lt;span class="p"&gt;&amp;lt;&lt;/span&gt;CR&lt;span class="p"&gt;&amp;gt;&lt;/span&gt;
-&lt;a name="rest_code_16338ce87dda4fea9db9993d40f9986a-7"&gt;&lt;/a&gt;&lt;span class="nb"&gt;nnoremap&lt;/span&gt; &lt;span class="p"&gt;&amp;lt;&lt;/span&gt;leader&lt;span class="p"&gt;&amp;gt;&lt;/span&gt;N :NERDTreeFind&lt;span class="p"&gt;&amp;lt;&lt;/span&gt;CR&lt;span class="p"&gt;&amp;gt;&lt;/span&gt;
+&lt;pre class="code vim"&gt;&lt;a name="rest_code_62663c0f9a2c4df69793fcd3e851f703-1"&gt;&lt;/a&gt;&lt;span class="k"&gt;let&lt;/span&gt; &lt;span class="k"&gt;g&lt;/span&gt;:NERDTreeChDirMode &lt;span class="p"&gt;=&lt;/span&gt; &lt;span class="m"&gt;2&lt;/span&gt;  &lt;span class="c"&gt;" Change cwd to parent node&lt;/span&gt;
+&lt;a name="rest_code_62663c0f9a2c4df69793fcd3e851f703-2"&gt;&lt;/a&gt;
+&lt;a name="rest_code_62663c0f9a2c4df69793fcd3e851f703-3"&gt;&lt;/a&gt;&lt;span class="k"&gt;let&lt;/span&gt; &lt;span class="k"&gt;g&lt;/span&gt;:NERDTreeMinimalUI &lt;span class="p"&gt;=&lt;/span&gt; &lt;span class="m"&gt;1&lt;/span&gt;  &lt;span class="c"&gt;" Hide help text&lt;/span&gt;
+&lt;a name="rest_code_62663c0f9a2c4df69793fcd3e851f703-4"&gt;&lt;/a&gt;&lt;span class="k"&gt;let&lt;/span&gt; &lt;span class="k"&gt;g&lt;/span&gt;:NERDTreeAutoDeleteBuffer &lt;span class="p"&gt;=&lt;/span&gt; &lt;span class="m"&gt;1&lt;/span&gt;
+&lt;a name="rest_code_62663c0f9a2c4df69793fcd3e851f703-5"&gt;&lt;/a&gt;
+&lt;a name="rest_code_62663c0f9a2c4df69793fcd3e851f703-6"&gt;&lt;/a&gt;&lt;span class="nb"&gt;nnoremap&lt;/span&gt; &lt;span class="p"&gt;&amp;lt;&lt;/span&gt;leader&lt;span class="p"&gt;&amp;gt;&lt;/span&gt;&lt;span class="k"&gt;n&lt;/span&gt; :NERDTreeToggle&lt;span class="p"&gt;&amp;lt;&lt;/span&gt;CR&lt;span class="p"&gt;&amp;gt;&lt;/span&gt;
+&lt;a name="rest_code_62663c0f9a2c4df69793fcd3e851f703-7"&gt;&lt;/a&gt;&lt;span class="nb"&gt;nnoremap&lt;/span&gt; &lt;span class="p"&gt;&amp;lt;&lt;/span&gt;leader&lt;span class="p"&gt;&amp;gt;&lt;/span&gt;N :NERDTreeFind&lt;span class="p"&gt;&amp;lt;&lt;/span&gt;CR&lt;span class="p"&gt;&amp;gt;&lt;/span&gt;
 &lt;/pre&gt;&lt;p&gt;So, if I want to see the project structure I just press &lt;code class="kbd docutils literal"&gt;&amp;lt;leader&amp;gt; + n&lt;/code&gt;.
 If I want to see the files that are around the current file, I just press &lt;code class="kbd docutils literal"&gt;&amp;lt;leader&amp;gt; + N&lt;/code&gt;.&lt;/p&gt;
 &lt;p&gt;If you like icons, you can get it in NerdTree with &lt;a class="reference external" href="https://github.com/ryanoasis/vim-devicons"&gt;Vim devicons&lt;/a&gt;.&lt;/p&gt;
 &lt;p&gt;You can navigate on NerdTree like any other buffer.
 For more information, read the manual &lt;code class="docutils literal"&gt;:help NerdTree.txt&lt;/code&gt;.&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class="section" id="fzf-ripgrep"&gt;
+&lt;/section&gt;
+&lt;section id="fzf-ripgrep"&gt;
 &lt;h2&gt;FZF &amp;amp; Ripgrep&lt;/h2&gt;
 &lt;p&gt;&lt;a class="reference external" href="https://github.com/junegunn/fzf"&gt;FZF&lt;/a&gt; is an interactive fuzzy finder for the command line that can be used with any list.&lt;/p&gt;
 &lt;p&gt;&lt;a class="reference external" href="https://github.com/BurntSushi/ripgrep"&gt;Ripgrep&lt;/a&gt; is an alternative to &lt;code class="docutils literal"&gt;grep&lt;/code&gt;,
@@ -98,17 +100,17 @@ Ripgrep can be used together with FZF.&lt;/p&gt;
 &lt;div class="line"&gt;&lt;br&gt;&lt;/div&gt;
 &lt;/div&gt;
 &lt;p&gt;You can install ripgrep with:&lt;/p&gt;
-&lt;pre class="code bash"&gt;&lt;a name="rest_code_d218fdb531494408bfa332606737165a-1"&gt;&lt;/a&gt;&lt;span class="c1"&gt;# Ubuntu&lt;/span&gt;
-&lt;a name="rest_code_d218fdb531494408bfa332606737165a-2"&gt;&lt;/a&gt;sudo apt install ripgrep
-&lt;a name="rest_code_d218fdb531494408bfa332606737165a-3"&gt;&lt;/a&gt;
-&lt;a name="rest_code_d218fdb531494408bfa332606737165a-4"&gt;&lt;/a&gt;&lt;span class="c1"&gt;# Fedora&lt;/span&gt;
-&lt;a name="rest_code_d218fdb531494408bfa332606737165a-5"&gt;&lt;/a&gt;sudo dnf install ripgrep
+&lt;pre class="code bash"&gt;&lt;a name="rest_code_606c1bf050ef473482502c8677fa7da4-1"&gt;&lt;/a&gt;&lt;span class="c1"&gt;# Ubuntu&lt;/span&gt;
+&lt;a name="rest_code_606c1bf050ef473482502c8677fa7da4-2"&gt;&lt;/a&gt;sudo apt install ripgrep
+&lt;a name="rest_code_606c1bf050ef473482502c8677fa7da4-3"&gt;&lt;/a&gt;
+&lt;a name="rest_code_606c1bf050ef473482502c8677fa7da4-4"&gt;&lt;/a&gt;&lt;span class="c1"&gt;# Fedora&lt;/span&gt;
+&lt;a name="rest_code_606c1bf050ef473482502c8677fa7da4-5"&gt;&lt;/a&gt;sudo dnf install ripgrep
 &lt;/pre&gt;&lt;p&gt;For other OSs, &lt;a class="reference external" href="https://github.com/BurntSushi/ripgrep#installation"&gt;read this&lt;/a&gt;.&lt;/p&gt;
 &lt;p&gt;FZF has a &lt;a class="reference external" href="https://github.com/junegunn/fzf.vim"&gt;plugin for Neovim&lt;/a&gt;
 (it installs the binary package too),
 you can install it with:&lt;/p&gt;
-&lt;pre class="code vim"&gt;&lt;a name="rest_code_6142ec4f0bc2456f9aec026e10d18a8a-1"&gt;&lt;/a&gt;Plug &lt;span class="s1"&gt;'junegunn/fzf'&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; { &lt;span class="s1"&gt;'dir'&lt;/span&gt;: &lt;span class="s1"&gt;'~/.fzf'&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s1"&gt;'do'&lt;/span&gt;: &lt;span class="s1"&gt;'./install --all'&lt;/span&gt; }
-&lt;a name="rest_code_6142ec4f0bc2456f9aec026e10d18a8a-2"&gt;&lt;/a&gt;Plug &lt;span class="s1"&gt;'junegunn/fzf.vim'&lt;/span&gt;  &lt;span class="c"&gt;" General fuzzy finder&lt;/span&gt;
+&lt;pre class="code vim"&gt;&lt;a name="rest_code_886cbeb7a69a4ba6b69dc1e5090c1d5d-1"&gt;&lt;/a&gt;Plug &lt;span class="s1"&gt;'junegunn/fzf'&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; { &lt;span class="s1"&gt;'dir'&lt;/span&gt;: &lt;span class="s1"&gt;'~/.fzf'&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s1"&gt;'do'&lt;/span&gt;: &lt;span class="s1"&gt;'./install --all'&lt;/span&gt; }
+&lt;a name="rest_code_886cbeb7a69a4ba6b69dc1e5090c1d5d-2"&gt;&lt;/a&gt;Plug &lt;span class="s1"&gt;'junegunn/fzf.vim'&lt;/span&gt;  &lt;span class="c"&gt;" General fuzzy finder&lt;/span&gt;
 &lt;/pre&gt;&lt;p&gt;Now you can use the commands:&lt;/p&gt;
 &lt;ul class="simple"&gt;
 &lt;li&gt;&lt;p&gt;&lt;code class="docutils literal"&gt;:Files&lt;/code&gt; to fuzzy search all files in the current directory.&lt;/p&gt;&lt;/li&gt;
@@ -117,17 +119,17 @@ you can install it with:&lt;/p&gt;
 &lt;li&gt;&lt;p&gt;&lt;code class="docutils literal"&gt;:Buffers&lt;/code&gt; to fuzzy search all open buffers.&lt;/p&gt;&lt;/li&gt;
 &lt;/ul&gt;
 &lt;p&gt;I have these settings for FZF:&lt;/p&gt;
-&lt;pre class="code vim"&gt;&lt;a name="rest_code_c9a3273feb36418b84b64c34126f1f60-1"&gt;&lt;/a&gt;&lt;span class="c"&gt;" Prefix all commands with Fz,&lt;/span&gt;
-&lt;a name="rest_code_c9a3273feb36418b84b64c34126f1f60-2"&gt;&lt;/a&gt;&lt;span class="c"&gt;" so Files is Fzfiles, Rg is FzRg, etc.&lt;/span&gt;
-&lt;a name="rest_code_c9a3273feb36418b84b64c34126f1f60-3"&gt;&lt;/a&gt;&lt;span class="c"&gt;" It's useful to autocomplete all fzf commands using :Fz&amp;lt;tab&amp;gt;&lt;/span&gt;
-&lt;a name="rest_code_c9a3273feb36418b84b64c34126f1f60-4"&gt;&lt;/a&gt;&lt;span class="k"&gt;let&lt;/span&gt; &lt;span class="k"&gt;g&lt;/span&gt;:fzf_command_prefix &lt;span class="p"&gt;=&lt;/span&gt; &lt;span class="s1"&gt;'Fz'&lt;/span&gt;
-&lt;a name="rest_code_c9a3273feb36418b84b64c34126f1f60-5"&gt;&lt;/a&gt;
-&lt;a name="rest_code_c9a3273feb36418b84b64c34126f1f60-6"&gt;&lt;/a&gt;&lt;span class="c"&gt;" Keeps the history of previous searches.&lt;/span&gt;
-&lt;a name="rest_code_c9a3273feb36418b84b64c34126f1f60-7"&gt;&lt;/a&gt;&lt;span class="c"&gt;" You can use ctrl-n or ctr-p to navigate the history on a FZF window&lt;/span&gt;
-&lt;a name="rest_code_c9a3273feb36418b84b64c34126f1f60-8"&gt;&lt;/a&gt;&lt;span class="k"&gt;let&lt;/span&gt; &lt;span class="k"&gt;g&lt;/span&gt;:fzf_history_dir &lt;span class="p"&gt;=&lt;/span&gt; &lt;span class="s1"&gt;'~/.local/share/fzf-history'&lt;/span&gt;
+&lt;pre class="code vim"&gt;&lt;a name="rest_code_c3ac9bb8094f43899f97ca3cbfc4ef81-1"&gt;&lt;/a&gt;&lt;span class="c"&gt;" Prefix all commands with Fz,&lt;/span&gt;
+&lt;a name="rest_code_c3ac9bb8094f43899f97ca3cbfc4ef81-2"&gt;&lt;/a&gt;&lt;span class="c"&gt;" so Files is Fzfiles, Rg is FzRg, etc.&lt;/span&gt;
+&lt;a name="rest_code_c3ac9bb8094f43899f97ca3cbfc4ef81-3"&gt;&lt;/a&gt;&lt;span class="c"&gt;" It's useful to autocomplete all fzf commands using :Fz&amp;lt;tab&amp;gt;&lt;/span&gt;
+&lt;a name="rest_code_c3ac9bb8094f43899f97ca3cbfc4ef81-4"&gt;&lt;/a&gt;&lt;span class="k"&gt;let&lt;/span&gt; &lt;span class="k"&gt;g&lt;/span&gt;:fzf_command_prefix &lt;span class="p"&gt;=&lt;/span&gt; &lt;span class="s1"&gt;'Fz'&lt;/span&gt;
+&lt;a name="rest_code_c3ac9bb8094f43899f97ca3cbfc4ef81-5"&gt;&lt;/a&gt;
+&lt;a name="rest_code_c3ac9bb8094f43899f97ca3cbfc4ef81-6"&gt;&lt;/a&gt;&lt;span class="c"&gt;" Keeps the history of previous searches.&lt;/span&gt;
+&lt;a name="rest_code_c3ac9bb8094f43899f97ca3cbfc4ef81-7"&gt;&lt;/a&gt;&lt;span class="c"&gt;" You can use ctrl-n or ctr-p to navigate the history on a FZF window&lt;/span&gt;
+&lt;a name="rest_code_c3ac9bb8094f43899f97ca3cbfc4ef81-8"&gt;&lt;/a&gt;&lt;span class="k"&gt;let&lt;/span&gt; &lt;span class="k"&gt;g&lt;/span&gt;:fzf_history_dir &lt;span class="p"&gt;=&lt;/span&gt; &lt;span class="s1"&gt;'~/.local/share/fzf-history'&lt;/span&gt;
 &lt;/pre&gt;&lt;p&gt;For more commands and options, read the manual &lt;code class="docutils literal"&gt;:help &lt;span class="pre"&gt;fzf-vim&lt;/span&gt;&lt;/code&gt;.&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class="section" id="vim-altr"&gt;
+&lt;/section&gt;
+&lt;section id="vim-altr"&gt;
 &lt;h2&gt;Vim-altr&lt;/h2&gt;
 &lt;p&gt;When you are editing a file, you may want to check its tests.
 Or if you are a C/Cpp programmer, you may find yourself changing between the source and header file.&lt;/p&gt;
@@ -137,15 +139,15 @@ Or if you are a C/Cpp programmer, you may find yourself changing between the sou
 &lt;div class="line"&gt;&lt;br&gt;&lt;/div&gt;
 &lt;/div&gt;
 &lt;p&gt;You can install it with:&lt;/p&gt;
-&lt;pre class="code vim"&gt;&lt;a name="rest_code_aee1c7fc783342b2a1afb656e1503b70-1"&gt;&lt;/a&gt;Plug &lt;span class="s1"&gt;'kana/vim-altr'&lt;/span&gt;  &lt;span class="c"&gt;" Altern between files&lt;/span&gt;
+&lt;pre class="code vim"&gt;&lt;a name="rest_code_d91a3bd27fb64dc7bebe5feeb38e78b7-1"&gt;&lt;/a&gt;Plug &lt;span class="s1"&gt;'kana/vim-altr'&lt;/span&gt;  &lt;span class="c"&gt;" Altern between files&lt;/span&gt;
 &lt;/pre&gt;&lt;p&gt;I have these settings for vim-altr:&lt;/p&gt;
-&lt;pre class="code vim"&gt;&lt;a name="rest_code_14a5ead4bf4c474e9e5c90d7bc91de75-1"&gt;&lt;/a&gt;nmap &lt;span class="p"&gt;&amp;lt;&lt;/span&gt;leader&lt;span class="p"&gt;&amp;gt;&lt;/span&gt;&lt;span class="k"&gt;a&lt;/span&gt; &lt;span class="p"&gt;&amp;lt;&lt;/span&gt;Plug&lt;span class="p"&gt;&amp;gt;(&lt;/span&gt;altr&lt;span class="p"&gt;-&lt;/span&gt;forward&lt;span class="p"&gt;)&lt;/span&gt;
-&lt;a name="rest_code_14a5ead4bf4c474e9e5c90d7bc91de75-2"&gt;&lt;/a&gt;nmap &lt;span class="p"&gt;&amp;lt;&lt;/span&gt;leader&lt;span class="p"&gt;&amp;gt;&lt;/span&gt;A &lt;span class="p"&gt;&amp;lt;&lt;/span&gt;Plug&lt;span class="p"&gt;&amp;gt;(&lt;/span&gt;altr&lt;span class="p"&gt;-&lt;/span&gt;back&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;pre class="code vim"&gt;&lt;a name="rest_code_b6577bb2ea0344329444477418da752a-1"&gt;&lt;/a&gt;nmap &lt;span class="p"&gt;&amp;lt;&lt;/span&gt;leader&lt;span class="p"&gt;&amp;gt;&lt;/span&gt;&lt;span class="k"&gt;a&lt;/span&gt; &lt;span class="p"&gt;&amp;lt;&lt;/span&gt;Plug&lt;span class="p"&gt;&amp;gt;(&lt;/span&gt;altr&lt;span class="p"&gt;-&lt;/span&gt;forward&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;a name="rest_code_b6577bb2ea0344329444477418da752a-2"&gt;&lt;/a&gt;nmap &lt;span class="p"&gt;&amp;lt;&lt;/span&gt;leader&lt;span class="p"&gt;&amp;gt;&lt;/span&gt;A &lt;span class="p"&gt;&amp;lt;&lt;/span&gt;Plug&lt;span class="p"&gt;&amp;gt;(&lt;/span&gt;altr&lt;span class="p"&gt;-&lt;/span&gt;back&lt;span class="p"&gt;)&lt;/span&gt;
 &lt;/pre&gt;&lt;p&gt;To altern between files I just press &lt;code class="kbd docutils literal"&gt;&amp;lt;leader&amp;gt; + a&lt;/code&gt;.
 To see more options and how to define your own rules,
 red the manual &lt;code class="docutils literal"&gt;:help altr.txt&lt;/code&gt;.&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class="section" id="git"&gt;
+&lt;/section&gt;
+&lt;section id="git"&gt;
 &lt;h2&gt;Git&lt;/h2&gt;
 &lt;p&gt;FZF allows you to pass any list and filter those elements.
 When you find yourself in big projects with several branches is easy to get lost.&lt;/p&gt;
@@ -154,9 +156,9 @@ When you find yourself in big projects with several branches is easy to get lost
 &lt;div class="line"&gt;&lt;br&gt;&lt;/div&gt;
 &lt;/div&gt;
 &lt;p&gt;I wrote &lt;a class="reference external" href="https://github.com/stsewd/fzf-checkout.vim"&gt;this plugin&lt;/a&gt; that list all your branches using &lt;code class="docutils literal"&gt;fzf.vim&lt;/code&gt;.&lt;/p&gt;
-&lt;pre class="code vim"&gt;&lt;a name="rest_code_655c652e83e443438b632f00e940ae56-1"&gt;&lt;/a&gt;Plug &lt;span class="s1"&gt;'stsewd/fzf-checkout.vim'&lt;/span&gt;
+&lt;pre class="code vim"&gt;&lt;a name="rest_code_4afab9b370e946d0b7dfa6690810e49b-1"&gt;&lt;/a&gt;Plug &lt;span class="s1"&gt;'stsewd/fzf-checkout.vim'&lt;/span&gt;
 &lt;/pre&gt;&lt;p&gt;Use &lt;code class="docutils literal"&gt;:GCheckout&lt;/code&gt; or &lt;code class="docutils literal"&gt;:GCheckoutTag&lt;/code&gt;.&lt;/p&gt;
-&lt;/div&gt;&lt;/div&gt;</description><guid>https://stsewd.dev/posts/file-navigation-neovim/</guid><pubDate>Fri, 06 Sep 2019 05:00:00 GMT</pubDate></item><item><title>Read the docs</title><link>https://stsewd.dev/posts/read-the-docs/</link><dc:creator>Santos Gallegos</dc:creator><description>&lt;div&gt;&lt;p&gt;When we write software,
+&lt;/section&gt;&lt;/div&gt;</description><guid>https://stsewd.dev/posts/file-navigation-neovim/</guid><pubDate>Fri, 06 Sep 2019 05:00:00 GMT</pubDate></item><item><title>Read the docs</title><link>https://stsewd.dev/posts/read-the-docs/</link><dc:creator>Santos Gallegos</dc:creator><description>&lt;div&gt;&lt;p&gt;When we write software,
 people tell us to write docs for it.
 But when we use software,
 we forgot to read their docs very often.&lt;/p&gt;
@@ -171,27 +173,27 @@ Then I realized that so many times I search for things in other sites
 but their official documentation.&lt;/p&gt;
 &lt;p&gt;So, in the next paragraphs I'm going to tell you (or remind you)
 where you can search for the official docs of common development tools.&lt;/p&gt;
-&lt;div class="section" id="linux-command-docs"&gt;
+&lt;section id="linux-command-docs"&gt;
 &lt;h2&gt;Linux command docs&lt;/h2&gt;
 &lt;p&gt;&lt;code class="docutils literal"&gt;&lt;span class="pre"&gt;--help&lt;/span&gt;&lt;/code&gt; or &lt;code class="docutils literal"&gt;&lt;span class="pre"&gt;-h&lt;/span&gt;&lt;/code&gt;,
 probably one fo the most obvious options that we check before executing a command in the terminal,
 and that most of the tools have.
 Here you can see the list of options and a short description of what that option does.&lt;/p&gt;
 &lt;p&gt;Its common usage is:&lt;/p&gt;
-&lt;pre class="code bash"&gt;&lt;a name="rest_code_56503bf6c70145abaeb3795674c833dd-1"&gt;&lt;/a&gt;&lt;span class="nb"&gt;command&lt;/span&gt; --help
+&lt;pre class="code bash"&gt;&lt;a name="rest_code_d2fcde0e2d83496f9d9fd1a79f4ccb78-1"&gt;&lt;/a&gt;&lt;span class="nb"&gt;command&lt;/span&gt; --help
 &lt;/pre&gt;&lt;p&gt;Example:&lt;/p&gt;
-&lt;pre class="code bash"&gt;&lt;a name="rest_code_c68ffe4c44284a13b43174049445f65e-1"&gt;&lt;/a&gt;ls --help
+&lt;pre class="code bash"&gt;&lt;a name="rest_code_71c323d97c374604ae25f0d73dcb09fe-1"&gt;&lt;/a&gt;ls --help
 &lt;/pre&gt;&lt;p&gt;or&lt;/p&gt;
-&lt;pre class="code bash"&gt;&lt;a name="rest_code_6ffe9ae07d6a4facb3c246875b668c8d-1"&gt;&lt;/a&gt;&lt;span class="nb"&gt;command&lt;/span&gt; subcommand --help
+&lt;pre class="code bash"&gt;&lt;a name="rest_code_a20c6b63378f4379af494c4b3fe368a6-1"&gt;&lt;/a&gt;&lt;span class="nb"&gt;command&lt;/span&gt; subcommand --help
 &lt;/pre&gt;&lt;p&gt;Example:&lt;/p&gt;
-&lt;pre class="code bash"&gt;&lt;a name="rest_code_d487bfc12b514759a8c45296817bee25-1"&gt;&lt;/a&gt;git add --help
+&lt;pre class="code bash"&gt;&lt;a name="rest_code_689c08edc51048e0a48e8f666c6ace53-1"&gt;&lt;/a&gt;git add --help
 &lt;/pre&gt;&lt;p&gt;Man pages,
 most of the Linux tools has a respective man page (apart from the &lt;code class="docutils literal"&gt;&lt;span class="pre"&gt;--help&lt;/span&gt;&lt;/code&gt; option).
 Man pages have a more detailed documentation than the &lt;code class="docutils literal"&gt;&lt;span class="pre"&gt;--help&lt;/span&gt;&lt;/code&gt; option from the command.&lt;/p&gt;
 &lt;p&gt;Most of the time you'll need to run:&lt;/p&gt;
-&lt;pre class="code bash"&gt;&lt;a name="rest_code_c929c37e477c4c0db997deeb1b24cf40-1"&gt;&lt;/a&gt;man &lt;span class="nb"&gt;command&lt;/span&gt;
+&lt;pre class="code bash"&gt;&lt;a name="rest_code_00db2a5583f74c6abbad67f8a21d937e-1"&gt;&lt;/a&gt;man &lt;span class="nb"&gt;command&lt;/span&gt;
 &lt;/pre&gt;&lt;p&gt;Example&lt;/p&gt;
-&lt;pre class="code bash"&gt;&lt;a name="rest_code_dbdcb189da5c4400a5fdcc31400577a9-1"&gt;&lt;/a&gt;man ls
+&lt;pre class="code bash"&gt;&lt;a name="rest_code_fbab512816494d88ad77c258eef50aa9-1"&gt;&lt;/a&gt;man ls
 &lt;/pre&gt;&lt;p&gt;But not only commands have man pages,
 it also includes documentation of the format used in some configuration files,
 kernel functions, libraries (usually the ones used in C).&lt;/p&gt;
@@ -208,12 +210,12 @@ each section is represented by a number:&lt;/p&gt;
 8   System administration commands (usually only for root)
 9   Kernel routines [Non standard]&lt;/pre&gt;
 &lt;p&gt;Knowing the section you can get the man page with:&lt;/p&gt;
-&lt;pre class="code bash"&gt;&lt;a name="rest_code_8f352f2bdb13463293c4bbac55d304b3-1"&gt;&lt;/a&gt;man &amp;lt;section&amp;gt; keyword
+&lt;pre class="code bash"&gt;&lt;a name="rest_code_f8c5e9029e5a4b6484c1bf674b963dac-1"&gt;&lt;/a&gt;man &amp;lt;section&amp;gt; keyword
 &lt;/pre&gt;&lt;p&gt;Example:&lt;/p&gt;
-&lt;pre class="code bash"&gt;&lt;a name="rest_code_a22890b23a584c5bb80a508469f2e96f-1"&gt;&lt;/a&gt;man &lt;span class="m"&gt;1&lt;/span&gt; ls
-&lt;a name="rest_code_a22890b23a584c5bb80a508469f2e96f-2"&gt;&lt;/a&gt;man &lt;span class="m"&gt;2&lt;/span&gt; fork
-&lt;a name="rest_code_a22890b23a584c5bb80a508469f2e96f-3"&gt;&lt;/a&gt;man &lt;span class="m"&gt;3&lt;/span&gt; &lt;span class="nb"&gt;printf&lt;/span&gt;
-&lt;a name="rest_code_a22890b23a584c5bb80a508469f2e96f-4"&gt;&lt;/a&gt;man &lt;span class="m"&gt;5&lt;/span&gt; /etc/passwd
+&lt;pre class="code bash"&gt;&lt;a name="rest_code_3a3eac28b77043fdad2c144d109450ab-1"&gt;&lt;/a&gt;man &lt;span class="m"&gt;1&lt;/span&gt; ls
+&lt;a name="rest_code_3a3eac28b77043fdad2c144d109450ab-2"&gt;&lt;/a&gt;man &lt;span class="m"&gt;2&lt;/span&gt; fork
+&lt;a name="rest_code_3a3eac28b77043fdad2c144d109450ab-3"&gt;&lt;/a&gt;man &lt;span class="m"&gt;3&lt;/span&gt; &lt;span class="nb"&gt;printf&lt;/span&gt;
+&lt;a name="rest_code_3a3eac28b77043fdad2c144d109450ab-4"&gt;&lt;/a&gt;man &lt;span class="m"&gt;5&lt;/span&gt; /etc/passwd
 &lt;/pre&gt;&lt;p&gt;Some times the result from the &lt;code class="docutils literal"&gt;&lt;span class="pre"&gt;--help&lt;/span&gt;&lt;/code&gt; option or
 from the man pages can be very extensive,
 and difficult to extract what you need,
@@ -221,25 +223,25 @@ or missing clear examples.&lt;/p&gt;
 &lt;p&gt;Fortunately there is the &lt;a class="reference external" href="https://github.com/tldr-pages/tldr"&gt;tldr&lt;/a&gt; project,
 which has community-driven simplified man pages with common usage examples.&lt;/p&gt;
 &lt;p&gt;Did you always forget the correct options to untar a file?&lt;/p&gt;
-&lt;pre class="code bash"&gt;&lt;a name="rest_code_0c7252d4c2d64823a3412e6b1d24a9b3-1"&gt;&lt;/a&gt;tldr tar
-&lt;a name="rest_code_0c7252d4c2d64823a3412e6b1d24a9b3-2"&gt;&lt;/a&gt;
-&lt;a name="rest_code_0c7252d4c2d64823a3412e6b1d24a9b3-3"&gt;&lt;/a&gt;  Archiving utility.
-&lt;a name="rest_code_0c7252d4c2d64823a3412e6b1d24a9b3-4"&gt;&lt;/a&gt;  Often combined with a compression method, such as gzip or bzip.
-&lt;a name="rest_code_0c7252d4c2d64823a3412e6b1d24a9b3-5"&gt;&lt;/a&gt;  More information: &amp;lt;https://www.gnu.org/software/tar&amp;gt;.
-&lt;a name="rest_code_0c7252d4c2d64823a3412e6b1d24a9b3-6"&gt;&lt;/a&gt;
-&lt;a name="rest_code_0c7252d4c2d64823a3412e6b1d24a9b3-7"&gt;&lt;/a&gt;- Create an archive from files:
-&lt;a name="rest_code_0c7252d4c2d64823a3412e6b1d24a9b3-8"&gt;&lt;/a&gt;
-&lt;a name="rest_code_0c7252d4c2d64823a3412e6b1d24a9b3-9"&gt;&lt;/a&gt;  tar -cf target.tar file1 file2 file3
-&lt;a name="rest_code_0c7252d4c2d64823a3412e6b1d24a9b3-10"&gt;&lt;/a&gt;
-&lt;a name="rest_code_0c7252d4c2d64823a3412e6b1d24a9b3-11"&gt;&lt;/a&gt;- Extract an archive &lt;span class="k"&gt;in&lt;/span&gt; a target directory:
-&lt;a name="rest_code_0c7252d4c2d64823a3412e6b1d24a9b3-12"&gt;&lt;/a&gt;
-&lt;a name="rest_code_0c7252d4c2d64823a3412e6b1d24a9b3-13"&gt;&lt;/a&gt;  tar -xf source.tar -C directory
-&lt;a name="rest_code_0c7252d4c2d64823a3412e6b1d24a9b3-14"&gt;&lt;/a&gt;
-&lt;a name="rest_code_0c7252d4c2d64823a3412e6b1d24a9b3-15"&gt;&lt;/a&gt;...
+&lt;pre class="code bash"&gt;&lt;a name="rest_code_3ce228a635aa44d7a490366e81293e1c-1"&gt;&lt;/a&gt;tldr tar
+&lt;a name="rest_code_3ce228a635aa44d7a490366e81293e1c-2"&gt;&lt;/a&gt;
+&lt;a name="rest_code_3ce228a635aa44d7a490366e81293e1c-3"&gt;&lt;/a&gt;  Archiving utility.
+&lt;a name="rest_code_3ce228a635aa44d7a490366e81293e1c-4"&gt;&lt;/a&gt;  Often combined with a compression method, such as gzip or bzip.
+&lt;a name="rest_code_3ce228a635aa44d7a490366e81293e1c-5"&gt;&lt;/a&gt;  More information: &amp;lt;https://www.gnu.org/software/tar&amp;gt;.
+&lt;a name="rest_code_3ce228a635aa44d7a490366e81293e1c-6"&gt;&lt;/a&gt;
+&lt;a name="rest_code_3ce228a635aa44d7a490366e81293e1c-7"&gt;&lt;/a&gt;- Create an archive from files:
+&lt;a name="rest_code_3ce228a635aa44d7a490366e81293e1c-8"&gt;&lt;/a&gt;
+&lt;a name="rest_code_3ce228a635aa44d7a490366e81293e1c-9"&gt;&lt;/a&gt;  tar -cf target.tar file1 file2 file3
+&lt;a name="rest_code_3ce228a635aa44d7a490366e81293e1c-10"&gt;&lt;/a&gt;
+&lt;a name="rest_code_3ce228a635aa44d7a490366e81293e1c-11"&gt;&lt;/a&gt;- Extract an archive &lt;span class="k"&gt;in&lt;/span&gt; a target directory:
+&lt;a name="rest_code_3ce228a635aa44d7a490366e81293e1c-12"&gt;&lt;/a&gt;
+&lt;a name="rest_code_3ce228a635aa44d7a490366e81293e1c-13"&gt;&lt;/a&gt;  tar -xf source.tar -C directory
+&lt;a name="rest_code_3ce228a635aa44d7a490366e81293e1c-14"&gt;&lt;/a&gt;
+&lt;a name="rest_code_3ce228a635aa44d7a490366e81293e1c-15"&gt;&lt;/a&gt;...
 &lt;/pre&gt;&lt;p&gt;If you use Python,
 you can install it using &lt;code class="docutils literal"&gt;pip install tldr&lt;/code&gt;.&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class="section" id="from-your-editor"&gt;
+&lt;/section&gt;
+&lt;section id="from-your-editor"&gt;
 &lt;h2&gt;From your editor&lt;/h2&gt;
 &lt;p&gt;It's useful to setup your editor to show you the documentation from the name that your cursor is under.
 Take a look at &lt;a class="reference external" href="https://langserver.org/"&gt;langserver&lt;/a&gt; for a &lt;em&gt;global&lt;/em&gt; solution and
@@ -252,15 +254,15 @@ which runs a program to lookup the keyword under the cursor.
 This program can be setup for different file types,
 see &lt;code class="docutils literal"&gt;:help K&lt;/code&gt;.&lt;/p&gt;
 &lt;p&gt;For instance, try this C code and press &lt;code class="docutils literal"&gt;K&lt;/code&gt; under the &lt;code class="docutils literal"&gt;printf&lt;/code&gt; function.&lt;/p&gt;
-&lt;pre class="code c"&gt;&lt;a name="rest_code_456ef1a1dcb44f3b900ebd0dc5779d58-1"&gt;&lt;/a&gt;&lt;span class="cp"&gt;#import &amp;lt;stdio.h&amp;gt;&lt;/span&gt;
-&lt;a name="rest_code_456ef1a1dcb44f3b900ebd0dc5779d58-2"&gt;&lt;/a&gt;
-&lt;a name="rest_code_456ef1a1dcb44f3b900ebd0dc5779d58-3"&gt;&lt;/a&gt;&lt;span class="kt"&gt;int&lt;/span&gt; &lt;span class="nf"&gt;main&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt;
-&lt;a name="rest_code_456ef1a1dcb44f3b900ebd0dc5779d58-4"&gt;&lt;/a&gt;    &lt;span class="n"&gt;printf&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s"&gt;"Hello, world&lt;/span&gt;&lt;span class="se"&gt;\n&lt;/span&gt;&lt;span class="s"&gt;"&lt;/span&gt;&lt;span class="p"&gt;);&lt;/span&gt;
-&lt;a name="rest_code_456ef1a1dcb44f3b900ebd0dc5779d58-5"&gt;&lt;/a&gt;    &lt;span class="k"&gt;return&lt;/span&gt; &lt;span class="mi"&gt;0&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
-&lt;a name="rest_code_456ef1a1dcb44f3b900ebd0dc5779d58-6"&gt;&lt;/a&gt;&lt;span class="p"&gt;}&lt;/span&gt;
+&lt;pre class="code c"&gt;&lt;a name="rest_code_5e4634745ce347b5b52f6acc8a62d963-1"&gt;&lt;/a&gt;&lt;span class="cp"&gt;#import &amp;lt;stdio.h&amp;gt;&lt;/span&gt;
+&lt;a name="rest_code_5e4634745ce347b5b52f6acc8a62d963-2"&gt;&lt;/a&gt;
+&lt;a name="rest_code_5e4634745ce347b5b52f6acc8a62d963-3"&gt;&lt;/a&gt;&lt;span class="kt"&gt;int&lt;/span&gt; &lt;span class="nf"&gt;main&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt;
+&lt;a name="rest_code_5e4634745ce347b5b52f6acc8a62d963-4"&gt;&lt;/a&gt;    &lt;span class="n"&gt;printf&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s"&gt;"Hello, world&lt;/span&gt;&lt;span class="se"&gt;\n&lt;/span&gt;&lt;span class="s"&gt;"&lt;/span&gt;&lt;span class="p"&gt;);&lt;/span&gt;
+&lt;a name="rest_code_5e4634745ce347b5b52f6acc8a62d963-5"&gt;&lt;/a&gt;    &lt;span class="k"&gt;return&lt;/span&gt; &lt;span class="mi"&gt;0&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+&lt;a name="rest_code_5e4634745ce347b5b52f6acc8a62d963-6"&gt;&lt;/a&gt;&lt;span class="p"&gt;}&lt;/span&gt;
 &lt;/pre&gt;&lt;p&gt;For a general and &lt;em&gt;nicer&lt;/em&gt; solution I use the &lt;a class="reference external" href="https://github.com/neoclide/coc.nvim"&gt;coc plugin&lt;/a&gt;.&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class="section" id="online-documentation"&gt;
+&lt;/section&gt;
+&lt;section id="online-documentation"&gt;
 &lt;h2&gt;Online documentation&lt;/h2&gt;
 &lt;p&gt;Some libraries or programs don't include their documentation when you downloaded it,
 but probably they have their documentation online.
@@ -277,36 +279,36 @@ Note that I'm not referring to a blog post or a tutorial.&lt;/p&gt;
 &lt;p&gt;By the way,
 for Python packages,
 most of the time they have their documentation hosted in &lt;a class="reference external" href="https://readthedocs.org/"&gt;https://readthedocs.org/&lt;/a&gt;.&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class="section" id="python-docs"&gt;
+&lt;/section&gt;
+&lt;section id="python-docs"&gt;
 &lt;h2&gt;Python docs&lt;/h2&gt;
 &lt;p&gt;I'm a Python developer,
 so searching for docs from methods and functions is my daily task.&lt;/p&gt;
 &lt;p&gt;When I'm not inside my editor, I use these methods:&lt;/p&gt;
-&lt;div class="section" id="the-help-function"&gt;
+&lt;section id="the-help-function"&gt;
 &lt;h3&gt;The help function&lt;/h3&gt;
 &lt;p&gt;Python has a built in function called &lt;code class="docutils literal"&gt;help&lt;/code&gt;,
 you can use it inside the interpreter like this:&lt;/p&gt;
-&lt;pre class="code python"&gt;&lt;a name="rest_code_826bf96dbab74115a606f6267def258f-1"&gt;&lt;/a&gt;&lt;span class="o"&gt;&amp;gt;&amp;gt;&amp;gt;&lt;/span&gt; &lt;span class="n"&gt;help&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nb"&gt;open&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
-&lt;a name="rest_code_826bf96dbab74115a606f6267def258f-2"&gt;&lt;/a&gt;&lt;span class="o"&gt;&amp;gt;&amp;gt;&amp;gt;&lt;/span&gt; &lt;span class="n"&gt;my_string&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="s1"&gt;'hello world'&lt;/span&gt;
-&lt;a name="rest_code_826bf96dbab74115a606f6267def258f-3"&gt;&lt;/a&gt;&lt;span class="o"&gt;&amp;gt;&amp;gt;&amp;gt;&lt;/span&gt; &lt;span class="n"&gt;help&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;my_string&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;upper&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;pre class="code python"&gt;&lt;a name="rest_code_300226d3b87847f4bd3a4296b92b0ce7-1"&gt;&lt;/a&gt;&lt;span class="o"&gt;&amp;gt;&amp;gt;&amp;gt;&lt;/span&gt; &lt;span class="n"&gt;help&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nb"&gt;open&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;a name="rest_code_300226d3b87847f4bd3a4296b92b0ce7-2"&gt;&lt;/a&gt;&lt;span class="o"&gt;&amp;gt;&amp;gt;&amp;gt;&lt;/span&gt; &lt;span class="n"&gt;my_string&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="s1"&gt;'hello world'&lt;/span&gt;
+&lt;a name="rest_code_300226d3b87847f4bd3a4296b92b0ce7-3"&gt;&lt;/a&gt;&lt;span class="o"&gt;&amp;gt;&amp;gt;&amp;gt;&lt;/span&gt; &lt;span class="n"&gt;help&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;my_string&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;upper&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
 &lt;/pre&gt;&lt;p&gt;The argument can be any function, method, object or module.&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class="section" id="pydoc"&gt;
+&lt;/section&gt;
+&lt;section id="pydoc"&gt;
 &lt;h3&gt;pydoc&lt;/h3&gt;
 &lt;p&gt;&lt;a class="reference external" href="https://docs.python.org/3/library/pydoc.html"&gt;pydoc&lt;/a&gt; is a command line tool shipped with Python.
 It's what the &lt;code class="docutils literal"&gt;help&lt;/code&gt; function uses under it.
 You can use it from your terminal like this:&lt;/p&gt;
-&lt;pre class="code bash"&gt;&lt;a name="rest_code_b07cae376cec42be9408797bba8f7981-1"&gt;&lt;/a&gt;pydoc open
-&lt;/pre&gt;&lt;/div&gt;
-&lt;div class="section" id="the-official-online-docs"&gt;
+&lt;pre class="code bash"&gt;&lt;a name="rest_code_3c51b25eb3434019a06c1ea32bdee998-1"&gt;&lt;/a&gt;pydoc open
+&lt;/pre&gt;&lt;/section&gt;
+&lt;section id="the-official-online-docs"&gt;
 &lt;h3&gt;The official online docs&lt;/h3&gt;
 &lt;p&gt;For a more extensive documentation,
 with several common usage examples.
 See the online docs in &lt;a class="reference external" href="https://docs.python.org/"&gt;https://docs.python.org/&lt;/a&gt;.&lt;/p&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;div class="section" id="conclusions"&gt;
+&lt;/section&gt;
+&lt;/section&gt;
+&lt;section id="conclusions"&gt;
 &lt;h2&gt;Conclusions&lt;/h2&gt;
 &lt;p&gt;If you ever find yourself reading the usage instructions for a tool or method/function from another site having the official docs at hand,
 probably is because:&lt;/p&gt;
@@ -315,7 +317,7 @@ probably is because:&lt;/p&gt;
 &lt;li&gt;&lt;p&gt;The project doesn't have good documentation (a little more common) -- Help to improve it if it's the case!&lt;/p&gt;&lt;/li&gt;
 &lt;li&gt;&lt;p&gt;The documentation isn't written in the language you know (very common) -- Help to translate it if it's the case!&lt;/p&gt;&lt;/li&gt;
 &lt;/ol&gt;
-&lt;/div&gt;&lt;/div&gt;</description><category>documentation</category><category>read the docs</category><guid>https://stsewd.dev/posts/read-the-docs/</guid><pubDate>Sat, 06 Jul 2019 05:00:00 GMT</pubDate></item><item><title>De guía en Django Girls a pasante en Read the Docs</title><link>https://stsewd.dev/posts/historia-django-girls-rtd/</link><dc:creator>Santos Gallegos</dc:creator><description>&lt;div&gt;&lt;ul class="simple"&gt;
+&lt;/section&gt;&lt;/div&gt;</description><category>documentation</category><category>read the docs</category><guid>https://stsewd.dev/posts/read-the-docs/</guid><pubDate>Sat, 06 Jul 2019 05:00:00 GMT</pubDate></item><item><title>De guía en Django Girls a pasante en Read the Docs</title><link>https://stsewd.dev/posts/historia-django-girls-rtd/</link><dc:creator>Santos Gallegos</dc:creator><description>&lt;div&gt;&lt;ul class="simple"&gt;
 &lt;li&gt;&lt;p&gt;¿Entonces, qué les interesa a las personas acá? ¿Qué te interesa a ti?&lt;/p&gt;&lt;/li&gt;
 &lt;li&gt;&lt;p&gt;¡Graduarme!&lt;/p&gt;&lt;/li&gt;
 &lt;li&gt;&lt;p&gt;¿Para qué?&lt;/p&gt;&lt;/li&gt;
@@ -331,7 +333,7 @@ probably is because:&lt;/p&gt;
 &lt;li&gt;&lt;p&gt;¿¡Programar!? No, eso no hacen los ingenieros.
 Los ingenieros no programamos, eso es como ser los albañiles de la ingeniera civil.&lt;/p&gt;&lt;/li&gt;
 &lt;/ul&gt;
-&lt;div class="section" id="hello-world"&gt;
+&lt;section id="hello-world"&gt;
 &lt;h2&gt;&lt;code class="docutils literal"&gt;Hello World&lt;/code&gt;&lt;/h2&gt;
 &lt;p&gt;Antes de empezar con esta historia,
 quisiera contar un poco sobre mi.
@@ -381,8 +383,8 @@ pude ver que el desarrollo de software no está tan avanzado en el país.
 Y nadie hace nada al respecto, todo lo cool seguía en las grandes ciudades
 como Quito (traído gracias a empresas extranjeras) o en otros países.
 Me sentí decepcionado, otra vez.&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class="section" id="main-py"&gt;
+&lt;/section&gt;
+&lt;section id="main-py"&gt;
 &lt;h2&gt;&lt;code class="docutils literal"&gt;main.py&lt;/code&gt;&lt;/h2&gt;
 &lt;p&gt;No recuerdo exactamente dónde, creo que fue en Facebook.
 Vi una publicidad sobre que se iba a hacer un Django Girls en Cuenca.
@@ -445,8 +447,8 @@ Y luego recibí este email:&lt;/p&gt;
 &lt;p&gt;Espero esto no estarlo alucinando.
 Si antes tenía una gran deuda con la comunidad de software libre,
 ahora tengo una deuda mucho más grande.&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class="section" id="open-mind-txt-r"&gt;
+&lt;/section&gt;
+&lt;section id="open-mind-txt-r"&gt;
 &lt;h2&gt;&lt;code class="docutils literal"&gt;&lt;span class="pre"&gt;open('mind.txt',&lt;/span&gt; &lt;span class="pre"&gt;'r+')&lt;/span&gt;&lt;/code&gt;&lt;/h2&gt;
 &lt;p&gt;¿Haber asistido a un Django Girls me llevó a esta oportunidad?
 Varias cosas locas pasaron desde ese momento, muchas no tan buenas.
@@ -458,16 +460,16 @@ Gracias Manuel y Johanna.&lt;/p&gt;
 sino para mostrarte que esto es una realidad. Participar en el software libre,
 en la comunidad, compartiendo el conocimiento, te abre muchas oportunidades,
 conoces a muchas personas, aprendes un montón. Te abre la mente.&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class="section" id="exit-1"&gt;
+&lt;/section&gt;
+&lt;section id="exit-1"&gt;
 &lt;h2&gt;&lt;code class="docutils literal"&gt;exit(1)&lt;/code&gt;&lt;/h2&gt;
 &lt;ul class="simple"&gt;
 &lt;li&gt;&lt;p&gt;Cool, voy a inscribirme como guía de un Django Girls en la próxima
 para hacerme famoso y ganar mucho dinero desde mi casa.&lt;/p&gt;&lt;/li&gt;
 &lt;li&gt;&lt;p&gt;Creo que deberías leer el post nuevamente.&lt;/p&gt;&lt;/li&gt;
 &lt;/ul&gt;
-&lt;/div&gt;&lt;/div&gt;</description><guid>https://stsewd.dev/posts/historia-django-girls-rtd/</guid><pubDate>Wed, 30 May 2018 05:00:00 GMT</pubDate></item><item><title>Neovim, Instalación de Plugins</title><link>https://stsewd.dev/posts/neovim-plugins/</link><dc:creator>Santos Gallegos</dc:creator><description>&lt;div&gt;&lt;a class="reference external image-reference" href="https://stsewd.dev/images/nvim/neovim-logo.png"&gt;&lt;img alt="Logo de Neovim" class="align-center" src="https://stsewd.dev/images/nvim/neovim-logo.png"&gt;&lt;/a&gt;
-&lt;div class="section" id="plugins"&gt;
+&lt;/section&gt;&lt;/div&gt;</description><guid>https://stsewd.dev/posts/historia-django-girls-rtd/</guid><pubDate>Wed, 30 May 2018 05:00:00 GMT</pubDate></item><item><title>Neovim, Instalación de Plugins</title><link>https://stsewd.dev/posts/neovim-plugins/</link><dc:creator>Santos Gallegos</dc:creator><description>&lt;div&gt;&lt;a class="reference external image-reference" href="https://stsewd.dev/images/nvim/neovim-logo.png"&gt;&lt;img alt="Logo de Neovim" class="align-center" src="https://stsewd.dev/images/nvim/neovim-logo.png"&gt;&lt;/a&gt;
+&lt;section id="plugins"&gt;
 &lt;h2&gt;Plugins&lt;/h2&gt;
 &lt;p&gt;Los plugins de Vim/Neovim no son más que archivos &lt;code class="docutils literal"&gt;.vim&lt;/code&gt;
 (vimscript &lt;a class="footnote-reference brackets" href="https://stsewd.dev/posts/neovim-plugins/#vimscript" id="id1"&gt;1&lt;/a&gt;) o al menos la mayoría,
@@ -476,8 +478,8 @@ ya que Neovim nos permite escribir plugins en cualquier lenguaje
 &lt;p&gt;Los plugins permiten extender la funcionalidad de nuestro editor,
 integrarlo con herramientas externas, darle color (temas),
 o hasta proveer &lt;em&gt;mappings&lt;/em&gt; que nos facilitan realizar ciertas acciones.&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class="section" id="administrador-de-plugins"&gt;
+&lt;/section&gt;
+&lt;section id="administrador-de-plugins"&gt;
 &lt;h2&gt;Administrador de plugins&lt;/h2&gt;
 &lt;p&gt;Los archivos que conforman un plugin deben estar en directorios específicos para que este funcione.
 En los inicios de Vim, bastaba con copiar y pegar estos archivos en cada directorio
@@ -506,18 +508,18 @@ Puedes escoger el que desees, los plugins pueden ser instalados con cualquier ad
 &lt;p&gt;Si quieres saber más sobre la estructura de directorios de los plugins
 de Vim/Neovim puedes leer &lt;a class="reference external" href="https://gist.github.com/nelstrom/1056049/784e252c3de653e204e9e128653010e19fbd493f"&gt;este gist&lt;/a&gt;.&lt;/p&gt;
 &lt;/div&gt;
-&lt;/div&gt;
-&lt;div class="section" id="instalando-vim-plug"&gt;
+&lt;/section&gt;
+&lt;section id="instalando-vim-plug"&gt;
 &lt;h2&gt;Instalando vim-plug&lt;/h2&gt;
 &lt;p&gt;Vim-plug depende de git, si no lo tienes instalado,
 ejecuta el siguiente comando:&lt;/p&gt;
-&lt;pre class="code bash"&gt;&lt;a name="rest_code_7d876f6449f44d309aacffab77c51e6e-1"&gt;&lt;/a&gt;&lt;span class="c1"&gt;# Ubuntu&lt;/span&gt;
-&lt;a name="rest_code_7d876f6449f44d309aacffab77c51e6e-2"&gt;&lt;/a&gt;sudo apt install git
-&lt;a name="rest_code_7d876f6449f44d309aacffab77c51e6e-3"&gt;&lt;/a&gt;
-&lt;a name="rest_code_7d876f6449f44d309aacffab77c51e6e-4"&gt;&lt;/a&gt;&lt;span class="c1"&gt;# Fedora&lt;/span&gt;
-&lt;a name="rest_code_7d876f6449f44d309aacffab77c51e6e-5"&gt;&lt;/a&gt;sudo dnf install git
+&lt;pre class="code bash"&gt;&lt;a name="rest_code_44427d63399f461ea808bc413d52f71a-1"&gt;&lt;/a&gt;&lt;span class="c1"&gt;# Ubuntu&lt;/span&gt;
+&lt;a name="rest_code_44427d63399f461ea808bc413d52f71a-2"&gt;&lt;/a&gt;sudo apt install git
+&lt;a name="rest_code_44427d63399f461ea808bc413d52f71a-3"&gt;&lt;/a&gt;
+&lt;a name="rest_code_44427d63399f461ea808bc413d52f71a-4"&gt;&lt;/a&gt;&lt;span class="c1"&gt;# Fedora&lt;/span&gt;
+&lt;a name="rest_code_44427d63399f461ea808bc413d52f71a-5"&gt;&lt;/a&gt;sudo dnf install git
 &lt;/pre&gt;&lt;p&gt;Para instalar vim-plug ejecuta el siguiente comando en la terminal:&lt;/p&gt;
-&lt;pre class="code bash"&gt;&lt;a name="rest_code_13c34876c6d54a039488878d6b2e1173-1"&gt;&lt;/a&gt;curl -fLo ~/.local/share/nvim/site/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+&lt;pre class="code bash"&gt;&lt;a name="rest_code_91728687010845b4a593219fce7a2dce-1"&gt;&lt;/a&gt;curl -fLo ~/.local/share/nvim/site/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
 &lt;/pre&gt;&lt;div class="admonition note"&gt;
 &lt;p class="admonition-title"&gt;Nota&lt;/p&gt;
 &lt;p&gt;Debes tener instalado &lt;code class="docutils literal"&gt;curl&lt;/code&gt; previamente,
@@ -528,18 +530,18 @@ o en Fedora con &lt;code class="docutils literal"&gt;sudo dnf install curl&lt;/c
 &lt;a class="reference external" href="https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim"&gt;este archivo&lt;/a&gt;
 y guárdalo en &lt;code class="docutils literal"&gt;&lt;span class="pre"&gt;~/.local/share/nvim/site/autoload/plug.vim&lt;/span&gt;&lt;/code&gt;.&lt;/p&gt;
 &lt;p&gt;Ahora abre tu archivo &lt;code class="docutils literal"&gt;init.vim&lt;/code&gt;.&lt;/p&gt;
-&lt;pre class="code bash"&gt;&lt;a name="rest_code_a270ab367bb64e058907be27ed7635e4-1"&gt;&lt;/a&gt;nvim ~/.config/nvim/init.vim
+&lt;pre class="code bash"&gt;&lt;a name="rest_code_30094e469e034089ad131c87b29402e4-1"&gt;&lt;/a&gt;nvim ~/.config/nvim/init.vim
 &lt;/pre&gt;&lt;p&gt;Al inicio agrega lo siguiente:&lt;/p&gt;
-&lt;pre class="code vim"&gt;&lt;a name="rest_code_5c4ac6b474df4d0bb880747ec0bafe4f-1"&gt;&lt;/a&gt;&lt;span class="c"&gt;" Directorio de plugins&lt;/span&gt;
-&lt;a name="rest_code_5c4ac6b474df4d0bb880747ec0bafe4f-2"&gt;&lt;/a&gt;&lt;span class="k"&gt;call&lt;/span&gt; plug#begin&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s1"&gt;'~/.local/share/nvim/plugged'&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
-&lt;a name="rest_code_5c4ac6b474df4d0bb880747ec0bafe4f-3"&gt;&lt;/a&gt;
-&lt;a name="rest_code_5c4ac6b474df4d0bb880747ec0bafe4f-4"&gt;&lt;/a&gt;&lt;span class="c"&gt;" Aquí irán los plugins a instalar&lt;/span&gt;
-&lt;a name="rest_code_5c4ac6b474df4d0bb880747ec0bafe4f-5"&gt;&lt;/a&gt;
-&lt;a name="rest_code_5c4ac6b474df4d0bb880747ec0bafe4f-6"&gt;&lt;/a&gt;&lt;span class="k"&gt;call&lt;/span&gt; plug#&lt;span class="k"&gt;end&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt;
-&lt;a name="rest_code_5c4ac6b474df4d0bb880747ec0bafe4f-7"&gt;&lt;/a&gt;
-&lt;a name="rest_code_5c4ac6b474df4d0bb880747ec0bafe4f-8"&gt;&lt;/a&gt;&lt;span class="c"&gt;" Luego de esta línea puedes agregar tus configuraciones y mappings&lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;
-&lt;div class="section" id="instalando-plugins-con-vim-plug"&gt;
+&lt;pre class="code vim"&gt;&lt;a name="rest_code_7fd41c8285f44d868571dab14b71ebfc-1"&gt;&lt;/a&gt;&lt;span class="c"&gt;" Directorio de plugins&lt;/span&gt;
+&lt;a name="rest_code_7fd41c8285f44d868571dab14b71ebfc-2"&gt;&lt;/a&gt;&lt;span class="k"&gt;call&lt;/span&gt; plug#begin&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s1"&gt;'~/.local/share/nvim/plugged'&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;a name="rest_code_7fd41c8285f44d868571dab14b71ebfc-3"&gt;&lt;/a&gt;
+&lt;a name="rest_code_7fd41c8285f44d868571dab14b71ebfc-4"&gt;&lt;/a&gt;&lt;span class="c"&gt;" Aquí irán los plugins a instalar&lt;/span&gt;
+&lt;a name="rest_code_7fd41c8285f44d868571dab14b71ebfc-5"&gt;&lt;/a&gt;
+&lt;a name="rest_code_7fd41c8285f44d868571dab14b71ebfc-6"&gt;&lt;/a&gt;&lt;span class="k"&gt;call&lt;/span&gt; plug#&lt;span class="k"&gt;end&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt;
+&lt;a name="rest_code_7fd41c8285f44d868571dab14b71ebfc-7"&gt;&lt;/a&gt;
+&lt;a name="rest_code_7fd41c8285f44d868571dab14b71ebfc-8"&gt;&lt;/a&gt;&lt;span class="c"&gt;" Luego de esta línea puedes agregar tus configuraciones y mappings&lt;/span&gt;
+&lt;/pre&gt;&lt;/section&gt;
+&lt;section id="instalando-plugins-con-vim-plug"&gt;
 &lt;h2&gt;Instalando plugins con vim-plug&lt;/h2&gt;
 &lt;p&gt;Vim-plug tiene soporte directo con plugins alojados en GitHub
 (pero también se puede instalar los que estén alojados en otros sitios,
@@ -548,19 +550,21 @@ un repositorio git, o de manera local).&lt;/p&gt;
 poner el nombre del usuario y del repositorio en el archivo &lt;cite&gt;init.vim&lt;/cite&gt;.&lt;/p&gt;
 &lt;p&gt;Por ejemplo, para instalar &lt;a class="reference external" href="https://github.com/tpope/vim-surround"&gt;este plugin&lt;/a&gt;,
 sólo se necesita agregar lo siguiente en el archivo &lt;code class="docutils literal"&gt;init.vim&lt;/code&gt;.&lt;/p&gt;
-&lt;pre class="code vim"&gt;&lt;a name="rest_code_c22d4380256d45a597f7cd9670ad1911-1"&gt;&lt;/a&gt;&lt;span class="k"&gt;call&lt;/span&gt; plug#begin&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s1"&gt;'~/.local/share/nvim/plugged'&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
-&lt;a name="rest_code_c22d4380256d45a597f7cd9670ad1911-2"&gt;&lt;/a&gt;
-&lt;a name="rest_code_c22d4380256d45a597f7cd9670ad1911-3"&gt;&lt;/a&gt;Plug &lt;span class="s1"&gt;'tpope/vim-surround'&lt;/span&gt;  &lt;span class="c"&gt;" Es buena idea agregar una descripción del plugin&lt;/span&gt;
-&lt;a name="rest_code_c22d4380256d45a597f7cd9670ad1911-4"&gt;&lt;/a&gt;
-&lt;a name="rest_code_c22d4380256d45a597f7cd9670ad1911-5"&gt;&lt;/a&gt;&lt;span class="k"&gt;call&lt;/span&gt; plug#&lt;span class="k"&gt;end&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt;
+&lt;pre class="code vim"&gt;&lt;a name="rest_code_2ba6114f144f492fa83e7a448aaf69ab-1"&gt;&lt;/a&gt;&lt;span class="k"&gt;call&lt;/span&gt; plug#begin&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s1"&gt;'~/.local/share/nvim/plugged'&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;a name="rest_code_2ba6114f144f492fa83e7a448aaf69ab-2"&gt;&lt;/a&gt;
+&lt;a name="rest_code_2ba6114f144f492fa83e7a448aaf69ab-3"&gt;&lt;/a&gt;Plug &lt;span class="s1"&gt;'tpope/vim-surround'&lt;/span&gt;  &lt;span class="c"&gt;" Es buena idea agregar una descripción del plugin&lt;/span&gt;
+&lt;a name="rest_code_2ba6114f144f492fa83e7a448aaf69ab-4"&gt;&lt;/a&gt;
+&lt;a name="rest_code_2ba6114f144f492fa83e7a448aaf69ab-5"&gt;&lt;/a&gt;&lt;span class="k"&gt;call&lt;/span&gt; plug#&lt;span class="k"&gt;end&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt;
 &lt;/pre&gt;&lt;p&gt;Pero con esto el plugin no está aún instalado,
 debes recargar tu &lt;code class="docutils literal"&gt;init.vim&lt;/code&gt; ejecutando &lt;code class="docutils literal"&gt;:so &lt;span class="pre"&gt;~/.config/nvim/init.vim&lt;/span&gt;&lt;/code&gt;.
 Y luego, ejecuta &lt;code class="docutils literal"&gt;:PlugInstall&lt;/code&gt;. Aparecerá una ventana con el progreso de instalación,
 cuando se termine de instalar el plugin, ciérrala presionando &lt;code class="kbd docutils literal"&gt;q&lt;/code&gt;.&lt;/p&gt;
-&lt;div class="figure"&gt;
+&lt;figure&gt;
 &lt;a class="reference external image-reference" href="https://raw.githubusercontent.com/junegunn/i/master/vim-plug/installer.gif"&gt;&lt;img alt="Ejecución del comando ``:PlugInstall``" src="https://raw.githubusercontent.com/junegunn/i/master/vim-plug/installer.gif"&gt;&lt;/a&gt;
-&lt;p class="caption"&gt;Ejecución del comando &lt;code class="docutils literal"&gt;:PlugInstall&lt;/code&gt;&lt;/p&gt;
-&lt;/div&gt;
+&lt;figcaption&gt;
+&lt;p&gt;Ejecución del comando &lt;code class="docutils literal"&gt;:PlugInstall&lt;/code&gt;&lt;/p&gt;
+&lt;/figcaption&gt;
+&lt;/figure&gt;
 &lt;p&gt;Ahora si, el plugin se encontrará instalado,
 si deseas deshabilitarlo, basta con comentar o eliminar esa línea.
 Pero esto no eliminará el plugin de tu disco,
@@ -569,8 +573,8 @@ para hacerlo ejecuta el comando &lt;code class="docutils literal"&gt;:PlugClean&
 sí que de vez en cuando ejecuta &lt;code class="docutils literal"&gt;:PlugUpdate&lt;/code&gt; para actualizarlos.&lt;/p&gt;
 &lt;p&gt;Mantener al día tu &lt;em&gt;administrador de plugins&lt;/em&gt; también es importante,
 puedes hacerlo con &lt;code class="docutils literal"&gt;:PlugUpgrade&lt;/code&gt;.&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class="section" id="como-usar-y-configurar-los-plugins"&gt;
+&lt;/section&gt;
+&lt;section id="como-usar-y-configurar-los-plugins"&gt;
 &lt;h2&gt;Cómo usar y configurar los plugins&lt;/h2&gt;
 &lt;p&gt;Cada plugin tiene su propia documentación y dependencias,
 asegúrate de leerlas, no hace falta hacerlo a profundidad.
@@ -579,19 +583,19 @@ La mayoría provee en su página algunas configuraciones suficientes para comenz
 Si notas un error, asegúrate de estar usando la última versión (&lt;code class="docutils literal"&gt;:PlugUpdate&lt;/code&gt;).&lt;/p&gt;
 &lt;p&gt;Las configuraciones de cada plugin van en tu &lt;code class="docutils literal"&gt;init.vim&lt;/code&gt; luego de toda la lista de plugins.
 Al igual que las demás configuraciones, trata de ser organizado y documenta todo.&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class="section" id="plugins-esenciales"&gt;
+&lt;/section&gt;
+&lt;section id="plugins-esenciales"&gt;
 &lt;h2&gt;Plugins esenciales&lt;/h2&gt;
 &lt;p&gt;A continuación describiré algunos plugins que considero esenciales para aumentar tu productividad,
 tu editor luzca bien y se asemeje a un &lt;em&gt;IDE liviano&lt;/em&gt;.&lt;/p&gt;
 &lt;p&gt;Para cada plugin presentaré una breve descripción, su página, una lista de comandos
 y de ser el caso, algunas configuraciones necesarias para empezar a usarlo.
 Para ello usaré un &lt;code class="docutils literal"&gt;init.vim&lt;/code&gt; &lt;em&gt;abreviado&lt;/em&gt; de la siguiente manera.&lt;/p&gt;
-&lt;pre class="code vim"&gt;&lt;a name="rest_code_957c3a0c812042d4bc86a607fd723c7e-1"&gt;&lt;/a&gt;Plug &lt;span class="s1"&gt;'usuario/plugin'&lt;/span&gt;  &lt;span class="c"&gt;" Comentario&lt;/span&gt;
-&lt;a name="rest_code_957c3a0c812042d4bc86a607fd723c7e-2"&gt;&lt;/a&gt;
-&lt;a name="rest_code_957c3a0c812042d4bc86a607fd723c7e-3"&gt;&lt;/a&gt;...
-&lt;a name="rest_code_957c3a0c812042d4bc86a607fd723c7e-4"&gt;&lt;/a&gt;
-&lt;a name="rest_code_957c3a0c812042d4bc86a607fd723c7e-5"&gt;&lt;/a&gt;&lt;span class="k"&gt;let&lt;/span&gt; &lt;span class="k"&gt;g&lt;/span&gt;:configuracion_del_plugin &lt;span class="p"&gt;=&lt;/span&gt; &lt;span class="m"&gt;1&lt;/span&gt;
+&lt;pre class="code vim"&gt;&lt;a name="rest_code_7e4cd4080c284b72909a6706b5466ab8-1"&gt;&lt;/a&gt;Plug &lt;span class="s1"&gt;'usuario/plugin'&lt;/span&gt;  &lt;span class="c"&gt;" Comentario&lt;/span&gt;
+&lt;a name="rest_code_7e4cd4080c284b72909a6706b5466ab8-2"&gt;&lt;/a&gt;
+&lt;a name="rest_code_7e4cd4080c284b72909a6706b5466ab8-3"&gt;&lt;/a&gt;...
+&lt;a name="rest_code_7e4cd4080c284b72909a6706b5466ab8-4"&gt;&lt;/a&gt;
+&lt;a name="rest_code_7e4cd4080c284b72909a6706b5466ab8-5"&gt;&lt;/a&gt;&lt;span class="k"&gt;let&lt;/span&gt; &lt;span class="k"&gt;g&lt;/span&gt;:configuracion_del_plugin &lt;span class="p"&gt;=&lt;/span&gt; &lt;span class="m"&gt;1&lt;/span&gt;
 &lt;/pre&gt;&lt;p&gt;Recuerda que los nombres de los plugins deben ir entre las funciones de vim-plug,
 Y las configuraciones deben ir luego de &lt;code class="docutils literal"&gt;call plug#end()&lt;/code&gt;.
 Y por si acaso, los &lt;code class="docutils literal"&gt;...&lt;/code&gt; son sólo un separador visual,
@@ -687,86 +691,94 @@ o crees que mejoren tu productividad.&lt;/p&gt;
 &lt;/li&gt;
 &lt;/ul&gt;
 &lt;/div&gt;
-&lt;div class="section" id="temas"&gt;
+&lt;section id="temas"&gt;
 &lt;h3&gt;&lt;a class="toc-backref" href="https://stsewd.dev/posts/neovim-plugins/#id15"&gt;Temas&lt;/a&gt;&lt;/h3&gt;
 &lt;p&gt;Dentro de los plugins tenemos &lt;em&gt;color schemes&lt;/em&gt;, o temas para tu Neovim.&lt;/p&gt;
-&lt;div class="section" id="one-dark"&gt;
+&lt;section id="one-dark"&gt;
 &lt;h4&gt;&lt;a class="toc-backref" href="https://stsewd.dev/posts/neovim-plugins/#id16"&gt;One Dark&lt;/a&gt;&lt;/h4&gt;
 &lt;blockquote&gt;
 &lt;p&gt;Color scheme inspirado por el tema One Dark de Atom.&lt;/p&gt;
 &lt;/blockquote&gt;
-&lt;div class="figure"&gt;
+&lt;figure&gt;
 &lt;a class="reference external image-reference" href="https://stsewd.dev/images/nvim/plugins/onedark.png"&gt;&lt;img alt="One Dark" src="https://stsewd.dev/images/nvim/plugins/onedark.png"&gt;&lt;/a&gt;
-&lt;p class="caption"&gt;One Dark&lt;/p&gt;
-&lt;/div&gt;
-&lt;pre class="code vim"&gt;&lt;a name="rest_code_10afb44f268d47f28ca439609fb433e4-1"&gt;&lt;/a&gt;Plug &lt;span class="s1"&gt;'joshdick/onedark.vim'&lt;/span&gt;
-&lt;a name="rest_code_10afb44f268d47f28ca439609fb433e4-2"&gt;&lt;/a&gt;
-&lt;a name="rest_code_10afb44f268d47f28ca439609fb433e4-3"&gt;&lt;/a&gt;...
-&lt;a name="rest_code_10afb44f268d47f28ca439609fb433e4-4"&gt;&lt;/a&gt;
-&lt;a name="rest_code_10afb44f268d47f28ca439609fb433e4-5"&gt;&lt;/a&gt;&lt;span class="k"&gt;set&lt;/span&gt; termguicolors  &lt;span class="c"&gt;" Activa true colors en la terminal&lt;/span&gt;
-&lt;a name="rest_code_10afb44f268d47f28ca439609fb433e4-6"&gt;&lt;/a&gt;&lt;span class="k"&gt;colorscheme&lt;/span&gt; onedark  &lt;span class="c"&gt;" Activa tema onedark&lt;/span&gt;
+&lt;figcaption&gt;
+&lt;p&gt;One Dark&lt;/p&gt;
+&lt;/figcaption&gt;
+&lt;/figure&gt;
+&lt;pre class="code vim"&gt;&lt;a name="rest_code_8f9fe3cba12b4c1a9e07dd0932308e37-1"&gt;&lt;/a&gt;Plug &lt;span class="s1"&gt;'joshdick/onedark.vim'&lt;/span&gt;
+&lt;a name="rest_code_8f9fe3cba12b4c1a9e07dd0932308e37-2"&gt;&lt;/a&gt;
+&lt;a name="rest_code_8f9fe3cba12b4c1a9e07dd0932308e37-3"&gt;&lt;/a&gt;...
+&lt;a name="rest_code_8f9fe3cba12b4c1a9e07dd0932308e37-4"&gt;&lt;/a&gt;
+&lt;a name="rest_code_8f9fe3cba12b4c1a9e07dd0932308e37-5"&gt;&lt;/a&gt;&lt;span class="k"&gt;set&lt;/span&gt; termguicolors  &lt;span class="c"&gt;" Activa true colors en la terminal&lt;/span&gt;
+&lt;a name="rest_code_8f9fe3cba12b4c1a9e07dd0932308e37-6"&gt;&lt;/a&gt;&lt;span class="k"&gt;colorscheme&lt;/span&gt; onedark  &lt;span class="c"&gt;" Activa tema onedark&lt;/span&gt;
 &lt;/pre&gt;&lt;ul class="simple"&gt;
 &lt;li&gt;&lt;p&gt;&lt;span class="raw-html"&gt;&lt;i class="fa fa-external-link"&gt;&lt;/i&gt;&lt;/span&gt; &lt;a class="reference external" href="https://github.com/joshdick/onedark.vim"&gt;https://github.com/joshdick/onedark.vim&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
 &lt;li&gt;&lt;p&gt;&lt;span class="raw-html"&gt;&lt;i class="fa fa-info-circle"&gt;&lt;/i&gt;&lt;/span&gt; &lt;a class="reference external" href="https://github.com/joshdick/onedark.vim#options"&gt;https://github.com/joshdick/onedark.vim#options&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
 &lt;/ul&gt;
-&lt;/div&gt;
-&lt;div class="section" id="neosolarized"&gt;
+&lt;/section&gt;
+&lt;section id="neosolarized"&gt;
 &lt;h4&gt;&lt;a class="toc-backref" href="https://stsewd.dev/posts/neovim-plugins/#id17"&gt;NeoSolarized&lt;/a&gt;&lt;/h4&gt;
 &lt;blockquote&gt;
 &lt;p&gt;Paleta de colores &lt;a class="reference external" href="http://ethanschoonover.com/solarized"&gt;Solarized&lt;/a&gt; para Neovim.&lt;/p&gt;
 &lt;/blockquote&gt;
-&lt;div class="figure"&gt;
+&lt;figure&gt;
 &lt;a class="reference external image-reference" href="https://stsewd.dev/images/nvim/plugins/neosolarized-light.png"&gt;&lt;img alt="NeoSolarized light" src="https://stsewd.dev/images/nvim/plugins/neosolarized-light.png"&gt;&lt;/a&gt;
-&lt;p class="caption"&gt;NeoSolarized light&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class="figure"&gt;
+&lt;figcaption&gt;
+&lt;p&gt;NeoSolarized light&lt;/p&gt;
+&lt;/figcaption&gt;
+&lt;/figure&gt;
+&lt;figure&gt;
 &lt;a class="reference external image-reference" href="https://stsewd.dev/images/nvim/plugins/neosolarized-dark.png"&gt;&lt;img alt="NeoSolarized dark" src="https://stsewd.dev/images/nvim/plugins/neosolarized-dark.png"&gt;&lt;/a&gt;
-&lt;p class="caption"&gt;NeoSolarized dark&lt;/p&gt;
-&lt;/div&gt;
-&lt;pre class="code vim"&gt;&lt;a name="rest_code_881389decc73499b99da7c4eb3a80cbd-1"&gt;&lt;/a&gt;Plug &lt;span class="s1"&gt;'iCyMind/NeoSolarized'&lt;/span&gt;
-&lt;a name="rest_code_881389decc73499b99da7c4eb3a80cbd-2"&gt;&lt;/a&gt;
-&lt;a name="rest_code_881389decc73499b99da7c4eb3a80cbd-3"&gt;&lt;/a&gt;...
-&lt;a name="rest_code_881389decc73499b99da7c4eb3a80cbd-4"&gt;&lt;/a&gt;
-&lt;a name="rest_code_881389decc73499b99da7c4eb3a80cbd-5"&gt;&lt;/a&gt;&lt;span class="k"&gt;set&lt;/span&gt; termguicolors  &lt;span class="c"&gt;" Activa true colors en la terminal&lt;/span&gt;
-&lt;a name="rest_code_881389decc73499b99da7c4eb3a80cbd-6"&gt;&lt;/a&gt;&lt;span class="k"&gt;set&lt;/span&gt; &lt;span class="nb"&gt;background&lt;/span&gt;&lt;span class="p"&gt;=&lt;/span&gt;&lt;span class="nb"&gt;dark&lt;/span&gt;  &lt;span class="c"&gt;" Fondo del tema: dark/light&lt;/span&gt;
-&lt;a name="rest_code_881389decc73499b99da7c4eb3a80cbd-7"&gt;&lt;/a&gt;&lt;span class="k"&gt;colorscheme&lt;/span&gt; NeoSolarized  &lt;span class="c"&gt;" Activa tema NeoSolarized&lt;/span&gt;
+&lt;figcaption&gt;
+&lt;p&gt;NeoSolarized dark&lt;/p&gt;
+&lt;/figcaption&gt;
+&lt;/figure&gt;
+&lt;pre class="code vim"&gt;&lt;a name="rest_code_4a8ef9d49a894de0b8537cd0ea4ad697-1"&gt;&lt;/a&gt;Plug &lt;span class="s1"&gt;'iCyMind/NeoSolarized'&lt;/span&gt;
+&lt;a name="rest_code_4a8ef9d49a894de0b8537cd0ea4ad697-2"&gt;&lt;/a&gt;
+&lt;a name="rest_code_4a8ef9d49a894de0b8537cd0ea4ad697-3"&gt;&lt;/a&gt;...
+&lt;a name="rest_code_4a8ef9d49a894de0b8537cd0ea4ad697-4"&gt;&lt;/a&gt;
+&lt;a name="rest_code_4a8ef9d49a894de0b8537cd0ea4ad697-5"&gt;&lt;/a&gt;&lt;span class="k"&gt;set&lt;/span&gt; termguicolors  &lt;span class="c"&gt;" Activa true colors en la terminal&lt;/span&gt;
+&lt;a name="rest_code_4a8ef9d49a894de0b8537cd0ea4ad697-6"&gt;&lt;/a&gt;&lt;span class="k"&gt;set&lt;/span&gt; &lt;span class="nb"&gt;background&lt;/span&gt;&lt;span class="p"&gt;=&lt;/span&gt;&lt;span class="nb"&gt;dark&lt;/span&gt;  &lt;span class="c"&gt;" Fondo del tema: dark/light&lt;/span&gt;
+&lt;a name="rest_code_4a8ef9d49a894de0b8537cd0ea4ad697-7"&gt;&lt;/a&gt;&lt;span class="k"&gt;colorscheme&lt;/span&gt; NeoSolarized  &lt;span class="c"&gt;" Activa tema NeoSolarized&lt;/span&gt;
 &lt;/pre&gt;&lt;ul class="simple"&gt;
 &lt;li&gt;&lt;p&gt;&lt;span class="raw-html"&gt;&lt;i class="fa fa-external-link"&gt;&lt;/i&gt;&lt;/span&gt; &lt;a class="reference external" href="https://github.com/iCyMind/NeoSolarized"&gt;https://github.com/iCyMind/NeoSolarized&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
 &lt;li&gt;&lt;p&gt;&lt;span class="raw-html"&gt;&lt;i class="fa fa-info-circle"&gt;&lt;/i&gt;&lt;/span&gt; &lt;a class="reference external" href="https://github.com/iCyMind/NeoSolarized#options"&gt;https://github.com/iCyMind/NeoSolarized#options&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
 &lt;/ul&gt;
-&lt;/div&gt;
-&lt;div class="section" id="nova"&gt;
+&lt;/section&gt;
+&lt;section id="nova"&gt;
 &lt;h4&gt;&lt;a class="toc-backref" href="https://stsewd.dev/posts/neovim-plugins/#id18"&gt;Nova&lt;/a&gt;&lt;/h4&gt;
 &lt;blockquote&gt;
 &lt;p&gt;Foto de Nova&lt;/p&gt;
 &lt;/blockquote&gt;
-&lt;/div&gt;
-&lt;div class="section" id="mas"&gt;
+&lt;/section&gt;
+&lt;section id="mas"&gt;
 &lt;h4&gt;&lt;a class="toc-backref" href="https://stsewd.dev/posts/neovim-plugins/#id19"&gt;Más&lt;/a&gt;&lt;/h4&gt;
 &lt;ul class="simple"&gt;
 &lt;li&gt;&lt;p&gt;&lt;a class="reference external" href="https://github.com/neovim/neovim/wiki/Related-projects#colorschemes"&gt;Documentación de Neovim&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
 &lt;/ul&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;div class="section" id="explorador-de-archivos"&gt;
+&lt;/section&gt;
+&lt;/section&gt;
+&lt;section id="explorador-de-archivos"&gt;
 &lt;h3&gt;&lt;a class="toc-backref" href="https://stsewd.dev/posts/neovim-plugins/#id20"&gt;Explorador de archivos&lt;/a&gt;&lt;/h3&gt;
-&lt;div class="section" id="nerdtree"&gt;
+&lt;section id="nerdtree"&gt;
 &lt;h4&gt;&lt;a class="toc-backref" href="https://stsewd.dev/posts/neovim-plugins/#id21"&gt;NerdTree&lt;/a&gt;&lt;/h4&gt;
 &lt;blockquote&gt;
 &lt;p&gt;Explorador de archivos, útil para ver la estructura de tu proyecto.&lt;/p&gt;
 &lt;/blockquote&gt;
-&lt;div class="figure"&gt;
+&lt;figure&gt;
 &lt;a class="reference external image-reference" href="https://stsewd.dev/images/nvim/plugins/nerdtree.png"&gt;&lt;img alt="NERDTree" src="https://stsewd.dev/images/nvim/plugins/nerdtree.png"&gt;&lt;/a&gt;
-&lt;p class="caption"&gt;NERDTree&lt;/p&gt;
-&lt;/div&gt;
-&lt;pre class="code vim"&gt;&lt;a name="rest_code_fe6bf4ed450249618701a83a5c2885dc-1"&gt;&lt;/a&gt;Plug &lt;span class="s1"&gt;'scrooloose/nerdtree'&lt;/span&gt;
-&lt;a name="rest_code_fe6bf4ed450249618701a83a5c2885dc-2"&gt;&lt;/a&gt;
-&lt;a name="rest_code_fe6bf4ed450249618701a83a5c2885dc-3"&gt;&lt;/a&gt;...
-&lt;a name="rest_code_fe6bf4ed450249618701a83a5c2885dc-4"&gt;&lt;/a&gt;
-&lt;a name="rest_code_fe6bf4ed450249618701a83a5c2885dc-5"&gt;&lt;/a&gt;&lt;span class="k"&gt;let&lt;/span&gt; &lt;span class="k"&gt;g&lt;/span&gt;:NERDTreeChDirMode &lt;span class="p"&gt;=&lt;/span&gt; &lt;span class="m"&gt;2&lt;/span&gt;  &lt;span class="c"&gt;" Cambia el directorio actual al nodo padre actual&lt;/span&gt;
-&lt;a name="rest_code_fe6bf4ed450249618701a83a5c2885dc-6"&gt;&lt;/a&gt;
-&lt;a name="rest_code_fe6bf4ed450249618701a83a5c2885dc-7"&gt;&lt;/a&gt;&lt;span class="c"&gt;" Abrir/cerrar NERDTree con F2&lt;/span&gt;
-&lt;a name="rest_code_fe6bf4ed450249618701a83a5c2885dc-8"&gt;&lt;/a&gt;map &lt;span class="p"&gt;&amp;lt;&lt;/span&gt;F2&lt;span class="p"&gt;&amp;gt;&lt;/span&gt; :NERDTreeToggle&lt;span class="p"&gt;&amp;lt;&lt;/span&gt;CR&lt;span class="p"&gt;&amp;gt;&lt;/span&gt;
+&lt;figcaption&gt;
+&lt;p&gt;NERDTree&lt;/p&gt;
+&lt;/figcaption&gt;
+&lt;/figure&gt;
+&lt;pre class="code vim"&gt;&lt;a name="rest_code_a33f33353ea049609bae889878aac965-1"&gt;&lt;/a&gt;Plug &lt;span class="s1"&gt;'scrooloose/nerdtree'&lt;/span&gt;
+&lt;a name="rest_code_a33f33353ea049609bae889878aac965-2"&gt;&lt;/a&gt;
+&lt;a name="rest_code_a33f33353ea049609bae889878aac965-3"&gt;&lt;/a&gt;...
+&lt;a name="rest_code_a33f33353ea049609bae889878aac965-4"&gt;&lt;/a&gt;
+&lt;a name="rest_code_a33f33353ea049609bae889878aac965-5"&gt;&lt;/a&gt;&lt;span class="k"&gt;let&lt;/span&gt; &lt;span class="k"&gt;g&lt;/span&gt;:NERDTreeChDirMode &lt;span class="p"&gt;=&lt;/span&gt; &lt;span class="m"&gt;2&lt;/span&gt;  &lt;span class="c"&gt;" Cambia el directorio actual al nodo padre actual&lt;/span&gt;
+&lt;a name="rest_code_a33f33353ea049609bae889878aac965-6"&gt;&lt;/a&gt;
+&lt;a name="rest_code_a33f33353ea049609bae889878aac965-7"&gt;&lt;/a&gt;&lt;span class="c"&gt;" Abrir/cerrar NERDTree con F2&lt;/span&gt;
+&lt;a name="rest_code_a33f33353ea049609bae889878aac965-8"&gt;&lt;/a&gt;map &lt;span class="p"&gt;&amp;lt;&lt;/span&gt;F2&lt;span class="p"&gt;&amp;gt;&lt;/span&gt; :NERDTreeToggle&lt;span class="p"&gt;&amp;lt;&lt;/span&gt;CR&lt;span class="p"&gt;&amp;gt;&lt;/span&gt;
 &lt;/pre&gt;&lt;ul class="simple"&gt;
 &lt;li&gt;&lt;p&gt;&lt;span class="raw-html"&gt;&lt;i class="fa fa-terminal"&gt;&lt;/i&gt;&lt;/span&gt;&lt;/p&gt;
 &lt;ul&gt;
@@ -781,31 +793,33 @@ o crees que mejoren tu productividad.&lt;/p&gt;
 &lt;p&gt;Para cambiar entre ventanas (NERDTree y tu buffer actual)
 presiona &lt;code class="kbd docutils literal"&gt;Ctrl&lt;/code&gt; + &lt;code class="kbd docutils literal"&gt;ww&lt;/code&gt;.&lt;/p&gt;
 &lt;/div&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;div class="section" id="barra-de-estado"&gt;
+&lt;/section&gt;
+&lt;/section&gt;
+&lt;section id="barra-de-estado"&gt;
 &lt;h3&gt;&lt;a class="toc-backref" href="https://stsewd.dev/posts/neovim-plugins/#id22"&gt;Barra de estado&lt;/a&gt;&lt;/h3&gt;
-&lt;div class="section" id="airline"&gt;
+&lt;section id="airline"&gt;
 &lt;h4&gt;&lt;a class="toc-backref" href="https://stsewd.dev/posts/neovim-plugins/#id23"&gt;Airline&lt;/a&gt;&lt;/h4&gt;
 &lt;blockquote&gt;
 &lt;p&gt;Barra de estado, con integración con varios plugins y herramientas externas como git.&lt;/p&gt;
 &lt;/blockquote&gt;
-&lt;div class="figure"&gt;
+&lt;figure&gt;
 &lt;a class="reference external image-reference" href="https://raw.githubusercontent.com/wiki/vim-airline/vim-airline/screenshots/demo.gif"&gt;&lt;img alt="Airline" src="https://raw.githubusercontent.com/wiki/vim-airline/vim-airline/screenshots/demo.gif"&gt;&lt;/a&gt;
-&lt;p class="caption"&gt;Airline&lt;/p&gt;
-&lt;/div&gt;
-&lt;pre class="code vim"&gt;&lt;a name="rest_code_61902929f89c474595b7dbd9843c8263-1"&gt;&lt;/a&gt;Plug &lt;span class="s1"&gt;'vim-airline/vim-airline'&lt;/span&gt;
-&lt;a name="rest_code_61902929f89c474595b7dbd9843c8263-2"&gt;&lt;/a&gt;Plug &lt;span class="s1"&gt;'vim-airline/vim-airline-themes'&lt;/span&gt;  &lt;span class="c"&gt;" Temas para airline&lt;/span&gt;
-&lt;a name="rest_code_61902929f89c474595b7dbd9843c8263-3"&gt;&lt;/a&gt;
-&lt;a name="rest_code_61902929f89c474595b7dbd9843c8263-4"&gt;&lt;/a&gt;...
-&lt;a name="rest_code_61902929f89c474595b7dbd9843c8263-5"&gt;&lt;/a&gt;
-&lt;a name="rest_code_61902929f89c474595b7dbd9843c8263-6"&gt;&lt;/a&gt;&lt;span class="k"&gt;let&lt;/span&gt; &lt;span class="k"&gt;g&lt;/span&gt;:airline#extensions#&lt;span class="nb"&gt;tabline&lt;/span&gt;#enabled &lt;span class="p"&gt;=&lt;/span&gt; &lt;span class="m"&gt;1&lt;/span&gt;  &lt;span class="c"&gt;" Mostrar buffers abiertos (como pestañas)&lt;/span&gt;
-&lt;a name="rest_code_61902929f89c474595b7dbd9843c8263-7"&gt;&lt;/a&gt;&lt;span class="k"&gt;let&lt;/span&gt; &lt;span class="k"&gt;g&lt;/span&gt;:airline#extensions#&lt;span class="nb"&gt;tabline&lt;/span&gt;#fnamemod &lt;span class="p"&gt;=&lt;/span&gt; &lt;span class="s1"&gt;':t'&lt;/span&gt;  &lt;span class="c"&gt;" Mostrar sólo el nombre del archivo&lt;/span&gt;
-&lt;a name="rest_code_61902929f89c474595b7dbd9843c8263-8"&gt;&lt;/a&gt;
-&lt;a name="rest_code_61902929f89c474595b7dbd9843c8263-9"&gt;&lt;/a&gt;&lt;span class="c"&gt;" Cargar fuente Powerline y símbolos (ver nota)&lt;/span&gt;
-&lt;a name="rest_code_61902929f89c474595b7dbd9843c8263-10"&gt;&lt;/a&gt;&lt;span class="k"&gt;let&lt;/span&gt; &lt;span class="k"&gt;g&lt;/span&gt;:airline_powerline_fonts &lt;span class="p"&gt;=&lt;/span&gt; &lt;span class="m"&gt;1&lt;/span&gt;
-&lt;a name="rest_code_61902929f89c474595b7dbd9843c8263-11"&gt;&lt;/a&gt;
-&lt;a name="rest_code_61902929f89c474595b7dbd9843c8263-12"&gt;&lt;/a&gt;&lt;span class="k"&gt;set&lt;/span&gt; &lt;span class="nb"&gt;noshowmode&lt;/span&gt;  &lt;span class="c"&gt;" No mostrar el modo actual (ya lo muestra la barra de estado)&lt;/span&gt;
+&lt;figcaption&gt;
+&lt;p&gt;Airline&lt;/p&gt;
+&lt;/figcaption&gt;
+&lt;/figure&gt;
+&lt;pre class="code vim"&gt;&lt;a name="rest_code_0cb737bf80e14e61a476f8bab7105fde-1"&gt;&lt;/a&gt;Plug &lt;span class="s1"&gt;'vim-airline/vim-airline'&lt;/span&gt;
+&lt;a name="rest_code_0cb737bf80e14e61a476f8bab7105fde-2"&gt;&lt;/a&gt;Plug &lt;span class="s1"&gt;'vim-airline/vim-airline-themes'&lt;/span&gt;  &lt;span class="c"&gt;" Temas para airline&lt;/span&gt;
+&lt;a name="rest_code_0cb737bf80e14e61a476f8bab7105fde-3"&gt;&lt;/a&gt;
+&lt;a name="rest_code_0cb737bf80e14e61a476f8bab7105fde-4"&gt;&lt;/a&gt;...
+&lt;a name="rest_code_0cb737bf80e14e61a476f8bab7105fde-5"&gt;&lt;/a&gt;
+&lt;a name="rest_code_0cb737bf80e14e61a476f8bab7105fde-6"&gt;&lt;/a&gt;&lt;span class="k"&gt;let&lt;/span&gt; &lt;span class="k"&gt;g&lt;/span&gt;:airline#extensions#&lt;span class="nb"&gt;tabline&lt;/span&gt;#enabled &lt;span class="p"&gt;=&lt;/span&gt; &lt;span class="m"&gt;1&lt;/span&gt;  &lt;span class="c"&gt;" Mostrar buffers abiertos (como pestañas)&lt;/span&gt;
+&lt;a name="rest_code_0cb737bf80e14e61a476f8bab7105fde-7"&gt;&lt;/a&gt;&lt;span class="k"&gt;let&lt;/span&gt; &lt;span class="k"&gt;g&lt;/span&gt;:airline#extensions#&lt;span class="nb"&gt;tabline&lt;/span&gt;#fnamemod &lt;span class="p"&gt;=&lt;/span&gt; &lt;span class="s1"&gt;':t'&lt;/span&gt;  &lt;span class="c"&gt;" Mostrar sólo el nombre del archivo&lt;/span&gt;
+&lt;a name="rest_code_0cb737bf80e14e61a476f8bab7105fde-8"&gt;&lt;/a&gt;
+&lt;a name="rest_code_0cb737bf80e14e61a476f8bab7105fde-9"&gt;&lt;/a&gt;&lt;span class="c"&gt;" Cargar fuente Powerline y símbolos (ver nota)&lt;/span&gt;
+&lt;a name="rest_code_0cb737bf80e14e61a476f8bab7105fde-10"&gt;&lt;/a&gt;&lt;span class="k"&gt;let&lt;/span&gt; &lt;span class="k"&gt;g&lt;/span&gt;:airline_powerline_fonts &lt;span class="p"&gt;=&lt;/span&gt; &lt;span class="m"&gt;1&lt;/span&gt;
+&lt;a name="rest_code_0cb737bf80e14e61a476f8bab7105fde-11"&gt;&lt;/a&gt;
+&lt;a name="rest_code_0cb737bf80e14e61a476f8bab7105fde-12"&gt;&lt;/a&gt;&lt;span class="k"&gt;set&lt;/span&gt; &lt;span class="nb"&gt;noshowmode&lt;/span&gt;  &lt;span class="c"&gt;" No mostrar el modo actual (ya lo muestra la barra de estado)&lt;/span&gt;
 &lt;/pre&gt;&lt;div class="admonition note"&gt;
 &lt;p class="admonition-title"&gt;Nota&lt;/p&gt;
 &lt;p&gt;Para que tu barra de estado luzca como en la imagen,
@@ -817,68 +831,72 @@ puedes instalar una de &lt;a class="reference external" href="https://github.com
 &lt;li&gt;&lt;p&gt;&lt;span class="raw-html"&gt;&lt;i class="fa fa-external-link"&gt;&lt;/i&gt;&lt;/span&gt; &lt;a class="reference external" href="https://github.com/vim-airline/vim-airline"&gt;https://github.com/vim-airline/vim-airline&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
 &lt;li&gt;&lt;p&gt;&lt;span class="raw-html"&gt;&lt;i class="fa fa-info-circle"&gt;&lt;/i&gt;&lt;/span&gt; &lt;code class="docutils literal"&gt;:h airline&lt;/code&gt;&lt;/p&gt;&lt;/li&gt;
 &lt;/ul&gt;
-&lt;/div&gt;
-&lt;div class="section" id="id6"&gt;
+&lt;/section&gt;
+&lt;section id="id6"&gt;
 &lt;h4&gt;&lt;a class="toc-backref" href="https://stsewd.dev/posts/neovim-plugins/#id24"&gt;Más&lt;/a&gt;&lt;/h4&gt;
 &lt;ul class="simple"&gt;
 &lt;li&gt;&lt;p&gt;&lt;a class="reference external" href="https://github.com/itchyny/lightline.vim"&gt;Lightline&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
 &lt;/ul&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;div class="section" id="guias-de-indentacion"&gt;
+&lt;/section&gt;
+&lt;/section&gt;
+&lt;section id="guias-de-indentacion"&gt;
 &lt;h3&gt;&lt;a class="toc-backref" href="https://stsewd.dev/posts/neovim-plugins/#id25"&gt;Guías de indentación&lt;/a&gt;&lt;/h3&gt;
-&lt;div class="section" id="indentline"&gt;
+&lt;section id="indentline"&gt;
 &lt;h4&gt;&lt;a class="toc-backref" href="https://stsewd.dev/posts/neovim-plugins/#id26"&gt;IndentLine&lt;/a&gt;&lt;/h4&gt;
 &lt;blockquote&gt;
 &lt;p&gt;Muestra los niveles de indentación con líneas verticales.&lt;/p&gt;
 &lt;/blockquote&gt;
-&lt;div class="figure"&gt;
+&lt;figure&gt;
 &lt;a class="reference external image-reference" href="https://camo.githubusercontent.com/77b20e2e707ac1d85fd8bc12f16b5b7b7e72e186/687474703a2f2f692e696d6775722e636f6d2f4b566930542e6a7067"&gt;&lt;img alt="IndentLine" src="https://camo.githubusercontent.com/77b20e2e707ac1d85fd8bc12f16b5b7b7e72e186/687474703a2f2f692e696d6775722e636f6d2f4b566930542e6a7067"&gt;&lt;/a&gt;
-&lt;p class="caption"&gt;IndentLine&lt;/p&gt;
-&lt;/div&gt;
-&lt;pre class="code vim"&gt;&lt;a name="rest_code_1474c5abfd1e4229ba293645fae38511-1"&gt;&lt;/a&gt;Plug &lt;span class="s1"&gt;'Yggdroot/indentLine'&lt;/span&gt;
-&lt;a name="rest_code_1474c5abfd1e4229ba293645fae38511-2"&gt;&lt;/a&gt;
-&lt;a name="rest_code_1474c5abfd1e4229ba293645fae38511-3"&gt;&lt;/a&gt;...
-&lt;a name="rest_code_1474c5abfd1e4229ba293645fae38511-4"&gt;&lt;/a&gt;
-&lt;a name="rest_code_1474c5abfd1e4229ba293645fae38511-5"&gt;&lt;/a&gt;&lt;span class="c"&gt;" No mostrar en ciertos tipos de buffers y archivos&lt;/span&gt;
-&lt;a name="rest_code_1474c5abfd1e4229ba293645fae38511-6"&gt;&lt;/a&gt;&lt;span class="k"&gt;let&lt;/span&gt; &lt;span class="k"&gt;g&lt;/span&gt;:indentLine_fileTypeExclude &lt;span class="p"&gt;=&lt;/span&gt; [&lt;span class="s1"&gt;'text'&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s1"&gt;'sh'&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s1"&gt;'help'&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s1"&gt;'terminal'&lt;/span&gt;]
-&lt;a name="rest_code_1474c5abfd1e4229ba293645fae38511-7"&gt;&lt;/a&gt;&lt;span class="k"&gt;let&lt;/span&gt; &lt;span class="k"&gt;g&lt;/span&gt;:indentLine_bufNameExclude &lt;span class="p"&gt;=&lt;/span&gt; [&lt;span class="s1"&gt;'NERD_tree.*'&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s1"&gt;'term:.*'&lt;/span&gt;]
+&lt;figcaption&gt;
+&lt;p&gt;IndentLine&lt;/p&gt;
+&lt;/figcaption&gt;
+&lt;/figure&gt;
+&lt;pre class="code vim"&gt;&lt;a name="rest_code_69d54102f9a547cba4f3905b7b331071-1"&gt;&lt;/a&gt;Plug &lt;span class="s1"&gt;'Yggdroot/indentLine'&lt;/span&gt;
+&lt;a name="rest_code_69d54102f9a547cba4f3905b7b331071-2"&gt;&lt;/a&gt;
+&lt;a name="rest_code_69d54102f9a547cba4f3905b7b331071-3"&gt;&lt;/a&gt;...
+&lt;a name="rest_code_69d54102f9a547cba4f3905b7b331071-4"&gt;&lt;/a&gt;
+&lt;a name="rest_code_69d54102f9a547cba4f3905b7b331071-5"&gt;&lt;/a&gt;&lt;span class="c"&gt;" No mostrar en ciertos tipos de buffers y archivos&lt;/span&gt;
+&lt;a name="rest_code_69d54102f9a547cba4f3905b7b331071-6"&gt;&lt;/a&gt;&lt;span class="k"&gt;let&lt;/span&gt; &lt;span class="k"&gt;g&lt;/span&gt;:indentLine_fileTypeExclude &lt;span class="p"&gt;=&lt;/span&gt; [&lt;span class="s1"&gt;'text'&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s1"&gt;'sh'&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s1"&gt;'help'&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s1"&gt;'terminal'&lt;/span&gt;]
+&lt;a name="rest_code_69d54102f9a547cba4f3905b7b331071-7"&gt;&lt;/a&gt;&lt;span class="k"&gt;let&lt;/span&gt; &lt;span class="k"&gt;g&lt;/span&gt;:indentLine_bufNameExclude &lt;span class="p"&gt;=&lt;/span&gt; [&lt;span class="s1"&gt;'NERD_tree.*'&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s1"&gt;'term:.*'&lt;/span&gt;]
 &lt;/pre&gt;&lt;ul class="simple"&gt;
 &lt;li&gt;&lt;p&gt;&lt;span class="raw-html"&gt;&lt;i class="fa fa-external-link"&gt;&lt;/i&gt;&lt;/span&gt; &lt;a class="reference external" href="https://github.com/Yggdroot/indentLine"&gt;https://github.com/Yggdroot/indentLine&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
 &lt;li&gt;&lt;p&gt;&lt;span class="raw-html"&gt;&lt;i class="fa fa-info-circle"&gt;&lt;/i&gt;&lt;/span&gt; &lt;code class="docutils literal"&gt;:h indentLine.txt&lt;/code&gt;&lt;/p&gt;&lt;/li&gt;
 &lt;/ul&gt;
-&lt;/div&gt;
-&lt;div class="section" id="id7"&gt;
+&lt;/section&gt;
+&lt;section id="id7"&gt;
 &lt;h4&gt;&lt;a class="toc-backref" href="https://stsewd.dev/posts/neovim-plugins/#id27"&gt;Más&lt;/a&gt;&lt;/h4&gt;
 &lt;ul class="simple"&gt;
 &lt;li&gt;&lt;p&gt;&lt;a class="reference external" href="https://github.com/nathanaelkane/vim-indent-guides"&gt;Indent guides&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
 &lt;/ul&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;div class="section" id="auto-completado"&gt;
+&lt;/section&gt;
+&lt;/section&gt;
+&lt;section id="auto-completado"&gt;
 &lt;h3&gt;&lt;a class="toc-backref" href="https://stsewd.dev/posts/neovim-plugins/#id28"&gt;Auto completado&lt;/a&gt;&lt;/h3&gt;
-&lt;div class="section" id="deoplete"&gt;
+&lt;section id="deoplete"&gt;
 &lt;h4&gt;&lt;a class="toc-backref" href="https://stsewd.dev/posts/neovim-plugins/#id29"&gt;Deoplete&lt;/a&gt;&lt;/h4&gt;
 &lt;blockquote&gt;
 &lt;p&gt;Auto completado asíncrono para Neovim.&lt;/p&gt;
 &lt;/blockquote&gt;
-&lt;div class="figure"&gt;
+&lt;figure&gt;
 &lt;a class="reference external image-reference" href="https://raw.githubusercontent.com/mhartington/nvim-typescript/master/deoplete-tss.gif"&gt;&lt;img alt="Deoplete" src="https://raw.githubusercontent.com/mhartington/nvim-typescript/master/deoplete-tss.gif"&gt;&lt;/a&gt;
-&lt;p class="caption"&gt;Deoplete&lt;/p&gt;
-&lt;/div&gt;
-&lt;pre class="code vim"&gt;&lt;a name="rest_code_a4cae4dbc5904b8dbb687dc64f00f0e7-1"&gt;&lt;/a&gt;Plug &lt;span class="s1"&gt;'Shougo/deoplete.nvim'&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; { &lt;span class="s1"&gt;'do'&lt;/span&gt;: &lt;span class="s1"&gt;':UpdateRemotePlugins'&lt;/span&gt; }
-&lt;a name="rest_code_a4cae4dbc5904b8dbb687dc64f00f0e7-2"&gt;&lt;/a&gt;Plug &lt;span class="s1"&gt;'Shougo/neco-syntax'&lt;/span&gt;  &lt;span class="c"&gt;" Fuente general de auto completado&lt;/span&gt;
-&lt;a name="rest_code_a4cae4dbc5904b8dbb687dc64f00f0e7-3"&gt;&lt;/a&gt;
-&lt;a name="rest_code_a4cae4dbc5904b8dbb687dc64f00f0e7-4"&gt;&lt;/a&gt;...
-&lt;a name="rest_code_a4cae4dbc5904b8dbb687dc64f00f0e7-5"&gt;&lt;/a&gt;
-&lt;a name="rest_code_a4cae4dbc5904b8dbb687dc64f00f0e7-6"&gt;&lt;/a&gt;&lt;span class="c"&gt;" Activar deoplete al iniciar Neovim&lt;/span&gt;
-&lt;a name="rest_code_a4cae4dbc5904b8dbb687dc64f00f0e7-7"&gt;&lt;/a&gt;&lt;span class="k"&gt;let&lt;/span&gt; &lt;span class="k"&gt;g&lt;/span&gt;:deoplete#enable_at_startup &lt;span class="p"&gt;=&lt;/span&gt; &lt;span class="m"&gt;1&lt;/span&gt;
-&lt;a name="rest_code_a4cae4dbc5904b8dbb687dc64f00f0e7-8"&gt;&lt;/a&gt;
-&lt;a name="rest_code_a4cae4dbc5904b8dbb687dc64f00f0e7-9"&gt;&lt;/a&gt;&lt;span class="c"&gt;" Cerrar automaticamente la ventana de vista previa (donde se muestra documentación, si existe)&lt;/span&gt;
-&lt;a name="rest_code_a4cae4dbc5904b8dbb687dc64f00f0e7-10"&gt;&lt;/a&gt;augroup deopleteCompleteDoneAu
-&lt;a name="rest_code_a4cae4dbc5904b8dbb687dc64f00f0e7-11"&gt;&lt;/a&gt;  autocmd&lt;span class="p"&gt;!&lt;/span&gt;
-&lt;a name="rest_code_a4cae4dbc5904b8dbb687dc64f00f0e7-12"&gt;&lt;/a&gt;  autocmd &lt;span class="nb"&gt;CompleteDone&lt;/span&gt; * &lt;span class="k"&gt;silent&lt;/span&gt;&lt;span class="p"&gt;!&lt;/span&gt; &lt;span class="k"&gt;pclose&lt;/span&gt;&lt;span class="p"&gt;!&lt;/span&gt;
-&lt;a name="rest_code_a4cae4dbc5904b8dbb687dc64f00f0e7-13"&gt;&lt;/a&gt;augroup END
+&lt;figcaption&gt;
+&lt;p&gt;Deoplete&lt;/p&gt;
+&lt;/figcaption&gt;
+&lt;/figure&gt;
+&lt;pre class="code vim"&gt;&lt;a name="rest_code_f02bc7cb3cdc416e9a5f25f3f67fdfc7-1"&gt;&lt;/a&gt;Plug &lt;span class="s1"&gt;'Shougo/deoplete.nvim'&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; { &lt;span class="s1"&gt;'do'&lt;/span&gt;: &lt;span class="s1"&gt;':UpdateRemotePlugins'&lt;/span&gt; }
+&lt;a name="rest_code_f02bc7cb3cdc416e9a5f25f3f67fdfc7-2"&gt;&lt;/a&gt;Plug &lt;span class="s1"&gt;'Shougo/neco-syntax'&lt;/span&gt;  &lt;span class="c"&gt;" Fuente general de auto completado&lt;/span&gt;
+&lt;a name="rest_code_f02bc7cb3cdc416e9a5f25f3f67fdfc7-3"&gt;&lt;/a&gt;
+&lt;a name="rest_code_f02bc7cb3cdc416e9a5f25f3f67fdfc7-4"&gt;&lt;/a&gt;...
+&lt;a name="rest_code_f02bc7cb3cdc416e9a5f25f3f67fdfc7-5"&gt;&lt;/a&gt;
+&lt;a name="rest_code_f02bc7cb3cdc416e9a5f25f3f67fdfc7-6"&gt;&lt;/a&gt;&lt;span class="c"&gt;" Activar deoplete al iniciar Neovim&lt;/span&gt;
+&lt;a name="rest_code_f02bc7cb3cdc416e9a5f25f3f67fdfc7-7"&gt;&lt;/a&gt;&lt;span class="k"&gt;let&lt;/span&gt; &lt;span class="k"&gt;g&lt;/span&gt;:deoplete#enable_at_startup &lt;span class="p"&gt;=&lt;/span&gt; &lt;span class="m"&gt;1&lt;/span&gt;
+&lt;a name="rest_code_f02bc7cb3cdc416e9a5f25f3f67fdfc7-8"&gt;&lt;/a&gt;
+&lt;a name="rest_code_f02bc7cb3cdc416e9a5f25f3f67fdfc7-9"&gt;&lt;/a&gt;&lt;span class="c"&gt;" Cerrar automaticamente la ventana de vista previa (donde se muestra documentación, si existe)&lt;/span&gt;
+&lt;a name="rest_code_f02bc7cb3cdc416e9a5f25f3f67fdfc7-10"&gt;&lt;/a&gt;augroup deopleteCompleteDoneAu
+&lt;a name="rest_code_f02bc7cb3cdc416e9a5f25f3f67fdfc7-11"&gt;&lt;/a&gt;  autocmd&lt;span class="p"&gt;!&lt;/span&gt;
+&lt;a name="rest_code_f02bc7cb3cdc416e9a5f25f3f67fdfc7-12"&gt;&lt;/a&gt;  autocmd &lt;span class="nb"&gt;CompleteDone&lt;/span&gt; * &lt;span class="k"&gt;silent&lt;/span&gt;&lt;span class="p"&gt;!&lt;/span&gt; &lt;span class="k"&gt;pclose&lt;/span&gt;&lt;span class="p"&gt;!&lt;/span&gt;
+&lt;a name="rest_code_f02bc7cb3cdc416e9a5f25f3f67fdfc7-13"&gt;&lt;/a&gt;augroup END
 &lt;/pre&gt;&lt;ul class="simple"&gt;
 &lt;li&gt;&lt;p&gt;&lt;span class="raw-html"&gt;&lt;i class="fa fa-external-link"&gt;&lt;/i&gt;&lt;/span&gt; &lt;a class="reference external" href="https://github.com/Shougo/deoplete.nvim"&gt;https://github.com/Shougo/deoplete.nvim&lt;/a&gt;"&lt;/p&gt;&lt;/li&gt;
 &lt;li&gt;&lt;p&gt;&lt;span class="raw-html"&gt;&lt;i class="fa fa-info-circle"&gt;&lt;/i&gt;&lt;/span&gt; &lt;code class="docutils literal"&gt;:h deoplete&lt;/code&gt;&lt;/p&gt;&lt;/li&gt;
@@ -892,12 +910,12 @@ puedes encontrar una lista de varias fuentes &lt;a class="reference external" hr
 &lt;blockquote&gt;
 &lt;p&gt;Permite navegar entre las sugerencias de deoplete usando &lt;code class="kbd docutils literal"&gt;Tab&lt;/code&gt;.&lt;/p&gt;
 &lt;/blockquote&gt;
-&lt;pre class="code vim"&gt;&lt;a name="rest_code_e5dfe0a0e54a4482a084fd51a28b98d9-1"&gt;&lt;/a&gt;Plug &lt;span class="s1"&gt;'ervandew/supertab'&lt;/span&gt;
-&lt;a name="rest_code_e5dfe0a0e54a4482a084fd51a28b98d9-2"&gt;&lt;/a&gt;
-&lt;a name="rest_code_e5dfe0a0e54a4482a084fd51a28b98d9-3"&gt;&lt;/a&gt;...
-&lt;a name="rest_code_e5dfe0a0e54a4482a084fd51a28b98d9-4"&gt;&lt;/a&gt;
-&lt;a name="rest_code_e5dfe0a0e54a4482a084fd51a28b98d9-5"&gt;&lt;/a&gt;&lt;span class="c"&gt;" Invertir direccion de navegacion (de arriba a abajo)&lt;/span&gt;
-&lt;a name="rest_code_e5dfe0a0e54a4482a084fd51a28b98d9-6"&gt;&lt;/a&gt;&lt;span class="k"&gt;let&lt;/span&gt; &lt;span class="k"&gt;g&lt;/span&gt;:SuperTabDefaultCompletionType &lt;span class="p"&gt;=&lt;/span&gt; &lt;span class="s1"&gt;'&amp;lt;c-n&amp;gt;'&lt;/span&gt;
+&lt;pre class="code vim"&gt;&lt;a name="rest_code_8ba32067a88d4ccca71148ef3309c4f9-1"&gt;&lt;/a&gt;Plug &lt;span class="s1"&gt;'ervandew/supertab'&lt;/span&gt;
+&lt;a name="rest_code_8ba32067a88d4ccca71148ef3309c4f9-2"&gt;&lt;/a&gt;
+&lt;a name="rest_code_8ba32067a88d4ccca71148ef3309c4f9-3"&gt;&lt;/a&gt;...
+&lt;a name="rest_code_8ba32067a88d4ccca71148ef3309c4f9-4"&gt;&lt;/a&gt;
+&lt;a name="rest_code_8ba32067a88d4ccca71148ef3309c4f9-5"&gt;&lt;/a&gt;&lt;span class="c"&gt;" Invertir direccion de navegacion (de arriba a abajo)&lt;/span&gt;
+&lt;a name="rest_code_8ba32067a88d4ccca71148ef3309c4f9-6"&gt;&lt;/a&gt;&lt;span class="k"&gt;let&lt;/span&gt; &lt;span class="k"&gt;g&lt;/span&gt;:SuperTabDefaultCompletionType &lt;span class="p"&gt;=&lt;/span&gt; &lt;span class="s1"&gt;'&amp;lt;c-n&amp;gt;'&lt;/span&gt;
 &lt;/pre&gt;&lt;ul class="simple"&gt;
 &lt;li&gt;&lt;p&gt;&lt;span class="raw-html"&gt;&lt;i class="fa fa-external-link"&gt;&lt;/i&gt;&lt;/span&gt; &lt;a class="reference external" href="https://github.com/ervandew/supertab"&gt;https://github.com/ervandew/supertab&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
 &lt;li&gt;&lt;p&gt;&lt;span class="raw-html"&gt;&lt;i class="fa fa-info-circle"&gt;&lt;/i&gt;&lt;/span&gt; &lt;code class="docutils literal"&gt;h supertab&lt;/code&gt;&lt;/p&gt;&lt;/li&gt;
@@ -906,78 +924,84 @@ puedes encontrar una lista de varias fuentes &lt;a class="reference external" hr
 &lt;blockquote&gt;
 &lt;p&gt;Muestra la firma de la función.&lt;/p&gt;
 &lt;/blockquote&gt;
-&lt;div class="figure"&gt;
+&lt;figure&gt;
 &lt;a class="reference external image-reference" href="https://cloud.githubusercontent.com/assets/111942/19444981/a076d748-9460-11e6-851c-f249f8110b3b.gif"&gt;&lt;img alt="echodoc" src="https://cloud.githubusercontent.com/assets/111942/19444981/a076d748-9460-11e6-851c-f249f8110b3b.gif"&gt;&lt;/a&gt;
-&lt;p class="caption"&gt;echodoc&lt;/p&gt;
-&lt;/div&gt;
-&lt;pre class="code vim"&gt;&lt;a name="rest_code_2d44013181f14ff093ce6dabf5cc417c-1"&gt;&lt;/a&gt;Plug &lt;span class="s1"&gt;'Shougo/echodoc.vim'&lt;/span&gt;
-&lt;a name="rest_code_2d44013181f14ff093ce6dabf5cc417c-2"&gt;&lt;/a&gt;
-&lt;a name="rest_code_2d44013181f14ff093ce6dabf5cc417c-3"&gt;&lt;/a&gt;...
-&lt;a name="rest_code_2d44013181f14ff093ce6dabf5cc417c-4"&gt;&lt;/a&gt;
-&lt;a name="rest_code_2d44013181f14ff093ce6dabf5cc417c-5"&gt;&lt;/a&gt;&lt;span class="k"&gt;set&lt;/span&gt; &lt;span class="nb"&gt;noshowmode&lt;/span&gt;  &lt;span class="c"&gt;" No mostrar el modo actual (echodoc hace uso de este espacio)&lt;/span&gt;
-&lt;a name="rest_code_2d44013181f14ff093ce6dabf5cc417c-6"&gt;&lt;/a&gt;
-&lt;a name="rest_code_2d44013181f14ff093ce6dabf5cc417c-7"&gt;&lt;/a&gt;&lt;span class="c"&gt;" Activar echodoc al iniciar Neovim&lt;/span&gt;
-&lt;a name="rest_code_2d44013181f14ff093ce6dabf5cc417c-8"&gt;&lt;/a&gt;&lt;span class="k"&gt;let&lt;/span&gt; &lt;span class="k"&gt;g&lt;/span&gt;:echodoc_enable_at_startup &lt;span class="p"&gt;=&lt;/span&gt; &lt;span class="m"&gt;1&lt;/span&gt;
+&lt;figcaption&gt;
+&lt;p&gt;echodoc&lt;/p&gt;
+&lt;/figcaption&gt;
+&lt;/figure&gt;
+&lt;pre class="code vim"&gt;&lt;a name="rest_code_f19b36e7282a46019ef1ced3c37f5cd5-1"&gt;&lt;/a&gt;Plug &lt;span class="s1"&gt;'Shougo/echodoc.vim'&lt;/span&gt;
+&lt;a name="rest_code_f19b36e7282a46019ef1ced3c37f5cd5-2"&gt;&lt;/a&gt;
+&lt;a name="rest_code_f19b36e7282a46019ef1ced3c37f5cd5-3"&gt;&lt;/a&gt;...
+&lt;a name="rest_code_f19b36e7282a46019ef1ced3c37f5cd5-4"&gt;&lt;/a&gt;
+&lt;a name="rest_code_f19b36e7282a46019ef1ced3c37f5cd5-5"&gt;&lt;/a&gt;&lt;span class="k"&gt;set&lt;/span&gt; &lt;span class="nb"&gt;noshowmode&lt;/span&gt;  &lt;span class="c"&gt;" No mostrar el modo actual (echodoc hace uso de este espacio)&lt;/span&gt;
+&lt;a name="rest_code_f19b36e7282a46019ef1ced3c37f5cd5-6"&gt;&lt;/a&gt;
+&lt;a name="rest_code_f19b36e7282a46019ef1ced3c37f5cd5-7"&gt;&lt;/a&gt;&lt;span class="c"&gt;" Activar echodoc al iniciar Neovim&lt;/span&gt;
+&lt;a name="rest_code_f19b36e7282a46019ef1ced3c37f5cd5-8"&gt;&lt;/a&gt;&lt;span class="k"&gt;let&lt;/span&gt; &lt;span class="k"&gt;g&lt;/span&gt;:echodoc_enable_at_startup &lt;span class="p"&gt;=&lt;/span&gt; &lt;span class="m"&gt;1&lt;/span&gt;
 &lt;/pre&gt;&lt;ul class="simple"&gt;
 &lt;li&gt;&lt;p&gt;&lt;span class="raw-html"&gt;&lt;i class="fa fa-external-link"&gt;&lt;/i&gt;&lt;/span&gt; &lt;a class="reference external" href="https://github.com/Shougo/echodoc.vim"&gt;https://github.com/Shougo/echodoc.vim&lt;/a&gt;"&lt;/p&gt;&lt;/li&gt;
 &lt;li&gt;&lt;p&gt;&lt;span class="raw-html"&gt;&lt;i class="fa fa-info-circle"&gt;&lt;/i&gt;&lt;/span&gt; &lt;code class="docutils literal"&gt;:h echodoc&lt;/code&gt;&lt;/p&gt;&lt;/li&gt;
 &lt;/ul&gt;
-&lt;/div&gt;
-&lt;div class="section" id="id9"&gt;
+&lt;/section&gt;
+&lt;section id="id9"&gt;
 &lt;h4&gt;&lt;a class="toc-backref" href="https://stsewd.dev/posts/neovim-plugins/#id30"&gt;Más&lt;/a&gt;&lt;/h4&gt;
 &lt;ul class="simple"&gt;
 &lt;li&gt;&lt;p&gt;&lt;a class="reference external" href="https://github.com/Valloric/YouCompleteMe"&gt;YouCompleteMe&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
 &lt;/ul&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;div class="section" id="snippets"&gt;
+&lt;/section&gt;
+&lt;/section&gt;
+&lt;section id="snippets"&gt;
 &lt;h3&gt;&lt;a class="toc-backref" href="https://stsewd.dev/posts/neovim-plugins/#id31"&gt;Snippets&lt;/a&gt;&lt;/h3&gt;
-&lt;div class="section" id="ultisnips"&gt;
+&lt;section id="ultisnips"&gt;
 &lt;h4&gt;&lt;a class="toc-backref" href="https://stsewd.dev/posts/neovim-plugins/#id32"&gt;Ultisnips&lt;/a&gt;&lt;/h4&gt;
 &lt;blockquote&gt;
 &lt;p&gt;Provee porciones de código reusables.&lt;/p&gt;
 &lt;/blockquote&gt;
-&lt;div class="figure"&gt;
+&lt;figure&gt;
 &lt;a class="reference external image-reference" href="https://camo.githubusercontent.com/296aecf30e1607233814196db6bd3f5f47e70c73/68747470733a2f2f7261772e6769746875622e636f6d2f5369725665722f756c7469736e6970732f6d61737465722f646f632f64656d6f2e676966"&gt;&lt;img alt="Ultisnips" src="https://camo.githubusercontent.com/296aecf30e1607233814196db6bd3f5f47e70c73/68747470733a2f2f7261772e6769746875622e636f6d2f5369725665722f756c7469736e6970732f6d61737465722f646f632f64656d6f2e676966"&gt;&lt;/a&gt;
-&lt;p class="caption"&gt;Ultisnips&lt;/p&gt;
-&lt;/div&gt;
-&lt;pre class="code vim"&gt;&lt;a name="rest_code_78649cebbcd84ad9b48b1f058ae029ea-1"&gt;&lt;/a&gt;Plug &lt;span class="s1"&gt;'sirver/ultisnips'&lt;/span&gt;
-&lt;a name="rest_code_78649cebbcd84ad9b48b1f058ae029ea-2"&gt;&lt;/a&gt;Plug &lt;span class="s1"&gt;'honza/vim-snippets'&lt;/span&gt;
-&lt;a name="rest_code_78649cebbcd84ad9b48b1f058ae029ea-3"&gt;&lt;/a&gt;
-&lt;a name="rest_code_78649cebbcd84ad9b48b1f058ae029ea-4"&gt;&lt;/a&gt;...
-&lt;a name="rest_code_78649cebbcd84ad9b48b1f058ae029ea-5"&gt;&lt;/a&gt;
-&lt;a name="rest_code_78649cebbcd84ad9b48b1f058ae029ea-6"&gt;&lt;/a&gt;&lt;span class="c"&gt;" Expandir snippet con Ctrl + j&lt;/span&gt;
-&lt;a name="rest_code_78649cebbcd84ad9b48b1f058ae029ea-7"&gt;&lt;/a&gt;&lt;span class="k"&gt;let&lt;/span&gt; &lt;span class="k"&gt;g&lt;/span&gt;:UltiSnipsExpandTrigger &lt;span class="p"&gt;=&lt;/span&gt; &lt;span class="s1"&gt;'&amp;lt;c-j&amp;gt;'&lt;/span&gt;
-&lt;a name="rest_code_78649cebbcd84ad9b48b1f058ae029ea-8"&gt;&lt;/a&gt;
-&lt;a name="rest_code_78649cebbcd84ad9b48b1f058ae029ea-9"&gt;&lt;/a&gt;&lt;span class="c"&gt;" Ir a siguiente ubicacion con Ctrl + j&lt;/span&gt;
-&lt;a name="rest_code_78649cebbcd84ad9b48b1f058ae029ea-10"&gt;&lt;/a&gt;&lt;span class="k"&gt;let&lt;/span&gt; &lt;span class="k"&gt;g&lt;/span&gt;:UltiSnipsJumpForwardTrigger &lt;span class="p"&gt;=&lt;/span&gt; &lt;span class="s1"&gt;'&amp;lt;c-j&amp;gt;'&lt;/span&gt;
-&lt;a name="rest_code_78649cebbcd84ad9b48b1f058ae029ea-11"&gt;&lt;/a&gt;&lt;span class="c"&gt;" Ir a anterior ubicacion con Ctrl + k&lt;/span&gt;
-&lt;a name="rest_code_78649cebbcd84ad9b48b1f058ae029ea-12"&gt;&lt;/a&gt;&lt;span class="k"&gt;let&lt;/span&gt; &lt;span class="k"&gt;g&lt;/span&gt;:UltiSnipsJumpBackwardTrigger &lt;span class="p"&gt;=&lt;/span&gt; &lt;span class="s1"&gt;'&amp;lt;c-k&amp;gt;'&lt;/span&gt;
+&lt;figcaption&gt;
+&lt;p&gt;Ultisnips&lt;/p&gt;
+&lt;/figcaption&gt;
+&lt;/figure&gt;
+&lt;pre class="code vim"&gt;&lt;a name="rest_code_2dd021cd70e74603b97b832ac38b0d44-1"&gt;&lt;/a&gt;Plug &lt;span class="s1"&gt;'sirver/ultisnips'&lt;/span&gt;
+&lt;a name="rest_code_2dd021cd70e74603b97b832ac38b0d44-2"&gt;&lt;/a&gt;Plug &lt;span class="s1"&gt;'honza/vim-snippets'&lt;/span&gt;
+&lt;a name="rest_code_2dd021cd70e74603b97b832ac38b0d44-3"&gt;&lt;/a&gt;
+&lt;a name="rest_code_2dd021cd70e74603b97b832ac38b0d44-4"&gt;&lt;/a&gt;...
+&lt;a name="rest_code_2dd021cd70e74603b97b832ac38b0d44-5"&gt;&lt;/a&gt;
+&lt;a name="rest_code_2dd021cd70e74603b97b832ac38b0d44-6"&gt;&lt;/a&gt;&lt;span class="c"&gt;" Expandir snippet con Ctrl + j&lt;/span&gt;
+&lt;a name="rest_code_2dd021cd70e74603b97b832ac38b0d44-7"&gt;&lt;/a&gt;&lt;span class="k"&gt;let&lt;/span&gt; &lt;span class="k"&gt;g&lt;/span&gt;:UltiSnipsExpandTrigger &lt;span class="p"&gt;=&lt;/span&gt; &lt;span class="s1"&gt;'&amp;lt;c-j&amp;gt;'&lt;/span&gt;
+&lt;a name="rest_code_2dd021cd70e74603b97b832ac38b0d44-8"&gt;&lt;/a&gt;
+&lt;a name="rest_code_2dd021cd70e74603b97b832ac38b0d44-9"&gt;&lt;/a&gt;&lt;span class="c"&gt;" Ir a siguiente ubicacion con Ctrl + j&lt;/span&gt;
+&lt;a name="rest_code_2dd021cd70e74603b97b832ac38b0d44-10"&gt;&lt;/a&gt;&lt;span class="k"&gt;let&lt;/span&gt; &lt;span class="k"&gt;g&lt;/span&gt;:UltiSnipsJumpForwardTrigger &lt;span class="p"&gt;=&lt;/span&gt; &lt;span class="s1"&gt;'&amp;lt;c-j&amp;gt;'&lt;/span&gt;
+&lt;a name="rest_code_2dd021cd70e74603b97b832ac38b0d44-11"&gt;&lt;/a&gt;&lt;span class="c"&gt;" Ir a anterior ubicacion con Ctrl + k&lt;/span&gt;
+&lt;a name="rest_code_2dd021cd70e74603b97b832ac38b0d44-12"&gt;&lt;/a&gt;&lt;span class="k"&gt;let&lt;/span&gt; &lt;span class="k"&gt;g&lt;/span&gt;:UltiSnipsJumpBackwardTrigger &lt;span class="p"&gt;=&lt;/span&gt; &lt;span class="s1"&gt;'&amp;lt;c-k&amp;gt;'&lt;/span&gt;
 &lt;/pre&gt;&lt;ul class="simple"&gt;
 &lt;li&gt;&lt;p&gt;&lt;span class="raw-html"&gt;&lt;i class="fa fa-external-link"&gt;&lt;/i&gt;&lt;/span&gt; &lt;a class="reference external" href="https://github.com/sirver/ultisnips"&gt;https://github.com/sirver/ultisnips&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
 &lt;li&gt;&lt;p&gt;&lt;span class="raw-html"&gt;&lt;i class="fa fa-info-circle"&gt;&lt;/i&gt;&lt;/span&gt; &lt;code class="docutils literal"&gt;:h UltiSnips&lt;/code&gt;&lt;/p&gt;&lt;/li&gt;
 &lt;/ul&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;div class="section" id="analizador-estatico-de-codigo"&gt;
+&lt;/section&gt;
+&lt;/section&gt;
+&lt;section id="analizador-estatico-de-codigo"&gt;
 &lt;h3&gt;&lt;a class="toc-backref" href="https://stsewd.dev/posts/neovim-plugins/#id33"&gt;Analizador estático de código&lt;/a&gt;&lt;/h3&gt;
-&lt;div class="section" id="ale"&gt;
+&lt;section id="ale"&gt;
 &lt;h4&gt;&lt;a class="toc-backref" href="https://stsewd.dev/posts/neovim-plugins/#id34"&gt;ALE&lt;/a&gt;&lt;/h4&gt;
 &lt;blockquote&gt;
 &lt;p&gt;Analizador estático asíncrono.&lt;/p&gt;
 &lt;/blockquote&gt;
-&lt;div class="figure"&gt;
+&lt;figure&gt;
 &lt;a class="reference external image-reference" href="https://github.com/w0rp/ale/raw/master/img/example.gif?raw=true"&gt;&lt;img alt="ALE" src="https://github.com/w0rp/ale/raw/master/img/example.gif?raw=true"&gt;&lt;/a&gt;
-&lt;p class="caption"&gt;ALE&lt;/p&gt;
-&lt;/div&gt;
-&lt;pre class="code vim"&gt;&lt;a name="rest_code_4020821259c84cc9b3e631700e326ae2-1"&gt;&lt;/a&gt;Plug &lt;span class="s1"&gt;'w0rp/ale'&lt;/span&gt;
-&lt;a name="rest_code_4020821259c84cc9b3e631700e326ae2-2"&gt;&lt;/a&gt;
-&lt;a name="rest_code_4020821259c84cc9b3e631700e326ae2-3"&gt;&lt;/a&gt;...
-&lt;a name="rest_code_4020821259c84cc9b3e631700e326ae2-4"&gt;&lt;/a&gt;
-&lt;a name="rest_code_4020821259c84cc9b3e631700e326ae2-5"&gt;&lt;/a&gt;&lt;span class="c"&gt;" Mostrar mejor mensajes de error&lt;/span&gt;
-&lt;a name="rest_code_4020821259c84cc9b3e631700e326ae2-6"&gt;&lt;/a&gt;&lt;span class="k"&gt;let&lt;/span&gt; &lt;span class="k"&gt;g&lt;/span&gt;:ale_echo_msg_error_str &lt;span class="p"&gt;=&lt;/span&gt; &lt;span class="s1"&gt;'E'&lt;/span&gt;
-&lt;a name="rest_code_4020821259c84cc9b3e631700e326ae2-7"&gt;&lt;/a&gt;&lt;span class="k"&gt;let&lt;/span&gt; &lt;span class="k"&gt;g&lt;/span&gt;:ale_echo_msg_warning_str &lt;span class="p"&gt;=&lt;/span&gt; &lt;span class="s1"&gt;'W'&lt;/span&gt;
-&lt;a name="rest_code_4020821259c84cc9b3e631700e326ae2-8"&gt;&lt;/a&gt;&lt;span class="k"&gt;let&lt;/span&gt; &lt;span class="k"&gt;g&lt;/span&gt;:ale_echo_msg_format &lt;span class="p"&gt;=&lt;/span&gt; &lt;span class="s1"&gt;'[%linter%] %s [%severity%]'&lt;/span&gt;
+&lt;figcaption&gt;
+&lt;p&gt;ALE&lt;/p&gt;
+&lt;/figcaption&gt;
+&lt;/figure&gt;
+&lt;pre class="code vim"&gt;&lt;a name="rest_code_feb3bd0229d14c5d844a89edf4b58d2c-1"&gt;&lt;/a&gt;Plug &lt;span class="s1"&gt;'w0rp/ale'&lt;/span&gt;
+&lt;a name="rest_code_feb3bd0229d14c5d844a89edf4b58d2c-2"&gt;&lt;/a&gt;
+&lt;a name="rest_code_feb3bd0229d14c5d844a89edf4b58d2c-3"&gt;&lt;/a&gt;...
+&lt;a name="rest_code_feb3bd0229d14c5d844a89edf4b58d2c-4"&gt;&lt;/a&gt;
+&lt;a name="rest_code_feb3bd0229d14c5d844a89edf4b58d2c-5"&gt;&lt;/a&gt;&lt;span class="c"&gt;" Mostrar mejor mensajes de error&lt;/span&gt;
+&lt;a name="rest_code_feb3bd0229d14c5d844a89edf4b58d2c-6"&gt;&lt;/a&gt;&lt;span class="k"&gt;let&lt;/span&gt; &lt;span class="k"&gt;g&lt;/span&gt;:ale_echo_msg_error_str &lt;span class="p"&gt;=&lt;/span&gt; &lt;span class="s1"&gt;'E'&lt;/span&gt;
+&lt;a name="rest_code_feb3bd0229d14c5d844a89edf4b58d2c-7"&gt;&lt;/a&gt;&lt;span class="k"&gt;let&lt;/span&gt; &lt;span class="k"&gt;g&lt;/span&gt;:ale_echo_msg_warning_str &lt;span class="p"&gt;=&lt;/span&gt; &lt;span class="s1"&gt;'W'&lt;/span&gt;
+&lt;a name="rest_code_feb3bd0229d14c5d844a89edf4b58d2c-8"&gt;&lt;/a&gt;&lt;span class="k"&gt;let&lt;/span&gt; &lt;span class="k"&gt;g&lt;/span&gt;:ale_echo_msg_format &lt;span class="p"&gt;=&lt;/span&gt; &lt;span class="s1"&gt;'[%linter%] %s [%severity%]'&lt;/span&gt;
 &lt;/pre&gt;&lt;ul class="simple"&gt;
 &lt;li&gt;&lt;p&gt;&lt;span class="raw-html"&gt;&lt;i class="fa fa-terminal"&gt;&lt;/i&gt;&lt;/span&gt;&lt;/p&gt;
 &lt;ul&gt;
@@ -988,50 +1012,50 @@ puedes encontrar una lista de varias fuentes &lt;a class="reference external" hr
 &lt;li&gt;&lt;p&gt;&lt;span class="raw-html"&gt;&lt;i class="fa fa-external-link"&gt;&lt;/i&gt;&lt;/span&gt; &lt;a class="reference external" href="https://github.com/w0rp/ale"&gt;https://github.com/w0rp/ale&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
 &lt;li&gt;&lt;p&gt;&lt;span class="raw-html"&gt;&lt;i class="fa fa-info-circle"&gt;&lt;/i&gt;&lt;/span&gt; &lt;code class="docutils literal"&gt;:h ale.txt&lt;/code&gt;&lt;/p&gt;&lt;/li&gt;
 &lt;/ul&gt;
-&lt;/div&gt;
-&lt;div class="section" id="otros"&gt;
+&lt;/section&gt;
+&lt;section id="otros"&gt;
 &lt;h4&gt;&lt;a class="toc-backref" href="https://stsewd.dev/posts/neovim-plugins/#id35"&gt;Otros&lt;/a&gt;&lt;/h4&gt;
 &lt;ul class="simple"&gt;
 &lt;li&gt;&lt;p&gt;&lt;a class="reference external" href="https://github.com/neomake/neomake"&gt;Neomake&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
 &lt;/ul&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;div class="section" id="resaltado-de-sintaxis"&gt;
+&lt;/section&gt;
+&lt;/section&gt;
+&lt;section id="resaltado-de-sintaxis"&gt;
 &lt;h3&gt;&lt;a class="toc-backref" href="https://stsewd.dev/posts/neovim-plugins/#id36"&gt;Resaltado de sintaxis&lt;/a&gt;&lt;/h3&gt;
-&lt;div class="section" id="polyglot"&gt;
+&lt;section id="polyglot"&gt;
 &lt;h4&gt;&lt;a class="toc-backref" href="https://stsewd.dev/posts/neovim-plugins/#id37"&gt;Polyglot&lt;/a&gt;&lt;/h4&gt;
 &lt;blockquote&gt;
 &lt;p&gt;Colección de varios plugins de resaltado de sintaxis.&lt;/p&gt;
 &lt;/blockquote&gt;
-&lt;pre class="code vim"&gt;&lt;a name="rest_code_8f3b65147d134fecb20cbe076e36b130-1"&gt;&lt;/a&gt;Plug &lt;span class="s1"&gt;'sheerun/vim-polyglot'&lt;/span&gt;
+&lt;pre class="code vim"&gt;&lt;a name="rest_code_9c9b1f96e36c4c8cb7480f81360b0f22-1"&gt;&lt;/a&gt;Plug &lt;span class="s1"&gt;'sheerun/vim-polyglot'&lt;/span&gt;
 &lt;/pre&gt;&lt;ul class="simple"&gt;
 &lt;li&gt;&lt;p&gt;&lt;span class="raw-html"&gt;&lt;i class="fa fa-external-link"&gt;&lt;/i&gt;&lt;/span&gt; &lt;a class="reference external" href="https://github.com/sheerun/vim-polyglot"&gt;https://github.com/sheerun/vim-polyglot&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
 &lt;li&gt;&lt;p&gt;&lt;span class="raw-html"&gt;&lt;i class="fa fa-info-circle"&gt;&lt;/i&gt;&lt;/span&gt; &lt;a class="reference external" href="https://github.com/sheerun/vim-polyglot#troubleshooting"&gt;https://github.com/sheerun/vim-polyglot#troubleshooting&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
 &lt;/ul&gt;
-&lt;/div&gt;
-&lt;div class="section" id="id10"&gt;
+&lt;/section&gt;
+&lt;section id="id10"&gt;
 &lt;h4&gt;&lt;a class="toc-backref" href="https://stsewd.dev/posts/neovim-plugins/#id38"&gt;Otros&lt;/a&gt;&lt;/h4&gt;
 &lt;p&gt;Alternativamente puedes instalar un plugin específico para cada lenguaje.
 Por ejemplo:&lt;/p&gt;
 &lt;ul class="simple"&gt;
 &lt;li&gt;&lt;p&gt;&lt;a class="reference external" href="https://github.com/hail2u/vim-css3-syntax"&gt;CSS&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
 &lt;/ul&gt;
-&lt;pre class="code vim"&gt;&lt;a name="rest_code_f412c7d6d31c4e74bed3a983ec2c40c3-1"&gt;&lt;/a&gt;Plug &lt;span class="s1"&gt;'hail2u/vim-css3-syntax'&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; { &lt;span class="s1"&gt;'for'&lt;/span&gt;: &lt;span class="s1"&gt;'css'&lt;/span&gt; }
+&lt;pre class="code vim"&gt;&lt;a name="rest_code_7268cb2e70284096877c6fc193121843-1"&gt;&lt;/a&gt;Plug &lt;span class="s1"&gt;'hail2u/vim-css3-syntax'&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; { &lt;span class="s1"&gt;'for'&lt;/span&gt;: &lt;span class="s1"&gt;'css'&lt;/span&gt; }
 &lt;/pre&gt;&lt;ul class="simple"&gt;
 &lt;li&gt;&lt;p&gt;&lt;a class="reference external" href="https://github.com/othree/html5.vim"&gt;Html&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
 &lt;/ul&gt;
-&lt;pre class="code vim"&gt;&lt;a name="rest_code_2928fa5ece9447018d6592809072f38b-1"&gt;&lt;/a&gt;Plug &lt;span class="s1"&gt;'othree/html5.vim'&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; { &lt;span class="s1"&gt;'for'&lt;/span&gt;: &lt;span class="s1"&gt;'html'&lt;/span&gt; }
+&lt;pre class="code vim"&gt;&lt;a name="rest_code_58c23d2c295e4f54977f3c05887cfc50-1"&gt;&lt;/a&gt;Plug &lt;span class="s1"&gt;'othree/html5.vim'&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; { &lt;span class="s1"&gt;'for'&lt;/span&gt;: &lt;span class="s1"&gt;'html'&lt;/span&gt; }
 &lt;/pre&gt;&lt;ul class="simple"&gt;
 &lt;li&gt;&lt;p&gt;&lt;a class="reference external" href="https://github.com/pangloss/vim-javascript"&gt;JavaScript&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
 &lt;/ul&gt;
-&lt;pre class="code vim"&gt;&lt;a name="rest_code_3b331182760f4f7d9cbc496aa2cf7886-1"&gt;&lt;/a&gt;Plug &lt;span class="s1"&gt;'pangloss/vim-javascript'&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; { &lt;span class="s1"&gt;'for'&lt;/span&gt;: &lt;span class="s1"&gt;'javascript'&lt;/span&gt; }
+&lt;pre class="code vim"&gt;&lt;a name="rest_code_de514d335ae44a1ea6b17cce1e79f45d-1"&gt;&lt;/a&gt;Plug &lt;span class="s1"&gt;'pangloss/vim-javascript'&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; { &lt;span class="s1"&gt;'for'&lt;/span&gt;: &lt;span class="s1"&gt;'javascript'&lt;/span&gt; }
 &lt;/pre&gt;&lt;ul class="simple"&gt;
 &lt;li&gt;&lt;p&gt;&lt;a class="reference external" href="https://github.com/plasticboy/vim-markdown"&gt;Markdown&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
 &lt;/ul&gt;
-&lt;pre class="code vim"&gt;&lt;a name="rest_code_cb2ccf9117644c36a19748f7abd5820e-1"&gt;&lt;/a&gt;Plug &lt;span class="s1"&gt;'plasticboy/vim-markdown'&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; { &lt;span class="s1"&gt;'for'&lt;/span&gt;: &lt;span class="s1"&gt;'markdown'&lt;/span&gt; }
-&lt;/pre&gt;&lt;/div&gt;
-&lt;/div&gt;
-&lt;div class="section" id="ir-a-definicion"&gt;
+&lt;pre class="code vim"&gt;&lt;a name="rest_code_acf1dabd39b84c36a6a8575f5622dada-1"&gt;&lt;/a&gt;Plug &lt;span class="s1"&gt;'plasticboy/vim-markdown'&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; { &lt;span class="s1"&gt;'for'&lt;/span&gt;: &lt;span class="s1"&gt;'markdown'&lt;/span&gt; }
+&lt;/pre&gt;&lt;/section&gt;
+&lt;/section&gt;
+&lt;section id="ir-a-definicion"&gt;
 &lt;h3&gt;&lt;a class="toc-backref" href="https://stsewd.dev/posts/neovim-plugins/#id39"&gt;Ir a definición&lt;/a&gt;&lt;/h3&gt;
 &lt;p&gt;Varios IDEs ofrecen la funcionalidad de "ir a definición" (go to ...).
 Neovim también lo hace, y para ello almacena un índice de identificadores con su localización en un archivo &lt;cite&gt;tag&lt;/cite&gt;.&lt;/p&gt;
@@ -1041,11 +1065,11 @@ Neovim también lo hace, y para ello almacena un índice de identificadores con 
 &lt;li&gt;&lt;p&gt;&lt;code class="kbd docutils literal"&gt;Ctrl&lt;/code&gt; + click izquierdo&lt;/p&gt;&lt;/li&gt;
 &lt;/ul&gt;
 &lt;p&gt;Para generar este archivo haremos uso de un programa llamado &lt;cite&gt;ctags&lt;/cite&gt;.&lt;/p&gt;
-&lt;pre class="code bash"&gt;&lt;a name="rest_code_c57f1bf7fef4438ba268a2d2409dca5f-1"&gt;&lt;/a&gt;&lt;span class="c1"&gt;# Instalar en ctags en Ubuntu&lt;/span&gt;
-&lt;a name="rest_code_c57f1bf7fef4438ba268a2d2409dca5f-2"&gt;&lt;/a&gt;sudo apt install exuberant-ctags
-&lt;a name="rest_code_c57f1bf7fef4438ba268a2d2409dca5f-3"&gt;&lt;/a&gt;
-&lt;a name="rest_code_c57f1bf7fef4438ba268a2d2409dca5f-4"&gt;&lt;/a&gt;&lt;span class="c1"&gt;# Instalar ctags en Fedora&lt;/span&gt;
-&lt;a name="rest_code_c57f1bf7fef4438ba268a2d2409dca5f-5"&gt;&lt;/a&gt;sudo dnf install ctags
+&lt;pre class="code bash"&gt;&lt;a name="rest_code_d11e4f5d96704ff1b2bf703b29f3c903-1"&gt;&lt;/a&gt;&lt;span class="c1"&gt;# Instalar en ctags en Ubuntu&lt;/span&gt;
+&lt;a name="rest_code_d11e4f5d96704ff1b2bf703b29f3c903-2"&gt;&lt;/a&gt;sudo apt install exuberant-ctags
+&lt;a name="rest_code_d11e4f5d96704ff1b2bf703b29f3c903-3"&gt;&lt;/a&gt;
+&lt;a name="rest_code_d11e4f5d96704ff1b2bf703b29f3c903-4"&gt;&lt;/a&gt;&lt;span class="c1"&gt;# Instalar ctags en Fedora&lt;/span&gt;
+&lt;a name="rest_code_d11e4f5d96704ff1b2bf703b29f3c903-5"&gt;&lt;/a&gt;sudo dnf install ctags
 &lt;/pre&gt;&lt;p&gt;&lt;cite&gt;Lista de lenguajes soportados por ``ctags`&lt;/cite&gt; &amp;lt;&lt;a class="reference external" href="http://ctags.sourceforge.net/languages.html"&gt;http://ctags.sourceforge.net/languages.html&lt;/a&gt;&amp;gt;`_.
 Si tu lenguaje no está en la lista, hay varios plugins que ofrecen esta funcionalidad a modo de funciones,
 como &lt;a class="reference external" href="https://github.com/ternjs/tern_for_vim#tern-for-vim"&gt;tern for vim&lt;/a&gt;, &lt;a class="reference external" href="https://github.com/davidhalter/jedi-vim#features"&gt;jedi-vim&lt;/a&gt;.&lt;/p&gt;
@@ -1058,42 +1082,42 @@ como &lt;a class="reference external" href="https://github.com/ternjs/tern_for_v
 &lt;p&gt;Neovim no genera este archivo de manera automática,
 sólo se encarga de leerlo, pero existen plugins que nos facilitan esta tarea.&lt;/p&gt;
 &lt;/div&gt;
-&lt;div class="section" id="gutentags"&gt;
+&lt;section id="gutentags"&gt;
 &lt;h4&gt;&lt;a class="toc-backref" href="https://stsewd.dev/posts/neovim-plugins/#id40"&gt;Gutentags&lt;/a&gt;&lt;/h4&gt;
 &lt;blockquote&gt;
 &lt;p&gt;Administrador de archivos &lt;code class="docutils literal"&gt;tag&lt;/code&gt;.&lt;/p&gt;
 &lt;/blockquote&gt;
-&lt;pre class="code vim"&gt;&lt;a name="rest_code_00620c0cf9ec4568b812e8d3cb07362f-1"&gt;&lt;/a&gt;Plug &lt;span class="s1"&gt;'ludovicchabant/vim-gutentags'&lt;/span&gt;
-&lt;a name="rest_code_00620c0cf9ec4568b812e8d3cb07362f-2"&gt;&lt;/a&gt;
-&lt;a name="rest_code_00620c0cf9ec4568b812e8d3cb07362f-3"&gt;&lt;/a&gt;...
-&lt;a name="rest_code_00620c0cf9ec4568b812e8d3cb07362f-4"&gt;&lt;/a&gt;
-&lt;a name="rest_code_00620c0cf9ec4568b812e8d3cb07362f-5"&gt;&lt;/a&gt;&lt;span class="c"&gt;" Nombre del archivo generado&lt;/span&gt;
-&lt;a name="rest_code_00620c0cf9ec4568b812e8d3cb07362f-6"&gt;&lt;/a&gt;&lt;span class="k"&gt;let&lt;/span&gt; &lt;span class="k"&gt;g&lt;/span&gt;:gutentags_ctags_tagfile &lt;span class="p"&gt;=&lt;/span&gt; &lt;span class="s1"&gt;'.tags'&lt;/span&gt;
+&lt;pre class="code vim"&gt;&lt;a name="rest_code_f70a9b5c9f47458e83d369f292bd89cd-1"&gt;&lt;/a&gt;Plug &lt;span class="s1"&gt;'ludovicchabant/vim-gutentags'&lt;/span&gt;
+&lt;a name="rest_code_f70a9b5c9f47458e83d369f292bd89cd-2"&gt;&lt;/a&gt;
+&lt;a name="rest_code_f70a9b5c9f47458e83d369f292bd89cd-3"&gt;&lt;/a&gt;...
+&lt;a name="rest_code_f70a9b5c9f47458e83d369f292bd89cd-4"&gt;&lt;/a&gt;
+&lt;a name="rest_code_f70a9b5c9f47458e83d369f292bd89cd-5"&gt;&lt;/a&gt;&lt;span class="c"&gt;" Nombre del archivo generado&lt;/span&gt;
+&lt;a name="rest_code_f70a9b5c9f47458e83d369f292bd89cd-6"&gt;&lt;/a&gt;&lt;span class="k"&gt;let&lt;/span&gt; &lt;span class="k"&gt;g&lt;/span&gt;:gutentags_ctags_tagfile &lt;span class="p"&gt;=&lt;/span&gt; &lt;span class="s1"&gt;'.tags'&lt;/span&gt;
 &lt;/pre&gt;&lt;ul class="simple"&gt;
 &lt;li&gt;&lt;p&gt;&lt;span class="raw-html"&gt;&lt;i class="fa fa-external-link"&gt;&lt;/i&gt;&lt;/span&gt; &lt;a class="reference external" href="https://github.com/ludovicchabant/vim-gutentags"&gt;https://github.com/ludovicchabant/vim-gutentags&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
 &lt;li&gt;&lt;p&gt;&lt;span class="raw-html"&gt;&lt;i class="fa fa-info-circle"&gt;&lt;/i&gt;&lt;/span&gt; &lt;code class="docutils literal"&gt;:h gutentags&lt;/code&gt;&lt;/p&gt;&lt;/li&gt;
 &lt;/ul&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;div class="section" id="buscador-de-archivos"&gt;
+&lt;/section&gt;
+&lt;/section&gt;
+&lt;section id="buscador-de-archivos"&gt;
 &lt;h3&gt;&lt;a class="toc-backref" href="https://stsewd.dev/posts/neovim-plugins/#id41"&gt;Buscador de archivos&lt;/a&gt;&lt;/h3&gt;
-&lt;div class="section" id="fzf"&gt;
+&lt;section id="fzf"&gt;
 &lt;h4&gt;&lt;a class="toc-backref" href="https://stsewd.dev/posts/neovim-plugins/#id42"&gt;FZF&lt;/a&gt;&lt;/h4&gt;
 &lt;blockquote&gt;
 &lt;p&gt;Wrapper de FZF buscador de archivos, buffers, grep, etc.&lt;/p&gt;
 &lt;/blockquote&gt;
-&lt;pre class="code vim"&gt;&lt;a name="rest_code_93801801898a435489d291a437bad0b6-1"&gt;&lt;/a&gt;Plug &lt;span class="s1"&gt;'junegunn/fzf'&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; { &lt;span class="s1"&gt;'dir'&lt;/span&gt;: &lt;span class="s1"&gt;'~/.fzf'&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s1"&gt;'do'&lt;/span&gt;: &lt;span class="s1"&gt;'./install --all'&lt;/span&gt; }
-&lt;a name="rest_code_93801801898a435489d291a437bad0b6-2"&gt;&lt;/a&gt;Plug &lt;span class="s1"&gt;'junegunn/fzf.vim'&lt;/span&gt;
-&lt;a name="rest_code_93801801898a435489d291a437bad0b6-3"&gt;&lt;/a&gt;
-&lt;a name="rest_code_93801801898a435489d291a437bad0b6-4"&gt;&lt;/a&gt;...
-&lt;a name="rest_code_93801801898a435489d291a437bad0b6-5"&gt;&lt;/a&gt;
-&lt;a name="rest_code_93801801898a435489d291a437bad0b6-6"&gt;&lt;/a&gt;&lt;span class="c"&gt;" Ejecutar comandos con alt-enter :Commands&lt;/span&gt;
-&lt;a name="rest_code_93801801898a435489d291a437bad0b6-7"&gt;&lt;/a&gt;&lt;span class="k"&gt;let&lt;/span&gt; &lt;span class="k"&gt;g&lt;/span&gt;:fzf_commands_expect &lt;span class="p"&gt;=&lt;/span&gt; &lt;span class="s1"&gt;'alt-enter'&lt;/span&gt;
-&lt;a name="rest_code_93801801898a435489d291a437bad0b6-8"&gt;&lt;/a&gt;&lt;span class="c"&gt;" Guardar historial de búsquedas&lt;/span&gt;
-&lt;a name="rest_code_93801801898a435489d291a437bad0b6-9"&gt;&lt;/a&gt;&lt;span class="k"&gt;let&lt;/span&gt; &lt;span class="k"&gt;g&lt;/span&gt;:fzf_history_dir &lt;span class="p"&gt;=&lt;/span&gt; &lt;span class="s1"&gt;'~/.local/share/fzf-history'&lt;/span&gt;
-&lt;a name="rest_code_93801801898a435489d291a437bad0b6-10"&gt;&lt;/a&gt;
-&lt;a name="rest_code_93801801898a435489d291a437bad0b6-11"&gt;&lt;/a&gt;&lt;span class="c"&gt;" Empezar a buscar presionando Ctrl + p&lt;/span&gt;
-&lt;a name="rest_code_93801801898a435489d291a437bad0b6-12"&gt;&lt;/a&gt;&lt;span class="nb"&gt;nnoremap&lt;/span&gt; &lt;span class="p"&gt;&amp;lt;&lt;/span&gt;C&lt;span class="p"&gt;-&lt;/span&gt;&lt;span class="k"&gt;p&lt;/span&gt;&lt;span class="p"&gt;&amp;gt;&lt;/span&gt; :Files&lt;span class="p"&gt;&amp;lt;&lt;/span&gt;CR&lt;span class="p"&gt;&amp;gt;&lt;/span&gt;
+&lt;pre class="code vim"&gt;&lt;a name="rest_code_2b7ba3ee857e485298d20b6ec0ae96ee-1"&gt;&lt;/a&gt;Plug &lt;span class="s1"&gt;'junegunn/fzf'&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; { &lt;span class="s1"&gt;'dir'&lt;/span&gt;: &lt;span class="s1"&gt;'~/.fzf'&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s1"&gt;'do'&lt;/span&gt;: &lt;span class="s1"&gt;'./install --all'&lt;/span&gt; }
+&lt;a name="rest_code_2b7ba3ee857e485298d20b6ec0ae96ee-2"&gt;&lt;/a&gt;Plug &lt;span class="s1"&gt;'junegunn/fzf.vim'&lt;/span&gt;
+&lt;a name="rest_code_2b7ba3ee857e485298d20b6ec0ae96ee-3"&gt;&lt;/a&gt;
+&lt;a name="rest_code_2b7ba3ee857e485298d20b6ec0ae96ee-4"&gt;&lt;/a&gt;...
+&lt;a name="rest_code_2b7ba3ee857e485298d20b6ec0ae96ee-5"&gt;&lt;/a&gt;
+&lt;a name="rest_code_2b7ba3ee857e485298d20b6ec0ae96ee-6"&gt;&lt;/a&gt;&lt;span class="c"&gt;" Ejecutar comandos con alt-enter :Commands&lt;/span&gt;
+&lt;a name="rest_code_2b7ba3ee857e485298d20b6ec0ae96ee-7"&gt;&lt;/a&gt;&lt;span class="k"&gt;let&lt;/span&gt; &lt;span class="k"&gt;g&lt;/span&gt;:fzf_commands_expect &lt;span class="p"&gt;=&lt;/span&gt; &lt;span class="s1"&gt;'alt-enter'&lt;/span&gt;
+&lt;a name="rest_code_2b7ba3ee857e485298d20b6ec0ae96ee-8"&gt;&lt;/a&gt;&lt;span class="c"&gt;" Guardar historial de búsquedas&lt;/span&gt;
+&lt;a name="rest_code_2b7ba3ee857e485298d20b6ec0ae96ee-9"&gt;&lt;/a&gt;&lt;span class="k"&gt;let&lt;/span&gt; &lt;span class="k"&gt;g&lt;/span&gt;:fzf_history_dir &lt;span class="p"&gt;=&lt;/span&gt; &lt;span class="s1"&gt;'~/.local/share/fzf-history'&lt;/span&gt;
+&lt;a name="rest_code_2b7ba3ee857e485298d20b6ec0ae96ee-10"&gt;&lt;/a&gt;
+&lt;a name="rest_code_2b7ba3ee857e485298d20b6ec0ae96ee-11"&gt;&lt;/a&gt;&lt;span class="c"&gt;" Empezar a buscar presionando Ctrl + p&lt;/span&gt;
+&lt;a name="rest_code_2b7ba3ee857e485298d20b6ec0ae96ee-12"&gt;&lt;/a&gt;&lt;span class="nb"&gt;nnoremap&lt;/span&gt; &lt;span class="p"&gt;&amp;lt;&lt;/span&gt;C&lt;span class="p"&gt;-&lt;/span&gt;&lt;span class="k"&gt;p&lt;/span&gt;&lt;span class="p"&gt;&amp;gt;&lt;/span&gt; :Files&lt;span class="p"&gt;&amp;lt;&lt;/span&gt;CR&lt;span class="p"&gt;&amp;gt;&lt;/span&gt;
 &lt;/pre&gt;&lt;ul class="simple"&gt;
 &lt;li&gt;&lt;p&gt;&lt;span class="raw-html"&gt;&lt;i class="fa fa-terminal"&gt;&lt;/i&gt;&lt;/span&gt;&lt;/p&gt;
 &lt;ul&gt;
@@ -1107,88 +1131,90 @@ sólo se encarga de leerlo, pero existen plugins que nos facilitan esta tarea.&l
 &lt;li&gt;&lt;p&gt;&lt;span class="raw-html"&gt;&lt;i class="fa fa-external-link"&gt;&lt;/i&gt;&lt;/span&gt; &lt;a class="reference external" href="https://github.com/junegunn/fzf.vim"&gt;https://github.com/junegunn/fzf.vim&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
 &lt;li&gt;&lt;p&gt;&lt;span class="raw-html"&gt;&lt;i class="fa fa-info-circle"&gt;&lt;/i&gt;&lt;/span&gt; &lt;code class="docutils literal"&gt;:h &lt;span class="pre"&gt;fzf-vim&lt;/span&gt;&lt;/code&gt;&lt;/p&gt;&lt;/li&gt;
 &lt;/ul&gt;
-&lt;/div&gt;
-&lt;div class="section" id="ctrlp"&gt;
+&lt;/section&gt;
+&lt;section id="ctrlp"&gt;
 &lt;h4&gt;&lt;a class="toc-backref" href="https://stsewd.dev/posts/neovim-plugins/#id43"&gt;CtrlP&lt;/a&gt;&lt;/h4&gt;
 &lt;blockquote&gt;
 &lt;p&gt;Buscador de archivos y buffers.&lt;/p&gt;
 &lt;/blockquote&gt;
-&lt;pre class="code vim"&gt;&lt;a name="rest_code_bc224688a3ec4cd499240eb979a56b23-1"&gt;&lt;/a&gt;Plug &lt;span class="s1"&gt;'ctrlpvim/ctrlp.vim'&lt;/span&gt;
-&lt;a name="rest_code_bc224688a3ec4cd499240eb979a56b23-2"&gt;&lt;/a&gt;
-&lt;a name="rest_code_bc224688a3ec4cd499240eb979a56b23-3"&gt;&lt;/a&gt;...
-&lt;a name="rest_code_bc224688a3ec4cd499240eb979a56b23-4"&gt;&lt;/a&gt;
-&lt;a name="rest_code_bc224688a3ec4cd499240eb979a56b23-5"&gt;&lt;/a&gt;&lt;span class="c"&gt;" Archivos ignorados&lt;/span&gt;
-&lt;a name="rest_code_bc224688a3ec4cd499240eb979a56b23-6"&gt;&lt;/a&gt;&lt;span class="k"&gt;set&lt;/span&gt; &lt;span class="nb"&gt;wildignore&lt;/span&gt;&lt;span class="p"&gt;+=&lt;/span&gt;*&lt;span class="sr"&gt;/tmp/&lt;/span&gt;*&lt;span class="p"&gt;,&lt;/span&gt;*.&lt;span class="k"&gt;so&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;*.swp&lt;span class="p"&gt;,&lt;/span&gt;*.zip
-&lt;a name="rest_code_bc224688a3ec4cd499240eb979a56b23-7"&gt;&lt;/a&gt;&lt;span class="k"&gt;let&lt;/span&gt; &lt;span class="k"&gt;g&lt;/span&gt;:ctrlp_custom_ignore &lt;span class="p"&gt;=&lt;/span&gt; {
-&lt;a name="rest_code_bc224688a3ec4cd499240eb979a56b23-8"&gt;&lt;/a&gt;  \ &lt;span class="s1"&gt;'dir'&lt;/span&gt;:  &lt;span class="s1"&gt;'\v[\/](\.(git|hg|svn)|node_modules)$'&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
-&lt;a name="rest_code_bc224688a3ec4cd499240eb979a56b23-9"&gt;&lt;/a&gt;  \ &lt;span class="s1"&gt;'file'&lt;/span&gt;: &lt;span class="s1"&gt;'\v\.(exe|so|dll)$'&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
-&lt;a name="rest_code_bc224688a3ec4cd499240eb979a56b23-10"&gt;&lt;/a&gt;  \ }
-&lt;a name="rest_code_bc224688a3ec4cd499240eb979a56b23-11"&gt;&lt;/a&gt;
-&lt;a name="rest_code_bc224688a3ec4cd499240eb979a56b23-12"&gt;&lt;/a&gt;&lt;span class="c"&gt;" Ignorar archivos en .gitignore&lt;/span&gt;
-&lt;a name="rest_code_bc224688a3ec4cd499240eb979a56b23-13"&gt;&lt;/a&gt;&lt;span class="k"&gt;let&lt;/span&gt; &lt;span class="k"&gt;g&lt;/span&gt;:ctrlp_user_command &lt;span class="p"&gt;=&lt;/span&gt; [&lt;span class="s1"&gt;'.git'&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s1"&gt;'cd %s &amp;amp;&amp;amp; git ls-files -co --exclude-standard'&lt;/span&gt;]
+&lt;pre class="code vim"&gt;&lt;a name="rest_code_89fd61cb069f426c9617e2d6a436f684-1"&gt;&lt;/a&gt;Plug &lt;span class="s1"&gt;'ctrlpvim/ctrlp.vim'&lt;/span&gt;
+&lt;a name="rest_code_89fd61cb069f426c9617e2d6a436f684-2"&gt;&lt;/a&gt;
+&lt;a name="rest_code_89fd61cb069f426c9617e2d6a436f684-3"&gt;&lt;/a&gt;...
+&lt;a name="rest_code_89fd61cb069f426c9617e2d6a436f684-4"&gt;&lt;/a&gt;
+&lt;a name="rest_code_89fd61cb069f426c9617e2d6a436f684-5"&gt;&lt;/a&gt;&lt;span class="c"&gt;" Archivos ignorados&lt;/span&gt;
+&lt;a name="rest_code_89fd61cb069f426c9617e2d6a436f684-6"&gt;&lt;/a&gt;&lt;span class="k"&gt;set&lt;/span&gt; &lt;span class="nb"&gt;wildignore&lt;/span&gt;&lt;span class="p"&gt;+=&lt;/span&gt;*&lt;span class="sr"&gt;/tmp/&lt;/span&gt;*&lt;span class="p"&gt;,&lt;/span&gt;*.&lt;span class="k"&gt;so&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;*.swp&lt;span class="p"&gt;,&lt;/span&gt;*.zip
+&lt;a name="rest_code_89fd61cb069f426c9617e2d6a436f684-7"&gt;&lt;/a&gt;&lt;span class="k"&gt;let&lt;/span&gt; &lt;span class="k"&gt;g&lt;/span&gt;:ctrlp_custom_ignore &lt;span class="p"&gt;=&lt;/span&gt; {
+&lt;a name="rest_code_89fd61cb069f426c9617e2d6a436f684-8"&gt;&lt;/a&gt;  \ &lt;span class="s1"&gt;'dir'&lt;/span&gt;:  &lt;span class="s1"&gt;'\v[\/](\.(git|hg|svn)|node_modules)$'&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
+&lt;a name="rest_code_89fd61cb069f426c9617e2d6a436f684-9"&gt;&lt;/a&gt;  \ &lt;span class="s1"&gt;'file'&lt;/span&gt;: &lt;span class="s1"&gt;'\v\.(exe|so|dll)$'&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
+&lt;a name="rest_code_89fd61cb069f426c9617e2d6a436f684-10"&gt;&lt;/a&gt;  \ }
+&lt;a name="rest_code_89fd61cb069f426c9617e2d6a436f684-11"&gt;&lt;/a&gt;
+&lt;a name="rest_code_89fd61cb069f426c9617e2d6a436f684-12"&gt;&lt;/a&gt;&lt;span class="c"&gt;" Ignorar archivos en .gitignore&lt;/span&gt;
+&lt;a name="rest_code_89fd61cb069f426c9617e2d6a436f684-13"&gt;&lt;/a&gt;&lt;span class="k"&gt;let&lt;/span&gt; &lt;span class="k"&gt;g&lt;/span&gt;:ctrlp_user_command &lt;span class="p"&gt;=&lt;/span&gt; [&lt;span class="s1"&gt;'.git'&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s1"&gt;'cd %s &amp;amp;&amp;amp; git ls-files -co --exclude-standard'&lt;/span&gt;]
 &lt;/pre&gt;&lt;ul class="simple"&gt;
 &lt;li&gt;&lt;p&gt;&lt;span class="raw-html"&gt;&lt;i class="fa fa-external-link"&gt;&lt;/i&gt;&lt;/span&gt; &lt;a class="reference external" href="https://github.com/ctrlpvim/ctrlp.vim"&gt;https://github.com/ctrlpvim/ctrlp.vim&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
 &lt;li&gt;&lt;p&gt;&lt;span class="raw-html"&gt;&lt;i class="fa fa-info-circle"&gt;&lt;/i&gt;&lt;/span&gt; &lt;code class="docutils literal"&gt;:h ctrlp&lt;/code&gt;&lt;/p&gt;&lt;/li&gt;
 &lt;/ul&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;div class="section" id="busqueda"&gt;
+&lt;/section&gt;
+&lt;/section&gt;
+&lt;section id="busqueda"&gt;
 &lt;h3&gt;&lt;a class="toc-backref" href="https://stsewd.dev/posts/neovim-plugins/#id44"&gt;Búsqueda&lt;/a&gt;&lt;/h3&gt;
-&lt;div class="section" id="incsearch"&gt;
+&lt;section id="incsearch"&gt;
 &lt;h4&gt;&lt;a class="toc-backref" href="https://stsewd.dev/posts/neovim-plugins/#id45"&gt;Incsearch&lt;/a&gt;&lt;/h4&gt;
 &lt;blockquote&gt;
 &lt;p&gt;Búsqueda incremental mejorada.&lt;/p&gt;
 &lt;/blockquote&gt;
-&lt;div class="figure"&gt;
+&lt;figure&gt;
 &lt;a class="reference external image-reference" href="https://cloud.githubusercontent.com/assets/3797062/3866152/40e11c48-1fc4-11e4-8cfd-ace452a19f90.gif"&gt;&lt;img alt="incsearch" src="https://cloud.githubusercontent.com/assets/3797062/3866152/40e11c48-1fc4-11e4-8cfd-ace452a19f90.gif"&gt;&lt;/a&gt;
-&lt;p class="caption"&gt;incsearch&lt;/p&gt;
-&lt;/div&gt;
-&lt;pre class="code vim"&gt;&lt;a name="rest_code_d378142aa9634156aefc857a88ad2e39-1"&gt;&lt;/a&gt;Plug &lt;span class="s1"&gt;'haya14busa/incsearch.vim'&lt;/span&gt;
-&lt;a name="rest_code_d378142aa9634156aefc857a88ad2e39-2"&gt;&lt;/a&gt;
-&lt;a name="rest_code_d378142aa9634156aefc857a88ad2e39-3"&gt;&lt;/a&gt;...
-&lt;a name="rest_code_d378142aa9634156aefc857a88ad2e39-4"&gt;&lt;/a&gt;
-&lt;a name="rest_code_d378142aa9634156aefc857a88ad2e39-5"&gt;&lt;/a&gt;&lt;span class="c"&gt;" Maps requeridos&lt;/span&gt;
-&lt;a name="rest_code_d378142aa9634156aefc857a88ad2e39-6"&gt;&lt;/a&gt;map /  &lt;span class="p"&gt;&amp;lt;&lt;/span&gt;Plug&lt;span class="p"&gt;&amp;gt;(&lt;/span&gt;&lt;span class="nb"&gt;incsearch&lt;/span&gt;&lt;span class="p"&gt;-&lt;/span&gt;forward&lt;span class="p"&gt;)&lt;/span&gt;
-&lt;a name="rest_code_d378142aa9634156aefc857a88ad2e39-7"&gt;&lt;/a&gt;map ?  &lt;span class="p"&gt;&amp;lt;&lt;/span&gt;Plug&lt;span class="p"&gt;&amp;gt;(&lt;/span&gt;&lt;span class="nb"&gt;incsearch&lt;/span&gt;&lt;span class="p"&gt;-&lt;/span&gt;backward&lt;span class="p"&gt;)&lt;/span&gt;
-&lt;a name="rest_code_d378142aa9634156aefc857a88ad2e39-8"&gt;&lt;/a&gt;
-&lt;a name="rest_code_d378142aa9634156aefc857a88ad2e39-9"&gt;&lt;/a&gt;&lt;span class="c"&gt;" Quitar resaltado luego de buscar&lt;/span&gt;
-&lt;a name="rest_code_d378142aa9634156aefc857a88ad2e39-10"&gt;&lt;/a&gt;&lt;span class="k"&gt;let&lt;/span&gt; &lt;span class="k"&gt;g&lt;/span&gt;:&lt;span class="nb"&gt;incsearch&lt;/span&gt;#auto_nohlsearch &lt;span class="p"&gt;=&lt;/span&gt; &lt;span class="m"&gt;1&lt;/span&gt;
+&lt;figcaption&gt;
+&lt;p&gt;incsearch&lt;/p&gt;
+&lt;/figcaption&gt;
+&lt;/figure&gt;
+&lt;pre class="code vim"&gt;&lt;a name="rest_code_7b6aa305d59f494fb9a55f6ed95880ee-1"&gt;&lt;/a&gt;Plug &lt;span class="s1"&gt;'haya14busa/incsearch.vim'&lt;/span&gt;
+&lt;a name="rest_code_7b6aa305d59f494fb9a55f6ed95880ee-2"&gt;&lt;/a&gt;
+&lt;a name="rest_code_7b6aa305d59f494fb9a55f6ed95880ee-3"&gt;&lt;/a&gt;...
+&lt;a name="rest_code_7b6aa305d59f494fb9a55f6ed95880ee-4"&gt;&lt;/a&gt;
+&lt;a name="rest_code_7b6aa305d59f494fb9a55f6ed95880ee-5"&gt;&lt;/a&gt;&lt;span class="c"&gt;" Maps requeridos&lt;/span&gt;
+&lt;a name="rest_code_7b6aa305d59f494fb9a55f6ed95880ee-6"&gt;&lt;/a&gt;map /  &lt;span class="p"&gt;&amp;lt;&lt;/span&gt;Plug&lt;span class="p"&gt;&amp;gt;(&lt;/span&gt;&lt;span class="nb"&gt;incsearch&lt;/span&gt;&lt;span class="p"&gt;-&lt;/span&gt;forward&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;a name="rest_code_7b6aa305d59f494fb9a55f6ed95880ee-7"&gt;&lt;/a&gt;map ?  &lt;span class="p"&gt;&amp;lt;&lt;/span&gt;Plug&lt;span class="p"&gt;&amp;gt;(&lt;/span&gt;&lt;span class="nb"&gt;incsearch&lt;/span&gt;&lt;span class="p"&gt;-&lt;/span&gt;backward&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;a name="rest_code_7b6aa305d59f494fb9a55f6ed95880ee-8"&gt;&lt;/a&gt;
+&lt;a name="rest_code_7b6aa305d59f494fb9a55f6ed95880ee-9"&gt;&lt;/a&gt;&lt;span class="c"&gt;" Quitar resaltado luego de buscar&lt;/span&gt;
+&lt;a name="rest_code_7b6aa305d59f494fb9a55f6ed95880ee-10"&gt;&lt;/a&gt;&lt;span class="k"&gt;let&lt;/span&gt; &lt;span class="k"&gt;g&lt;/span&gt;:&lt;span class="nb"&gt;incsearch&lt;/span&gt;#auto_nohlsearch &lt;span class="p"&gt;=&lt;/span&gt; &lt;span class="m"&gt;1&lt;/span&gt;
 &lt;/pre&gt;&lt;ul class="simple"&gt;
 &lt;li&gt;&lt;p&gt;&lt;span class="raw-html"&gt;&lt;i class="fa fa-external-link"&gt;&lt;/i&gt;&lt;/span&gt; &lt;a class="reference external" href="https://github.com/haya14busa/incsearch.vim"&gt;https://github.com/haya14busa/incsearch.vim&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
 &lt;li&gt;&lt;p&gt;&lt;span class="raw-html"&gt;&lt;i class="fa fa-info-circle"&gt;&lt;/i&gt;&lt;/span&gt; &lt;code class="docutils literal"&gt;:h incsearch.txt&lt;/code&gt;&lt;/p&gt;&lt;/li&gt;
 &lt;/ul&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;div class="section" id="utilidades"&gt;
+&lt;/section&gt;
+&lt;/section&gt;
+&lt;section id="utilidades"&gt;
 &lt;h3&gt;&lt;a class="toc-backref" href="https://stsewd.dev/posts/neovim-plugins/#id46"&gt;Utilidades&lt;/a&gt;&lt;/h3&gt;
-&lt;div class="section" id="surround"&gt;
+&lt;section id="surround"&gt;
 &lt;h4&gt;&lt;a class="toc-backref" href="https://stsewd.dev/posts/neovim-plugins/#id47"&gt;Surround&lt;/a&gt;&lt;/h4&gt;
 &lt;blockquote&gt;
 &lt;p&gt;Facilita poner/quitar/cambiar comillas, paréntesis, tags, etc sobre un texto.&lt;/p&gt;
 &lt;/blockquote&gt;
-&lt;pre class="code vim"&gt;&lt;a name="rest_code_7fc244cf058d4ffdabc307ef1de8e17f-1"&gt;&lt;/a&gt;Plug &lt;span class="s1"&gt;'tpope/vim-surround'&lt;/span&gt;
+&lt;pre class="code vim"&gt;&lt;a name="rest_code_d1d25ac318b247af8058cf4573c3ab00-1"&gt;&lt;/a&gt;Plug &lt;span class="s1"&gt;'tpope/vim-surround'&lt;/span&gt;
 &lt;/pre&gt;&lt;ul class="simple"&gt;
 &lt;li&gt;&lt;p&gt;&lt;span class="raw-html"&gt;&lt;i class="fa fa-external-link"&gt;&lt;/i&gt;&lt;/span&gt; &lt;a class="reference external" href="https://github.com/tpope/vim-surround"&gt;https://github.com/tpope/vim-surround&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
 &lt;li&gt;&lt;p&gt;&lt;span class="raw-html"&gt;&lt;i class="fa fa-info-circle"&gt;&lt;/i&gt;&lt;/span&gt; &lt;code class="docutils literal"&gt;:h surround&lt;/code&gt;&lt;/p&gt;&lt;/li&gt;
 &lt;/ul&gt;
-&lt;/div&gt;
-&lt;div class="section" id="repeat"&gt;
+&lt;/section&gt;
+&lt;section id="repeat"&gt;
 &lt;h4&gt;&lt;a class="toc-backref" href="https://stsewd.dev/posts/neovim-plugins/#id48"&gt;Repeat&lt;/a&gt;&lt;/h4&gt;
 &lt;blockquote&gt;
 &lt;p&gt;Repetir acciones de plugins con &lt;code class="kbd docutils literal"&gt;.&lt;/code&gt;.&lt;/p&gt;
 &lt;/blockquote&gt;
-&lt;pre class="code vim"&gt;&lt;a name="rest_code_03cb76818d0d4a3b953fd1c165cdc25e-1"&gt;&lt;/a&gt;Plug &lt;span class="s1"&gt;'tpope/vim-repeat'&lt;/span&gt;
+&lt;pre class="code vim"&gt;&lt;a name="rest_code_7230d33985f44a7e85e2ec866eeb0023-1"&gt;&lt;/a&gt;Plug &lt;span class="s1"&gt;'tpope/vim-repeat'&lt;/span&gt;
 &lt;/pre&gt;&lt;ul class="simple"&gt;
 &lt;li&gt;&lt;p&gt;&lt;span class="raw-html"&gt;&lt;i class="fa fa-external-link"&gt;&lt;/i&gt;&lt;/span&gt; &lt;a class="reference external" href="https://github.com/tpope/vim-repeat"&gt;https://github.com/tpope/vim-repeat&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
 &lt;li&gt;&lt;p&gt;&lt;span class="raw-html"&gt;&lt;i class="fa fa-info-circle"&gt;&lt;/i&gt;&lt;/span&gt; &lt;a class="reference external" href="https://github.com/tpope/vim-repeat#repeatvim"&gt;https://github.com/tpope/vim-repeat#repeatvim&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
 &lt;/ul&gt;
-&lt;/div&gt;
-&lt;div class="section" id="eunuch"&gt;
+&lt;/section&gt;
+&lt;section id="eunuch"&gt;
 &lt;h4&gt;&lt;a class="toc-backref" href="https://stsewd.dev/posts/neovim-plugins/#id49"&gt;Eunuch&lt;/a&gt;&lt;/h4&gt;
 &lt;blockquote&gt;
 &lt;p&gt;Provee comandos de sistemas UNIX.&lt;/p&gt;
 &lt;/blockquote&gt;
-&lt;pre class="code vim"&gt;&lt;a name="rest_code_ca5c4f4032b3463dad0f3ce378d869ba-1"&gt;&lt;/a&gt;Plug &lt;span class="s1"&gt;'tpope/vim-eunuch'&lt;/span&gt;
+&lt;pre class="code vim"&gt;&lt;a name="rest_code_315f8c984bf7492d9dfefd2c200ef375-1"&gt;&lt;/a&gt;Plug &lt;span class="s1"&gt;'tpope/vim-eunuch'&lt;/span&gt;
 &lt;/pre&gt;&lt;ul class="simple"&gt;
 &lt;li&gt;&lt;p&gt;&lt;span class="raw-html"&gt;&lt;i class="fa fa-terminal"&gt;&lt;/i&gt;&lt;/span&gt;&lt;/p&gt;
 &lt;ul&gt;
@@ -1202,43 +1228,43 @@ sólo se encarga de leerlo, pero existen plugins que nos facilitan esta tarea.&l
 &lt;li&gt;&lt;p&gt;&lt;span class="raw-html"&gt;&lt;i class="fa fa-external-link"&gt;&lt;/i&gt;&lt;/span&gt; &lt;a class="reference external" href="https://github.com/tpope/vim-eunuch"&gt;https://github.com/tpope/vim-eunuch&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
 &lt;li&gt;&lt;p&gt;&lt;span class="raw-html"&gt;&lt;i class="fa fa-info-circle"&gt;&lt;/i&gt;&lt;/span&gt; &lt;code class="docutils literal"&gt;:h eunuch&lt;/code&gt;&lt;/p&gt;&lt;/li&gt;
 &lt;/ul&gt;
-&lt;/div&gt;
-&lt;div class="section" id="auto-pairs"&gt;
+&lt;/section&gt;
+&lt;section id="auto-pairs"&gt;
 &lt;h4&gt;&lt;a class="toc-backref" href="https://stsewd.dev/posts/neovim-plugins/#id50"&gt;Auto-pairs&lt;/a&gt;&lt;/h4&gt;
 &lt;blockquote&gt;
 &lt;p&gt;Inserta pares de comillas y paréntesis.&lt;/p&gt;
 &lt;/blockquote&gt;
-&lt;pre class="code vim"&gt;&lt;a name="rest_code_273deb6216cd4c1ba64a3f4c21425b59-1"&gt;&lt;/a&gt;Plug &lt;span class="s1"&gt;'jiangmiao/auto-pairs'&lt;/span&gt;
+&lt;pre class="code vim"&gt;&lt;a name="rest_code_aec65f2ac69940f4a9b8e1a47a52bae9-1"&gt;&lt;/a&gt;Plug &lt;span class="s1"&gt;'jiangmiao/auto-pairs'&lt;/span&gt;
 &lt;/pre&gt;&lt;ul class="simple"&gt;
 &lt;li&gt;&lt;p&gt;&lt;span class="raw-html"&gt;&lt;i class="fa fa-external-link"&gt;&lt;/i&gt;&lt;/span&gt; &lt;a class="reference external" href="https://github.com/jiangmiao/auto-pairs"&gt;https://github.com/jiangmiao/auto-pairs&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
 &lt;li&gt;&lt;p&gt;&lt;span class="raw-html"&gt;&lt;i class="fa fa-info-circle"&gt;&lt;/i&gt;&lt;/span&gt; &lt;code class="docutils literal"&gt;:h AutoPairs.txt&lt;/code&gt;&lt;/p&gt;&lt;/li&gt;
 &lt;/ul&gt;
-&lt;/div&gt;
-&lt;div class="section" id="nerdcommenter"&gt;
+&lt;/section&gt;
+&lt;section id="nerdcommenter"&gt;
 &lt;h4&gt;&lt;a class="toc-backref" href="https://stsewd.dev/posts/neovim-plugins/#id51"&gt;Nerdcommenter&lt;/a&gt;&lt;/h4&gt;
 &lt;blockquote&gt;
 &lt;p&gt;Facilita agregar y quitar comentarios.&lt;/p&gt;
 &lt;/blockquote&gt;
-&lt;pre class="code vim"&gt;&lt;a name="rest_code_0c8755b7b1ea4619b49ac39f3c2b4811-1"&gt;&lt;/a&gt;Plug &lt;span class="s1"&gt;'scrooloose/nerdcommenter'&lt;/span&gt;
-&lt;a name="rest_code_0c8755b7b1ea4619b49ac39f3c2b4811-2"&gt;&lt;/a&gt;
-&lt;a name="rest_code_0c8755b7b1ea4619b49ac39f3c2b4811-3"&gt;&lt;/a&gt;...
-&lt;a name="rest_code_0c8755b7b1ea4619b49ac39f3c2b4811-4"&gt;&lt;/a&gt;
-&lt;a name="rest_code_0c8755b7b1ea4619b49ac39f3c2b4811-5"&gt;&lt;/a&gt;&lt;span class="k"&gt;let&lt;/span&gt; &lt;span class="k"&gt;g&lt;/span&gt;:NERDSpaceDelims &lt;span class="p"&gt;=&lt;/span&gt; &lt;span class="m"&gt;1&lt;/span&gt;  &lt;span class="c"&gt;" Agregar un espacio después del delimitador del comentario&lt;/span&gt;
-&lt;a name="rest_code_0c8755b7b1ea4619b49ac39f3c2b4811-6"&gt;&lt;/a&gt;&lt;span class="k"&gt;let&lt;/span&gt; &lt;span class="k"&gt;g&lt;/span&gt;:NERDTrimTrailingWhitespace &lt;span class="p"&gt;=&lt;/span&gt; &lt;span class="m"&gt;1&lt;/span&gt;  &lt;span class="c"&gt;" Quitar espacios al quitar comentario&lt;/span&gt;
+&lt;pre class="code vim"&gt;&lt;a name="rest_code_bc443949ebf846a3805ebb2d4c6bee6e-1"&gt;&lt;/a&gt;Plug &lt;span class="s1"&gt;'scrooloose/nerdcommenter'&lt;/span&gt;
+&lt;a name="rest_code_bc443949ebf846a3805ebb2d4c6bee6e-2"&gt;&lt;/a&gt;
+&lt;a name="rest_code_bc443949ebf846a3805ebb2d4c6bee6e-3"&gt;&lt;/a&gt;...
+&lt;a name="rest_code_bc443949ebf846a3805ebb2d4c6bee6e-4"&gt;&lt;/a&gt;
+&lt;a name="rest_code_bc443949ebf846a3805ebb2d4c6bee6e-5"&gt;&lt;/a&gt;&lt;span class="k"&gt;let&lt;/span&gt; &lt;span class="k"&gt;g&lt;/span&gt;:NERDSpaceDelims &lt;span class="p"&gt;=&lt;/span&gt; &lt;span class="m"&gt;1&lt;/span&gt;  &lt;span class="c"&gt;" Agregar un espacio después del delimitador del comentario&lt;/span&gt;
+&lt;a name="rest_code_bc443949ebf846a3805ebb2d4c6bee6e-6"&gt;&lt;/a&gt;&lt;span class="k"&gt;let&lt;/span&gt; &lt;span class="k"&gt;g&lt;/span&gt;:NERDTrimTrailingWhitespace &lt;span class="p"&gt;=&lt;/span&gt; &lt;span class="m"&gt;1&lt;/span&gt;  &lt;span class="c"&gt;" Quitar espacios al quitar comentario&lt;/span&gt;
 &lt;/pre&gt;&lt;ul class="simple"&gt;
 &lt;li&gt;&lt;p&gt;&lt;span class="raw-html"&gt;&lt;i class="fa fa-external-link"&gt;&lt;/i&gt;&lt;/span&gt; &lt;a class="reference external" href="https://github.com/scrooloose/nerdcommenter"&gt;https://github.com/scrooloose/nerdcommenter&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
 &lt;li&gt;&lt;p&gt;&lt;span class="raw-html"&gt;&lt;i class="fa fa-info-circle"&gt;&lt;/i&gt;&lt;/span&gt; &lt;code class="docutils literal"&gt;:h NERDCommenter&lt;/code&gt;&lt;/p&gt;&lt;/li&gt;
 &lt;/ul&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;div class="section" id="git"&gt;
+&lt;/section&gt;
+&lt;/section&gt;
+&lt;section id="git"&gt;
 &lt;h3&gt;&lt;a class="toc-backref" href="https://stsewd.dev/posts/neovim-plugins/#id52"&gt;Git&lt;/a&gt;&lt;/h3&gt;
-&lt;div class="section" id="fugitive"&gt;
+&lt;section id="fugitive"&gt;
 &lt;h4&gt;&lt;a class="toc-backref" href="https://stsewd.dev/posts/neovim-plugins/#id53"&gt;Fugitive&lt;/a&gt;&lt;/h4&gt;
 &lt;blockquote&gt;
 &lt;p&gt;Provee comandos de git.&lt;/p&gt;
 &lt;/blockquote&gt;
-&lt;pre class="code vim"&gt;&lt;a name="rest_code_1568ac6887e7474a8766811c604706f9-1"&gt;&lt;/a&gt;Plug &lt;span class="s1"&gt;'tpope/vim-fugitive'&lt;/span&gt;
+&lt;pre class="code vim"&gt;&lt;a name="rest_code_26033b30c74f403a8764df926703d293-1"&gt;&lt;/a&gt;Plug &lt;span class="s1"&gt;'tpope/vim-fugitive'&lt;/span&gt;
 &lt;/pre&gt;&lt;ul class="simple"&gt;
 &lt;li&gt;&lt;p&gt;&lt;span class="raw-html"&gt;&lt;i class="fa fa-terminal"&gt;&lt;/i&gt;&lt;/span&gt;&lt;/p&gt;
 &lt;ul&gt;
@@ -1250,68 +1276,72 @@ sólo se encarga de leerlo, pero existen plugins que nos facilitan esta tarea.&l
 &lt;li&gt;&lt;p&gt;&lt;span class="raw-html"&gt;&lt;i class="fa fa-external-link"&gt;&lt;/i&gt;&lt;/span&gt; &lt;a class="reference external" href="https://github.com/tpope/vim-fugitive"&gt;https://github.com/tpope/vim-fugitive&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
 &lt;li&gt;&lt;p&gt;&lt;span class="raw-html"&gt;&lt;i class="fa fa-info-circle"&gt;&lt;/i&gt;&lt;/span&gt; &lt;code class="docutils literal"&gt;:h fugitive&lt;/code&gt;&lt;/p&gt;&lt;/li&gt;
 &lt;/ul&gt;
-&lt;/div&gt;
-&lt;div class="section" id="gitgutter"&gt;
+&lt;/section&gt;
+&lt;section id="gitgutter"&gt;
 &lt;h4&gt;&lt;a class="toc-backref" href="https://stsewd.dev/posts/neovim-plugins/#id54"&gt;Gitgutter&lt;/a&gt;&lt;/h4&gt;
 &lt;blockquote&gt;
 &lt;p&gt;Muestra cambios hechos en el archivo en la columna de signos.&lt;/p&gt;
 &lt;/blockquote&gt;
-&lt;div class="figure"&gt;
+&lt;figure&gt;
 &lt;a class="reference external image-reference" href="https://camo.githubusercontent.com/f88161827e0cbb3144455b9e5c7582fdd5b5fc83/68747470733a2f2f7261772e6769746875622e636f6d2f616972626c6164652f76696d2d6769746775747465722f6d61737465722f73637265656e73686f742e706e67"&gt;&lt;img alt="incsearch" src="https://camo.githubusercontent.com/f88161827e0cbb3144455b9e5c7582fdd5b5fc83/68747470733a2f2f7261772e6769746875622e636f6d2f616972626c6164652f76696d2d6769746775747465722f6d61737465722f73637265656e73686f742e706e67"&gt;&lt;/a&gt;
-&lt;p class="caption"&gt;incsearch&lt;/p&gt;
-&lt;/div&gt;
-&lt;pre class="code vim"&gt;&lt;a name="rest_code_f327f24b8b294d248a815e71b2962b05-1"&gt;&lt;/a&gt;Plug &lt;span class="s1"&gt;'airblade/vim-gitgutter'&lt;/span&gt;
-&lt;a name="rest_code_f327f24b8b294d248a815e71b2962b05-2"&gt;&lt;/a&gt;
-&lt;a name="rest_code_f327f24b8b294d248a815e71b2962b05-3"&gt;&lt;/a&gt;...
-&lt;a name="rest_code_f327f24b8b294d248a815e71b2962b05-4"&gt;&lt;/a&gt;
-&lt;a name="rest_code_f327f24b8b294d248a815e71b2962b05-5"&gt;&lt;/a&gt;&lt;span class="c"&gt;" Actualizar barra cada 250 mili segundos&lt;/span&gt;
-&lt;a name="rest_code_f327f24b8b294d248a815e71b2962b05-6"&gt;&lt;/a&gt;&lt;span class="k"&gt;set&lt;/span&gt; &lt;span class="nb"&gt;updatetime&lt;/span&gt;&lt;span class="p"&gt;=&lt;/span&gt;&lt;span class="m"&gt;250&lt;/span&gt;
+&lt;figcaption&gt;
+&lt;p&gt;incsearch&lt;/p&gt;
+&lt;/figcaption&gt;
+&lt;/figure&gt;
+&lt;pre class="code vim"&gt;&lt;a name="rest_code_840d0641dec844ffb794d0f78fdf8940-1"&gt;&lt;/a&gt;Plug &lt;span class="s1"&gt;'airblade/vim-gitgutter'&lt;/span&gt;
+&lt;a name="rest_code_840d0641dec844ffb794d0f78fdf8940-2"&gt;&lt;/a&gt;
+&lt;a name="rest_code_840d0641dec844ffb794d0f78fdf8940-3"&gt;&lt;/a&gt;...
+&lt;a name="rest_code_840d0641dec844ffb794d0f78fdf8940-4"&gt;&lt;/a&gt;
+&lt;a name="rest_code_840d0641dec844ffb794d0f78fdf8940-5"&gt;&lt;/a&gt;&lt;span class="c"&gt;" Actualizar barra cada 250 mili segundos&lt;/span&gt;
+&lt;a name="rest_code_840d0641dec844ffb794d0f78fdf8940-6"&gt;&lt;/a&gt;&lt;span class="k"&gt;set&lt;/span&gt; &lt;span class="nb"&gt;updatetime&lt;/span&gt;&lt;span class="p"&gt;=&lt;/span&gt;&lt;span class="m"&gt;250&lt;/span&gt;
 &lt;/pre&gt;&lt;ul class="simple"&gt;
 &lt;li&gt;&lt;p&gt;&lt;span class="raw-html"&gt;&lt;i class="fa fa-external-link"&gt;&lt;/i&gt;&lt;/span&gt; &lt;a class="reference external" href="https://github.com/airblade/vim-gitgutter"&gt;https://github.com/airblade/vim-gitgutter&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
 &lt;li&gt;&lt;p&gt;&lt;span class="raw-html"&gt;&lt;i class="fa fa-info-circle"&gt;&lt;/i&gt;&lt;/span&gt; &lt;code class="docutils literal"&gt;:h gitgutter.txt&lt;/code&gt;&lt;/p&gt;&lt;/li&gt;
 &lt;/ul&gt;
-&lt;/div&gt;
-&lt;div class="section" id="nerdtree-git-plugin"&gt;
+&lt;/section&gt;
+&lt;section id="nerdtree-git-plugin"&gt;
 &lt;h4&gt;&lt;a class="toc-backref" href="https://stsewd.dev/posts/neovim-plugins/#id55"&gt;Nerdtree git plugin&lt;/a&gt;&lt;/h4&gt;
 &lt;blockquote&gt;
 &lt;p&gt;Muestra el estado de los archivos en Nerdtree.&lt;/p&gt;
 &lt;/blockquote&gt;
-&lt;div class="figure"&gt;
+&lt;figure&gt;
 &lt;a class="reference external image-reference" href="https://camo.githubusercontent.com/3fe0388df11cb787f36e1fa108398fd3f757eef4/687474703a2f2f692e696d6775722e636f6d2f6a534377476a552e6769663f31"&gt;&lt;img alt="nerdtree git plugin" src="https://camo.githubusercontent.com/3fe0388df11cb787f36e1fa108398fd3f757eef4/687474703a2f2f692e696d6775722e636f6d2f6a534377476a552e6769663f31"&gt;&lt;/a&gt;
-&lt;p class="caption"&gt;Nerdtree git plugin&lt;/p&gt;
-&lt;/div&gt;
-&lt;pre class="code vim"&gt;&lt;a name="rest_code_51e92034df024d72b58ae444ab614c4c-1"&gt;&lt;/a&gt;Plug &lt;span class="s1"&gt;'xuyuanp/nerdtree-git-plugin'&lt;/span&gt;
+&lt;figcaption&gt;
+&lt;p&gt;Nerdtree git plugin&lt;/p&gt;
+&lt;/figcaption&gt;
+&lt;/figure&gt;
+&lt;pre class="code vim"&gt;&lt;a name="rest_code_0409edba64f0410ba35d706905cbccc1-1"&gt;&lt;/a&gt;Plug &lt;span class="s1"&gt;'xuyuanp/nerdtree-git-plugin'&lt;/span&gt;
 &lt;/pre&gt;&lt;ul class="simple"&gt;
 &lt;li&gt;&lt;p&gt;&lt;span class="raw-html"&gt;&lt;i class="fa fa-external-link"&gt;&lt;/i&gt;&lt;/span&gt; &lt;a class="reference external" href="https://github.com/xuyuanp/nerdtree-git-plugin"&gt;https://github.com/xuyuanp/nerdtree-git-plugin&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
 &lt;li&gt;&lt;p&gt;&lt;span class="raw-html"&gt;&lt;i class="fa fa-info-circle"&gt;&lt;/i&gt;&lt;/span&gt; &lt;a class="reference external" href="https://github.com/xuyuanp/nerdtree-git-plugin#faq"&gt;https://github.com/xuyuanp/nerdtree-git-plugin#faq&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
 &lt;/ul&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;div class="section" id="buscando-plugins"&gt;
+&lt;/section&gt;
+&lt;/section&gt;
+&lt;/section&gt;
+&lt;section id="buscando-plugins"&gt;
 &lt;h2&gt;Buscando plugins&lt;/h2&gt;
 &lt;p&gt;No existe un repositorio oficial de plugins para Neovim,
 por lo que hace que la búsqueda de nuevos plugins
 (bien mantenidos y sin errores) sea un poco difícil.&lt;/p&gt;
-&lt;div class="section" id="id11"&gt;
+&lt;section id="id11"&gt;
 &lt;h3&gt;&lt;a class="reference external" href="https://github.com"&gt;GitHub&lt;/a&gt;&lt;/h3&gt;
 &lt;p&gt;Como habrás observado, la mayoría de plugins están alojados en GitHub,
 así que es un buen lugar para buscar.&lt;/p&gt;
 &lt;p&gt;Trata de buscar repositorios con la palabra &lt;cite&gt;vim&lt;/cite&gt;, &lt;cite&gt;neovim&lt;/cite&gt;, &lt;cite&gt;nvim&lt;/cite&gt; o que terminen en &lt;cite&gt;.vim&lt;/cite&gt;
 (los que son sólo compatibles con Neovim tienen la extensión &lt;cite&gt;.nvim&lt;/cite&gt;).&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class="section" id="id12"&gt;
+&lt;/section&gt;
+&lt;section id="id12"&gt;
 &lt;h3&gt;&lt;a class="reference external" href="https://github.com/search?l=Vim+script&amp;amp;q=dotfiles&amp;amp;type=Repositories&amp;amp;utf8=%E2%9C%93"&gt;Dotfiles&lt;/a&gt;&lt;/h3&gt;
 &lt;p&gt;Otra manera de buscar plugins es buscando en los &lt;cite&gt;dotfiles&lt;/cite&gt; de varios usuarios
 (&lt;a class="reference external" href="https://github.com/stsewd/dotfiles"&gt;mis dotfiles&lt;/a&gt;).&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class="section" id="id13"&gt;
+&lt;/section&gt;
+&lt;section id="id13"&gt;
 &lt;h3&gt;&lt;a class="reference external" href="http://vimawesome.com/"&gt;Vim awesome&lt;/a&gt;&lt;/h3&gt;
 &lt;p&gt;Colección de plugins más usados.
 Ten en cuenta que la mayor parte (todos en realidad) son plugins para Vim,
 así que tal vez no encuentres mejores alternativas para Neovim.&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class="section" id="id14"&gt;
+&lt;/section&gt;
+&lt;section id="id14"&gt;
 &lt;h3&gt;&lt;a class="reference external" href="https://github.com/neovim/neovim/wiki/Related-projects#plugins"&gt;Documentación de Neovim&lt;/a&gt;&lt;/h3&gt;
 &lt;p&gt;Lista de varios plugins que hacen uso de las características de Neovim.&lt;/p&gt;
 &lt;hr class="docutils"&gt;
@@ -1323,9 +1353,9 @@ así que tal vez no encuentres mejores alternativas para Neovim.&lt;/p&gt;
 &lt;dd&gt;&lt;p&gt;&lt;a class="reference external" href="https://neovim.io/doc/user/remote_plugin.html"&gt;https://neovim.io/doc/user/remote_plugin.html&lt;/a&gt;&lt;/p&gt;
 &lt;/dd&gt;
 &lt;/dl&gt;
-&lt;/div&gt;
-&lt;/div&gt;&lt;/div&gt;</description><guid>https://stsewd.dev/posts/neovim-plugins/</guid><pubDate>Sun, 20 Aug 2017 05:00:00 GMT</pubDate></item><item><title>Neovim, Instalación y Configuración Básica</title><link>https://stsewd.dev/posts/neovim-installation-configuration/</link><dc:creator>Santos Gallegos</dc:creator><description>&lt;div&gt;&lt;a class="reference external image-reference" href="https://stsewd.dev/images/nvim/neovim-logo.png"&gt;&lt;img alt="Logo de Neovim" class="align-center" src="https://stsewd.dev/images/nvim/neovim-logo.png"&gt;&lt;/a&gt;
-&lt;div class="section" id="que-es-neovim"&gt;
+&lt;/section&gt;
+&lt;/section&gt;&lt;/div&gt;</description><guid>https://stsewd.dev/posts/neovim-plugins/</guid><pubDate>Sun, 20 Aug 2017 05:00:00 GMT</pubDate></item><item><title>Neovim, Instalación y Configuración Básica</title><link>https://stsewd.dev/posts/neovim-installation-configuration/</link><dc:creator>Santos Gallegos</dc:creator><description>&lt;div&gt;&lt;a class="reference external image-reference" href="https://stsewd.dev/images/nvim/neovim-logo.png"&gt;&lt;img alt="Logo de Neovim" class="align-center" src="https://stsewd.dev/images/nvim/neovim-logo.png"&gt;&lt;/a&gt;
+&lt;section id="que-es-neovim"&gt;
 &lt;h2&gt;¿Qué es Neovim?&lt;/h2&gt;
 &lt;p&gt;&lt;a class="reference external" href="https://neovim.io/charter/"&gt;Neovim&lt;/a&gt; es una refactorización del código de &lt;a class="reference external" href="http://www.vim.org/"&gt;Vim&lt;/a&gt;,
 es un fork, no un clon de este &lt;a class="footnote-reference brackets" href="https://stsewd.dev/posts/neovim-installation-configuration/#fork-no-clone" id="id1"&gt;1&lt;/a&gt;.
@@ -1335,8 +1365,8 @@ Trae lo bueno de Vim con una mejor experiencia &lt;em&gt;fuera de caja&lt;/em&gt
 Nació como mejora de Vi (1976).
 Su interfaz no es gráfica, sino basada en texto
 (aunque existen varias implementaciones con interfaz gráfica, como gVim).&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class="section" id="neovim-vs-vim"&gt;
+&lt;/section&gt;
+&lt;section id="neovim-vs-vim"&gt;
 &lt;h2&gt;Neovim vs Vim&lt;/h2&gt;
 &lt;p&gt;¿Qué realmente ofrece Neovim frente a Vim,
 además de tener un código más limpio?&lt;/p&gt;
@@ -1350,8 +1380,8 @@ además de tener un código más limpio?&lt;/p&gt;
 (de manera segura y asíncrona). &lt;a class="footnote-reference brackets" href="https://stsewd.dev/posts/neovim-installation-configuration/#api-neovim" id="id6"&gt;6&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
 &lt;li&gt;&lt;p&gt;Mejor integración con el mouse.&lt;/p&gt;&lt;/li&gt;
 &lt;/ul&gt;
-&lt;/div&gt;
-&lt;div class="section" id="por-que-usar-neovim"&gt;
+&lt;/section&gt;
+&lt;section id="por-que-usar-neovim"&gt;
 &lt;h2&gt;¿Por qué usar Neovim?&lt;/h2&gt;
 &lt;p&gt;Antes de describir las ventajas de usar Neovim,
 debo aclarar que las mismas &lt;strong&gt;son válidas para Vim&lt;/strong&gt;,
@@ -1380,8 +1410,8 @@ como: auto completado, corrector ortográfico, pestañas, coloreado de sintaxis,
 búsqueda y reemplazo con expresiones regulares, etc.&lt;/p&gt;
 &lt;p&gt;Con todas las características mencionadas Neovim será &lt;em&gt;el único editor&lt;/em&gt; que necesites
 para programar en cualquier lenguaje, o editar texto en general.&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class="section" id="instalacion"&gt;
+&lt;/section&gt;
+&lt;section id="instalacion"&gt;
 &lt;h2&gt;Instalación&lt;/h2&gt;
 &lt;p&gt;Para la instalación de Neovim he usado dos máquinas virtuales:&lt;/p&gt;
 &lt;ul class="simple"&gt;
@@ -1392,43 +1422,47 @@ para programar en cualquier lenguaje, o editar texto en general.&lt;/p&gt;
 puedes seguir el proceso de instalación en la
 &lt;a class="reference external" href="https://github.com/neovim/neovim/wiki/Installing-Neovim"&gt;documentación oficial de Neovim&lt;/a&gt;.&lt;/p&gt;
 &lt;p&gt;Si no deseas instalar nada en tu sistema, puedes hacer uso de la &lt;code class="docutils literal"&gt;Appimage&lt;/code&gt; de Neovim.&lt;/p&gt;
-&lt;pre class="code sh"&gt;&lt;a name="rest_code_ad9d8962d61f41ccba54e1fea3a68caf-1"&gt;&lt;/a&gt;curl -LO https://github.com/neovim/neovim/releases/download/nightly/nvim.appimage
-&lt;a name="rest_code_ad9d8962d61f41ccba54e1fea3a68caf-2"&gt;&lt;/a&gt;chmod u+x nvim.appimage
-&lt;/pre&gt;&lt;div class="section" id="ubuntu"&gt;
+&lt;pre class="code sh"&gt;&lt;a name="rest_code_0433ad07789d45c19c52c26b65415af4-1"&gt;&lt;/a&gt;curl -LO https://github.com/neovim/neovim/releases/download/nightly/nvim.appimage
+&lt;a name="rest_code_0433ad07789d45c19c52c26b65415af4-2"&gt;&lt;/a&gt;chmod u+x nvim.appimage
+&lt;/pre&gt;&lt;section id="ubuntu"&gt;
 &lt;h3&gt;Ubuntu&lt;/h3&gt;
 &lt;p&gt;Para tener la última versión hay que agregar la
 &lt;a class="reference external" href="https://launchpad.net/%7Eneovim-ppa/+archive/ubuntu/unstable"&gt;PPA de Neovim&lt;/a&gt;.
 Ejecuta el siguiente comando en la terminal.&lt;/p&gt;
-&lt;pre class="code sh"&gt;&lt;a name="rest_code_72aa2b4c01a54ac28573e3851ed8e91e-1"&gt;&lt;/a&gt;sudo add-apt-repository ppa:neovim-ppa/unstable
+&lt;pre class="code sh"&gt;&lt;a name="rest_code_a87ec20a0854497ca8c78cd7c09c9101-1"&gt;&lt;/a&gt;sudo add-apt-repository ppa:neovim-ppa/unstable
 &lt;/pre&gt;&lt;p&gt;Luego, hay que actualizar los paquetes e instalar Neovim.&lt;/p&gt;
-&lt;pre class="code sh"&gt;&lt;a name="rest_code_1aacc5699bd641d98cbce9dd74cbaefb-1"&gt;&lt;/a&gt;sudo apt-get update
-&lt;a name="rest_code_1aacc5699bd641d98cbce9dd74cbaefb-2"&gt;&lt;/a&gt;sudo apt-get install neovim
-&lt;/pre&gt;&lt;/div&gt;
-&lt;div class="section" id="fedora"&gt;
+&lt;pre class="code sh"&gt;&lt;a name="rest_code_5296379a7537465193892505fcdff58c-1"&gt;&lt;/a&gt;sudo apt-get update
+&lt;a name="rest_code_5296379a7537465193892505fcdff58c-2"&gt;&lt;/a&gt;sudo apt-get install neovim
+&lt;/pre&gt;&lt;/section&gt;
+&lt;section id="fedora"&gt;
 &lt;h3&gt;Fedora&lt;/h3&gt;
 &lt;p&gt;Para instalar la última versión de Neovim en Fedora,
 ejecuta el siguiente comando.&lt;/p&gt;
-&lt;pre class="code sh"&gt;&lt;a name="rest_code_e4d2811660ae4575afa49020b4832bd6-1"&gt;&lt;/a&gt;sudo dnf install neovim
-&lt;/pre&gt;&lt;/div&gt;
-&lt;div class="section" id="comprobando-la-instalacion"&gt;
+&lt;pre class="code sh"&gt;&lt;a name="rest_code_80822f4491764f53be2dffe2f5957d97-1"&gt;&lt;/a&gt;sudo dnf install neovim
+&lt;/pre&gt;&lt;/section&gt;
+&lt;section id="comprobando-la-instalacion"&gt;
 &lt;h3&gt;Comprobando la instalación&lt;/h3&gt;
 &lt;p&gt;Para comprobar que todo ha salido bien,
 en la terminal ejecuta el comando &lt;code class="docutils literal"&gt;nvim&lt;/code&gt;.&lt;/p&gt;
-&lt;pre class="code sh"&gt;&lt;a name="rest_code_c8323672e6414513961e085aebd98707-1"&gt;&lt;/a&gt;nvim
+&lt;pre class="code sh"&gt;&lt;a name="rest_code_1badbbaca5f74ad59f69f1e02062c2f3-1"&gt;&lt;/a&gt;nvim
 &lt;/pre&gt;&lt;div class="admonition note"&gt;
 &lt;p class="admonition-title"&gt;Nota&lt;/p&gt;
 &lt;p&gt;Si usaste la &lt;code class="docutils literal"&gt;Appimage&lt;/code&gt;, debes ejecutar &lt;code class="docutils literal"&gt;./nvim.appimage&lt;/code&gt;
 sobre el directorio donde la descargaste.&lt;/p&gt;
 &lt;/div&gt;
 &lt;p&gt;Podrás ver la pantalla de bienvenida de Neovim.&lt;/p&gt;
-&lt;div class="figure"&gt;
+&lt;figure&gt;
 &lt;a class="reference external image-reference" href="https://stsewd.dev/images/nvim/neovim-ubuntu.jpg"&gt;&lt;img alt="Neovim en Ubuntu" src="https://stsewd.dev/images/nvim/neovim-ubuntu.jpg"&gt;&lt;/a&gt;
-&lt;p class="caption"&gt;Neovim en Ubuntu&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class="figure"&gt;
+&lt;figcaption&gt;
+&lt;p&gt;Neovim en Ubuntu&lt;/p&gt;
+&lt;/figcaption&gt;
+&lt;/figure&gt;
+&lt;figure&gt;
 &lt;a class="reference external image-reference" href="https://stsewd.dev/images/nvim/neovim-fedora.png"&gt;&lt;img alt="Neovim en Fedora" src="https://stsewd.dev/images/nvim/neovim-fedora.png"&gt;&lt;/a&gt;
-&lt;p class="caption"&gt;Neovim en Fedora&lt;/p&gt;
-&lt;/div&gt;
+&lt;figcaption&gt;
+&lt;p&gt;Neovim en Fedora&lt;/p&gt;
+&lt;/figcaption&gt;
+&lt;/figure&gt;
 &lt;div class="admonition note"&gt;
 &lt;p class="admonition-title"&gt;Nota&lt;/p&gt;
 &lt;p&gt;Tal vez ahora mismo Neovim luzca aburrido,
@@ -1436,13 +1470,15 @@ nada &lt;em&gt;moderno&lt;/em&gt; ni con un gran diseño,
 pero al finalizar esta serie de posts
 tendrás un editor sin nada que envidiarle al resto.&lt;/p&gt;
 &lt;/div&gt;
-&lt;div class="figure"&gt;
+&lt;figure&gt;
 &lt;a class="reference external image-reference" href="https://stsewd.dev/images/nvim/my-neovim.png"&gt;&lt;img alt="Mi Neovim" src="https://stsewd.dev/images/nvim/my-neovim.png"&gt;&lt;/a&gt;
-&lt;p class="caption"&gt;Mi Neovim ahora&lt;/p&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;div class="section" id="y-ahora-que"&gt;
+&lt;figcaption&gt;
+&lt;p&gt;Mi Neovim ahora&lt;/p&gt;
+&lt;/figcaption&gt;
+&lt;/figure&gt;
+&lt;/section&gt;
+&lt;/section&gt;
+&lt;section id="y-ahora-que"&gt;
 &lt;h2&gt;¿Y ahora qué?&lt;/h2&gt;
 &lt;p&gt;Has abierto Neovim por primera vez, si no has usado Vim antes,
 puede que te estés haciendo algunas preguntas:
@@ -1453,52 +1489,52 @@ y para salir, presiona al menos tres veces la tecla &lt;code class="kbd docutils
 luego presiona la tecla &lt;code class="kbd docutils literal"&gt;:&lt;/code&gt;,
 en la parte inferior aparecerá un pequeño espacio donde podrás ingresar texto,
 ingresa &lt;code class="docutils literal"&gt;q!&lt;/code&gt; y luego presiona &lt;code class="kbd docutils literal"&gt;Enter&lt;/code&gt;.&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class="section" id="instalando-dependencias-adicionales"&gt;
+&lt;/section&gt;
+&lt;section id="instalando-dependencias-adicionales"&gt;
 &lt;h2&gt;Instalando dependencias adicionales&lt;/h2&gt;
 &lt;p&gt;Has instalado Neovim,
 pero aún hace falta instalar algunas dependencias (opcionales)
 para sacarle más provecho y no tener ningún problema al instalar plugins.&lt;/p&gt;
-&lt;div class="section" id="proveedor-de-portapapeles"&gt;
+&lt;section id="proveedor-de-portapapeles"&gt;
 &lt;h3&gt;Proveedor de portapapeles&lt;/h3&gt;
 &lt;p&gt;Para que Neovim pueda copiar o pegar desde el portapapeles &lt;a class="footnote-reference brackets" href="https://stsewd.dev/posts/neovim-installation-configuration/#portapapeles" id="id7"&gt;8&lt;/a&gt; del sistema operativo,
 hay que instalar un &lt;em&gt;proveedor&lt;/em&gt;.&lt;/p&gt;
 &lt;p&gt;Existen dos alternativas &lt;code class="docutils literal"&gt;xclip&lt;/code&gt; y &lt;code class="docutils literal"&gt;xsel&lt;/code&gt;, ambas muy buenas.
 A continuación tienes los comandos para instalar alguna de ellas.&lt;/p&gt;
 &lt;p&gt;Ubuntu:&lt;/p&gt;
-&lt;pre class="code sh"&gt;&lt;a name="rest_code_b26f9a1fc6d84cf3808eb97e2e99a83f-1"&gt;&lt;/a&gt;sudo apt install xclip
-&lt;/pre&gt;&lt;pre class="code sh"&gt;&lt;a name="rest_code_93e40c3b72d44d26a5e8a4c6a9291a21-1"&gt;&lt;/a&gt;sudo apt install xsel
+&lt;pre class="code sh"&gt;&lt;a name="rest_code_1e00e400ab504701a874eee397457189-1"&gt;&lt;/a&gt;sudo apt install xclip
+&lt;/pre&gt;&lt;pre class="code sh"&gt;&lt;a name="rest_code_b4949bfc551c490e990d6d1cbd5efc46-1"&gt;&lt;/a&gt;sudo apt install xsel
 &lt;/pre&gt;&lt;p&gt;Fedora:&lt;/p&gt;
-&lt;pre class="code sh"&gt;&lt;a name="rest_code_78ca27f71f364f1397ec5ecc25b12cfb-1"&gt;&lt;/a&gt;sudo dnf install xclip
-&lt;/pre&gt;&lt;pre class="code sh"&gt;&lt;a name="rest_code_74ea953985c54391ab9167b098e5a00f-1"&gt;&lt;/a&gt;sudo dnf install xsel
-&lt;/pre&gt;&lt;/div&gt;
-&lt;div class="section" id="interfaces-de-python"&gt;
+&lt;pre class="code sh"&gt;&lt;a name="rest_code_4e1f0964d6d544e08db494a80ebc067c-1"&gt;&lt;/a&gt;sudo dnf install xclip
+&lt;/pre&gt;&lt;pre class="code sh"&gt;&lt;a name="rest_code_52000a86ca4f401394d662a564092e3b-1"&gt;&lt;/a&gt;sudo dnf install xsel
+&lt;/pre&gt;&lt;/section&gt;
+&lt;section id="interfaces-de-python"&gt;
 &lt;h3&gt;Interfaces de Python&lt;/h3&gt;
 &lt;p&gt;Algunos plugins hacen uso de la &lt;a class="reference external" href="https://github.com/neovim/python-client"&gt;interfaz de python&lt;/a&gt; que Neovim provee.&lt;/p&gt;
 &lt;p&gt;Se hará la instalación para las dos versiones de Python (2 y 3),
 aunque es seguro no instalar las interfaces de Python 2,
 porque todos los plugins que se instalarán usan Python 3.&lt;/p&gt;
-&lt;div class="section" id="id8"&gt;
+&lt;section id="id8"&gt;
 &lt;h4&gt;Ubuntu&lt;/h4&gt;
 &lt;p&gt;Ubuntu ya incluye ambas versiones de Python,
 pero antes hay que instalar &lt;code class="docutils literal"&gt;pip&lt;/code&gt;
 (una herramienta para descargar y administrar librerías de Python).
 Para ello ejecuta los siguientes comandos:&lt;/p&gt;
-&lt;pre class="code sh"&gt;&lt;a name="rest_code_c49e174bbd8d44458342869002572528-1"&gt;&lt;/a&gt;sudo apt install python3-pip
-&lt;/pre&gt;&lt;pre class="code sh"&gt;&lt;a name="rest_code_d86d5c59b04d4f6cb738fbe02709d496-1"&gt;&lt;/a&gt;sudo apt install python-pip
+&lt;pre class="code sh"&gt;&lt;a name="rest_code_384b452b973c45e6a3b49544914c97b4-1"&gt;&lt;/a&gt;sudo apt install python3-pip
+&lt;/pre&gt;&lt;pre class="code sh"&gt;&lt;a name="rest_code_1de006c470214903937f3f6b78b82be6-1"&gt;&lt;/a&gt;sudo apt install python-pip
 &lt;/pre&gt;&lt;p&gt;Ahora ya puedes instalar las interfaces de Neovim.&lt;/p&gt;
 &lt;div class="admonition warning"&gt;
 &lt;p class="admonition-title"&gt;Advertencia&lt;/p&gt;
 &lt;p&gt;Puede que necesites ejecutar estos comandos anteponiendo &lt;strong&gt;sudo&lt;/strong&gt;.&lt;/p&gt;
 &lt;/div&gt;
-&lt;pre class="code sh"&gt;&lt;a name="rest_code_b00c1345f20b467eb3a48119804bc123-1"&gt;&lt;/a&gt;python3 -m pip install neovim
-&lt;/pre&gt;&lt;pre class="code sh"&gt;&lt;a name="rest_code_349b7587d89a41b49854d122721da815-1"&gt;&lt;/a&gt;python -m pip install neovim
-&lt;/pre&gt;&lt;/div&gt;
-&lt;div class="section" id="id9"&gt;
+&lt;pre class="code sh"&gt;&lt;a name="rest_code_ce7fe840b58241988255a6220dfcf10f-1"&gt;&lt;/a&gt;python3 -m pip install neovim
+&lt;/pre&gt;&lt;pre class="code sh"&gt;&lt;a name="rest_code_8469550041064de3af3a71ab56b0ffc2-1"&gt;&lt;/a&gt;python -m pip install neovim
+&lt;/pre&gt;&lt;/section&gt;
+&lt;section id="id9"&gt;
 &lt;h4&gt;Fedora&lt;/h4&gt;
 &lt;p&gt;Las versiones actuales de Fedora sólo incluyen Python 3,
 así que si necesitas instalar Python 2, puedes hacerlo con:&lt;/p&gt;
-&lt;pre class="code sh"&gt;&lt;a name="rest_code_61f5cb8e76ae4c8fa62c1182c9c4904d-1"&gt;&lt;/a&gt;sudo dnf install python
+&lt;pre class="code sh"&gt;&lt;a name="rest_code_1f8e92a61fd8453d8625a749cf647b20-1"&gt;&lt;/a&gt;sudo dnf install python
 &lt;/pre&gt;&lt;p&gt;Ahora ya puedes instalar las interfaces de Neovim,
 aunque puede que Fedora ya lo haya hecho cuando instalaste Neovim
 (actualizar con los comandos de la siguiente sección si es el caso).&lt;/p&gt;
@@ -1506,11 +1542,11 @@ aunque puede que Fedora ya lo haya hecho cuando instalaste Neovim
 &lt;p class="admonition-title"&gt;Advertencia&lt;/p&gt;
 &lt;p&gt;Puede que necesites ejecutar estos comandos anteponiendo &lt;strong&gt;sudo&lt;/strong&gt;.&lt;/p&gt;
 &lt;/div&gt;
-&lt;pre class="code sh"&gt;&lt;a name="rest_code_30b5045c2de44c3cbd14261c0088f79b-1"&gt;&lt;/a&gt;python3 -m pip install neovim
-&lt;/pre&gt;&lt;pre class="code sh"&gt;&lt;a name="rest_code_424d071e8476456b9deb38e038a6e6f8-1"&gt;&lt;/a&gt;python -m pip install neovim
-&lt;/pre&gt;&lt;/div&gt;
-&lt;/div&gt;
-&lt;div class="section" id="manteniendo-las-interfaces-de-python-al-dia"&gt;
+&lt;pre class="code sh"&gt;&lt;a name="rest_code_854d87c6bcca4537a58d7d426525f2e1-1"&gt;&lt;/a&gt;python3 -m pip install neovim
+&lt;/pre&gt;&lt;pre class="code sh"&gt;&lt;a name="rest_code_41d6175f7ac74d1e90ccbdbbdd0d3e4c-1"&gt;&lt;/a&gt;python -m pip install neovim
+&lt;/pre&gt;&lt;/section&gt;
+&lt;/section&gt;
+&lt;section id="manteniendo-las-interfaces-de-python-al-dia"&gt;
 &lt;h3&gt;Manteniendo las interfaces de Python al día&lt;/h3&gt;
 &lt;p&gt;Es recomendable que cada cierto tiempo actualices las interfaces de Python,
 así estarás al día con lo último que Neovim ofrece a través de su API.&lt;/p&gt;
@@ -1518,58 +1554,60 @@ así estarás al día con lo último que Neovim ofrece a través de su API.&lt;/
 &lt;p class="admonition-title"&gt;Advertencia&lt;/p&gt;
 &lt;p&gt;Puede que necesites ejecutar estos comandos anteponiendo &lt;strong&gt;sudo&lt;/strong&gt;.&lt;/p&gt;
 &lt;/div&gt;
-&lt;pre class="code sh"&gt;&lt;a name="rest_code_1baf296c245847619fa733379b5ae4f7-1"&gt;&lt;/a&gt;python3 -m pip install --upgrade neovim
-&lt;/pre&gt;&lt;pre class="code sh"&gt;&lt;a name="rest_code_9ad71013b32e40e7be1b5d95cea236d3-1"&gt;&lt;/a&gt;python -m pip install --upgrade neovim
-&lt;/pre&gt;&lt;/div&gt;
-&lt;div class="section" id="interfaces-de-ruby"&gt;
+&lt;pre class="code sh"&gt;&lt;a name="rest_code_451d222c87454adab7c3d9a553c1e5d4-1"&gt;&lt;/a&gt;python3 -m pip install --upgrade neovim
+&lt;/pre&gt;&lt;pre class="code sh"&gt;&lt;a name="rest_code_462e364ec75242029aea4919eb248dff-1"&gt;&lt;/a&gt;python -m pip install --upgrade neovim
+&lt;/pre&gt;&lt;/section&gt;
+&lt;section id="interfaces-de-ruby"&gt;
 &lt;h3&gt;Interfaces de Ruby&lt;/h3&gt;
 &lt;p&gt;Al igual que algunos plugins hacen uso de la interfaz de Python,
 otros usan la interfaz de &lt;a class="reference external" href="https://rubygems.org/gems/neovim/"&gt;Ruby&lt;/a&gt;.&lt;/p&gt;
-&lt;div class="section" id="id10"&gt;
+&lt;section id="id10"&gt;
 &lt;h4&gt;Ubuntu&lt;/h4&gt;
 &lt;p&gt;Ubuntu no trae Ruby por defecto,
 instálalo con los siguientes comandos.&lt;/p&gt;
-&lt;pre class="code sh"&gt;&lt;a name="rest_code_27cdc33a4d8e4a8884b685a4bbc2e6d6-1"&gt;&lt;/a&gt;sudo apt install ruby
-&lt;a name="rest_code_27cdc33a4d8e4a8884b685a4bbc2e6d6-2"&gt;&lt;/a&gt;sudo apt install ruby-dev
+&lt;pre class="code sh"&gt;&lt;a name="rest_code_3e35a12c2d164021ba9d2f27bc16230b-1"&gt;&lt;/a&gt;sudo apt install ruby
+&lt;a name="rest_code_3e35a12c2d164021ba9d2f27bc16230b-2"&gt;&lt;/a&gt;sudo apt install ruby-dev
 &lt;/pre&gt;&lt;p&gt;Ahora si podrás instalar la interfaz de Ruby.&lt;/p&gt;
 &lt;div class="admonition warning"&gt;
 &lt;p class="admonition-title"&gt;Advertencia&lt;/p&gt;
 &lt;p&gt;Puede que necesites ejecutar estos comandos anteponiendo &lt;strong&gt;sudo&lt;/strong&gt;.&lt;/p&gt;
 &lt;/div&gt;
-&lt;pre class="code sh"&gt;&lt;a name="rest_code_9b5265560c3f48429fcedc66187cb391-1"&gt;&lt;/a&gt;gem install neovim
-&lt;/pre&gt;&lt;/div&gt;
-&lt;div class="section" id="id11"&gt;
+&lt;pre class="code sh"&gt;&lt;a name="rest_code_de79c24a8de042c496a3b361311649a0-1"&gt;&lt;/a&gt;gem install neovim
+&lt;/pre&gt;&lt;/section&gt;
+&lt;section id="id11"&gt;
 &lt;h4&gt;Fedora&lt;/h4&gt;
 &lt;p&gt;Fedora no trae Ruby por defecto,
 instálalo con los siguientes comandos.&lt;/p&gt;
-&lt;pre class="code sh"&gt;&lt;a name="rest_code_1de5a0ff36a141b780e4160d260768f9-1"&gt;&lt;/a&gt;sudo dnf install ruby
-&lt;a name="rest_code_1de5a0ff36a141b780e4160d260768f9-2"&gt;&lt;/a&gt;sudo dnf install ruby-devel
-&lt;a name="rest_code_1de5a0ff36a141b780e4160d260768f9-3"&gt;&lt;/a&gt;sudo dnf install gcc-c++
-&lt;a name="rest_code_1de5a0ff36a141b780e4160d260768f9-4"&gt;&lt;/a&gt;sudo dnf install redhat-rpm-config
+&lt;pre class="code sh"&gt;&lt;a name="rest_code_29ba28ea19024b34a9dfff43744cbdf9-1"&gt;&lt;/a&gt;sudo dnf install ruby
+&lt;a name="rest_code_29ba28ea19024b34a9dfff43744cbdf9-2"&gt;&lt;/a&gt;sudo dnf install ruby-devel
+&lt;a name="rest_code_29ba28ea19024b34a9dfff43744cbdf9-3"&gt;&lt;/a&gt;sudo dnf install gcc-c++
+&lt;a name="rest_code_29ba28ea19024b34a9dfff43744cbdf9-4"&gt;&lt;/a&gt;sudo dnf install redhat-rpm-config
 &lt;/pre&gt;&lt;p&gt;Ahora si podrás instalar la interfaz de Ruby.&lt;/p&gt;
 &lt;div class="admonition warning"&gt;
 &lt;p class="admonition-title"&gt;Advertencia&lt;/p&gt;
 &lt;p&gt;Puede que necesites ejecutar estos comandos anteponiendo &lt;strong&gt;sudo&lt;/strong&gt;.&lt;/p&gt;
 &lt;/div&gt;
-&lt;pre class="code sh"&gt;&lt;a name="rest_code_c53336087ca44c0e90810f46e41e335d-1"&gt;&lt;/a&gt;gem install neovim
-&lt;/pre&gt;&lt;/div&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;div class="section" id="comprobando-las-dependencias-adicionales"&gt;
+&lt;pre class="code sh"&gt;&lt;a name="rest_code_d483e3b0b5064bbeb83b4633a71d1663-1"&gt;&lt;/a&gt;gem install neovim
+&lt;/pre&gt;&lt;/section&gt;
+&lt;/section&gt;
+&lt;/section&gt;
+&lt;section id="comprobando-las-dependencias-adicionales"&gt;
 &lt;h2&gt;Comprobando las dependencias adicionales&lt;/h2&gt;
 &lt;p&gt;Has instalado las dependencias adicionales para Neovim,
 pero ¿cómo saber que todo salió bien?
 Neovim trae una herramienta que permite comprobarlo, &lt;code class="docutils literal"&gt;checkhealth&lt;/code&gt;.
 Para hacer uso de esta herramienta hay que iniciar Neovim con un parámetro algo especial.&lt;/p&gt;
-&lt;pre class="code sh"&gt;&lt;a name="rest_code_ce8cbb9aefc4414e92a4b5828e591919-1"&gt;&lt;/a&gt;nvim +checkhealth
+&lt;pre class="code sh"&gt;&lt;a name="rest_code_1f31e181bde1452eadc2904d081f5e9d-1"&gt;&lt;/a&gt;nvim +checkhealth
 &lt;/pre&gt;&lt;p&gt;Espera unos segundos a que Neovim haga las comprobaciones,
 si todo salió bien debe aparecer algo como esto:&lt;/p&gt;
-&lt;div class="figure"&gt;
+&lt;figure&gt;
 &lt;a class="reference external image-reference" href="https://stsewd.dev/images/nvim/checkhealth.png"&gt;&lt;img alt="resultado de correr checkhealth en Neovim" src="https://stsewd.dev/images/nvim/checkhealth.png"&gt;&lt;/a&gt;
-&lt;p class="caption"&gt;Resultado de correr checkhealth en Neovim&lt;/p&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;div class="section" id="primeros-pasos-con-neovim"&gt;
+&lt;figcaption&gt;
+&lt;p&gt;Resultado de correr checkhealth en Neovim&lt;/p&gt;
+&lt;/figcaption&gt;
+&lt;/figure&gt;
+&lt;/section&gt;
+&lt;section id="primeros-pasos-con-neovim"&gt;
 &lt;h2&gt;Primeros pasos con Neovim&lt;/h2&gt;
 &lt;p&gt;A continuación aprenderás lo básico para empezar a usar Neovim como un editor de código.
 Al principio parecerá que es contra-productivo,
@@ -1581,7 +1619,7 @@ Al final del post encontrarás varios recursos para aprender más sobre Neovim/V
 &lt;p class="admonition-title"&gt;Nota&lt;/p&gt;
 &lt;p&gt;Todo lo que aprendas en esta sección también es válido para Vim.&lt;/p&gt;
 &lt;/div&gt;
-&lt;div class="section" id="modos"&gt;
+&lt;section id="modos"&gt;
 &lt;h3&gt;Modos&lt;/h3&gt;
 &lt;p&gt;Neovim tiene 3 modos principales:&lt;/p&gt;
 &lt;ul class="simple"&gt;
@@ -1603,13 +1641,13 @@ Al final del post encontrarás varios recursos para aprender más sobre Neovim/V
 presiona &lt;code class="kbd docutils literal"&gt;Esc&lt;/code&gt; al menos tres veces,
 así podrás regresar al modo normal y empezar de nuevo.&lt;/p&gt;
 &lt;/div&gt;
-&lt;/div&gt;
-&lt;div class="section" id="abrir-un-archivo"&gt;
+&lt;/section&gt;
+&lt;section id="abrir-un-archivo"&gt;
 &lt;h3&gt;Abrir un archivo&lt;/h3&gt;
 &lt;p&gt;Puedes abrir un archivo desde la terminal con:&lt;/p&gt;
-&lt;pre class="code sh"&gt;&lt;a name="rest_code_f84b30e283a74c40b59dd849db6f2178-1"&gt;&lt;/a&gt;nvim mi-archivo.txt
-&lt;/pre&gt;&lt;/div&gt;
-&lt;div class="section" id="moviendote-por-el-editor"&gt;
+&lt;pre class="code sh"&gt;&lt;a name="rest_code_6e32ea540e67460a874c142b1ecce21e-1"&gt;&lt;/a&gt;nvim mi-archivo.txt
+&lt;/pre&gt;&lt;/section&gt;
+&lt;section id="moviendote-por-el-editor"&gt;
 &lt;h3&gt;Moviéndote por el editor&lt;/h3&gt;
 &lt;p&gt;Antes había dicho que puedes usar las teclas direccionales para moverte,
 pero no es lo más eficiente cuando usas Neovim,
@@ -1621,10 +1659,12 @@ Puedes usar las siguientes teclas para moverte dentro del modo normal.&lt;/p&gt;
 &lt;li&gt;&lt;p&gt;&lt;code class="kbd docutils literal"&gt;k&lt;/code&gt; - arriba&lt;/p&gt;&lt;/li&gt;
 &lt;li&gt;&lt;p&gt;&lt;code class="kbd docutils literal"&gt;l&lt;/code&gt; - derecha&lt;/p&gt;&lt;/li&gt;
 &lt;/ul&gt;
-&lt;div class="figure align-center"&gt;
+&lt;figure class="align-center"&gt;
 &lt;a class="reference external image-reference" href="https://stsewd.dev/images/nvim/hjkl.png"&gt;&lt;img alt="/images/nvim/hjkl.png" src="https://stsewd.dev/images/nvim/hjkl.png"&gt;&lt;/a&gt;
-&lt;p class="caption"&gt;Cheatsheet &lt;a class="reference external" href="http://vimsheet.com/"&gt;http://vimsheet.com/&lt;/a&gt;&lt;/p&gt;
-&lt;/div&gt;
+&lt;figcaption&gt;
+&lt;p&gt;Cheatsheet &lt;a class="reference external" href="http://vimsheet.com/"&gt;http://vimsheet.com/&lt;/a&gt;&lt;/p&gt;
+&lt;/figcaption&gt;
+&lt;/figure&gt;
 &lt;p&gt;También puedes usar &lt;code class="kbd docutils literal"&gt;w&lt;/code&gt; y &lt;code class="kbd docutils literal"&gt;b&lt;/code&gt; para moverte entre palabras.&lt;/p&gt;
 &lt;p&gt;Al principio va a ser duro no hacerlo con las teclas direccionales,
 intenta practicar hasta que te sientas cómodo,
@@ -1633,51 +1673,51 @@ y no llegar a perder la cabeza o &lt;a class="reference external" href="https://
 &lt;p class="admonition-title"&gt;Nota&lt;/p&gt;
 &lt;p&gt;Puedes usar &lt;code class="kbd docutils literal"&gt;j&lt;/code&gt; y &lt;code class="kbd docutils literal"&gt;k&lt;/code&gt; para moverte en este blog.&lt;/p&gt;
 &lt;/div&gt;
-&lt;/div&gt;
-&lt;div class="section" id="escribir-sobre-un-archivo"&gt;
+&lt;/section&gt;
+&lt;section id="escribir-sobre-un-archivo"&gt;
 &lt;h3&gt;Escribir sobre un archivo&lt;/h3&gt;
 &lt;p&gt;Para empezar a escribir debes ingresar al modo insertar con &lt;code class="kbd docutils literal"&gt;i&lt;/code&gt;.
 Observa como la forma del cursor ha cambiado,
 ingresa algún texto y cuando termines presiona &lt;code class="kbd docutils literal"&gt;Esc&lt;/code&gt; para volver al modo normal.&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class="section" id="guardar"&gt;
+&lt;/section&gt;
+&lt;section id="guardar"&gt;
 &lt;h3&gt;Guardar&lt;/h3&gt;
 &lt;p&gt;En modo normal presiona &lt;code class="kbd docutils literal"&gt;:&lt;/code&gt;, escribe &lt;cite&gt;w&lt;/cite&gt; y presiona enter.&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class="section" id="salir"&gt;
+&lt;/section&gt;
+&lt;section id="salir"&gt;
 &lt;h3&gt;Salir&lt;/h3&gt;
 &lt;p&gt;En modo normal presiona &lt;code class="kbd docutils literal"&gt;:&lt;/code&gt;, luego escribe &lt;code class="docutils literal"&gt;q&lt;/code&gt; y presiona enter
 (para salir sin guardar los cambios, debes escribir &lt;code class="docutils literal"&gt;q!&lt;/code&gt;).&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class="section" id="seleccionar-texto"&gt;
+&lt;/section&gt;
+&lt;section id="seleccionar-texto"&gt;
 &lt;h3&gt;Seleccionar texto&lt;/h3&gt;
 &lt;p&gt;Presiona &lt;code class="kbd docutils literal"&gt;v&lt;/code&gt; para entrar al modo visual,
 mueve el cursor para realizar la selección.
 Presiona &lt;code class="kbd docutils literal"&gt;Esc&lt;/code&gt; para regresar al modo normal.&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class="section" id="copiar-pegar"&gt;
+&lt;/section&gt;
+&lt;section id="copiar-pegar"&gt;
 &lt;h3&gt;Copiar &amp;amp; pegar&lt;/h3&gt;
 &lt;p&gt;Selecciona un texto usando el modo visual, luego presiona &lt;code class="kbd docutils literal"&gt;y&lt;/code&gt;.
 Presiona &lt;code class="kbd docutils literal"&gt;p&lt;/code&gt; para pegar después del cursor o &lt;code class="kbd docutils literal"&gt;P&lt;/code&gt; para pegar antes del cursor.&lt;/p&gt;
 &lt;p&gt;Para copiar una palabra,
 en modo normal presiona &lt;code class="kbd docutils literal"&gt;yiw&lt;/code&gt; o para copiar la línea actual presiona &lt;code class="kbd docutils literal"&gt;yy&lt;/code&gt;.&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class="section" id="cortar"&gt;
+&lt;/section&gt;
+&lt;section id="cortar"&gt;
 &lt;h3&gt;Cortar&lt;/h3&gt;
 &lt;p&gt;Selecciona un texto usando el modo visual, luego presiona &lt;code class="kbd docutils literal"&gt;d&lt;/code&gt;.
 Para cortar una palabra,
 en modo normal presiona &lt;code class="kbd docutils literal"&gt;diw&lt;/code&gt; o para cortar la línea actual presiona &lt;code class="kbd docutils literal"&gt;dd&lt;/code&gt;.&lt;/p&gt;
 &lt;p&gt;Para pegar el texto cortado, presiona &lt;code class="kbd docutils literal"&gt;p&lt;/code&gt;.&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class="section" id="copiar-y-pegar-desde-el-portapapeles"&gt;
+&lt;/section&gt;
+&lt;section id="copiar-y-pegar-desde-el-portapapeles"&gt;
 &lt;h3&gt;Copiar y pegar desde el portapapeles&lt;/h3&gt;
 &lt;p&gt;Si intentaste pegar texto fuera de Neovim,
 o pegar algo que habías copiado al portapapeles,
 te habrás dado cuenta que no funciona.
 Para usar el portapapeles debes copiar usando &lt;code class="kbd docutils literal"&gt;"+y&lt;/code&gt;,
 y para pegar desde el portapapeles &lt;code class="kbd docutils literal"&gt;"+p&lt;/code&gt;.&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class="section" id="deshacer-y-rehacer"&gt;
+&lt;/section&gt;
+&lt;section id="deshacer-y-rehacer"&gt;
 &lt;h3&gt;Deshacer y rehacer&lt;/h3&gt;
 &lt;p&gt;Para deshacer, en modo normal presiona &lt;code class="kbd docutils literal"&gt;u&lt;/code&gt;;
 y para rehacer &lt;code class="kbd docutils literal"&gt;Ctrl&lt;/code&gt; + &lt;code class="kbd docutils literal"&gt;r&lt;/code&gt;.&lt;/p&gt;
@@ -1687,13 +1727,13 @@ y para rehacer &lt;code class="kbd docutils literal"&gt;Ctrl&lt;/code&gt; + &lt;
 si lo hiciste y tu editor se &lt;em&gt;cerró&lt;/em&gt; no te preocupes,
 sólo escribe &lt;code class="kbd docutils literal"&gt;fg&lt;/code&gt; en la terminal y tendrás de regreso tu editor.&lt;/p&gt;
 &lt;/div&gt;
-&lt;/div&gt;
-&lt;div class="section" id="auto-completado"&gt;
+&lt;/section&gt;
+&lt;section id="auto-completado"&gt;
 &lt;h3&gt;Auto completado&lt;/h3&gt;
 &lt;p&gt;Mientras estás en modo insertar,
 escribe el inicio de una palabra y presiona &lt;code class="kbd docutils literal"&gt;Crtl&lt;/code&gt; + &lt;code class="kbd docutils literal"&gt;p&lt;/code&gt; o &lt;code class="kbd docutils literal"&gt;Ctrl&lt;/code&gt; + &lt;code class="kbd docutils literal"&gt;n&lt;/code&gt; para iterar sobre las sugerencias.&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class="section" id="modo-linea-de-comandos"&gt;
+&lt;/section&gt;
+&lt;section id="modo-linea-de-comandos"&gt;
 &lt;h3&gt;Modo línea de comandos&lt;/h3&gt;
 &lt;p&gt;Neovim tiene otro modo, el modo línea de comandos.
 Aparece debajo del editor donde puedes ingresar un comando,
@@ -1712,14 +1752,14 @@ Por ejemplo para guardar &lt;code class="docutils literal"&gt;:w&lt;/code&gt;.&l
 &lt;p class="admonition-title"&gt;Nota&lt;/p&gt;
 &lt;p&gt;El comando &lt;code class="docutils literal"&gt;:w&lt;/code&gt; es una abreviación de &lt;code class="docutils literal"&gt;:write&lt;/code&gt; ¡pruébalo!&lt;/p&gt;
 &lt;/div&gt;
-&lt;/div&gt;
-&lt;div class="section" id="trabajando-con-varios-archivos"&gt;
+&lt;/section&gt;
+&lt;section id="trabajando-con-varios-archivos"&gt;
 &lt;h3&gt;Trabajando con varios archivos&lt;/h3&gt;
 &lt;p&gt;Para trabajar con varios archivos solemos usar pestañas, Neovim tiene pestañas,
 pero no son exactamente lo mismo que en los demás editores &lt;a class="footnote-reference brackets" href="https://stsewd.dev/posts/neovim-installation-configuration/#vim-buffers" id="id13"&gt;9&lt;/a&gt;,
 en su lugar usaremos &lt;code class="docutils literal"&gt;buffers&lt;/code&gt;.&lt;/p&gt;
 &lt;p&gt;Podemos abrir varios archivos desde la terminal con:&lt;/p&gt;
-&lt;pre class="code sh"&gt;&lt;a name="rest_code_a5eb12883ad24b19ba9a0ff70779a003-1"&gt;&lt;/a&gt;nvim archivo-uno.txt archivo-dos.txt
+&lt;pre class="code sh"&gt;&lt;a name="rest_code_399fd9738bd545bba41f3ff3003f1ffc-1"&gt;&lt;/a&gt;nvim archivo-uno.txt archivo-dos.txt
 &lt;/pre&gt;&lt;p&gt;O si ya tienes Neovim abierto,
 puedes usar el comando &lt;code class="docutils literal"&gt;:e &amp;lt;archivo&amp;gt;&lt;/code&gt;,
 por ejemplo &lt;code class="docutils literal"&gt;:e &lt;span class="pre"&gt;archivo-uno.txt&lt;/span&gt;&lt;/code&gt;.&lt;/p&gt;
@@ -1731,14 +1771,14 @@ para cerrar el buffer actual &lt;code class="docutils literal"&gt;:bdelete&lt;/c
 &lt;p class="admonition-title"&gt;Nota&lt;/p&gt;
 &lt;p&gt;Los comandos &lt;code class="docutils literal"&gt;:bn&lt;/code&gt; y &lt;code class="docutils literal"&gt;:bp&lt;/code&gt; son una abreviación de &lt;code class="docutils literal"&gt;:bnext&lt;/code&gt; y &lt;code class="docutils literal"&gt;:bprevious&lt;/code&gt;.&lt;/p&gt;
 &lt;/div&gt;
-&lt;/div&gt;
-&lt;div class="section" id="buscar"&gt;
+&lt;/section&gt;
+&lt;section id="buscar"&gt;
 &lt;h3&gt;Buscar&lt;/h3&gt;
 &lt;p&gt;En modo normal presiona &lt;code class="kbd docutils literal"&gt;/&lt;/code&gt;,
 ingresa la palabra a buscar y presiona &lt;code class="kbd docutils literal"&gt;Enter&lt;/code&gt;.
 Muévete a la siguiente o anterior coincidencia con &lt;code class="kbd docutils literal"&gt;n&lt;/code&gt; y &lt;code class="kbd docutils literal"&gt;N&lt;/code&gt;.&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class="section" id="obteniendo-ayuda"&gt;
+&lt;/section&gt;
+&lt;section id="obteniendo-ayuda"&gt;
 &lt;h3&gt;Obteniendo ayuda&lt;/h3&gt;
 &lt;p&gt;Para obtener ayuda puedes usar el comando &lt;code class="docutils literal"&gt;:help [tema]&lt;/code&gt;,
 por ejemplo &lt;code class="docutils literal"&gt;:help :w&lt;/code&gt; para obtener ayuda sobre el comando &lt;code class="docutils literal"&gt;:w&lt;/code&gt;.&lt;/p&gt;
@@ -1746,14 +1786,14 @@ por ejemplo &lt;code class="docutils literal"&gt;:help :w&lt;/code&gt; para obte
 &lt;p class="admonition-title"&gt;Nota&lt;/p&gt;
 &lt;p&gt;El comando &lt;code class="docutils literal"&gt;:help&lt;/code&gt; puede ser abreviado como &lt;code class="docutils literal"&gt;:h&lt;/code&gt;.&lt;/p&gt;
 &lt;/div&gt;
-&lt;/div&gt;
-&lt;div class="section" id="aprendiendo-desde-neovim"&gt;
+&lt;/section&gt;
+&lt;section id="aprendiendo-desde-neovim"&gt;
 &lt;h3&gt;Aprendiendo desde Neovim&lt;/h3&gt;
 &lt;p&gt;Neovim incluye un tutorial interactivo,
 ejecuta el comando &lt;code class="docutils literal"&gt;:Tutor&lt;/code&gt; para empezarlo.&lt;/p&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;div class="section" id="configurando-neovim"&gt;
+&lt;/section&gt;
+&lt;/section&gt;
+&lt;section id="configurando-neovim"&gt;
 &lt;h2&gt;Configurando Neovim&lt;/h2&gt;
 &lt;p&gt;Neovim puede ser configurado desde el modo línea de comandos,
 prueba mostrando los números de las líneas ejecutando &lt;code class="docutils literal"&gt;:set number&lt;/code&gt;.
@@ -1761,18 +1801,18 @@ prueba mostrando los números de las líneas ejecutando &lt;code class="docutils
 &lt;p&gt;Si cierras Neovim, todas las configuraciones se perderán,
 para mantenerlas se usa un archivo &lt;code class="docutils literal"&gt;init.vim&lt;/code&gt;,
 el cual es cargado cada vez que se inicia Neovim.&lt;/p&gt;
-&lt;div class="section" id="init-vim"&gt;
+&lt;section id="init-vim"&gt;
 &lt;h3&gt;init.vim&lt;/h3&gt;
 &lt;div class="admonition note"&gt;
 &lt;p class="admonition-title"&gt;Nota&lt;/p&gt;
 &lt;p&gt;Si usas Vim, este archivo cumple la misma función que el archivo &lt;code class="docutils literal"&gt;.vimrc&lt;/code&gt;.&lt;/p&gt;
 &lt;/div&gt;
 &lt;p&gt;Este archivo se localiza en &lt;code class="docutils literal"&gt;&lt;span class="pre"&gt;~/.config/nvim/init.vim&lt;/span&gt;&lt;/code&gt;, si no existe, créalo.&lt;/p&gt;
-&lt;pre class="code sh"&gt;&lt;a name="rest_code_15a47c6d52c84ab8a0f17f723b1e17a3-1"&gt;&lt;/a&gt;&lt;span class="nb"&gt;cd&lt;/span&gt; ~/.config/
-&lt;a name="rest_code_15a47c6d52c84ab8a0f17f723b1e17a3-2"&gt;&lt;/a&gt;mkdir nvim
-&lt;a name="rest_code_15a47c6d52c84ab8a0f17f723b1e17a3-3"&gt;&lt;/a&gt;touch nvim/init.vim
+&lt;pre class="code sh"&gt;&lt;a name="rest_code_8d4715e909bb4584ae6a79f728dd01ca-1"&gt;&lt;/a&gt;&lt;span class="nb"&gt;cd&lt;/span&gt; ~/.config/
+&lt;a name="rest_code_8d4715e909bb4584ae6a79f728dd01ca-2"&gt;&lt;/a&gt;mkdir nvim
+&lt;a name="rest_code_8d4715e909bb4584ae6a79f728dd01ca-3"&gt;&lt;/a&gt;touch nvim/init.vim
 &lt;/pre&gt;&lt;p&gt;Abre el archivo y agrega la línea:&lt;/p&gt;
-&lt;pre class="code vim"&gt;&lt;a name="rest_code_e911dab24c2d4cdababbc5639e737829-1"&gt;&lt;/a&gt;&lt;span class="k"&gt;set&lt;/span&gt; &lt;span class="k"&gt;number&lt;/span&gt;
+&lt;pre class="code vim"&gt;&lt;a name="rest_code_53e484d008074f56bf076593f5471f5e-1"&gt;&lt;/a&gt;&lt;span class="k"&gt;set&lt;/span&gt; &lt;span class="k"&gt;number&lt;/span&gt;
 &lt;/pre&gt;&lt;p&gt;Para que los cambios tengan efecto debes volver a abrir Neovim,
 o puedes ejecutar el commando &lt;code class="docutils literal"&gt;:so &lt;span class="pre"&gt;~/.config/nvim/init.vim&lt;/span&gt;&lt;/code&gt;.&lt;/p&gt;
 &lt;p&gt;El archivo de configuraciones puede llegar a ser muy grande,
@@ -1820,9 +1860,9 @@ colorscheme zellner  " Nombre del tema&lt;/pre&gt;
 &lt;p class="admonition-title"&gt;Nota&lt;/p&gt;
 &lt;p&gt;Para ver todos los temas escribe &lt;code class="docutils literal"&gt;:colorscheme&lt;/code&gt; da un espacio y luego usa &lt;code class="kbd docutils literal"&gt;Tab&lt;/code&gt; para iterar sobre estos.&lt;/p&gt;
 &lt;/div&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;div class="section" id="mappings"&gt;
+&lt;/section&gt;
+&lt;/section&gt;
+&lt;section id="mappings"&gt;
 &lt;h2&gt;Mappings&lt;/h2&gt;
 &lt;p&gt;Se ha usado varios comandos para interactuar con Neovim, pero no parece ser tan
 productivo tener que escribirlos cada vez para cambiar de buffer o guardar un
@@ -1830,7 +1870,7 @@ archivo.&lt;/p&gt;
 &lt;p&gt;Neovim nos permite definir nuestros propios atajos de teclado (mappings). Por
 ejemplo, si quisiéramos usar &lt;code class="kbd docutils literal"&gt;Ctrl&lt;/code&gt; + &lt;code class="kbd docutils literal"&gt;s&lt;/code&gt; para guardar,
 bastaría con poner esta línea en el archivo &lt;cite&gt;init.vim&lt;/cite&gt;.&lt;/p&gt;
-&lt;pre class="code vim"&gt;&lt;a name="rest_code_038bb2abf0c04d3796d630728543c625-1"&gt;&lt;/a&gt;&lt;span class="nb"&gt;nnoremap&lt;/span&gt; &lt;span class="p"&gt;&amp;lt;&lt;/span&gt;C&lt;span class="p"&gt;-&lt;/span&gt;s&lt;span class="p"&gt;&amp;gt;&lt;/span&gt; :&lt;span class="k"&gt;w&lt;/span&gt;&lt;span class="p"&gt;&amp;lt;&lt;/span&gt;CR&lt;span class="p"&gt;&amp;gt;&lt;/span&gt;
+&lt;pre class="code vim"&gt;&lt;a name="rest_code_23a0174386e5493496b259def8476ce9-1"&gt;&lt;/a&gt;&lt;span class="nb"&gt;nnoremap&lt;/span&gt; &lt;span class="p"&gt;&amp;lt;&lt;/span&gt;C&lt;span class="p"&gt;-&lt;/span&gt;s&lt;span class="p"&gt;&amp;gt;&lt;/span&gt; :&lt;span class="k"&gt;w&lt;/span&gt;&lt;span class="p"&gt;&amp;lt;&lt;/span&gt;CR&lt;span class="p"&gt;&amp;gt;&lt;/span&gt;
 &lt;/pre&gt;&lt;p&gt;A menudo verás combinaciones que usan &lt;code class="docutils literal"&gt;&amp;lt;leader&amp;gt;&lt;/code&gt;,
 nos referiremos a esta como la tecla líder,
 está reservada para atajos definidos por el usuario.
@@ -1866,19 +1906,21 @@ nnoremap &amp;lt;leader&amp;gt;j :bprevious&amp;lt;CR&amp;gt;
 
 " Cerrar el buffer actual con &amp;lt;líder&amp;gt; + q
 nnoremap &amp;lt;leader&amp;gt;q :bdelete&amp;lt;CR&amp;gt;&lt;/pre&gt;
-&lt;/noscript&gt;&lt;/div&gt;
-&lt;div class="section" id="configurando-la-terminal"&gt;
+&lt;/noscript&gt;&lt;/section&gt;
+&lt;section id="configurando-la-terminal"&gt;
 &lt;h2&gt;Configurando la terminal&lt;/h2&gt;
 &lt;p&gt;¿Sientes que tu terminal no encaja del todo con Neovim?&lt;/p&gt;
-&lt;div class="section" id="ocultar-la-barra-de-menu"&gt;
+&lt;section id="ocultar-la-barra-de-menu"&gt;
 &lt;h3&gt;Ocultar la barra de menú&lt;/h3&gt;
 &lt;p&gt;La barra de menú que ves es la de tú terminal, no la de Neovim.&lt;/p&gt;
 &lt;p&gt;Accede al menú &lt;code class="docutils literal"&gt;Editar&lt;/code&gt; y selecciona &lt;code class="docutils literal"&gt;Preferencias&lt;/code&gt;.
 En la pestaña &lt;code class="docutils literal"&gt;General&lt;/code&gt; desmarca &lt;code class="docutils literal"&gt;Mostrar la barra de menús en las terminales nuevas por omisión&lt;/code&gt;.&lt;/p&gt;
-&lt;div class="figure"&gt;
+&lt;figure&gt;
 &lt;a class="reference external image-reference" href="https://stsewd.dev/images/nvim/hide-menu-bar.png"&gt;&lt;img alt="Ocultar la barra de menú de la terminal en Ubuntu" src="https://stsewd.dev/images/nvim/hide-menu-bar.png"&gt;&lt;/a&gt;
-&lt;p class="caption"&gt;Ocultar la barra de menú de la terminal en Ubuntu&lt;/p&gt;
-&lt;/div&gt;
+&lt;figcaption&gt;
+&lt;p&gt;Ocultar la barra de menú de la terminal en Ubuntu&lt;/p&gt;
+&lt;/figcaption&gt;
+&lt;/figure&gt;
 &lt;div class="admonition warning"&gt;
 &lt;p class="admonition-title"&gt;Advertencia&lt;/p&gt;
 &lt;p&gt;Tendrás de volver a abrir la terminal para ver los cambios.&lt;/p&gt;
@@ -1889,47 +1931,55 @@ En la pestaña &lt;code class="docutils literal"&gt;General&lt;/code&gt; desmarc
 presiona &lt;code class="kbd docutils literal"&gt;Shift&lt;/code&gt; y luego da clic derecho sobre la terminal,
 o si prefieres hacerlo sin el mouse &lt;code class="kbd docutils literal"&gt;Shift&lt;/code&gt; + &lt;code class="kbd docutils literal"&gt;F10&lt;/code&gt;.&lt;/p&gt;
 &lt;/div&gt;
-&lt;/div&gt;
-&lt;div class="section" id="ocultar-las-barras-de-scroll"&gt;
+&lt;/section&gt;
+&lt;section id="ocultar-las-barras-de-scroll"&gt;
 &lt;h3&gt;Ocultar las barras de scroll&lt;/h3&gt;
 &lt;p&gt;Cuando abres Neovim verás las barras de scroll horizontal y vertical de tu terminal,
 pero si intentas usarlas, podrás darte cuenta que no funcionan como esperas.&lt;/p&gt;
 &lt;p&gt;Abre el menú de opciones de tú terminal y ve a &lt;code class="docutils literal"&gt;Perfiles&lt;/code&gt; y a &lt;code class="docutils literal"&gt;Preferencias del perfil&lt;/code&gt;.
 Dirígete a la pestaña &lt;code class="docutils literal"&gt;Desplazamiento&lt;/code&gt; y desmarca la opción &lt;code class="docutils literal"&gt;Mostrar barra de desplazamiento&lt;/code&gt;.&lt;/p&gt;
-&lt;div class="figure"&gt;
+&lt;figure&gt;
 &lt;a class="reference external image-reference" href="https://stsewd.dev/images/nvim/hide-scroll-bar.png"&gt;&lt;img alt="Ocultar la barra de scroll de la terminal en Ubuntu" src="https://stsewd.dev/images/nvim/hide-scroll-bar.png"&gt;&lt;/a&gt;
-&lt;p class="caption"&gt;Ocultar la barra de scroll de la terminal en Ubuntu&lt;/p&gt;
-&lt;/div&gt;
+&lt;figcaption&gt;
+&lt;p&gt;Ocultar la barra de scroll de la terminal en Ubuntu&lt;/p&gt;
+&lt;/figcaption&gt;
+&lt;/figure&gt;
 &lt;div class="admonition note"&gt;
 &lt;p class="admonition-title"&gt;Nota&lt;/p&gt;
 &lt;p&gt;Puedes moverte rápidamente hacia arriba o hacia abajo con &lt;code class="kbd docutils literal"&gt;Ctrl&lt;/code&gt; + &lt;code class="kbd docutils literal"&gt;u&lt;/code&gt; y &lt;code class="kbd docutils literal"&gt;Ctrl&lt;/code&gt; + &lt;code class="kbd docutils literal"&gt;d&lt;/code&gt;.&lt;/p&gt;
 &lt;/div&gt;
-&lt;/div&gt;
-&lt;div class="section" id="tipo-y-tamano-de-letra"&gt;
+&lt;/section&gt;
+&lt;section id="tipo-y-tamano-de-letra"&gt;
 &lt;h3&gt;Tipo y tamaño de letra&lt;/h3&gt;
 &lt;p&gt;Para cambiar el tipo y tamaño de la letra de Neovim,
 basta con cambiarla en la terminal.&lt;/p&gt;
 &lt;p&gt;Abre el menú de opciones de tú terminal y ve a &lt;code class="docutils literal"&gt;Perfiles&lt;/code&gt; y a &lt;code class="docutils literal"&gt;Preferencias del perfil&lt;/code&gt;.
 En la pestaña &lt;code class="docutils literal"&gt;General&lt;/code&gt; marca &lt;code class="docutils literal"&gt;Tipo de letra personalizado&lt;/code&gt;,
 y selecciona el tipo y tamaño de letra.&lt;/p&gt;
-&lt;div class="figure"&gt;
+&lt;figure&gt;
 &lt;a class="reference external image-reference" href="https://stsewd.dev/images/nvim/custom-font.png"&gt;&lt;img alt="Configurar el tipo y tamaño de letra de la terminal en Ubuntu" src="https://stsewd.dev/images/nvim/custom-font.png"&gt;&lt;/a&gt;
-&lt;p class="caption"&gt;Configurar el tipo y tamaño de letra de la terminal en Ubuntu&lt;/p&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;div class="section" id="resultado-final"&gt;
+&lt;figcaption&gt;
+&lt;p&gt;Configurar el tipo y tamaño de letra de la terminal en Ubuntu&lt;/p&gt;
+&lt;/figcaption&gt;
+&lt;/figure&gt;
+&lt;/section&gt;
+&lt;/section&gt;
+&lt;section id="resultado-final"&gt;
 &lt;h2&gt;Resultado final&lt;/h2&gt;
-&lt;div class="figure"&gt;
+&lt;figure&gt;
 &lt;a class="reference external image-reference" href="https://stsewd.dev/images/nvim/final-nvim-ubuntu.png"&gt;&lt;img alt="Neovim final en Ubuntu" src="https://stsewd.dev/images/nvim/final-nvim-ubuntu.png"&gt;&lt;/a&gt;
-&lt;p class="caption"&gt;Neovim final en Ubuntu&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class="figure"&gt;
+&lt;figcaption&gt;
+&lt;p&gt;Neovim final en Ubuntu&lt;/p&gt;
+&lt;/figcaption&gt;
+&lt;/figure&gt;
+&lt;figure&gt;
 &lt;a class="reference external image-reference" href="https://stsewd.dev/images/nvim/final-nvim-fedora.png"&gt;&lt;img alt="Neovim final en Fedora" src="https://stsewd.dev/images/nvim/final-nvim-fedora.png"&gt;&lt;/a&gt;
-&lt;p class="caption"&gt;Neovim final en Fedora&lt;/p&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;div class="section" id="alternativas"&gt;
+&lt;figcaption&gt;
+&lt;p&gt;Neovim final en Fedora&lt;/p&gt;
+&lt;/figcaption&gt;
+&lt;/figure&gt;
+&lt;/section&gt;
+&lt;section id="alternativas"&gt;
 &lt;h2&gt;Alternativas&lt;/h2&gt;
 &lt;p&gt;¿Te gustaron ciertas características de Neovim pero no te atreves a abandonar tu actual editor?
 Puedes hacerlo de manera progresiva o disfrutar varias de las características de Neovim sin usarlo de manera directa.&lt;/p&gt;
@@ -1940,8 +1990,8 @@ Los que recomiendo son:&lt;/p&gt;
 &lt;li&gt;&lt;p&gt;&lt;a class="reference external" href="https://www.jetbrains.com/idea/"&gt;IntelliJ IDEA&lt;/a&gt; y derivados (pycharm, webstorm, android studio, etc) + &lt;a class="reference external" href="https://github.com/JetBrains/ideavim"&gt;IdeaVim&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
 &lt;li&gt;&lt;p&gt;&lt;a class="reference external" href="https://www.eclipse.org/"&gt;Eclipse&lt;/a&gt; + &lt;a class="reference external" href="https://marketplace.eclipse.org/content/vrapper-vim"&gt;Vrapper&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
 &lt;/ul&gt;
-&lt;/div&gt;
-&lt;div class="section" id="conclusion-y-recomendaciones"&gt;
+&lt;/section&gt;
+&lt;section id="conclusion-y-recomendaciones"&gt;
 &lt;h2&gt;Conclusión y recomendaciones&lt;/h2&gt;
 &lt;p&gt;Aprender a usar Neovim es duro,
 pasará algún tiempo hasta que te sientas cómodo,
@@ -1953,55 +2003,55 @@ ni copies totalmente las configuraciones de otras personas,
 toma lo que vas a estar seguro que usarás.&lt;/p&gt;
 &lt;p&gt;Luego de aprender lo básico,
 el siguiente paso es empezar a usar plugins y a aprender desde la documentación oficial de Neovim.&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class="section" id="recursos-adicionales"&gt;
+&lt;/section&gt;
+&lt;section id="recursos-adicionales"&gt;
 &lt;h2&gt;Recursos adicionales&lt;/h2&gt;
 &lt;p&gt;¿Interesado en aprender más?
 Neovim es un reemplazo directo de Vim,
 así que todo lo que aprendas para Vim podrás aplicarlo en Neovim.&lt;/p&gt;
-&lt;div class="section" id="tutoriales-online"&gt;
+&lt;section id="tutoriales-online"&gt;
 &lt;h3&gt;Tutoriales online&lt;/h3&gt;
 &lt;ul class="simple"&gt;
 &lt;li&gt;&lt;p&gt;&lt;a class="reference external" href="http://yannesposito.com/Scratch/en/blog/Learn-Vim-Progressively/"&gt;Learn vim progressively&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
 &lt;li&gt;&lt;p&gt;&lt;a class="reference external" href="https://bluz71.github.io/2017/05/15/vim-tips-tricks.html"&gt;Vim Tips &amp;amp; Tricks&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
 &lt;li&gt;&lt;p&gt;&lt;a class="reference external" href="https://learnxinyminutes.com/docs/vim/"&gt;Learn X in Y minutes&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
 &lt;/ul&gt;
-&lt;/div&gt;
-&lt;div class="section" id="cheat-sheets"&gt;
+&lt;/section&gt;
+&lt;section id="cheat-sheets"&gt;
 &lt;h3&gt;Cheat Sheets&lt;/h3&gt;
 &lt;ul class="simple"&gt;
 &lt;li&gt;&lt;p&gt;&lt;a class="reference external" href="http://www.viemu.com/a_vi_vim_graphical_cheat_sheet_tutorial.html"&gt;Graphical vi-vim Cheat Sheet and Tutorial&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
 &lt;li&gt;&lt;p&gt;&lt;a class="reference external" href="http://vimsheet.com/"&gt;A Great Vim Cheat Sheet&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
 &lt;/ul&gt;
-&lt;/div&gt;
-&lt;div class="section" id="videos"&gt;
+&lt;/section&gt;
+&lt;section id="videos"&gt;
 &lt;h3&gt;Vídeos&lt;/h3&gt;
 &lt;ul class="simple"&gt;
 &lt;li&gt;&lt;p&gt;&lt;a class="reference external" href="http://vimcasts.org/"&gt;Vim casts&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
 &lt;li&gt;&lt;p&gt;&lt;a class="reference external" href="https://www.youtube.com/watch?v=XA2WjJbmmoM&amp;amp;list=PL8tzorAO7s0jy7DQ3Q0FwF3BnXGQnDirs"&gt;Vim meetups&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
 &lt;/ul&gt;
-&lt;/div&gt;
-&lt;div class="section" id="libros"&gt;
+&lt;/section&gt;
+&lt;section id="libros"&gt;
 &lt;h3&gt;Libros&lt;/h3&gt;
 &lt;ul class="simple"&gt;
 &lt;li&gt;&lt;p&gt;&lt;a class="reference external" href="https://vimebook.com/"&gt;Vim for humans&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
 &lt;li&gt;&lt;p&gt;&lt;a class="reference external" href="https://github.com/mhinz/vim-galore"&gt;Vim Galore&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
 &lt;li&gt;&lt;p&gt;&lt;a class="reference external" href="http://learnvimscriptthehardway.stevelosh.com/"&gt;Learn Vimscript the Hard Way&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
 &lt;/ul&gt;
-&lt;/div&gt;
-&lt;div class="section" id="video-juegos"&gt;
+&lt;/section&gt;
+&lt;section id="video-juegos"&gt;
 &lt;h3&gt;Vídeo juegos&lt;/h3&gt;
 &lt;ul class="simple"&gt;
 &lt;li&gt;&lt;p&gt;&lt;a class="reference external" href="https://vim-adventures.com/"&gt;Vim adventures&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
 &lt;/ul&gt;
-&lt;/div&gt;
-&lt;div class="section" id="articulos"&gt;
+&lt;/section&gt;
+&lt;section id="articulos"&gt;
 &lt;h3&gt;Artículos&lt;/h3&gt;
 &lt;ul class="simple"&gt;
 &lt;li&gt;&lt;p&gt;&lt;a class="reference external" href="https://jacky.wtf/weblog/moving-to-neovim/"&gt;Moving to Neovim from Vim&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
 &lt;/ul&gt;
-&lt;/div&gt;
-&lt;div class="section" id="dotfiles"&gt;
+&lt;/section&gt;
+&lt;section id="dotfiles"&gt;
 &lt;h3&gt;Dotfiles&lt;/h3&gt;
 &lt;p&gt;Los dotfiles no son más que archivos de configuración
 (que usualmente empiezan con un &lt;code class="docutils literal"&gt;.&lt;/code&gt;, de ahí su nombre).
@@ -2040,5 +2090,5 @@ En varios dotfiles podrás encontrar configuraciones para Vim/Neovim que podría
 &lt;dd&gt;&lt;p&gt;&lt;a class="reference external" href="http://joshldavis.com/2014/04/05/vim-tab-madness-buffers-vs-tabs/"&gt;http://joshldavis.com/2014/04/05/vim-tab-madness-buffers-vs-tabs/&lt;/a&gt;&lt;/p&gt;
 &lt;/dd&gt;
 &lt;/dl&gt;
-&lt;/div&gt;
-&lt;/div&gt;&lt;/div&gt;</description><guid>https://stsewd.dev/posts/neovim-installation-configuration/</guid><pubDate>Thu, 06 Jul 2017 05:00:00 GMT</pubDate></item></channel></rss>
+&lt;/section&gt;
+&lt;/section&gt;&lt;/div&gt;</description><guid>https://stsewd.dev/posts/neovim-installation-configuration/</guid><pubDate>Thu, 06 Jul 2017 05:00:00 GMT</pubDate></item></channel></rss>
