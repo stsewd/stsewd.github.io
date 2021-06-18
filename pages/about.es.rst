@@ -5,7 +5,7 @@
 Quién soy
 ---------
 
-Soy Santos Gallegos, vivo en Cuenca - Ecuador.
+Soy Santos Gallegos, vivo en Ecuador.
 Me gusta el desarrollo web, algoritmos, Python, Neovim, y software libre y open source.
 Siempre tratando de aprender nuevas cosas,
 `y dibujante de vez en cuando <https://stsewd.deviantart.com/gallery/>`__.

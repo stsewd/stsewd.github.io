@@ -1,9 +1,7 @@
 .. title: De guía en Django Girls a pasante en Read the Docs
 .. slug: historia-django-girls-rtd
 .. date: 2018-05-30
-.. tags:
-.. category:
-.. link:
+.. category: experience
 .. description: Esta es una historia de como participar como guía en un Django Girls me llevó a conecer a grandes personas, aprender mucho, compartir y llegar a hacer pasantías en Read the Docs.
 .. type: text
 

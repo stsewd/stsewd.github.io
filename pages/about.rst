@@ -5,7 +5,7 @@
 About me
 --------
 
-I'm Santos Gallegos, I live in Cuenca - Ecuador.
+I'm Santos Gallegos, I live in Ecuador.
 I love web development, algorithms, Python, Neovim, and free and open source software.
 Always trying to learn new things,
 and `artist occasionally <https://stsewd.deviantart.com/gallery/>`__.

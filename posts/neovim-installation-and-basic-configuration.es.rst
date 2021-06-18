@@ -3,7 +3,6 @@
 .. date: 2017-07-06
 .. tags: neovim
 .. category: neovim
-.. link:
 .. description: En este post daré una introducción a Neovim, un editor de texto muy diferente a los que estás acostumbrado a usar. Además detallaré paso a paso las instrucciones para su instalación en Fedora y Ubuntu; y cómo configurarlo.
 .. type: text
 
