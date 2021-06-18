@@ -1,6 +1,7 @@
 .. title: Devsu Code Jam 2019 - solutions and my experience
 .. date: 2020-10-02
 .. category: problem solving, experience
+.. tags: problem solving, experience
 .. description: Solutions to some problems from the Devsu codejam 2019 contest and my experience.
 
 Last year I participated in the `Devsu Codejam 2019`_ contest,

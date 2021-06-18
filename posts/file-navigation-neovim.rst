@@ -2,6 +2,7 @@
 .. date: 2019-09-06
 .. updated: 2020-04-26
 .. category: neovim, fzf, plugins, nerdtree, navigation
+.. tags: neovim, fzf, plugins, nerdtree, navigation
 .. description: How to navigate files and more in Neovim
 
 If you work in a project with more than one file,

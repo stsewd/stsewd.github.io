@@ -2,6 +2,7 @@
 .. slug: neovim-plugins
 .. date: 2017-08-20
 .. category: neovim
+.. tags: neovim
 .. description: Para ser más productivo con Neovim los plugins son tus aliados, en este post mostraré cómo instalarlos y administrarlos, además una lista de plugins esenciales para hacer de tu editor un IDE muy liviano.
 .. type: text
 

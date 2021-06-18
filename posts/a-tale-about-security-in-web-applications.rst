@@ -1,6 +1,7 @@
 .. title: A tale about security in web applications, or how I helped to save a bank from bankruptcy
 .. date: 2021-06-18
 .. category: security, experience
+.. tags: security, experience
 .. description: A short tale about the importance of good security practices while developing or auditing safe critical systems.
 
 Hi friend, today I'm going to tell you a little story.

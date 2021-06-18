@@ -2,6 +2,7 @@
 .. slug: read-the-docs
 .. date: 2019-07-06
 .. category: documentation
+.. tags: documentation
 .. description: When we write software, people tell us to write docs for it, but we forgot to read the docs very often
 .. type: text
 

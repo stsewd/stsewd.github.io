@@ -2,6 +2,7 @@
 .. slug: historia-django-girls-rtd
 .. date: 2018-05-30
 .. category: experience
+.. tags: experience
 .. description: Esta es una historia de como participar como guía en un Django Girls me llevó a conecer a grandes personas, aprender mucho, compartir y llegar a hacer pasantías en Read the Docs.
 .. type: text
 
