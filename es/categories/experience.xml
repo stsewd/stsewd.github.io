@@ -1,0 +1,349 @@
+<?xml version="1.0" encoding="utf-8"?>
+<?xml-stylesheet type="text/xsl" href="../../assets/xml/rss.xsl" media="all"?><rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Santos Gallegos (Publicaciones sobre experience)</title><link>https://stsewd.dev/</link><description></description><atom:link href="https://stsewd.dev/es/categories/experience.xml" rel="self" type="application/rss+xml"></atom:link><language>es</language><copyright>Contents © 2021 &lt;a href="mailto:stsewd@protonmail.com"&gt;Santos Gallegos&lt;/a&gt; </copyright><lastBuildDate>Fri, 18 Jun 2021 15:15:44 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>A tale about security in web applications, or how I helped to save a bank from bankruptcy</title><link>https://stsewd.dev/es/posts/a-tale-about-security-in-web-applications/</link><dc:creator>Santos Gallegos</dc:creator><description>&lt;div&gt;&lt;p&gt;Hi friend, today I'm going to tell you a little story.
+Some things may look familiar, or even you could feel related to some situations.
+I assure you, &lt;strong&gt;it's mere coincidence&lt;/strong&gt;.&lt;/p&gt;
+&lt;section id="a-new-experience"&gt;
+&lt;h2&gt;A new experience&lt;/h2&gt;
+&lt;p&gt;This tale takes place in Ecuador.
+It was during the lockdown that some friends contacted me to help them with a security audit.
+They were forming a team (with special abilities?),
+and there was missing someone with programming/web skills.&lt;/p&gt;
+&lt;p&gt;I was a little nervous to say yes,
+since I haven't had much experience with security in the field.
+But it was comforting to know that my teammates had vast experience in it.
+I was excited to learn new things from them, and how the world of security, auditing, and banking works.
+Oh, and I would get one of those fancy permits (salvoconducto) to go outside during lockdown.&lt;/p&gt;
+&lt;ul class="simple"&gt;
+&lt;li&gt;&lt;p&gt;Wait, "banking"?&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;Oh, sorry I didn't tell you, the security audit was for a small bank.&lt;/p&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/section&gt;
+&lt;section id="first-flight"&gt;
+&lt;h2&gt;First flight&lt;/h2&gt;
+&lt;p&gt;And &lt;em&gt;the day&lt;/em&gt; arrived.
+We started with their homepage, and some small web applications.
+It didn't take me much time to start finding small security bugs.
+And then not so small, but not &lt;em&gt;that&lt;/em&gt; critical either,
+mostly things returning too much data or returning data when they shouldn't.
+And it was from some old applications, so there wasn't much surprise in there,
+and the data exposed wasn't from all their clients.&lt;/p&gt;
+&lt;p&gt;After reporting some of those bugs that seemed important to get fixed soon
+we moved on to our next target: &lt;strong&gt;the online banking application&lt;/strong&gt;.&lt;/p&gt;
+&lt;p&gt;We started with a black box test (no user).
+It wasn't long since we started to find minor security bugs.
+And we found some indications that the API may not be doing an appropriate check for authorization,
+but without a user, it wasn't easy to guess (yet!).&lt;/p&gt;
+&lt;ul class="simple"&gt;
+&lt;li&gt;&lt;p&gt;What indications?&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;Well, most of their APIs required a user ID to be present in the request.
+So, instead of relying on some session cookie or authorization token previously validated by the server,
+&lt;strong&gt;they were asking the client to explicitly pass the user's ID&lt;/strong&gt;.&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;Oh, I see, that smells bad.&lt;/p&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/section&gt;
+&lt;section id="access-granted"&gt;
+&lt;h2&gt;Access granted&lt;/h2&gt;
+&lt;p&gt;After we got tired of guessing what some APIs would do and their parameters,
+we created a new user and started our gray box testing.
+The first thing we did was to check those precious API requests,
+the parameters being sent, cookies, etc.
+And then, the test we all were waiting for.
+Changing the user from the request to another one...
+Bingo! We got access. I mean, &lt;strong&gt;damn, we got access???&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;After that shocking reveal, we kept digging for more endpoints to test.
+The obvious one was to try to transfer money from/to other accounts, but there was a little problem.
+An &lt;a class="reference external" href="https://en.wikipedia.org/wiki/One-time_password"&gt;OTP&lt;/a&gt; was required for each transaction.
+So we first made a real transaction to check how the API works...
+We realized that the OTP wasn't needed at all! &lt;strong&gt;It was being validated from the client side!&lt;/strong&gt;
+So, yes, we were able to transfer money to any account &lt;strong&gt;and&lt;/strong&gt; from any account.
+The user IDs were all incremental,
+which means that you could easily steal money from everyone in the bank.&lt;/p&gt;
+&lt;ul class="simple"&gt;
+&lt;li&gt;&lt;p&gt;Damn! THAT IS SHOCKING! Someone could have easily emptied the accounts of everyone!
+But it would have been very obvious if it has happened.&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;Or just steal 50 cents from everyone in the bank each month.
+Do you really know exactly how much money do you have in your bank account?
+Would you even care if only 50 cents were missing?&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;That's a low and long game to play, but still easy to track.&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;Or you could just buy things, and pay with a wire transfer.
+That way the money goes to several people instead of just one.
+There are more ways you could exploit this without anyone noticing it, for sure.&lt;/p&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/section&gt;
+&lt;section id="interlude-about-boxes"&gt;
+&lt;h2&gt;Interlude - about boxes&lt;/h2&gt;
+&lt;ul class="simple"&gt;
+&lt;li&gt;&lt;p&gt;So, you did a black and gray box tests, is there a white one? and what those colors mean?&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;The color thing is about how much information and access you have to the application.
+In a black box test, you don't know anything about the system internals.
+In a gray box test, you have some knowledge of the application, like the architecture,
+technologies being used and intern access to the application (like a user!).
+And finally the white one, you have access to the source code.
+But we didn't do that one.&lt;/p&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/section&gt;
+&lt;section id="consequences"&gt;
+&lt;h2&gt;Consequences&lt;/h2&gt;
+&lt;p&gt;At this point more than shocked, &lt;strong&gt;I was scare and disappointed&lt;/strong&gt;.
+Scare of knowing this vulnerability existed and was &lt;strong&gt;easy to exploit&lt;/strong&gt;.
+The money from all the people was in danger, maybe even their lives!
+And disappointed to know that this application has been sold to this bank (and others!) for a lot of money,
+and the company behind it has been doing so for more than 15 years.
+And also, that all these banks have been for many security audits,
+and &lt;strong&gt;NO ONE&lt;/strong&gt; found any of the things we reported.&lt;/p&gt;
+&lt;ul class="simple"&gt;
+&lt;li&gt;&lt;p&gt;What do you mean with their lives were in danger?&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;You could disagree with me on this one,
+personally I think that a bank is a &lt;a class="reference external" href="https://en.wikipedia.org/wiki/Safety-critical_system"&gt;SCS&lt;/a&gt;,
+Nothing good can happen
+if something goes wrong with people's money,
+or all their savings.&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;No one found that after several audits? WOW! Why do you think they missed them?
+And how the developers missed that!?&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;Sadly. Laziness, inexperience and negligence.
+Here people don't like to go very &lt;em&gt;technical&lt;/em&gt;,
+but instead go with degrees and certifications ($$$).
+And when doing the audit, they only run automated tools
+without doing any manual checking, or trust that the apps are secure,
+or everyone in the team knows only about networking.
+And from the developers side, what can I say?
+Most developers here don't know what a unit test is,
+or are afraid to say "I'm not qualified to build this, we need someone else".&lt;/p&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/section&gt;
+&lt;section id="not-surprised"&gt;
+&lt;h2&gt;Not surprised&lt;/h2&gt;
+&lt;p&gt;I can't say this was &lt;em&gt;that&lt;/em&gt; shocking,
+I mean, I have seen things like this on several apps in my country before,
+but seeing this happening in a bank... that's another thing.&lt;/p&gt;
+&lt;ul class="simple"&gt;
+&lt;li&gt;&lt;p&gt;So, what happened after you reported this?&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;Well, the company behind the application negated that the bug existed,
+but we provided enough proofs in our report that invalidated all those claims.
+And they even charged the bank for fixing those vulnerabilities.&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;WTF? That's unethical.&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;Yeah, but sadly I learned that's how the banking/enterprise world works.&lt;/p&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;We found more shocking things&lt;/strong&gt;, but I may tell you that in another occasion.&lt;/p&gt;
+&lt;/section&gt;
+&lt;section id="the-end"&gt;
+&lt;h2&gt;The end&lt;/h2&gt;
+&lt;p&gt;&lt;strong&gt;If you are a developer&lt;/strong&gt;, please always make sure to write tests for you code,
+especially if you are dealing with sensitive data.
+If you feel you may not have enough experience to work on something,
+don't be afraid to say so, and ask for help.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;If you are doing a security audit&lt;/strong&gt;,
+please bring a diverse team,
+or be clear with the client about what things you may not be dealing with.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;If you are looking to do a security audit at your company&lt;/strong&gt;,
+I may know a great team with experts in different areas that &lt;a class="reference external" href="https://stsewd.dev/es/about"&gt;you could hire&lt;/a&gt;.&lt;/p&gt;
+&lt;div class="admonition note"&gt;
+&lt;p class="admonition-title"&gt;Note&lt;/p&gt;
+&lt;p&gt;This tale may have been inspired by a real situation,
+and some things may have been exaggerated (or maybe not?).&lt;/p&gt;
+&lt;/div&gt;
+&lt;/section&gt;&lt;/div&gt;</description><guid>https://stsewd.dev/es/posts/a-tale-about-security-in-web-applications/</guid><pubDate>Fri, 18 Jun 2021 05:00:00 GMT</pubDate></item><item><title>Devsu Code Jam 2019 - solutions and my experience</title><link>https://stsewd.dev/es/posts/devsucodejam-2019/</link><dc:creator>Santos Gallegos</dc:creator><description>&lt;div&gt;&lt;p&gt;Last year I participated in the &lt;a class="reference external" href="https://www.devsucodejam.com/"&gt;Devsu Codejam 2019&lt;/a&gt; contest,
+which is about solving programming problems.
+The first place? A car 🚗.&lt;/p&gt;
+&lt;p&gt;The contest was for all developers from Ecuador,
+this is the first time I have heard about this type of contests being organized in Ecuador,
+so it caught my attention (well, the car a little too).&lt;/p&gt;
+&lt;figure class="align-center"&gt;
+&lt;img alt="/images/devsucodejam-2019/web.png" src="https://stsewd.dev/images/devsucodejam-2019/web.png"&gt;
+&lt;figcaption&gt;
+&lt;p&gt;Devsu Codejam front page&lt;/p&gt;
+&lt;/figcaption&gt;
+&lt;/figure&gt;
+&lt;p&gt;First, a little of background about myself.
+I have participated in some contests about problem solving in the past:
+three times in the &lt;a class="reference external" href="https://ieeextreme.org/"&gt;IEEEXtreme programming&lt;/a&gt; (before the university kicked me out),
+and a couple on &lt;a class="reference external" href="https://www.hackerrank.com/stsewd"&gt;Hackerrank&lt;/a&gt;, so I'm kind of familiar with them.
+I stopped participating in these kind of contests for a while,
+so this was a good opportunity to get back into the game.&lt;/p&gt;
+&lt;p&gt;The contest was split into two categories (students and professionals), and it had two rounds.
+The first round was online (November 23th), and was around ~4 hours with 16 problems.
+The first 50 of each category from the first round could go the second round held in Quito,
+the capital of Ecuador (November 30th), this phase was around 3 hours with 10 problems.&lt;/p&gt;
+&lt;p&gt;I participated in the professionals category.
+And got the 10th place in the first round, and the 7th place in the final round.
+What? Did you think I won the car? Sorry friend, I didn't mean to disappoint you.&lt;/p&gt;
+&lt;p&gt;Anyway, I arrived at Quito the day before the contest,
+met some friends and got drunk, and didn't get much sleep.
+And the day of the contest my allergies didn't play nice...
+so I had a running nose during the whole contest.
+And yes, those are silly excuses, but a 7th place isn't bad 😃
+(and they gave some prizes to the first 10 of each category).&lt;/p&gt;
+&lt;p&gt;That was my experience, now let's get back to the problems.
+I uploaded my solutions from the first round here
+&lt;a class="reference external" href="https://github.com/stsewd/devsucodejam-2019"&gt;https://github.com/stsewd/devsucodejam-2019&lt;/a&gt; and from the final round here &lt;a class="reference external" href="https://github.com/stsewd/devsucodejam-2019-final"&gt;https://github.com/stsewd/devsucodejam-2019-final&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;I don't have access to the platform with all the test cases,
+so I can't guarantee all the solutions are correct,
+but I believe most of them are :).&lt;/p&gt;
+&lt;div class="admonition note"&gt;
+&lt;p class="admonition-title"&gt;Note&lt;/p&gt;
+&lt;p&gt;First I was planning in writting the explanation for all solutions,
+but then I realized the posts would be too long to read &lt;em&gt;and write&lt;/em&gt;...
+So I'm just linking to my solutions instead,
+if you have any questions about one of them let me know,
+maybe I'll do another post explaining those solutions.&lt;/p&gt;
+&lt;/div&gt;
+&lt;p&gt;Some final words, I encourage &lt;strong&gt;you&lt;/strong&gt; to keep solving problems in platforms like &lt;a class="reference external" href="https://www.hackerrank.com/"&gt;hackerrank&lt;/a&gt; and &lt;a class="reference external" href="https://hackerearth.com/"&gt;hackerearth&lt;/a&gt;.
+You'll realize how using a different algorithm or data structure will make your programs faster,
+how some small optimizations can make a big difference when handling large amounts of data,
+start thinking outside the box when solving real-life problems,
+and see math as your best friend when solving problems.&lt;/p&gt;
+&lt;p&gt;And there is another plus,
+when solving problems, at the same time you'll be building your portfolio,
+and showing your &lt;em&gt;real skills&lt;/em&gt; to the world.&lt;/p&gt;
+&lt;p&gt;&lt;em&gt;If you want to master a programming language, solving problems is a fun way to do it!&lt;/em&gt;&lt;/p&gt;&lt;/div&gt;</description><guid>https://stsewd.dev/es/posts/devsucodejam-2019/</guid><pubDate>Fri, 02 Oct 2020 05:00:00 GMT</pubDate></item><item><title>De guía en Django Girls a pasante en Read the Docs</title><link>https://stsewd.dev/es/posts/historia-django-girls-rtd/</link><dc:creator>Santos Gallegos</dc:creator><description>&lt;div&gt;&lt;ul class="simple"&gt;
+&lt;li&gt;&lt;p&gt;¿Entonces, qué les interesa a las personas acá? ¿Qué te interesa a ti?&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;¡Graduarme!&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;¿Para qué?&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;Para obtener mi título, por supuesto, todos me van a llamar ingeniera/o.&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;¿Para qué quieres eso?&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;Para tener un trabajo y ganar mucho dinero&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;¿Para qué?&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;Pues para tener un carro de lujo y una gran casa. Los ingenieros cambiamos el mundo.&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;Entonces ¿Estás estudiando cómo construir grandes cosas para el beneficio de la comunidad?
+¿Así como un proyecto de software libre?&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;No, eso del software libre no da plata.&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;Entonces ¿estás aprendiendo cómo programar mejor que nadie para hacer algo grandioso?&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;¿¡Programar!? No, eso no hacen los ingenieros.
+Los ingenieros no programamos, eso es como ser los albañiles de la ingeniera civil.&lt;/p&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;section id="hello-world"&gt;
+&lt;h2&gt;&lt;code class="docutils literal"&gt;Hello World&lt;/code&gt;&lt;/h2&gt;
+&lt;p&gt;Antes de empezar con esta historia,
+quisiera contar un poco sobre mi.
+Soy de Machala, una pequeña ciudad de Ecuador.&lt;/p&gt;
+&lt;p&gt;Desde mi infancia siempre tuve cierto interés por la tecnología,
+pero mi familia no tenía los recursos para tener un computador o cosas de &lt;em&gt;tecnología de punta&lt;/em&gt;.
+Todo eso que me atraía era sólo un sueño, no conocía a nadie más con quién compartir este interés.
+En la escuela/colegio tuve un par de clases de computación,
+pero a lo mucho nos enseñaron como manejar Word y Excel,
+incluso en el último año de colegio nos enseñaron como crearnos una cuenta de Google+
+(¡hasta nos hicieron comprar un libro para eso!).&lt;/p&gt;
+&lt;p&gt;A mis 16 años, por fin mi familia pudo adquirir un computador,
+y luego de unos meses tuve Internet.
+Empecé a investigar y leer, me topé con algo que se llama programación y así empezó mi viaje.
+Durante todo ese tiempo tenía muchas preguntas, no sabía a quién preguntárselas,
+ni qué realmente debía preguntar.&lt;/p&gt;
+&lt;p&gt;Luego me tocó ir a la Universidad, en Machala la educación pública no era muy buena,
+al terminar el colegio tienes 4 opciones: empezar a trabajar, seguir algún curso/academia
+y empezar a trabajar, ir a la universidad de Machala y con suerte conseguir un trabajo,
+o viajar para ir a una universidad de las grandes ciudades,
+donde podrás tener la oportunidad de ser un profesional reconocido.&lt;/p&gt;
+&lt;p&gt;No tenía idea de qué carrera seguir,
+los últimos años pude explorar el mundo de la computación.
+Así que decidí que tenía que seleccionar una carrera relacionada a computadoras.
+Ingeniería en sistemas, parecía la mejor opción
+(no tenía idea de lo que era, sólo que de alguna manera tenía que ver con computadoras).&lt;/p&gt;
+&lt;p&gt;Di la prueba de admisión, y pude ingresar a la Universidad de Cuenca.
+Ya ahí, en los primeros ciclos seguía sin entender qué era lo que estaba estudiando.
+Hasta que en un ciclo me tocó tomar la materia de programación,
+donde me enseñaron Python.&lt;/p&gt;
+&lt;p&gt;En los siguientes años, nos enseñaron Java, pero a mi me seguía gustando Python.
+Empecé a leer diferentes libros relacionados a programación,
+seguir proyectos en GitHub, leer artículos de ingenieros de software de grandes empresas.
+Hasta que un día empecé a notar algo... los profesores nunca nombraban todas esas cosas tan cooles que leía.
+Algo estaba mal... O esas personas que estaban al frente de mi con varios años de educación,
+incluso en universidades de otros países estaban equivocadas
+o todos esos libros, artículos y proyectos open source eran una mentira.&lt;/p&gt;
+&lt;p&gt;Con esto pude ver que la mayoría no tenía experiencia real,
+lo único que hacían era repetirnos lo que estaba escrito en los libros,
+o repetirnos lo que los profesores de ellos les enseñaron,
+casi nadie podía enseñarnos de su experiencia propia. Me sentí decepcionado.
+No iba a aprender todas esas cosas super cooles que se usaban en grandes proyectos.&lt;/p&gt;
+&lt;p&gt;Pero no me dí por vencido, Cuenca se llama así misma ciudad tecnológica,
+debía tener empresas muy cooles de las cuales aprender.
+Equivocado, luego de ver un par de empresas locales,
+pude ver que el desarrollo de software no está tan avanzado en el país.
+Y nadie hace nada al respecto, todo lo cool seguía en las grandes ciudades
+como Quito (traído gracias a empresas extranjeras) o en otros países.
+Me sentí decepcionado, otra vez.&lt;/p&gt;
+&lt;/section&gt;
+&lt;section id="main-py"&gt;
+&lt;h2&gt;&lt;code class="docutils literal"&gt;main.py&lt;/code&gt;&lt;/h2&gt;
+&lt;p&gt;No recuerdo exactamente dónde, creo que fue en Facebook.
+Vi una publicidad sobre que se iba a hacer un Django Girls en Cuenca.
+La mayoría de eventos tecnológicos sólo pasaban en Quito,
+y Django Girls, sólo en otros países.
+Pero era real, se iba a realizar este evento en Cuenca.
+Pero desafortunadamente era tarde para las inscripciones.
+Luego de un tiempo vi que en las páginas de Facebook donde anunciaron el Django Girls
+estaban anunciando meetups sobre Python, no conocía muy bien la ciudad
+y no tenía con quién más ir. Con el tiempo vi que publicaban más eventos, hasta que ya no hubo más.
+Ahí se fue mi oportunidad de conocer a otras personas que les apasionara Python.&lt;/p&gt;
+&lt;p&gt;Al siguiente año, se anunciaba otro Django Girls, ahí estaba mi oportunidad otra vez.
+Esta vez no la iba a dejar pasar, así que me atreví a inscribirme como guía.
+Así fue como conocí a &lt;a class="reference external" href="https://argentinaenpython.com"&gt;Argentina en Python&lt;/a&gt;
+junto a Manuel, Johanna y su fiel amigo herrante (¡no, no fue en una meetup!).&lt;/p&gt;
+&lt;p&gt;Ese día me la pasé genial, por fin pude conocer a un &lt;em&gt;programador de verdad&lt;/em&gt;.
+Unas semanas después del Django Girls, hubo una reunión post evento.
+Estaba muy emocionado, otra vez iba a tener la oportunidad de compartir con estas
+personas que buscan descentralizar el conocimiento,
+e iba a poder conversar con un programador de verdad nuevamente.&lt;/p&gt;
+&lt;p&gt;Cuando llegué al lugar no había nadie. Pensé que me había equivocado de día/hora.
+Pero no, al final llegaron Manuel y Johanna, y nadie más...
+No entendía que pasaba ¿Dónde están los demás? ¿Por qué están desperdiciando esta oportunidad?
+¿Realmente soy el único que le interesa? Ese día me decepcioné aún más.&lt;/p&gt;
+&lt;p&gt;En esa reunión pudimos hablar un poco sobre la comunidad y cómo reanimarla.
+Así empecé a ayudar un poco a organizar &lt;a class="reference external" href="https://www.meetup.com/python-ecuador"&gt;meetups&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;Así pasaron un par de meetups, nadie más se nos sumaba.
+Un día tuvimos éxito, y se nos sumaron 2 personas más (Sebastián y Leonardo).
+Y actualmente con ellos seguimos organizando eventos en Cuenca,
+y con muchas ganas de contagiar al resto del país.&lt;/p&gt;
+&lt;p&gt;Ya con Manuel veníamos hablando varias veces sobre el desinterés de las personas en la comunidad,
+en el auto-aprendizaje, en desarrollar software de la mejor manera.&lt;/p&gt;
+&lt;p&gt;Quería ayudar a cambiar eso, dar a conocer que hay un montón por aprender,
+y que en la universidad no lo van a enseñar,
+nadie más que tu mismo te lo va a hacer.
+Hacer que las personas vean que programar si es de ingenieros.
+Que es una actividad muy importante y divertida, y por lo tanto debe hacerse bien.&lt;/p&gt;
+&lt;p&gt;Argentina en Python comparte mi filosofía de descentralizar el conocimiento,
+de que no debe ser un impedimento haber nacido en una ciudad pequeña
+o no tener dinero para aprender. El conocimiento debe ser libre.&lt;/p&gt;
+&lt;p&gt;Así, un día Manuel me hizo una propuesta muy loca.
+Que dejara mi trabajo actual, que trabajara para él, un trato.
+Él me pagaba casi la misma cantidad que ganaba actualmente
+(¡y un poco más, la verdad!) por unos meses, todo esto de su bolsillo.
+Trabajar colaborando en el proyecto &lt;a class="reference external" href="https://readthedocs.org/"&gt;Read the Docs&lt;/a&gt; medio tiempo.
+¿Qué? No podía creerlo, ¡me estaba jugando una broma!
+O me volví completamente loco y estaba alucinando todo esto.
+Dejaría atrás mi trabajo aburrido y empezaría a hacer algo que me gusta,
+en conjunto con desarrolladores con mucha experiencia, y por si fuera poco,
+estaría ayudando a la comunidad. Espera... ¿Qué ganaba Manuel con esto?
+Económicamente, ¡nada! Me dijo que lo hacía porque quería que me de a conocer,
+que empiece a mirar más allá, que todo eso que pensamos que es un sueño es posible.&lt;/p&gt;
+&lt;p&gt;Y así lo que me parecía que sólo pasaba en las grandes ciudades, me estaba pasando a mi.
+Esos meses que &lt;em&gt;trabajé para Manuel&lt;/em&gt; aprendí mucho, y conocí a varias personas,
+y otras personas me conocieron a mi. Así a un mes de terminarse mi trato con Manuel,
+me dijo que &lt;a class="reference external" href="http://ericholscher.com/"&gt;Eric Holscher&lt;/a&gt;,
+el dueño del proyecto Read the Docs me estaba ofreciendo hacer pasantías.
+Y luego recibí este email:&lt;/p&gt;
+&lt;a class="reference external image-reference" href="https://stsewd.dev/images/django-girls-rtd/rtd-ssoc.png"&gt;&lt;img alt="/images/django-girls-rtd/rtd-ssoc.png" class="align-center" src="https://stsewd.dev/images/django-girls-rtd/rtd-ssoc.png"&gt;&lt;/a&gt;
+&lt;p&gt;Espero esto no estarlo alucinando.
+Si antes tenía una gran deuda con la comunidad de software libre,
+ahora tengo una deuda mucho más grande.&lt;/p&gt;
+&lt;/section&gt;
+&lt;section id="open-mind-txt-r"&gt;
+&lt;h2&gt;&lt;code class="docutils literal"&gt;&lt;span class="pre"&gt;open('mind.txt',&lt;/span&gt; &lt;span class="pre"&gt;'r+')&lt;/span&gt;&lt;/code&gt;&lt;/h2&gt;
+&lt;p&gt;¿Haber asistido a un Django Girls me llevó a esta oportunidad?
+Varias cosas locas pasaron desde ese momento, muchas no tan buenas.
+Pero también me trajo nuevos amigos, personas que comparten mi
+visión sobre compartir y descentralizar el conocimiento,
+ayudar a la comunidad sin buscar ningún interés personal.
+Gracias Manuel y Johanna.&lt;/p&gt;
+&lt;p&gt;El objetivo de este post, no es presumirte sobre mi oportunidad o algo así,
+sino para mostrarte que esto es una realidad. Participar en el software libre,
+en la comunidad, compartiendo el conocimiento, te abre muchas oportunidades,
+conoces a muchas personas, aprendes un montón. Te abre la mente.&lt;/p&gt;
+&lt;/section&gt;
+&lt;section id="exit-1"&gt;
+&lt;h2&gt;&lt;code class="docutils literal"&gt;exit(1)&lt;/code&gt;&lt;/h2&gt;
+&lt;ul class="simple"&gt;
+&lt;li&gt;&lt;p&gt;Cool, voy a inscribirme como guía de un Django Girls en la próxima
+para hacerme famoso y ganar mucho dinero desde mi casa.&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;Creo que deberías leer el post nuevamente.&lt;/p&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/section&gt;&lt;/div&gt;</description><category>experience</category><guid>https://stsewd.dev/es/posts/historia-django-girls-rtd/</guid><pubDate>Wed, 30 May 2018 05:00:00 GMT</pubDate></item></channel></rss>
