@@ -1,6 +1,7 @@
 .. title: Securing your development environment
 .. date: 2021-07-24
 .. category: security, development
+.. tags: security, development
 .. description: Tips on how to secure how to secure your development environment from your computer to your terminal.
 
 If you are a developer, chances are that you handle private code or production secrets.
