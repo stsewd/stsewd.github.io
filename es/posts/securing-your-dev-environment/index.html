@@ -22,6 +22,8 @@
 <meta property="og:description" content="Tips on how to secure how to secure your development environment from your computer to your terminal.">
 <meta property="og:type" content="article">
 <meta property="article:published_time" content="2021-07-24T00:00:00-05:00">
+<meta property="article:tag" content="development">
+<meta property="article:tag" content="security">
 <link rel="alternate" hreflang="en" href="../../../posts/securing-your-dev-environment/">
 </head>
 <body>
@@ -240,16 +242,16 @@ and navigating the history with <code class="docutils literal">↑</code> <code 
 but that history can also contain sensitive information.</p>
 <p>The default number of history entries is usually high,
 as a quick experiment, you can check how many entries you have with:</p>
-<pre class="code bash"><a id="rest_code_112684bea53f48cfa66cc242660de1c6-1" name="rest_code_112684bea53f48cfa66cc242660de1c6-1"></a>cat <span class="nv">$HISTFILE</span> <span class="p">|</span> wc -l
+<pre class="code bash"><a id="rest_code_9729623a5469421e864bff3a7adbde7d-1" name="rest_code_9729623a5469421e864bff3a7adbde7d-1"></a>cat <span class="nv">$HISTFILE</span> <span class="p">|</span> wc -l
 </pre>
 <p>And how many of those entries possibly have secrets with:</p>
-<pre class="code bash"><a id="rest_code_533db177c73d49159bae63e4bd6b972a-1" name="rest_code_533db177c73d49159bae63e4bd6b972a-1"></a>grep -E -i <span class="s1">'(token)|(pass)|(secret)'</span> <span class="nv">$HISTFILE</span>
+<pre class="code bash"><a id="rest_code_6b47f036b7e148e499ab8d9f7c6fc744-1" name="rest_code_6b47f036b7e148e499ab8d9f7c6fc744-1"></a>grep -E -i <span class="s1">'(token)|(pass)|(secret)'</span> <span class="nv">$HISTFILE</span>
 </pre>
 <p>Depending on the Shell you are using,
 you can control the max number of entries with environment variables,
 for zsh this is done with:</p>
-<pre class="code bash"><a id="rest_code_5bafa74449e347c592bf0702ea3638dd-1" name="rest_code_5bafa74449e347c592bf0702ea3638dd-1"></a><span class="nb">export</span> <span class="nv">SAVEHIST</span><span class="o">=</span><span class="m">1000</span>
-<a id="rest_code_5bafa74449e347c592bf0702ea3638dd-2" name="rest_code_5bafa74449e347c592bf0702ea3638dd-2"></a><span class="nb">export</span> <span class="nv">HISTSIZE</span><span class="o">=</span><span class="nv">$SAVEHIST</span>
+<pre class="code bash"><a id="rest_code_3b30e9c529fa44b8aa5cde4f7aa45a5a-1" name="rest_code_3b30e9c529fa44b8aa5cde4f7aa45a5a-1"></a><span class="nb">export</span> <span class="nv">SAVEHIST</span><span class="o">=</span><span class="m">1000</span>
+<a id="rest_code_3b30e9c529fa44b8aa5cde4f7aa45a5a-2" name="rest_code_3b30e9c529fa44b8aa5cde4f7aa45a5a-2"></a><span class="nb">export</span> <span class="nv">HISTSIZE</span><span class="o">=</span><span class="nv">$SAVEHIST</span>
 </pre>
 <p>Choose the number of entries at your discretion,
 not big enough that will keep things for a long period of time,
@@ -260,13 +262,13 @@ You can avoid adding your commands to the history
 by prefixing them with a space.</p>
 <p>Another way to enter into <em>incognito mode</em> is by un-setting the <code class="docutils literal">$HISTFILE</code> environment variable
 (thanks <a class="reference external" href="https://github.com/WhiteHatTux">@WhiteHatTux</a> for this tip!).</p>
-<pre class="code bash"><a id="rest_code_f9c5d89e606a456ebb5de0d8202ab3d1-1" name="rest_code_f9c5d89e606a456ebb5de0d8202ab3d1-1"></a><span class="nb">unset</span> HISTFILE
+<pre class="code bash"><a id="rest_code_43d5460752d64d80a477377d716a5ca1-1" name="rest_code_43d5460752d64d80a477377d716a5ca1-1"></a><span class="nb">unset</span> HISTFILE
 </pre></section><section id="securing-your-files-and-environment-variables"><h2>Securing your files and environment variables</h2>
 <p>If you have files with sensitive information
 that you can't encrypt because it needs to be readable (like configuration files),
 at least give access only the appropriate users/processes.</p>
 <p>To remove access from all users except yours, you can use:</p>
-<pre class="code bash"><a id="rest_code_fe77bece4ae64947908157ac05e52bf6-1" name="rest_code_fe77bece4ae64947908157ac05e52bf6-1"></a>chmod og-rwx <span class="o">{</span>file<span class="o">}</span>
+<pre class="code bash"><a id="rest_code_25833b60c6db4ffeb5584ed600c6fdc5-1" name="rest_code_25833b60c6db4ffeb5584ed600c6fdc5-1"></a>chmod og-rwx <span class="o">{</span>file<span class="o">}</span>
 </pre>
 <p>For extra protection, check the <a class="reference external" href="https://selinuxproject.org/page/Main_Page">SELinux</a> project.</p>
 <p>If you need to expose some environment variables with secrets to your commands.
@@ -327,7 +329,11 @@ Let me know in the comments!</p>
 </dl></section>
 </div>
     </div>
-    <aside class="postpromonav"><nav><ul class="pager hidden-print">
+    <aside class="postpromonav"><nav><ul itemprop="keywords" class="tags">
+<li><a class="tag p-category" href="../../categories/development/" rel="tag">development</a></li>
+            <li><a class="tag p-category" href="../../categories/security/" rel="tag">security</a></li>
+        </ul>
+<ul class="pager hidden-print">
 <li class="previous">
                 <a href="../a-tale-about-security-in-web-applications/" rel="prev" title="A tale about security in web applications, or how I helped to save a bank from bankruptcy">Publicación anterior</a>
             </li>

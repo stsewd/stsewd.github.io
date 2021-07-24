@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<?xml-stylesheet type="text/xsl" href="../assets/xml/rss.xsl" media="all"?><rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Santos Gallegos (Posts about security, development)</title><link>https://stsewd.dev/</link><description></description><atom:link href="https://stsewd.dev/categories/cat_security-development.xml" rel="self" type="application/rss+xml"></atom:link><language>en</language><copyright>Contents © 2021 &lt;a href="mailto:stsewd@protonmail.com"&gt;Santos Gallegos&lt;/a&gt; </copyright><lastBuildDate>Sat, 24 Jul 2021 23:36:29 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Securing your development environment</title><link>https://stsewd.dev/posts/securing-your-dev-environment/</link><dc:creator>Santos Gallegos</dc:creator><description>&lt;div&gt;&lt;p&gt;If you are a developer, chances are that you handle private code or production secrets.
+<?xml-stylesheet type="text/xsl" href="../../assets/xml/rss.xsl" media="all"?><rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Santos Gallegos (Publicaciones sobre development)</title><link>https://stsewd.dev/</link><description></description><atom:link href="https://stsewd.dev/es/categories/development.xml" rel="self" type="application/rss+xml"></atom:link><language>es</language><copyright>Contents © 2021 &lt;a href="mailto:stsewd@protonmail.com"&gt;Santos Gallegos&lt;/a&gt; </copyright><lastBuildDate>Sat, 24 Jul 2021 23:36:28 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Securing your development environment</title><link>https://stsewd.dev/es/posts/securing-your-dev-environment/</link><dc:creator>Santos Gallegos</dc:creator><description>&lt;div&gt;&lt;p&gt;If you are a developer, chances are that you handle private code or production secrets.
 If someone has access to those, you may be in serious problems with your bosses and clients.
 I'll share with you some tips on how to secure your development environment &lt;strong&gt;from your computer to your terminal&lt;/strong&gt;.&lt;/p&gt;
 &lt;div class="admonition note"&gt;
@@ -12,18 +12,18 @@ For some tools I have my configuration available at &lt;a class="reference exter
 &lt;div class="contents local topic" id="contents"&gt;
 &lt;p class="topic-title"&gt;Contents&lt;/p&gt;
 &lt;ul class="simple"&gt;
-&lt;li&gt;&lt;p&gt;&lt;a class="reference internal" href="https://stsewd.dev/posts/securing-your-dev-environment/#passwords" id="id4"&gt;Passwords&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;&lt;a class="reference internal" href="https://stsewd.dev/posts/securing-your-dev-environment/#multi-factor-authentication" id="id5"&gt;Multi factor authentication&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;&lt;a class="reference internal" href="https://stsewd.dev/posts/securing-your-dev-environment/#full-disk-encryption" id="id6"&gt;Full disk encryption&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;&lt;a class="reference internal" href="https://stsewd.dev/posts/securing-your-dev-environment/#securing-your-code" id="id7"&gt;Securing your code&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;&lt;a class="reference internal" href="https://stsewd.dev/posts/securing-your-dev-environment/#signing-your-commits" id="id8"&gt;Signing your commits&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;&lt;a class="reference internal" href="https://stsewd.dev/posts/securing-your-dev-environment/#securing-your-terminal" id="id9"&gt;Securing your terminal&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;&lt;a class="reference internal" href="https://stsewd.dev/posts/securing-your-dev-environment/#securing-your-files-and-environment-variables" id="id10"&gt;Securing your files and environment variables&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;&lt;a class="reference internal" href="https://stsewd.dev/posts/securing-your-dev-environment/#securing-your-browser" id="id11"&gt;Securing your browser&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;&lt;a class="reference internal" href="https://stsewd.dev/posts/securing-your-dev-environment/#email" id="id12"&gt;Email&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;&lt;a class="reference internal" href="https://stsewd.dev/posts/securing-your-dev-environment/#use-a-secure-channel-for-communication" id="id13"&gt;Use a secure channel for communication&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;&lt;a class="reference internal" href="https://stsewd.dev/posts/securing-your-dev-environment/#extra-paranoia" id="id14"&gt;Extra paranoia&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;&lt;a class="reference internal" href="https://stsewd.dev/posts/securing-your-dev-environment/#conclusions" id="id15"&gt;Conclusions&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;&lt;a class="reference internal" href="https://stsewd.dev/es/posts/securing-your-dev-environment/#passwords" id="id4"&gt;Passwords&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;&lt;a class="reference internal" href="https://stsewd.dev/es/posts/securing-your-dev-environment/#multi-factor-authentication" id="id5"&gt;Multi factor authentication&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;&lt;a class="reference internal" href="https://stsewd.dev/es/posts/securing-your-dev-environment/#full-disk-encryption" id="id6"&gt;Full disk encryption&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;&lt;a class="reference internal" href="https://stsewd.dev/es/posts/securing-your-dev-environment/#securing-your-code" id="id7"&gt;Securing your code&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;&lt;a class="reference internal" href="https://stsewd.dev/es/posts/securing-your-dev-environment/#signing-your-commits" id="id8"&gt;Signing your commits&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;&lt;a class="reference internal" href="https://stsewd.dev/es/posts/securing-your-dev-environment/#securing-your-terminal" id="id9"&gt;Securing your terminal&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;&lt;a class="reference internal" href="https://stsewd.dev/es/posts/securing-your-dev-environment/#securing-your-files-and-environment-variables" id="id10"&gt;Securing your files and environment variables&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;&lt;a class="reference internal" href="https://stsewd.dev/es/posts/securing-your-dev-environment/#securing-your-browser" id="id11"&gt;Securing your browser&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;&lt;a class="reference internal" href="https://stsewd.dev/es/posts/securing-your-dev-environment/#email" id="id12"&gt;Email&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;&lt;a class="reference internal" href="https://stsewd.dev/es/posts/securing-your-dev-environment/#use-a-secure-channel-for-communication" id="id13"&gt;Use a secure channel for communication&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;&lt;a class="reference internal" href="https://stsewd.dev/es/posts/securing-your-dev-environment/#extra-paranoia" id="id14"&gt;Extra paranoia&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;&lt;a class="reference internal" href="https://stsewd.dev/es/posts/securing-your-dev-environment/#conclusions" id="id15"&gt;Conclusions&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/div&gt;
 &lt;section id="passwords"&gt;
@@ -48,18 +48,18 @@ a premium account in other services, and even the premium version is cheap.&lt;/
 the generated password could be exposed without you knowing it,
 or your master password could be compromised.
 Multi factor authentication (MFA) to the rescue!&lt;/p&gt;
-&lt;p&gt;MFA is about using two or more pieces of evidence on authentication to be able to access a website or application &lt;a class="footnote-reference brackets" href="https://stsewd.dev/posts/securing-your-dev-environment/#mfa" id="id1"&gt;1&lt;/a&gt;.
+&lt;p&gt;MFA is about using two or more pieces of evidence on authentication to be able to access a website or application &lt;a class="footnote-reference brackets" href="https://stsewd.dev/es/posts/securing-your-dev-environment/#mfa" id="id1"&gt;1&lt;/a&gt;.
 Your password is one factor (something you know),
 the second factor is usually something you have.
 Common ways of MFA are:&lt;/p&gt;
 &lt;dl&gt;
 &lt;dt&gt;SMS&lt;/dt&gt;
 &lt;dd&gt;&lt;p&gt;This is using your phone number to receive a code via SMS to be able to authenticate.
-&lt;strong&gt;Please don't use this method&lt;/strong&gt;, it's easy for an attacker to hijack your phone number &lt;a class="footnote-reference brackets" href="https://stsewd.dev/posts/securing-your-dev-environment/#sim-hijack" id="id2"&gt;2&lt;/a&gt;,
+&lt;strong&gt;Please don't use this method&lt;/strong&gt;, it's easy for an attacker to hijack your phone number &lt;a class="footnote-reference brackets" href="https://stsewd.dev/es/posts/securing-your-dev-environment/#sim-hijack" id="id2"&gt;2&lt;/a&gt;,
 and if you are traveling, you won't be able to receive the codes.&lt;/p&gt;
 &lt;/dd&gt;
 &lt;dt&gt;App&lt;/dt&gt;
-&lt;dd&gt;&lt;p&gt;This is using an application in your phone that generates an OTP &lt;a class="footnote-reference brackets" href="https://stsewd.dev/posts/securing-your-dev-environment/#otp" id="id3"&gt;3&lt;/a&gt;
+&lt;dd&gt;&lt;p&gt;This is using an application in your phone that generates an OTP &lt;a class="footnote-reference brackets" href="https://stsewd.dev/es/posts/securing-your-dev-environment/#otp" id="id3"&gt;3&lt;/a&gt;
 valid for 30 seconds for each login.
 Using an app is an excellent way of MFA,
 and you don't need Internet connection on your phone to be able to access the tokens.&lt;/p&gt;
@@ -237,14 +237,14 @@ Or do you have more to share?
 Let me know in the comments!&lt;/p&gt;
 &lt;hr class="docutils"&gt;
 &lt;dl class="footnote brackets"&gt;
-&lt;dt class="label" id="mfa"&gt;&lt;span class="brackets"&gt;&lt;a class="fn-backref" href="https://stsewd.dev/posts/securing-your-dev-environment/#id1"&gt;1&lt;/a&gt;&lt;/span&gt;&lt;/dt&gt;
+&lt;dt class="label" id="mfa"&gt;&lt;span class="brackets"&gt;&lt;a class="fn-backref" href="https://stsewd.dev/es/posts/securing-your-dev-environment/#id1"&gt;1&lt;/a&gt;&lt;/span&gt;&lt;/dt&gt;
 &lt;dd&gt;&lt;p&gt;&lt;a class="reference external" href="https://en.wikipedia.org/wiki/Multi-factor_authentication"&gt;https://en.wikipedia.org/wiki/Multi-factor_authentication&lt;/a&gt;&lt;/p&gt;
 &lt;/dd&gt;
-&lt;dt class="label" id="sim-hijack"&gt;&lt;span class="brackets"&gt;&lt;a class="fn-backref" href="https://stsewd.dev/posts/securing-your-dev-environment/#id2"&gt;2&lt;/a&gt;&lt;/span&gt;&lt;/dt&gt;
+&lt;dt class="label" id="sim-hijack"&gt;&lt;span class="brackets"&gt;&lt;a class="fn-backref" href="https://stsewd.dev/es/posts/securing-your-dev-environment/#id2"&gt;2&lt;/a&gt;&lt;/span&gt;&lt;/dt&gt;
 &lt;dd&gt;&lt;p&gt;&lt;a class="reference external" href="https://en.wikipedia.org/wiki/SIM_swap_scam"&gt;https://en.wikipedia.org/wiki/SIM_swap_scam&lt;/a&gt;&lt;/p&gt;
 &lt;/dd&gt;
-&lt;dt class="label" id="otp"&gt;&lt;span class="brackets"&gt;&lt;a class="fn-backref" href="https://stsewd.dev/posts/securing-your-dev-environment/#id3"&gt;3&lt;/a&gt;&lt;/span&gt;&lt;/dt&gt;
+&lt;dt class="label" id="otp"&gt;&lt;span class="brackets"&gt;&lt;a class="fn-backref" href="https://stsewd.dev/es/posts/securing-your-dev-environment/#id3"&gt;3&lt;/a&gt;&lt;/span&gt;&lt;/dt&gt;
 &lt;dd&gt;&lt;p&gt;&lt;a class="reference external" href="https://en.wikipedia.org/wiki/One-time_password"&gt;https://en.wikipedia.org/wiki/One-time_password&lt;/a&gt;&lt;/p&gt;
 &lt;/dd&gt;
 &lt;/dl&gt;
-&lt;/section&gt;&lt;/div&gt;</description><category>development</category><category>security</category><guid>https://stsewd.dev/posts/securing-your-dev-environment/</guid><pubDate>Sat, 24 Jul 2021 05:00:00 GMT</pubDate></item></channel></rss>
+&lt;/section&gt;&lt;/div&gt;</description><guid>https://stsewd.dev/es/posts/securing-your-dev-environment/</guid><pubDate>Sat, 24 Jul 2021 05:00:00 GMT</pubDate></item></channel></rss>

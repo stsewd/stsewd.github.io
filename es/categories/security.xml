@@ -1,5 +1,253 @@
 <?xml version="1.0" encoding="utf-8"?>
-<?xml-stylesheet type="text/xsl" href="../../assets/xml/rss.xsl" media="all"?><rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Santos Gallegos (Publicaciones sobre security)</title><link>https://stsewd.dev/</link><description></description><atom:link href="https://stsewd.dev/es/categories/security.xml" rel="self" type="application/rss+xml"></atom:link><language>es</language><copyright>Contents © 2021 &lt;a href="mailto:stsewd@protonmail.com"&gt;Santos Gallegos&lt;/a&gt; </copyright><lastBuildDate>Sat, 24 Jul 2021 23:09:40 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>A tale about security in web applications, or how I helped to save a bank from bankruptcy</title><link>https://stsewd.dev/es/posts/a-tale-about-security-in-web-applications/</link><dc:creator>Santos Gallegos</dc:creator><description>&lt;div&gt;&lt;p&gt;Hi friend, today I'm going to tell you a little story.
+<?xml-stylesheet type="text/xsl" href="../../assets/xml/rss.xsl" media="all"?><rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Santos Gallegos (Publicaciones sobre security)</title><link>https://stsewd.dev/</link><description></description><atom:link href="https://stsewd.dev/es/categories/security.xml" rel="self" type="application/rss+xml"></atom:link><language>es</language><copyright>Contents © 2021 &lt;a href="mailto:stsewd@protonmail.com"&gt;Santos Gallegos&lt;/a&gt; </copyright><lastBuildDate>Sat, 24 Jul 2021 23:36:29 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Securing your development environment</title><link>https://stsewd.dev/es/posts/securing-your-dev-environment/</link><dc:creator>Santos Gallegos</dc:creator><description>&lt;div&gt;&lt;p&gt;If you are a developer, chances are that you handle private code or production secrets.
+If someone has access to those, you may be in serious problems with your bosses and clients.
+I'll share with you some tips on how to secure your development environment &lt;strong&gt;from your computer to your terminal&lt;/strong&gt;.&lt;/p&gt;
+&lt;div class="admonition note"&gt;
+&lt;p class="admonition-title"&gt;Note&lt;/p&gt;
+&lt;p&gt;In this post I'd recommend some tools,
+for their usage please check their respective documentation,
+or search for alternatives for your Operating System.
+For some tools I have my configuration available at &lt;a class="reference external" href="https://github.com/stsewd/dotfiles"&gt;https://github.com/stsewd/dotfiles&lt;/a&gt;.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="contents local topic" id="contents"&gt;
+&lt;p class="topic-title"&gt;Contents&lt;/p&gt;
+&lt;ul class="simple"&gt;
+&lt;li&gt;&lt;p&gt;&lt;a class="reference internal" href="https://stsewd.dev/es/posts/securing-your-dev-environment/#passwords" id="id4"&gt;Passwords&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;&lt;a class="reference internal" href="https://stsewd.dev/es/posts/securing-your-dev-environment/#multi-factor-authentication" id="id5"&gt;Multi factor authentication&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;&lt;a class="reference internal" href="https://stsewd.dev/es/posts/securing-your-dev-environment/#full-disk-encryption" id="id6"&gt;Full disk encryption&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;&lt;a class="reference internal" href="https://stsewd.dev/es/posts/securing-your-dev-environment/#securing-your-code" id="id7"&gt;Securing your code&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;&lt;a class="reference internal" href="https://stsewd.dev/es/posts/securing-your-dev-environment/#signing-your-commits" id="id8"&gt;Signing your commits&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;&lt;a class="reference internal" href="https://stsewd.dev/es/posts/securing-your-dev-environment/#securing-your-terminal" id="id9"&gt;Securing your terminal&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;&lt;a class="reference internal" href="https://stsewd.dev/es/posts/securing-your-dev-environment/#securing-your-files-and-environment-variables" id="id10"&gt;Securing your files and environment variables&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;&lt;a class="reference internal" href="https://stsewd.dev/es/posts/securing-your-dev-environment/#securing-your-browser" id="id11"&gt;Securing your browser&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;&lt;a class="reference internal" href="https://stsewd.dev/es/posts/securing-your-dev-environment/#email" id="id12"&gt;Email&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;&lt;a class="reference internal" href="https://stsewd.dev/es/posts/securing-your-dev-environment/#use-a-secure-channel-for-communication" id="id13"&gt;Use a secure channel for communication&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;&lt;a class="reference internal" href="https://stsewd.dev/es/posts/securing-your-dev-environment/#extra-paranoia" id="id14"&gt;Extra paranoia&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;&lt;a class="reference internal" href="https://stsewd.dev/es/posts/securing-your-dev-environment/#conclusions" id="id15"&gt;Conclusions&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;
+&lt;section id="passwords"&gt;
+&lt;h2&gt;Passwords&lt;/h2&gt;
+&lt;p&gt;Using an strong password is good, but using the same password for each login isn't good,
+if one system is compromised, &lt;strong&gt;all your&lt;/strong&gt; accounts could be compromised.
+The best password is the one that not even you know,
+a password manager can help you to generate strong and unique passwords for each login.&lt;/p&gt;
+&lt;p&gt;Using a password manager requires you to have one master password,
+this one you do need to remember,
+so make sure to choose a strong one, and rotate that password every year or so.&lt;/p&gt;
+&lt;figure class="align-center"&gt;
+&lt;a class="reference external image-reference" href="https://xkcd.com/936/"&gt;&lt;img alt="/images/securing-your-dev-environment/password_strength.png" src="https://stsewd.dev/images/securing-your-dev-environment/password_strength.png"&gt;&lt;/a&gt;
+&lt;/figure&gt;
+&lt;p&gt;I recommend &lt;a class="reference external" href="https://bitwarden.com/"&gt;Bitwarden&lt;/a&gt; as password manager, it's Open Source.
+The free version gives you a lot of features that usually require
+a premium account in other services, and even the premium version is cheap.&lt;/p&gt;
+&lt;/section&gt;
+&lt;section id="multi-factor-authentication"&gt;
+&lt;h2&gt;Multi factor authentication&lt;/h2&gt;
+&lt;p&gt;But even using a password manager isn't enough to protect your accounts,
+the generated password could be exposed without you knowing it,
+or your master password could be compromised.
+Multi factor authentication (MFA) to the rescue!&lt;/p&gt;
+&lt;p&gt;MFA is about using two or more pieces of evidence on authentication to be able to access a website or application &lt;a class="footnote-reference brackets" href="https://stsewd.dev/es/posts/securing-your-dev-environment/#mfa" id="id1"&gt;1&lt;/a&gt;.
+Your password is one factor (something you know),
+the second factor is usually something you have.
+Common ways of MFA are:&lt;/p&gt;
+&lt;dl&gt;
+&lt;dt&gt;SMS&lt;/dt&gt;
+&lt;dd&gt;&lt;p&gt;This is using your phone number to receive a code via SMS to be able to authenticate.
+&lt;strong&gt;Please don't use this method&lt;/strong&gt;, it's easy for an attacker to hijack your phone number &lt;a class="footnote-reference brackets" href="https://stsewd.dev/es/posts/securing-your-dev-environment/#sim-hijack" id="id2"&gt;2&lt;/a&gt;,
+and if you are traveling, you won't be able to receive the codes.&lt;/p&gt;
+&lt;/dd&gt;
+&lt;dt&gt;App&lt;/dt&gt;
+&lt;dd&gt;&lt;p&gt;This is using an application in your phone that generates an OTP &lt;a class="footnote-reference brackets" href="https://stsewd.dev/es/posts/securing-your-dev-environment/#otp" id="id3"&gt;3&lt;/a&gt;
+valid for 30 seconds for each login.
+Using an app is an excellent way of MFA,
+and you don't need Internet connection on your phone to be able to access the tokens.&lt;/p&gt;
+&lt;p&gt;An app that I recommend is &lt;a class="reference external" href="https://github.com/andOTP/andOTP"&gt;andOTP&lt;/a&gt;,
+it's Open Source, and has several features like using a PIN to unlock the codes,
+and making encrypted offline backups.&lt;/p&gt;
+&lt;p&gt;When choosing an app, &lt;strong&gt;don't use those that sync your codes to the cloud&lt;/strong&gt;,
+that kind of breaks the rule about something you (and only you) have.&lt;/p&gt;
+&lt;/dd&gt;
+&lt;dt&gt;Hardware keys&lt;/dt&gt;
+&lt;dd&gt;&lt;p&gt;They are similar to an app, they can provide an OTP,
+but the good thing is that they aren't attached to your phone.
+Popular hardware keys are &lt;a class="reference external" href="https://www.yubico.com/"&gt;YubiKeys&lt;/a&gt;.
+&lt;strong&gt;If you decide to get one, buy two!&lt;/strong&gt;
+The second key will act as your backup in case you lose or damage the other one.&lt;/p&gt;
+&lt;figure class="align-center"&gt;
+&lt;a class="reference external image-reference" href="https://commons.wikimedia.org/wiki/File:YubiKey-4-keychain-and-YubiKey-4-Nano.png"&gt;&lt;img alt="/images/securing-your-dev-environment/yubikey.png" src="https://stsewd.dev/images/securing-your-dev-environment/yubikey.png" style="width: 50%;"&gt;&lt;/a&gt;
+&lt;/figure&gt;
+&lt;/dd&gt;
+&lt;/dl&gt;
+&lt;p&gt;Not all services support MFA, but make sure to take some minutes to set it for those that do.
+Most services will give you recovery codes in case you lose access to your MFA device,
+&lt;strong&gt;save them offline and in a secure location&lt;/strong&gt;!&lt;/p&gt;
+&lt;/section&gt;
+&lt;section id="full-disk-encryption"&gt;
+&lt;h2&gt;Full disk encryption&lt;/h2&gt;
+&lt;p&gt;If someone steals your computer,
+they can access all your files without having to know your user's password.
+To prevent this, make use of full disk encryption on your computer.&lt;/p&gt;
+&lt;p&gt;On Linux systems, this is usually an option on installation
+You could even make use of your YubiKey to protect your disk
+(your password + an static password from your YubiKey).&lt;/p&gt;
+&lt;div class="admonition note"&gt;
+&lt;p class="admonition-title"&gt;Note&lt;/p&gt;
+&lt;p&gt;Is also a good idea to automatically lock your computer on inactivity.&lt;/p&gt;
+&lt;/div&gt;
+&lt;/section&gt;
+&lt;section id="securing-your-code"&gt;
+&lt;h2&gt;Securing your code&lt;/h2&gt;
+&lt;p&gt;Even if you use full disk encryption,
+if someone steals your computer while you are logged in,
+they will have access to all your files and active sessions.
+Sure, you can revoke your active sessions,
+but doing so could take some time, and isn't possible to revoke access to your files.&lt;/p&gt;
+&lt;p&gt;In addition to full disk encryption you can encrypt individual directories, and set a lifetime.
+This way your files will be secure even if someone has access to your un-locked computer.
+A simple tool to archive this is &lt;a class="reference external" href="https://github.com/vgough/encfs"&gt;encFS&lt;/a&gt; (check for the &lt;code class="docutils literal"&gt;&lt;span class="pre"&gt;-i&lt;/span&gt;&lt;/code&gt; option).&lt;/p&gt;
+&lt;p&gt;Is common to use SSH authentication with your version control system (VCS) provider
+to avoid entering your password every time,
+but this leaves the door open for anyone with access to your computer.
+&lt;strong&gt;Protect your private key with a passphrase,
+and set a lifetime to your SSH agent&lt;/strong&gt; (&lt;code class="docutils literal"&gt;&lt;span class="pre"&gt;-t&lt;/span&gt;&lt;/code&gt; option, see &lt;code class="docutils literal"&gt;man &lt;span class="pre"&gt;ssh-agent&lt;/span&gt;&lt;/code&gt;),
+this way you'll need to re-enter your passphrase every &lt;code class="docutils literal"&gt;t&lt;/code&gt; minutes/hours.&lt;/p&gt;
+&lt;/section&gt;
+&lt;section id="signing-your-commits"&gt;
+&lt;h2&gt;Signing your commits&lt;/h2&gt;
+&lt;p&gt;Using a VCS like Git for your code is great
+(you do have your code under a VCS, right?),
+it allows you to keep track of your changes, revert changes, and more!
+It is also useful to know who changed a particular piece of code and when,
+which is great when doing audits over your code base.&lt;/p&gt;
+&lt;p&gt;But in fact, anyone can say to be you when committing changes,
+Git for example makes use of a configuration file to set your name and email,
+you don't need to provide anything else to say that you are that person!&lt;/p&gt;
+&lt;p&gt;This means that any of your coworkers could impersonate you,
+or an attacker with access to your VCS provider could do so as well.
+You don't want to be responsible for changes that you didn't make!&lt;/p&gt;
+&lt;p&gt;Luckily, Git allows you to sign your commits with a GPG key.
+Someone could still use your email for their commits,
+but they won't be able to sign those commits with your private GPG key.
+GitLab has a great guide on how to sign your commits with GPG
+&lt;a class="reference external" href="https://docs.gitlab.com/ee/user/project/repository/gpg_signed_commits/"&gt;https://docs.gitlab.com/ee/user/project/repository/gpg_signed_commits/&lt;/a&gt;.&lt;/p&gt;
+&lt;figure class="align-center"&gt;
+&lt;a class="reference external image-reference" href="https://stsewd.dev/images/securing-your-dev-environment/signed-commit.png"&gt;&lt;img alt="/images/securing-your-dev-environment/signed-commit.png" src="https://stsewd.dev/images/securing-your-dev-environment/signed-commit.png"&gt;&lt;/a&gt;
+&lt;figcaption&gt;
+&lt;p&gt;Commit signed (verified) on GitHub&lt;/p&gt;
+&lt;/figcaption&gt;
+&lt;/figure&gt;
+&lt;div class="admonition note"&gt;
+&lt;p class="admonition-title"&gt;Note&lt;/p&gt;
+&lt;p&gt;Same as SSH, protect your private GPG key with a passphrase,
+and set a lifetime to your GPG agent (&lt;code class="docutils literal"&gt;&lt;span class="pre"&gt;default-cache-ttl&lt;/span&gt;&lt;/code&gt; and &lt;code class="docutils literal"&gt;&lt;span class="pre"&gt;max-cache-ttl&lt;/span&gt;&lt;/code&gt; options, see &lt;code class="docutils literal"&gt;man &lt;span class="pre"&gt;gpg-agent&lt;/span&gt;&lt;/code&gt;).&lt;/p&gt;
+&lt;/div&gt;
+&lt;/section&gt;
+&lt;section id="securing-your-terminal"&gt;
+&lt;h2&gt;Securing your terminal&lt;/h2&gt;
+&lt;p&gt;The terminal is a great friend,
+and navigating the history with &lt;code class="docutils literal"&gt;↑&lt;/code&gt; &lt;code class="docutils literal"&gt;↓&lt;/code&gt; save you some typing,
+but that history can also contain sensitive information.&lt;/p&gt;
+&lt;p&gt;The default number of history entries is usually high,
+as a quick experiment, you can check how many entries you have with:&lt;/p&gt;
+&lt;pre class="code bash"&gt;&lt;a id="rest_code_9729623a5469421e864bff3a7adbde7d-1" name="rest_code_9729623a5469421e864bff3a7adbde7d-1"&gt;&lt;/a&gt;cat &lt;span class="nv"&gt;$HISTFILE&lt;/span&gt; &lt;span class="p"&gt;|&lt;/span&gt; wc -l
+&lt;/pre&gt;&lt;p&gt;And how many of those entries possibly have secrets with:&lt;/p&gt;
+&lt;pre class="code bash"&gt;&lt;a id="rest_code_6b47f036b7e148e499ab8d9f7c6fc744-1" name="rest_code_6b47f036b7e148e499ab8d9f7c6fc744-1"&gt;&lt;/a&gt;grep -E -i &lt;span class="s1"&gt;'(token)|(pass)|(secret)'&lt;/span&gt; &lt;span class="nv"&gt;$HISTFILE&lt;/span&gt;
+&lt;/pre&gt;&lt;p&gt;Depending on the Shell you are using,
+you can control the max number of entries with environment variables,
+for zsh this is done with:&lt;/p&gt;
+&lt;pre class="code bash"&gt;&lt;a id="rest_code_3b30e9c529fa44b8aa5cde4f7aa45a5a-1" name="rest_code_3b30e9c529fa44b8aa5cde4f7aa45a5a-1"&gt;&lt;/a&gt;&lt;span class="nb"&gt;export&lt;/span&gt; &lt;span class="nv"&gt;SAVEHIST&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="m"&gt;1000&lt;/span&gt;
+&lt;a id="rest_code_3b30e9c529fa44b8aa5cde4f7aa45a5a-2" name="rest_code_3b30e9c529fa44b8aa5cde4f7aa45a5a-2"&gt;&lt;/a&gt;&lt;span class="nb"&gt;export&lt;/span&gt; &lt;span class="nv"&gt;HISTSIZE&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="nv"&gt;$SAVEHIST&lt;/span&gt;
+&lt;/pre&gt;&lt;p&gt;Choose the number of entries at your discretion,
+not big enough that will keep things for a long period of time,
+and not so small to not save you some typing.&lt;/p&gt;
+&lt;p&gt;Some times you need to enter secrets in your terminal,
+but you don't want to save them in your history.
+You can avoid adding your commands to the history
+by prefixing them with a space.&lt;/p&gt;
+&lt;p&gt;Another way to enter into &lt;em&gt;incognito mode&lt;/em&gt; is by un-setting the &lt;code class="docutils literal"&gt;$HISTFILE&lt;/code&gt; environment variable
+(thanks &lt;a class="reference external" href="https://github.com/WhiteHatTux"&gt;@WhiteHatTux&lt;/a&gt; for this tip!).&lt;/p&gt;
+&lt;pre class="code bash"&gt;&lt;a id="rest_code_43d5460752d64d80a477377d716a5ca1-1" name="rest_code_43d5460752d64d80a477377d716a5ca1-1"&gt;&lt;/a&gt;&lt;span class="nb"&gt;unset&lt;/span&gt; HISTFILE
+&lt;/pre&gt;&lt;/section&gt;
+&lt;section id="securing-your-files-and-environment-variables"&gt;
+&lt;h2&gt;Securing your files and environment variables&lt;/h2&gt;
+&lt;p&gt;If you have files with sensitive information
+that you can't encrypt because it needs to be readable (like configuration files),
+at least give access only the appropriate users/processes.&lt;/p&gt;
+&lt;p&gt;To remove access from all users except yours, you can use:&lt;/p&gt;
+&lt;pre class="code bash"&gt;&lt;a id="rest_code_25833b60c6db4ffeb5584ed600c6fdc5-1" name="rest_code_25833b60c6db4ffeb5584ed600c6fdc5-1"&gt;&lt;/a&gt;chmod og-rwx &lt;span class="o"&gt;{&lt;/span&gt;file&lt;span class="o"&gt;}&lt;/span&gt;
+&lt;/pre&gt;&lt;p&gt;For extra protection, check the &lt;a class="reference external" href="https://selinuxproject.org/page/Main_Page"&gt;SELinux&lt;/a&gt; project.&lt;/p&gt;
+&lt;p&gt;If you need to expose some environment variables with secrets to your commands.
+You can use &lt;a class="reference external" href="https://direnv.net/"&gt;direnv&lt;/a&gt; with an encrypted directory.
+This way the environment variables will be set only when you are on that directory.&lt;/p&gt;
+&lt;/section&gt;
+&lt;section id="securing-your-browser"&gt;
+&lt;h2&gt;Securing your browser&lt;/h2&gt;
+&lt;ul class="simple"&gt;
+&lt;li&gt;&lt;p&gt;If you are using a network that you don't have control over,
+use a VPN to connect to the Internet.
+&lt;a class="reference external" href="https://protonvpn.com/"&gt;ProtonVPN&lt;/a&gt; is a good free option.&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;Take some time hardening your browser settings,
+for Firefox for example,
+I use &lt;a class="reference external" href="https://github.com/stsewd/dotfiles/blob/master/firefox-about.txt"&gt;these&lt;/a&gt;.&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;Use extra extensions to secure your browser:
+like disabling cookies and JS for unknown sites.&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;Use a separate &lt;a class="reference external" href="https://support.mozilla.org/en-US/kb/profile-manager-create-remove-switch-firefox-profiles"&gt;profile&lt;/a&gt; for work.&lt;/p&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/section&gt;
+&lt;section id="email"&gt;
+&lt;h2&gt;Email&lt;/h2&gt;
+&lt;p&gt;Don't load external content by default.
+This is usually an option in your email client,
+&lt;a class="reference external" href="https://protonmail.com/"&gt;Protonmail&lt;/a&gt; has this option enabled by default.&lt;/p&gt;
+&lt;figure class="align-center"&gt;
+&lt;a class="reference external image-reference" href="https://stsewd.dev/images/securing-your-dev-environment/gmail-disable-display-external-images.png"&gt;&lt;img alt="/images/securing-your-dev-environment/gmail-disable-display-external-images.png" src="https://stsewd.dev/images/securing-your-dev-environment/gmail-disable-display-external-images.png"&gt;&lt;/a&gt;
+&lt;figcaption&gt;
+&lt;p&gt;Option to disable loading external images on Gmail.&lt;/p&gt;
+&lt;/figcaption&gt;
+&lt;/figure&gt;
+&lt;/section&gt;
+&lt;section id="use-a-secure-channel-for-communication"&gt;
+&lt;h2&gt;Use a secure channel for communication&lt;/h2&gt;
+&lt;p&gt;Sometimes you'll need to share passwords or private information with other coworkers.
+Use a secure channel with end to end encryption to do so (and delete the messages after you are done),
+or use a password manager for your team,
+or encrypt the secrets with their public GPG key.&lt;/p&gt;
+&lt;/section&gt;
+&lt;section id="extra-paranoia"&gt;
+&lt;h2&gt;Extra paranoia&lt;/h2&gt;
+&lt;ul class="simple"&gt;
+&lt;li&gt;&lt;p&gt;Avoid wireless devices when possible.&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;Search for security related settings on every application you use.&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;Be careful with the personal information you share with others.&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;Use two phone numbers and two computers.&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;Shred any document before throwing it to the trash.&lt;/p&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/section&gt;
+&lt;section id="conclusions"&gt;
+&lt;h2&gt;Conclusions&lt;/h2&gt;
+&lt;p&gt;Everything is about encryption and lifetimes.&lt;/p&gt;
+&lt;p&gt;In perfect conditions, you should have a dedicated computer for work,
+and connect to the Internet using a secure network,
+but this isn't always possible or provided by your employer.
+Still, it's always good to have several layers of protection when handling sensitive information.&lt;/p&gt;
+&lt;p&gt;Did you already knew some of these tips?
+Or do you have more to share?
+Let me know in the comments!&lt;/p&gt;
+&lt;hr class="docutils"&gt;
+&lt;dl class="footnote brackets"&gt;
+&lt;dt class="label" id="mfa"&gt;&lt;span class="brackets"&gt;&lt;a class="fn-backref" href="https://stsewd.dev/es/posts/securing-your-dev-environment/#id1"&gt;1&lt;/a&gt;&lt;/span&gt;&lt;/dt&gt;
+&lt;dd&gt;&lt;p&gt;&lt;a class="reference external" href="https://en.wikipedia.org/wiki/Multi-factor_authentication"&gt;https://en.wikipedia.org/wiki/Multi-factor_authentication&lt;/a&gt;&lt;/p&gt;
+&lt;/dd&gt;
+&lt;dt class="label" id="sim-hijack"&gt;&lt;span class="brackets"&gt;&lt;a class="fn-backref" href="https://stsewd.dev/es/posts/securing-your-dev-environment/#id2"&gt;2&lt;/a&gt;&lt;/span&gt;&lt;/dt&gt;
+&lt;dd&gt;&lt;p&gt;&lt;a class="reference external" href="https://en.wikipedia.org/wiki/SIM_swap_scam"&gt;https://en.wikipedia.org/wiki/SIM_swap_scam&lt;/a&gt;&lt;/p&gt;
+&lt;/dd&gt;
+&lt;dt class="label" id="otp"&gt;&lt;span class="brackets"&gt;&lt;a class="fn-backref" href="https://stsewd.dev/es/posts/securing-your-dev-environment/#id3"&gt;3&lt;/a&gt;&lt;/span&gt;&lt;/dt&gt;
+&lt;dd&gt;&lt;p&gt;&lt;a class="reference external" href="https://en.wikipedia.org/wiki/One-time_password"&gt;https://en.wikipedia.org/wiki/One-time_password&lt;/a&gt;&lt;/p&gt;
+&lt;/dd&gt;
+&lt;/dl&gt;
+&lt;/section&gt;&lt;/div&gt;</description><guid>https://stsewd.dev/es/posts/securing-your-dev-environment/</guid><pubDate>Sat, 24 Jul 2021 05:00:00 GMT</pubDate></item><item><title>A tale about security in web applications, or how I helped to save a bank from bankruptcy</title><link>https://stsewd.dev/es/posts/a-tale-about-security-in-web-applications/</link><dc:creator>Santos Gallegos</dc:creator><description>&lt;div&gt;&lt;p&gt;Hi friend, today I'm going to tell you a little story.
 Some things may look familiar, or even you could feel related to some situations.
 I assure you, &lt;strong&gt;it's mere coincidence&lt;/strong&gt;.&lt;/p&gt;
 &lt;section id="a-new-experience"&gt;
