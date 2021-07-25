@@ -48,10 +48,9 @@ the generated password could be exposed without you knowing it,
 or your master password could be compromised.
 Multi factor authentication (MFA) to the rescue!
 
-MFA is about using two or more pieces of evidence on authentication to be able to access a website or application [#mfa]_.
-Your password is one factor (something you know),
-the second factor is usually something you have.
-Common ways of MFA are:
+MFA is about using two or more pieces of evidence (factors) on authentication to be able to access a website or application [#mfa]_.
+Factors are: something you know (like a password), something you have (like a phone), and something you are (like your fingerprints).
+A common way of MFA is combining a password (something you know) with something you have, like:
 
 SMS
   This is using your phone number to receive a code via SMS to be able to authenticate.
@@ -75,8 +74,8 @@ Hardware keys
   They are similar to an app, they can provide an OTP,
   but the good thing is that they aren't attached to your phone.
   Popular hardware keys are `YubiKeys <https://www.yubico.com/>`__.
-  **If you decide to get one, buy two!**
-  The second key will act as your backup in case you lose or damage the other one.
+  **If you decide to get one, buy two!**,
+  the second key will act as your backup in case you lose or damage the other one.
 
   .. figure:: /images/securing-your-dev-environment/yubikey.png
      :target: https://commons.wikimedia.org/wiki/File:YubiKey-4-keychain-and-YubiKey-4-Nano.png
@@ -237,10 +236,13 @@ Securing your browser
 Email
 -----
 
-Don't load external content by default.
+Don't load external content by default,
+an attacker can use this for something *harmless* like tracking you,
+to something more sophisticated like exploiting a CSRF_ vulnerable site.
 This is usually an option in your email client,
 `Protonmail <https://protonmail.com/>`__ has this option enabled by default.
 
+.. _CSRF: https://en.wikipedia.org/wiki/Cross-site_request_forgery
 
 .. figure:: /images/securing-your-dev-environment/gmail-disable-display-external-images.png
    :target: /images/securing-your-dev-environment/gmail-disable-display-external-images.png
