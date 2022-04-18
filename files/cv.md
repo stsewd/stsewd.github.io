@@ -4,24 +4,25 @@
 
 ## Laboral experience
 
-- Read the Docs, Inc: Software developer (2018 - present)
-- Computer security audit at Cooperativa CB (2020)
+- **Read the Docs, Inc**: Software developer (2018 - present)
+- **Impodirect, CIA LTDA**: Computer security audit (2021 - 2022)
+- **Cooperativa CB**: Computer security audit (2020)
 
 ## Contests
 
-- Devsu Code Jam (2019): 7th place, professionals category
-- IEEEXtreme Programming 11.0 (2017): 1st place nationally (trivialbox team)
-- IEEEXtreme Programming 10.0 (2016): 1st place nationally (trivialbox team)
-- Rally Latinoamericano de Innovación (2016):
-  1st place locally (Cuenca) and nationally in the innovation category (Atuk Maskhay team)
-- Hackaton UPS (2016): 2nd place (trivialbox team)
-- IEEEXtreme Programming 9.0 (2015): 3rd place nationally (EnigmaT team)
+- **Devsu Code Jam**: 7th place, professionals category (2019)
+- **IEEEXtreme Programming 11.0**: 1st place nationally (trivialbox team) (2017)
+- **IEEEXtreme Programming 10.0**: 1st place nationally (trivialbox team) (2016)
+- **Rally Latinoamericano de Innovación**:
+  1st place locally (Cuenca) and nationally in the innovation category (Atuk Maskhay team) (2016)
+- **Hackaton UPS**: 2nd place (trivialbox team) (2016)
+- **IEEEXtreme Programming 9.0**: 3rd place nationally (EnigmaT team) (2015)
 
 ## Programming languages and skills
 
 - Python
-- C
 - Django
+- C
 - Git
 - Free and Open Source Software
 - Elastic Search
@@ -40,10 +41,18 @@
 
 ## Social
 
-- GitHub: <https://github.com/stsewd>
-- Hackerrank: <https://www.hackerrank.com/stsewd>
-- HackerEarth: <https://www.hackerearth.com/@stsewd>
-- Stack Overflow: <http://stackoverflow.com/users/5689214/>
-- LinkedIn <https://www.linkedin.com/in/stsewd/>
-- Personal blog: <https://stsewd.dev>
-- Email: stsewd@protonmail.com
+- **GitHub**: <https://github.com/stsewd>
+- **Hackerrank**: <https://www.hackerrank.com/stsewd>
+- **HackerEarth**: <https://www.hackerearth.com/@stsewd>
+- **Stack Overflow**: <http://stackoverflow.com/users/5689214/>
+- **LinkedIn**: <https://www.linkedin.com/in/stsewd/>
+- **Personal blog**: <https://stsewd.dev>
+- **Email**: <stsewd@protonmail.com>
+
+## Publicly disclosed security issues
+
+Over the years I've been responsibly reporting security issues,
+but only a few have been made public.
+
+- https://github.com/readthedocs/readthedocs.org/security/advisories/GHSA-3v5m-qmm9-3c6c (2021)
+- https://docs.readthedocs.io/en/stable/security.html#release-2-3-0 (2018)

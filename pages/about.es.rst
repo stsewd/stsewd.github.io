@@ -41,4 +41,4 @@ Encuentrame en
 CV
 --
 
-¿Eres de la vieja escuela y buscas un CV? `Aquí tienes </cv.es.pdf>`__.
+`Aquí tienes </cv.es.pdf>`__.

@@ -41,4 +41,4 @@ Find me on
 CV
 --
 
-Old fashioned and looking for a CV? `Here you go </cv.pdf>`__.
+`Here you go </cv.pdf>`__.
