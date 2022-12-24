@@ -7,8 +7,9 @@ docker run --name pandoc-latex --volume "`pwd`:/data":z --entrypoint sh -it pand
 Convert to PDF with some custom fonts and styles:
 
 ```bash
-apt install texlive-fonts-extra
-apt install texlive-full
+apt update
+apt install -y texlive-fonts-extra
+apt install -y texlive-full
 pandoc --pdf-engine=xelatex --standalone --from commonmark_x -V 'mainfont:NotoSansMono-Regular' -V pagestyle:empty cv.md -o cv.pdf
 pandoc --pdf-engine=xelatex --standalone --from commonmark_x -V 'mainfont:NotoSansMono-Regular' -V pagestyle:empty cv.es.md -o cv.es.pdf
 ```

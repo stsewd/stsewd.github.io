@@ -12,15 +12,15 @@ and `an artist occasionally <https://stsewd.deviantart.com/gallery/>`__.
 
 Currently writting bugs at `Read the Docs <https://readthedocs.org>`__,
 and helping in computer security audits.
-I'm open for consulting about software development.
+I'm open for consulting about software development and security audits (pentesting).
 
 I also help to organize events in my local `Python community <https://python.ec/>`__.
 
 Languages
 ---------
 
-- Español (native)
-- Inglés (fluent)
+- Spanish (native)
+- English (fluent)
 - Python (fluent)
 - VimScript
 - C
@@ -36,7 +36,7 @@ Find me on
 - `Stack Overflow <http://stackoverflow.com/users/5689214/>`__
 - `Twitter <http://twitter.com/stsewd>`__
 - `LinkedIn <https://www.linkedin.com/in/stsewd/>`__
-- Or write me at stsewd@protonmail.com
+- Or write me at stsewd@proton.me
 
 CV
 --

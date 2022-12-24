@@ -5,6 +5,7 @@
 ## Experiencia laboral
 
 - **Read the Docs, Inc**: Software developer (2018 - presente)
+- **Cooperativa CB**: Auditoría de seguridad informática (2022)
 - **Impodirect, CIA LTDA**: Auditoría de seguridad informática (2021 - 2022)
 - **Cooperativa CB**: Auditoría de seguridad informática (2020)
 
@@ -33,6 +34,7 @@
 - Web development
 - Linux
 - Open Source maintainer
+- Rust
 
 ## Idiomas
 
@@ -47,12 +49,14 @@
 - **Stack Overflow**: <http://stackoverflow.com/users/5689214/>
 - **LinkedIn** <https://www.linkedin.com/in/stsewd/>
 - **Blog personal**: <https://stsewd.dev>
-- **Email**: <stsewd@protonmail.com>
+- **Email**: <stsewd@proton.me>
 
-## Fallas de seguridad publicamente divulgadas
+## Fallas de seguridad públicamente divulgadas
 
 A lo largo del tiempo he reportado varios problemas de seguridad de manera responsable,
 pero solo un par se han hecho públicos.
 
+- https://github.com/readthedocs/readthedocs.org/security/advisories/GHSA-368m-86q9-m99w (2022)
+- https://github.com/readthedocs/readthedocs.org/security/advisories/GHSA-98pf-gfh3-x3mp (2022)
 - https://github.com/readthedocs/readthedocs.org/security/advisories/GHSA-3v5m-qmm9-3c6c (2021)
 - https://docs.readthedocs.io/en/stable/security.html#release-2-3-0 (2018)
