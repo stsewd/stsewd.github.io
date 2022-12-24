@@ -93,7 +93,7 @@ bg-dark
             <time class="published dt-published" datetime="2021-07-24T00:00:00-05:00" itemprop="datePublished" title="2021-07-24">2021-07-24</time></a>
             </p>
                 <p class="commentline">
-        
+    
     <a href="#disqus_thread" data-disqus-identifier="cache/posts/securing-your-dev-environment.html">Comentarios</a>
 
 
@@ -104,8 +104,7 @@ bg-dark
         
 
     </header><div class="e-content entry-content" itemprop="articleBody text">
-    <div>
-<p>If you are a developer, chances are that you handle private code or production secrets.
+    <p>If you are a developer, chances are that you handle private code or production secrets.
 If someone has access to those, you may be in serious problems with your bosses and clients.
 I'll share with you some tips on how to secure your development environment <strong>from your computer to your terminal</strong>.</p>
 <aside class="admonition note"><p class="admonition-title">Note</p>
@@ -232,17 +231,17 @@ and navigating the history with <code class="docutils literal">↑</code> <code 
 but that history can also contain sensitive information.</p>
 <p>The default number of history entries is usually high,
 as a quick experiment, you can check how many entries you have with:</p>
-<pre class="code bash"><a id="rest_code_426e6a537fb64581a0a401d37095963b-1" name="rest_code_426e6a537fb64581a0a401d37095963b-1" href="#rest_code_426e6a537fb64581a0a401d37095963b-1"></a>cat <span class="nv">$HISTFILE</span> <span class="p">|</span> wc -l
-</pre>
+<div class="code"><pre class="code bash"><a id="rest_code_63695665d6da4c38ac640564736b7638-1" name="rest_code_63695665d6da4c38ac640564736b7638-1" href="#rest_code_63695665d6da4c38ac640564736b7638-1"></a>cat <span class="nv">$HISTFILE</span> <span class="p">|</span> wc -l
+</pre></div>
 <p>And how many of those entries possibly have secrets with:</p>
-<pre class="code bash"><a id="rest_code_a6875fde4c3444018045803f12bf9d0f-1" name="rest_code_a6875fde4c3444018045803f12bf9d0f-1" href="#rest_code_a6875fde4c3444018045803f12bf9d0f-1"></a>grep -E -i <span class="s1">'(token)|(pass)|(secret)'</span> <span class="nv">$HISTFILE</span>
-</pre>
+<div class="code"><pre class="code bash"><a id="rest_code_f34cd7d0bc764d0b8608c0731fdffcbe-1" name="rest_code_f34cd7d0bc764d0b8608c0731fdffcbe-1" href="#rest_code_f34cd7d0bc764d0b8608c0731fdffcbe-1"></a>grep -E -i <span class="s1">'(token)|(pass)|(secret)'</span> <span class="nv">$HISTFILE</span>
+</pre></div>
 <p>Depending on the Shell you are using,
 you can control the max number of entries with environment variables,
 for zsh this is done with:</p>
-<pre class="code bash"><a id="rest_code_f9ecbd3216754e5d861615a045badec8-1" name="rest_code_f9ecbd3216754e5d861615a045badec8-1" href="#rest_code_f9ecbd3216754e5d861615a045badec8-1"></a><span class="nb">export</span> <span class="nv">SAVEHIST</span><span class="o">=</span><span class="m">1000</span>
-<a id="rest_code_f9ecbd3216754e5d861615a045badec8-2" name="rest_code_f9ecbd3216754e5d861615a045badec8-2" href="#rest_code_f9ecbd3216754e5d861615a045badec8-2"></a><span class="nb">export</span> <span class="nv">HISTSIZE</span><span class="o">=</span><span class="nv">$SAVEHIST</span>
-</pre>
+<div class="code"><pre class="code bash"><a id="rest_code_71180f14c01041caba534245e661b1b1-1" name="rest_code_71180f14c01041caba534245e661b1b1-1" href="#rest_code_71180f14c01041caba534245e661b1b1-1"></a><span class="nb">export</span> <span class="nv">SAVEHIST</span><span class="o">=</span><span class="m">1000</span>
+<a id="rest_code_71180f14c01041caba534245e661b1b1-2" name="rest_code_71180f14c01041caba534245e661b1b1-2" href="#rest_code_71180f14c01041caba534245e661b1b1-2"></a><span class="nb">export</span> <span class="nv">HISTSIZE</span><span class="o">=</span><span class="nv">$SAVEHIST</span>
+</pre></div>
 <p>Choose the number of entries at your discretion,
 not big enough that will keep things for a long period of time,
 and not so small to not save you some typing.</p>
@@ -252,14 +251,15 @@ You can avoid adding your commands to the history
 by prefixing them with a space.</p>
 <p>Another way to enter into <em>incognito mode</em> is by un-setting the <code class="docutils literal">$HISTFILE</code> environment variable
 (thanks <a class="reference external" href="https://github.com/WhiteHatTux">@WhiteHatTux</a> for this tip!).</p>
-<pre class="code bash"><a id="rest_code_33c8485e7fac48a6a6a3c8a3a33e48d8-1" name="rest_code_33c8485e7fac48a6a6a3c8a3a33e48d8-1" href="#rest_code_33c8485e7fac48a6a6a3c8a3a33e48d8-1"></a><span class="nb">unset</span> HISTFILE
-</pre></section><section id="securing-your-files-and-environment-variables"><h2>Securing your files and environment variables</h2>
+<div class="code"><pre class="code bash"><a id="rest_code_36ea803e161c4e18a1ff1e2679e980cf-1" name="rest_code_36ea803e161c4e18a1ff1e2679e980cf-1" href="#rest_code_36ea803e161c4e18a1ff1e2679e980cf-1"></a><span class="nb">unset</span> HISTFILE
+</pre></div>
+</section><section id="securing-your-files-and-environment-variables"><h2>Securing your files and environment variables</h2>
 <p>If you have files with sensitive information
 that you can't encrypt because it needs to be readable (like configuration files),
 at least give access only the appropriate users/processes.</p>
 <p>To remove access from all users except yours, you can use:</p>
-<pre class="code bash"><a id="rest_code_68effec4a7d74ec9b369b265d7bb3392-1" name="rest_code_68effec4a7d74ec9b369b265d7bb3392-1" href="#rest_code_68effec4a7d74ec9b369b265d7bb3392-1"></a>chmod og-rwx <span class="o">{</span>file<span class="o">}</span>
-</pre>
+<div class="code"><pre class="code bash"><a id="rest_code_701b99a86753459aaff0fa53aa747762-1" name="rest_code_701b99a86753459aaff0fa53aa747762-1" href="#rest_code_701b99a86753459aaff0fa53aa747762-1"></a>chmod og-rwx <span class="o">{</span>file<span class="o">}</span>
+</pre></div>
 <p>For extra protection, check the <a class="reference external" href="https://selinuxproject.org/page/Main_Page">SELinux</a> project.</p>
 <p>If you need to expose some environment variables with secrets to your commands.
 You can use <a class="reference external" href="https://direnv.net/">direnv</a> with an encrypted directory.
@@ -305,15 +305,14 @@ Still, it's always good to have several layers of protection when handling sensi
 Or do you have more to share?
 Let me know in the comments!</p>
 <hr class="docutils">
-<aside class="footnote brackets" id="mfa" role="note"><span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#footnote-reference-1">1</a><span class="fn-bracket">]</span></span>
+<aside class="footnote-list brackets"><aside class="footnote brackets" id="mfa" role="note"><span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#footnote-reference-1">1</a><span class="fn-bracket">]</span></span>
 <p><a class="reference external" href="https://en.wikipedia.org/wiki/Multi-factor_authentication">https://en.wikipedia.org/wiki/Multi-factor_authentication</a></p>
 </aside><aside class="footnote brackets" id="sim-hijack" role="note"><span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#footnote-reference-2">2</a><span class="fn-bracket">]</span></span>
 <p><a class="reference external" href="https://en.wikipedia.org/wiki/SIM_swap_scam">https://en.wikipedia.org/wiki/SIM_swap_scam</a></p>
 </aside><aside class="footnote brackets" id="otp" role="note"><span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#footnote-reference-3">3</a><span class="fn-bracket">]</span></span>
 <p><a class="reference external" href="https://en.wikipedia.org/wiki/One-time_password">https://en.wikipedia.org/wiki/One-time_password</a></p>
-</aside></section>
+</aside></aside></section>
 </div>
-    </div>
     <aside class="postpromonav"><nav><ul itemprop="keywords" class="tags">
 <li><a class="tag p-category" href="../../categories/development/" rel="tag">development</a></li>
             <li><a class="tag p-category" href="../../categories/security/" rel="tag">security</a></li>
@@ -324,7 +323,7 @@ Let me know in the comments!</p>
             </li>
         </ul></nav></aside><section class="comments hidden-print"><h2>Comentarios</h2>
         
-        
+    
         <div id="disqus_thread"></div>
         <script>
         var disqus_shortname ="stsewd",
@@ -355,7 +354,7 @@ Let me know in the comments!</p>
     <div class="row text-center">
         <div class="col">
             <small>
-                Contents © 2022 <a href="mailto:stsewd@protonmail.com">Santos Gallegos</a> -
+                Contents © 2022 <a href="mailto:stsewd@proton.me">Santos Gallegos</a> -
                 Powered by <a href="https://getnikola.com" rel="nofollow">Nikola</a> -
                 Hosted on <a href="https://pages.github.com/" rel="nofollow">GitHub Pages</a>
                 

@@ -99,7 +99,7 @@ bg-dark
             </a>
             </p>
                 <p class="commentline">
-        
+    
     <a href="#disqus_thread" data-disqus-identifier="cache/posts/file-navigation-neovim.html">Comments</a>
 
 
@@ -110,8 +110,7 @@ bg-dark
         
 
     </header><div class="e-content entry-content" itemprop="articleBody text">
-    <div>
-<p>If you work in a project with more than one file,
+    <p>If you work in a project with more than one file,
 probably you'll be changing files very frequently or
 search for a file that contains the code or text you are interested in.</p>
 <p>Or when you are new in a project, you want to know:</p>
@@ -131,17 +130,17 @@ But, if you are already in Neovim, you can use the <a class="reference external"
 <div class="line"><br></div>
 </div>
 <p>You can install it with <a class="reference external" href="https://github.com/junegunn/vim-plug">vim-plug</a>:</p>
-<pre class="code vim"><a id="rest_code_c037d69ca60f47949036100a9b0aff60-1" name="rest_code_c037d69ca60f47949036100a9b0aff60-1" href="#rest_code_c037d69ca60f47949036100a9b0aff60-1"></a>Plug <span class="s1">'scrooloose/nerdtree'</span>
-</pre>
+<div class="code"><pre class="code vim"><a id="rest_code_5b3ab155e2da463f8856f09d9f32106a-1" name="rest_code_5b3ab155e2da463f8856f09d9f32106a-1" href="#rest_code_5b3ab155e2da463f8856f09d9f32106a-1"></a>Plug <span class="s1">'scrooloose/nerdtree'</span>
+</pre></div>
 <p>I have these settings for NerdTree:</p>
-<pre class="code vim"><a id="rest_code_649af2780edd41a7a2e70a0c11d06419-1" name="rest_code_649af2780edd41a7a2e70a0c11d06419-1" href="#rest_code_649af2780edd41a7a2e70a0c11d06419-1"></a><span class="k">let</span> <span class="k">g</span>:NERDTreeChDirMode <span class="p">=</span> <span class="m">2</span>  <span class="c">" Change cwd to parent node</span>
-<a id="rest_code_649af2780edd41a7a2e70a0c11d06419-2" name="rest_code_649af2780edd41a7a2e70a0c11d06419-2" href="#rest_code_649af2780edd41a7a2e70a0c11d06419-2"></a>
-<a id="rest_code_649af2780edd41a7a2e70a0c11d06419-3" name="rest_code_649af2780edd41a7a2e70a0c11d06419-3" href="#rest_code_649af2780edd41a7a2e70a0c11d06419-3"></a><span class="k">let</span> <span class="k">g</span>:NERDTreeMinimalUI <span class="p">=</span> <span class="m">1</span>  <span class="c">" Hide help text</span>
-<a id="rest_code_649af2780edd41a7a2e70a0c11d06419-4" name="rest_code_649af2780edd41a7a2e70a0c11d06419-4" href="#rest_code_649af2780edd41a7a2e70a0c11d06419-4"></a><span class="k">let</span> <span class="k">g</span>:NERDTreeAutoDeleteBuffer <span class="p">=</span> <span class="m">1</span>
-<a id="rest_code_649af2780edd41a7a2e70a0c11d06419-5" name="rest_code_649af2780edd41a7a2e70a0c11d06419-5" href="#rest_code_649af2780edd41a7a2e70a0c11d06419-5"></a>
-<a id="rest_code_649af2780edd41a7a2e70a0c11d06419-6" name="rest_code_649af2780edd41a7a2e70a0c11d06419-6" href="#rest_code_649af2780edd41a7a2e70a0c11d06419-6"></a><span class="nb">nnoremap</span> <span class="p">&lt;</span>leader<span class="p">&gt;</span><span class="k">n</span> :NERDTreeToggle<span class="p">&lt;</span>CR<span class="p">&gt;</span>
-<a id="rest_code_649af2780edd41a7a2e70a0c11d06419-7" name="rest_code_649af2780edd41a7a2e70a0c11d06419-7" href="#rest_code_649af2780edd41a7a2e70a0c11d06419-7"></a><span class="nb">nnoremap</span> <span class="p">&lt;</span>leader<span class="p">&gt;</span>N :NERDTreeFind<span class="p">&lt;</span>CR<span class="p">&gt;</span>
-</pre>
+<div class="code"><pre class="code vim"><a id="rest_code_71b2999115004df6ba1113931846d1e5-1" name="rest_code_71b2999115004df6ba1113931846d1e5-1" href="#rest_code_71b2999115004df6ba1113931846d1e5-1"></a><span class="k">let</span> <span class="k">g</span>:NERDTreeChDirMode <span class="p">=</span> <span class="m">2</span>  <span class="c">" Change cwd to parent node</span>
+<a id="rest_code_71b2999115004df6ba1113931846d1e5-2" name="rest_code_71b2999115004df6ba1113931846d1e5-2" href="#rest_code_71b2999115004df6ba1113931846d1e5-2"></a>
+<a id="rest_code_71b2999115004df6ba1113931846d1e5-3" name="rest_code_71b2999115004df6ba1113931846d1e5-3" href="#rest_code_71b2999115004df6ba1113931846d1e5-3"></a><span class="k">let</span> <span class="k">g</span>:NERDTreeMinimalUI <span class="p">=</span> <span class="m">1</span>  <span class="c">" Hide help text</span>
+<a id="rest_code_71b2999115004df6ba1113931846d1e5-4" name="rest_code_71b2999115004df6ba1113931846d1e5-4" href="#rest_code_71b2999115004df6ba1113931846d1e5-4"></a><span class="k">let</span> <span class="k">g</span>:NERDTreeAutoDeleteBuffer <span class="p">=</span> <span class="m">1</span>
+<a id="rest_code_71b2999115004df6ba1113931846d1e5-5" name="rest_code_71b2999115004df6ba1113931846d1e5-5" href="#rest_code_71b2999115004df6ba1113931846d1e5-5"></a>
+<a id="rest_code_71b2999115004df6ba1113931846d1e5-6" name="rest_code_71b2999115004df6ba1113931846d1e5-6" href="#rest_code_71b2999115004df6ba1113931846d1e5-6"></a><span class="nb">nnoremap</span> <span class="p">&lt;</span>leader<span class="p">&gt;</span><span class="k">n</span> :NERDTreeToggle<span class="p">&lt;</span>CR<span class="p">&gt;</span>
+<a id="rest_code_71b2999115004df6ba1113931846d1e5-7" name="rest_code_71b2999115004df6ba1113931846d1e5-7" href="#rest_code_71b2999115004df6ba1113931846d1e5-7"></a><span class="nb">nnoremap</span> <span class="p">&lt;</span>leader<span class="p">&gt;</span>N :NERDTreeFind<span class="p">&lt;</span>CR<span class="p">&gt;</span>
+</pre></div>
 <p>So, if I want to see the project structure I just press <code class="kbd docutils literal">&lt;leader&gt; + n</code>.
 If I want to see the files that are around the current file, I just press <code class="kbd docutils literal">&lt;leader&gt; + N</code>.</p>
 <p>If you like icons, you can get it in NerdTree with <a class="reference external" href="https://github.com/ryanoasis/vim-devicons">Vim devicons</a>.</p>
@@ -158,19 +157,19 @@ Ripgrep can be used together with FZF.</p>
 <div class="line"><br></div>
 </div>
 <p>You can install ripgrep with:</p>
-<pre class="code bash"><a id="rest_code_98d618dcafd24a899a50ab86482cf9d7-1" name="rest_code_98d618dcafd24a899a50ab86482cf9d7-1" href="#rest_code_98d618dcafd24a899a50ab86482cf9d7-1"></a><span class="c1"># Ubuntu</span>
-<a id="rest_code_98d618dcafd24a899a50ab86482cf9d7-2" name="rest_code_98d618dcafd24a899a50ab86482cf9d7-2" href="#rest_code_98d618dcafd24a899a50ab86482cf9d7-2"></a>sudo apt install ripgrep
-<a id="rest_code_98d618dcafd24a899a50ab86482cf9d7-3" name="rest_code_98d618dcafd24a899a50ab86482cf9d7-3" href="#rest_code_98d618dcafd24a899a50ab86482cf9d7-3"></a>
-<a id="rest_code_98d618dcafd24a899a50ab86482cf9d7-4" name="rest_code_98d618dcafd24a899a50ab86482cf9d7-4" href="#rest_code_98d618dcafd24a899a50ab86482cf9d7-4"></a><span class="c1"># Fedora</span>
-<a id="rest_code_98d618dcafd24a899a50ab86482cf9d7-5" name="rest_code_98d618dcafd24a899a50ab86482cf9d7-5" href="#rest_code_98d618dcafd24a899a50ab86482cf9d7-5"></a>sudo dnf install ripgrep
-</pre>
+<div class="code"><pre class="code bash"><a id="rest_code_9de98c5d8d3743ae9a5ac129f4725735-1" name="rest_code_9de98c5d8d3743ae9a5ac129f4725735-1" href="#rest_code_9de98c5d8d3743ae9a5ac129f4725735-1"></a><span class="c1"># Ubuntu</span>
+<a id="rest_code_9de98c5d8d3743ae9a5ac129f4725735-2" name="rest_code_9de98c5d8d3743ae9a5ac129f4725735-2" href="#rest_code_9de98c5d8d3743ae9a5ac129f4725735-2"></a>sudo apt install ripgrep
+<a id="rest_code_9de98c5d8d3743ae9a5ac129f4725735-3" name="rest_code_9de98c5d8d3743ae9a5ac129f4725735-3" href="#rest_code_9de98c5d8d3743ae9a5ac129f4725735-3"></a>
+<a id="rest_code_9de98c5d8d3743ae9a5ac129f4725735-4" name="rest_code_9de98c5d8d3743ae9a5ac129f4725735-4" href="#rest_code_9de98c5d8d3743ae9a5ac129f4725735-4"></a><span class="c1"># Fedora</span>
+<a id="rest_code_9de98c5d8d3743ae9a5ac129f4725735-5" name="rest_code_9de98c5d8d3743ae9a5ac129f4725735-5" href="#rest_code_9de98c5d8d3743ae9a5ac129f4725735-5"></a>sudo dnf install ripgrep
+</pre></div>
 <p>For other OSs, <a class="reference external" href="https://github.com/BurntSushi/ripgrep#installation">read this</a>.</p>
 <p>FZF has a <a class="reference external" href="https://github.com/junegunn/fzf.vim">plugin for Neovim</a>
 (it installs the binary package too),
 you can install it with:</p>
-<pre class="code vim"><a id="rest_code_01716054d33e480e83291da2b9a0e874-1" name="rest_code_01716054d33e480e83291da2b9a0e874-1" href="#rest_code_01716054d33e480e83291da2b9a0e874-1"></a>Plug <span class="s1">'junegunn/fzf'</span><span class="p">,</span> { <span class="s1">'dir'</span>: <span class="s1">'~/.fzf'</span><span class="p">,</span> <span class="s1">'do'</span>: <span class="s1">'./install --all'</span> }
-<a id="rest_code_01716054d33e480e83291da2b9a0e874-2" name="rest_code_01716054d33e480e83291da2b9a0e874-2" href="#rest_code_01716054d33e480e83291da2b9a0e874-2"></a>Plug <span class="s1">'junegunn/fzf.vim'</span>  <span class="c">" General fuzzy finder</span>
-</pre>
+<div class="code"><pre class="code vim"><a id="rest_code_98cbaddd927e45cd81764900d027c537-1" name="rest_code_98cbaddd927e45cd81764900d027c537-1" href="#rest_code_98cbaddd927e45cd81764900d027c537-1"></a>Plug <span class="s1">'junegunn/fzf'</span><span class="p">,</span> { <span class="s1">'dir'</span>: <span class="s1">'~/.fzf'</span><span class="p">,</span> <span class="s1">'do'</span>: <span class="s1">'./install --all'</span> }
+<a id="rest_code_98cbaddd927e45cd81764900d027c537-2" name="rest_code_98cbaddd927e45cd81764900d027c537-2" href="#rest_code_98cbaddd927e45cd81764900d027c537-2"></a>Plug <span class="s1">'junegunn/fzf.vim'</span>  <span class="c">" General fuzzy finder</span>
+</pre></div>
 <p>Now you can use the commands:</p>
 <ul class="simple">
 <li><p><code class="docutils literal">:Files</code> to fuzzy search all files in the current directory.</p></li>
@@ -179,15 +178,15 @@ you can install it with:</p>
 <li><p><code class="docutils literal">:Buffers</code> to fuzzy search all open buffers.</p></li>
 </ul>
 <p>I have these settings for FZF:</p>
-<pre class="code vim"><a id="rest_code_dedf71ebea094e0b939520734d2281f8-1" name="rest_code_dedf71ebea094e0b939520734d2281f8-1" href="#rest_code_dedf71ebea094e0b939520734d2281f8-1"></a><span class="c">" Prefix all commands with Fz,</span>
-<a id="rest_code_dedf71ebea094e0b939520734d2281f8-2" name="rest_code_dedf71ebea094e0b939520734d2281f8-2" href="#rest_code_dedf71ebea094e0b939520734d2281f8-2"></a><span class="c">" so Files is Fzfiles, Rg is FzRg, etc.</span>
-<a id="rest_code_dedf71ebea094e0b939520734d2281f8-3" name="rest_code_dedf71ebea094e0b939520734d2281f8-3" href="#rest_code_dedf71ebea094e0b939520734d2281f8-3"></a><span class="c">" It's useful to autocomplete all fzf commands using :Fz&lt;tab&gt;</span>
-<a id="rest_code_dedf71ebea094e0b939520734d2281f8-4" name="rest_code_dedf71ebea094e0b939520734d2281f8-4" href="#rest_code_dedf71ebea094e0b939520734d2281f8-4"></a><span class="k">let</span> <span class="k">g</span>:fzf_command_prefix <span class="p">=</span> <span class="s1">'Fz'</span>
-<a id="rest_code_dedf71ebea094e0b939520734d2281f8-5" name="rest_code_dedf71ebea094e0b939520734d2281f8-5" href="#rest_code_dedf71ebea094e0b939520734d2281f8-5"></a>
-<a id="rest_code_dedf71ebea094e0b939520734d2281f8-6" name="rest_code_dedf71ebea094e0b939520734d2281f8-6" href="#rest_code_dedf71ebea094e0b939520734d2281f8-6"></a><span class="c">" Keeps the history of previous searches.</span>
-<a id="rest_code_dedf71ebea094e0b939520734d2281f8-7" name="rest_code_dedf71ebea094e0b939520734d2281f8-7" href="#rest_code_dedf71ebea094e0b939520734d2281f8-7"></a><span class="c">" You can use ctrl-n or ctr-p to navigate the history on a FZF window</span>
-<a id="rest_code_dedf71ebea094e0b939520734d2281f8-8" name="rest_code_dedf71ebea094e0b939520734d2281f8-8" href="#rest_code_dedf71ebea094e0b939520734d2281f8-8"></a><span class="k">let</span> <span class="k">g</span>:fzf_history_dir <span class="p">=</span> <span class="s1">'~/.local/share/fzf-history'</span>
-</pre>
+<div class="code"><pre class="code vim"><a id="rest_code_b42c71663f01455db353bf23d28e168e-1" name="rest_code_b42c71663f01455db353bf23d28e168e-1" href="#rest_code_b42c71663f01455db353bf23d28e168e-1"></a><span class="c">" Prefix all commands with Fz,</span>
+<a id="rest_code_b42c71663f01455db353bf23d28e168e-2" name="rest_code_b42c71663f01455db353bf23d28e168e-2" href="#rest_code_b42c71663f01455db353bf23d28e168e-2"></a><span class="c">" so Files is Fzfiles, Rg is FzRg, etc.</span>
+<a id="rest_code_b42c71663f01455db353bf23d28e168e-3" name="rest_code_b42c71663f01455db353bf23d28e168e-3" href="#rest_code_b42c71663f01455db353bf23d28e168e-3"></a><span class="c">" It's useful to autocomplete all fzf commands using :Fz&lt;tab&gt;</span>
+<a id="rest_code_b42c71663f01455db353bf23d28e168e-4" name="rest_code_b42c71663f01455db353bf23d28e168e-4" href="#rest_code_b42c71663f01455db353bf23d28e168e-4"></a><span class="k">let</span> <span class="k">g</span>:fzf_command_prefix <span class="p">=</span> <span class="s1">'Fz'</span>
+<a id="rest_code_b42c71663f01455db353bf23d28e168e-5" name="rest_code_b42c71663f01455db353bf23d28e168e-5" href="#rest_code_b42c71663f01455db353bf23d28e168e-5"></a>
+<a id="rest_code_b42c71663f01455db353bf23d28e168e-6" name="rest_code_b42c71663f01455db353bf23d28e168e-6" href="#rest_code_b42c71663f01455db353bf23d28e168e-6"></a><span class="c">" Keeps the history of previous searches.</span>
+<a id="rest_code_b42c71663f01455db353bf23d28e168e-7" name="rest_code_b42c71663f01455db353bf23d28e168e-7" href="#rest_code_b42c71663f01455db353bf23d28e168e-7"></a><span class="c">" You can use ctrl-n or ctr-p to navigate the history on a FZF window</span>
+<a id="rest_code_b42c71663f01455db353bf23d28e168e-8" name="rest_code_b42c71663f01455db353bf23d28e168e-8" href="#rest_code_b42c71663f01455db353bf23d28e168e-8"></a><span class="k">let</span> <span class="k">g</span>:fzf_history_dir <span class="p">=</span> <span class="s1">'~/.local/share/fzf-history'</span>
+</pre></div>
 <p>For more commands and options, read the manual <code class="docutils literal">:help <span class="pre">fzf-vim</span></code>.</p>
 </section><section id="vim-altr"><h2>Vim-altr</h2>
 <p>When you are editing a file, you may want to check its tests.
@@ -198,12 +197,12 @@ Or if you are a C/Cpp programmer, you may find yourself changing between the sou
 <div class="line"><br></div>
 </div>
 <p>You can install it with:</p>
-<pre class="code vim"><a id="rest_code_cc5aeb5759b443359fb1d6b11b53f111-1" name="rest_code_cc5aeb5759b443359fb1d6b11b53f111-1" href="#rest_code_cc5aeb5759b443359fb1d6b11b53f111-1"></a>Plug <span class="s1">'kana/vim-altr'</span>  <span class="c">" Altern between files</span>
-</pre>
+<div class="code"><pre class="code vim"><a id="rest_code_02cde885a5974a52b7667627177ae3a5-1" name="rest_code_02cde885a5974a52b7667627177ae3a5-1" href="#rest_code_02cde885a5974a52b7667627177ae3a5-1"></a>Plug <span class="s1">'kana/vim-altr'</span>  <span class="c">" Altern between files</span>
+</pre></div>
 <p>I have these settings for vim-altr:</p>
-<pre class="code vim"><a id="rest_code_9e596c1ec35340c4aa9c5922c9acdbed-1" name="rest_code_9e596c1ec35340c4aa9c5922c9acdbed-1" href="#rest_code_9e596c1ec35340c4aa9c5922c9acdbed-1"></a>nmap <span class="p">&lt;</span>leader<span class="p">&gt;</span><span class="k">a</span> <span class="p">&lt;</span>Plug<span class="p">&gt;(</span>altr<span class="p">-</span>forward<span class="p">)</span>
-<a id="rest_code_9e596c1ec35340c4aa9c5922c9acdbed-2" name="rest_code_9e596c1ec35340c4aa9c5922c9acdbed-2" href="#rest_code_9e596c1ec35340c4aa9c5922c9acdbed-2"></a>nmap <span class="p">&lt;</span>leader<span class="p">&gt;</span>A <span class="p">&lt;</span>Plug<span class="p">&gt;(</span>altr<span class="p">-</span>back<span class="p">)</span>
-</pre>
+<div class="code"><pre class="code vim"><a id="rest_code_89361cecd5fb4243a5568b14d573baba-1" name="rest_code_89361cecd5fb4243a5568b14d573baba-1" href="#rest_code_89361cecd5fb4243a5568b14d573baba-1"></a>nmap <span class="p">&lt;</span>leader<span class="p">&gt;</span><span class="k">a</span> <span class="p">&lt;</span>Plug<span class="p">&gt;(</span>altr<span class="p">-</span>forward<span class="p">)</span>
+<a id="rest_code_89361cecd5fb4243a5568b14d573baba-2" name="rest_code_89361cecd5fb4243a5568b14d573baba-2" href="#rest_code_89361cecd5fb4243a5568b14d573baba-2"></a>nmap <span class="p">&lt;</span>leader<span class="p">&gt;</span>A <span class="p">&lt;</span>Plug<span class="p">&gt;(</span>altr<span class="p">-</span>back<span class="p">)</span>
+</pre></div>
 <p>To altern between files I just press <code class="kbd docutils literal">&lt;leader&gt; + a</code>.
 To see more options and how to define your own rules,
 red the manual <code class="docutils literal">:help altr.txt</code>.</p>
@@ -215,12 +214,11 @@ When you find yourself in big projects with several branches is easy to get lost
 <div class="line"><br></div>
 </div>
 <p>I wrote <a class="reference external" href="https://github.com/stsewd/fzf-checkout.vim">this plugin</a> that list all your branches using <code class="docutils literal">fzf.vim</code>.</p>
-<pre class="code vim"><a id="rest_code_ed0746b730ac41928f0f9f0b8ea8f411-1" name="rest_code_ed0746b730ac41928f0f9f0b8ea8f411-1" href="#rest_code_ed0746b730ac41928f0f9f0b8ea8f411-1"></a>Plug <span class="s1">'stsewd/fzf-checkout.vim'</span>
-</pre>
+<div class="code"><pre class="code vim"><a id="rest_code_4161b5c850bd488180815d6665130cc4-1" name="rest_code_4161b5c850bd488180815d6665130cc4-1" href="#rest_code_4161b5c850bd488180815d6665130cc4-1"></a>Plug <span class="s1">'stsewd/fzf-checkout.vim'</span>
+</pre></div>
 <p>Use <code class="docutils literal">:GCheckout</code> or <code class="docutils literal">:GCheckoutTag</code>.</p>
 </section>
 </div>
-    </div>
     <aside class="postpromonav"><nav><ul itemprop="keywords" class="tags">
 <li><a class="tag p-category" href="../../categories/fzf/" rel="tag">fzf</a></li>
             <li><a class="tag p-category" href="../../categories/navigation/" rel="tag">navigation</a></li>
@@ -237,7 +235,7 @@ When you find yourself in big projects with several branches is easy to get lost
             </li>
         </ul></nav></aside><section class="comments hidden-print"><h2>Comments</h2>
         
-        
+    
         <div id="disqus_thread"></div>
         <script>
         var disqus_shortname ="stsewd",
@@ -268,7 +266,7 @@ When you find yourself in big projects with several branches is easy to get lost
     <div class="row text-center">
         <div class="col">
             <small>
-                Contents © 2022 <a href="mailto:stsewd@protonmail.com">Santos Gallegos</a> -
+                Contents © 2022 <a href="mailto:stsewd@proton.me">Santos Gallegos</a> -
                 Powered by <a href="https://getnikola.com" rel="nofollow">Nikola</a> -
                 Hosted on <a href="https://pages.github.com/" rel="nofollow">GitHub Pages</a>
                 

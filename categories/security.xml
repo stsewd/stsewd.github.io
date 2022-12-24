@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<?xml-stylesheet type="text/xsl" href="../assets/xml/rss.xsl" media="all"?><rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Santos Gallegos (Posts about security)</title><link>https://stsewd.dev/</link><description></description><atom:link href="https://stsewd.dev/categories/security.xml" rel="self" type="application/rss+xml"></atom:link><language>en</language><copyright>Contents © 2022 &lt;a href="mailto:stsewd@protonmail.com"&gt;Santos Gallegos&lt;/a&gt; </copyright><lastBuildDate>Mon, 18 Apr 2022 23:19:24 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Securing your development environment</title><link>https://stsewd.dev/posts/securing-your-dev-environment/</link><dc:creator>Santos Gallegos</dc:creator><description>&lt;div&gt;&lt;p&gt;If you are a developer, chances are that you handle private code or production secrets.
+<?xml-stylesheet type="text/xsl" href="../assets/xml/rss.xsl" media="all"?><rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Santos Gallegos (Posts about security)</title><link>https://stsewd.dev/</link><description></description><atom:link href="https://stsewd.dev/categories/security.xml" rel="self" type="application/rss+xml"></atom:link><language>en</language><copyright>Contents © 2022 &lt;a href="mailto:stsewd@proton.me"&gt;Santos Gallegos&lt;/a&gt; </copyright><lastBuildDate>Sat, 24 Dec 2022 22:04:34 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Securing your development environment</title><link>https://stsewd.dev/posts/securing-your-dev-environment/</link><dc:creator>Santos Gallegos</dc:creator><description>&lt;p&gt;If you are a developer, chances are that you handle private code or production secrets.
 If someone has access to those, you may be in serious problems with your bosses and clients.
 I'll share with you some tips on how to secure your development environment &lt;strong&gt;from your computer to your terminal&lt;/strong&gt;.&lt;/p&gt;
 &lt;aside class="admonition note"&gt;
@@ -150,15 +150,18 @@ and navigating the history with &lt;code class="docutils literal"&gt;↑&lt;/cod
 but that history can also contain sensitive information.&lt;/p&gt;
 &lt;p&gt;The default number of history entries is usually high,
 as a quick experiment, you can check how many entries you have with:&lt;/p&gt;
-&lt;pre class="code bash"&gt;&lt;a id="rest_code_426e6a537fb64581a0a401d37095963b-1" name="rest_code_426e6a537fb64581a0a401d37095963b-1" href="https://stsewd.dev/posts/securing-your-dev-environment/#rest_code_426e6a537fb64581a0a401d37095963b-1"&gt;&lt;/a&gt;cat &lt;span class="nv"&gt;$HISTFILE&lt;/span&gt; &lt;span class="p"&gt;|&lt;/span&gt; wc -l
-&lt;/pre&gt;&lt;p&gt;And how many of those entries possibly have secrets with:&lt;/p&gt;
-&lt;pre class="code bash"&gt;&lt;a id="rest_code_a6875fde4c3444018045803f12bf9d0f-1" name="rest_code_a6875fde4c3444018045803f12bf9d0f-1" href="https://stsewd.dev/posts/securing-your-dev-environment/#rest_code_a6875fde4c3444018045803f12bf9d0f-1"&gt;&lt;/a&gt;grep -E -i &lt;span class="s1"&gt;'(token)|(pass)|(secret)'&lt;/span&gt; &lt;span class="nv"&gt;$HISTFILE&lt;/span&gt;
-&lt;/pre&gt;&lt;p&gt;Depending on the Shell you are using,
+&lt;div class="code"&gt;&lt;pre class="code bash"&gt;&lt;a id="rest_code_63695665d6da4c38ac640564736b7638-1" name="rest_code_63695665d6da4c38ac640564736b7638-1" href="https://stsewd.dev/posts/securing-your-dev-environment/#rest_code_63695665d6da4c38ac640564736b7638-1"&gt;&lt;/a&gt;cat &lt;span class="nv"&gt;$HISTFILE&lt;/span&gt; &lt;span class="p"&gt;|&lt;/span&gt; wc -l
+&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;And how many of those entries possibly have secrets with:&lt;/p&gt;
+&lt;div class="code"&gt;&lt;pre class="code bash"&gt;&lt;a id="rest_code_f34cd7d0bc764d0b8608c0731fdffcbe-1" name="rest_code_f34cd7d0bc764d0b8608c0731fdffcbe-1" href="https://stsewd.dev/posts/securing-your-dev-environment/#rest_code_f34cd7d0bc764d0b8608c0731fdffcbe-1"&gt;&lt;/a&gt;grep -E -i &lt;span class="s1"&gt;'(token)|(pass)|(secret)'&lt;/span&gt; &lt;span class="nv"&gt;$HISTFILE&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;Depending on the Shell you are using,
 you can control the max number of entries with environment variables,
 for zsh this is done with:&lt;/p&gt;
-&lt;pre class="code bash"&gt;&lt;a id="rest_code_f9ecbd3216754e5d861615a045badec8-1" name="rest_code_f9ecbd3216754e5d861615a045badec8-1" href="https://stsewd.dev/posts/securing-your-dev-environment/#rest_code_f9ecbd3216754e5d861615a045badec8-1"&gt;&lt;/a&gt;&lt;span class="nb"&gt;export&lt;/span&gt; &lt;span class="nv"&gt;SAVEHIST&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="m"&gt;1000&lt;/span&gt;
-&lt;a id="rest_code_f9ecbd3216754e5d861615a045badec8-2" name="rest_code_f9ecbd3216754e5d861615a045badec8-2" href="https://stsewd.dev/posts/securing-your-dev-environment/#rest_code_f9ecbd3216754e5d861615a045badec8-2"&gt;&lt;/a&gt;&lt;span class="nb"&gt;export&lt;/span&gt; &lt;span class="nv"&gt;HISTSIZE&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="nv"&gt;$SAVEHIST&lt;/span&gt;
-&lt;/pre&gt;&lt;p&gt;Choose the number of entries at your discretion,
+&lt;div class="code"&gt;&lt;pre class="code bash"&gt;&lt;a id="rest_code_71180f14c01041caba534245e661b1b1-1" name="rest_code_71180f14c01041caba534245e661b1b1-1" href="https://stsewd.dev/posts/securing-your-dev-environment/#rest_code_71180f14c01041caba534245e661b1b1-1"&gt;&lt;/a&gt;&lt;span class="nb"&gt;export&lt;/span&gt; &lt;span class="nv"&gt;SAVEHIST&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="m"&gt;1000&lt;/span&gt;
+&lt;a id="rest_code_71180f14c01041caba534245e661b1b1-2" name="rest_code_71180f14c01041caba534245e661b1b1-2" href="https://stsewd.dev/posts/securing-your-dev-environment/#rest_code_71180f14c01041caba534245e661b1b1-2"&gt;&lt;/a&gt;&lt;span class="nb"&gt;export&lt;/span&gt; &lt;span class="nv"&gt;HISTSIZE&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="nv"&gt;$SAVEHIST&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;Choose the number of entries at your discretion,
 not big enough that will keep things for a long period of time,
 and not so small to not save you some typing.&lt;/p&gt;
 &lt;p&gt;Some times you need to enter secrets in your terminal,
@@ -167,16 +170,18 @@ You can avoid adding your commands to the history
 by prefixing them with a space.&lt;/p&gt;
 &lt;p&gt;Another way to enter into &lt;em&gt;incognito mode&lt;/em&gt; is by un-setting the &lt;code class="docutils literal"&gt;$HISTFILE&lt;/code&gt; environment variable
 (thanks &lt;a class="reference external" href="https://github.com/WhiteHatTux"&gt;@WhiteHatTux&lt;/a&gt; for this tip!).&lt;/p&gt;
-&lt;pre class="code bash"&gt;&lt;a id="rest_code_33c8485e7fac48a6a6a3c8a3a33e48d8-1" name="rest_code_33c8485e7fac48a6a6a3c8a3a33e48d8-1" href="https://stsewd.dev/posts/securing-your-dev-environment/#rest_code_33c8485e7fac48a6a6a3c8a3a33e48d8-1"&gt;&lt;/a&gt;&lt;span class="nb"&gt;unset&lt;/span&gt; HISTFILE
-&lt;/pre&gt;&lt;/section&gt;
+&lt;div class="code"&gt;&lt;pre class="code bash"&gt;&lt;a id="rest_code_36ea803e161c4e18a1ff1e2679e980cf-1" name="rest_code_36ea803e161c4e18a1ff1e2679e980cf-1" href="https://stsewd.dev/posts/securing-your-dev-environment/#rest_code_36ea803e161c4e18a1ff1e2679e980cf-1"&gt;&lt;/a&gt;&lt;span class="nb"&gt;unset&lt;/span&gt; HISTFILE
+&lt;/pre&gt;&lt;/div&gt;
+&lt;/section&gt;
 &lt;section id="securing-your-files-and-environment-variables"&gt;
 &lt;h2&gt;Securing your files and environment variables&lt;/h2&gt;
 &lt;p&gt;If you have files with sensitive information
 that you can't encrypt because it needs to be readable (like configuration files),
 at least give access only the appropriate users/processes.&lt;/p&gt;
 &lt;p&gt;To remove access from all users except yours, you can use:&lt;/p&gt;
-&lt;pre class="code bash"&gt;&lt;a id="rest_code_68effec4a7d74ec9b369b265d7bb3392-1" name="rest_code_68effec4a7d74ec9b369b265d7bb3392-1" href="https://stsewd.dev/posts/securing-your-dev-environment/#rest_code_68effec4a7d74ec9b369b265d7bb3392-1"&gt;&lt;/a&gt;chmod og-rwx &lt;span class="o"&gt;{&lt;/span&gt;file&lt;span class="o"&gt;}&lt;/span&gt;
-&lt;/pre&gt;&lt;p&gt;For extra protection, check the &lt;a class="reference external" href="https://selinuxproject.org/page/Main_Page"&gt;SELinux&lt;/a&gt; project.&lt;/p&gt;
+&lt;div class="code"&gt;&lt;pre class="code bash"&gt;&lt;a id="rest_code_701b99a86753459aaff0fa53aa747762-1" name="rest_code_701b99a86753459aaff0fa53aa747762-1" href="https://stsewd.dev/posts/securing-your-dev-environment/#rest_code_701b99a86753459aaff0fa53aa747762-1"&gt;&lt;/a&gt;chmod og-rwx &lt;span class="o"&gt;{&lt;/span&gt;file&lt;span class="o"&gt;}&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;For extra protection, check the &lt;a class="reference external" href="https://selinuxproject.org/page/Main_Page"&gt;SELinux&lt;/a&gt; project.&lt;/p&gt;
 &lt;p&gt;If you need to expose some environment variables with secrets to your commands.
 You can use &lt;a class="reference external" href="https://direnv.net/"&gt;direnv&lt;/a&gt; with an encrypted directory.
 This way the environment variables will be set only when you are on that directory.&lt;/p&gt;
@@ -237,6 +242,7 @@ Still, it's always good to have several layers of protection when handling sensi
 Or do you have more to share?
 Let me know in the comments!&lt;/p&gt;
 &lt;hr class="docutils"&gt;
+&lt;aside class="footnote-list brackets"&gt;
 &lt;aside class="footnote brackets" id="mfa" role="note"&gt;
 &lt;span class="label"&gt;&lt;span class="fn-bracket"&gt;[&lt;/span&gt;&lt;a role="doc-backlink" href="https://stsewd.dev/posts/securing-your-dev-environment/#footnote-reference-1"&gt;1&lt;/a&gt;&lt;span class="fn-bracket"&gt;]&lt;/span&gt;&lt;/span&gt;
 &lt;p&gt;&lt;a class="reference external" href="https://en.wikipedia.org/wiki/Multi-factor_authentication"&gt;https://en.wikipedia.org/wiki/Multi-factor_authentication&lt;/a&gt;&lt;/p&gt;
@@ -249,7 +255,8 @@ Let me know in the comments!&lt;/p&gt;
 &lt;span class="label"&gt;&lt;span class="fn-bracket"&gt;[&lt;/span&gt;&lt;a role="doc-backlink" href="https://stsewd.dev/posts/securing-your-dev-environment/#footnote-reference-3"&gt;3&lt;/a&gt;&lt;span class="fn-bracket"&gt;]&lt;/span&gt;&lt;/span&gt;
 &lt;p&gt;&lt;a class="reference external" href="https://en.wikipedia.org/wiki/One-time_password"&gt;https://en.wikipedia.org/wiki/One-time_password&lt;/a&gt;&lt;/p&gt;
 &lt;/aside&gt;
-&lt;/section&gt;&lt;/div&gt;</description><category>development</category><category>security</category><guid>https://stsewd.dev/posts/securing-your-dev-environment/</guid><pubDate>Sat, 24 Jul 2021 05:00:00 GMT</pubDate></item><item><title>A tale about security in web applications, or how I helped to save a bank from bankruptcy</title><link>https://stsewd.dev/posts/a-tale-about-security-in-web-applications/</link><dc:creator>Santos Gallegos</dc:creator><description>&lt;div&gt;&lt;p&gt;Hi friend, today I'm going to tell you a little story.
+&lt;/aside&gt;
+&lt;/section&gt;</description><category>development</category><category>security</category><guid>https://stsewd.dev/posts/securing-your-dev-environment/</guid><pubDate>Sat, 24 Jul 2021 05:00:00 GMT</pubDate></item><item><title>A tale about security in web applications, or how I helped to save a bank from bankruptcy</title><link>https://stsewd.dev/posts/a-tale-about-security-in-web-applications/</link><dc:creator>Santos Gallegos</dc:creator><description>&lt;p&gt;Hi friend, today I'm going to tell you a little story.
 Some things may look familiar, or even you could feel related to some situations.
 I assure you, &lt;strong&gt;it's mere coincidence&lt;/strong&gt;.&lt;/p&gt;
 &lt;section id="a-new-experience"&gt;
@@ -392,4 +399,4 @@ I may know a great team with experts in different areas that &lt;a class="refere
 &lt;p&gt;This tale may have been inspired by a real situation,
 and some things may have been exaggerated (or maybe not?).&lt;/p&gt;
 &lt;/aside&gt;
-&lt;/section&gt;&lt;/div&gt;</description><category>experience</category><category>security</category><guid>https://stsewd.dev/posts/a-tale-about-security-in-web-applications/</guid><pubDate>Fri, 18 Jun 2021 05:00:00 GMT</pubDate></item></channel></rss>
+&lt;/section&gt;</description><category>experience</category><category>security</category><guid>https://stsewd.dev/posts/a-tale-about-security-in-web-applications/</guid><pubDate>Fri, 18 Jun 2021 05:00:00 GMT</pubDate></item></channel></rss>
