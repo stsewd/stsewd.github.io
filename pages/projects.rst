@@ -2,8 +2,11 @@
 .. slug: projects
 .. type: text
 
-Projects I created
-==================
+Open source projects
+====================
+
+A list of some of the open source projects I've created,
+help to maintain, or made substantial contributions to.
 
 .. image:: https://github-readme-stats.vercel.app/api/pin/?username=stsewd&repo=sphinx.nvim
    :target: https://github.com/stsewd/sphinx.nvim/
@@ -30,11 +33,13 @@ Projects I created
 
 |
 
-Projects I help to maintain
-===========================
-
 .. image:: https://github-readme-stats.vercel.app/api/pin/?username=nvim-treesitter&repo=nvim-treesitter
    :target: https://github.com/nvim-treesitter/nvim-treesitter
+
+|
+
+.. image:: https://github-readme-stats.vercel.app/api/pin/?username=nvim-treesitter&repo=tree-sitter-query
+   :target: https://github.com/nvim-treesitter/tree-sitter-query
 
 |
 
@@ -53,13 +58,18 @@ Projects I help to maintain
 
 |
 
-.. image:: https://github-readme-stats.vercel.app/api/pin/?username=theacodes&show_owner=true&repo=nox
-   :target: https://github.com/theacodes/nox/
+.. image:: https://github-readme-stats.vercel.app/api/pin/?username=wntrblm&repo=nox
+   :target: https://github.com/wntrblm/nox/
 
 |
 
-.. image:: https://github-readme-stats.vercel.app/api/pin/?username=myint&show_owner=true&repo=rstcheck
-   :target: https://github.com/myint/rstcheck/
+.. image:: https://github-readme-stats.vercel.app/api/pin/?username=gitpython-developers&repo=GitPython
+   :target: https://github.com/gitpython-developers/GitPython/
+
+|
+
+.. image:: https://github-readme-stats.vercel.app/api/pin/?username=rstcheck&repo=rstcheck
+   :target: https://github.com/rstcheck/rstcheck/
 
 |
 

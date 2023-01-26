@@ -41,4 +41,5 @@ Find me on
 CV
 --
 
-`Here you go </cv.pdf>`__.
+- `English </cv.pdf>`__
+- `Spanish </cv.es.pdf>`__

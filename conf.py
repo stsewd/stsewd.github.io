@@ -140,12 +140,14 @@ NAVIGATION_LINKS = {
     DEFAULT_LANG: (
         ("/archive.html", "Posts"),
         ("/projects/", "Projects"),
+        ("/security-vulnerabilities/", "Security vulnerabilities"),
         ("/about/", "About"),
     ),
 
     "es": (
         ("/es/archive.html", "Posts"),
         ("/es/projects/", "Proyectos"),
+        ("/es/security-vulnerabilities/", "Security vulnerabilities"),
         ("/es/about/", "Acerca de"),
     ),
 }

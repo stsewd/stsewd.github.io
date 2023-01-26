@@ -53,10 +53,31 @@
 
 ## Publicly disclosed security vulnerabilities
 
-Over the years I've been responsibly reporting security issues,
-but only a few have been made public.
+Over the years I've been responsibly reporting security vulnerabilities, some have been made public.
 
-- https://github.com/readthedocs/readthedocs.org/security/advisories/GHSA-368m-86q9-m99w (2022)
-- https://github.com/readthedocs/readthedocs.org/security/advisories/GHSA-98pf-gfh3-x3mp (2022)
-- https://github.com/readthedocs/readthedocs.org/security/advisories/GHSA-3v5m-qmm9-3c6c (2021)
-- https://docs.readthedocs.io/en/stable/security.html#release-2-3-0 (2018)
+- [GHSA-hqwg-gjqw-h5wg](https://github.com/readthedocs/readthedocs.org/security/advisories/GHSA-hqwg-gjqw-h5wg) (2023)
+- [GHSA-7fcx-wwr3-99jv](https://github.com/readthedocs/readthedocs.org/security/advisories/GHSA-7fcx-wwr3-99jv) (2023)
+- [CVE-2022-25860](https://www.cve.org/CVERecord?id=CVE-2022-25860) (2022)
+- [GHSA-368m-86q9-m99w](https://github.com/readthedocs/readthedocs.org/security/advisories/GHSA-368m-86q9-m99w) (2022)
+- [GHSA-98pf-gfh3-x3mp](https://github.com/readthedocs/readthedocs.org/security/advisories/GHSA-98pf-gfh3-x3mp) (2022)
+- [GHSA-3v5m-qmm9-3c6c](https://github.com/readthedocs/readthedocs.org/security/advisories/GHSA-3v5m-qmm9-3c6c) (2021)
+- <https://docs.readthedocs.io/en/stable/security.html#release-2-3-0> (2018)
+
+## Open source projects
+
+A list of some of the open source projects I've created,
+help to maintain, or made substantial contributions to.
+
+- <https://github.com/gitpython-developers/GitPython>
+- <https://github.com/nvim-treesitter/nvim-treesitter>
+- <https://github.com/nvim-treesitter/tree-sitter-query>
+- <https://github.com/pythonecuador/pythonecuador.github.io>
+- <https://github.com/readthedocs/readthedocs.org>
+- <https://github.com/rstcheck/rstcheck>
+- <https://github.com/stsewd/fzf-checkout.vim/>
+- <https://github.com/stsewd/gx-extended.vim/>
+- <https://github.com/stsewd/sphinx.nvim/>
+- <https://github.com/stsewd/sphinx.nvim/>
+- <https://github.com/stsewd/spotify.nvim/>
+- <https://github.com/stsewd/tree-sitter-rst/>
+- <https://github.com/wntrblm/nox>
