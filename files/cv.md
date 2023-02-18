@@ -55,6 +55,9 @@
 
 Over the years I've been responsibly reporting security vulnerabilities, some have been made public.
 
+- [GHSA-mp38-vprc-7hf5](https://github.com/readthedocs/readthedocs.org/security/advisories/GHSA-mp38-vprc-7hf5) (2023)
+- [GHSA-6f9m-hj8h-xjgj](https://github.com/neovim/neovim/security/advisories/GHSA-6f9m-hj8h-xjgj) (2023)
+- [GHSA-5w8m-r7jm-mhp9](https://github.com/readthedocs/readthedocs.org/security/advisories/GHSA-5w8m-r7jm-mhp9) (2023)
 - [GHSA-hqwg-gjqw-h5wg](https://github.com/readthedocs/readthedocs.org/security/advisories/GHSA-hqwg-gjqw-h5wg) (2023)
 - [GHSA-7fcx-wwr3-99jv](https://github.com/readthedocs/readthedocs.org/security/advisories/GHSA-7fcx-wwr3-99jv) (2023)
 - [CVE-2022-25860](https://www.cve.org/CVERecord?id=CVE-2022-25860) (2022)
