@@ -3,7 +3,7 @@ on: push
 
 jobs:
   build:
-    runs-on: ubuntu-18.04
+    runs-on: ubuntu-22.04
     env:
       NIKOLA_DEPLOY: stsewd.dev
     steps:
@@ -11,7 +11,7 @@ jobs:
       - name: Setup Python
         uses: actions/setup-python@v2
         with:
-          python-version: '3.9'
+          python-version: '3.11'
       - name: Install requirements
         run: |
           python3 -m pip install --upgrade pip
