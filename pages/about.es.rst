@@ -41,4 +41,5 @@ Encuentrame en
 CV
 --
 
-`Aquí tienes </cv.es.pdf>`__.
+`Español </cv.es.pdf>`__.
+`Inglés </cv.pdf>`__.
