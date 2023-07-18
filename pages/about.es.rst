@@ -33,6 +33,7 @@ Encuentrame en
 --------------
 
 - `GitHub <http://github.com/stsewd>`__
+- `GitLab <http://gitlab.com/stsewd>`__
 - `Hackerrank <https://www.hackerrank.com/stsewd>`__
 - `Stack Overflow <http://stackoverflow.com/users/5689214/>`__
 - `Twitter <http://twitter.com/stsewd>`__
