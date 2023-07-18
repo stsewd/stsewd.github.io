@@ -1,10 +1,11 @@
-# CV - Santos Gallegos
+# Santos Gallegos - Curriculum Vitae
 
-![me](../images/me.jpg){ width=150px }
+![me](../images/me.jpg){ width=25% }
 
 ¡Hola! soy Santos Gallegos, vivo en Ecuador.
-Me gusta el desarrollo web, algoritmos, Python, Rust, Neovim, la ciberseguridad, y el software libre y open source.
-Siempre trato de aprender nuevas cosas, y artista de vez en cuando.
+Me apasiona el desarrollo web, algoritmos, Python, Rust, Neovim, la ciberseguridad, y el software libre y open source.
+Siempre trato de aprender nuevas cosas,
+cuando no estoy trabajando me gusta leer, ver películas, dibujar y pintar.
 
 ## Experiencia laboral
 

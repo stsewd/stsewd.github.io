@@ -6,9 +6,10 @@ Quién soy
 ---------
 
 Soy Santos Gallegos, vivo en Ecuador.
-Me gusta el desarrollo web, algoritmos, Python, Neovim, y software libre y open source.
-Siempre tratando de aprender nuevas cosas,
-`y artista de vez en cuando <https://stsewd.deviantart.com/gallery/>`__.
+Me apasiona el desarrollo web, algoritmos, Python, Neovim, y software libre y open source.
+Siempre trato de aprender nuevas cosas,
+cuando no estoy trabajando me gusta leer, ver películas,
+`dibujar y pintar <https://stsewd.deviantart.com/gallery/>`__.
 
 Actualmente codeando bugs en `Read the Docs <https://readthedocs.org>`__,
 y ayudando en auditorías de seguridad informática.

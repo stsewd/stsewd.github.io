@@ -23,6 +23,11 @@ help to maintain, or made substantial contributions to.
 
 |
 
+.. image:: https://github-readme-stats.vercel.app/api/pin/?username=stsewd&repo=tree-sitter-comment
+   :target: https://github.com/stsewd/tree-sitter-comment/
+
+|
+
 .. image:: https://github-readme-stats.vercel.app/api/pin/?username=stsewd&repo=gx-extended.vim
    :target: https://github.com/stsewd/gx-extended.vim/
 
@@ -33,6 +38,11 @@ help to maintain, or made substantial contributions to.
 
 |
 
+.. image:: https://github-readme-stats.vercel.app/api/pin/?username=stsewd&repo=ieee-pandoc-template
+   :target: https://github.com/stsewd/ieee-pandoc-template/
+
+|
+
 .. image:: https://github-readme-stats.vercel.app/api/pin/?username=nvim-treesitter&repo=nvim-treesitter
    :target: https://github.com/nvim-treesitter/nvim-treesitter
 
@@ -40,6 +50,11 @@ help to maintain, or made substantial contributions to.
 
 .. image:: https://github-readme-stats.vercel.app/api/pin/?username=nvim-treesitter&repo=tree-sitter-query
    :target: https://github.com/nvim-treesitter/tree-sitter-query
+
+|
+
+.. image:: https://github-readme-stats.vercel.app/api/pin/?username=tree-sitter&repo=tree-sitter-python
+   :target: https://github.com/tree-sitter/tree-sitter-python
 
 |
 

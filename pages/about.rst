@@ -6,9 +6,9 @@ About me
 --------
 
 I'm Santos Gallegos, I live in Ecuador.
-I love web development, algorithms, Python, Rust, Neovim, cybersecurity, and free and open source software.
-Always trying to learn new things,
-and `an artist occasionally <https://stsewd.deviantart.com/gallery/>`__.
+I'm passionate about web development, algorithms, Python, Rust, Neovim, cybersecurity, and free and open source software.
+I'm always eager to learn new things, when I'm not working I like to read, watch movies,
+`draw and paint <https://stsewd.deviantart.com/gallery/>`__.
 
 Currently writting bugs at `Read the Docs <https://readthedocs.org>`__,
 and helping in computer security audits.
