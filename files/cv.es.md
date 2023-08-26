@@ -7,6 +7,8 @@ Me apasiona el desarrollo web, algoritmos, Python, Rust, Neovim, la cibersegurid
 Siempre trato de aprender nuevas cosas,
 cuando no estoy trabajando me gusta leer, ver películas, dibujar y pintar.
 
+> **Nota**: La versión más actualizada de este documento (en inglés) se encuentra en <https://stsewd.dev/cv.pdf>.
+
 ## Experiencia laboral
 
 - **Read the Docs, Inc**: Software developer (2018 - presente)

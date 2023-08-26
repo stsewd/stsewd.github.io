@@ -1,7 +1,12 @@
 Run pandoc from docker:
 
 ```bash
+# If the container is not created:
 docker run --name pandoc-latex --volume "`pwd`:/data":z --entrypoint sh -it pandoc/ubuntu-latex
+
+# If the container is already created:
+docker start pandoc-latex
+docker exec -it pandoc-latex bash
 ```
 
 Convert to PDF with some custom fonts and styles:

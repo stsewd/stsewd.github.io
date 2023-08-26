@@ -43,4 +43,4 @@ CV
 --
 
 - `English </cv.pdf>`__
-- `Spanish </cv.es.pdf>`__
+- `Spanish </cv.es.pdf>`__ (may be outdated)

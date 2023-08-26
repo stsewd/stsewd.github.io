@@ -217,6 +217,21 @@ This is a non-exhaustive list of the technologies/tools/skills I actively use an
 
 Over the years, I have responsibly reported security vulnerabilities; some have been made public.
 
+- **Untrusted search path on Windows systems leading to arbitrary code execution  in GitPython: [GHSA-wfm5-v35h-vwf4](https://github.com/gitpython-developers/GitPython/security/advisories/GHSA-wfm5-v35h-vwf4) (2023)**
+
+  This vulnerability could have allowed a malicious user to execute arbitrary code on Windows systems
+  by tricking the user into running GitPython from an untrusted directory or repository.
+
+- **Blind local file inclusion in GitPython: [GHSA-cwvm-v4w8-q58c](https://github.com/gitpython-developers/GitPython/security/advisories/GHSA-cwvm-v4w8-q58c) (2023)**
+
+  This vulnerability could have allowed a malicious user to make GitPython read arbitrary files from the filesystem,
+  this can be used to check if a file exists or not, or cause a denial of service by reading a large file.
+
+- **Arbitrary write to files from builder server in Read the Docs: [GHSA-v7x4-rhpg-3p2r](https://github.com/readthedocs/readthedocs.org/security/advisories/GHSA-v7x4-rhpg-3p2r) (2023)**
+
+  This vulnerability could have allowed a malicious user to write to any files that the application has write access to.
+  The contents that can be written aren't fully controlled by the attacker, so the impact of this attack is limited.
+
 - **Write access to projects via API V2 for any logged-in user in Read the Docs: [GHSA-rqfv-8rrx-prmh](https://github.com/readthedocs/readthedocs.org/security/advisories/GHSA-rqfv-8rrx-prmh) (2023)**
 
   This vulnerability could have allowed a malicious user to use the API v2 to create, update, and delete any projects on the community version of Read the Docs.
@@ -234,7 +249,7 @@ Over the years, I have responsibly reported security vulnerabilities; some have 
   This vulnerability could have allowed a malicious user to serve arbitrary content under the main domain of documentation sites.
 
 - **Cache poisoning: serving arbitrary content on documentation sites in Read the Docs [GHSA-mp38-vprc-7hf5](https://github.com/readthedocs/readthedocs.org/security/advisories/GHSA-mp38-vprc-7hf5) (2023)**
-    
+
   This vulnerability could have allowed a malicious user to serve arbitrary content on documentation sites they don't own.
 
 - **Arbitrary code execution when using treesitter with injections in Neovim: [GHSA-6f9m-hj8h-xjgj](https://github.com/neovim/neovim/security/advisories/GHSA-6f9m-hj8h-xjgj) (2023)**
@@ -327,12 +342,12 @@ help to maintain, or made substantial contributions to.
   I was an early contributor and helped to add support for new features and fix bugs.
 
   [See all contributions](https://github.com/wntrblm/nox/pulls?q=is%3Apr+author%3Astsewd).
-  
+
 - **[fzf-checkout.vim](https://github.com/stsewd/fzf-checkout.vim/)**
 
   Vim plugin to manage Git branches and tags with fzf.
   I'm the author and maintainer.
-    
+
 - **[gx-extended.vim](https://github.com/stsewd/gx-extended.vim/)**
 
   Vim plugin for extending the `gx` mapping for opening URLs, files, and more.
@@ -353,7 +368,7 @@ help to maintain, or made substantial contributions to.
 - **[treesitter-comment](https://github.com/stsewd/tree-sitter-comment/)**
 
   Tree-sitter grammar for comment annotations. I'm the author and maintainer.
-  
+
 - **[ieee-pandoc-template](https://github.com/stsewd/ieee-pandoc-template)**
 
   Pandoc template for IEEE papers. I'm the author and maintainer.
