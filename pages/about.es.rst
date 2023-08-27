@@ -5,7 +5,7 @@
 Quién soy
 ---------
 
-Soy Santos Gallegos, vivo en Ecuador.
+Soy Santos Gallegos, soy de Ecuador.
 Me apasiona el desarrollo web, algoritmos, Python, Neovim, y software libre y open source.
 Siempre trato de aprender nuevas cosas,
 cuando no estoy trabajando me gusta leer, ver películas,
@@ -44,4 +44,4 @@ CV
 --
 
 - `Español </cv.es.pdf>`__ (la versión en inglés es la más actualizada)
-- `Inglés </cv.pdf>`__
+- `Inglés </cv/>`__

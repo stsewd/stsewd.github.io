@@ -5,7 +5,7 @@
 About me
 --------
 
-I'm Santos Gallegos, I live in Ecuador.
+I'm Santos Gallegos, I'm from Ecuador.
 I'm passionate about web development, algorithms, Python, Rust, Neovim, cybersecurity, and free and open source software.
 I'm always eager to learn new things, when I'm not working I like to read, watch movies,
 `draw and paint <https://stsewd.deviantart.com/gallery/>`__.
@@ -42,5 +42,5 @@ Find me on
 CV
 --
 
-- `English </cv.pdf>`__
+- `English </cv/>`__
 - `Spanish </cv.es.pdf>`__ (may be outdated)

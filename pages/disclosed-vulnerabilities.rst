@@ -5,7 +5,7 @@
 Publicly disclosed security vulnerabilities
 ===========================================
 
-Over the years, I have responsibly reported security vulnerabilities; some have been made public.
+I have responsibly reported several security vulnerabilities; some of the public ones are listed below.
 
 - Untrusted search path on Windows systems leading to arbitrary code execution  in GitPython: `GHSA-wfm5-v35h-vwf4 <https://github.com/gitpython-developers/GitPython/security/advisories/GHSA-wfm5-v35h-vwf4>`__ (2023)
 - Blind local file inclusion in GitPython: `GHSA-cwvm-v4w8-q58c <https://github.com/gitpython-developers/GitPython/security/advisories/GHSA-cwvm-v4w8-q58c>`__ (2023)
