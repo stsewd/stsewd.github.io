@@ -7,8 +7,9 @@ Publicly disclosed security vulnerabilities
 
 I have responsibly reported several security vulnerabilities; some of the public ones are listed below.
 
-- Untrusted search path on Windows systems leading to arbitrary code execution  in GitPython: `GHSA-wfm5-v35h-vwf4 <https://github.com/gitpython-developers/GitPython/security/advisories/GHSA-wfm5-v35h-vwf4>`__ (2023)
-- Blind local file inclusion in GitPython: `GHSA-cwvm-v4w8-q58c <https://github.com/gitpython-developers/GitPython/security/advisories/GHSA-cwvm-v4w8-q58c>`__ (2023)
+- Arbitrary command execution on Windows in Vim: `CVE-2023-4736 <https://huntr.dev/bounties/e1ce0995-4df4-4dec-9cd7-3136ac3e8e71/>`__ (2023)
+- Untrusted search path on Windows systems leading to arbitrary code execution  in GitPython: `CVE-2023-40590 <https://github.com/gitpython-developers/GitPython/security/advisories/GHSA-wfm5-v35h-vwf4>`__ (2023)
+- Blind local file inclusion in GitPython: `CVE-2023-41040 <https://github.com/gitpython-developers/GitPython/security/advisories/GHSA-cwvm-v4w8-q58c>`__ (2023)
 - Arbitrary write to files from builder server in Read the Docs: `GHSA-v7x4-rhpg-3p2r <https://github.com/readthedocs/readthedocs.org/security/advisories/GHSA-v7x4-rhpg-3p2r>`__ (2023)
 - Write access to projects via API V2 for any logged-in user in Read the Docs: `GHSA-rqfv-8rrx-prmh <https://github.com/readthedocs/readthedocs.org/security/advisories/GHSA-rqfv-8rrx-prmh>`__ (2023)
 - CAS session hijacking in Read the Docs for Businesses: `GHSA-4mgr-vrh5-hj8q <https://github.com/readthedocs/readthedocs.org/security/advisories/GHSA-4mgr-vrh5-hj8q>`__ (2023)
