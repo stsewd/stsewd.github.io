@@ -7,6 +7,7 @@ Publicly disclosed security vulnerabilities
 
 I have responsibly reported several security vulnerabilities; some of the public ones are listed below.
 
+- Creation of integrations for any project in Read the Docs: `GHSA-45hq-g76r-46wv <https://github.com/readthedocs/readthedocs.org/security/advisories/GHSA-45hq-g76r-46wv>`__ (2023)
 - Arbitrary command execution on Windows in Vim: `CVE-2023-4736 <https://huntr.dev/bounties/e1ce0995-4df4-4dec-9cd7-3136ac3e8e71/>`__ (2023)
 - Untrusted search path on Windows systems leading to arbitrary code execution  in GitPython: `CVE-2023-40590 <https://github.com/gitpython-developers/GitPython/security/advisories/GHSA-wfm5-v35h-vwf4>`__ (2023)
 - Blind local file inclusion in GitPython: `CVE-2023-41040 <https://github.com/gitpython-developers/GitPython/security/advisories/GHSA-cwvm-v4w8-q58c>`__ (2023)
