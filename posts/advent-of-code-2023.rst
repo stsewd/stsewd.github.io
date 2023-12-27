@@ -1,5 +1,5 @@
 .. title: Advent of Code 2023 - solutions and my experience
-.. date: 2023-12-26
+.. date: 2023-12-27
 .. category: problem solving, experience
 .. tags: problem solving, experience
 .. description: My solutions to Advent of Code 2023 and my experience.
