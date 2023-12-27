@@ -16,6 +16,7 @@
 <link rel="stylesheet" href="../../../assets/css/custom.css" type="text/css" media="all">
 <!-- Cloudflare Web Analytics --><script defer src="https://static.cloudflareinsights.com/beacon.min.js" data-cf-beacon='{"token": "f0bcc690290a454ab2e555da28759807"}'></script><!-- End Cloudflare Web Analytics --><meta name="author" content="Santos Gallegos">
 <link rel="prev" href="../a-tale-about-security-in-web-applications/" title="A tale about security in web applications, or how I helped to save a bank from bankruptcy" type="text/html">
+<link rel="next" href="../advent-of-code-2023/" title="Advent of Code 2023 - solutions and my experience" type="text/html">
 <meta property="og:site_name" content="Santos Gallegos">
 <meta property="og:title" content="Securing your development environment">
 <meta property="og:url" content="https://stsewd.dev/es/posts/securing-your-dev-environment/">
@@ -234,16 +235,16 @@ and navigating the history with <code class="docutils literal">↑</code> <code 
 but that history can also contain sensitive information.</p>
 <p>The default number of history entries is usually high,
 as a quick experiment, you can check how many entries you have with:</p>
-<div class="code"><pre class="code bash"><a id="rest_code_e9dbdf8ce1fc4bf5a05402257a358c9d-1" name="rest_code_e9dbdf8ce1fc4bf5a05402257a358c9d-1" href="#rest_code_e9dbdf8ce1fc4bf5a05402257a358c9d-1"></a>cat<span class="w"> </span><span class="nv">$HISTFILE</span><span class="w"> </span><span class="p">|</span><span class="w"> </span>wc<span class="w"> </span>-l
+<div class="code"><pre class="code bash"><a id="rest_code_ea6671e38d134c059bc475560e05b20e-1" name="rest_code_ea6671e38d134c059bc475560e05b20e-1" href="#rest_code_ea6671e38d134c059bc475560e05b20e-1"></a>cat<span class="w"> </span><span class="nv">$HISTFILE</span><span class="w"> </span><span class="p">|</span><span class="w"> </span>wc<span class="w"> </span>-l
 </pre></div>
 <p>And how many of those entries possibly have secrets with:</p>
-<div class="code"><pre class="code bash"><a id="rest_code_14ccf45e23e34d53bbc398204e9861a0-1" name="rest_code_14ccf45e23e34d53bbc398204e9861a0-1" href="#rest_code_14ccf45e23e34d53bbc398204e9861a0-1"></a>grep<span class="w"> </span>-E<span class="w"> </span>-i<span class="w"> </span><span class="s1">'(token)|(pass)|(secret)'</span><span class="w"> </span><span class="nv">$HISTFILE</span>
+<div class="code"><pre class="code bash"><a id="rest_code_b08a7996576242a8988ebe04e9c089a9-1" name="rest_code_b08a7996576242a8988ebe04e9c089a9-1" href="#rest_code_b08a7996576242a8988ebe04e9c089a9-1"></a>grep<span class="w"> </span>-E<span class="w"> </span>-i<span class="w"> </span><span class="s1">'(token)|(pass)|(secret)'</span><span class="w"> </span><span class="nv">$HISTFILE</span>
 </pre></div>
 <p>Depending on the Shell you are using,
 you can control the max number of entries with environment variables,
 for zsh this is done with:</p>
-<div class="code"><pre class="code bash"><a id="rest_code_f6c49021dd85464f8d4ef56e86bd7006-1" name="rest_code_f6c49021dd85464f8d4ef56e86bd7006-1" href="#rest_code_f6c49021dd85464f8d4ef56e86bd7006-1"></a><span class="nb">export</span><span class="w"> </span><span class="nv">SAVEHIST</span><span class="o">=</span><span class="m">1000</span>
-<a id="rest_code_f6c49021dd85464f8d4ef56e86bd7006-2" name="rest_code_f6c49021dd85464f8d4ef56e86bd7006-2" href="#rest_code_f6c49021dd85464f8d4ef56e86bd7006-2"></a><span class="nb">export</span><span class="w"> </span><span class="nv">HISTSIZE</span><span class="o">=</span><span class="nv">$SAVEHIST</span>
+<div class="code"><pre class="code bash"><a id="rest_code_ad449e375a384e72982c0abc7df5946d-1" name="rest_code_ad449e375a384e72982c0abc7df5946d-1" href="#rest_code_ad449e375a384e72982c0abc7df5946d-1"></a><span class="nb">export</span><span class="w"> </span><span class="nv">SAVEHIST</span><span class="o">=</span><span class="m">1000</span>
+<a id="rest_code_ad449e375a384e72982c0abc7df5946d-2" name="rest_code_ad449e375a384e72982c0abc7df5946d-2" href="#rest_code_ad449e375a384e72982c0abc7df5946d-2"></a><span class="nb">export</span><span class="w"> </span><span class="nv">HISTSIZE</span><span class="o">=</span><span class="nv">$SAVEHIST</span>
 </pre></div>
 <p>Choose the number of entries at your discretion,
 not big enough that will keep things for a long period of time,
@@ -254,14 +255,14 @@ You can avoid adding your commands to the history
 by prefixing them with a space.</p>
 <p>Another way to enter into <em>incognito mode</em> is by un-setting the <code class="docutils literal">$HISTFILE</code> environment variable
 (thanks <a class="reference external" href="https://github.com/WhiteHatTux">@WhiteHatTux</a> for this tip!).</p>
-<div class="code"><pre class="code bash"><a id="rest_code_38101355746e4eefa073a75ad26d3211-1" name="rest_code_38101355746e4eefa073a75ad26d3211-1" href="#rest_code_38101355746e4eefa073a75ad26d3211-1"></a><span class="nb">unset</span><span class="w"> </span>HISTFILE
+<div class="code"><pre class="code bash"><a id="rest_code_cf926c8861a84f29857441e206623b37-1" name="rest_code_cf926c8861a84f29857441e206623b37-1" href="#rest_code_cf926c8861a84f29857441e206623b37-1"></a><span class="nb">unset</span><span class="w"> </span>HISTFILE
 </pre></div>
 </section><section id="securing-your-files-and-environment-variables"><h2>Securing your files and environment variables</h2>
 <p>If you have files with sensitive information
 that you can't encrypt because it needs to be readable (like configuration files),
 at least give access only the appropriate users/processes.</p>
 <p>To remove access from all users except yours, you can use:</p>
-<div class="code"><pre class="code bash"><a id="rest_code_8d2a5687b9be478ba5d5013c899cdd98-1" name="rest_code_8d2a5687b9be478ba5d5013c899cdd98-1" href="#rest_code_8d2a5687b9be478ba5d5013c899cdd98-1"></a>chmod<span class="w"> </span>og-rwx<span class="w"> </span><span class="o">{</span>file<span class="o">}</span>
+<div class="code"><pre class="code bash"><a id="rest_code_0eb65ea76e3b4fabbf6b2c6a699eb52a-1" name="rest_code_0eb65ea76e3b4fabbf6b2c6a699eb52a-1" href="#rest_code_0eb65ea76e3b4fabbf6b2c6a699eb52a-1"></a>chmod<span class="w"> </span>og-rwx<span class="w"> </span><span class="o">{</span>file<span class="o">}</span>
 </pre></div>
 <p>For extra protection, check the <a class="reference external" href="https://selinuxproject.org/page/Main_Page">SELinux</a> project.</p>
 <p>If you need to expose some environment variables with secrets to your commands.
@@ -308,11 +309,11 @@ Still, it's always good to have several layers of protection when handling sensi
 Or do you have more to share?
 Let me know in the comments!</p>
 <hr class="docutils">
-<aside class="footnote-list brackets"><aside class="footnote brackets" id="mfa" role="note"><span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#footnote-reference-1">1</a><span class="fn-bracket">]</span></span>
+<aside class="footnote-list brackets"><aside class="footnote brackets" id="mfa" role="doc-footnote"><span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#footnote-reference-1">1</a><span class="fn-bracket">]</span></span>
 <p><a class="reference external" href="https://en.wikipedia.org/wiki/Multi-factor_authentication">https://en.wikipedia.org/wiki/Multi-factor_authentication</a></p>
-</aside><aside class="footnote brackets" id="sim-hijack" role="note"><span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#footnote-reference-2">2</a><span class="fn-bracket">]</span></span>
+</aside><aside class="footnote brackets" id="sim-hijack" role="doc-footnote"><span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#footnote-reference-2">2</a><span class="fn-bracket">]</span></span>
 <p><a class="reference external" href="https://en.wikipedia.org/wiki/SIM_swap_scam">https://en.wikipedia.org/wiki/SIM_swap_scam</a></p>
-</aside><aside class="footnote brackets" id="otp" role="note"><span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#footnote-reference-3">3</a><span class="fn-bracket">]</span></span>
+</aside><aside class="footnote brackets" id="otp" role="doc-footnote"><span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#footnote-reference-3">3</a><span class="fn-bracket">]</span></span>
 <p><a class="reference external" href="https://en.wikipedia.org/wiki/One-time_password">https://en.wikipedia.org/wiki/One-time_password</a></p>
 </aside></aside></section>
 </div>
@@ -323,6 +324,9 @@ Let me know in the comments!</p>
 <ul class="pager hidden-print">
 <li class="previous">
                 <a href="../a-tale-about-security-in-web-applications/" rel="prev" title="A tale about security in web applications, or how I helped to save a bank from bankruptcy">Publicación anterior</a>
+            </li>
+            <li class="next">
+                <a href="../advent-of-code-2023/" rel="next" title="Advent of Code 2023 - solutions and my experience">Siguiente publicación</a>
             </li>
         </ul></nav></aside><section class="comments hidden-print"><h2>Comentarios</h2>
         

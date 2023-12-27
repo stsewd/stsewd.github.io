@@ -1,0 +1,573 @@
+<!DOCTYPE html>
+<html prefix="og: http://ogp.me/ns# article: http://ogp.me/ns/article#
+" lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="description" content="My solutions to Advent of Code 2023 and my experience.">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Advent of Code 2023 - solutions and my experience | Santos Gallegos</title>
+<link href="../../assets/css/all-nocdn.css" rel="stylesheet" type="text/css">
+<meta name="theme-color" content="#222222">
+<meta name="generator" content="Nikola (getnikola.com)">
+<link rel="alternate" type="application/rss+xml" title="RSS (en)" hreflang="en" href="../../rss.xml">
+<link rel="alternate" type="application/rss+xml" title="RSS (es)" hreflang="es" href="../../es/rss.xml">
+<link rel="canonical" href="https://stsewd.dev/posts/advent-of-code-2023/">
+<!--[if lt IE 9]><script src="../../assets/js/html5.js"></script><![endif]--><!-- Custom css --><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="stylesheet" href="../../assets/css/custom.css" type="text/css" media="all">
+<!-- Cloudflare Web Analytics --><script defer src="https://static.cloudflareinsights.com/beacon.min.js" data-cf-beacon='{"token": "f0bcc690290a454ab2e555da28759807"}'></script><!-- End Cloudflare Web Analytics --><meta name="author" content="Santos Gallegos">
+<link rel="prev" href="../securing-your-dev-environment/" title="Securing your development environment" type="text/html">
+<meta property="og:site_name" content="Santos Gallegos">
+<meta property="og:title" content="Advent of Code 2023 - solutions and my experience">
+<meta property="og:url" content="https://stsewd.dev/posts/advent-of-code-2023/">
+<meta property="og:description" content="My solutions to Advent of Code 2023 and my experience.">
+<meta property="og:type" content="article">
+<meta property="article:published_time" content="2023-12-27T00:00:00-05:00">
+<meta property="article:tag" content="experience">
+<meta property="article:tag" content="problem solving">
+<link rel="alternate" hreflang="es" href="../../es/posts/advent-of-code-2023/">
+</head>
+<body>
+<a href="#content" class="sr-only sr-only-focusable">Skip to main content</a>
+
+<!-- Menubar -->
+
+<nav class="navbar navbar-expand-md static-top mb-4
+navbar-dark
+bg-dark
+"><div class="container">
+<!-- This keeps the margins nice -->
+        <a class="navbar-brand" href="../../">
+
+            <span id="blog-title">Santos Gallegos</span>
+        </a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#bs-navbar" aria-controls="bs-navbar" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="bs-navbar">
+            <ul class="navbar-nav mr-auto">
+<li class="nav-item">
+<a href="../../archive.html" class="nav-link">Posts</a>
+                </li>
+<li class="nav-item">
+<a href="../../projects/" class="nav-link">Projects</a>
+                </li>
+<li class="nav-item">
+<a href="../../disclosed-vulnerabilities/" class="nav-link">Disclosed vulnerabilities</a>
+                </li>
+<li class="nav-item">
+<a href="../../about/" class="nav-link">About</a>
+
+                
+            </li>
+</ul>
+<ul class="navbar-nav navbar-right">
+<li>
+            </li>
+<li class="nav-item"><a href="../../es/" rel="alternate" hreflang="es" class="nav-link">Español</a></li>
+
+                
+                
+            </ul>
+</div>
+<!-- /.navbar-collapse -->
+    </div>
+<!-- /.container -->
+</nav><!-- End of Menubar --><div class="container" id="content" role="main">
+    <div class="body-content">
+        <!--Body content-->
+        
+        
+        
+  
+
+<div class="container mb-3">
+  <div class="row justify-content-sm-center">
+    <div class="col col-sm-8">
+        
+<article class="post-text h-entry hentry postpage" itemscope="itemscope" itemtype="http://schema.org/Article"><header><h1 class="p-name entry-title" itemprop="headline name"><a href="." class="u-url">Advent of Code 2023 - solutions and my experience</a></h1>
+
+        <div class="metadata">
+            <p class="byline author vcard p-author h-card"><span class="byline-name fn p-name" itemprop="author">
+                    Santos Gallegos
+            </span></p>
+            <p class="dateline">
+            <a href="." rel="bookmark">
+            <time class="published dt-published" datetime="2023-12-27T00:00:00-05:00" itemprop="datePublished" title="2023-12-27">2023-12-27</time></a>
+            </p>
+                <p class="commentline">
+    
+    <a href="#disqus_thread" data-disqus-identifier="cache/posts/advent-of-code-2023.html">Comments</a>
+
+
+            
+
+        </p>
+</div>
+        
+
+    </header><div class="e-content entry-content" itemprop="articleBody text">
+    <p><a class="reference external" href="https://adventofcode.com/">Advent of Code</a> is a series of programming puzzles that are released every day in December up to Christmas.
+Each day, two puzzles are released, the puzzles consist of a story and a set of input data,
+and some examples of the expected output.</p>
+<nav class="contents local" id="contents" role="doc-toc"><p class="topic-title">Contents</p>
+<ul class="simple">
+<li><p><a class="reference internal" href="#the-start-of-a-journey" id="toc-entry-1">The start of a journey</a></p></li>
+<li><p><a class="reference internal" href="#embracing-differences-as-your-new-friends" id="toc-entry-2">Embracing differences as your new friends</a></p></li>
+<li><p><a class="reference internal" href="#my-daily-routine" id="toc-entry-3">My daily routine</a></p></li>
+<li><p><a class="reference internal" href="#the-right-tools-for-the-job" id="toc-entry-4">The right tools for the job</a></p></li>
+<li><p><a class="reference internal" href="#results-and-reflections" id="toc-entry-5">Results and reflections</a></p></li>
+<li><p><a class="reference internal" href="#solutions" id="toc-entry-6">Solutions</a></p></li>
+</ul></nav><section id="the-start-of-a-journey"><h2>The start of a journey</h2>
+<p>This is my first time participating in Advent of Code,
+I've heard about it before but never really put in the time to participate.
+Problem solving using programming isn't something new to me,
+I've participated in several <a class="reference external" href="../devsucodejam-2019">programming competitions</a> in the past,
+and <a class="reference external" href="https://github.com/stsewd/programming-problems-rust">I like solving problems</a> from <a class="reference external" href="https://www.hackerearth.com/@stsewd">HackerEarth</a> or similar platforms from time to time.
+But over the years I've been doing less and less of this,
+so this was a good opportunity to get back to it!</p>
+</section><section id="embracing-differences-as-your-new-friends"><h2>Embracing differences as your new friends</h2>
+<p>Advent of code is a bit different from other platforms/contests I've used before.</p>
+<ul class="simple">
+<li><p>You don't need to submit your code; you only submit the answer for a given input.
+This means no time or memory constraints, the limit is your hardware and your time!
+But finding an efficient and general solution is part of the fun.</p></li>
+<li><p>There isn't an explicit time limit, you can take as long as you want to solve the problems.
+But it's nice to be able to solve the two parts of the problem on the day they are released.</p></li>
+<li><p>You don't need to solve the problems from the previous days to unlock the next day,
+but you do need to solve the first part of a problem to unlock its second part.</p></li>
+<li><p>The <a class="reference external" href="https://adventofcode.com/2023/leaderboard">global ranking</a> is only for the first 100 people that solved each problem.</p></li>
+</ul>
+<p>These differences can be used to your advantage!</p>
+<ul class="simple">
+<li><p>Use any language you want with your favorite libraries, or any method you want.
+Want to solve it by hand or <a class="reference external" href="https://www.reddit.com/r/adventofcode/comments/189qs63/2023_day_3_a_successful_3rd_day_using_only_excel/">using Excel</a>? Go ahead! Want to brute force the solution? Go ahead (if your program finishes before Christmas)!</p></li>
+<li><p>Focus on solving the problem for just the given input, you don't need to worry about edge cases or generalizing your solution,
+you can even search for patterns in the input.</p></li>
+</ul></section><section id="my-daily-routine"><h2>My daily routine</h2>
+<p>My routine for each day was:</p>
+<ol class="arabic simple">
+<li><p>Solve the first part in the morning (sometimes I read it at midnight and go dream about it).</p></li>
+<li><p>Solve the second part in the afternoon or evening.</p></li>
+<li><p>Go to <a class="reference external" href="https://www.reddit.com/r/adventofcode/">Reddit</a> and see how other people solved the problem and check the memes.</p></li>
+</ol>
+<p>The best part of solving the problems with people around the world
+is that you can see how others solved the problems, and how they struggled with the same problems you did.
+It's always nice to read solutions that are more efficient or elegant than yours,
+or some unusual solutions that you didn't think of, and learn from them.</p>
+<p>I refrained from opening Reddit until I solved both parts of the problem,
+not even checked the memes (they may include spoilers or hints of the solution).
+This was a good motivator to solve the problems as soon as possible.</p>
+</section><section id="the-right-tools-for-the-job"><h2>The right tools for the job</h2>
+<p>The tools I used:</p>
+<dl class="simple">
+<dt>Python</dt>
+<dd>
+<p>I used Python without external libraries,
+since there is a lot of useful stuff in the standard library,
+and it has several data structures built-in.</p>
+</dd>
+<dt>Pen and paper</dt>
+<dd>
+<p>Essential for writing notes, manually testing solutions,
+exploring formulas, looking for patterns, etc.</p>
+</dd>
+<dt>Neovim</dt>
+<dd>
+<p>My editor of choice; I use Neovim, BTW.</p>
+</dd>
+</dl>
+<p>I focused on solving the problems in the most efficient way I could think of, while trying to maintain readability.
+Maintaining readability isn't always easy to maintain, since solutions are bound to how complex the problem is, algorithms used, etc.
+You are basically dumping the solution that was in your brain into the code,
+and sometimes it's hard to make sense of it later or for other people that aren't
+familiar with the steps you took to solve the problem or the algorithms you used.</p>
+<p>Focusing on solving the problem efficiently led me to overthink some solutions sometimes,
+ending with solutions that were more complex than they needed to be,
+or slower than a simpler solution.</p>
+</section><section id="results-and-reflections"><h2>Results and reflections</h2>
+<p>I solved 39 out of the 50 problems.
+Up to the 19th day, I was really focused and solved most of the problems on the same day they were released.
+The last five days I dedicated less time to solve the problems,
+to enjoy the holidays and do other things away from the computer.
+The problems got more complex too, I gave up on some,
+the last three I didn't even read them.</p>
+<figure><a class="reference external image-reference" href="../../images/advent-of-code-2023/personal-leaderboard.png"><img alt="My personal leaderboard" src="../../images/advent-of-code-2023/personal-leaderboard.png"></a>
+<figcaption><p>My personal leaderboard</p>
+</figcaption></figure><p>I'm happy with most of my solutions, and I learned a lot from reading others' solutions.
+It was great seeing that I wasn't that rusty,
+and that I was able to solve most problems without being completely stuck,
+lots of thinking, but never completely stuck.</p>
+<p>Participating in Advent of Code was a great experience, but exhausting too,
+50 problems in 25 days is a lot, specially during the holidays.</p>
+<p>On the positive side, it made me think about solving problems more often,
+and read more about algorithms and data structures, especially graph theory.
+I might revisit the unsolved problems in the future.</p>
+<p>That's all from my experience, now let's talk about the problems!
+If you haven't solved them yet, I encourage you to try before reading my solutions.</p>
+<aside class="admonition note"><p class="admonition-title">Note</p>
+<p>Are you curious about how to prepare for these type of problems,
+the algorithms you need to know, etc?
+I may revive an old post I started writing about this topic some years ago if there is enough interest.
+Comment below if you are interested!</p>
+</aside></section><section id="solutions"><h2>Solutions</h2>
+<blockquote>
+<p>"Talk is cheap. Show me the code."</p>
+<p class="attribution">—Linus Torvalds</p>
+</blockquote>
+<p>The solutions are in Python, the only dependency is <code class="docutils literal">pytest</code> for testing the solutions.
+To run the program for a specific input file, pass it as the first argument (<code class="docutils literal">python &lt;file.py&gt; &lt;input.txt&gt;</code>).
+The solution starts in the <code class="docutils literal">solve()</code> function.
+You can check all solutions in <a class="reference external" href="https://github.com/stsewd/advent-of-code-2023">https://github.com/stsewd/advent-of-code-2023</a>.</p>
+<p>At continuation, I'll talk about each day and my solution for each part.
+Note that this isn't a step-by-step guide to solving the problems,
+but more of a general overview of my solution and my experience.
+But I'll try to answer any questions you may have about my solutions in the comments.</p>
+<p>If you haven't solved the problems yet,
+I encourage you to try before reading my solutions.</p>
+<section id="day-01"><h3>Day 01</h3>
+<ul class="simple">
+<li><p>Problem: <a class="reference external" href="https://adventofcode.com/2023/day/1">https://adventofcode.com/2023/day/1</a></p></li>
+<li><p>Solution: <a class="reference external" href="https://github.com/stsewd/advent-of-code-2023/blob/main/01.py">Part 1</a>, <a class="reference external" href="https://github.com/stsewd/advent-of-code-2023/blob/main/01-2.py">Part 2</a></p></li>
+</ul>
+<p>This was a nice problem to start with, it was easy to solve, and it was a nice warm-up for the next problems.</p>
+<p>For the first part, I iterated from left to right till I found the first number,
+and then from right to left till I found the second number.</p>
+<p>For the second part, I iterated from left to right till I found the first number, either a digit or a word, and then from right to left.
+I used string operations like <code class="docutils literal">str.find</code> and <code class="docutils literal">str.rfind</code>.
+I was curious how fast was this compared to using regular expressions,
+so I wrote a second solution using regular expressions (<code class="docutils literal">solve2</code>),
+it turned out to be slightly faster than my initial solution!</p>
+<p>Some people had problems with the second part with overlapping words like <code class="docutils literal">eighthree</code>,
+solving this problem replacing the words to numbers wouldn't work.</p>
+</section><section id="day-02"><h3>Day 02</h3>
+<ul class="simple">
+<li><p>Problem: <a class="reference external" href="https://adventofcode.com/2023/day/2">https://adventofcode.com/2023/day/2</a></p></li>
+<li><p>Solution: <a class="reference external" href="https://github.com/stsewd/advent-of-code-2023/blob/main/02.py">Part 1</a>, <a class="reference external" href="https://github.com/stsewd/advent-of-code-2023/blob/main/02-2.py">Part 2</a></p></li>
+</ul>
+<p>Another easy day.
+For the first part, you needed to check that the number of cubes for a given color wasn't larger than the limit.</p>
+<p>For the second part, you needed to keep track of the largest number for each color.</p>
+</section><section id="day-03"><h3>Day 03</h3>
+<ul class="simple">
+<li><p>Problem: <a class="reference external" href="https://adventofcode.com/2023/day/3">https://adventofcode.com/2023/day/3</a></p></li>
+<li><p>Solution: <a class="reference external" href="https://github.com/stsewd/advent-of-code-2023/blob/main/03.py">Part 1</a>, <a class="reference external" href="https://github.com/stsewd/advent-of-code-2023/blob/main/03-2.py">Part 2</a></p></li>
+</ul>
+<p>This day was also easy, a little long to write the solution, but still easy.</p>
+<p>For the first part, I tracked the start and end of each number,
+and then used those positions to check if there was a symbol surrounding them.</p>
+<p>For the second part, I collected all the numbers' positions for each row,
+and then iterated over each symbol and checked if it had exactly two numbers surrounding it.</p>
+</section><section id="day-04"><h3>Day 04</h3>
+<ul class="simple">
+<li><p>Problem: <a class="reference external" href="https://adventofcode.com/2023/day/4">https://adventofcode.com/2023/day/4</a></p></li>
+<li><p>Solution: <a class="reference external" href="https://github.com/stsewd/advent-of-code-2023/blob/main/04.py">Part 1</a>, <a class="reference external" href="https://github.com/stsewd/advent-of-code-2023/blob/main/04-2.py">Part 2</a></p></li>
+</ul>
+<p>The first part was easy, I used two sets and then intersected them to get the winner numbers.</p>
+<p>The second part, was a classic example of <a class="reference external" href="https://en.wikipedia.org/wiki/Dynamic_programming">dynamic programming</a>, recursion and memoization to the rescue!
+The only <em>problem</em> I had here was forgetting to count the initial cards.</p>
+</section><section id="day-05"><h3>Day 05</h3>
+<ul class="simple">
+<li><p>Problem: <a class="reference external" href="https://adventofcode.com/2023/day/5">https://adventofcode.com/2023/day/5</a></p></li>
+<li><p>Solution: <a class="reference external" href="https://github.com/stsewd/advent-of-code-2023/blob/main/05.py">Part 1</a>, <a class="reference external" href="https://github.com/stsewd/advent-of-code-2023/blob/main/05-2.py">Part 2</a></p></li>
+</ul>
+<p>For the first part, I created a list with the ranges,
+and for each seed I'd check if its value was in any of those ranges,
+and convert it to the new number.
+The answer is the minimum value of the final value of the seeds.</p>
+<p>For part two, I created a list with the ranges sorted for each mapping so it would be easier to match them later,
+then I applied a similar logic as the first part, but instead of keeping track of a single value, I kept track of ranges.
+This is, we first start with a range, then we transform that range into another range, and so on.
+The answer is the minimum value of all the final ranges.</p>
+</section><section id="day-06"><h3>Day 06</h3>
+<ul class="simple">
+<li><p>Problem: <a class="reference external" href="https://adventofcode.com/2023/day/6">https://adventofcode.com/2023/day/6</a></p></li>
+<li><p>Solution: <a class="reference external" href="https://github.com/stsewd/advent-of-code-2023/blob/main/06.py">Part 1</a>, <a class="reference external" href="https://github.com/stsewd/advent-of-code-2023/blob/main/06-2.py">Part 2</a></p></li>
+</ul>
+<p>For this problem, we need to find the times that beat the current record.
+The <em>peak time</em> (time pressing the button that allows us to travel as far a possible)
+is the half of the allowed time, after the peak time the distance traveled decreases.</p>
+<p>With that in mind, we can count the distance traveled for each time from one to the peak time that beats the current record.
+I first solved both parts by iterating over all those times till I found the best time,
+but then I found that finding the best time can be done using a quadratic equation,
+thus solving the problem in constant time,
+but looping over was fast enough for the given input too.</p>
+</section><section id="day-07"><h3>Day 07</h3>
+<ul class="simple">
+<li><p>Problem: <a class="reference external" href="https://adventofcode.com/2023/day/7">https://adventofcode.com/2023/day/7</a></p></li>
+<li><p>Solution: <a class="reference external" href="https://github.com/stsewd/advent-of-code-2023/blob/main/07.py">Part 1</a>, <a class="reference external" href="https://github.com/stsewd/advent-of-code-2023/blob/main/07-2.py">Part 2</a></p></li>
+</ul>
+<p>This problem requires a custom comparison between the two set of hands,
+Python has a <code class="docutils literal">functools.cmp_to_key</code> function that can be used to compare two objects,
+and can be used as the <code class="docutils literal">key</code> function for the sort/sorted functions.
+Avoiding the need to create custom objects with a <code class="docutils literal">__lt__</code> method.</p>
+<p>For the first part the comparison function was easy, just get the type for each hand and compare them,
+to get the type of hand, we can use a <code class="docutils literal">Counter</code> to count the number of times each card appears in the hand.</p>
+<p>For the second part, I first got the type of the hand without the jokers,
+and then <em>promoted</em> the hand to the best possible hand with the jokers available.</p>
+</section><section id="day-08"><h3>Day 08</h3>
+<ul class="simple">
+<li><p>Problem: <a class="reference external" href="https://adventofcode.com/2023/day/8">https://adventofcode.com/2023/day/8</a></p></li>
+<li><p>Solution: <a class="reference external" href="https://github.com/stsewd/advent-of-code-2023/blob/main/08.py">Part 1</a>, <a class="reference external" href="https://github.com/stsewd/advent-of-code-2023/blob/main/08-2.py">Part 2</a></p></li>
+</ul>
+<p>For the first part I built a map of each node to its neighbors,
+and then started from the node <code class="docutils literal">AAA</code> following the directions until I found the node <code class="docutils literal">ZZZ</code>.</p>
+<p>For the second part, I built a list with all the start nodes,
+then I was thinking of the best way to follow the directions concurrently for each node and check if all of them reached their end node,
+I tested each node separately and found that after reaching their end node, each node will go back to their start node.
+With that information, it was just a matter of remembering the mathematical function to calculate when all nodes will be at their end node at the same time,
+that function is the least common multiple (<a class="reference external" href="https://en.wikipedia.org/wiki/Least_common_multiple">LCM</a>) of the number of steps of each node's cycle.</p>
+</section><section id="day-09"><h3>Day 09</h3>
+<ul class="simple">
+<li><p>Problem: <a class="reference external" href="https://adventofcode.com/2023/day/9">https://adventofcode.com/2023/day/9</a></p></li>
+<li><p>Solution: <a class="reference external" href="https://github.com/stsewd/advent-of-code-2023/blob/main/09.py">Part 1</a>, <a class="reference external" href="https://github.com/stsewd/advent-of-code-2023/blob/main/09-2.py">Part 2</a></p></li>
+</ul>
+<p>For this problem, I overthought the solution finding a formula, thinking it would pay off in the second part.
+After writing some examples on paper, I found that the solutions followed the pattern of a <a class="reference external" href="https://en.wikipedia.org/wiki/Pascal's_triangle">Pascal's triangle</a>
+(at the time I didn't remember the name of the triangle, so I had to Google for "math triangle 1").</p>
+<p>For the second part, the problem just asked for the value of the start,
+so it was a matter of doing the same operation, but with the list reversed.</p>
+<p>Probably wasted a lot of time, but I'm happy that I was able to solve the problem in linear time,
+and that I was able to remember the name of the Pascal's triangle.</p>
+</section><section id="day-10"><h3>Day 10</h3>
+<ul class="simple">
+<li><p>Problem: <a class="reference external" href="https://adventofcode.com/2023/day/10">https://adventofcode.com/2023/day/10</a></p></li>
+<li><p>Solution: <a class="reference external" href="https://github.com/stsewd/advent-of-code-2023/blob/main/10.py">Part 1</a>, <a class="reference external" href="https://github.com/stsewd/advent-of-code-2023/blob/main/10-2.py">Part 2</a></p></li>
+</ul>
+<p>This was problem was hard for me, I was stuck in the second part for 4 days.
+But more than stuck, I think I was blocked, like I knew the solution was there, but was having a hard time implementing it.</p>
+<p>For the first part I started by trying to follow each valid path recursively,
+but then I realized that there was just one valid path, so I just followed the first valid path I found.</p>
+<p>For the second part, I tried to think of different ways to fill the polygon,
+but none of them seemed to work for all the cases.
+The solution that worked for most cases was to try to fill the polygon from left to right pairing the vertical edges,
+but I was having a hard time figuring out the rules to pair the edges.
+After failing for several days, I decided to search for existing algorithms for filling a polygon.
+I found the <a class="reference external" href="https://en.wikipedia.org/wiki/Scanline_rendering">Scanline algorithm</a>, and after <a class="reference external" href="https://www.geeksforgeeks.org/scan-line-polygon-filling-using-opengl-c/">reading</a> <a class="reference external" href="https://www.cs.drexel.edu/~deb39/Classes/CS430/Lectures/L-05_Polygons.pdf">about it</a> and understanding it, I was able to implement it in Python,
+I'm happy that the solution I was trying to implement was similar to how this algorithm works,
+but also I should have searched for this algorithm earlier. You live, you learn.</p>
+<p>After reading others' solutions, I found that there was an even simpler solution
+using the <a class="reference external" href="https://en.wikipedia.org/wiki/Pick's_theorem">Pick's theorem</a> to get the number of points inside a polygon
+(this came handy for Day 18!).</p>
+</section><section id="day-11"><h3>Day 11</h3>
+<ul class="simple">
+<li><p>Problem: <a class="reference external" href="https://adventofcode.com/2023/day/11">https://adventofcode.com/2023/day/11</a></p></li>
+<li><p>Solution: <a class="reference external" href="https://github.com/stsewd/advent-of-code-2023/blob/main/11.py">Part 1</a>, <a class="reference external" href="https://github.com/stsewd/advent-of-code-2023/blob/main/11-2.py">Part 2</a></p></li>
+</ul>
+<p>I initially solved the first part expanding the grid,
+but after reading the second part I realized that I could just keep track of the rows/columns that needed to be expanded,
+and use that to calculate the final answer.</p>
+</section><section id="day-12"><h3>Day 12</h3>
+<ul class="simple">
+<li><p>Problem: <a class="reference external" href="https://adventofcode.com/2023/day/12">https://adventofcode.com/2023/day/12</a></p></li>
+<li><p>Solution: <a class="reference external" href="https://github.com/stsewd/advent-of-code-2023/blob/main/12.py">Part 1</a>, <a class="reference external" href="https://github.com/stsewd/advent-of-code-2023/blob/main/12-2.py">Part 2</a></p></li>
+</ul>
+<p>I solved this problem by recursively testing what would be the result if each of the <code class="docutils literal">?</code> would be replaced by a <code class="docutils literal">#</code> or <code class="docutils literal">.</code>,
+and instead of copying the rest of the string and group, I just passed their indexes to the function.
+This solution was fast for the first part, for the second I had to implement a cache to avoid recalculating the same group twice,
+the cache was per each row, it took around 4 seconds to complete, I saw other people applying the cache to the whole matrix,
+I may try that later and see if it's faster.</p>
+</section><section id="day-13"><h3>Day 13</h3>
+<ul class="simple">
+<li><p>Problem: <a class="reference external" href="https://adventofcode.com/2023/day/13">https://adventofcode.com/2023/day/13</a></p></li>
+<li><p>Solution: <a class="reference external" href="https://github.com/stsewd/advent-of-code-2023/blob/main/13.py">Part 1</a>, <a class="reference external" href="https://github.com/stsewd/advent-of-code-2023/blob/main/13-2.py">Part 2</a></p></li>
+</ul>
+<p>Instead of doing the operations over the matrix,
+I used a binary number to represent the state of each row and column,
+then finding the line of reflection was just a matter of comparing numbers.</p>
+<p>For the second part, I brute forced the solution,
+since I was using binary numbers, getting the possible combinations was
+a matter of flipping the bits using a <code class="docutils literal">XOR</code> operation.</p>
+</section><section id="day-14"><h3>Day 14</h3>
+<ul class="simple">
+<li><p>Problem: <a class="reference external" href="https://adventofcode.com/2023/day/14">https://adventofcode.com/2023/day/14</a></p></li>
+<li><p>Solution: <a class="reference external" href="https://github.com/stsewd/advent-of-code-2023/blob/main/14.py">Part 1</a>, <a class="reference external" href="https://github.com/stsewd/advent-of-code-2023/blob/main/14-2.py">Part 2</a></p></li>
+</ul>
+<p>The first part was easy, moving all rocks till we reach a <em>blocker</em> (another rock or the end of the grid).</p>
+<p>For the second part, I <em>cheated</em> a little by using the rules to my advantage,
+this is, solving the problem for the given input only.
+Analyzing the first 200 iterations, I found that after some iterations a pattern repeats,
+so I manually searched for the start of the pattern, and the number of iterations it takes to repeat.
+Then, I did some math to get the minimum number of iterations to reach the final answer.</p>
+</section><section id="day-15"><h3>Day 15</h3>
+<ul class="simple">
+<li><p>Problem: <a class="reference external" href="https://adventofcode.com/2023/day/15">https://adventofcode.com/2023/day/15</a></p></li>
+<li><p>Solution: <a class="reference external" href="https://github.com/stsewd/advent-of-code-2023/blob/main/15.py">Part 1</a>, <a class="reference external" href="https://github.com/stsewd/advent-of-code-2023/blob/main/15-2.py">Part 2</a></p></li>
+</ul>
+<p>This day was easy for both parts, a nice rest for a Friday.</p>
+<p>The first part you just needed some basic math operations, sum and modulo.</p>
+<p>For the second part, you needed some linked list operations,
+but instead of using a linked list, I used a dictionary for quick access to the elements,
+this is since Python 3.7+ preserves the insertion order of the elements in a dictionary.</p>
+</section><section id="day-16"><h3>Day 16</h3>
+<ul class="simple">
+<li><p>Problem: <a class="reference external" href="https://adventofcode.com/2023/day/16">https://adventofcode.com/2023/day/16</a></p></li>
+<li><p>Solution: <a class="reference external" href="https://github.com/stsewd/advent-of-code-2023/blob/main/16.py">Part 1</a>, <a class="reference external" href="https://github.com/stsewd/advent-of-code-2023/blob/main/16-2.py">Part 2</a></p></li>
+</ul>
+<p>For this problem, I traversed the matrix following the directions from the mirrors, while keeping track of the points and their direction that were visited.
+The result is the number of unique points visited without taking into consideration the direction.</p>
+<p>For the second part, I was thinking of using dynamic programming to solve it efficiently,
+but wasn't sure how to do it while keeping track of previous visited points.
+So, I just iterated over all start positions and directions and kept track of the maximum number of points visited on each iteration,
+it completed under two seconds, so I didn't bother optimizing it further.</p>
+</section><section id="day-17"><h3>Day 17</h3>
+<ul class="simple">
+<li><p>Problem: <a class="reference external" href="https://adventofcode.com/2023/day/17">https://adventofcode.com/2023/day/17</a></p></li>
+<li><p>Solution:</p></li>
+</ul>
+<p>This one was another hard one for me. I wasn't able to solve it.</p>
+<p>After failing to solve it using recursion,
+I realized that this was a path finding problem,
+probably a variation of Dijkstra's algorithm.
+My knowledge about graph theory and friends is a little rusty,
+so I started reading and understanding Dijkstra's algorithm,
+but I wasn't able to adapt it to this problem.</p>
+</section><section id="day-18"><h3>Day 18</h3>
+<ul class="simple">
+<li><p>Problem: <a class="reference external" href="https://adventofcode.com/2023/day/18">https://adventofcode.com/2023/day/18</a></p></li>
+<li><p>Solution: <a class="reference external" href="https://github.com/stsewd/advent-of-code-2023/blob/main/18.py">Part 1</a>, <a class="reference external" href="https://github.com/stsewd/advent-of-code-2023/blob/main/18-2.py">Part 2</a></p></li>
+</ul>
+<p>An easy day, great start for a Monday, a relief after day 17.
+Well, it's easy if you already solved Day 10, since it's the same principle.</p>
+<p>On day 10 I learned about <a class="reference external" href="https://en.wikipedia.org/wiki/Pick's_theorem">Pick's theorem</a> to get the number of points inside a polygon,
+and I also about the <a class="reference external" href="https://en.wikipedia.org/wiki/Shoelace_formula">shoelace formula</a> to get the area of a polygon.
+Using both formulas, I was able to solve the problem in linear time.</p>
+</section><section id="day-19"><h3>Day 19</h3>
+<ul class="simple">
+<li><p>Problem: <a class="reference external" href="https://adventofcode.com/2023/day/19">https://adventofcode.com/2023/day/19</a></p></li>
+<li><p>Solution: <a class="reference external" href="https://github.com/stsewd/advent-of-code-2023/blob/main/19.py">Part 1</a>, <a class="reference external" href="https://github.com/stsewd/advent-of-code-2023/blob/main/19-2.py">Part 2</a></p></li>
+</ul>
+<p>This problem was similar to Day 05.
+For the first part, I built a map with the workflows,
+and followed them until reaching the workflow <code class="docutils literal">A</code> or <code class="docutils literal">R</code>.</p>
+<p>For the second part, we had to find a range of values that would satisfy the given conditions,
+but here the ranges had branches, so I recursively collected all the possible ranges that reached to the <code class="docutils literal">A</code> workflow,
+the final solution was a matter of multiplying those ranges.</p>
+</section><section id="day-20"><h3>Day 20</h3>
+<ul class="simple">
+<li><p>Problem: <a class="reference external" href="https://adventofcode.com/2023/day/20">https://adventofcode.com/2023/day/20</a></p></li>
+<li><p>Solution: <a class="reference external" href="https://github.com/stsewd/advent-of-code-2023/blob/main/20.py">Part 1</a></p></li>
+</ul>
+<p>Part one was kind of easy,
+the hardest part was understanding the operations for each type of module,
+after that I looped over the operations till we didn't have any more operations to process.</p>
+<p>I wasn't able to solve part two,
+I tried for like two hours, and then gave up.
+Didn't even bother on trying to solve it later.</p>
+<p>Probably was on this day when I decided to dedicate less time to solve the problems, and enjoy more the holidays.</p>
+</section><section id="day-21"><h3>Day 21</h3>
+<ul class="simple">
+<li><p>Problem: <a class="reference external" href="https://adventofcode.com/2023/day/21">https://adventofcode.com/2023/day/21</a></p></li>
+<li><p>Solution: <a class="reference external" href="https://github.com/stsewd/advent-of-code-2023/blob/main/21.py">Part 1</a></p></li>
+</ul>
+<p>For part one I recursively traversed the matrix,
+and realized that if the remaining steps were even,
+returning to the previous position was guaranteed,
+avoiding having to check what would happen if we went back.
+That with a simple cache was fast enough to solve the first part.</p>
+<p>The second part was more difficult, and wasn't able to solve it,
+I tried for like one hour, and then gave up.</p>
+</section><section id="day-22"><h3>Day 22</h3>
+<ul class="simple">
+<li><p>Problem: <a class="reference external" href="https://adventofcode.com/2023/day/22">https://adventofcode.com/2023/day/22</a></p></li>
+<li><p>Solution: <a class="reference external" href="https://github.com/stsewd/advent-of-code-2023/blob/main/22.py">Part 1</a></p></li>
+</ul>
+<p>I solved this one on the next day, I was busy with the holidays and social life.</p>
+<p>I haven't played with 3D matrices in a while,
+so it took me a while to think of a solution that was easy to code.</p>
+<p>Drawing inspiration from Dijkstra's algorithm,
+I sorted all bricks by their z coordinate,
+and for each brick I checked all bricks below it, searching for one that would <em>stop</em> it by checking if their x and y coordinates intersected.
+After that, I built a map with all the bricks and the bricks above it that intersected with it.
+To get the final answer, I used a set difference, if the set was empty, the brick could be safely removed.
+It was a long solution, but it was still fast.</p>
+<p>For the second part, I used the same logic from the first part,
+but instead of using sets, I built a graph with the bricks and their intersections,
+and recursively exploring the bricks that will fall,
+it worked for the example, and it made sense on paper,
+but the solution was wrong for the given input,
+so I gave up after that.</p>
+</section><section id="day-23-25"><h3>Day 23-25</h3>
+<p>As previously mentioned, I didn't even read the problems for these days.
+I went to enjoy the holidays, and do other things away from the computer.
+I may go back and try to solve these problems some day.</p>
+<p>Hope you enjoyed reading about my experience and solutions!
+See you next year!</p>
+</section></section>
+</div>
+    <aside class="postpromonav"><nav><ul itemprop="keywords" class="tags">
+<li><a class="tag p-category" href="../../categories/experience/" rel="tag">experience</a></li>
+            <li><a class="tag p-category" href="../../categories/problem-solving/" rel="tag">problem solving</a></li>
+        </ul>
+<ul class="pager hidden-print">
+<li class="previous">
+                <a href="../securing-your-dev-environment/" rel="prev" title="Securing your development environment">Previous post</a>
+            </li>
+        </ul></nav></aside><section class="comments hidden-print"><h2>Comments</h2>
+        
+    
+        <div id="disqus_thread"></div>
+        <script>
+        var disqus_shortname ="stsewd",
+            disqus_url="https://stsewd.dev/posts/advent-of-code-2023/",
+        disqus_title="Advent of Code 2023 - solutions and my experience",
+        disqus_identifier="cache/posts/advent-of-code-2023.html",
+        disqus_config = function () {
+            this.language = "en";
+        };
+        (function() {
+            var dsq = document.createElement('script'); dsq.async = true;
+            dsq.src = 'https://' + disqus_shortname + '.disqus.com/embed.js';
+            (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+        })();
+    </script><noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a>
+</noscript>
+    <a href="https://disqus.com" class="dsq-brlink" rel="nofollow">Comments powered by <span class="logo-disqus">Disqus</span></a>
+
+
+        </section></article><script>var disqus_shortname="stsewd";(function(){var a=document.createElement("script");a.async=true;a.src="https://"+disqus_shortname+".disqus.com/count.js";(document.getElementsByTagName("head")[0]||document.getElementsByTagName("body")[0]).appendChild(a)}());</script>
+</div>
+  </div>
+</div>
+
+  <script src="https://craig.global.ssl.fastly.net/js/mousetrap/mousetrap.min.js"></script><script src="../../assets/js/keybindings.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/anchor-js/4.1.0/anchor.min.js"></script><script>
+  anchors.add();
+</script><!--End of body content--><footer id="footer"><div class="container">
+    <div class="row text-center">
+        <div class="col">
+            <small>
+                Contents © 2023 <a href="mailto:stsewd@proton.me">Santos Gallegos</a> -
+                Powered by <a href="https://getnikola.com" rel="nofollow">Nikola</a> -
+                Hosted on <a href="https://pages.github.com/" rel="nofollow">GitHub Pages</a>
+                
+            </small>
+        </div>
+    </div>
+    <div class="row text-center">
+        <div class="col">
+            <small>
+                <a href="http://github.com/stsewd">
+                <i class="fa fa-github fa-2x"></i>
+                </a>
+                <a href="http://twitter.com/stsewd">
+                <i class="fa fa-twitter fa-2x"></i>
+                </a>
+            </small>
+        </div>
+    </div>
+</div>
+
+            
+            
+        </footer>
+</div>
+</div>
+
+
+        <script src="../../assets/js/all-nocdn.js"></script><script>
+    baguetteBox.run('div#content', {
+        ignoreClass: 'islink',
+        captions: function(element){var i=element.getElementsByTagName('img')[0];return i===undefined?'':i.alt;}});
+    </script>
+</body>
+</html>
