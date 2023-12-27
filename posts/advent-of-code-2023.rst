@@ -436,7 +436,6 @@ On day 10 I learned about `Pick's theorem`_ to get the number of points inside a
 and I also about the `shoelace formula`_ to get the area of a polygon.
 Using both formulas, I was able to solve the problem in linear time.
 
-.. _Pick's theorem: https://en.wikipedia.org/wiki/Pick's_theorem
 .. _shoelace formula: https://en.wikipedia.org/wiki/Shoelace_formula
 
 Day 19
