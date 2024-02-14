@@ -54,7 +54,7 @@
 
     <hgroup>
       <h1>Santos Gallegos</h1>
-      <h2>Software Engineer and Application Security Engineer</h2>
+      <h2>Software and Application Security Engineer</h2>
     </hgroup>
 
     <section class="image-wrapper">
@@ -154,14 +154,15 @@
           <p>
             <strong>Read the Docs, Inc:</strong>
             <small>
-              Software developer and security engineer
+              Software and application security engineer
               <i>(2018 - present)</i>
             </small>
           </p>
           <p>
             During my time at Read the Docs I’ve worked on several projects and touched
-            many parts of the codebase. Mainly as a backend developer using Django, but
-            also a bit of frontend, some of the things I’ve worked on are:
+            many parts of the codebase, mainly as a backend developer using Django, but
+            also a bit of frontend, and as a application security engineer.
+            Some of the things I’ve worked on are:
           </p>
           <p>
           <ul>
@@ -183,22 +184,9 @@
             <li>User and organization security logs</li>
             <li>User invitations to organizations and projects</li>
             <li>Found and fixed several security vulnerabilities in the codebase</li>
+            <li>Improved the redirects feature allowing wildcards, explicit ordering and more</li>
             <li>Consolidating our code base from private and public repositories into one</li>
           </ul>
-          </p>
-        </li>
-        <li>
-          <p>
-            <strong>Telconet S.A:</strong>
-            <small>
-              Private bug bounty program
-              <i>(2022 - present)</i>
-            </small>
-          </p>
-          <p>
-            After participating in several CTFs, I was invited to participate in a
-            private bug bounty program by Telconet,
-            I've found and reported several security vulnerabilities.
           </p>
         </li>
         <li>
@@ -222,7 +210,7 @@
           <p>
             During recent years I’ve been learning Rust, and in 2022 I had the
             opportunity to work as a freelancer on a transport management system for a
-            German company, using AWS services like DynamoDB, Lambdas,and S3.
+            German company, using AWS services like DynamoDB, Lambdas, and S3.
           </p>
         </li>
         <li>
@@ -236,6 +224,20 @@
           <p>
             Penetration testing of their web application, mobile application, and core
             banking system.
+          </p>
+        </li>
+        <li>
+          <p>
+            <strong>Telconet S.A:</strong>
+            <small>
+              Private bug bounty program
+              <i>(2022)</i>
+            </small>
+          </p>
+          <p>
+            After participating in several CTFs, I was invited to participate in a
+            private bug bounty program by Telconet,
+            I've found and reported several security vulnerabilities during this time.
           </p>
         </li>
         <li>
@@ -589,6 +591,46 @@
         some of the public ones are listed below.
       </p>
       <ul>
+        <li>
+          <p>
+            <strong>
+              CAS session takeover in Read the Docs for Business
+            </strong>
+            <small>
+              -
+              <a href="https://github.com/readthedocs/readthedocs.org/security/advisories/GHSA-pw32-ffxw-68rh">
+                GHSA-pw32-ffxw-68rh
+              </a>
+              <i>(2024)</i>
+            </small>
+          </p>
+          <p>
+            This vulnerability could have allowed an attacker to hijack a specific type of
+            user session, given a crafted URL. Exploiting this vulnerability would have
+            required the user to have the pull requests previews feature enabled, and follow a malicious link,
+            allowing the attacker to steal the CAS ticket used to authenticate the user towards several read-only APIs.
+          </p>
+        </li>
+        <li>
+          <p>
+            <strong>
+              XSS in search integrations when including search results from malicious projects in Read the Docs
+            </strong>
+            <small>
+              -
+              <a href="https://github.com/readthedocs/readthedocs.org/security/advisories/GHSA-qhqx-5j25-rv48">
+                GHSA-qhqx-5j25-rv48
+              </a>
+              <i>(2024)</i>
+            </small>
+          </p>
+          <p>
+            This vulnerability could have allowed a malicious user to execute arbitrary
+            JavaScript code on the search results page of any project that included
+            search results from a malicious project. This vulnerability was present in
+            three different search integrations provided by Read the Docs.
+          </p>
+        </li>
         <li>
           <p>
             <strong>

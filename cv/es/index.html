@@ -54,7 +54,7 @@
 
     <hgroup>
       <h1>Santos Gallegos</h1>
-      <h2>Ingeniero de Software e Ingeniero de Seguridad de Aplicaciones</h2>
+      <h2>Ingeniero de Software y de Seguridad de Aplicaciones</h2>
     </hgroup>
 
     <section class="image-wrapper">
@@ -183,22 +183,9 @@
             <li>Logs de seguridad de usuarios y organizaciones</li>
             <li>Invitaciones de usuarios a organizaciones y proyectos.</li>
             <li>Identificación y remediación de varios problemas de seguridad en la aplicación</li>
+            <li>Mejoré la funcionalidad de redirects permitiendo wildcards, orden explícito y más</li>
             <li>Consolidación de varios repositorios públicos y privados en uno</li>
           </ul>
-          </p>
-        </li>
-        <li>
-          <p>
-            <strong>Telconet S.A:</strong>
-            <small>
-              Programa privado de bug bounty
-              <i>(2022 - presente)</i>
-            </small>
-          </p>
-          <p>
-            Después de participar en varios CTFs, fui invitado a participar en un
-            programa privado de bug bounty por Telconet, durante el programa encontré y
-            reporté varias vulnerabilidades de seguridad.
           </p>
         </li>
         <li>
@@ -236,6 +223,20 @@
           <p>
             Pruebas de penetración de su aplicación web, aplicación móvil y sistema
             bancario central.
+          </p>
+        </li>
+        <li>
+          <p>
+            <strong>Telconet S.A:</strong>
+            <small>
+              Programa privado de bug bounty
+              <i>(2022)</i>
+            </small>
+          </p>
+          <p>
+            Después de participar en varios CTFs, fui invitado a participar en un
+            programa privado de bug bounty por Telconet, durante el programa encontré y
+            reporté varias vulnerabilidades de seguridad.
           </p>
         </li>
         <li>
@@ -592,6 +593,49 @@
         las públicas se listan a continuación.
       </p>
       <ul>
+        <li>
+          <p>
+            <strong>
+              CAS session takeover in Read the Docs for Businesses
+            </strong>
+            <small>
+              -
+              <a href="https://github.com/readthedocs/readthedocs.org/security/advisories/GHSA-pw32-ffxw-68rh">
+                GHSA-pw32-ffxw-68rh
+              </a>
+              <i>(2024)</i>
+            </small>
+          </p>
+          <p>
+            Esta vulnerabilidad podría haber permitido a un atacante secuestrar un tipo
+            específico de sesión de usuario, dada una URL creada. Explotar esta
+            vulnerabilidad habría requerido que el usuario tenga habilitada la funcionalidad
+            de pull requests previews siguiera un enlace malicioso,
+            lo que permitiría al atacante robar el ticket CAS utilizado para autenticar
+            al usuario hacia varias APIs de solo lectura.
+          </p>
+        </li>
+        <li>
+        <li>
+          <p>
+            <strong>
+              XSS in search integrations when including search results from malicious projects in Read the Docs
+            </strong>
+            <small>
+              -
+              <a href="https://github.com/readthedocs/readthedocs.org/security/advisories/GHSA-qhqx-5j25-rv48">
+                GHSA-qhqx-5j25-rv48
+              </a>
+              <i>(2024)</i>
+            </small>
+          </p>
+          <p>
+            Esta vulnerabilidad podría haber permitido a un usuario malicioso ejecutar
+            código JavaScript arbitrario en la página de resultados de búsqueda de cualquier
+            proyecto que incluyera resultados de búsqueda de un proyecto malicioso.
+            Esta vulnerabilidad estaba presente en tres integraciones de proporcionadas por Read the Docs.
+          </p>
+        </li>
         <li>
           <p>
             <strong>
