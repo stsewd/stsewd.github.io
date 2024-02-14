@@ -7,6 +7,8 @@ Publicly disclosed security vulnerabilities
 
 I have responsibly reported several security vulnerabilities; some of the public ones are listed below.
 
+- CAS session takeover in Read the Docs for Business: `GHSA-pw32-ffxw-68rh <https://github.com/readthedocs/readthedocs.org/security/advisories/GHSA-pw32-ffxw-68rh>`__ (2024)
+- XSS in search integrations when including search results from malicious projects in Read the Docs: `GHSA-qhqx-5j25-rv48 <https://github.com/readthedocs/readthedocs.org/security/advisories/GHSA-qhqx-5j25-rv48>`__ (2024)
 - Creation of integrations for any project in Read the Docs: `GHSA-45hq-g76r-46wv <https://github.com/readthedocs/readthedocs.org/security/advisories/GHSA-45hq-g76r-46wv>`__ (2023)
 - Arbitrary command execution on Windows in Vim: `CVE-2023-4736 <https://huntr.dev/bounties/e1ce0995-4df4-4dec-9cd7-3136ac3e8e71/>`__ (2023)
 - Untrusted search path on Windows systems leading to arbitrary code execution  in GitPython: `CVE-2023-40590 <https://github.com/gitpython-developers/GitPython/security/advisories/GHSA-wfm5-v35h-vwf4>`__ (2023)
