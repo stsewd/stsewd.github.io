@@ -7,7 +7,7 @@ Publicly disclosed security vulnerabilities
 
 I have responsibly reported several security vulnerabilities; some of the public ones are listed below.
 
-- Denial of service via regular expression in Django Wiki: `GHSA-wj85-w4f4-xh8h <https://github.com/django-wiki/django-wiki/security/advisories/GHSA-wj85-w4f4-xh8h>`__ (2024)
+- Denial of service via regular expression in Django Wiki: `CVE-2024-28865 <https://github.com/django-wiki/django-wiki/security/advisories/GHSA-wj85-w4f4-xh8h>`__ (2024)
 - CAS session takeover in Read the Docs for Business: `GHSA-pw32-ffxw-68rh <https://github.com/readthedocs/readthedocs.org/security/advisories/GHSA-pw32-ffxw-68rh>`__ (2024)
 - XSS in search integrations when including search results from malicious projects in Read the Docs: `GHSA-qhqx-5j25-rv48 <https://github.com/readthedocs/readthedocs.org/security/advisories/GHSA-qhqx-5j25-rv48>`__ (2024)
 - Creation of integrations for any project in Read the Docs: `GHSA-45hq-g76r-46wv <https://github.com/readthedocs/readthedocs.org/security/advisories/GHSA-45hq-g76r-46wv>`__ (2023)
