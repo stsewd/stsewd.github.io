@@ -145,14 +145,14 @@ de Vim/Neovim puedes leer <a class="reference external" href="https://gist.githu
 </aside></section><section id="instalando-vim-plug"><h2>Instalando vim-plug</h2>
 <p>Vim-plug depende de git, si no lo tienes instalado,
 ejecuta el siguiente comando:</p>
-<div class="code"><pre class="code bash"><a id="rest_code_e8765609758a4a69a614b4a3a8964ffa-1" name="rest_code_e8765609758a4a69a614b4a3a8964ffa-1" href="#rest_code_e8765609758a4a69a614b4a3a8964ffa-1"></a><span class="c1"># Ubuntu</span>
-<a id="rest_code_e8765609758a4a69a614b4a3a8964ffa-2" name="rest_code_e8765609758a4a69a614b4a3a8964ffa-2" href="#rest_code_e8765609758a4a69a614b4a3a8964ffa-2"></a>sudo<span class="w"> </span>apt<span class="w"> </span>install<span class="w"> </span>git
-<a id="rest_code_e8765609758a4a69a614b4a3a8964ffa-3" name="rest_code_e8765609758a4a69a614b4a3a8964ffa-3" href="#rest_code_e8765609758a4a69a614b4a3a8964ffa-3"></a>
-<a id="rest_code_e8765609758a4a69a614b4a3a8964ffa-4" name="rest_code_e8765609758a4a69a614b4a3a8964ffa-4" href="#rest_code_e8765609758a4a69a614b4a3a8964ffa-4"></a><span class="c1"># Fedora</span>
-<a id="rest_code_e8765609758a4a69a614b4a3a8964ffa-5" name="rest_code_e8765609758a4a69a614b4a3a8964ffa-5" href="#rest_code_e8765609758a4a69a614b4a3a8964ffa-5"></a>sudo<span class="w"> </span>dnf<span class="w"> </span>install<span class="w"> </span>git
+<div class="code"><pre class="code bash"><a id="rest_code_ce66e245c40d4df8806f1a4a3a0e18c7-1" name="rest_code_ce66e245c40d4df8806f1a4a3a0e18c7-1" href="#rest_code_ce66e245c40d4df8806f1a4a3a0e18c7-1"></a><span class="c1"># Ubuntu</span>
+<a id="rest_code_ce66e245c40d4df8806f1a4a3a0e18c7-2" name="rest_code_ce66e245c40d4df8806f1a4a3a0e18c7-2" href="#rest_code_ce66e245c40d4df8806f1a4a3a0e18c7-2"></a>sudo<span class="w"> </span>apt<span class="w"> </span>install<span class="w"> </span>git
+<a id="rest_code_ce66e245c40d4df8806f1a4a3a0e18c7-3" name="rest_code_ce66e245c40d4df8806f1a4a3a0e18c7-3" href="#rest_code_ce66e245c40d4df8806f1a4a3a0e18c7-3"></a>
+<a id="rest_code_ce66e245c40d4df8806f1a4a3a0e18c7-4" name="rest_code_ce66e245c40d4df8806f1a4a3a0e18c7-4" href="#rest_code_ce66e245c40d4df8806f1a4a3a0e18c7-4"></a><span class="c1"># Fedora</span>
+<a id="rest_code_ce66e245c40d4df8806f1a4a3a0e18c7-5" name="rest_code_ce66e245c40d4df8806f1a4a3a0e18c7-5" href="#rest_code_ce66e245c40d4df8806f1a4a3a0e18c7-5"></a>sudo<span class="w"> </span>dnf<span class="w"> </span>install<span class="w"> </span>git
 </pre></div>
 <p>Para instalar vim-plug ejecuta el siguiente comando en la terminal:</p>
-<div class="code"><pre class="code bash"><a id="rest_code_c2f18af6bed04cba9245fee1c0260d46-1" name="rest_code_c2f18af6bed04cba9245fee1c0260d46-1" href="#rest_code_c2f18af6bed04cba9245fee1c0260d46-1"></a>curl<span class="w"> </span>-fLo<span class="w"> </span>~/.local/share/nvim/site/autoload/plug.vim<span class="w"> </span>--create-dirs<span class="w"> </span>https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+<div class="code"><pre class="code bash"><a id="rest_code_b83b3d5a691f4cd79fb8c19252ab95c3-1" name="rest_code_b83b3d5a691f4cd79fb8c19252ab95c3-1" href="#rest_code_b83b3d5a691f4cd79fb8c19252ab95c3-1"></a>curl<span class="w"> </span>-fLo<span class="w"> </span>~/.local/share/nvim/site/autoload/plug.vim<span class="w"> </span>--create-dirs<span class="w"> </span>https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
 </pre></div>
 <aside class="admonition note"><p class="admonition-title">Nota</p>
 <p>Debes tener instalado <code class="docutils literal">curl</code> previamente,
@@ -162,17 +162,17 @@ o en Fedora con <code class="docutils literal">sudo dnf install curl</code>.</p>
 <a class="reference external" href="https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim">este archivo</a>
 y guárdalo en <code class="docutils literal"><span class="pre">~/.local/share/nvim/site/autoload/plug.vim</span></code>.</p>
 <p>Ahora abre tu archivo <code class="docutils literal">init.vim</code>.</p>
-<div class="code"><pre class="code bash"><a id="rest_code_eebd4980defc4fac9de087749e03ace0-1" name="rest_code_eebd4980defc4fac9de087749e03ace0-1" href="#rest_code_eebd4980defc4fac9de087749e03ace0-1"></a>nvim<span class="w"> </span>~/.config/nvim/init.vim
+<div class="code"><pre class="code bash"><a id="rest_code_e8dd2ff659ad4676b0c0c8eedccb9bb9-1" name="rest_code_e8dd2ff659ad4676b0c0c8eedccb9bb9-1" href="#rest_code_e8dd2ff659ad4676b0c0c8eedccb9bb9-1"></a>nvim<span class="w"> </span>~/.config/nvim/init.vim
 </pre></div>
 <p>Al inicio agrega lo siguiente:</p>
-<div class="code"><pre class="code vim"><a id="rest_code_2b296c8648334c538425892625140db5-1" name="rest_code_2b296c8648334c538425892625140db5-1" href="#rest_code_2b296c8648334c538425892625140db5-1"></a><span class="c">" Directorio de plugins</span>
-<a id="rest_code_2b296c8648334c538425892625140db5-2" name="rest_code_2b296c8648334c538425892625140db5-2" href="#rest_code_2b296c8648334c538425892625140db5-2"></a><span class="k">call</span> plug#begin<span class="p">(</span><span class="s1">'~/.local/share/nvim/plugged'</span><span class="p">)</span>
-<a id="rest_code_2b296c8648334c538425892625140db5-3" name="rest_code_2b296c8648334c538425892625140db5-3" href="#rest_code_2b296c8648334c538425892625140db5-3"></a>
-<a id="rest_code_2b296c8648334c538425892625140db5-4" name="rest_code_2b296c8648334c538425892625140db5-4" href="#rest_code_2b296c8648334c538425892625140db5-4"></a><span class="c">" Aquí irán los plugins a instalar</span>
-<a id="rest_code_2b296c8648334c538425892625140db5-5" name="rest_code_2b296c8648334c538425892625140db5-5" href="#rest_code_2b296c8648334c538425892625140db5-5"></a>
-<a id="rest_code_2b296c8648334c538425892625140db5-6" name="rest_code_2b296c8648334c538425892625140db5-6" href="#rest_code_2b296c8648334c538425892625140db5-6"></a><span class="k">call</span> plug#<span class="k">end</span><span class="p">()</span>
-<a id="rest_code_2b296c8648334c538425892625140db5-7" name="rest_code_2b296c8648334c538425892625140db5-7" href="#rest_code_2b296c8648334c538425892625140db5-7"></a>
-<a id="rest_code_2b296c8648334c538425892625140db5-8" name="rest_code_2b296c8648334c538425892625140db5-8" href="#rest_code_2b296c8648334c538425892625140db5-8"></a><span class="c">" Luego de esta línea puedes agregar tus configuraciones y mappings</span>
+<div class="code"><pre class="code vim"><a id="rest_code_0ec4ba0761be43ed91d19e7c9419289c-1" name="rest_code_0ec4ba0761be43ed91d19e7c9419289c-1" href="#rest_code_0ec4ba0761be43ed91d19e7c9419289c-1"></a><span class="c">" Directorio de plugins</span>
+<a id="rest_code_0ec4ba0761be43ed91d19e7c9419289c-2" name="rest_code_0ec4ba0761be43ed91d19e7c9419289c-2" href="#rest_code_0ec4ba0761be43ed91d19e7c9419289c-2"></a><span class="k">call</span> plug#begin<span class="p">(</span><span class="s1">'~/.local/share/nvim/plugged'</span><span class="p">)</span>
+<a id="rest_code_0ec4ba0761be43ed91d19e7c9419289c-3" name="rest_code_0ec4ba0761be43ed91d19e7c9419289c-3" href="#rest_code_0ec4ba0761be43ed91d19e7c9419289c-3"></a>
+<a id="rest_code_0ec4ba0761be43ed91d19e7c9419289c-4" name="rest_code_0ec4ba0761be43ed91d19e7c9419289c-4" href="#rest_code_0ec4ba0761be43ed91d19e7c9419289c-4"></a><span class="c">" Aquí irán los plugins a instalar</span>
+<a id="rest_code_0ec4ba0761be43ed91d19e7c9419289c-5" name="rest_code_0ec4ba0761be43ed91d19e7c9419289c-5" href="#rest_code_0ec4ba0761be43ed91d19e7c9419289c-5"></a>
+<a id="rest_code_0ec4ba0761be43ed91d19e7c9419289c-6" name="rest_code_0ec4ba0761be43ed91d19e7c9419289c-6" href="#rest_code_0ec4ba0761be43ed91d19e7c9419289c-6"></a><span class="k">call</span> plug#<span class="k">end</span><span class="p">()</span>
+<a id="rest_code_0ec4ba0761be43ed91d19e7c9419289c-7" name="rest_code_0ec4ba0761be43ed91d19e7c9419289c-7" href="#rest_code_0ec4ba0761be43ed91d19e7c9419289c-7"></a>
+<a id="rest_code_0ec4ba0761be43ed91d19e7c9419289c-8" name="rest_code_0ec4ba0761be43ed91d19e7c9419289c-8" href="#rest_code_0ec4ba0761be43ed91d19e7c9419289c-8"></a><span class="c">" Luego de esta línea puedes agregar tus configuraciones y mappings</span>
 </pre></div>
 </section><section id="instalando-plugins-con-vim-plug"><h2>Instalando plugins con vim-plug</h2>
 <p>Vim-plug tiene soporte directo con plugins alojados en GitHub
@@ -182,11 +182,11 @@ un repositorio git, o de manera local).</p>
 poner el nombre del usuario y del repositorio en el archivo <cite>init.vim</cite>.</p>
 <p>Por ejemplo, para instalar <a class="reference external" href="https://github.com/tpope/vim-surround">este plugin</a>,
 sólo se necesita agregar lo siguiente en el archivo <code class="docutils literal">init.vim</code>.</p>
-<div class="code"><pre class="code vim"><a id="rest_code_9e9aee2d216744d1b1c4b61eaff81e62-1" name="rest_code_9e9aee2d216744d1b1c4b61eaff81e62-1" href="#rest_code_9e9aee2d216744d1b1c4b61eaff81e62-1"></a><span class="k">call</span> plug#begin<span class="p">(</span><span class="s1">'~/.local/share/nvim/plugged'</span><span class="p">)</span>
-<a id="rest_code_9e9aee2d216744d1b1c4b61eaff81e62-2" name="rest_code_9e9aee2d216744d1b1c4b61eaff81e62-2" href="#rest_code_9e9aee2d216744d1b1c4b61eaff81e62-2"></a>
-<a id="rest_code_9e9aee2d216744d1b1c4b61eaff81e62-3" name="rest_code_9e9aee2d216744d1b1c4b61eaff81e62-3" href="#rest_code_9e9aee2d216744d1b1c4b61eaff81e62-3"></a>Plug <span class="s1">'tpope/vim-surround'</span>  <span class="c">" Es buena idea agregar una descripción del plugin</span>
-<a id="rest_code_9e9aee2d216744d1b1c4b61eaff81e62-4" name="rest_code_9e9aee2d216744d1b1c4b61eaff81e62-4" href="#rest_code_9e9aee2d216744d1b1c4b61eaff81e62-4"></a>
-<a id="rest_code_9e9aee2d216744d1b1c4b61eaff81e62-5" name="rest_code_9e9aee2d216744d1b1c4b61eaff81e62-5" href="#rest_code_9e9aee2d216744d1b1c4b61eaff81e62-5"></a><span class="k">call</span> plug#<span class="k">end</span><span class="p">()</span>
+<div class="code"><pre class="code vim"><a id="rest_code_201a926600b343d591fc4f381aa55049-1" name="rest_code_201a926600b343d591fc4f381aa55049-1" href="#rest_code_201a926600b343d591fc4f381aa55049-1"></a><span class="k">call</span> plug#begin<span class="p">(</span><span class="s1">'~/.local/share/nvim/plugged'</span><span class="p">)</span>
+<a id="rest_code_201a926600b343d591fc4f381aa55049-2" name="rest_code_201a926600b343d591fc4f381aa55049-2" href="#rest_code_201a926600b343d591fc4f381aa55049-2"></a>
+<a id="rest_code_201a926600b343d591fc4f381aa55049-3" name="rest_code_201a926600b343d591fc4f381aa55049-3" href="#rest_code_201a926600b343d591fc4f381aa55049-3"></a>Plug <span class="s1">'tpope/vim-surround'</span>  <span class="c">" Es buena idea agregar una descripción del plugin</span>
+<a id="rest_code_201a926600b343d591fc4f381aa55049-4" name="rest_code_201a926600b343d591fc4f381aa55049-4" href="#rest_code_201a926600b343d591fc4f381aa55049-4"></a>
+<a id="rest_code_201a926600b343d591fc4f381aa55049-5" name="rest_code_201a926600b343d591fc4f381aa55049-5" href="#rest_code_201a926600b343d591fc4f381aa55049-5"></a><span class="k">call</span> plug#<span class="k">end</span><span class="p">()</span>
 </pre></div>
 <p>Pero con esto el plugin no está aún instalado,
 debes recargar tu <code class="docutils literal">init.vim</code> ejecutando <code class="docutils literal">:so <span class="pre">~/.config/nvim/init.vim</span></code>.
@@ -216,11 +216,11 @@ tu editor luzca bien y se asemeje a un <em>IDE liviano</em>.</p>
 <p>Para cada plugin presentaré una breve descripción, su página, una lista de comandos
 y de ser el caso, algunas configuraciones necesarias para empezar a usarlo.
 Para ello usaré un <code class="docutils literal">init.vim</code> <em>abreviado</em> de la siguiente manera.</p>
-<div class="code"><pre class="code vim"><a id="rest_code_90f75a2127af41978e11690c301c00a6-1" name="rest_code_90f75a2127af41978e11690c301c00a6-1" href="#rest_code_90f75a2127af41978e11690c301c00a6-1"></a>Plug <span class="s1">'usuario/plugin'</span>  <span class="c">" Comentario</span>
-<a id="rest_code_90f75a2127af41978e11690c301c00a6-2" name="rest_code_90f75a2127af41978e11690c301c00a6-2" href="#rest_code_90f75a2127af41978e11690c301c00a6-2"></a>
-<a id="rest_code_90f75a2127af41978e11690c301c00a6-3" name="rest_code_90f75a2127af41978e11690c301c00a6-3" href="#rest_code_90f75a2127af41978e11690c301c00a6-3"></a>...
-<a id="rest_code_90f75a2127af41978e11690c301c00a6-4" name="rest_code_90f75a2127af41978e11690c301c00a6-4" href="#rest_code_90f75a2127af41978e11690c301c00a6-4"></a>
-<a id="rest_code_90f75a2127af41978e11690c301c00a6-5" name="rest_code_90f75a2127af41978e11690c301c00a6-5" href="#rest_code_90f75a2127af41978e11690c301c00a6-5"></a><span class="k">let</span> <span class="k">g</span>:configuracion_del_plugin <span class="p">=</span> <span class="m">1</span>
+<div class="code"><pre class="code vim"><a id="rest_code_04a53189de944573ab4118ea7b26004e-1" name="rest_code_04a53189de944573ab4118ea7b26004e-1" href="#rest_code_04a53189de944573ab4118ea7b26004e-1"></a>Plug <span class="s1">'usuario/plugin'</span>  <span class="c">" Comentario</span>
+<a id="rest_code_04a53189de944573ab4118ea7b26004e-2" name="rest_code_04a53189de944573ab4118ea7b26004e-2" href="#rest_code_04a53189de944573ab4118ea7b26004e-2"></a>
+<a id="rest_code_04a53189de944573ab4118ea7b26004e-3" name="rest_code_04a53189de944573ab4118ea7b26004e-3" href="#rest_code_04a53189de944573ab4118ea7b26004e-3"></a>...
+<a id="rest_code_04a53189de944573ab4118ea7b26004e-4" name="rest_code_04a53189de944573ab4118ea7b26004e-4" href="#rest_code_04a53189de944573ab4118ea7b26004e-4"></a>
+<a id="rest_code_04a53189de944573ab4118ea7b26004e-5" name="rest_code_04a53189de944573ab4118ea7b26004e-5" href="#rest_code_04a53189de944573ab4118ea7b26004e-5"></a><span class="k">let</span> <span class="k">g</span>:configuracion_del_plugin <span class="p">=</span> <span class="m">1</span>
 </pre></div>
 <p>Recuerda que los nombres de los plugins deben ir entre las funciones de vim-plug,
 Y las configuraciones deben ir luego de <code class="docutils literal">call plug#end()</code>.
@@ -333,12 +333,12 @@ o crees que mejoren tu productividad.</p>
 </blockquote>
 <figure><a class="reference external image-reference" href="../../../images/nvim/plugins/onedark.png"><img alt="One Dark" src="../../../images/nvim/plugins/onedark.png"></a>
 <figcaption><p>One Dark</p>
-</figcaption></figure><div class="code"><pre class="code vim"><a id="rest_code_b14824e6174c4a38a19afd229fee12ad-1" name="rest_code_b14824e6174c4a38a19afd229fee12ad-1" href="#rest_code_b14824e6174c4a38a19afd229fee12ad-1"></a>Plug <span class="s1">'joshdick/onedark.vim'</span>
-<a id="rest_code_b14824e6174c4a38a19afd229fee12ad-2" name="rest_code_b14824e6174c4a38a19afd229fee12ad-2" href="#rest_code_b14824e6174c4a38a19afd229fee12ad-2"></a>
-<a id="rest_code_b14824e6174c4a38a19afd229fee12ad-3" name="rest_code_b14824e6174c4a38a19afd229fee12ad-3" href="#rest_code_b14824e6174c4a38a19afd229fee12ad-3"></a>...
-<a id="rest_code_b14824e6174c4a38a19afd229fee12ad-4" name="rest_code_b14824e6174c4a38a19afd229fee12ad-4" href="#rest_code_b14824e6174c4a38a19afd229fee12ad-4"></a>
-<a id="rest_code_b14824e6174c4a38a19afd229fee12ad-5" name="rest_code_b14824e6174c4a38a19afd229fee12ad-5" href="#rest_code_b14824e6174c4a38a19afd229fee12ad-5"></a><span class="k">set</span> termguicolors  <span class="c">" Activa true colors en la terminal</span>
-<a id="rest_code_b14824e6174c4a38a19afd229fee12ad-6" name="rest_code_b14824e6174c4a38a19afd229fee12ad-6" href="#rest_code_b14824e6174c4a38a19afd229fee12ad-6"></a><span class="k">colorscheme</span> onedark  <span class="c">" Activa tema onedark</span>
+</figcaption></figure><div class="code"><pre class="code vim"><a id="rest_code_da43b9beb79c4c3690bc7cb99e042b97-1" name="rest_code_da43b9beb79c4c3690bc7cb99e042b97-1" href="#rest_code_da43b9beb79c4c3690bc7cb99e042b97-1"></a>Plug <span class="s1">'joshdick/onedark.vim'</span>
+<a id="rest_code_da43b9beb79c4c3690bc7cb99e042b97-2" name="rest_code_da43b9beb79c4c3690bc7cb99e042b97-2" href="#rest_code_da43b9beb79c4c3690bc7cb99e042b97-2"></a>
+<a id="rest_code_da43b9beb79c4c3690bc7cb99e042b97-3" name="rest_code_da43b9beb79c4c3690bc7cb99e042b97-3" href="#rest_code_da43b9beb79c4c3690bc7cb99e042b97-3"></a>...
+<a id="rest_code_da43b9beb79c4c3690bc7cb99e042b97-4" name="rest_code_da43b9beb79c4c3690bc7cb99e042b97-4" href="#rest_code_da43b9beb79c4c3690bc7cb99e042b97-4"></a>
+<a id="rest_code_da43b9beb79c4c3690bc7cb99e042b97-5" name="rest_code_da43b9beb79c4c3690bc7cb99e042b97-5" href="#rest_code_da43b9beb79c4c3690bc7cb99e042b97-5"></a><span class="k">set</span> termguicolors  <span class="c">" Activa true colors en la terminal</span>
+<a id="rest_code_da43b9beb79c4c3690bc7cb99e042b97-6" name="rest_code_da43b9beb79c4c3690bc7cb99e042b97-6" href="#rest_code_da43b9beb79c4c3690bc7cb99e042b97-6"></a><span class="k">colorscheme</span> onedark  <span class="c">" Activa tema onedark</span>
 </pre></div>
 <ul class="simple">
 <li><p><span class="raw-html"><i class="fa fa-external-link"></i></span> <a class="reference external" href="https://github.com/joshdick/onedark.vim">https://github.com/joshdick/onedark.vim</a></p></li>
@@ -351,13 +351,13 @@ o crees que mejoren tu productividad.</p>
 <figcaption><p>NeoSolarized light</p>
 </figcaption></figure><figure><a class="reference external image-reference" href="../../../images/nvim/plugins/neosolarized-dark.png"><img alt="NeoSolarized dark" src="../../../images/nvim/plugins/neosolarized-dark.png"></a>
 <figcaption><p>NeoSolarized dark</p>
-</figcaption></figure><div class="code"><pre class="code vim"><a id="rest_code_9f938d4e60f94c44972f86b00662388b-1" name="rest_code_9f938d4e60f94c44972f86b00662388b-1" href="#rest_code_9f938d4e60f94c44972f86b00662388b-1"></a>Plug <span class="s1">'iCyMind/NeoSolarized'</span>
-<a id="rest_code_9f938d4e60f94c44972f86b00662388b-2" name="rest_code_9f938d4e60f94c44972f86b00662388b-2" href="#rest_code_9f938d4e60f94c44972f86b00662388b-2"></a>
-<a id="rest_code_9f938d4e60f94c44972f86b00662388b-3" name="rest_code_9f938d4e60f94c44972f86b00662388b-3" href="#rest_code_9f938d4e60f94c44972f86b00662388b-3"></a>...
-<a id="rest_code_9f938d4e60f94c44972f86b00662388b-4" name="rest_code_9f938d4e60f94c44972f86b00662388b-4" href="#rest_code_9f938d4e60f94c44972f86b00662388b-4"></a>
-<a id="rest_code_9f938d4e60f94c44972f86b00662388b-5" name="rest_code_9f938d4e60f94c44972f86b00662388b-5" href="#rest_code_9f938d4e60f94c44972f86b00662388b-5"></a><span class="k">set</span> termguicolors  <span class="c">" Activa true colors en la terminal</span>
-<a id="rest_code_9f938d4e60f94c44972f86b00662388b-6" name="rest_code_9f938d4e60f94c44972f86b00662388b-6" href="#rest_code_9f938d4e60f94c44972f86b00662388b-6"></a><span class="k">set</span> <span class="nb">background</span><span class="p">=</span><span class="nb">dark</span>  <span class="c">" Fondo del tema: dark/light</span>
-<a id="rest_code_9f938d4e60f94c44972f86b00662388b-7" name="rest_code_9f938d4e60f94c44972f86b00662388b-7" href="#rest_code_9f938d4e60f94c44972f86b00662388b-7"></a><span class="k">colorscheme</span> NeoSolarized  <span class="c">" Activa tema NeoSolarized</span>
+</figcaption></figure><div class="code"><pre class="code vim"><a id="rest_code_e7c0166a93eb41c5994c3e732ee71b21-1" name="rest_code_e7c0166a93eb41c5994c3e732ee71b21-1" href="#rest_code_e7c0166a93eb41c5994c3e732ee71b21-1"></a>Plug <span class="s1">'iCyMind/NeoSolarized'</span>
+<a id="rest_code_e7c0166a93eb41c5994c3e732ee71b21-2" name="rest_code_e7c0166a93eb41c5994c3e732ee71b21-2" href="#rest_code_e7c0166a93eb41c5994c3e732ee71b21-2"></a>
+<a id="rest_code_e7c0166a93eb41c5994c3e732ee71b21-3" name="rest_code_e7c0166a93eb41c5994c3e732ee71b21-3" href="#rest_code_e7c0166a93eb41c5994c3e732ee71b21-3"></a>...
+<a id="rest_code_e7c0166a93eb41c5994c3e732ee71b21-4" name="rest_code_e7c0166a93eb41c5994c3e732ee71b21-4" href="#rest_code_e7c0166a93eb41c5994c3e732ee71b21-4"></a>
+<a id="rest_code_e7c0166a93eb41c5994c3e732ee71b21-5" name="rest_code_e7c0166a93eb41c5994c3e732ee71b21-5" href="#rest_code_e7c0166a93eb41c5994c3e732ee71b21-5"></a><span class="k">set</span> termguicolors  <span class="c">" Activa true colors en la terminal</span>
+<a id="rest_code_e7c0166a93eb41c5994c3e732ee71b21-6" name="rest_code_e7c0166a93eb41c5994c3e732ee71b21-6" href="#rest_code_e7c0166a93eb41c5994c3e732ee71b21-6"></a><span class="k">set</span> <span class="nb">background</span><span class="p">=</span><span class="nb">dark</span>  <span class="c">" Fondo del tema: dark/light</span>
+<a id="rest_code_e7c0166a93eb41c5994c3e732ee71b21-7" name="rest_code_e7c0166a93eb41c5994c3e732ee71b21-7" href="#rest_code_e7c0166a93eb41c5994c3e732ee71b21-7"></a><span class="k">colorscheme</span> NeoSolarized  <span class="c">" Activa tema NeoSolarized</span>
 </pre></div>
 <ul class="simple">
 <li><p><span class="raw-html"><i class="fa fa-external-link"></i></span> <a class="reference external" href="https://github.com/iCyMind/NeoSolarized">https://github.com/iCyMind/NeoSolarized</a></p></li>
@@ -376,14 +376,14 @@ o crees que mejoren tu productividad.</p>
 </blockquote>
 <figure><a class="reference external image-reference" href="../../../images/nvim/plugins/nerdtree.png"><img alt="NERDTree" src="../../../images/nvim/plugins/nerdtree.png"></a>
 <figcaption><p>NERDTree</p>
-</figcaption></figure><div class="code"><pre class="code vim"><a id="rest_code_d2ea7d72cc324a1c87f3915501af9478-1" name="rest_code_d2ea7d72cc324a1c87f3915501af9478-1" href="#rest_code_d2ea7d72cc324a1c87f3915501af9478-1"></a>Plug <span class="s1">'scrooloose/nerdtree'</span>
-<a id="rest_code_d2ea7d72cc324a1c87f3915501af9478-2" name="rest_code_d2ea7d72cc324a1c87f3915501af9478-2" href="#rest_code_d2ea7d72cc324a1c87f3915501af9478-2"></a>
-<a id="rest_code_d2ea7d72cc324a1c87f3915501af9478-3" name="rest_code_d2ea7d72cc324a1c87f3915501af9478-3" href="#rest_code_d2ea7d72cc324a1c87f3915501af9478-3"></a>...
-<a id="rest_code_d2ea7d72cc324a1c87f3915501af9478-4" name="rest_code_d2ea7d72cc324a1c87f3915501af9478-4" href="#rest_code_d2ea7d72cc324a1c87f3915501af9478-4"></a>
-<a id="rest_code_d2ea7d72cc324a1c87f3915501af9478-5" name="rest_code_d2ea7d72cc324a1c87f3915501af9478-5" href="#rest_code_d2ea7d72cc324a1c87f3915501af9478-5"></a><span class="k">let</span> <span class="k">g</span>:NERDTreeChDirMode <span class="p">=</span> <span class="m">2</span>  <span class="c">" Cambia el directorio actual al nodo padre actual</span>
-<a id="rest_code_d2ea7d72cc324a1c87f3915501af9478-6" name="rest_code_d2ea7d72cc324a1c87f3915501af9478-6" href="#rest_code_d2ea7d72cc324a1c87f3915501af9478-6"></a>
-<a id="rest_code_d2ea7d72cc324a1c87f3915501af9478-7" name="rest_code_d2ea7d72cc324a1c87f3915501af9478-7" href="#rest_code_d2ea7d72cc324a1c87f3915501af9478-7"></a><span class="c">" Abrir/cerrar NERDTree con F2</span>
-<a id="rest_code_d2ea7d72cc324a1c87f3915501af9478-8" name="rest_code_d2ea7d72cc324a1c87f3915501af9478-8" href="#rest_code_d2ea7d72cc324a1c87f3915501af9478-8"></a>map <span class="p">&lt;</span>F2<span class="p">&gt;</span> :NERDTreeToggle<span class="p">&lt;</span>CR<span class="p">&gt;</span>
+</figcaption></figure><div class="code"><pre class="code vim"><a id="rest_code_12ac0e0f01df4b5785d1b7bccadf19cf-1" name="rest_code_12ac0e0f01df4b5785d1b7bccadf19cf-1" href="#rest_code_12ac0e0f01df4b5785d1b7bccadf19cf-1"></a>Plug <span class="s1">'scrooloose/nerdtree'</span>
+<a id="rest_code_12ac0e0f01df4b5785d1b7bccadf19cf-2" name="rest_code_12ac0e0f01df4b5785d1b7bccadf19cf-2" href="#rest_code_12ac0e0f01df4b5785d1b7bccadf19cf-2"></a>
+<a id="rest_code_12ac0e0f01df4b5785d1b7bccadf19cf-3" name="rest_code_12ac0e0f01df4b5785d1b7bccadf19cf-3" href="#rest_code_12ac0e0f01df4b5785d1b7bccadf19cf-3"></a>...
+<a id="rest_code_12ac0e0f01df4b5785d1b7bccadf19cf-4" name="rest_code_12ac0e0f01df4b5785d1b7bccadf19cf-4" href="#rest_code_12ac0e0f01df4b5785d1b7bccadf19cf-4"></a>
+<a id="rest_code_12ac0e0f01df4b5785d1b7bccadf19cf-5" name="rest_code_12ac0e0f01df4b5785d1b7bccadf19cf-5" href="#rest_code_12ac0e0f01df4b5785d1b7bccadf19cf-5"></a><span class="k">let</span> <span class="k">g</span>:NERDTreeChDirMode <span class="p">=</span> <span class="m">2</span>  <span class="c">" Cambia el directorio actual al nodo padre actual</span>
+<a id="rest_code_12ac0e0f01df4b5785d1b7bccadf19cf-6" name="rest_code_12ac0e0f01df4b5785d1b7bccadf19cf-6" href="#rest_code_12ac0e0f01df4b5785d1b7bccadf19cf-6"></a>
+<a id="rest_code_12ac0e0f01df4b5785d1b7bccadf19cf-7" name="rest_code_12ac0e0f01df4b5785d1b7bccadf19cf-7" href="#rest_code_12ac0e0f01df4b5785d1b7bccadf19cf-7"></a><span class="c">" Abrir/cerrar NERDTree con F2</span>
+<a id="rest_code_12ac0e0f01df4b5785d1b7bccadf19cf-8" name="rest_code_12ac0e0f01df4b5785d1b7bccadf19cf-8" href="#rest_code_12ac0e0f01df4b5785d1b7bccadf19cf-8"></a>map <span class="p">&lt;</span>F2<span class="p">&gt;</span> :NERDTreeToggle<span class="p">&lt;</span>CR<span class="p">&gt;</span>
 </pre></div>
 <ul class="simple">
 <li>
@@ -405,18 +405,18 @@ presiona <code class="kbd docutils literal">Ctrl</code> + <code class="kbd docut
 </blockquote>
 <figure><a class="reference external image-reference" href="https://raw.githubusercontent.com/wiki/vim-airline/vim-airline/screenshots/demo.gif"><img alt="Airline" src="https://raw.githubusercontent.com/wiki/vim-airline/vim-airline/screenshots/demo.gif"></a>
 <figcaption><p>Airline</p>
-</figcaption></figure><div class="code"><pre class="code vim"><a id="rest_code_5962d0959fc6444b90b82849638b5829-1" name="rest_code_5962d0959fc6444b90b82849638b5829-1" href="#rest_code_5962d0959fc6444b90b82849638b5829-1"></a>Plug <span class="s1">'vim-airline/vim-airline'</span>
-<a id="rest_code_5962d0959fc6444b90b82849638b5829-2" name="rest_code_5962d0959fc6444b90b82849638b5829-2" href="#rest_code_5962d0959fc6444b90b82849638b5829-2"></a>Plug <span class="s1">'vim-airline/vim-airline-themes'</span>  <span class="c">" Temas para airline</span>
-<a id="rest_code_5962d0959fc6444b90b82849638b5829-3" name="rest_code_5962d0959fc6444b90b82849638b5829-3" href="#rest_code_5962d0959fc6444b90b82849638b5829-3"></a>
-<a id="rest_code_5962d0959fc6444b90b82849638b5829-4" name="rest_code_5962d0959fc6444b90b82849638b5829-4" href="#rest_code_5962d0959fc6444b90b82849638b5829-4"></a>...
-<a id="rest_code_5962d0959fc6444b90b82849638b5829-5" name="rest_code_5962d0959fc6444b90b82849638b5829-5" href="#rest_code_5962d0959fc6444b90b82849638b5829-5"></a>
-<a id="rest_code_5962d0959fc6444b90b82849638b5829-6" name="rest_code_5962d0959fc6444b90b82849638b5829-6" href="#rest_code_5962d0959fc6444b90b82849638b5829-6"></a><span class="k">let</span> <span class="k">g</span>:airline#extensions#<span class="nb">tabline</span>#enabled <span class="p">=</span> <span class="m">1</span>  <span class="c">" Mostrar buffers abiertos (como pestañas)</span>
-<a id="rest_code_5962d0959fc6444b90b82849638b5829-7" name="rest_code_5962d0959fc6444b90b82849638b5829-7" href="#rest_code_5962d0959fc6444b90b82849638b5829-7"></a><span class="k">let</span> <span class="k">g</span>:airline#extensions#<span class="nb">tabline</span>#fnamemod <span class="p">=</span> <span class="s1">':t'</span>  <span class="c">" Mostrar sólo el nombre del archivo</span>
-<a id="rest_code_5962d0959fc6444b90b82849638b5829-8" name="rest_code_5962d0959fc6444b90b82849638b5829-8" href="#rest_code_5962d0959fc6444b90b82849638b5829-8"></a>
-<a id="rest_code_5962d0959fc6444b90b82849638b5829-9" name="rest_code_5962d0959fc6444b90b82849638b5829-9" href="#rest_code_5962d0959fc6444b90b82849638b5829-9"></a><span class="c">" Cargar fuente Powerline y símbolos (ver nota)</span>
-<a id="rest_code_5962d0959fc6444b90b82849638b5829-10" name="rest_code_5962d0959fc6444b90b82849638b5829-10" href="#rest_code_5962d0959fc6444b90b82849638b5829-10"></a><span class="k">let</span> <span class="k">g</span>:airline_powerline_fonts <span class="p">=</span> <span class="m">1</span>
-<a id="rest_code_5962d0959fc6444b90b82849638b5829-11" name="rest_code_5962d0959fc6444b90b82849638b5829-11" href="#rest_code_5962d0959fc6444b90b82849638b5829-11"></a>
-<a id="rest_code_5962d0959fc6444b90b82849638b5829-12" name="rest_code_5962d0959fc6444b90b82849638b5829-12" href="#rest_code_5962d0959fc6444b90b82849638b5829-12"></a><span class="k">set</span> <span class="nb">noshowmode</span>  <span class="c">" No mostrar el modo actual (ya lo muestra la barra de estado)</span>
+</figcaption></figure><div class="code"><pre class="code vim"><a id="rest_code_35c954f969d84dcc9aeafe7b37dd3cc3-1" name="rest_code_35c954f969d84dcc9aeafe7b37dd3cc3-1" href="#rest_code_35c954f969d84dcc9aeafe7b37dd3cc3-1"></a>Plug <span class="s1">'vim-airline/vim-airline'</span>
+<a id="rest_code_35c954f969d84dcc9aeafe7b37dd3cc3-2" name="rest_code_35c954f969d84dcc9aeafe7b37dd3cc3-2" href="#rest_code_35c954f969d84dcc9aeafe7b37dd3cc3-2"></a>Plug <span class="s1">'vim-airline/vim-airline-themes'</span>  <span class="c">" Temas para airline</span>
+<a id="rest_code_35c954f969d84dcc9aeafe7b37dd3cc3-3" name="rest_code_35c954f969d84dcc9aeafe7b37dd3cc3-3" href="#rest_code_35c954f969d84dcc9aeafe7b37dd3cc3-3"></a>
+<a id="rest_code_35c954f969d84dcc9aeafe7b37dd3cc3-4" name="rest_code_35c954f969d84dcc9aeafe7b37dd3cc3-4" href="#rest_code_35c954f969d84dcc9aeafe7b37dd3cc3-4"></a>...
+<a id="rest_code_35c954f969d84dcc9aeafe7b37dd3cc3-5" name="rest_code_35c954f969d84dcc9aeafe7b37dd3cc3-5" href="#rest_code_35c954f969d84dcc9aeafe7b37dd3cc3-5"></a>
+<a id="rest_code_35c954f969d84dcc9aeafe7b37dd3cc3-6" name="rest_code_35c954f969d84dcc9aeafe7b37dd3cc3-6" href="#rest_code_35c954f969d84dcc9aeafe7b37dd3cc3-6"></a><span class="k">let</span> <span class="k">g</span>:airline#extensions#<span class="nb">tabline</span>#enabled <span class="p">=</span> <span class="m">1</span>  <span class="c">" Mostrar buffers abiertos (como pestañas)</span>
+<a id="rest_code_35c954f969d84dcc9aeafe7b37dd3cc3-7" name="rest_code_35c954f969d84dcc9aeafe7b37dd3cc3-7" href="#rest_code_35c954f969d84dcc9aeafe7b37dd3cc3-7"></a><span class="k">let</span> <span class="k">g</span>:airline#extensions#<span class="nb">tabline</span>#fnamemod <span class="p">=</span> <span class="s1">':t'</span>  <span class="c">" Mostrar sólo el nombre del archivo</span>
+<a id="rest_code_35c954f969d84dcc9aeafe7b37dd3cc3-8" name="rest_code_35c954f969d84dcc9aeafe7b37dd3cc3-8" href="#rest_code_35c954f969d84dcc9aeafe7b37dd3cc3-8"></a>
+<a id="rest_code_35c954f969d84dcc9aeafe7b37dd3cc3-9" name="rest_code_35c954f969d84dcc9aeafe7b37dd3cc3-9" href="#rest_code_35c954f969d84dcc9aeafe7b37dd3cc3-9"></a><span class="c">" Cargar fuente Powerline y símbolos (ver nota)</span>
+<a id="rest_code_35c954f969d84dcc9aeafe7b37dd3cc3-10" name="rest_code_35c954f969d84dcc9aeafe7b37dd3cc3-10" href="#rest_code_35c954f969d84dcc9aeafe7b37dd3cc3-10"></a><span class="k">let</span> <span class="k">g</span>:airline_powerline_fonts <span class="p">=</span> <span class="m">1</span>
+<a id="rest_code_35c954f969d84dcc9aeafe7b37dd3cc3-11" name="rest_code_35c954f969d84dcc9aeafe7b37dd3cc3-11" href="#rest_code_35c954f969d84dcc9aeafe7b37dd3cc3-11"></a>
+<a id="rest_code_35c954f969d84dcc9aeafe7b37dd3cc3-12" name="rest_code_35c954f969d84dcc9aeafe7b37dd3cc3-12" href="#rest_code_35c954f969d84dcc9aeafe7b37dd3cc3-12"></a><span class="k">set</span> <span class="nb">noshowmode</span>  <span class="c">" No mostrar el modo actual (ya lo muestra la barra de estado)</span>
 </pre></div>
 <aside class="admonition note"><p class="admonition-title">Nota</p>
 <p>Para que tu barra de estado luzca como en la imagen,
@@ -436,13 +436,13 @@ puedes instalar una de <a class="reference external" href="https://github.com/ry
 </blockquote>
 <figure><a class="reference external image-reference" href="https://camo.githubusercontent.com/77b20e2e707ac1d85fd8bc12f16b5b7b7e72e186/687474703a2f2f692e696d6775722e636f6d2f4b566930542e6a7067"><img alt="IndentLine" src="https://camo.githubusercontent.com/77b20e2e707ac1d85fd8bc12f16b5b7b7e72e186/687474703a2f2f692e696d6775722e636f6d2f4b566930542e6a7067"></a>
 <figcaption><p>IndentLine</p>
-</figcaption></figure><div class="code"><pre class="code vim"><a id="rest_code_aabfc91993804b6b8a3c9d90cec449e2-1" name="rest_code_aabfc91993804b6b8a3c9d90cec449e2-1" href="#rest_code_aabfc91993804b6b8a3c9d90cec449e2-1"></a>Plug <span class="s1">'Yggdroot/indentLine'</span>
-<a id="rest_code_aabfc91993804b6b8a3c9d90cec449e2-2" name="rest_code_aabfc91993804b6b8a3c9d90cec449e2-2" href="#rest_code_aabfc91993804b6b8a3c9d90cec449e2-2"></a>
-<a id="rest_code_aabfc91993804b6b8a3c9d90cec449e2-3" name="rest_code_aabfc91993804b6b8a3c9d90cec449e2-3" href="#rest_code_aabfc91993804b6b8a3c9d90cec449e2-3"></a>...
-<a id="rest_code_aabfc91993804b6b8a3c9d90cec449e2-4" name="rest_code_aabfc91993804b6b8a3c9d90cec449e2-4" href="#rest_code_aabfc91993804b6b8a3c9d90cec449e2-4"></a>
-<a id="rest_code_aabfc91993804b6b8a3c9d90cec449e2-5" name="rest_code_aabfc91993804b6b8a3c9d90cec449e2-5" href="#rest_code_aabfc91993804b6b8a3c9d90cec449e2-5"></a><span class="c">" No mostrar en ciertos tipos de buffers y archivos</span>
-<a id="rest_code_aabfc91993804b6b8a3c9d90cec449e2-6" name="rest_code_aabfc91993804b6b8a3c9d90cec449e2-6" href="#rest_code_aabfc91993804b6b8a3c9d90cec449e2-6"></a><span class="k">let</span> <span class="k">g</span>:indentLine_fileTypeExclude <span class="p">=</span> [<span class="s1">'text'</span><span class="p">,</span> <span class="s1">'sh'</span><span class="p">,</span> <span class="s1">'help'</span><span class="p">,</span> <span class="s1">'terminal'</span>]
-<a id="rest_code_aabfc91993804b6b8a3c9d90cec449e2-7" name="rest_code_aabfc91993804b6b8a3c9d90cec449e2-7" href="#rest_code_aabfc91993804b6b8a3c9d90cec449e2-7"></a><span class="k">let</span> <span class="k">g</span>:indentLine_bufNameExclude <span class="p">=</span> [<span class="s1">'NERD_tree.*'</span><span class="p">,</span> <span class="s1">'term:.*'</span>]
+</figcaption></figure><div class="code"><pre class="code vim"><a id="rest_code_4f6f339a4caa4cbdb9ba4b9135110a6a-1" name="rest_code_4f6f339a4caa4cbdb9ba4b9135110a6a-1" href="#rest_code_4f6f339a4caa4cbdb9ba4b9135110a6a-1"></a>Plug <span class="s1">'Yggdroot/indentLine'</span>
+<a id="rest_code_4f6f339a4caa4cbdb9ba4b9135110a6a-2" name="rest_code_4f6f339a4caa4cbdb9ba4b9135110a6a-2" href="#rest_code_4f6f339a4caa4cbdb9ba4b9135110a6a-2"></a>
+<a id="rest_code_4f6f339a4caa4cbdb9ba4b9135110a6a-3" name="rest_code_4f6f339a4caa4cbdb9ba4b9135110a6a-3" href="#rest_code_4f6f339a4caa4cbdb9ba4b9135110a6a-3"></a>...
+<a id="rest_code_4f6f339a4caa4cbdb9ba4b9135110a6a-4" name="rest_code_4f6f339a4caa4cbdb9ba4b9135110a6a-4" href="#rest_code_4f6f339a4caa4cbdb9ba4b9135110a6a-4"></a>
+<a id="rest_code_4f6f339a4caa4cbdb9ba4b9135110a6a-5" name="rest_code_4f6f339a4caa4cbdb9ba4b9135110a6a-5" href="#rest_code_4f6f339a4caa4cbdb9ba4b9135110a6a-5"></a><span class="c">" No mostrar en ciertos tipos de buffers y archivos</span>
+<a id="rest_code_4f6f339a4caa4cbdb9ba4b9135110a6a-6" name="rest_code_4f6f339a4caa4cbdb9ba4b9135110a6a-6" href="#rest_code_4f6f339a4caa4cbdb9ba4b9135110a6a-6"></a><span class="k">let</span> <span class="k">g</span>:indentLine_fileTypeExclude <span class="p">=</span> [<span class="s1">'text'</span><span class="p">,</span> <span class="s1">'sh'</span><span class="p">,</span> <span class="s1">'help'</span><span class="p">,</span> <span class="s1">'terminal'</span>]
+<a id="rest_code_4f6f339a4caa4cbdb9ba4b9135110a6a-7" name="rest_code_4f6f339a4caa4cbdb9ba4b9135110a6a-7" href="#rest_code_4f6f339a4caa4cbdb9ba4b9135110a6a-7"></a><span class="k">let</span> <span class="k">g</span>:indentLine_bufNameExclude <span class="p">=</span> [<span class="s1">'NERD_tree.*'</span><span class="p">,</span> <span class="s1">'term:.*'</span>]
 </pre></div>
 <ul class="simple">
 <li><p><span class="raw-html"><i class="fa fa-external-link"></i></span> <a class="reference external" href="https://github.com/Yggdroot/indentLine">https://github.com/Yggdroot/indentLine</a></p></li>
@@ -457,19 +457,19 @@ puedes instalar una de <a class="reference external" href="https://github.com/ry
 </blockquote>
 <figure><a class="reference external image-reference" href="https://raw.githubusercontent.com/mhartington/nvim-typescript/master/deoplete-tss.gif"><img alt="Deoplete" src="https://raw.githubusercontent.com/mhartington/nvim-typescript/master/deoplete-tss.gif"></a>
 <figcaption><p>Deoplete</p>
-</figcaption></figure><div class="code"><pre class="code vim"><a id="rest_code_c45d3a5b2def4d97b7bdcb3b6641ae10-1" name="rest_code_c45d3a5b2def4d97b7bdcb3b6641ae10-1" href="#rest_code_c45d3a5b2def4d97b7bdcb3b6641ae10-1"></a>Plug <span class="s1">'Shougo/deoplete.nvim'</span><span class="p">,</span> { <span class="s1">'do'</span>: <span class="s1">':UpdateRemotePlugins'</span> }
-<a id="rest_code_c45d3a5b2def4d97b7bdcb3b6641ae10-2" name="rest_code_c45d3a5b2def4d97b7bdcb3b6641ae10-2" href="#rest_code_c45d3a5b2def4d97b7bdcb3b6641ae10-2"></a>Plug <span class="s1">'Shougo/neco-syntax'</span>  <span class="c">" Fuente general de auto completado</span>
-<a id="rest_code_c45d3a5b2def4d97b7bdcb3b6641ae10-3" name="rest_code_c45d3a5b2def4d97b7bdcb3b6641ae10-3" href="#rest_code_c45d3a5b2def4d97b7bdcb3b6641ae10-3"></a>
-<a id="rest_code_c45d3a5b2def4d97b7bdcb3b6641ae10-4" name="rest_code_c45d3a5b2def4d97b7bdcb3b6641ae10-4" href="#rest_code_c45d3a5b2def4d97b7bdcb3b6641ae10-4"></a>...
-<a id="rest_code_c45d3a5b2def4d97b7bdcb3b6641ae10-5" name="rest_code_c45d3a5b2def4d97b7bdcb3b6641ae10-5" href="#rest_code_c45d3a5b2def4d97b7bdcb3b6641ae10-5"></a>
-<a id="rest_code_c45d3a5b2def4d97b7bdcb3b6641ae10-6" name="rest_code_c45d3a5b2def4d97b7bdcb3b6641ae10-6" href="#rest_code_c45d3a5b2def4d97b7bdcb3b6641ae10-6"></a><span class="c">" Activar deoplete al iniciar Neovim</span>
-<a id="rest_code_c45d3a5b2def4d97b7bdcb3b6641ae10-7" name="rest_code_c45d3a5b2def4d97b7bdcb3b6641ae10-7" href="#rest_code_c45d3a5b2def4d97b7bdcb3b6641ae10-7"></a><span class="k">let</span> <span class="k">g</span>:deoplete#enable_at_startup <span class="p">=</span> <span class="m">1</span>
-<a id="rest_code_c45d3a5b2def4d97b7bdcb3b6641ae10-8" name="rest_code_c45d3a5b2def4d97b7bdcb3b6641ae10-8" href="#rest_code_c45d3a5b2def4d97b7bdcb3b6641ae10-8"></a>
-<a id="rest_code_c45d3a5b2def4d97b7bdcb3b6641ae10-9" name="rest_code_c45d3a5b2def4d97b7bdcb3b6641ae10-9" href="#rest_code_c45d3a5b2def4d97b7bdcb3b6641ae10-9"></a><span class="c">" Cerrar automaticamente la ventana de vista previa (donde se muestra documentación, si existe)</span>
-<a id="rest_code_c45d3a5b2def4d97b7bdcb3b6641ae10-10" name="rest_code_c45d3a5b2def4d97b7bdcb3b6641ae10-10" href="#rest_code_c45d3a5b2def4d97b7bdcb3b6641ae10-10"></a>augroup deopleteCompleteDoneAu
-<a id="rest_code_c45d3a5b2def4d97b7bdcb3b6641ae10-11" name="rest_code_c45d3a5b2def4d97b7bdcb3b6641ae10-11" href="#rest_code_c45d3a5b2def4d97b7bdcb3b6641ae10-11"></a>  autocmd<span class="p">!</span>
-<a id="rest_code_c45d3a5b2def4d97b7bdcb3b6641ae10-12" name="rest_code_c45d3a5b2def4d97b7bdcb3b6641ae10-12" href="#rest_code_c45d3a5b2def4d97b7bdcb3b6641ae10-12"></a>  autocmd <span class="nb">CompleteDone</span> * <span class="k">silent</span><span class="p">!</span> <span class="k">pclose</span><span class="p">!</span>
-<a id="rest_code_c45d3a5b2def4d97b7bdcb3b6641ae10-13" name="rest_code_c45d3a5b2def4d97b7bdcb3b6641ae10-13" href="#rest_code_c45d3a5b2def4d97b7bdcb3b6641ae10-13"></a>augroup END
+</figcaption></figure><div class="code"><pre class="code vim"><a id="rest_code_51e50be9d3ce47a79d387b0d81ac1cfe-1" name="rest_code_51e50be9d3ce47a79d387b0d81ac1cfe-1" href="#rest_code_51e50be9d3ce47a79d387b0d81ac1cfe-1"></a>Plug <span class="s1">'Shougo/deoplete.nvim'</span><span class="p">,</span> { <span class="s1">'do'</span>: <span class="s1">':UpdateRemotePlugins'</span> }
+<a id="rest_code_51e50be9d3ce47a79d387b0d81ac1cfe-2" name="rest_code_51e50be9d3ce47a79d387b0d81ac1cfe-2" href="#rest_code_51e50be9d3ce47a79d387b0d81ac1cfe-2"></a>Plug <span class="s1">'Shougo/neco-syntax'</span>  <span class="c">" Fuente general de auto completado</span>
+<a id="rest_code_51e50be9d3ce47a79d387b0d81ac1cfe-3" name="rest_code_51e50be9d3ce47a79d387b0d81ac1cfe-3" href="#rest_code_51e50be9d3ce47a79d387b0d81ac1cfe-3"></a>
+<a id="rest_code_51e50be9d3ce47a79d387b0d81ac1cfe-4" name="rest_code_51e50be9d3ce47a79d387b0d81ac1cfe-4" href="#rest_code_51e50be9d3ce47a79d387b0d81ac1cfe-4"></a>...
+<a id="rest_code_51e50be9d3ce47a79d387b0d81ac1cfe-5" name="rest_code_51e50be9d3ce47a79d387b0d81ac1cfe-5" href="#rest_code_51e50be9d3ce47a79d387b0d81ac1cfe-5"></a>
+<a id="rest_code_51e50be9d3ce47a79d387b0d81ac1cfe-6" name="rest_code_51e50be9d3ce47a79d387b0d81ac1cfe-6" href="#rest_code_51e50be9d3ce47a79d387b0d81ac1cfe-6"></a><span class="c">" Activar deoplete al iniciar Neovim</span>
+<a id="rest_code_51e50be9d3ce47a79d387b0d81ac1cfe-7" name="rest_code_51e50be9d3ce47a79d387b0d81ac1cfe-7" href="#rest_code_51e50be9d3ce47a79d387b0d81ac1cfe-7"></a><span class="k">let</span> <span class="k">g</span>:deoplete#enable_at_startup <span class="p">=</span> <span class="m">1</span>
+<a id="rest_code_51e50be9d3ce47a79d387b0d81ac1cfe-8" name="rest_code_51e50be9d3ce47a79d387b0d81ac1cfe-8" href="#rest_code_51e50be9d3ce47a79d387b0d81ac1cfe-8"></a>
+<a id="rest_code_51e50be9d3ce47a79d387b0d81ac1cfe-9" name="rest_code_51e50be9d3ce47a79d387b0d81ac1cfe-9" href="#rest_code_51e50be9d3ce47a79d387b0d81ac1cfe-9"></a><span class="c">" Cerrar automaticamente la ventana de vista previa (donde se muestra documentación, si existe)</span>
+<a id="rest_code_51e50be9d3ce47a79d387b0d81ac1cfe-10" name="rest_code_51e50be9d3ce47a79d387b0d81ac1cfe-10" href="#rest_code_51e50be9d3ce47a79d387b0d81ac1cfe-10"></a>augroup deopleteCompleteDoneAu
+<a id="rest_code_51e50be9d3ce47a79d387b0d81ac1cfe-11" name="rest_code_51e50be9d3ce47a79d387b0d81ac1cfe-11" href="#rest_code_51e50be9d3ce47a79d387b0d81ac1cfe-11"></a>  autocmd<span class="p">!</span>
+<a id="rest_code_51e50be9d3ce47a79d387b0d81ac1cfe-12" name="rest_code_51e50be9d3ce47a79d387b0d81ac1cfe-12" href="#rest_code_51e50be9d3ce47a79d387b0d81ac1cfe-12"></a>  autocmd <span class="nb">CompleteDone</span> * <span class="k">silent</span><span class="p">!</span> <span class="k">pclose</span><span class="p">!</span>
+<a id="rest_code_51e50be9d3ce47a79d387b0d81ac1cfe-13" name="rest_code_51e50be9d3ce47a79d387b0d81ac1cfe-13" href="#rest_code_51e50be9d3ce47a79d387b0d81ac1cfe-13"></a>augroup END
 </pre></div>
 <ul class="simple">
 <li><p><span class="raw-html"><i class="fa fa-external-link"></i></span> <a class="reference external" href="https://github.com/Shougo/deoplete.nvim">https://github.com/Shougo/deoplete.nvim</a>"</p></li>
@@ -482,12 +482,12 @@ puedes encontrar una lista de varias fuentes <a class="reference external" href=
 <blockquote>
 <p>Permite navegar entre las sugerencias de deoplete usando <code class="kbd docutils literal">Tab</code>.</p>
 </blockquote>
-<div class="code"><pre class="code vim"><a id="rest_code_649413f80c6e40c19c1fea1137f2dc19-1" name="rest_code_649413f80c6e40c19c1fea1137f2dc19-1" href="#rest_code_649413f80c6e40c19c1fea1137f2dc19-1"></a>Plug <span class="s1">'ervandew/supertab'</span>
-<a id="rest_code_649413f80c6e40c19c1fea1137f2dc19-2" name="rest_code_649413f80c6e40c19c1fea1137f2dc19-2" href="#rest_code_649413f80c6e40c19c1fea1137f2dc19-2"></a>
-<a id="rest_code_649413f80c6e40c19c1fea1137f2dc19-3" name="rest_code_649413f80c6e40c19c1fea1137f2dc19-3" href="#rest_code_649413f80c6e40c19c1fea1137f2dc19-3"></a>...
-<a id="rest_code_649413f80c6e40c19c1fea1137f2dc19-4" name="rest_code_649413f80c6e40c19c1fea1137f2dc19-4" href="#rest_code_649413f80c6e40c19c1fea1137f2dc19-4"></a>
-<a id="rest_code_649413f80c6e40c19c1fea1137f2dc19-5" name="rest_code_649413f80c6e40c19c1fea1137f2dc19-5" href="#rest_code_649413f80c6e40c19c1fea1137f2dc19-5"></a><span class="c">" Invertir direccion de navegacion (de arriba a abajo)</span>
-<a id="rest_code_649413f80c6e40c19c1fea1137f2dc19-6" name="rest_code_649413f80c6e40c19c1fea1137f2dc19-6" href="#rest_code_649413f80c6e40c19c1fea1137f2dc19-6"></a><span class="k">let</span> <span class="k">g</span>:SuperTabDefaultCompletionType <span class="p">=</span> <span class="s1">'&lt;c-n&gt;'</span>
+<div class="code"><pre class="code vim"><a id="rest_code_e4820c03d06e496eb397ea67409dd3d8-1" name="rest_code_e4820c03d06e496eb397ea67409dd3d8-1" href="#rest_code_e4820c03d06e496eb397ea67409dd3d8-1"></a>Plug <span class="s1">'ervandew/supertab'</span>
+<a id="rest_code_e4820c03d06e496eb397ea67409dd3d8-2" name="rest_code_e4820c03d06e496eb397ea67409dd3d8-2" href="#rest_code_e4820c03d06e496eb397ea67409dd3d8-2"></a>
+<a id="rest_code_e4820c03d06e496eb397ea67409dd3d8-3" name="rest_code_e4820c03d06e496eb397ea67409dd3d8-3" href="#rest_code_e4820c03d06e496eb397ea67409dd3d8-3"></a>...
+<a id="rest_code_e4820c03d06e496eb397ea67409dd3d8-4" name="rest_code_e4820c03d06e496eb397ea67409dd3d8-4" href="#rest_code_e4820c03d06e496eb397ea67409dd3d8-4"></a>
+<a id="rest_code_e4820c03d06e496eb397ea67409dd3d8-5" name="rest_code_e4820c03d06e496eb397ea67409dd3d8-5" href="#rest_code_e4820c03d06e496eb397ea67409dd3d8-5"></a><span class="c">" Invertir direccion de navegacion (de arriba a abajo)</span>
+<a id="rest_code_e4820c03d06e496eb397ea67409dd3d8-6" name="rest_code_e4820c03d06e496eb397ea67409dd3d8-6" href="#rest_code_e4820c03d06e496eb397ea67409dd3d8-6"></a><span class="k">let</span> <span class="k">g</span>:SuperTabDefaultCompletionType <span class="p">=</span> <span class="s1">'&lt;c-n&gt;'</span>
 </pre></div>
 <ul class="simple">
 <li><p><span class="raw-html"><i class="fa fa-external-link"></i></span> <a class="reference external" href="https://github.com/ervandew/supertab">https://github.com/ervandew/supertab</a></p></li>
@@ -499,14 +499,14 @@ puedes encontrar una lista de varias fuentes <a class="reference external" href=
 </blockquote>
 <figure><a class="reference external image-reference" href="https://cloud.githubusercontent.com/assets/111942/19444981/a076d748-9460-11e6-851c-f249f8110b3b.gif"><img alt="echodoc" src="https://cloud.githubusercontent.com/assets/111942/19444981/a076d748-9460-11e6-851c-f249f8110b3b.gif"></a>
 <figcaption><p>echodoc</p>
-</figcaption></figure><div class="code"><pre class="code vim"><a id="rest_code_67f340a42fca4b25958b0c79d921984c-1" name="rest_code_67f340a42fca4b25958b0c79d921984c-1" href="#rest_code_67f340a42fca4b25958b0c79d921984c-1"></a>Plug <span class="s1">'Shougo/echodoc.vim'</span>
-<a id="rest_code_67f340a42fca4b25958b0c79d921984c-2" name="rest_code_67f340a42fca4b25958b0c79d921984c-2" href="#rest_code_67f340a42fca4b25958b0c79d921984c-2"></a>
-<a id="rest_code_67f340a42fca4b25958b0c79d921984c-3" name="rest_code_67f340a42fca4b25958b0c79d921984c-3" href="#rest_code_67f340a42fca4b25958b0c79d921984c-3"></a>...
-<a id="rest_code_67f340a42fca4b25958b0c79d921984c-4" name="rest_code_67f340a42fca4b25958b0c79d921984c-4" href="#rest_code_67f340a42fca4b25958b0c79d921984c-4"></a>
-<a id="rest_code_67f340a42fca4b25958b0c79d921984c-5" name="rest_code_67f340a42fca4b25958b0c79d921984c-5" href="#rest_code_67f340a42fca4b25958b0c79d921984c-5"></a><span class="k">set</span> <span class="nb">noshowmode</span>  <span class="c">" No mostrar el modo actual (echodoc hace uso de este espacio)</span>
-<a id="rest_code_67f340a42fca4b25958b0c79d921984c-6" name="rest_code_67f340a42fca4b25958b0c79d921984c-6" href="#rest_code_67f340a42fca4b25958b0c79d921984c-6"></a>
-<a id="rest_code_67f340a42fca4b25958b0c79d921984c-7" name="rest_code_67f340a42fca4b25958b0c79d921984c-7" href="#rest_code_67f340a42fca4b25958b0c79d921984c-7"></a><span class="c">" Activar echodoc al iniciar Neovim</span>
-<a id="rest_code_67f340a42fca4b25958b0c79d921984c-8" name="rest_code_67f340a42fca4b25958b0c79d921984c-8" href="#rest_code_67f340a42fca4b25958b0c79d921984c-8"></a><span class="k">let</span> <span class="k">g</span>:echodoc_enable_at_startup <span class="p">=</span> <span class="m">1</span>
+</figcaption></figure><div class="code"><pre class="code vim"><a id="rest_code_b954659eca114820b6800d6b4e165c18-1" name="rest_code_b954659eca114820b6800d6b4e165c18-1" href="#rest_code_b954659eca114820b6800d6b4e165c18-1"></a>Plug <span class="s1">'Shougo/echodoc.vim'</span>
+<a id="rest_code_b954659eca114820b6800d6b4e165c18-2" name="rest_code_b954659eca114820b6800d6b4e165c18-2" href="#rest_code_b954659eca114820b6800d6b4e165c18-2"></a>
+<a id="rest_code_b954659eca114820b6800d6b4e165c18-3" name="rest_code_b954659eca114820b6800d6b4e165c18-3" href="#rest_code_b954659eca114820b6800d6b4e165c18-3"></a>...
+<a id="rest_code_b954659eca114820b6800d6b4e165c18-4" name="rest_code_b954659eca114820b6800d6b4e165c18-4" href="#rest_code_b954659eca114820b6800d6b4e165c18-4"></a>
+<a id="rest_code_b954659eca114820b6800d6b4e165c18-5" name="rest_code_b954659eca114820b6800d6b4e165c18-5" href="#rest_code_b954659eca114820b6800d6b4e165c18-5"></a><span class="k">set</span> <span class="nb">noshowmode</span>  <span class="c">" No mostrar el modo actual (echodoc hace uso de este espacio)</span>
+<a id="rest_code_b954659eca114820b6800d6b4e165c18-6" name="rest_code_b954659eca114820b6800d6b4e165c18-6" href="#rest_code_b954659eca114820b6800d6b4e165c18-6"></a>
+<a id="rest_code_b954659eca114820b6800d6b4e165c18-7" name="rest_code_b954659eca114820b6800d6b4e165c18-7" href="#rest_code_b954659eca114820b6800d6b4e165c18-7"></a><span class="c">" Activar echodoc al iniciar Neovim</span>
+<a id="rest_code_b954659eca114820b6800d6b4e165c18-8" name="rest_code_b954659eca114820b6800d6b4e165c18-8" href="#rest_code_b954659eca114820b6800d6b4e165c18-8"></a><span class="k">let</span> <span class="k">g</span>:echodoc_enable_at_startup <span class="p">=</span> <span class="m">1</span>
 </pre></div>
 <ul class="simple">
 <li><p><span class="raw-html"><i class="fa fa-external-link"></i></span> <a class="reference external" href="https://github.com/Shougo/echodoc.vim">https://github.com/Shougo/echodoc.vim</a>"</p></li>
@@ -521,18 +521,18 @@ puedes encontrar una lista de varias fuentes <a class="reference external" href=
 </blockquote>
 <figure><a class="reference external image-reference" href="https://camo.githubusercontent.com/296aecf30e1607233814196db6bd3f5f47e70c73/68747470733a2f2f7261772e6769746875622e636f6d2f5369725665722f756c7469736e6970732f6d61737465722f646f632f64656d6f2e676966"><img alt="Ultisnips" src="https://camo.githubusercontent.com/296aecf30e1607233814196db6bd3f5f47e70c73/68747470733a2f2f7261772e6769746875622e636f6d2f5369725665722f756c7469736e6970732f6d61737465722f646f632f64656d6f2e676966"></a>
 <figcaption><p>Ultisnips</p>
-</figcaption></figure><div class="code"><pre class="code vim"><a id="rest_code_af5c75e4e269455cb91c429503d6e9ce-1" name="rest_code_af5c75e4e269455cb91c429503d6e9ce-1" href="#rest_code_af5c75e4e269455cb91c429503d6e9ce-1"></a>Plug <span class="s1">'sirver/ultisnips'</span>
-<a id="rest_code_af5c75e4e269455cb91c429503d6e9ce-2" name="rest_code_af5c75e4e269455cb91c429503d6e9ce-2" href="#rest_code_af5c75e4e269455cb91c429503d6e9ce-2"></a>Plug <span class="s1">'honza/vim-snippets'</span>
-<a id="rest_code_af5c75e4e269455cb91c429503d6e9ce-3" name="rest_code_af5c75e4e269455cb91c429503d6e9ce-3" href="#rest_code_af5c75e4e269455cb91c429503d6e9ce-3"></a>
-<a id="rest_code_af5c75e4e269455cb91c429503d6e9ce-4" name="rest_code_af5c75e4e269455cb91c429503d6e9ce-4" href="#rest_code_af5c75e4e269455cb91c429503d6e9ce-4"></a>...
-<a id="rest_code_af5c75e4e269455cb91c429503d6e9ce-5" name="rest_code_af5c75e4e269455cb91c429503d6e9ce-5" href="#rest_code_af5c75e4e269455cb91c429503d6e9ce-5"></a>
-<a id="rest_code_af5c75e4e269455cb91c429503d6e9ce-6" name="rest_code_af5c75e4e269455cb91c429503d6e9ce-6" href="#rest_code_af5c75e4e269455cb91c429503d6e9ce-6"></a><span class="c">" Expandir snippet con Ctrl + j</span>
-<a id="rest_code_af5c75e4e269455cb91c429503d6e9ce-7" name="rest_code_af5c75e4e269455cb91c429503d6e9ce-7" href="#rest_code_af5c75e4e269455cb91c429503d6e9ce-7"></a><span class="k">let</span> <span class="k">g</span>:UltiSnipsExpandTrigger <span class="p">=</span> <span class="s1">'&lt;c-j&gt;'</span>
-<a id="rest_code_af5c75e4e269455cb91c429503d6e9ce-8" name="rest_code_af5c75e4e269455cb91c429503d6e9ce-8" href="#rest_code_af5c75e4e269455cb91c429503d6e9ce-8"></a>
-<a id="rest_code_af5c75e4e269455cb91c429503d6e9ce-9" name="rest_code_af5c75e4e269455cb91c429503d6e9ce-9" href="#rest_code_af5c75e4e269455cb91c429503d6e9ce-9"></a><span class="c">" Ir a siguiente ubicacion con Ctrl + j</span>
-<a id="rest_code_af5c75e4e269455cb91c429503d6e9ce-10" name="rest_code_af5c75e4e269455cb91c429503d6e9ce-10" href="#rest_code_af5c75e4e269455cb91c429503d6e9ce-10"></a><span class="k">let</span> <span class="k">g</span>:UltiSnipsJumpForwardTrigger <span class="p">=</span> <span class="s1">'&lt;c-j&gt;'</span>
-<a id="rest_code_af5c75e4e269455cb91c429503d6e9ce-11" name="rest_code_af5c75e4e269455cb91c429503d6e9ce-11" href="#rest_code_af5c75e4e269455cb91c429503d6e9ce-11"></a><span class="c">" Ir a anterior ubicacion con Ctrl + k</span>
-<a id="rest_code_af5c75e4e269455cb91c429503d6e9ce-12" name="rest_code_af5c75e4e269455cb91c429503d6e9ce-12" href="#rest_code_af5c75e4e269455cb91c429503d6e9ce-12"></a><span class="k">let</span> <span class="k">g</span>:UltiSnipsJumpBackwardTrigger <span class="p">=</span> <span class="s1">'&lt;c-k&gt;'</span>
+</figcaption></figure><div class="code"><pre class="code vim"><a id="rest_code_8f53a6d41766462b813c02ac9ccd41df-1" name="rest_code_8f53a6d41766462b813c02ac9ccd41df-1" href="#rest_code_8f53a6d41766462b813c02ac9ccd41df-1"></a>Plug <span class="s1">'sirver/ultisnips'</span>
+<a id="rest_code_8f53a6d41766462b813c02ac9ccd41df-2" name="rest_code_8f53a6d41766462b813c02ac9ccd41df-2" href="#rest_code_8f53a6d41766462b813c02ac9ccd41df-2"></a>Plug <span class="s1">'honza/vim-snippets'</span>
+<a id="rest_code_8f53a6d41766462b813c02ac9ccd41df-3" name="rest_code_8f53a6d41766462b813c02ac9ccd41df-3" href="#rest_code_8f53a6d41766462b813c02ac9ccd41df-3"></a>
+<a id="rest_code_8f53a6d41766462b813c02ac9ccd41df-4" name="rest_code_8f53a6d41766462b813c02ac9ccd41df-4" href="#rest_code_8f53a6d41766462b813c02ac9ccd41df-4"></a>...
+<a id="rest_code_8f53a6d41766462b813c02ac9ccd41df-5" name="rest_code_8f53a6d41766462b813c02ac9ccd41df-5" href="#rest_code_8f53a6d41766462b813c02ac9ccd41df-5"></a>
+<a id="rest_code_8f53a6d41766462b813c02ac9ccd41df-6" name="rest_code_8f53a6d41766462b813c02ac9ccd41df-6" href="#rest_code_8f53a6d41766462b813c02ac9ccd41df-6"></a><span class="c">" Expandir snippet con Ctrl + j</span>
+<a id="rest_code_8f53a6d41766462b813c02ac9ccd41df-7" name="rest_code_8f53a6d41766462b813c02ac9ccd41df-7" href="#rest_code_8f53a6d41766462b813c02ac9ccd41df-7"></a><span class="k">let</span> <span class="k">g</span>:UltiSnipsExpandTrigger <span class="p">=</span> <span class="s1">'&lt;c-j&gt;'</span>
+<a id="rest_code_8f53a6d41766462b813c02ac9ccd41df-8" name="rest_code_8f53a6d41766462b813c02ac9ccd41df-8" href="#rest_code_8f53a6d41766462b813c02ac9ccd41df-8"></a>
+<a id="rest_code_8f53a6d41766462b813c02ac9ccd41df-9" name="rest_code_8f53a6d41766462b813c02ac9ccd41df-9" href="#rest_code_8f53a6d41766462b813c02ac9ccd41df-9"></a><span class="c">" Ir a siguiente ubicacion con Ctrl + j</span>
+<a id="rest_code_8f53a6d41766462b813c02ac9ccd41df-10" name="rest_code_8f53a6d41766462b813c02ac9ccd41df-10" href="#rest_code_8f53a6d41766462b813c02ac9ccd41df-10"></a><span class="k">let</span> <span class="k">g</span>:UltiSnipsJumpForwardTrigger <span class="p">=</span> <span class="s1">'&lt;c-j&gt;'</span>
+<a id="rest_code_8f53a6d41766462b813c02ac9ccd41df-11" name="rest_code_8f53a6d41766462b813c02ac9ccd41df-11" href="#rest_code_8f53a6d41766462b813c02ac9ccd41df-11"></a><span class="c">" Ir a anterior ubicacion con Ctrl + k</span>
+<a id="rest_code_8f53a6d41766462b813c02ac9ccd41df-12" name="rest_code_8f53a6d41766462b813c02ac9ccd41df-12" href="#rest_code_8f53a6d41766462b813c02ac9ccd41df-12"></a><span class="k">let</span> <span class="k">g</span>:UltiSnipsJumpBackwardTrigger <span class="p">=</span> <span class="s1">'&lt;c-k&gt;'</span>
 </pre></div>
 <ul class="simple">
 <li><p><span class="raw-html"><i class="fa fa-external-link"></i></span> <a class="reference external" href="https://github.com/sirver/ultisnips">https://github.com/sirver/ultisnips</a></p></li>
@@ -544,14 +544,14 @@ puedes encontrar una lista de varias fuentes <a class="reference external" href=
 </blockquote>
 <figure><a class="reference external image-reference" href="https://github.com/w0rp/ale/raw/master/img/example.gif?raw=true"><img alt="ALE" src="https://github.com/w0rp/ale/raw/master/img/example.gif?raw=true"></a>
 <figcaption><p>ALE</p>
-</figcaption></figure><div class="code"><pre class="code vim"><a id="rest_code_aa7341f0b72d466fa2b9ca35391fbc9e-1" name="rest_code_aa7341f0b72d466fa2b9ca35391fbc9e-1" href="#rest_code_aa7341f0b72d466fa2b9ca35391fbc9e-1"></a>Plug <span class="s1">'w0rp/ale'</span>
-<a id="rest_code_aa7341f0b72d466fa2b9ca35391fbc9e-2" name="rest_code_aa7341f0b72d466fa2b9ca35391fbc9e-2" href="#rest_code_aa7341f0b72d466fa2b9ca35391fbc9e-2"></a>
-<a id="rest_code_aa7341f0b72d466fa2b9ca35391fbc9e-3" name="rest_code_aa7341f0b72d466fa2b9ca35391fbc9e-3" href="#rest_code_aa7341f0b72d466fa2b9ca35391fbc9e-3"></a>...
-<a id="rest_code_aa7341f0b72d466fa2b9ca35391fbc9e-4" name="rest_code_aa7341f0b72d466fa2b9ca35391fbc9e-4" href="#rest_code_aa7341f0b72d466fa2b9ca35391fbc9e-4"></a>
-<a id="rest_code_aa7341f0b72d466fa2b9ca35391fbc9e-5" name="rest_code_aa7341f0b72d466fa2b9ca35391fbc9e-5" href="#rest_code_aa7341f0b72d466fa2b9ca35391fbc9e-5"></a><span class="c">" Mostrar mejor mensajes de error</span>
-<a id="rest_code_aa7341f0b72d466fa2b9ca35391fbc9e-6" name="rest_code_aa7341f0b72d466fa2b9ca35391fbc9e-6" href="#rest_code_aa7341f0b72d466fa2b9ca35391fbc9e-6"></a><span class="k">let</span> <span class="k">g</span>:ale_echo_msg_error_str <span class="p">=</span> <span class="s1">'E'</span>
-<a id="rest_code_aa7341f0b72d466fa2b9ca35391fbc9e-7" name="rest_code_aa7341f0b72d466fa2b9ca35391fbc9e-7" href="#rest_code_aa7341f0b72d466fa2b9ca35391fbc9e-7"></a><span class="k">let</span> <span class="k">g</span>:ale_echo_msg_warning_str <span class="p">=</span> <span class="s1">'W'</span>
-<a id="rest_code_aa7341f0b72d466fa2b9ca35391fbc9e-8" name="rest_code_aa7341f0b72d466fa2b9ca35391fbc9e-8" href="#rest_code_aa7341f0b72d466fa2b9ca35391fbc9e-8"></a><span class="k">let</span> <span class="k">g</span>:ale_echo_msg_format <span class="p">=</span> <span class="s1">'[%linter%] %s [%severity%]'</span>
+</figcaption></figure><div class="code"><pre class="code vim"><a id="rest_code_c3e5e08969c940ffb1b5a1a34470ea0b-1" name="rest_code_c3e5e08969c940ffb1b5a1a34470ea0b-1" href="#rest_code_c3e5e08969c940ffb1b5a1a34470ea0b-1"></a>Plug <span class="s1">'w0rp/ale'</span>
+<a id="rest_code_c3e5e08969c940ffb1b5a1a34470ea0b-2" name="rest_code_c3e5e08969c940ffb1b5a1a34470ea0b-2" href="#rest_code_c3e5e08969c940ffb1b5a1a34470ea0b-2"></a>
+<a id="rest_code_c3e5e08969c940ffb1b5a1a34470ea0b-3" name="rest_code_c3e5e08969c940ffb1b5a1a34470ea0b-3" href="#rest_code_c3e5e08969c940ffb1b5a1a34470ea0b-3"></a>...
+<a id="rest_code_c3e5e08969c940ffb1b5a1a34470ea0b-4" name="rest_code_c3e5e08969c940ffb1b5a1a34470ea0b-4" href="#rest_code_c3e5e08969c940ffb1b5a1a34470ea0b-4"></a>
+<a id="rest_code_c3e5e08969c940ffb1b5a1a34470ea0b-5" name="rest_code_c3e5e08969c940ffb1b5a1a34470ea0b-5" href="#rest_code_c3e5e08969c940ffb1b5a1a34470ea0b-5"></a><span class="c">" Mostrar mejor mensajes de error</span>
+<a id="rest_code_c3e5e08969c940ffb1b5a1a34470ea0b-6" name="rest_code_c3e5e08969c940ffb1b5a1a34470ea0b-6" href="#rest_code_c3e5e08969c940ffb1b5a1a34470ea0b-6"></a><span class="k">let</span> <span class="k">g</span>:ale_echo_msg_error_str <span class="p">=</span> <span class="s1">'E'</span>
+<a id="rest_code_c3e5e08969c940ffb1b5a1a34470ea0b-7" name="rest_code_c3e5e08969c940ffb1b5a1a34470ea0b-7" href="#rest_code_c3e5e08969c940ffb1b5a1a34470ea0b-7"></a><span class="k">let</span> <span class="k">g</span>:ale_echo_msg_warning_str <span class="p">=</span> <span class="s1">'W'</span>
+<a id="rest_code_c3e5e08969c940ffb1b5a1a34470ea0b-8" name="rest_code_c3e5e08969c940ffb1b5a1a34470ea0b-8" href="#rest_code_c3e5e08969c940ffb1b5a1a34470ea0b-8"></a><span class="k">let</span> <span class="k">g</span>:ale_echo_msg_format <span class="p">=</span> <span class="s1">'[%linter%] %s [%severity%]'</span>
 </pre></div>
 <ul class="simple">
 <li>
@@ -571,7 +571,7 @@ puedes encontrar una lista de varias fuentes <a class="reference external" href=
 <blockquote>
 <p>Colección de varios plugins de resaltado de sintaxis.</p>
 </blockquote>
-<div class="code"><pre class="code vim"><a id="rest_code_eafd56b0c0814e96bea121e86dc21ad1-1" name="rest_code_eafd56b0c0814e96bea121e86dc21ad1-1" href="#rest_code_eafd56b0c0814e96bea121e86dc21ad1-1"></a>Plug <span class="s1">'sheerun/vim-polyglot'</span>
+<div class="code"><pre class="code vim"><a id="rest_code_414489aa95e545eeb16f71204a7a2277-1" name="rest_code_414489aa95e545eeb16f71204a7a2277-1" href="#rest_code_414489aa95e545eeb16f71204a7a2277-1"></a>Plug <span class="s1">'sheerun/vim-polyglot'</span>
 </pre></div>
 <ul class="simple">
 <li><p><span class="raw-html"><i class="fa fa-external-link"></i></span> <a class="reference external" href="https://github.com/sheerun/vim-polyglot">https://github.com/sheerun/vim-polyglot</a></p></li>
@@ -582,22 +582,22 @@ Por ejemplo:</p>
 <ul class="simple">
 <li><p><a class="reference external" href="https://github.com/hail2u/vim-css3-syntax">CSS</a></p></li>
 </ul>
-<div class="code"><pre class="code vim"><a id="rest_code_e1a6d83889b4443b8af8eaa5551e0ab8-1" name="rest_code_e1a6d83889b4443b8af8eaa5551e0ab8-1" href="#rest_code_e1a6d83889b4443b8af8eaa5551e0ab8-1"></a>Plug <span class="s1">'hail2u/vim-css3-syntax'</span><span class="p">,</span> { <span class="s1">'for'</span>: <span class="s1">'css'</span> }
+<div class="code"><pre class="code vim"><a id="rest_code_f70ca1464825408ebee645ee690d7127-1" name="rest_code_f70ca1464825408ebee645ee690d7127-1" href="#rest_code_f70ca1464825408ebee645ee690d7127-1"></a>Plug <span class="s1">'hail2u/vim-css3-syntax'</span><span class="p">,</span> { <span class="s1">'for'</span>: <span class="s1">'css'</span> }
 </pre></div>
 <ul class="simple">
 <li><p><a class="reference external" href="https://github.com/othree/html5.vim">Html</a></p></li>
 </ul>
-<div class="code"><pre class="code vim"><a id="rest_code_4efc38bf41ce4bedb1961af23ba4b0e5-1" name="rest_code_4efc38bf41ce4bedb1961af23ba4b0e5-1" href="#rest_code_4efc38bf41ce4bedb1961af23ba4b0e5-1"></a>Plug <span class="s1">'othree/html5.vim'</span><span class="p">,</span> { <span class="s1">'for'</span>: <span class="s1">'html'</span> }
+<div class="code"><pre class="code vim"><a id="rest_code_16138bb618de47e181294961a5afc2fe-1" name="rest_code_16138bb618de47e181294961a5afc2fe-1" href="#rest_code_16138bb618de47e181294961a5afc2fe-1"></a>Plug <span class="s1">'othree/html5.vim'</span><span class="p">,</span> { <span class="s1">'for'</span>: <span class="s1">'html'</span> }
 </pre></div>
 <ul class="simple">
 <li><p><a class="reference external" href="https://github.com/pangloss/vim-javascript">JavaScript</a></p></li>
 </ul>
-<div class="code"><pre class="code vim"><a id="rest_code_bf5700ef31c34cffbff97e260f4084ae-1" name="rest_code_bf5700ef31c34cffbff97e260f4084ae-1" href="#rest_code_bf5700ef31c34cffbff97e260f4084ae-1"></a>Plug <span class="s1">'pangloss/vim-javascript'</span><span class="p">,</span> { <span class="s1">'for'</span>: <span class="s1">'javascript'</span> }
+<div class="code"><pre class="code vim"><a id="rest_code_09be7c5b61894c788f5decdc2427aa4e-1" name="rest_code_09be7c5b61894c788f5decdc2427aa4e-1" href="#rest_code_09be7c5b61894c788f5decdc2427aa4e-1"></a>Plug <span class="s1">'pangloss/vim-javascript'</span><span class="p">,</span> { <span class="s1">'for'</span>: <span class="s1">'javascript'</span> }
 </pre></div>
 <ul class="simple">
 <li><p><a class="reference external" href="https://github.com/plasticboy/vim-markdown">Markdown</a></p></li>
 </ul>
-<div class="code"><pre class="code vim"><a id="rest_code_6908c0c745ac4e449a69c280cc2f17e3-1" name="rest_code_6908c0c745ac4e449a69c280cc2f17e3-1" href="#rest_code_6908c0c745ac4e449a69c280cc2f17e3-1"></a>Plug <span class="s1">'plasticboy/vim-markdown'</span><span class="p">,</span> { <span class="s1">'for'</span>: <span class="s1">'markdown'</span> }
+<div class="code"><pre class="code vim"><a id="rest_code_ea21d774bca241e7a94dbaa1738431d2-1" name="rest_code_ea21d774bca241e7a94dbaa1738431d2-1" href="#rest_code_ea21d774bca241e7a94dbaa1738431d2-1"></a>Plug <span class="s1">'plasticboy/vim-markdown'</span><span class="p">,</span> { <span class="s1">'for'</span>: <span class="s1">'markdown'</span> }
 </pre></div>
 </section></section><section id="ir-a-definicion"><h3><a class="toc-backref" href="#toc-entry-25" role="doc-backlink">Ir a definición</a></h3>
 <p>Varios IDEs ofrecen la funcionalidad de "ir a definición" (go to ...).
@@ -608,11 +608,11 @@ Neovim también lo hace, y para ello almacena un índice de identificadores con 
 <li><p><code class="kbd docutils literal">Ctrl</code> + click izquierdo</p></li>
 </ul>
 <p>Para generar este archivo haremos uso de un programa llamado <cite>ctags</cite>.</p>
-<div class="code"><pre class="code bash"><a id="rest_code_467418b6a2774f62b63e39c0931f4245-1" name="rest_code_467418b6a2774f62b63e39c0931f4245-1" href="#rest_code_467418b6a2774f62b63e39c0931f4245-1"></a><span class="c1"># Instalar en ctags en Ubuntu</span>
-<a id="rest_code_467418b6a2774f62b63e39c0931f4245-2" name="rest_code_467418b6a2774f62b63e39c0931f4245-2" href="#rest_code_467418b6a2774f62b63e39c0931f4245-2"></a>sudo<span class="w"> </span>apt<span class="w"> </span>install<span class="w"> </span>exuberant-ctags
-<a id="rest_code_467418b6a2774f62b63e39c0931f4245-3" name="rest_code_467418b6a2774f62b63e39c0931f4245-3" href="#rest_code_467418b6a2774f62b63e39c0931f4245-3"></a>
-<a id="rest_code_467418b6a2774f62b63e39c0931f4245-4" name="rest_code_467418b6a2774f62b63e39c0931f4245-4" href="#rest_code_467418b6a2774f62b63e39c0931f4245-4"></a><span class="c1"># Instalar ctags en Fedora</span>
-<a id="rest_code_467418b6a2774f62b63e39c0931f4245-5" name="rest_code_467418b6a2774f62b63e39c0931f4245-5" href="#rest_code_467418b6a2774f62b63e39c0931f4245-5"></a>sudo<span class="w"> </span>dnf<span class="w"> </span>install<span class="w"> </span>ctags
+<div class="code"><pre class="code bash"><a id="rest_code_4822199cdbc64c01bd87de6ea910c89e-1" name="rest_code_4822199cdbc64c01bd87de6ea910c89e-1" href="#rest_code_4822199cdbc64c01bd87de6ea910c89e-1"></a><span class="c1"># Instalar en ctags en Ubuntu</span>
+<a id="rest_code_4822199cdbc64c01bd87de6ea910c89e-2" name="rest_code_4822199cdbc64c01bd87de6ea910c89e-2" href="#rest_code_4822199cdbc64c01bd87de6ea910c89e-2"></a>sudo<span class="w"> </span>apt<span class="w"> </span>install<span class="w"> </span>exuberant-ctags
+<a id="rest_code_4822199cdbc64c01bd87de6ea910c89e-3" name="rest_code_4822199cdbc64c01bd87de6ea910c89e-3" href="#rest_code_4822199cdbc64c01bd87de6ea910c89e-3"></a>
+<a id="rest_code_4822199cdbc64c01bd87de6ea910c89e-4" name="rest_code_4822199cdbc64c01bd87de6ea910c89e-4" href="#rest_code_4822199cdbc64c01bd87de6ea910c89e-4"></a><span class="c1"># Instalar ctags en Fedora</span>
+<a id="rest_code_4822199cdbc64c01bd87de6ea910c89e-5" name="rest_code_4822199cdbc64c01bd87de6ea910c89e-5" href="#rest_code_4822199cdbc64c01bd87de6ea910c89e-5"></a>sudo<span class="w"> </span>dnf<span class="w"> </span>install<span class="w"> </span>ctags
 </pre></div>
 <p><cite>Lista de lenguajes soportados por ``ctags`</cite> &lt;<a class="reference external" href="http://ctags.sourceforge.net/languages.html">http://ctags.sourceforge.net/languages.html</a>&gt;`_.
 Si tu lenguaje no está en la lista, hay varios plugins que ofrecen esta funcionalidad a modo de funciones,
@@ -626,12 +626,12 @@ sólo se encarga de leerlo, pero existen plugins que nos facilitan esta tarea.</
 <blockquote>
 <p>Administrador de archivos <code class="docutils literal">tag</code>.</p>
 </blockquote>
-<div class="code"><pre class="code vim"><a id="rest_code_0a0e5d2a8eb045ccb4f0137fc75b14c7-1" name="rest_code_0a0e5d2a8eb045ccb4f0137fc75b14c7-1" href="#rest_code_0a0e5d2a8eb045ccb4f0137fc75b14c7-1"></a>Plug <span class="s1">'ludovicchabant/vim-gutentags'</span>
-<a id="rest_code_0a0e5d2a8eb045ccb4f0137fc75b14c7-2" name="rest_code_0a0e5d2a8eb045ccb4f0137fc75b14c7-2" href="#rest_code_0a0e5d2a8eb045ccb4f0137fc75b14c7-2"></a>
-<a id="rest_code_0a0e5d2a8eb045ccb4f0137fc75b14c7-3" name="rest_code_0a0e5d2a8eb045ccb4f0137fc75b14c7-3" href="#rest_code_0a0e5d2a8eb045ccb4f0137fc75b14c7-3"></a>...
-<a id="rest_code_0a0e5d2a8eb045ccb4f0137fc75b14c7-4" name="rest_code_0a0e5d2a8eb045ccb4f0137fc75b14c7-4" href="#rest_code_0a0e5d2a8eb045ccb4f0137fc75b14c7-4"></a>
-<a id="rest_code_0a0e5d2a8eb045ccb4f0137fc75b14c7-5" name="rest_code_0a0e5d2a8eb045ccb4f0137fc75b14c7-5" href="#rest_code_0a0e5d2a8eb045ccb4f0137fc75b14c7-5"></a><span class="c">" Nombre del archivo generado</span>
-<a id="rest_code_0a0e5d2a8eb045ccb4f0137fc75b14c7-6" name="rest_code_0a0e5d2a8eb045ccb4f0137fc75b14c7-6" href="#rest_code_0a0e5d2a8eb045ccb4f0137fc75b14c7-6"></a><span class="k">let</span> <span class="k">g</span>:gutentags_ctags_tagfile <span class="p">=</span> <span class="s1">'.tags'</span>
+<div class="code"><pre class="code vim"><a id="rest_code_56f9ef9f20ba47e18f6f26fc1fe9eb41-1" name="rest_code_56f9ef9f20ba47e18f6f26fc1fe9eb41-1" href="#rest_code_56f9ef9f20ba47e18f6f26fc1fe9eb41-1"></a>Plug <span class="s1">'ludovicchabant/vim-gutentags'</span>
+<a id="rest_code_56f9ef9f20ba47e18f6f26fc1fe9eb41-2" name="rest_code_56f9ef9f20ba47e18f6f26fc1fe9eb41-2" href="#rest_code_56f9ef9f20ba47e18f6f26fc1fe9eb41-2"></a>
+<a id="rest_code_56f9ef9f20ba47e18f6f26fc1fe9eb41-3" name="rest_code_56f9ef9f20ba47e18f6f26fc1fe9eb41-3" href="#rest_code_56f9ef9f20ba47e18f6f26fc1fe9eb41-3"></a>...
+<a id="rest_code_56f9ef9f20ba47e18f6f26fc1fe9eb41-4" name="rest_code_56f9ef9f20ba47e18f6f26fc1fe9eb41-4" href="#rest_code_56f9ef9f20ba47e18f6f26fc1fe9eb41-4"></a>
+<a id="rest_code_56f9ef9f20ba47e18f6f26fc1fe9eb41-5" name="rest_code_56f9ef9f20ba47e18f6f26fc1fe9eb41-5" href="#rest_code_56f9ef9f20ba47e18f6f26fc1fe9eb41-5"></a><span class="c">" Nombre del archivo generado</span>
+<a id="rest_code_56f9ef9f20ba47e18f6f26fc1fe9eb41-6" name="rest_code_56f9ef9f20ba47e18f6f26fc1fe9eb41-6" href="#rest_code_56f9ef9f20ba47e18f6f26fc1fe9eb41-6"></a><span class="k">let</span> <span class="k">g</span>:gutentags_ctags_tagfile <span class="p">=</span> <span class="s1">'.tags'</span>
 </pre></div>
 <ul class="simple">
 <li><p><span class="raw-html"><i class="fa fa-external-link"></i></span> <a class="reference external" href="https://github.com/ludovicchabant/vim-gutentags">https://github.com/ludovicchabant/vim-gutentags</a></p></li>
@@ -641,18 +641,18 @@ sólo se encarga de leerlo, pero existen plugins que nos facilitan esta tarea.</
 <blockquote>
 <p>Wrapper de FZF buscador de archivos, buffers, grep, etc.</p>
 </blockquote>
-<div class="code"><pre class="code vim"><a id="rest_code_e038e3f121c1472ebe6371dcad6b3b2b-1" name="rest_code_e038e3f121c1472ebe6371dcad6b3b2b-1" href="#rest_code_e038e3f121c1472ebe6371dcad6b3b2b-1"></a>Plug <span class="s1">'junegunn/fzf'</span><span class="p">,</span> { <span class="s1">'dir'</span>: <span class="s1">'~/.fzf'</span><span class="p">,</span> <span class="s1">'do'</span>: <span class="s1">'./install --all'</span> }
-<a id="rest_code_e038e3f121c1472ebe6371dcad6b3b2b-2" name="rest_code_e038e3f121c1472ebe6371dcad6b3b2b-2" href="#rest_code_e038e3f121c1472ebe6371dcad6b3b2b-2"></a>Plug <span class="s1">'junegunn/fzf.vim'</span>
-<a id="rest_code_e038e3f121c1472ebe6371dcad6b3b2b-3" name="rest_code_e038e3f121c1472ebe6371dcad6b3b2b-3" href="#rest_code_e038e3f121c1472ebe6371dcad6b3b2b-3"></a>
-<a id="rest_code_e038e3f121c1472ebe6371dcad6b3b2b-4" name="rest_code_e038e3f121c1472ebe6371dcad6b3b2b-4" href="#rest_code_e038e3f121c1472ebe6371dcad6b3b2b-4"></a>...
-<a id="rest_code_e038e3f121c1472ebe6371dcad6b3b2b-5" name="rest_code_e038e3f121c1472ebe6371dcad6b3b2b-5" href="#rest_code_e038e3f121c1472ebe6371dcad6b3b2b-5"></a>
-<a id="rest_code_e038e3f121c1472ebe6371dcad6b3b2b-6" name="rest_code_e038e3f121c1472ebe6371dcad6b3b2b-6" href="#rest_code_e038e3f121c1472ebe6371dcad6b3b2b-6"></a><span class="c">" Ejecutar comandos con alt-enter :Commands</span>
-<a id="rest_code_e038e3f121c1472ebe6371dcad6b3b2b-7" name="rest_code_e038e3f121c1472ebe6371dcad6b3b2b-7" href="#rest_code_e038e3f121c1472ebe6371dcad6b3b2b-7"></a><span class="k">let</span> <span class="k">g</span>:fzf_commands_expect <span class="p">=</span> <span class="s1">'alt-enter'</span>
-<a id="rest_code_e038e3f121c1472ebe6371dcad6b3b2b-8" name="rest_code_e038e3f121c1472ebe6371dcad6b3b2b-8" href="#rest_code_e038e3f121c1472ebe6371dcad6b3b2b-8"></a><span class="c">" Guardar historial de búsquedas</span>
-<a id="rest_code_e038e3f121c1472ebe6371dcad6b3b2b-9" name="rest_code_e038e3f121c1472ebe6371dcad6b3b2b-9" href="#rest_code_e038e3f121c1472ebe6371dcad6b3b2b-9"></a><span class="k">let</span> <span class="k">g</span>:fzf_history_dir <span class="p">=</span> <span class="s1">'~/.local/share/fzf-history'</span>
-<a id="rest_code_e038e3f121c1472ebe6371dcad6b3b2b-10" name="rest_code_e038e3f121c1472ebe6371dcad6b3b2b-10" href="#rest_code_e038e3f121c1472ebe6371dcad6b3b2b-10"></a>
-<a id="rest_code_e038e3f121c1472ebe6371dcad6b3b2b-11" name="rest_code_e038e3f121c1472ebe6371dcad6b3b2b-11" href="#rest_code_e038e3f121c1472ebe6371dcad6b3b2b-11"></a><span class="c">" Empezar a buscar presionando Ctrl + p</span>
-<a id="rest_code_e038e3f121c1472ebe6371dcad6b3b2b-12" name="rest_code_e038e3f121c1472ebe6371dcad6b3b2b-12" href="#rest_code_e038e3f121c1472ebe6371dcad6b3b2b-12"></a><span class="nb">nnoremap</span> <span class="p">&lt;</span>C<span class="p">-</span><span class="k">p</span><span class="p">&gt;</span> :Files<span class="p">&lt;</span>CR<span class="p">&gt;</span>
+<div class="code"><pre class="code vim"><a id="rest_code_24c92f0445044778ba863d57cf471759-1" name="rest_code_24c92f0445044778ba863d57cf471759-1" href="#rest_code_24c92f0445044778ba863d57cf471759-1"></a>Plug <span class="s1">'junegunn/fzf'</span><span class="p">,</span> { <span class="s1">'dir'</span>: <span class="s1">'~/.fzf'</span><span class="p">,</span> <span class="s1">'do'</span>: <span class="s1">'./install --all'</span> }
+<a id="rest_code_24c92f0445044778ba863d57cf471759-2" name="rest_code_24c92f0445044778ba863d57cf471759-2" href="#rest_code_24c92f0445044778ba863d57cf471759-2"></a>Plug <span class="s1">'junegunn/fzf.vim'</span>
+<a id="rest_code_24c92f0445044778ba863d57cf471759-3" name="rest_code_24c92f0445044778ba863d57cf471759-3" href="#rest_code_24c92f0445044778ba863d57cf471759-3"></a>
+<a id="rest_code_24c92f0445044778ba863d57cf471759-4" name="rest_code_24c92f0445044778ba863d57cf471759-4" href="#rest_code_24c92f0445044778ba863d57cf471759-4"></a>...
+<a id="rest_code_24c92f0445044778ba863d57cf471759-5" name="rest_code_24c92f0445044778ba863d57cf471759-5" href="#rest_code_24c92f0445044778ba863d57cf471759-5"></a>
+<a id="rest_code_24c92f0445044778ba863d57cf471759-6" name="rest_code_24c92f0445044778ba863d57cf471759-6" href="#rest_code_24c92f0445044778ba863d57cf471759-6"></a><span class="c">" Ejecutar comandos con alt-enter :Commands</span>
+<a id="rest_code_24c92f0445044778ba863d57cf471759-7" name="rest_code_24c92f0445044778ba863d57cf471759-7" href="#rest_code_24c92f0445044778ba863d57cf471759-7"></a><span class="k">let</span> <span class="k">g</span>:fzf_commands_expect <span class="p">=</span> <span class="s1">'alt-enter'</span>
+<a id="rest_code_24c92f0445044778ba863d57cf471759-8" name="rest_code_24c92f0445044778ba863d57cf471759-8" href="#rest_code_24c92f0445044778ba863d57cf471759-8"></a><span class="c">" Guardar historial de búsquedas</span>
+<a id="rest_code_24c92f0445044778ba863d57cf471759-9" name="rest_code_24c92f0445044778ba863d57cf471759-9" href="#rest_code_24c92f0445044778ba863d57cf471759-9"></a><span class="k">let</span> <span class="k">g</span>:fzf_history_dir <span class="p">=</span> <span class="s1">'~/.local/share/fzf-history'</span>
+<a id="rest_code_24c92f0445044778ba863d57cf471759-10" name="rest_code_24c92f0445044778ba863d57cf471759-10" href="#rest_code_24c92f0445044778ba863d57cf471759-10"></a>
+<a id="rest_code_24c92f0445044778ba863d57cf471759-11" name="rest_code_24c92f0445044778ba863d57cf471759-11" href="#rest_code_24c92f0445044778ba863d57cf471759-11"></a><span class="c">" Empezar a buscar presionando Ctrl + p</span>
+<a id="rest_code_24c92f0445044778ba863d57cf471759-12" name="rest_code_24c92f0445044778ba863d57cf471759-12" href="#rest_code_24c92f0445044778ba863d57cf471759-12"></a><span class="nb">nnoremap</span> <span class="p">&lt;</span>C<span class="p">-</span><span class="k">p</span><span class="p">&gt;</span> :Files<span class="p">&lt;</span>CR<span class="p">&gt;</span>
 </pre></div>
 <ul class="simple">
 <li>
@@ -671,19 +671,19 @@ sólo se encarga de leerlo, pero existen plugins que nos facilitan esta tarea.</
 <blockquote>
 <p>Buscador de archivos y buffers.</p>
 </blockquote>
-<div class="code"><pre class="code vim"><a id="rest_code_625343ea48994457b919e321624f08d9-1" name="rest_code_625343ea48994457b919e321624f08d9-1" href="#rest_code_625343ea48994457b919e321624f08d9-1"></a>Plug <span class="s1">'ctrlpvim/ctrlp.vim'</span>
-<a id="rest_code_625343ea48994457b919e321624f08d9-2" name="rest_code_625343ea48994457b919e321624f08d9-2" href="#rest_code_625343ea48994457b919e321624f08d9-2"></a>
-<a id="rest_code_625343ea48994457b919e321624f08d9-3" name="rest_code_625343ea48994457b919e321624f08d9-3" href="#rest_code_625343ea48994457b919e321624f08d9-3"></a>...
-<a id="rest_code_625343ea48994457b919e321624f08d9-4" name="rest_code_625343ea48994457b919e321624f08d9-4" href="#rest_code_625343ea48994457b919e321624f08d9-4"></a>
-<a id="rest_code_625343ea48994457b919e321624f08d9-5" name="rest_code_625343ea48994457b919e321624f08d9-5" href="#rest_code_625343ea48994457b919e321624f08d9-5"></a><span class="c">" Archivos ignorados</span>
-<a id="rest_code_625343ea48994457b919e321624f08d9-6" name="rest_code_625343ea48994457b919e321624f08d9-6" href="#rest_code_625343ea48994457b919e321624f08d9-6"></a><span class="k">set</span> <span class="nb">wildignore</span><span class="p">+=</span>*<span class="sr">/tmp/</span>*<span class="p">,</span>*.<span class="k">so</span><span class="p">,</span>*.swp<span class="p">,</span>*.zip
-<a id="rest_code_625343ea48994457b919e321624f08d9-7" name="rest_code_625343ea48994457b919e321624f08d9-7" href="#rest_code_625343ea48994457b919e321624f08d9-7"></a><span class="k">let</span> <span class="k">g</span>:ctrlp_custom_ignore <span class="p">=</span> {
-<a id="rest_code_625343ea48994457b919e321624f08d9-8" name="rest_code_625343ea48994457b919e321624f08d9-8" href="#rest_code_625343ea48994457b919e321624f08d9-8"></a>  \ <span class="s1">'dir'</span>:  <span class="s1">'\v[\/](\.(git|hg|svn)|node_modules)$'</span><span class="p">,</span>
-<a id="rest_code_625343ea48994457b919e321624f08d9-9" name="rest_code_625343ea48994457b919e321624f08d9-9" href="#rest_code_625343ea48994457b919e321624f08d9-9"></a>  \ <span class="s1">'file'</span>: <span class="s1">'\v\.(exe|so|dll)$'</span><span class="p">,</span>
-<a id="rest_code_625343ea48994457b919e321624f08d9-10" name="rest_code_625343ea48994457b919e321624f08d9-10" href="#rest_code_625343ea48994457b919e321624f08d9-10"></a>  \ }
-<a id="rest_code_625343ea48994457b919e321624f08d9-11" name="rest_code_625343ea48994457b919e321624f08d9-11" href="#rest_code_625343ea48994457b919e321624f08d9-11"></a>
-<a id="rest_code_625343ea48994457b919e321624f08d9-12" name="rest_code_625343ea48994457b919e321624f08d9-12" href="#rest_code_625343ea48994457b919e321624f08d9-12"></a><span class="c">" Ignorar archivos en .gitignore</span>
-<a id="rest_code_625343ea48994457b919e321624f08d9-13" name="rest_code_625343ea48994457b919e321624f08d9-13" href="#rest_code_625343ea48994457b919e321624f08d9-13"></a><span class="k">let</span> <span class="k">g</span>:ctrlp_user_command <span class="p">=</span> [<span class="s1">'.git'</span><span class="p">,</span> <span class="s1">'cd %s &amp;&amp; git ls-files -co --exclude-standard'</span>]
+<div class="code"><pre class="code vim"><a id="rest_code_c22e8c99d2464cb09e17dbd424d840ac-1" name="rest_code_c22e8c99d2464cb09e17dbd424d840ac-1" href="#rest_code_c22e8c99d2464cb09e17dbd424d840ac-1"></a>Plug <span class="s1">'ctrlpvim/ctrlp.vim'</span>
+<a id="rest_code_c22e8c99d2464cb09e17dbd424d840ac-2" name="rest_code_c22e8c99d2464cb09e17dbd424d840ac-2" href="#rest_code_c22e8c99d2464cb09e17dbd424d840ac-2"></a>
+<a id="rest_code_c22e8c99d2464cb09e17dbd424d840ac-3" name="rest_code_c22e8c99d2464cb09e17dbd424d840ac-3" href="#rest_code_c22e8c99d2464cb09e17dbd424d840ac-3"></a>...
+<a id="rest_code_c22e8c99d2464cb09e17dbd424d840ac-4" name="rest_code_c22e8c99d2464cb09e17dbd424d840ac-4" href="#rest_code_c22e8c99d2464cb09e17dbd424d840ac-4"></a>
+<a id="rest_code_c22e8c99d2464cb09e17dbd424d840ac-5" name="rest_code_c22e8c99d2464cb09e17dbd424d840ac-5" href="#rest_code_c22e8c99d2464cb09e17dbd424d840ac-5"></a><span class="c">" Archivos ignorados</span>
+<a id="rest_code_c22e8c99d2464cb09e17dbd424d840ac-6" name="rest_code_c22e8c99d2464cb09e17dbd424d840ac-6" href="#rest_code_c22e8c99d2464cb09e17dbd424d840ac-6"></a><span class="k">set</span> <span class="nb">wildignore</span><span class="p">+=</span>*<span class="sr">/tmp/</span>*<span class="p">,</span>*.<span class="k">so</span><span class="p">,</span>*.swp<span class="p">,</span>*.zip
+<a id="rest_code_c22e8c99d2464cb09e17dbd424d840ac-7" name="rest_code_c22e8c99d2464cb09e17dbd424d840ac-7" href="#rest_code_c22e8c99d2464cb09e17dbd424d840ac-7"></a><span class="k">let</span> <span class="k">g</span>:ctrlp_custom_ignore <span class="p">=</span> {
+<a id="rest_code_c22e8c99d2464cb09e17dbd424d840ac-8" name="rest_code_c22e8c99d2464cb09e17dbd424d840ac-8" href="#rest_code_c22e8c99d2464cb09e17dbd424d840ac-8"></a>  \ <span class="s1">'dir'</span>:  <span class="s1">'\v[\/](\.(git|hg|svn)|node_modules)$'</span><span class="p">,</span>
+<a id="rest_code_c22e8c99d2464cb09e17dbd424d840ac-9" name="rest_code_c22e8c99d2464cb09e17dbd424d840ac-9" href="#rest_code_c22e8c99d2464cb09e17dbd424d840ac-9"></a>  \ <span class="s1">'file'</span>: <span class="s1">'\v\.(exe|so|dll)$'</span><span class="p">,</span>
+<a id="rest_code_c22e8c99d2464cb09e17dbd424d840ac-10" name="rest_code_c22e8c99d2464cb09e17dbd424d840ac-10" href="#rest_code_c22e8c99d2464cb09e17dbd424d840ac-10"></a>  \ }
+<a id="rest_code_c22e8c99d2464cb09e17dbd424d840ac-11" name="rest_code_c22e8c99d2464cb09e17dbd424d840ac-11" href="#rest_code_c22e8c99d2464cb09e17dbd424d840ac-11"></a>
+<a id="rest_code_c22e8c99d2464cb09e17dbd424d840ac-12" name="rest_code_c22e8c99d2464cb09e17dbd424d840ac-12" href="#rest_code_c22e8c99d2464cb09e17dbd424d840ac-12"></a><span class="c">" Ignorar archivos en .gitignore</span>
+<a id="rest_code_c22e8c99d2464cb09e17dbd424d840ac-13" name="rest_code_c22e8c99d2464cb09e17dbd424d840ac-13" href="#rest_code_c22e8c99d2464cb09e17dbd424d840ac-13"></a><span class="k">let</span> <span class="k">g</span>:ctrlp_user_command <span class="p">=</span> [<span class="s1">'.git'</span><span class="p">,</span> <span class="s1">'cd %s &amp;&amp; git ls-files -co --exclude-standard'</span>]
 </pre></div>
 <ul class="simple">
 <li><p><span class="raw-html"><i class="fa fa-external-link"></i></span> <a class="reference external" href="https://github.com/ctrlpvim/ctrlp.vim">https://github.com/ctrlpvim/ctrlp.vim</a></p></li>
@@ -695,16 +695,16 @@ sólo se encarga de leerlo, pero existen plugins que nos facilitan esta tarea.</
 </blockquote>
 <figure><a class="reference external image-reference" href="https://cloud.githubusercontent.com/assets/3797062/3866152/40e11c48-1fc4-11e4-8cfd-ace452a19f90.gif"><img alt="incsearch" src="https://cloud.githubusercontent.com/assets/3797062/3866152/40e11c48-1fc4-11e4-8cfd-ace452a19f90.gif"></a>
 <figcaption><p>incsearch</p>
-</figcaption></figure><div class="code"><pre class="code vim"><a id="rest_code_8f12ff33269d45c2a2633eed78ea6f73-1" name="rest_code_8f12ff33269d45c2a2633eed78ea6f73-1" href="#rest_code_8f12ff33269d45c2a2633eed78ea6f73-1"></a>Plug <span class="s1">'haya14busa/incsearch.vim'</span>
-<a id="rest_code_8f12ff33269d45c2a2633eed78ea6f73-2" name="rest_code_8f12ff33269d45c2a2633eed78ea6f73-2" href="#rest_code_8f12ff33269d45c2a2633eed78ea6f73-2"></a>
-<a id="rest_code_8f12ff33269d45c2a2633eed78ea6f73-3" name="rest_code_8f12ff33269d45c2a2633eed78ea6f73-3" href="#rest_code_8f12ff33269d45c2a2633eed78ea6f73-3"></a>...
-<a id="rest_code_8f12ff33269d45c2a2633eed78ea6f73-4" name="rest_code_8f12ff33269d45c2a2633eed78ea6f73-4" href="#rest_code_8f12ff33269d45c2a2633eed78ea6f73-4"></a>
-<a id="rest_code_8f12ff33269d45c2a2633eed78ea6f73-5" name="rest_code_8f12ff33269d45c2a2633eed78ea6f73-5" href="#rest_code_8f12ff33269d45c2a2633eed78ea6f73-5"></a><span class="c">" Maps requeridos</span>
-<a id="rest_code_8f12ff33269d45c2a2633eed78ea6f73-6" name="rest_code_8f12ff33269d45c2a2633eed78ea6f73-6" href="#rest_code_8f12ff33269d45c2a2633eed78ea6f73-6"></a>map /  <span class="p">&lt;</span>Plug<span class="p">&gt;(</span><span class="nb">incsearch</span><span class="p">-</span>forward<span class="p">)</span>
-<a id="rest_code_8f12ff33269d45c2a2633eed78ea6f73-7" name="rest_code_8f12ff33269d45c2a2633eed78ea6f73-7" href="#rest_code_8f12ff33269d45c2a2633eed78ea6f73-7"></a>map ?  <span class="p">&lt;</span>Plug<span class="p">&gt;(</span><span class="nb">incsearch</span><span class="p">-</span>backward<span class="p">)</span>
-<a id="rest_code_8f12ff33269d45c2a2633eed78ea6f73-8" name="rest_code_8f12ff33269d45c2a2633eed78ea6f73-8" href="#rest_code_8f12ff33269d45c2a2633eed78ea6f73-8"></a>
-<a id="rest_code_8f12ff33269d45c2a2633eed78ea6f73-9" name="rest_code_8f12ff33269d45c2a2633eed78ea6f73-9" href="#rest_code_8f12ff33269d45c2a2633eed78ea6f73-9"></a><span class="c">" Quitar resaltado luego de buscar</span>
-<a id="rest_code_8f12ff33269d45c2a2633eed78ea6f73-10" name="rest_code_8f12ff33269d45c2a2633eed78ea6f73-10" href="#rest_code_8f12ff33269d45c2a2633eed78ea6f73-10"></a><span class="k">let</span> <span class="k">g</span>:<span class="nb">incsearch</span>#auto_nohlsearch <span class="p">=</span> <span class="m">1</span>
+</figcaption></figure><div class="code"><pre class="code vim"><a id="rest_code_b31da6d2fcff4f5eb479f30ddafddd73-1" name="rest_code_b31da6d2fcff4f5eb479f30ddafddd73-1" href="#rest_code_b31da6d2fcff4f5eb479f30ddafddd73-1"></a>Plug <span class="s1">'haya14busa/incsearch.vim'</span>
+<a id="rest_code_b31da6d2fcff4f5eb479f30ddafddd73-2" name="rest_code_b31da6d2fcff4f5eb479f30ddafddd73-2" href="#rest_code_b31da6d2fcff4f5eb479f30ddafddd73-2"></a>
+<a id="rest_code_b31da6d2fcff4f5eb479f30ddafddd73-3" name="rest_code_b31da6d2fcff4f5eb479f30ddafddd73-3" href="#rest_code_b31da6d2fcff4f5eb479f30ddafddd73-3"></a>...
+<a id="rest_code_b31da6d2fcff4f5eb479f30ddafddd73-4" name="rest_code_b31da6d2fcff4f5eb479f30ddafddd73-4" href="#rest_code_b31da6d2fcff4f5eb479f30ddafddd73-4"></a>
+<a id="rest_code_b31da6d2fcff4f5eb479f30ddafddd73-5" name="rest_code_b31da6d2fcff4f5eb479f30ddafddd73-5" href="#rest_code_b31da6d2fcff4f5eb479f30ddafddd73-5"></a><span class="c">" Maps requeridos</span>
+<a id="rest_code_b31da6d2fcff4f5eb479f30ddafddd73-6" name="rest_code_b31da6d2fcff4f5eb479f30ddafddd73-6" href="#rest_code_b31da6d2fcff4f5eb479f30ddafddd73-6"></a>map /  <span class="p">&lt;</span>Plug<span class="p">&gt;(</span><span class="nb">incsearch</span><span class="p">-</span>forward<span class="p">)</span>
+<a id="rest_code_b31da6d2fcff4f5eb479f30ddafddd73-7" name="rest_code_b31da6d2fcff4f5eb479f30ddafddd73-7" href="#rest_code_b31da6d2fcff4f5eb479f30ddafddd73-7"></a>map ?  <span class="p">&lt;</span>Plug<span class="p">&gt;(</span><span class="nb">incsearch</span><span class="p">-</span>backward<span class="p">)</span>
+<a id="rest_code_b31da6d2fcff4f5eb479f30ddafddd73-8" name="rest_code_b31da6d2fcff4f5eb479f30ddafddd73-8" href="#rest_code_b31da6d2fcff4f5eb479f30ddafddd73-8"></a>
+<a id="rest_code_b31da6d2fcff4f5eb479f30ddafddd73-9" name="rest_code_b31da6d2fcff4f5eb479f30ddafddd73-9" href="#rest_code_b31da6d2fcff4f5eb479f30ddafddd73-9"></a><span class="c">" Quitar resaltado luego de buscar</span>
+<a id="rest_code_b31da6d2fcff4f5eb479f30ddafddd73-10" name="rest_code_b31da6d2fcff4f5eb479f30ddafddd73-10" href="#rest_code_b31da6d2fcff4f5eb479f30ddafddd73-10"></a><span class="k">let</span> <span class="k">g</span>:<span class="nb">incsearch</span>#auto_nohlsearch <span class="p">=</span> <span class="m">1</span>
 </pre></div>
 <ul class="simple">
 <li><p><span class="raw-html"><i class="fa fa-external-link"></i></span> <a class="reference external" href="https://github.com/haya14busa/incsearch.vim">https://github.com/haya14busa/incsearch.vim</a></p></li>
@@ -714,7 +714,7 @@ sólo se encarga de leerlo, pero existen plugins que nos facilitan esta tarea.</
 <blockquote>
 <p>Facilita poner/quitar/cambiar comillas, paréntesis, tags, etc sobre un texto.</p>
 </blockquote>
-<div class="code"><pre class="code vim"><a id="rest_code_507a81f3111d4db381335feec9c7dad1-1" name="rest_code_507a81f3111d4db381335feec9c7dad1-1" href="#rest_code_507a81f3111d4db381335feec9c7dad1-1"></a>Plug <span class="s1">'tpope/vim-surround'</span>
+<div class="code"><pre class="code vim"><a id="rest_code_4b24e51bd88b4cb9a15618a0d7c08a79-1" name="rest_code_4b24e51bd88b4cb9a15618a0d7c08a79-1" href="#rest_code_4b24e51bd88b4cb9a15618a0d7c08a79-1"></a>Plug <span class="s1">'tpope/vim-surround'</span>
 </pre></div>
 <ul class="simple">
 <li><p><span class="raw-html"><i class="fa fa-external-link"></i></span> <a class="reference external" href="https://github.com/tpope/vim-surround">https://github.com/tpope/vim-surround</a></p></li>
@@ -723,7 +723,7 @@ sólo se encarga de leerlo, pero existen plugins que nos facilitan esta tarea.</
 <blockquote>
 <p>Repetir acciones de plugins con <code class="kbd docutils literal">.</code>.</p>
 </blockquote>
-<div class="code"><pre class="code vim"><a id="rest_code_1a83d401ccd54885834814c8eeeea037-1" name="rest_code_1a83d401ccd54885834814c8eeeea037-1" href="#rest_code_1a83d401ccd54885834814c8eeeea037-1"></a>Plug <span class="s1">'tpope/vim-repeat'</span>
+<div class="code"><pre class="code vim"><a id="rest_code_1d1993389f644cb4a0876cb5db4d61b1-1" name="rest_code_1d1993389f644cb4a0876cb5db4d61b1-1" href="#rest_code_1d1993389f644cb4a0876cb5db4d61b1-1"></a>Plug <span class="s1">'tpope/vim-repeat'</span>
 </pre></div>
 <ul class="simple">
 <li><p><span class="raw-html"><i class="fa fa-external-link"></i></span> <a class="reference external" href="https://github.com/tpope/vim-repeat">https://github.com/tpope/vim-repeat</a></p></li>
@@ -732,7 +732,7 @@ sólo se encarga de leerlo, pero existen plugins que nos facilitan esta tarea.</
 <blockquote>
 <p>Provee comandos de sistemas UNIX.</p>
 </blockquote>
-<div class="code"><pre class="code vim"><a id="rest_code_2fc9621ca8a14aa4a056336b3c541eb5-1" name="rest_code_2fc9621ca8a14aa4a056336b3c541eb5-1" href="#rest_code_2fc9621ca8a14aa4a056336b3c541eb5-1"></a>Plug <span class="s1">'tpope/vim-eunuch'</span>
+<div class="code"><pre class="code vim"><a id="rest_code_426138ad8af9468fa29fde127072cbd6-1" name="rest_code_426138ad8af9468fa29fde127072cbd6-1" href="#rest_code_426138ad8af9468fa29fde127072cbd6-1"></a>Plug <span class="s1">'tpope/vim-eunuch'</span>
 </pre></div>
 <ul class="simple">
 <li>
@@ -751,7 +751,7 @@ sólo se encarga de leerlo, pero existen plugins que nos facilitan esta tarea.</
 <blockquote>
 <p>Inserta pares de comillas y paréntesis.</p>
 </blockquote>
-<div class="code"><pre class="code vim"><a id="rest_code_1e62b667418d4f9d9789dedda3ccea99-1" name="rest_code_1e62b667418d4f9d9789dedda3ccea99-1" href="#rest_code_1e62b667418d4f9d9789dedda3ccea99-1"></a>Plug <span class="s1">'jiangmiao/auto-pairs'</span>
+<div class="code"><pre class="code vim"><a id="rest_code_dcab9ea45120484dac8587eb00f4e759-1" name="rest_code_dcab9ea45120484dac8587eb00f4e759-1" href="#rest_code_dcab9ea45120484dac8587eb00f4e759-1"></a>Plug <span class="s1">'jiangmiao/auto-pairs'</span>
 </pre></div>
 <ul class="simple">
 <li><p><span class="raw-html"><i class="fa fa-external-link"></i></span> <a class="reference external" href="https://github.com/jiangmiao/auto-pairs">https://github.com/jiangmiao/auto-pairs</a></p></li>
@@ -760,12 +760,12 @@ sólo se encarga de leerlo, pero existen plugins que nos facilitan esta tarea.</
 <blockquote>
 <p>Facilita agregar y quitar comentarios.</p>
 </blockquote>
-<div class="code"><pre class="code vim"><a id="rest_code_95cc95c76cf34965bdc98a22bff44185-1" name="rest_code_95cc95c76cf34965bdc98a22bff44185-1" href="#rest_code_95cc95c76cf34965bdc98a22bff44185-1"></a>Plug <span class="s1">'scrooloose/nerdcommenter'</span>
-<a id="rest_code_95cc95c76cf34965bdc98a22bff44185-2" name="rest_code_95cc95c76cf34965bdc98a22bff44185-2" href="#rest_code_95cc95c76cf34965bdc98a22bff44185-2"></a>
-<a id="rest_code_95cc95c76cf34965bdc98a22bff44185-3" name="rest_code_95cc95c76cf34965bdc98a22bff44185-3" href="#rest_code_95cc95c76cf34965bdc98a22bff44185-3"></a>...
-<a id="rest_code_95cc95c76cf34965bdc98a22bff44185-4" name="rest_code_95cc95c76cf34965bdc98a22bff44185-4" href="#rest_code_95cc95c76cf34965bdc98a22bff44185-4"></a>
-<a id="rest_code_95cc95c76cf34965bdc98a22bff44185-5" name="rest_code_95cc95c76cf34965bdc98a22bff44185-5" href="#rest_code_95cc95c76cf34965bdc98a22bff44185-5"></a><span class="k">let</span> <span class="k">g</span>:NERDSpaceDelims <span class="p">=</span> <span class="m">1</span>  <span class="c">" Agregar un espacio después del delimitador del comentario</span>
-<a id="rest_code_95cc95c76cf34965bdc98a22bff44185-6" name="rest_code_95cc95c76cf34965bdc98a22bff44185-6" href="#rest_code_95cc95c76cf34965bdc98a22bff44185-6"></a><span class="k">let</span> <span class="k">g</span>:NERDTrimTrailingWhitespace <span class="p">=</span> <span class="m">1</span>  <span class="c">" Quitar espacios al quitar comentario</span>
+<div class="code"><pre class="code vim"><a id="rest_code_cd9862cb4f2e4f649323e3567525db30-1" name="rest_code_cd9862cb4f2e4f649323e3567525db30-1" href="#rest_code_cd9862cb4f2e4f649323e3567525db30-1"></a>Plug <span class="s1">'scrooloose/nerdcommenter'</span>
+<a id="rest_code_cd9862cb4f2e4f649323e3567525db30-2" name="rest_code_cd9862cb4f2e4f649323e3567525db30-2" href="#rest_code_cd9862cb4f2e4f649323e3567525db30-2"></a>
+<a id="rest_code_cd9862cb4f2e4f649323e3567525db30-3" name="rest_code_cd9862cb4f2e4f649323e3567525db30-3" href="#rest_code_cd9862cb4f2e4f649323e3567525db30-3"></a>...
+<a id="rest_code_cd9862cb4f2e4f649323e3567525db30-4" name="rest_code_cd9862cb4f2e4f649323e3567525db30-4" href="#rest_code_cd9862cb4f2e4f649323e3567525db30-4"></a>
+<a id="rest_code_cd9862cb4f2e4f649323e3567525db30-5" name="rest_code_cd9862cb4f2e4f649323e3567525db30-5" href="#rest_code_cd9862cb4f2e4f649323e3567525db30-5"></a><span class="k">let</span> <span class="k">g</span>:NERDSpaceDelims <span class="p">=</span> <span class="m">1</span>  <span class="c">" Agregar un espacio después del delimitador del comentario</span>
+<a id="rest_code_cd9862cb4f2e4f649323e3567525db30-6" name="rest_code_cd9862cb4f2e4f649323e3567525db30-6" href="#rest_code_cd9862cb4f2e4f649323e3567525db30-6"></a><span class="k">let</span> <span class="k">g</span>:NERDTrimTrailingWhitespace <span class="p">=</span> <span class="m">1</span>  <span class="c">" Quitar espacios al quitar comentario</span>
 </pre></div>
 <ul class="simple">
 <li><p><span class="raw-html"><i class="fa fa-external-link"></i></span> <a class="reference external" href="https://github.com/scrooloose/nerdcommenter">https://github.com/scrooloose/nerdcommenter</a></p></li>
@@ -775,7 +775,7 @@ sólo se encarga de leerlo, pero existen plugins que nos facilitan esta tarea.</
 <blockquote>
 <p>Provee comandos de git.</p>
 </blockquote>
-<div class="code"><pre class="code vim"><a id="rest_code_7054c7eeaac54607a901be2d86f166d3-1" name="rest_code_7054c7eeaac54607a901be2d86f166d3-1" href="#rest_code_7054c7eeaac54607a901be2d86f166d3-1"></a>Plug <span class="s1">'tpope/vim-fugitive'</span>
+<div class="code"><pre class="code vim"><a id="rest_code_3a9e4448a0854635b5897a49b35418de-1" name="rest_code_3a9e4448a0854635b5897a49b35418de-1" href="#rest_code_3a9e4448a0854635b5897a49b35418de-1"></a>Plug <span class="s1">'tpope/vim-fugitive'</span>
 </pre></div>
 <ul class="simple">
 <li>
@@ -794,12 +794,12 @@ sólo se encarga de leerlo, pero existen plugins que nos facilitan esta tarea.</
 </blockquote>
 <figure><a class="reference external image-reference" href="https://camo.githubusercontent.com/f88161827e0cbb3144455b9e5c7582fdd5b5fc83/68747470733a2f2f7261772e6769746875622e636f6d2f616972626c6164652f76696d2d6769746775747465722f6d61737465722f73637265656e73686f742e706e67"><img alt="incsearch" src="https://camo.githubusercontent.com/f88161827e0cbb3144455b9e5c7582fdd5b5fc83/68747470733a2f2f7261772e6769746875622e636f6d2f616972626c6164652f76696d2d6769746775747465722f6d61737465722f73637265656e73686f742e706e67"></a>
 <figcaption><p>incsearch</p>
-</figcaption></figure><div class="code"><pre class="code vim"><a id="rest_code_77193733f1ea48e085d03a46146f640d-1" name="rest_code_77193733f1ea48e085d03a46146f640d-1" href="#rest_code_77193733f1ea48e085d03a46146f640d-1"></a>Plug <span class="s1">'airblade/vim-gitgutter'</span>
-<a id="rest_code_77193733f1ea48e085d03a46146f640d-2" name="rest_code_77193733f1ea48e085d03a46146f640d-2" href="#rest_code_77193733f1ea48e085d03a46146f640d-2"></a>
-<a id="rest_code_77193733f1ea48e085d03a46146f640d-3" name="rest_code_77193733f1ea48e085d03a46146f640d-3" href="#rest_code_77193733f1ea48e085d03a46146f640d-3"></a>...
-<a id="rest_code_77193733f1ea48e085d03a46146f640d-4" name="rest_code_77193733f1ea48e085d03a46146f640d-4" href="#rest_code_77193733f1ea48e085d03a46146f640d-4"></a>
-<a id="rest_code_77193733f1ea48e085d03a46146f640d-5" name="rest_code_77193733f1ea48e085d03a46146f640d-5" href="#rest_code_77193733f1ea48e085d03a46146f640d-5"></a><span class="c">" Actualizar barra cada 250 mili segundos</span>
-<a id="rest_code_77193733f1ea48e085d03a46146f640d-6" name="rest_code_77193733f1ea48e085d03a46146f640d-6" href="#rest_code_77193733f1ea48e085d03a46146f640d-6"></a><span class="k">set</span> <span class="nb">updatetime</span><span class="p">=</span><span class="m">250</span>
+</figcaption></figure><div class="code"><pre class="code vim"><a id="rest_code_57a01834646444d0a0a4f492593afd03-1" name="rest_code_57a01834646444d0a0a4f492593afd03-1" href="#rest_code_57a01834646444d0a0a4f492593afd03-1"></a>Plug <span class="s1">'airblade/vim-gitgutter'</span>
+<a id="rest_code_57a01834646444d0a0a4f492593afd03-2" name="rest_code_57a01834646444d0a0a4f492593afd03-2" href="#rest_code_57a01834646444d0a0a4f492593afd03-2"></a>
+<a id="rest_code_57a01834646444d0a0a4f492593afd03-3" name="rest_code_57a01834646444d0a0a4f492593afd03-3" href="#rest_code_57a01834646444d0a0a4f492593afd03-3"></a>...
+<a id="rest_code_57a01834646444d0a0a4f492593afd03-4" name="rest_code_57a01834646444d0a0a4f492593afd03-4" href="#rest_code_57a01834646444d0a0a4f492593afd03-4"></a>
+<a id="rest_code_57a01834646444d0a0a4f492593afd03-5" name="rest_code_57a01834646444d0a0a4f492593afd03-5" href="#rest_code_57a01834646444d0a0a4f492593afd03-5"></a><span class="c">" Actualizar barra cada 250 mili segundos</span>
+<a id="rest_code_57a01834646444d0a0a4f492593afd03-6" name="rest_code_57a01834646444d0a0a4f492593afd03-6" href="#rest_code_57a01834646444d0a0a4f492593afd03-6"></a><span class="k">set</span> <span class="nb">updatetime</span><span class="p">=</span><span class="m">250</span>
 </pre></div>
 <ul class="simple">
 <li><p><span class="raw-html"><i class="fa fa-external-link"></i></span> <a class="reference external" href="https://github.com/airblade/vim-gitgutter">https://github.com/airblade/vim-gitgutter</a></p></li>
@@ -810,7 +810,7 @@ sólo se encarga de leerlo, pero existen plugins que nos facilitan esta tarea.</
 </blockquote>
 <figure><a class="reference external image-reference" href="https://camo.githubusercontent.com/3fe0388df11cb787f36e1fa108398fd3f757eef4/687474703a2f2f692e696d6775722e636f6d2f6a534377476a552e6769663f31"><img alt="nerdtree git plugin" src="https://camo.githubusercontent.com/3fe0388df11cb787f36e1fa108398fd3f757eef4/687474703a2f2f692e696d6775722e636f6d2f6a534377476a552e6769663f31"></a>
 <figcaption><p>Nerdtree git plugin</p>
-</figcaption></figure><div class="code"><pre class="code vim"><a id="rest_code_825269ff03c141ca87b833955e272c9f-1" name="rest_code_825269ff03c141ca87b833955e272c9f-1" href="#rest_code_825269ff03c141ca87b833955e272c9f-1"></a>Plug <span class="s1">'xuyuanp/nerdtree-git-plugin'</span>
+</figcaption></figure><div class="code"><pre class="code vim"><a id="rest_code_1010afb635dd432287a43ca17ef48489-1" name="rest_code_1010afb635dd432287a43ca17ef48489-1" href="#rest_code_1010afb635dd432287a43ca17ef48489-1"></a>Plug <span class="s1">'xuyuanp/nerdtree-git-plugin'</span>
 </pre></div>
 <ul class="simple">
 <li><p><span class="raw-html"><i class="fa fa-external-link"></i></span> <a class="reference external" href="https://github.com/xuyuanp/nerdtree-git-plugin">https://github.com/xuyuanp/nerdtree-git-plugin</a></p></li>
