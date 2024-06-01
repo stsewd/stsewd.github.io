@@ -116,7 +116,7 @@ I'll share with you some tips on how to secure your development environment <str
 for their usage please check their respective documentation,
 or search for alternatives for your Operating System.
 For some tools I have my configuration available at <a class="reference external" href="https://github.com/stsewd/dotfiles">https://github.com/stsewd/dotfiles</a>.</p>
-</aside><nav class="contents local" id="contents" role="doc-toc"><p class="topic-title">Contents</p>
+</aside><nav class="contents local" id="contents" role="doc-toc"><p class="topic-title"><a class="reference internal" href="#top">Contents</a></p>
 <ul class="simple">
 <li><p><a class="reference internal" href="#passwords" id="toc-entry-1">Passwords</a></p></li>
 <li><p><a class="reference internal" href="#multi-factor-authentication" id="toc-entry-2">Multi factor authentication</a></p></li>
@@ -138,7 +138,8 @@ a password manager can help you to generate strong and unique passwords for each
 <p>Using a password manager requires you to have one master password,
 this one you do need to remember,
 so make sure to choose a strong one, and rotate that password every year or so.</p>
-<figure class="align-center"><a class="reference external image-reference" href="https://xkcd.com/936/"><img alt="/images/securing-your-dev-environment/password_strength.png" src="../../../images/securing-your-dev-environment/password_strength.png"></a>
+<figure class="align-center"><a class="reference external image-reference" href="https://xkcd.com/936/">
+<img alt="/images/securing-your-dev-environment/password_strength.png" src="../../../images/securing-your-dev-environment/password_strength.png"></a>
 </figure><p>I recommend <a class="reference external" href="https://bitwarden.com/">Bitwarden</a> as password manager, it's Open Source.
 The free version gives you a lot of features that usually require
 a premium account in other services, and even the premium version is cheap.</p>
@@ -147,19 +148,19 @@ a premium account in other services, and even the premium version is cheap.</p>
 the generated password could be exposed without you knowing it,
 or your master password could be compromised.
 Multi factor authentication (MFA) to the rescue!</p>
-<p>MFA is about using two or more pieces of evidence (factors) on authentication to be able to access a website or application <a class="footnote-reference brackets" href="#mfa" id="footnote-reference-1" role="doc-noteref"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></a>.
+<p>MFA is about using two or more pieces of evidence (factors) on authentication to be able to access a website or application <a class="brackets" href="#mfa" id="footnote-reference-1" role="doc-noteref"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></a>.
 Factors are: something you know (like a password), something you have (like a phone), and something you are (like your fingerprints).
 A common way of MFA is combining a password (something you know) with something you have, like:</p>
 <dl>
 <dt>SMS</dt>
 <dd>
 <p>This is using your phone number to receive a code via SMS to be able to authenticate.
-<strong>Please don't use this method</strong>, it's easy for an attacker to hijack your phone number <a class="footnote-reference brackets" href="#sim-hijack" id="footnote-reference-2" role="doc-noteref"><span class="fn-bracket">[</span>2<span class="fn-bracket">]</span></a>,
+<strong>Please don't use this method</strong>, it's easy for an attacker to hijack your phone number <a class="brackets" href="#sim-hijack" id="footnote-reference-2" role="doc-noteref"><span class="fn-bracket">[</span>2<span class="fn-bracket">]</span></a>,
 and if you are traveling, you won't be able to receive the codes.</p>
 </dd>
 <dt>App</dt>
 <dd>
-<p>This is using an application in your phone that generates an OTP <a class="footnote-reference brackets" href="#otp" id="footnote-reference-3" role="doc-noteref"><span class="fn-bracket">[</span>3<span class="fn-bracket">]</span></a>
+<p>This is using an application in your phone that generates an OTP <a class="brackets" href="#otp" id="footnote-reference-3" role="doc-noteref"><span class="fn-bracket">[</span>3<span class="fn-bracket">]</span></a>
 valid for 30 seconds for each login.
 Using an app is an excellent way of MFA,
 and you don't need Internet connection on your phone to be able to access the tokens.</p>
@@ -176,7 +177,8 @@ but the good thing is that they aren't attached to your phone.
 Popular hardware keys are <a class="reference external" href="https://www.yubico.com/">YubiKeys</a>.
 <strong>If you decide to get one, buy two!</strong>,
 the second key will act as your backup in case you lose or damage the other one.</p>
-<figure class="align-center"><a class="reference external image-reference" href="https://commons.wikimedia.org/wiki/File:YubiKey-4-keychain-and-YubiKey-4-Nano.png"><img alt="/images/securing-your-dev-environment/yubikey.png" src="../../../images/securing-your-dev-environment/yubikey.png" style="width: 50%;"></a>
+<figure class="align-center"><a class="reference external image-reference" href="https://commons.wikimedia.org/wiki/File:YubiKey-4-keychain-and-YubiKey-4-Nano.png">
+<img alt="/images/securing-your-dev-environment/yubikey.png" src="../../../images/securing-your-dev-environment/yubikey.png" style="width: 50%;"></a>
 </figure>
 </dd>
 </dl>
@@ -224,7 +226,8 @@ Someone could still use your email for their commits,
 but they won't be able to sign those commits with your private GPG key.
 GitLab has a great guide on how to sign your commits with GPG
 <a class="reference external" href="https://docs.gitlab.com/ee/user/project/repository/gpg_signed_commits/">https://docs.gitlab.com/ee/user/project/repository/gpg_signed_commits/</a>.</p>
-<figure class="align-center"><a class="reference external image-reference" href="../../../images/securing-your-dev-environment/signed-commit.png"><img alt="/images/securing-your-dev-environment/signed-commit.png" src="../../../images/securing-your-dev-environment/signed-commit.png"></a>
+<figure class="align-center"><a class="reference external image-reference" href="../../../images/securing-your-dev-environment/signed-commit.png">
+<img alt="/images/securing-your-dev-environment/signed-commit.png" src="../../../images/securing-your-dev-environment/signed-commit.png"></a>
 <figcaption><p>Commit signed (verified) on GitHub</p>
 </figcaption></figure><aside class="admonition note"><p class="admonition-title">Note</p>
 <p>Same as SSH, protect your private GPG key with a passphrase,
@@ -235,16 +238,16 @@ and navigating the history with <code class="docutils literal">↑</code> <code 
 but that history can also contain sensitive information.</p>
 <p>The default number of history entries is usually high,
 as a quick experiment, you can check how many entries you have with:</p>
-<div class="code"><pre class="code bash"><a id="rest_code_206db8d0260840568eabdafd4caf12c5-1" name="rest_code_206db8d0260840568eabdafd4caf12c5-1" href="#rest_code_206db8d0260840568eabdafd4caf12c5-1"></a>cat<span class="w"> </span><span class="nv">$HISTFILE</span><span class="w"> </span><span class="p">|</span><span class="w"> </span>wc<span class="w"> </span>-l
+<div class="code"><pre class="code bash"><a id="rest_code_3fc953aabc3d4096baeaf29fb8df8d22-1" name="rest_code_3fc953aabc3d4096baeaf29fb8df8d22-1" href="#rest_code_3fc953aabc3d4096baeaf29fb8df8d22-1"></a>cat<span class="w"> </span><span class="nv">$HISTFILE</span><span class="w"> </span><span class="p">|</span><span class="w"> </span>wc<span class="w"> </span>-l
 </pre></div>
 <p>And how many of those entries possibly have secrets with:</p>
-<div class="code"><pre class="code bash"><a id="rest_code_c25efabcf3b640f690ccf678ff87db51-1" name="rest_code_c25efabcf3b640f690ccf678ff87db51-1" href="#rest_code_c25efabcf3b640f690ccf678ff87db51-1"></a>grep<span class="w"> </span>-E<span class="w"> </span>-i<span class="w"> </span><span class="s1">'(token)|(pass)|(secret)'</span><span class="w"> </span><span class="nv">$HISTFILE</span>
+<div class="code"><pre class="code bash"><a id="rest_code_f25958eb2ad74c179df3282319113885-1" name="rest_code_f25958eb2ad74c179df3282319113885-1" href="#rest_code_f25958eb2ad74c179df3282319113885-1"></a>grep<span class="w"> </span>-E<span class="w"> </span>-i<span class="w"> </span><span class="s1">'(token)|(pass)|(secret)'</span><span class="w"> </span><span class="nv">$HISTFILE</span>
 </pre></div>
 <p>Depending on the Shell you are using,
 you can control the max number of entries with environment variables,
 for zsh this is done with:</p>
-<div class="code"><pre class="code bash"><a id="rest_code_5d85b84dc9d54aa9af0b77fee7358a4b-1" name="rest_code_5d85b84dc9d54aa9af0b77fee7358a4b-1" href="#rest_code_5d85b84dc9d54aa9af0b77fee7358a4b-1"></a><span class="nb">export</span><span class="w"> </span><span class="nv">SAVEHIST</span><span class="o">=</span><span class="m">1000</span>
-<a id="rest_code_5d85b84dc9d54aa9af0b77fee7358a4b-2" name="rest_code_5d85b84dc9d54aa9af0b77fee7358a4b-2" href="#rest_code_5d85b84dc9d54aa9af0b77fee7358a4b-2"></a><span class="nb">export</span><span class="w"> </span><span class="nv">HISTSIZE</span><span class="o">=</span><span class="nv">$SAVEHIST</span>
+<div class="code"><pre class="code bash"><a id="rest_code_655f170c6d63420485ef9ea14a88e752-1" name="rest_code_655f170c6d63420485ef9ea14a88e752-1" href="#rest_code_655f170c6d63420485ef9ea14a88e752-1"></a><span class="nb">export</span><span class="w"> </span><span class="nv">SAVEHIST</span><span class="o">=</span><span class="m">1000</span>
+<a id="rest_code_655f170c6d63420485ef9ea14a88e752-2" name="rest_code_655f170c6d63420485ef9ea14a88e752-2" href="#rest_code_655f170c6d63420485ef9ea14a88e752-2"></a><span class="nb">export</span><span class="w"> </span><span class="nv">HISTSIZE</span><span class="o">=</span><span class="nv">$SAVEHIST</span>
 </pre></div>
 <p>Choose the number of entries at your discretion,
 not big enough that will keep things for a long period of time,
@@ -255,14 +258,14 @@ You can avoid adding your commands to the history
 by prefixing them with a space.</p>
 <p>Another way to enter into <em>incognito mode</em> is by un-setting the <code class="docutils literal">$HISTFILE</code> environment variable
 (thanks <a class="reference external" href="https://github.com/WhiteHatTux">@WhiteHatTux</a> for this tip!).</p>
-<div class="code"><pre class="code bash"><a id="rest_code_cc136ee8d4fa4349b98c1e3ce8d8f80d-1" name="rest_code_cc136ee8d4fa4349b98c1e3ce8d8f80d-1" href="#rest_code_cc136ee8d4fa4349b98c1e3ce8d8f80d-1"></a><span class="nb">unset</span><span class="w"> </span>HISTFILE
+<div class="code"><pre class="code bash"><a id="rest_code_a3094b760eda40ff923fbe2483e10871-1" name="rest_code_a3094b760eda40ff923fbe2483e10871-1" href="#rest_code_a3094b760eda40ff923fbe2483e10871-1"></a><span class="nb">unset</span><span class="w"> </span>HISTFILE
 </pre></div>
 </section><section id="securing-your-files-and-environment-variables"><h2>Securing your files and environment variables</h2>
 <p>If you have files with sensitive information
 that you can't encrypt because it needs to be readable (like configuration files),
 at least give access only the appropriate users/processes.</p>
 <p>To remove access from all users except yours, you can use:</p>
-<div class="code"><pre class="code bash"><a id="rest_code_339a50cb6e664a61bf35d79c33bb33ef-1" name="rest_code_339a50cb6e664a61bf35d79c33bb33ef-1" href="#rest_code_339a50cb6e664a61bf35d79c33bb33ef-1"></a>chmod<span class="w"> </span>og-rwx<span class="w"> </span><span class="o">{</span>file<span class="o">}</span>
+<div class="code"><pre class="code bash"><a id="rest_code_ceb6527444554a2793a4d95afc96dbdd-1" name="rest_code_ceb6527444554a2793a4d95afc96dbdd-1" href="#rest_code_ceb6527444554a2793a4d95afc96dbdd-1"></a>chmod<span class="w"> </span>og-rwx<span class="w"> </span><span class="o">{</span>file<span class="o">}</span>
 </pre></div>
 <p>For extra protection, check the <a class="reference external" href="https://selinuxproject.org/page/Main_Page">SELinux</a> project.</p>
 <p>If you need to expose some environment variables with secrets to your commands.
@@ -285,7 +288,8 @@ an attacker can use this for something <em>harmless</em> like tracking you,
 to something more sophisticated like exploiting a <a class="reference external" href="https://en.wikipedia.org/wiki/Cross-site_request_forgery">CSRF</a> vulnerable site.
 This is usually an option in your email client,
 <a class="reference external" href="https://protonmail.com/">Protonmail</a> has this option enabled by default.</p>
-<figure class="align-center"><a class="reference external image-reference" href="../../../images/securing-your-dev-environment/gmail-disable-display-external-images.png"><img alt="/images/securing-your-dev-environment/gmail-disable-display-external-images.png" src="../../../images/securing-your-dev-environment/gmail-disable-display-external-images.png"></a>
+<figure class="align-center"><a class="reference external image-reference" href="../../../images/securing-your-dev-environment/gmail-disable-display-external-images.png">
+<img alt="/images/securing-your-dev-environment/gmail-disable-display-external-images.png" src="../../../images/securing-your-dev-environment/gmail-disable-display-external-images.png"></a>
 <figcaption><p>Option to disable loading external images on Gmail.</p>
 </figcaption></figure></section><section id="use-a-secure-channel-for-communication"><h2>Use a secure channel for communication</h2>
 <p>Sometimes you'll need to share passwords or private information with other coworkers.

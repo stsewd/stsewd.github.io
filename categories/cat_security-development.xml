@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<?xml-stylesheet type="text/xsl" href="../assets/xml/rss.xsl" media="all"?><rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Santos Gallegos (Posts about security, development)</title><link>https://stsewd.dev/</link><description></description><atom:link href="https://stsewd.dev/categories/cat_security-development.xml" rel="self" type="application/rss+xml"></atom:link><language>en</language><copyright>Contents © 2024 &lt;a href="mailto:stsewd@proton.me"&gt;Santos Gallegos&lt;/a&gt; </copyright><lastBuildDate>Wed, 20 Mar 2024 02:12:54 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Securing your development environment</title><link>https://stsewd.dev/posts/securing-your-dev-environment/</link><dc:creator>Santos Gallegos</dc:creator><description>&lt;p&gt;If you are a developer, chances are that you handle private code or production secrets.
+<?xml-stylesheet type="text/xsl" href="../assets/xml/rss.xsl" media="all"?><rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Santos Gallegos (Posts about security, development)</title><link>https://stsewd.dev/</link><description></description><atom:link href="https://stsewd.dev/categories/cat_security-development.xml" rel="self" type="application/rss+xml"></atom:link><language>en</language><copyright>Contents © 2024 &lt;a href="mailto:stsewd@proton.me"&gt;Santos Gallegos&lt;/a&gt; </copyright><lastBuildDate>Sat, 01 Jun 2024 05:31:35 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Securing your development environment</title><link>https://stsewd.dev/posts/securing-your-dev-environment/</link><dc:creator>Santos Gallegos</dc:creator><description>&lt;p&gt;If you are a developer, chances are that you handle private code or production secrets.
 If someone has access to those, you may be in serious problems with your bosses and clients.
 I'll share with you some tips on how to secure your development environment &lt;strong&gt;from your computer to your terminal&lt;/strong&gt;.&lt;/p&gt;
 &lt;aside class="admonition note"&gt;
@@ -10,7 +10,7 @@ or search for alternatives for your Operating System.
 For some tools I have my configuration available at &lt;a class="reference external" href="https://github.com/stsewd/dotfiles"&gt;https://github.com/stsewd/dotfiles&lt;/a&gt;.&lt;/p&gt;
 &lt;/aside&gt;
 &lt;nav class="contents local" id="contents" role="doc-toc"&gt;
-&lt;p class="topic-title"&gt;Contents&lt;/p&gt;
+&lt;p class="topic-title"&gt;&lt;a class="reference internal" href="https://stsewd.dev/posts/securing-your-dev-environment/#top"&gt;Contents&lt;/a&gt;&lt;/p&gt;
 &lt;ul class="simple"&gt;
 &lt;li&gt;&lt;p&gt;&lt;a class="reference internal" href="https://stsewd.dev/posts/securing-your-dev-environment/#passwords" id="toc-entry-1"&gt;Passwords&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
 &lt;li&gt;&lt;p&gt;&lt;a class="reference internal" href="https://stsewd.dev/posts/securing-your-dev-environment/#multi-factor-authentication" id="toc-entry-2"&gt;Multi factor authentication&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
@@ -36,7 +36,9 @@ a password manager can help you to generate strong and unique passwords for each
 this one you do need to remember,
 so make sure to choose a strong one, and rotate that password every year or so.&lt;/p&gt;
 &lt;figure class="align-center"&gt;
-&lt;a class="reference external image-reference" href="https://xkcd.com/936/"&gt;&lt;img alt="/images/securing-your-dev-environment/password_strength.png" src="https://stsewd.dev/images/securing-your-dev-environment/password_strength.png"&gt;&lt;/a&gt;
+&lt;a class="reference external image-reference" href="https://xkcd.com/936/"&gt;
+&lt;img alt="/images/securing-your-dev-environment/password_strength.png" src="https://stsewd.dev/images/securing-your-dev-environment/password_strength.png"&gt;
+&lt;/a&gt;
 &lt;/figure&gt;
 &lt;p&gt;I recommend &lt;a class="reference external" href="https://bitwarden.com/"&gt;Bitwarden&lt;/a&gt; as password manager, it's Open Source.
 The free version gives you a lot of features that usually require
@@ -48,17 +50,17 @@ a premium account in other services, and even the premium version is cheap.&lt;/
 the generated password could be exposed without you knowing it,
 or your master password could be compromised.
 Multi factor authentication (MFA) to the rescue!&lt;/p&gt;
-&lt;p&gt;MFA is about using two or more pieces of evidence (factors) on authentication to be able to access a website or application &lt;a class="footnote-reference brackets" href="https://stsewd.dev/posts/securing-your-dev-environment/#mfa" id="footnote-reference-1" role="doc-noteref"&gt;&lt;span class="fn-bracket"&gt;[&lt;/span&gt;1&lt;span class="fn-bracket"&gt;]&lt;/span&gt;&lt;/a&gt;.
+&lt;p&gt;MFA is about using two or more pieces of evidence (factors) on authentication to be able to access a website or application &lt;a class="brackets" href="https://stsewd.dev/posts/securing-your-dev-environment/#mfa" id="footnote-reference-1" role="doc-noteref"&gt;&lt;span class="fn-bracket"&gt;[&lt;/span&gt;1&lt;span class="fn-bracket"&gt;]&lt;/span&gt;&lt;/a&gt;.
 Factors are: something you know (like a password), something you have (like a phone), and something you are (like your fingerprints).
 A common way of MFA is combining a password (something you know) with something you have, like:&lt;/p&gt;
 &lt;dl&gt;
 &lt;dt&gt;SMS&lt;/dt&gt;
 &lt;dd&gt;&lt;p&gt;This is using your phone number to receive a code via SMS to be able to authenticate.
-&lt;strong&gt;Please don't use this method&lt;/strong&gt;, it's easy for an attacker to hijack your phone number &lt;a class="footnote-reference brackets" href="https://stsewd.dev/posts/securing-your-dev-environment/#sim-hijack" id="footnote-reference-2" role="doc-noteref"&gt;&lt;span class="fn-bracket"&gt;[&lt;/span&gt;2&lt;span class="fn-bracket"&gt;]&lt;/span&gt;&lt;/a&gt;,
+&lt;strong&gt;Please don't use this method&lt;/strong&gt;, it's easy for an attacker to hijack your phone number &lt;a class="brackets" href="https://stsewd.dev/posts/securing-your-dev-environment/#sim-hijack" id="footnote-reference-2" role="doc-noteref"&gt;&lt;span class="fn-bracket"&gt;[&lt;/span&gt;2&lt;span class="fn-bracket"&gt;]&lt;/span&gt;&lt;/a&gt;,
 and if you are traveling, you won't be able to receive the codes.&lt;/p&gt;
 &lt;/dd&gt;
 &lt;dt&gt;App&lt;/dt&gt;
-&lt;dd&gt;&lt;p&gt;This is using an application in your phone that generates an OTP &lt;a class="footnote-reference brackets" href="https://stsewd.dev/posts/securing-your-dev-environment/#otp" id="footnote-reference-3" role="doc-noteref"&gt;&lt;span class="fn-bracket"&gt;[&lt;/span&gt;3&lt;span class="fn-bracket"&gt;]&lt;/span&gt;&lt;/a&gt;
+&lt;dd&gt;&lt;p&gt;This is using an application in your phone that generates an OTP &lt;a class="brackets" href="https://stsewd.dev/posts/securing-your-dev-environment/#otp" id="footnote-reference-3" role="doc-noteref"&gt;&lt;span class="fn-bracket"&gt;[&lt;/span&gt;3&lt;span class="fn-bracket"&gt;]&lt;/span&gt;&lt;/a&gt;
 valid for 30 seconds for each login.
 Using an app is an excellent way of MFA,
 and you don't need Internet connection on your phone to be able to access the tokens.&lt;/p&gt;
@@ -75,7 +77,9 @@ Popular hardware keys are &lt;a class="reference external" href="https://www.yub
 &lt;strong&gt;If you decide to get one, buy two!&lt;/strong&gt;,
 the second key will act as your backup in case you lose or damage the other one.&lt;/p&gt;
 &lt;figure class="align-center"&gt;
-&lt;a class="reference external image-reference" href="https://commons.wikimedia.org/wiki/File:YubiKey-4-keychain-and-YubiKey-4-Nano.png"&gt;&lt;img alt="/images/securing-your-dev-environment/yubikey.png" src="https://stsewd.dev/images/securing-your-dev-environment/yubikey.png" style="width: 50%;"&gt;&lt;/a&gt;
+&lt;a class="reference external image-reference" href="https://commons.wikimedia.org/wiki/File:YubiKey-4-keychain-and-YubiKey-4-Nano.png"&gt;
+&lt;img alt="/images/securing-your-dev-environment/yubikey.png" src="https://stsewd.dev/images/securing-your-dev-environment/yubikey.png" style="width: 50%;"&gt;
+&lt;/a&gt;
 &lt;/figure&gt;
 &lt;/dd&gt;
 &lt;/dl&gt;
@@ -132,7 +136,9 @@ but they won't be able to sign those commits with your private GPG key.
 GitLab has a great guide on how to sign your commits with GPG
 &lt;a class="reference external" href="https://docs.gitlab.com/ee/user/project/repository/gpg_signed_commits/"&gt;https://docs.gitlab.com/ee/user/project/repository/gpg_signed_commits/&lt;/a&gt;.&lt;/p&gt;
 &lt;figure class="align-center"&gt;
-&lt;a class="reference external image-reference" href="https://stsewd.dev/images/securing-your-dev-environment/signed-commit.png"&gt;&lt;img alt="/images/securing-your-dev-environment/signed-commit.png" src="https://stsewd.dev/images/securing-your-dev-environment/signed-commit.png"&gt;&lt;/a&gt;
+&lt;a class="reference external image-reference" href="https://stsewd.dev/images/securing-your-dev-environment/signed-commit.png"&gt;
+&lt;img alt="/images/securing-your-dev-environment/signed-commit.png" src="https://stsewd.dev/images/securing-your-dev-environment/signed-commit.png"&gt;
+&lt;/a&gt;
 &lt;figcaption&gt;
 &lt;p&gt;Commit signed (verified) on GitHub&lt;/p&gt;
 &lt;/figcaption&gt;
@@ -150,16 +156,16 @@ and navigating the history with &lt;code class="docutils literal"&gt;↑&lt;/cod
 but that history can also contain sensitive information.&lt;/p&gt;
 &lt;p&gt;The default number of history entries is usually high,
 as a quick experiment, you can check how many entries you have with:&lt;/p&gt;
-&lt;div class="code"&gt;&lt;pre class="code bash"&gt;&lt;a id="rest_code_206db8d0260840568eabdafd4caf12c5-1" name="rest_code_206db8d0260840568eabdafd4caf12c5-1" href="https://stsewd.dev/posts/securing-your-dev-environment/#rest_code_206db8d0260840568eabdafd4caf12c5-1"&gt;&lt;/a&gt;cat&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nv"&gt;$HISTFILE&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p"&gt;|&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;wc&lt;span class="w"&gt; &lt;/span&gt;-l
+&lt;div class="code"&gt;&lt;pre class="code bash"&gt;&lt;a id="rest_code_3fc953aabc3d4096baeaf29fb8df8d22-1" name="rest_code_3fc953aabc3d4096baeaf29fb8df8d22-1" href="https://stsewd.dev/posts/securing-your-dev-environment/#rest_code_3fc953aabc3d4096baeaf29fb8df8d22-1"&gt;&lt;/a&gt;cat&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nv"&gt;$HISTFILE&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p"&gt;|&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;wc&lt;span class="w"&gt; &lt;/span&gt;-l
 &lt;/pre&gt;&lt;/div&gt;
 &lt;p&gt;And how many of those entries possibly have secrets with:&lt;/p&gt;
-&lt;div class="code"&gt;&lt;pre class="code bash"&gt;&lt;a id="rest_code_c25efabcf3b640f690ccf678ff87db51-1" name="rest_code_c25efabcf3b640f690ccf678ff87db51-1" href="https://stsewd.dev/posts/securing-your-dev-environment/#rest_code_c25efabcf3b640f690ccf678ff87db51-1"&gt;&lt;/a&gt;grep&lt;span class="w"&gt; &lt;/span&gt;-E&lt;span class="w"&gt; &lt;/span&gt;-i&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="s1"&gt;'(token)|(pass)|(secret)'&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nv"&gt;$HISTFILE&lt;/span&gt;
+&lt;div class="code"&gt;&lt;pre class="code bash"&gt;&lt;a id="rest_code_f25958eb2ad74c179df3282319113885-1" name="rest_code_f25958eb2ad74c179df3282319113885-1" href="https://stsewd.dev/posts/securing-your-dev-environment/#rest_code_f25958eb2ad74c179df3282319113885-1"&gt;&lt;/a&gt;grep&lt;span class="w"&gt; &lt;/span&gt;-E&lt;span class="w"&gt; &lt;/span&gt;-i&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="s1"&gt;'(token)|(pass)|(secret)'&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nv"&gt;$HISTFILE&lt;/span&gt;
 &lt;/pre&gt;&lt;/div&gt;
 &lt;p&gt;Depending on the Shell you are using,
 you can control the max number of entries with environment variables,
 for zsh this is done with:&lt;/p&gt;
-&lt;div class="code"&gt;&lt;pre class="code bash"&gt;&lt;a id="rest_code_5d85b84dc9d54aa9af0b77fee7358a4b-1" name="rest_code_5d85b84dc9d54aa9af0b77fee7358a4b-1" href="https://stsewd.dev/posts/securing-your-dev-environment/#rest_code_5d85b84dc9d54aa9af0b77fee7358a4b-1"&gt;&lt;/a&gt;&lt;span class="nb"&gt;export&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nv"&gt;SAVEHIST&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="m"&gt;1000&lt;/span&gt;
-&lt;a id="rest_code_5d85b84dc9d54aa9af0b77fee7358a4b-2" name="rest_code_5d85b84dc9d54aa9af0b77fee7358a4b-2" href="https://stsewd.dev/posts/securing-your-dev-environment/#rest_code_5d85b84dc9d54aa9af0b77fee7358a4b-2"&gt;&lt;/a&gt;&lt;span class="nb"&gt;export&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nv"&gt;HISTSIZE&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="nv"&gt;$SAVEHIST&lt;/span&gt;
+&lt;div class="code"&gt;&lt;pre class="code bash"&gt;&lt;a id="rest_code_655f170c6d63420485ef9ea14a88e752-1" name="rest_code_655f170c6d63420485ef9ea14a88e752-1" href="https://stsewd.dev/posts/securing-your-dev-environment/#rest_code_655f170c6d63420485ef9ea14a88e752-1"&gt;&lt;/a&gt;&lt;span class="nb"&gt;export&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nv"&gt;SAVEHIST&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="m"&gt;1000&lt;/span&gt;
+&lt;a id="rest_code_655f170c6d63420485ef9ea14a88e752-2" name="rest_code_655f170c6d63420485ef9ea14a88e752-2" href="https://stsewd.dev/posts/securing-your-dev-environment/#rest_code_655f170c6d63420485ef9ea14a88e752-2"&gt;&lt;/a&gt;&lt;span class="nb"&gt;export&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nv"&gt;HISTSIZE&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="nv"&gt;$SAVEHIST&lt;/span&gt;
 &lt;/pre&gt;&lt;/div&gt;
 &lt;p&gt;Choose the number of entries at your discretion,
 not big enough that will keep things for a long period of time,
@@ -170,7 +176,7 @@ You can avoid adding your commands to the history
 by prefixing them with a space.&lt;/p&gt;
 &lt;p&gt;Another way to enter into &lt;em&gt;incognito mode&lt;/em&gt; is by un-setting the &lt;code class="docutils literal"&gt;$HISTFILE&lt;/code&gt; environment variable
 (thanks &lt;a class="reference external" href="https://github.com/WhiteHatTux"&gt;@WhiteHatTux&lt;/a&gt; for this tip!).&lt;/p&gt;
-&lt;div class="code"&gt;&lt;pre class="code bash"&gt;&lt;a id="rest_code_cc136ee8d4fa4349b98c1e3ce8d8f80d-1" name="rest_code_cc136ee8d4fa4349b98c1e3ce8d8f80d-1" href="https://stsewd.dev/posts/securing-your-dev-environment/#rest_code_cc136ee8d4fa4349b98c1e3ce8d8f80d-1"&gt;&lt;/a&gt;&lt;span class="nb"&gt;unset&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;HISTFILE
+&lt;div class="code"&gt;&lt;pre class="code bash"&gt;&lt;a id="rest_code_a3094b760eda40ff923fbe2483e10871-1" name="rest_code_a3094b760eda40ff923fbe2483e10871-1" href="https://stsewd.dev/posts/securing-your-dev-environment/#rest_code_a3094b760eda40ff923fbe2483e10871-1"&gt;&lt;/a&gt;&lt;span class="nb"&gt;unset&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;HISTFILE
 &lt;/pre&gt;&lt;/div&gt;
 &lt;/section&gt;
 &lt;section id="securing-your-files-and-environment-variables"&gt;
@@ -179,7 +185,7 @@ by prefixing them with a space.&lt;/p&gt;
 that you can't encrypt because it needs to be readable (like configuration files),
 at least give access only the appropriate users/processes.&lt;/p&gt;
 &lt;p&gt;To remove access from all users except yours, you can use:&lt;/p&gt;
-&lt;div class="code"&gt;&lt;pre class="code bash"&gt;&lt;a id="rest_code_339a50cb6e664a61bf35d79c33bb33ef-1" name="rest_code_339a50cb6e664a61bf35d79c33bb33ef-1" href="https://stsewd.dev/posts/securing-your-dev-environment/#rest_code_339a50cb6e664a61bf35d79c33bb33ef-1"&gt;&lt;/a&gt;chmod&lt;span class="w"&gt; &lt;/span&gt;og-rwx&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;{&lt;/span&gt;file&lt;span class="o"&gt;}&lt;/span&gt;
+&lt;div class="code"&gt;&lt;pre class="code bash"&gt;&lt;a id="rest_code_ceb6527444554a2793a4d95afc96dbdd-1" name="rest_code_ceb6527444554a2793a4d95afc96dbdd-1" href="https://stsewd.dev/posts/securing-your-dev-environment/#rest_code_ceb6527444554a2793a4d95afc96dbdd-1"&gt;&lt;/a&gt;chmod&lt;span class="w"&gt; &lt;/span&gt;og-rwx&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;{&lt;/span&gt;file&lt;span class="o"&gt;}&lt;/span&gt;
 &lt;/pre&gt;&lt;/div&gt;
 &lt;p&gt;For extra protection, check the &lt;a class="reference external" href="https://selinuxproject.org/page/Main_Page"&gt;SELinux&lt;/a&gt; project.&lt;/p&gt;
 &lt;p&gt;If you need to expose some environment variables with secrets to your commands.
@@ -208,7 +214,9 @@ to something more sophisticated like exploiting a &lt;a class="reference externa
 This is usually an option in your email client,
 &lt;a class="reference external" href="https://protonmail.com/"&gt;Protonmail&lt;/a&gt; has this option enabled by default.&lt;/p&gt;
 &lt;figure class="align-center"&gt;
-&lt;a class="reference external image-reference" href="https://stsewd.dev/images/securing-your-dev-environment/gmail-disable-display-external-images.png"&gt;&lt;img alt="/images/securing-your-dev-environment/gmail-disable-display-external-images.png" src="https://stsewd.dev/images/securing-your-dev-environment/gmail-disable-display-external-images.png"&gt;&lt;/a&gt;
+&lt;a class="reference external image-reference" href="https://stsewd.dev/images/securing-your-dev-environment/gmail-disable-display-external-images.png"&gt;
+&lt;img alt="/images/securing-your-dev-environment/gmail-disable-display-external-images.png" src="https://stsewd.dev/images/securing-your-dev-environment/gmail-disable-display-external-images.png"&gt;
+&lt;/a&gt;
 &lt;figcaption&gt;
 &lt;p&gt;Option to disable loading external images on Gmail.&lt;/p&gt;
 &lt;/figcaption&gt;
