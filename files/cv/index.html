@@ -594,6 +594,43 @@
         <li>
           <p>
             <strong>
+              Login CSRF in the SAML implementation of django-allauth
+            </strong>
+            <small>
+              -
+              <a href="https://github.com/pennersr/django-allauth/commit/1f631a1bcd5062518a7ba437457242eadfd521ab">
+                Fixed in 0.63.3
+              </a>
+              <i>(2024)</i>
+            </small>
+          </p>
+          <p>
+            This vulnerability could have allowed an attacker to trick a user into
+            logging in as the attacker in a SAML authentication flow.
+          </p>
+        </li>
+        <li>
+          <p>
+            <strong>
+              Cross site scripting on beta dashboard in Read the Docs
+            </strong>
+            <small>
+              -
+              <a href="https://github.com/readthedocs/readthedocs.org/security/advisories/GHSA-8v7c-r4x6-h796">
+                GHSA-8v7c-r4x6-h796
+              </a>
+              <i>(2024)</i>
+            </small>
+          </p>
+          <p>
+            This vulnerability could have allowed an attacker to execute arbitrary
+            JavaScript code on the beta dashboard of Read the Docs when a user visited a
+            build page with the malicious payload.
+          </p>
+        </li>
+        <li>
+          <p>
+            <strong>
               Denial of service via regular expression in Django Wiki
             </strong>
             <small>
