@@ -238,16 +238,16 @@ and navigating the history with <code class="docutils literal">↑</code> <code 
 but that history can also contain sensitive information.</p>
 <p>The default number of history entries is usually high,
 as a quick experiment, you can check how many entries you have with:</p>
-<div class="code"><pre class="code bash"><a id="rest_code_a679cc1db6594cb1a1dae210f7f2eb2a-1" name="rest_code_a679cc1db6594cb1a1dae210f7f2eb2a-1" href="#rest_code_a679cc1db6594cb1a1dae210f7f2eb2a-1"></a>cat<span class="w"> </span><span class="nv">$HISTFILE</span><span class="w"> </span><span class="p">|</span><span class="w"> </span>wc<span class="w"> </span>-l
+<div class="code"><pre class="code bash"><a id="rest_code_e7fefe2622e146538184d8eb430a86e3-1" name="rest_code_e7fefe2622e146538184d8eb430a86e3-1" href="#rest_code_e7fefe2622e146538184d8eb430a86e3-1"></a>cat<span class="w"> </span><span class="nv">$HISTFILE</span><span class="w"> </span><span class="p">|</span><span class="w"> </span>wc<span class="w"> </span>-l
 </pre></div>
 <p>And how many of those entries possibly have secrets with:</p>
-<div class="code"><pre class="code bash"><a id="rest_code_a9de6521aae24f91a162a87b645c41b5-1" name="rest_code_a9de6521aae24f91a162a87b645c41b5-1" href="#rest_code_a9de6521aae24f91a162a87b645c41b5-1"></a>grep<span class="w"> </span>-E<span class="w"> </span>-i<span class="w"> </span><span class="s1">'(token)|(pass)|(secret)'</span><span class="w"> </span><span class="nv">$HISTFILE</span>
+<div class="code"><pre class="code bash"><a id="rest_code_26b6b1ebb5ae4d5389a4b0c4829035cb-1" name="rest_code_26b6b1ebb5ae4d5389a4b0c4829035cb-1" href="#rest_code_26b6b1ebb5ae4d5389a4b0c4829035cb-1"></a>grep<span class="w"> </span>-E<span class="w"> </span>-i<span class="w"> </span><span class="s1">'(token)|(pass)|(secret)'</span><span class="w"> </span><span class="nv">$HISTFILE</span>
 </pre></div>
 <p>Depending on the Shell you are using,
 you can control the max number of entries with environment variables,
 for zsh this is done with:</p>
-<div class="code"><pre class="code bash"><a id="rest_code_599933ac9b6f4e8ab90985217a2ed29a-1" name="rest_code_599933ac9b6f4e8ab90985217a2ed29a-1" href="#rest_code_599933ac9b6f4e8ab90985217a2ed29a-1"></a><span class="nb">export</span><span class="w"> </span><span class="nv">SAVEHIST</span><span class="o">=</span><span class="m">1000</span>
-<a id="rest_code_599933ac9b6f4e8ab90985217a2ed29a-2" name="rest_code_599933ac9b6f4e8ab90985217a2ed29a-2" href="#rest_code_599933ac9b6f4e8ab90985217a2ed29a-2"></a><span class="nb">export</span><span class="w"> </span><span class="nv">HISTSIZE</span><span class="o">=</span><span class="nv">$SAVEHIST</span>
+<div class="code"><pre class="code bash"><a id="rest_code_fe7f1c5827f84cd9ba27ddc2d302bc49-1" name="rest_code_fe7f1c5827f84cd9ba27ddc2d302bc49-1" href="#rest_code_fe7f1c5827f84cd9ba27ddc2d302bc49-1"></a><span class="nb">export</span><span class="w"> </span><span class="nv">SAVEHIST</span><span class="o">=</span><span class="m">1000</span>
+<a id="rest_code_fe7f1c5827f84cd9ba27ddc2d302bc49-2" name="rest_code_fe7f1c5827f84cd9ba27ddc2d302bc49-2" href="#rest_code_fe7f1c5827f84cd9ba27ddc2d302bc49-2"></a><span class="nb">export</span><span class="w"> </span><span class="nv">HISTSIZE</span><span class="o">=</span><span class="nv">$SAVEHIST</span>
 </pre></div>
 <p>Choose the number of entries at your discretion,
 not big enough that will keep things for a long period of time,
@@ -258,14 +258,14 @@ You can avoid adding your commands to the history
 by prefixing them with a space.</p>
 <p>Another way to enter into <em>incognito mode</em> is by un-setting the <code class="docutils literal">$HISTFILE</code> environment variable
 (thanks <a class="reference external" href="https://github.com/WhiteHatTux">@WhiteHatTux</a> for this tip!).</p>
-<div class="code"><pre class="code bash"><a id="rest_code_ec21d103935d448ca345c7af50ddfb23-1" name="rest_code_ec21d103935d448ca345c7af50ddfb23-1" href="#rest_code_ec21d103935d448ca345c7af50ddfb23-1"></a><span class="nb">unset</span><span class="w"> </span>HISTFILE
+<div class="code"><pre class="code bash"><a id="rest_code_023673886c2145c3847ebfdc8a801449-1" name="rest_code_023673886c2145c3847ebfdc8a801449-1" href="#rest_code_023673886c2145c3847ebfdc8a801449-1"></a><span class="nb">unset</span><span class="w"> </span>HISTFILE
 </pre></div>
 </section><section id="securing-your-files-and-environment-variables"><h2>Securing your files and environment variables</h2>
 <p>If you have files with sensitive information
 that you can't encrypt because it needs to be readable (like configuration files),
 at least give access only the appropriate users/processes.</p>
 <p>To remove access from all users except yours, you can use:</p>
-<div class="code"><pre class="code bash"><a id="rest_code_7c67c8bf69dd4dc986008529f3267cda-1" name="rest_code_7c67c8bf69dd4dc986008529f3267cda-1" href="#rest_code_7c67c8bf69dd4dc986008529f3267cda-1"></a>chmod<span class="w"> </span>og-rwx<span class="w"> </span><span class="o">{</span>file<span class="o">}</span>
+<div class="code"><pre class="code bash"><a id="rest_code_a815c72f93ad4c1a8fde20899a146e3f-1" name="rest_code_a815c72f93ad4c1a8fde20899a146e3f-1" href="#rest_code_a815c72f93ad4c1a8fde20899a146e3f-1"></a>chmod<span class="w"> </span>og-rwx<span class="w"> </span><span class="o">{</span>file<span class="o">}</span>
 </pre></div>
 <p>For extra protection, check the <a class="reference external" href="https://selinuxproject.org/page/Main_Page">SELinux</a> project.</p>
 <p>If you need to expose some environment variables with secrets to your commands.
