@@ -135,8 +135,8 @@ it was possible to use it, as you can see in the `fix <https://github.com/penner
 Timeline
 --------
 
-- 11/07/2024: Found and reported the vulnerability to django-allauth.
-- 12/07/2024: Maintainer confirmed the vulnerability and released version 0.63.6 with the fix.
+- **11/07/2024:** Found and reported the vulnerability to django-allauth.
+- **12/07/2024:** Maintainer confirmed the vulnerability and released version 0.63.6 with the fix.
 
 Acknowledgements
 ----------------
