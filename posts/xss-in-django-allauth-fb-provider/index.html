@@ -136,7 +136,7 @@ and furthermore that snippet is included anywhere the social providers are liste
 like the login page (<code class="docutils literal">/accounts/login/</code>), and the social account connections page (<code class="docutils literal">/accounts/3rdparty/</code>).</p>
 </section><section id="payload"><h2>Payload</h2>
 <p>To exploit this vulnerability, an attacker could inject the following content in the <code class="docutils literal">scope</code> query parameter:</p>
-<div class="code"><pre class="code html"><a id="rest_code_0b1bf42283f348b69545bbb4399c8d7b-1" name="rest_code_0b1bf42283f348b69545bbb4399c8d7b-1" href="#rest_code_0b1bf42283f348b69545bbb4399c8d7b-1"></a><span class="p">&lt;/</span><span class="nt">script</span><span class="p">&gt;&lt;</span><span class="nt">script</span><span class="p">&gt;</span><span class="nx">alert</span><span class="p">(</span><span class="nb">document</span><span class="p">.</span><span class="nx">domain</span><span class="p">)&lt;/</span><span class="nt">script</span><span class="p">&gt;&lt;</span><span class="nt">script</span><span class="p">&gt;</span>
+<div class="code"><pre class="code html"><a id="rest_code_323188e5e44248619ae40fbae0c895ad-1" name="rest_code_323188e5e44248619ae40fbae0c895ad-1" href="#rest_code_323188e5e44248619ae40fbae0c895ad-1"></a><span class="p">&lt;/</span><span class="nt">script</span><span class="p">&gt;&lt;</span><span class="nt">script</span><span class="p">&gt;</span><span class="nx">alert</span><span class="p">(</span><span class="nb">document</span><span class="p">.</span><span class="nx">domain</span><span class="p">)&lt;/</span><span class="nt">script</span><span class="p">&gt;&lt;</span><span class="nt">script</span><span class="p">&gt;</span>
 </pre></div>
 <p>What this does is:</p>
 <ul class="simple">
@@ -147,12 +147,12 @@ like the login page (<code class="docutils literal">/accounts/login/</code>), an
 <p>I created a <a class="reference external" href="https://github.com/stsewd/poc-xss-django-allauth">proof of concept</a> to demonstrate the vulnerability, so you can see it in action,
 you just need to have Python and <a class="reference external" href="https://docs.astral.sh/uv/getting-started/installation/">uv</a> installed:</p>
 <p>It consists of a simple Django project with <code class="docutils literal"><span class="pre">django-allauth==0.63.5</span></code> installed, and a Facebook provider configured using the JavaScript SDK.</p>
-<div class="code"><pre class="code bash"><a id="rest_code_2652e154ad394f649f4bdfcb805cfbe4-1" name="rest_code_2652e154ad394f649f4bdfcb805cfbe4-1" href="#rest_code_2652e154ad394f649f4bdfcb805cfbe4-1"></a>$<span class="w"> </span>git<span class="w"> </span>clone<span class="w"> </span>https://github.com/stsewd/poc-xss-django-allauth
-<a id="rest_code_2652e154ad394f649f4bdfcb805cfbe4-2" name="rest_code_2652e154ad394f649f4bdfcb805cfbe4-2" href="#rest_code_2652e154ad394f649f4bdfcb805cfbe4-2"></a>$<span class="w"> </span><span class="nb">cd</span><span class="w"> </span>poc-xss-django-allauth
-<a id="rest_code_2652e154ad394f649f4bdfcb805cfbe4-3" name="rest_code_2652e154ad394f649f4bdfcb805cfbe4-3" href="#rest_code_2652e154ad394f649f4bdfcb805cfbe4-3"></a>$<span class="w"> </span>uv<span class="w"> </span>run<span class="w"> </span>manage.py<span class="w"> </span>migrate
-<a id="rest_code_2652e154ad394f649f4bdfcb805cfbe4-4" name="rest_code_2652e154ad394f649f4bdfcb805cfbe4-4" href="#rest_code_2652e154ad394f649f4bdfcb805cfbe4-4"></a><span class="c1"># Create a user to log into the application.</span>
-<a id="rest_code_2652e154ad394f649f4bdfcb805cfbe4-5" name="rest_code_2652e154ad394f649f4bdfcb805cfbe4-5" href="#rest_code_2652e154ad394f649f4bdfcb805cfbe4-5"></a>$<span class="w"> </span>uv<span class="w"> </span>run<span class="w"> </span>manage.py<span class="w"> </span>createsuperuser
-<a id="rest_code_2652e154ad394f649f4bdfcb805cfbe4-6" name="rest_code_2652e154ad394f649f4bdfcb805cfbe4-6" href="#rest_code_2652e154ad394f649f4bdfcb805cfbe4-6"></a>$<span class="w"> </span>uv<span class="w"> </span>run<span class="w"> </span>manage.py<span class="w"> </span>runserver
+<div class="code"><pre class="code bash"><a id="rest_code_22a5552756914587b598494ea5994980-1" name="rest_code_22a5552756914587b598494ea5994980-1" href="#rest_code_22a5552756914587b598494ea5994980-1"></a>$<span class="w"> </span>git<span class="w"> </span>clone<span class="w"> </span>https://github.com/stsewd/poc-xss-django-allauth
+<a id="rest_code_22a5552756914587b598494ea5994980-2" name="rest_code_22a5552756914587b598494ea5994980-2" href="#rest_code_22a5552756914587b598494ea5994980-2"></a>$<span class="w"> </span><span class="nb">cd</span><span class="w"> </span>poc-xss-django-allauth
+<a id="rest_code_22a5552756914587b598494ea5994980-3" name="rest_code_22a5552756914587b598494ea5994980-3" href="#rest_code_22a5552756914587b598494ea5994980-3"></a>$<span class="w"> </span>uv<span class="w"> </span>run<span class="w"> </span>manage.py<span class="w"> </span>migrate
+<a id="rest_code_22a5552756914587b598494ea5994980-4" name="rest_code_22a5552756914587b598494ea5994980-4" href="#rest_code_22a5552756914587b598494ea5994980-4"></a><span class="c1"># Create a user to log into the application.</span>
+<a id="rest_code_22a5552756914587b598494ea5994980-5" name="rest_code_22a5552756914587b598494ea5994980-5" href="#rest_code_22a5552756914587b598494ea5994980-5"></a>$<span class="w"> </span>uv<span class="w"> </span>run<span class="w"> </span>manage.py<span class="w"> </span>createsuperuser
+<a id="rest_code_22a5552756914587b598494ea5994980-6" name="rest_code_22a5552756914587b598494ea5994980-6" href="#rest_code_22a5552756914587b598494ea5994980-6"></a>$<span class="w"> </span>uv<span class="w"> </span>run<span class="w"> </span>manage.py<span class="w"> </span>runserver
 </pre></div>
 <dl class="simple">
 <dt>XSS in login page:</dt>
@@ -179,8 +179,8 @@ since allauth supports newer versions of Django,
 it was possible to use it, as you can see in the <a class="reference external" href="https://github.com/pennersr/django-allauth/commit/8fead343c1d3e75cc842e0ee1e21a39c6d145155">fix</a>.</p>
 </section><section id="timeline"><h2>Timeline</h2>
 <ul class="simple">
-<li><p>11/07/2024: Found and reported the vulnerability to django-allauth.</p></li>
-<li><p>12/07/2024: Maintainer confirmed the vulnerability and released version 0.63.6 with the fix.</p></li>
+<li><p><strong>11/07/2024:</strong> Found and reported the vulnerability to django-allauth.</p></li>
+<li><p><strong>12/07/2024:</strong> Maintainer confirmed the vulnerability and released version 0.63.6 with the fix.</p></li>
 </ul></section><section id="acknowledgements"><h2>Acknowledgements</h2>
 <ul class="simple">
 <li><p>I'm always surprised by how quickly open source maintainers fix security vulnerabilities
