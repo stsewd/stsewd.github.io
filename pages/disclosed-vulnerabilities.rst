@@ -7,6 +7,11 @@ Publicly disclosed security vulnerabilities
 
 I have responsibly reported several security vulnerabilities; some of the public ones are listed below.
 
+2025
+----
+
+- XSS in Read the Docs: `GHSA-gg7x-cc2v-mcp3 <https://github.com/readthedocs/readthedocs.org/security/advisories/GHSA-gg7x-cc2v-mcp3>`__.
+
 2024
 ----
 
