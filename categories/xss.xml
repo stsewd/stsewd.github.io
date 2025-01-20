@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="utf-8"?>
+<?xml-stylesheet type="text/xsl" href="../assets/xml/rss.xsl" media="all"?><rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Santos Gallegos (Posts about xss)</title><link>https://stsewd.dev/</link><description></description><atom:link href="https://stsewd.dev/categories/xss.xml" rel="self" type="application/rss+xml"></atom:link><language>en</language><copyright>Contents © 2025 &lt;a href="mailto:stsewd@proton.me"&gt;Santos Gallegos&lt;/a&gt; </copyright><lastBuildDate>Mon, 20 Jan 2025 02:45:48 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>XSS in django-allauth &lt;0.63.6</title><link>https://stsewd.dev/posts/xss-in-django-allauth-fb-provider/</link><dc:creator>Santos Gallegos</dc:creator><description>&lt;p&gt;This post details a Cross-Site Scripting (XSS) vulnerability I discovered in &lt;a class="reference external" href="https://allauth.org/"&gt;django-allauth&lt;/a&gt;, a popular Django package for authentication.
+This vulnerability affected the Facebook provider only, and it was fixed in version &lt;a class="reference external" href="https://allauth.org/news/2024/07/django-allauth-0.63.6-released/"&gt;0.63.6&lt;/a&gt; on July 12, 2024.&lt;/p&gt;
+&lt;section id="background"&gt;
+&lt;h2&gt;Background&lt;/h2&gt;
+&lt;p&gt;Before I found this vulnerability, I already reported another one to django-allauth,
+a login CSRF vulnerability in its SAML provider, which was fixed in version &lt;a class="reference external" href="https://docs.allauth.org/en/latest/release-notes/recent.html#id34"&gt;0.63.3&lt;/a&gt;
+(maybe I'll write a post about it if people are interested in more posts like this).&lt;/p&gt;
+&lt;p&gt;At &lt;a class="reference external" href="https://about.readthedocs.com/"&gt;Read the Docs&lt;/a&gt;, we use django-allauth for user authentication.
+I was in charge of integrating SAML into our authentication system, while working on that I noticed the CSRF vulnerability.
+After reporting it and seeing how quick it was fixed, I decided to do a quick security audit of the project.&lt;/p&gt;
+&lt;/section&gt;
+&lt;section id="the-vulnerability"&gt;
+&lt;h2&gt;The vulnerability&lt;/h2&gt;
+&lt;p&gt;After grepping the codebase for common vulnerable patterns, I found this line of code that caught my attention:&lt;/p&gt;
+&lt;iframe frameborder="0" scrolling="no" style="width:100%; height:121px;" allow="clipboard-write" src="https://emgithub.com/iframe.html?target=https%3A%2F%2Fgithub.com%2Fpennersr%2Fdjango-allauth%2Fblob%2F1512ac4fe0353d7a8d795c5e8b89a07f3a9a31f5%2Fallauth%2Fsocialaccount%2Fproviders%2Ffacebook%2Fprovider.py%23L179-L180&amp;amp;style=default&amp;amp;type=code&amp;amp;showBorder=on&amp;amp;showLineNumbers=on&amp;amp;showFileMeta=on&amp;amp;showFullPath=on&amp;amp;showCopy=on"&gt;&lt;/iframe&gt;&lt;p&gt;django-allauth &lt;a class="reference external" href="https://docs.allauth.org/en/latest/socialaccount/providers/facebook.html"&gt;allows using Facebook as a provider for social authentication&lt;/a&gt;,
+and allows using the regular form (&lt;code class="docutils literal"&gt;oauth2&lt;/code&gt; method) or the Facebook JavaScript SDK (&lt;code class="docutils literal"&gt;js_sdk&lt;/code&gt; method) to login.
+When using the &lt;code class="docutils literal"&gt;js_sdk&lt;/code&gt; method, the &lt;code class="docutils literal"&gt;fb_data&lt;/code&gt; variable is passed to the template to be used in the frontend.&lt;/p&gt;
+&lt;iframe frameborder="0" scrolling="no" style="width:100%; height:163px;" allow="clipboard-write" src="https://emgithub.com/iframe.html?target=https%3A%2F%2Fgithub.com%2Fpennersr%2Fdjango-allauth%2Fblob%2F1512ac4fe0353d7a8d795c5e8b89a07f3a9a31f5%2Fallauth%2Fsocialaccount%2Fproviders%2Ffacebook%2Ftemplates%2Ffacebook%2Ffbconnect.html&amp;amp;style=default&amp;amp;type=code&amp;amp;showBorder=on&amp;amp;showLineNumbers=on&amp;amp;showFileMeta=on&amp;amp;showFullPath=on&amp;amp;showCopy=on"&gt;&lt;/iframe&gt;&lt;p&gt;Which is then used in the &lt;a class="reference external" href="https://github.com/pennersr/django-allauth/blob/1512ac4fe0353d7a8d795c5e8b89a07f3a9a31f5/allauth/socialaccount/providers/facebook/static/facebook/js/fbconnect.js#L32"&gt;fbconnect.js&lt;/a&gt;
+script to initialize the Facebook SDK.&lt;/p&gt;
+&lt;p&gt;So, what's the problem here?
+The &lt;code class="docutils literal"&gt;fb_data&lt;/code&gt; variable is &lt;a class="reference external" href="https://docs.djangoproject.com/en/4.2/ref/utils/#django.utils.safestring.mark_safe"&gt;marked as safe&lt;/a&gt;
+(Django won't escape it when including it in a template)
+after being transformed into a JSON string.
+Since &lt;code class="docutils literal"&gt;json.dumps&lt;/code&gt; doesn't escape HTML characters,
+it's possible to inject arbitrary HTML and JavaScript code into the template.&lt;/p&gt;
+&lt;/section&gt;
+&lt;section id="exploitation"&gt;
+&lt;h2&gt;Exploitation&lt;/h2&gt;
+&lt;p&gt;Using &lt;code class="docutils literal"&gt;mark_safe&lt;/code&gt; by itself is not a vulnerability,
+as long as the content is trusted and doesn't contain user input.
+So the next step was to find a way to inject user-controlled content into the &lt;code class="docutils literal"&gt;fb_data&lt;/code&gt; variable.&lt;/p&gt;
+&lt;p&gt;As shown below, most of the content in the &lt;code class="docutils literal"&gt;fb_data&lt;/code&gt; variable is static:&lt;/p&gt;
+&lt;iframe frameborder="0" scrolling="no" style="width:100%; height:394px;" allow="clipboard-write" src="https://emgithub.com/iframe.html?target=https%3A%2F%2Fgithub.com%2Fpennersr%2Fdjango-allauth%2Fblob%2F1512ac4fe0353d7a8d795c5e8b89a07f3a9a31f5%2Fallauth%2Fsocialaccount%2Fproviders%2Ffacebook%2Fprovider.py%23L164-L178&amp;amp;style=default&amp;amp;type=code&amp;amp;showBorder=on&amp;amp;showLineNumbers=on&amp;amp;showFileMeta=on&amp;amp;showFullPath=on&amp;amp;showCopy=on"&gt;&lt;/iframe&gt;&lt;p&gt;Except for &lt;code class="docutils literal"&gt;loginOptions&lt;/code&gt;, which includes the value from the &lt;code class="docutils literal"&gt;scope&lt;/code&gt; query parameter:&lt;/p&gt;
+&lt;iframe frameborder="0" scrolling="no" style="width:100%; height:205px;" allow="clipboard-write" src="https://emgithub.com/iframe.html?target=https%3A%2F%2Fgithub.com%2Fpennersr%2Fdjango-allauth%2Fblob%2F1512ac4fe0353d7a8d795c5e8b89a07f3a9a31f5%2Fallauth%2Fsocialaccount%2Fproviders%2Ffacebook%2Fprovider.py%23L139-L144&amp;amp;style=default&amp;amp;type=code&amp;amp;showBorder=on&amp;amp;showLineNumbers=on&amp;amp;showFileMeta=on&amp;amp;showFullPath=on&amp;amp;showCopy=on"&gt;&lt;/iframe&gt;&lt;iframe frameborder="0" scrolling="no" style="width:100%; height:268px;" allow="clipboard-write" src="https://emgithub.com/iframe.html?target=https%3A%2F%2Fgithub.com%2Fpennersr%2Fdjango-allauth%2Fblob%2Fc11e1429d90aa12373fb97705e18b1d8c602c417%2Fallauth%2Fsocialaccount%2Fproviders%2Foauth2%2Fprovider.py%23L83-L91&amp;amp;style=default&amp;amp;type=code&amp;amp;showBorder=on&amp;amp;showLineNumbers=on&amp;amp;showFileMeta=on&amp;amp;showFullPath=on&amp;amp;showCopy=on"&gt;&lt;/iframe&gt;&lt;p&gt;With that, we now can inject arbitrary HTML and JavaScript using the &lt;code class="docutils literal"&gt;scope&lt;/code&gt; query parameter.&lt;/p&gt;
+&lt;p&gt;But wait... In which page can we control the &lt;code class="docutils literal"&gt;scope&lt;/code&gt; query parameter?
+By following the code, I found that &lt;code class="docutils literal"&gt;media_js&lt;/code&gt; is used in the &lt;code class="docutils literal"&gt;providers_media_js&lt;/code&gt; template tag,
+which is called in the &lt;a class="reference external" href="https://github.com/pennersr/django-allauth/blob/0.63.5/allauth/templates/socialaccount/snippets/login_extra.html"&gt;login_extra.html&lt;/a&gt; snippet,
+and furthermore that snippet is included anywhere the social providers are listed,
+like the login page (&lt;code class="docutils literal"&gt;/accounts/login/&lt;/code&gt;), and the social account connections page (&lt;code class="docutils literal"&gt;/accounts/3rdparty/&lt;/code&gt;).&lt;/p&gt;
+&lt;/section&gt;
+&lt;section id="payload"&gt;
+&lt;h2&gt;Payload&lt;/h2&gt;
+&lt;p&gt;To exploit this vulnerability, an attacker could inject the following content in the &lt;code class="docutils literal"&gt;scope&lt;/code&gt; query parameter:&lt;/p&gt;
+&lt;div class="code"&gt;&lt;pre class="code html"&gt;&lt;a id="rest_code_0b1bf42283f348b69545bbb4399c8d7b-1" name="rest_code_0b1bf42283f348b69545bbb4399c8d7b-1" href="https://stsewd.dev/posts/xss-in-django-allauth-fb-provider/#rest_code_0b1bf42283f348b69545bbb4399c8d7b-1"&gt;&lt;/a&gt;&lt;span class="p"&gt;&amp;lt;/&lt;/span&gt;&lt;span class="nt"&gt;script&lt;/span&gt;&lt;span class="p"&gt;&amp;gt;&amp;lt;&lt;/span&gt;&lt;span class="nt"&gt;script&lt;/span&gt;&lt;span class="p"&gt;&amp;gt;&lt;/span&gt;&lt;span class="nx"&gt;alert&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nb"&gt;document&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nx"&gt;domain&lt;/span&gt;&lt;span class="p"&gt;)&amp;lt;/&lt;/span&gt;&lt;span class="nt"&gt;script&lt;/span&gt;&lt;span class="p"&gt;&amp;gt;&amp;lt;&lt;/span&gt;&lt;span class="nt"&gt;script&lt;/span&gt;&lt;span class="p"&gt;&amp;gt;&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;What this does is:&lt;/p&gt;
+&lt;ul class="simple"&gt;
+&lt;li&gt;&lt;p&gt;Closes the &lt;code class="docutils literal"&gt;script&lt;/code&gt; tag containing the &lt;code class="docutils literal"&gt;fb_data&lt;/code&gt; variable.&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;Injects a script that shows an alert with the current domain.&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;Opens a new &lt;code class="docutils literal"&gt;script&lt;/code&gt; tag, so the rest of the JSON content is not shown as plain text.&lt;/p&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/section&gt;
+&lt;section id="proof-of-concept"&gt;
+&lt;h2&gt;Proof of concept&lt;/h2&gt;
+&lt;p&gt;I created a &lt;a class="reference external" href="https://github.com/stsewd/poc-xss-django-allauth"&gt;proof of concept&lt;/a&gt; to demonstrate the vulnerability, so you can see it in action,
+you just need to have Python and &lt;a class="reference external" href="https://docs.astral.sh/uv/getting-started/installation/"&gt;uv&lt;/a&gt; installed:&lt;/p&gt;
+&lt;p&gt;It consists of a simple Django project with &lt;code class="docutils literal"&gt;&lt;span class="pre"&gt;django-allauth==0.63.5&lt;/span&gt;&lt;/code&gt; installed, and a Facebook provider configured using the JavaScript SDK.&lt;/p&gt;
+&lt;div class="code"&gt;&lt;pre class="code bash"&gt;&lt;a id="rest_code_2652e154ad394f649f4bdfcb805cfbe4-1" name="rest_code_2652e154ad394f649f4bdfcb805cfbe4-1" href="https://stsewd.dev/posts/xss-in-django-allauth-fb-provider/#rest_code_2652e154ad394f649f4bdfcb805cfbe4-1"&gt;&lt;/a&gt;$&lt;span class="w"&gt; &lt;/span&gt;git&lt;span class="w"&gt; &lt;/span&gt;clone&lt;span class="w"&gt; &lt;/span&gt;https://github.com/stsewd/poc-xss-django-allauth
+&lt;a id="rest_code_2652e154ad394f649f4bdfcb805cfbe4-2" name="rest_code_2652e154ad394f649f4bdfcb805cfbe4-2" href="https://stsewd.dev/posts/xss-in-django-allauth-fb-provider/#rest_code_2652e154ad394f649f4bdfcb805cfbe4-2"&gt;&lt;/a&gt;$&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nb"&gt;cd&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;poc-xss-django-allauth
+&lt;a id="rest_code_2652e154ad394f649f4bdfcb805cfbe4-3" name="rest_code_2652e154ad394f649f4bdfcb805cfbe4-3" href="https://stsewd.dev/posts/xss-in-django-allauth-fb-provider/#rest_code_2652e154ad394f649f4bdfcb805cfbe4-3"&gt;&lt;/a&gt;$&lt;span class="w"&gt; &lt;/span&gt;uv&lt;span class="w"&gt; &lt;/span&gt;run&lt;span class="w"&gt; &lt;/span&gt;manage.py&lt;span class="w"&gt; &lt;/span&gt;migrate
+&lt;a id="rest_code_2652e154ad394f649f4bdfcb805cfbe4-4" name="rest_code_2652e154ad394f649f4bdfcb805cfbe4-4" href="https://stsewd.dev/posts/xss-in-django-allauth-fb-provider/#rest_code_2652e154ad394f649f4bdfcb805cfbe4-4"&gt;&lt;/a&gt;&lt;span class="c1"&gt;# Create a user to log into the application.&lt;/span&gt;
+&lt;a id="rest_code_2652e154ad394f649f4bdfcb805cfbe4-5" name="rest_code_2652e154ad394f649f4bdfcb805cfbe4-5" href="https://stsewd.dev/posts/xss-in-django-allauth-fb-provider/#rest_code_2652e154ad394f649f4bdfcb805cfbe4-5"&gt;&lt;/a&gt;$&lt;span class="w"&gt; &lt;/span&gt;uv&lt;span class="w"&gt; &lt;/span&gt;run&lt;span class="w"&gt; &lt;/span&gt;manage.py&lt;span class="w"&gt; &lt;/span&gt;createsuperuser
+&lt;a id="rest_code_2652e154ad394f649f4bdfcb805cfbe4-6" name="rest_code_2652e154ad394f649f4bdfcb805cfbe4-6" href="https://stsewd.dev/posts/xss-in-django-allauth-fb-provider/#rest_code_2652e154ad394f649f4bdfcb805cfbe4-6"&gt;&lt;/a&gt;$&lt;span class="w"&gt; &lt;/span&gt;uv&lt;span class="w"&gt; &lt;/span&gt;run&lt;span class="w"&gt; &lt;/span&gt;manage.py&lt;span class="w"&gt; &lt;/span&gt;runserver
+&lt;/pre&gt;&lt;/div&gt;
+&lt;dl class="simple"&gt;
+&lt;dt&gt;XSS in login page:&lt;/dt&gt;
+&lt;dd&gt;&lt;ul class="simple"&gt;
+&lt;li&gt;&lt;p&gt;While logged out, go to &lt;code class="docutils literal"&gt;&lt;span class="pre"&gt;http://127.0.0.1:8000/accounts/login/?scope=&amp;lt;/script&amp;gt;&amp;lt;script&amp;gt;alert(document.domain)&amp;lt;/script&amp;gt;&amp;lt;script&amp;gt;&lt;/span&gt;&lt;/code&gt;.&lt;/p&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/dd&gt;
+&lt;dt&gt;XSS in social connections page:&lt;/dt&gt;
+&lt;dd&gt;&lt;ul class="simple"&gt;
+&lt;li&gt;&lt;p&gt;Go to &lt;code class="docutils literal"&gt;&lt;span class="pre"&gt;http://127.0.0.1:8000/accounts/login/&lt;/span&gt;&lt;/code&gt;.&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;Log in with the user you created.&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;Go to &lt;code class="docutils literal"&gt;&lt;span class="pre"&gt;http://127.0.0.1:8000/accounts/3rdparty/?scope=&amp;lt;/script&amp;gt;&amp;lt;script&amp;gt;alert(document.domain)&amp;lt;/script&amp;gt;&amp;lt;script&amp;gt;&lt;/span&gt;&lt;/code&gt;.&lt;/p&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/dd&gt;
+&lt;/dl&gt;
+&lt;p&gt;Showing an alert is just a simple example,
+but an attacker can execute any JavaScript code in the context of the user's session.&lt;/p&gt;
+&lt;/section&gt;
+&lt;section id="mitigation"&gt;
+&lt;h2&gt;Mitigation&lt;/h2&gt;
+&lt;p&gt;You should never mark user-controlled content as safe,
+but if you find yourself wanting to include JSON content in a template,
+escaping will break the JSON format.&lt;/p&gt;
+&lt;p&gt;Luckily, Django has a built-in template filter to include JSON content in a template safely,
+&lt;a class="reference external" href="https://docs.djangoproject.com/en/4.2/ref/templates/builtins/#json-script"&gt;json_script&lt;/a&gt;.
+Sadly, that filter wasn't available at the moment the allauth code was written, but it's been available since Django 2.1,
+since allauth supports newer versions of Django,
+it was possible to use it, as you can see in the &lt;a class="reference external" href="https://github.com/pennersr/django-allauth/commit/8fead343c1d3e75cc842e0ee1e21a39c6d145155"&gt;fix&lt;/a&gt;.&lt;/p&gt;
+&lt;/section&gt;
+&lt;section id="timeline"&gt;
+&lt;h2&gt;Timeline&lt;/h2&gt;
+&lt;ul class="simple"&gt;
+&lt;li&gt;&lt;p&gt;11/07/2024: Found and reported the vulnerability to django-allauth.&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;12/07/2024: Maintainer confirmed the vulnerability and released version 0.63.6 with the fix.&lt;/p&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/section&gt;
+&lt;section id="acknowledgements"&gt;
+&lt;h2&gt;Acknowledgements&lt;/h2&gt;
+&lt;ul class="simple"&gt;
+&lt;li&gt;&lt;p&gt;I'm always surprised by how quickly open source maintainers fix security vulnerabilities
+(so much faster than commercial software vendors), kudos to &lt;a class="reference external" href="https://github.com/pennersr/"&gt;Raymond Penners&lt;/a&gt;, maintainer of django-allauth.&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;It's also great I have the support at Read the Docs to spend part of my work time on security audits on packages we use.
+Even if the vulnerabilities don't affect our systems directly (we don't use the Facebook provider),
+it's nice to have the chance to give back to the community.&lt;/p&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Are you still using django-allauth &lt;code class="docutils literal"&gt;&amp;lt;0.63.6&lt;/code&gt;? The fix was released more than 6 months ago, please update your dependencies!
+Thank you for reading, and let me know if you'd like to see more posts like this!&lt;/p&gt;
+&lt;/section&gt;</description><category>django</category><category>python</category><category>security</category><category>xss</category><guid>https://stsewd.dev/posts/xss-in-django-allauth-fb-provider/</guid><pubDate>Sun, 19 Jan 2025 05:00:00 GMT</pubDate></item></channel></rss>
