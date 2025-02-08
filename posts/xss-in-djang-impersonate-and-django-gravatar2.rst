@@ -1,4 +1,4 @@
-.. title: XSS in django-impersonate <1.9.4 and django-gravatar2 <1.4.5
+.. title: XSS in django-impersonate 1.9.3 and django-gravatar2 1.4.4
 .. date: 2025-02-08
 .. category: security, python, django
 .. tags: security, python, django, xss
@@ -163,7 +163,6 @@ Timeline
 - **21/06/2024**: Found and reported the vulnerability to the maintainer.
 - **21/06/2024**: Maintainer replied and confirmed the vulnerability.
 - **29/08/2024**: Maintainer released version 1.4.5 with the fix.
-
 
 More in common than you think
 -----------------------------
