@@ -1,4 +1,4 @@
-.. title: XSS in django-allauth <0.63.6
+.. title: XSS in django-allauth 0.63.5
 .. date: 2025-01-19
 .. category: security, python, django
 .. tags: security, python, django, xss
