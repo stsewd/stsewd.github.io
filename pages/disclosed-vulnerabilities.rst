@@ -10,6 +10,7 @@ I have responsibly reported several security vulnerabilities; some of the public
 2025
 ----
 
+- Email verification bypass in Read the Docs: `GHSA-h73w-m588-h9r6 <https://github.com/readthedocs/readthedocs.org/security/advisories/GHSA-h73w-m588-h9r6>`__.
 - XSS in Read the Docs: `GHSA-gg7x-cc2v-mcp3 <https://github.com/readthedocs/readthedocs.org/security/advisories/GHSA-gg7x-cc2v-mcp3>`__.
 
 2024
@@ -47,6 +48,7 @@ I have responsibly reported several security vulnerabilities; some of the public
 -----------
 
 - Arbitrary command execution in simple-git: `CVE-2022-25860 <https://www.cve.org/CVERecord?id=CVE-2022-25860>`__ (2022)
+- Arbitrary command execution in GitPython: `Fixed in 3.1.30 <https://github.com/gitpython-developers/GitPython/releases/tag/3.1.30>`__ (2022)
 - Symlink following: arbitrary file access from builder server in Read the Docs: `GHSA-368m-86q9-m99w <https://github.com/readthedocs/readthedocs.org/security/advisories/GHSA-368m-86q9-m99w>`__ (2022)
 - Allow serving of arbitrary HTML files from the main domain in Read the Docs: `GHSA-98pf-gfh3-x3mp <https://github.com/readthedocs/readthedocs.org/security/advisories/GHSA-98pf-gfh3-x3mp>`__ (2022)
 - CSRF from documentation domains in Read the Docs: `GHSA-3v5m-qmm9-3c6c <https://github.com/readthedocs/readthedocs.org/security/advisories/GHSA-3v5m-qmm9-3c6c>`__ (2021)
