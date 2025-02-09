@@ -66,6 +66,7 @@ I found it was used in two views related to listing users:
 But only the `template <https://hg.code.netlandish.com/~petersanchez/django-impersonate/browse/impersonate/templates/impersonate/search_users.html?rev=ed7f09b3bb9f2168888c15562e29471ea82373c2#L11>`__
 rendered from the ``search_users`` view includes the result of the function.
 
+.. rstcheck: ignore-next-code-block
 .. code-block:: python
 
    # impersonate/views.py (search_users)
