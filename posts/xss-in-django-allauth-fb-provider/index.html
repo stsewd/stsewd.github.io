@@ -15,6 +15,7 @@
 <link rel="stylesheet" href="../../assets/css/custom.css" type="text/css" media="all">
 <!-- Cloudflare Web Analytics --><script defer src="https://static.cloudflareinsights.com/beacon.min.js" data-cf-beacon='{"token": "f0bcc690290a454ab2e555da28759807"}'></script><!-- End Cloudflare Web Analytics --><meta name="author" content="Santos Gallegos">
 <link rel="prev" href="../advent-of-code-2023/" title="Advent of Code 2023 - solutions and my experience" type="text/html">
+<link rel="next" href="../xss-in-djang-impersonate-and-django-gravatar2/" title="XSS in django-impersonate 1.9.3 and django-gravatar2 1.4.4" type="text/html">
 <meta property="og:site_name" content="Santos Gallegos">
 <meta property="og:title" content="XSS in django-allauth 0.63.5">
 <meta property="og:url" content="https://stsewd.dev/posts/xss-in-django-allauth-fb-provider/">
@@ -136,7 +137,7 @@ and furthermore that snippet is included anywhere the social providers are liste
 like the login page (<code class="docutils literal">/accounts/login/</code>), and the social account connections page (<code class="docutils literal">/accounts/3rdparty/</code>).</p>
 </section><section id="payload"><h2>Payload</h2>
 <p>To exploit this vulnerability, an attacker could inject the following content in the <code class="docutils literal">scope</code> query parameter:</p>
-<div class="code"><pre class="code html"><a id="rest_code_77d849c7f2df46989706e24e9145caab-1" name="rest_code_77d849c7f2df46989706e24e9145caab-1" href="#rest_code_77d849c7f2df46989706e24e9145caab-1"></a><span class="p">&lt;/</span><span class="nt">script</span><span class="p">&gt;&lt;</span><span class="nt">script</span><span class="p">&gt;</span><span class="nx">alert</span><span class="p">(</span><span class="nb">document</span><span class="p">.</span><span class="nx">domain</span><span class="p">)&lt;/</span><span class="nt">script</span><span class="p">&gt;&lt;</span><span class="nt">script</span><span class="p">&gt;</span>
+<div class="code"><pre class="code html"><a id="rest_code_d7f6a5c7341a4af183f1c45eb05c18ae-1" name="rest_code_d7f6a5c7341a4af183f1c45eb05c18ae-1" href="#rest_code_d7f6a5c7341a4af183f1c45eb05c18ae-1"></a><span class="p">&lt;/</span><span class="nt">script</span><span class="p">&gt;&lt;</span><span class="nt">script</span><span class="p">&gt;</span><span class="nx">alert</span><span class="p">(</span><span class="nb">document</span><span class="p">.</span><span class="nx">domain</span><span class="p">)&lt;/</span><span class="nt">script</span><span class="p">&gt;&lt;</span><span class="nt">script</span><span class="p">&gt;</span>
 </pre></div>
 <p>What this does is:</p>
 <ul class="simple">
@@ -147,12 +148,12 @@ like the login page (<code class="docutils literal">/accounts/login/</code>), an
 <p>I created a <a class="reference external" href="https://github.com/stsewd/poc-xss-django-allauth">proof of concept</a> to demonstrate the vulnerability, so you can see it in action,
 you just need to have Python and <a class="reference external" href="https://docs.astral.sh/uv/getting-started/installation/">uv</a> installed:</p>
 <p>It consists of a simple Django project with <code class="docutils literal"><span class="pre">django-allauth==0.63.5</span></code> installed, and a Facebook provider configured using the JavaScript SDK.</p>
-<div class="code"><pre class="code bash"><a id="rest_code_00d119fdff814c4e9bd0f068761a9d26-1" name="rest_code_00d119fdff814c4e9bd0f068761a9d26-1" href="#rest_code_00d119fdff814c4e9bd0f068761a9d26-1"></a>$<span class="w"> </span>git<span class="w"> </span>clone<span class="w"> </span>https://github.com/stsewd/poc-xss-django-allauth
-<a id="rest_code_00d119fdff814c4e9bd0f068761a9d26-2" name="rest_code_00d119fdff814c4e9bd0f068761a9d26-2" href="#rest_code_00d119fdff814c4e9bd0f068761a9d26-2"></a>$<span class="w"> </span><span class="nb">cd</span><span class="w"> </span>poc-xss-django-allauth
-<a id="rest_code_00d119fdff814c4e9bd0f068761a9d26-3" name="rest_code_00d119fdff814c4e9bd0f068761a9d26-3" href="#rest_code_00d119fdff814c4e9bd0f068761a9d26-3"></a>$<span class="w"> </span>uv<span class="w"> </span>run<span class="w"> </span>manage.py<span class="w"> </span>migrate
-<a id="rest_code_00d119fdff814c4e9bd0f068761a9d26-4" name="rest_code_00d119fdff814c4e9bd0f068761a9d26-4" href="#rest_code_00d119fdff814c4e9bd0f068761a9d26-4"></a><span class="c1"># Create a user to log into the application.</span>
-<a id="rest_code_00d119fdff814c4e9bd0f068761a9d26-5" name="rest_code_00d119fdff814c4e9bd0f068761a9d26-5" href="#rest_code_00d119fdff814c4e9bd0f068761a9d26-5"></a>$<span class="w"> </span>uv<span class="w"> </span>run<span class="w"> </span>manage.py<span class="w"> </span>createsuperuser
-<a id="rest_code_00d119fdff814c4e9bd0f068761a9d26-6" name="rest_code_00d119fdff814c4e9bd0f068761a9d26-6" href="#rest_code_00d119fdff814c4e9bd0f068761a9d26-6"></a>$<span class="w"> </span>uv<span class="w"> </span>run<span class="w"> </span>manage.py<span class="w"> </span>runserver
+<div class="code"><pre class="code bash"><a id="rest_code_58adb01dff52438dacd7eb026b0db6c5-1" name="rest_code_58adb01dff52438dacd7eb026b0db6c5-1" href="#rest_code_58adb01dff52438dacd7eb026b0db6c5-1"></a>$<span class="w"> </span>git<span class="w"> </span>clone<span class="w"> </span>https://github.com/stsewd/poc-xss-django-allauth
+<a id="rest_code_58adb01dff52438dacd7eb026b0db6c5-2" name="rest_code_58adb01dff52438dacd7eb026b0db6c5-2" href="#rest_code_58adb01dff52438dacd7eb026b0db6c5-2"></a>$<span class="w"> </span><span class="nb">cd</span><span class="w"> </span>poc-xss-django-allauth
+<a id="rest_code_58adb01dff52438dacd7eb026b0db6c5-3" name="rest_code_58adb01dff52438dacd7eb026b0db6c5-3" href="#rest_code_58adb01dff52438dacd7eb026b0db6c5-3"></a>$<span class="w"> </span>uv<span class="w"> </span>run<span class="w"> </span>manage.py<span class="w"> </span>migrate
+<a id="rest_code_58adb01dff52438dacd7eb026b0db6c5-4" name="rest_code_58adb01dff52438dacd7eb026b0db6c5-4" href="#rest_code_58adb01dff52438dacd7eb026b0db6c5-4"></a><span class="c1"># Create a user to log into the application.</span>
+<a id="rest_code_58adb01dff52438dacd7eb026b0db6c5-5" name="rest_code_58adb01dff52438dacd7eb026b0db6c5-5" href="#rest_code_58adb01dff52438dacd7eb026b0db6c5-5"></a>$<span class="w"> </span>uv<span class="w"> </span>run<span class="w"> </span>manage.py<span class="w"> </span>createsuperuser
+<a id="rest_code_58adb01dff52438dacd7eb026b0db6c5-6" name="rest_code_58adb01dff52438dacd7eb026b0db6c5-6" href="#rest_code_58adb01dff52438dacd7eb026b0db6c5-6"></a>$<span class="w"> </span>uv<span class="w"> </span>run<span class="w"> </span>manage.py<span class="w"> </span>runserver
 </pre></div>
 <dl class="simple">
 <dt>XSS in login page:</dt>
@@ -202,6 +203,9 @@ Thank you for reading, and let me know if you'd like to see more posts like this
 <ul class="pager hidden-print">
 <li class="previous">
                 <a href="../advent-of-code-2023/" rel="prev" title="Advent of Code 2023 - solutions and my experience">Previous post</a>
+            </li>
+            <li class="next">
+                <a href="../xss-in-djang-impersonate-and-django-gravatar2/" rel="next" title="XSS in django-impersonate 1.9.3 and django-gravatar2 1.4.4">Next post</a>
             </li>
         </ul></nav></aside><section class="comments hidden-print"><h2>Comments</h2>
         
