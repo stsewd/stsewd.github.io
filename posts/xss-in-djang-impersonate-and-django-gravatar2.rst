@@ -57,7 +57,6 @@ The problem arises as the query parameter is controlled by the user, and isn't e
 Exploitation
 ~~~~~~~~~~~~
 
-Identified the vulnerable code, the next step was to find a way to exploit it.
 Searching for the usage of the ``get_redir_field`` function,
 I found it was used in two views related to listing users:
 
@@ -65,7 +64,7 @@ I found it was used in two views related to listing users:
 - `/impersonate/views.py:134 (search_users) <https://hg.code.netlandish.com/~petersanchez/django-impersonate/browse/impersonate/views.py?rev=ed7f09b3bb9f2168888c15562e29471ea82373c2#L134>`__
 
 But only the `template <https://hg.code.netlandish.com/~petersanchez/django-impersonate/browse/impersonate/templates/impersonate/search_users.html?rev=ed7f09b3bb9f2168888c15562e29471ea82373c2#L11>`__
-rendered from the ``search_users`` view includes the result of the ``get_redir_field`` function.
+rendered from the ``search_users`` view includes the result of the function.
 
 .. code-block:: python
 
@@ -197,7 +196,7 @@ For example, you can use it in a template like this:
    {% gravatar user 50 "User profile" %}
 
 In this example, the size and the alt text are hardcoded,
-so there is no way for an attacker to inject arbitrary HTML or JavaScript code.
+so there is no way for an attacker to inject arbitrary HTML.
 But what happens if the size or alt text come from the user?
 Then we have a problem, as the values are not escaped before being included in the template.
 
@@ -211,14 +210,14 @@ Exploitation
 ~~~~~~~~~~~~
 
 Since the vulnerability is in a template tag,
-exploiting the vulnerability will depend if an application uses the template tag with user-controlled content.
+exploiting the vulnerability will depend if the application uses the template tag with user-controlled content.
 We can assume that a common alt text is the user's name.
 
 .. code-block:: html
 
    {% load gravatar from gravatar %}
 
-   {% gravatar user 50 user.name %}
+   {% gravatar user 50 user.first_name %}
 
 Then the attacker can inject the payload in the user's name.
 A simple payload could be:
@@ -241,7 +240,7 @@ The payload injected into the template would look like this:
    <script>alert(document.domain)</script>
    <img src="" />
 
-But that's too simple and very similar to the previous example,
+But that's very similar to the previous example,
 so let's assume that the application uses the user's email as the alt text instead.
 
 .. code-block:: html
@@ -251,15 +250,15 @@ so let's assume that the application uses the user's email as the alt text inste
    {% gravatar user 50 user.email %}
 
 You may think that's the same as the previous example,
-but since the email is used as the alt text, the payload needs to be a valid email.
+but now the payload needs to be a valid email.
 And if you try to create an email with the previous payload, it won't work,
 as the Django user model will validate the email format.
 
 Making the payload a valid email is not as simple as just adding ``@example.com`` at the end,
 as the part before the ``@`` (local part) can't contain special characters like ``"<>()``,
-which are needed to inject the payload.
+which are part of the payload.
 
-Luckily, the `spec says that the local part can contain any ASCII graphic if it's quoted <https://en.wikipedia.org/wiki/Email_address#Local-part>`__,
+Luckily, the `spec says that the local part can contain any ASCII characters if it's quoted <https://en.wikipedia.org/wiki/Email_address#Local-part>`__,
 and coincidentally, our payload has already quotes around it, so it's just a matter adding ``@example.com`` at the end!
 Or almost... Django's email validator does allow the local part to be quoted, but it doesn't allow spaces,
 luckily HTML is very forgiving, so we can add almost anything instead of the spaces, and our payload will still work
@@ -293,8 +292,8 @@ it shows the Gravatar of a user given its email.
 - Go to ``http://127.0.0.1:8000/``
 - In the form enter ``"/><script>alert(document.domain)</script><img src="`` as the name,
   or ``"/><script>alert(document.domain)</script><img/src="@example.com`` as the email.
-- Click on the "Submit" button
-- A pop-up with the domain of the page should appear
+- Click on the "Submit" button.
+- A pop-up with the domain of the page should appear.
 
 Showing an alert is just a simple example,
 but an attacker can execute any JavaScript code in the context of the user's session.
@@ -315,8 +314,6 @@ you can use the `format_html <https://docs.djangoproject.com/en/4.2/ref/utils/#d
    in the size or CSS class, you should escape it as show in the following example:
 
    .. code-block:: html
-
-      {% load gravatar from gravatar %}
 
       {% gravatar user size|escape "User profile" class|escape %}
 
