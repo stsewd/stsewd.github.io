@@ -9,6 +9,11 @@ and `django-gravatar2 <https://pypi.org/project/django-gravatar2/>`__.
 I'm writing about them together because they share the same vulnerability,
 and are similar in other aspects that I'll explain below.
 
+.. contents:: Contents
+   :depth: 2
+   :local:
+   :backlinks: none
+
 Background
 ----------
 
@@ -53,14 +58,14 @@ Exploitation
 ~~~~~~~~~~~~
 
 Identified the vulnerable code, the next step was to find a way to exploit it.
-Searching for the usage of the `get_redir_field` function,
+Searching for the usage of the ``get_redir_field`` function,
 I found it was used in two views related to listing users:
 
 - `/impersonate/views.py:106 (list_users) <https://hg.code.netlandish.com/~petersanchez/django-impersonate/browse/impersonate/views.py?rev=ed7f09b3bb9f2168888c15562e29471ea82373c2#L106>`__
 - `/impersonate/views.py:134 (search_users) <https://hg.code.netlandish.com/~petersanchez/django-impersonate/browse/impersonate/views.py?rev=ed7f09b3bb9f2168888c15562e29471ea82373c2#L134>`__
 
 But only the `template <https://hg.code.netlandish.com/~petersanchez/django-impersonate/browse/impersonate/templates/impersonate/search_users.html?rev=ed7f09b3bb9f2168888c15562e29471ea82373c2#L11>`__
-rendered from the ``search_users`` view includes the result of the `get_redir_field` function.
+rendered from the ``search_users`` view includes the result of the ``get_redir_field`` function.
 
 .. code-block:: python
 
@@ -83,10 +88,10 @@ rendered from the ``search_users`` view includes the result of the `get_redir_fi
 
    <!-- impersonate/templates/impersonate/search_users.html -->
    <form action="{% url 'impersonate-search' %}" method="GET">
-   Enter Search Query:<br />
-   <input type="text" name="q" value="{% if query %}{{ query }}{% endif %}"><br />
-   {{redirect_field}}
-   <input type="submit" value="Search"><br />
+      Enter Search Query:<br />
+      <input type="text" name="q" value="{% if query %}{{ query }}{% endif %}"><br />
+      {{redirect_field}}
+      <input type="submit" value="Search"><br />
    </form>
 
 Assuming the application defined the ``IMPERSONATE["REDIRECT_FIELD_NAME"]`` setting as ``next``,
@@ -95,11 +100,11 @@ Where ``{payload}`` can be:
 
 .. code-block:: html
 
-   "><script>alert(document.domain)</script><input type="hidden
+   "/><script>alert(document.domain)</script><input type="hidden
 
 What this does is:
 
-- Uses a ``"`` to close the ``value`` attribute.
+- Uses a ``"/>`` to close the ``input`` tag.
 - Injects a script that shows an alert with the current domain.
 - Opens a new tag so the rest of the HTML is not shown as broken.
 
@@ -107,7 +112,9 @@ The payload injected into the template would look like this:
 
 .. code-block:: html
 
-   <input type="hidden" name="next" value=""><script>alert(document.domain)</script><input type="hidden"/>
+   <input type="hidden" name="next" value="">
+   <script>alert(document.domain)</script>
+   <input type="hidden"/>
 
 Proof of concept
 ~~~~~~~~~~~~~~~~
@@ -130,7 +137,7 @@ with the ``IMPERSONATE["REDIRECT_FIELD_NAME"]`` setting defined as ``next``.
 - Go to ``http://127.0.0.1:8000/admin/login/``
 - Log in with the user you created
 - Go to ``http://127.0.0.1:8000/impersonate/search/?next=?next="><script>alert(document.domain)</script><input type="hidden``
-- A popup with the domain of the page should appear
+- A pop-up with the domain of the page should appear
 
 Showing an alert is just a simple example,
 but an attacker can execute any JavaScript code in the context of the user's session.
@@ -155,7 +162,163 @@ Timeline
 django-gravatar2
 ----------------
 
-`django-gravatar2 <https://pypi.org/project/django-gravatar2/>`__ allows you to integrate Gravatar
+`django-gravatar2 <https://pypi.org/project/django-gravatar2/>`__ allows you to integrate `Gravatar <https://gravatar.com/>`__ in your project,
+so you can show the user's avatar based on their email.
+
+The vulnerability
+~~~~~~~~~~~~~~~~~
+
+After grepping the codebase for common vulnerable patterns,
+I found this code that caught my attention:
+
+.. raw:: html
+
+   <iframe frameborder="0" scrolling="no" style="width:100%; height:457px;" allow="clipboard-write" src="https://emgithub.com/iframe.html?target=https%3A%2F%2Fgithub.com%2Ftwaddington%2Fdjango-gravatar%2Fblob%2Fed123f849b5207e11efdfb1b2b0235baa41df356%2Fdjango_gravatar%2Ftemplatetags%2Fgravatar.py%23L24-L41&style=default&type=code&showBorder=on&showLineNumbers=on&showFileMeta=on&showFullPath=on&showCopy=on"></iframe>
+
+You can see that the application is building an HTML ``img`` tag with several attributes,
+like CSS class, alt text, size, and the URL of the Gravatar image,
+and marking it as safe with `mark_safe <https://docs.djangoproject.com/en/4.2/ref/utils/#django.utils.safestring.mark_safe>`__
+(Django won't escape it when including it in a template).
+Of all these attributes, only the URL is being `escaped <https://docs.djangoproject.com/en/4.2/ref/utils/#django.utils.html.escape>`__,
+all other values are used as is.
+
+I found that the function is used as a `template tag <https://docs.djangoproject.com/en/4.2/howto/custom-template-tags/>`__ to render the Gravatar image:
+
+.. raw:: html
+
+   <iframe frameborder="0" scrolling="no" style="width:100%; height:100px;" allow="clipboard-write" src="https://emgithub.com/iframe.html?target=https%3A%2F%2Fgithub.com%2Ftwaddington%2Fdjango-gravatar%2Fblob%2Fed123f849b5207e11efdfb1b2b0235baa41df356%2Fdjango_gravatar%2Ftemplatetags%2Fgravatar.py%23L56&style=default&type=code&showBorder=on&showLineNumbers=on&showFileMeta=on&showFullPath=on&showCopy=on"></iframe>
+
+For example, you can use it in a template like this:
+
+.. code-block:: html
+
+   {% load gravatar from gravatar %}
+
+   {% gravatar user 50 "User profile" %}
+
+In this example, the size and the alt text are hardcoded,
+so there is no way for an attacker to inject arbitrary HTML or JavaScript code.
+But what happens if the size or alt text come from the user?
+Then we have a problem, as the values are not escaped before being included in the template.
+
+.. code-block:: html
+
+   {% load gravatar from gravatar %}
+
+   {% gravatar user 50 user.name %}
+
+Exploitation
+~~~~~~~~~~~~
+
+Since the vulnerability is in a template tag,
+exploiting the vulnerability will depend if an application uses the template tag with user-controlled content.
+We can assume that a common alt text is the user's name.
+
+.. code-block:: html
+
+   {% load gravatar from gravatar %}
+
+   {% gravatar user 50 user.name %}
+
+Then the attacker can inject the payload in the user's name.
+A simple payload could be:
+
+.. code-block:: html
+
+   "/><script>alert(document.domain)</script><img src="
+
+What this does is:
+
+- Uses a ``"/>`` to close the ``img`` tag.
+- Injects a script that shows an alert with the current domain.
+- Opens a new tag so the rest of the HTML is not shown as broken.
+
+The payload injected into the template would look like this:
+
+.. code-block:: html
+
+   <img class="gravatar" src="https://www.gravatar.com/" width="50" height="50" alt=""/>
+   <script>alert(document.domain)</script>
+   <img src="" />
+
+But that's too simple and very similar to the previous example,
+so let's assume that the application uses the user's email as the alt text instead.
+
+.. code-block:: html
+
+   {% load gravatar from gravatar %}
+
+   {% gravatar user 50 user.email %}
+
+You may think that's the same as the previous example,
+but since the email is used as the alt text, the payload needs to be a valid email.
+And if you try to create an email with the previous payload, it won't work,
+as the Django user model will validate the email format.
+
+Making the payload a valid email is not as simple as just adding ``@example.com`` at the end,
+as the part before the ``@`` (local part) can't contain special characters like ``"<>()``,
+which are needed to inject the payload.
+
+Luckily, the `spec says that the local part can contain any ASCII graphic if it's quoted <https://en.wikipedia.org/wiki/Email_address#Local-part>`__,
+and coincidentally, our payload has already quotes around it, so it's just a matter adding ``@example.com`` at the end!
+Or almost... Django's email validator does allow the local part to be quoted, but it doesn't allow spaces,
+luckily HTML is very forgiving, so we can add almost anything instead of the spaces, and our payload will still work
+
+.. code-block:: html
+
+   "/><script>alert(document.domain)</script><img/src="@example.com
+
+You could also leave the tag unclosed, but that will break the rest of the HTML in the template.
+
+.. code-block:: html
+
+   "/><script>alert(document.domain)</script>"@example.com
+
+Proof of concept
+~~~~~~~~~~~~~~~~
+
+I created a `proof of concept <https://github.com/stsewd/poc-xss-django-gravatar2>`__ to demonstrate the vulnerability, so you can see it in action,
+you just need to have Python and `uv <https://docs.astral.sh/uv/getting-started/installation/>`__ installed:
+
+It consists of a simple Django project with ``django-gravatar2==1.4.4`` installed,
+it shows the Gravatar of a user given its email.
+
+.. code-block:: bash
+
+   $ git clone https://github.com/stsewd/poc-xss-django-gravatar2
+   $ cd poc-xss-django-gravatar2
+   $ uv run manage.py migrate
+   $ uv run manage.py runserver
+
+- Go to ``http://127.0.0.1:8000/``
+- In the form enter ``"/><script>alert(document.domain)</script><img src="`` as the name,
+  or ``"/><script>alert(document.domain)</script><img/src="@example.com`` as the email.
+- Click on the "Submit" button
+- A pop-up with the domain of the page should appear
+
+Showing an alert is just a simple example,
+but an attacker can execute any JavaScript code in the context of the user's session.
+
+Mitigation
+~~~~~~~~~~
+
+As the previous vulnerability,
+you should never use ``mark_safe`` with user-controlled content,
+if you need to build HTML with user-controlled data outside of a template,
+you can use the `format_html <https://docs.djangoproject.com/en/4.2/ref/utils/#django.utils.html.format_html>`__ function.
+
+.. note::
+
+   The maintainer chose to `escape the alt text only <https://github.com/twaddington/django-gravatar/commit/b08820112f062b40521c6f07fb9657f4204f6cf1>`__,
+   as he considered the size and CSS class should be validated by the developer.
+   If you are using the ``gravatar`` template tag with user-controlled content
+   in the size or CSS class, you should escape it as show in the following example:
+
+   .. code-block:: html
+
+      {% load gravatar from gravatar %}
+
+      {% gravatar user size|escape "User profile" class|escape %}
 
 Timeline
 ~~~~~~~~
@@ -173,7 +336,7 @@ Apart from sharing the same vulnerability, there are other similarities between 
   At the time of writing, `django-impersonate had 220K downloads in the last month <https://pypistats.org/packages/django-impersonate>`__,
   and `django-gravatar2 had 32K downloads in the last month <https://pypistats.org/packages/django-gravatar2>`__.
 - Mostly maintained by a single person.
-- Not activily maintained.
+- Not actively maintained.
 
 While the functionality that both packages provide is very specific,
 they may be considered complete and stable without the need for active development.
