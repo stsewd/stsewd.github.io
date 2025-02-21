@@ -17,10 +17,11 @@ I have responsibly reported several security vulnerabilities; some of the public
 ----
 
 - XSS in Read the Docs for Businesses: `GHSA-v4vm-q9fw-x237 <https://github.com/readthedocs/readthedocs.org/security/advisories/GHSA-v4vm-q9fw-x237>`__.
-- XSS in django-gravatar2: Fixed in `1.4.5 <https://github.com/twaddington/django-gravatar/commit/b08820112f062b40521c6f07fb9657f4204f6cf1>`__.
+- XSS in django-gravatar2: Fixed in `1.4.5 <https://github.com/twaddington/django-gravatar/commit/b08820112f062b40521c6f07fb9657f4204f6cf1>`__ (`blog post </posts/xss-in-djang-impersonate-and-django-gravatar2/>`__).
 - Stored XSS via integration of external issues in Sentry: `CVE-2024-41656 <https://github.com/getsentry/sentry/security/advisories/GHSA-fm88-hc3v-3www>`__.
-- XSS in django-allauth: Fixed in `0.63.6 <https://github.com/pennersr/django-allauth/commit/8fead343c1d3e75cc842e0ee1e21a39c6d145155>`__.
-- XSS in django-impersonate: Fixed in `1.9.3 <https://lists.code.netlandish.com/~petersanchez/public-inbox/%3Ct5pgizrp24etpcgo3sdbt2kvtmltwjybjzojg7tknuhpr56ffx@vmsradru5t34%3E>`__ and `1.9.4 <https://lists.code.netlandish.com/~petersanchez/public-inbox/%3Cqqzbdqtfgq66igm55u4vmn3upan2coj2liclyson6krn2hfrv3@75qdhehcghri%3E>`__.
+- XSS in django-allauth: Fixed in `0.63.6 <https://github.com/pennersr/django-allauth/commit/8fead343c1d3e75cc842e0ee1e21a39c6d145155>`__ (`blog post </posts/xss-in-django-allauth-fb-provider/>`__).
+- XSS in django-impersonate: Fixed in `1.9.3 <https://lists.code.netlandish.com/~petersanchez/public-inbox/%3Ct5pgizrp24etpcgo3sdbt2kvtmltwjybjzojg7tknuhpr56ffx@vmsradru5t34%3E>`__
+  and `1.9.4 <https://lists.code.netlandish.com/~petersanchez/public-inbox/%3Cqqzbdqtfgq66igm55u4vmn3upan2coj2liclyson6krn2hfrv3@75qdhehcghri%3E>`__ (`blog post </posts/xss-in-djang-impersonate-and-django-gravatar2/>`__).
 - Login CSRF in the SAML implementation of django-allauth: `Fixed in 0.63.3 <https://github.com/pennersr/django-allauth/commit/1f631a1bcd5062518a7ba437457242eadfd521ab>`__.
 - Cross site scripting on beta dashboard in Read the Docs: `GHSA-8v7c-r4x6-h796 <https://github.com/readthedocs/readthedocs.org/security/advisories/GHSA-8v7c-r4x6-h796>`__.
 - Denial of service via regular expression in Django Wiki: `CVE-2024-28865 <https://github.com/django-wiki/django-wiki/security/advisories/GHSA-wj85-w4f4-xh8h>`__.
