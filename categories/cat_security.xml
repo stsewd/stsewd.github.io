@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="utf-8"?>
+<?xml-stylesheet type="text/xsl" href="../assets/xml/rss.xsl" media="all"?><rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Santos Gallegos (Posts about security)</title><link>https://stsewd.dev/</link><description></description><atom:link href="https://stsewd.dev/categories/cat_security.xml" rel="self" type="application/rss+xml"></atom:link><language>en</language><copyright>Contents © 2025 &lt;a href="mailto:stsewd@proton.me"&gt;Santos Gallegos&lt;/a&gt; </copyright><lastBuildDate>Fri, 21 Feb 2025 02:47:32 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Exploiting a bad implementation of OAuth2</title><link>https://stsewd.dev/posts/exploiting-a-bad-implementation-of-oauth2/</link><dc:creator>Santos Gallegos</dc:creator><description>&lt;p&gt;In this post I'm going to share how I exploited a bad implementation of OAuth2 to take over user accounts with a single click.&lt;/p&gt;
+&lt;aside class="admonition note"&gt;
+&lt;p class="admonition-title"&gt;Note&lt;/p&gt;
+&lt;p&gt;This vulnerability was reported in a private bug bounty program,
+so I won't disclose the name of the company or details that could lead to its identification.&lt;/p&gt;
+&lt;/aside&gt;
+&lt;nav class="contents local" id="contents" role="doc-toc"&gt;
+&lt;p class="topic-title"&gt;&lt;a class="reference internal" href="https://stsewd.dev/posts/exploiting-a-bad-implementation-of-oauth2/#top"&gt;Contents&lt;/a&gt;&lt;/p&gt;
+&lt;ul class="simple"&gt;
+&lt;li&gt;&lt;p&gt;&lt;a class="reference internal" href="https://stsewd.dev/posts/exploiting-a-bad-implementation-of-oauth2/#oauth2" id="toc-entry-1"&gt;OAuth2&lt;/a&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;&lt;a class="reference internal" href="https://stsewd.dev/posts/exploiting-a-bad-implementation-of-oauth2/#the-state-parameter" id="toc-entry-2"&gt;The state parameter&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;&lt;a class="reference internal" href="https://stsewd.dev/posts/exploiting-a-bad-implementation-of-oauth2/#the-vulnerability" id="toc-entry-3"&gt;The vulnerability&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;&lt;a class="reference internal" href="https://stsewd.dev/posts/exploiting-a-bad-implementation-of-oauth2/#from-login-csrf-to-account-takeover" id="toc-entry-4"&gt;From login CSRF to account takeover&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;&lt;a class="reference internal" href="https://stsewd.dev/posts/exploiting-a-bad-implementation-of-oauth2/#exploitation" id="toc-entry-5"&gt;Exploitation&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;&lt;a class="reference internal" href="https://stsewd.dev/posts/exploiting-a-bad-implementation-of-oauth2/#mitigation" id="toc-entry-6"&gt;Mitigation&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;&lt;a class="reference internal" href="https://stsewd.dev/posts/exploiting-a-bad-implementation-of-oauth2/#timeline" id="toc-entry-7"&gt;Timeline&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/nav&gt;
+&lt;section id="oauth2"&gt;
+&lt;h2&gt;OAuth2&lt;/h2&gt;
+&lt;aside class="admonition note"&gt;
+&lt;p class="admonition-title"&gt;Note&lt;/p&gt;
+&lt;p&gt;I won't explain OAuth2 in detail, as there are plenty of resources online that do a better job than I could :)&lt;/p&gt;
+&lt;/aside&gt;
+&lt;p&gt;Whenever you see a log in button that says "Log in with Google" or "Log in with Facebook", that's OAuth2 in action.
+A common OAuth2 flow looks like this:&lt;/p&gt;
+&lt;ol class="arabic simple"&gt;
+&lt;li&gt;&lt;p&gt;User goes to &lt;code class="docutils literal"&gt;&lt;span class="pre"&gt;https://example.com&lt;/span&gt;&lt;/code&gt; and clicks "Log in with Google".&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;The user is redirected to Google's login/authorization page (&lt;code class="docutils literal"&gt;&lt;span class="pre"&gt;https://accounts.google.com/o/oauth2/auth?client_id=1234&amp;amp;scope=email&amp;amp;state=4321&lt;/span&gt;&lt;/code&gt;).&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;The user logs in and authorizes the application.&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;Google redirects the user back to the application (callback URL) with an authorization code and state parameter (&lt;code class="docutils literal"&gt;&lt;span class="pre"&gt;https://example.com/login/callback?code=5678&amp;amp;state=4321&lt;/span&gt;&lt;/code&gt;).&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;The application exchanges the authorization code for an access token (usually done server-side).&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;The application uses the access token to access the user's resources (profile, email, etc).&lt;/p&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;section id="the-state-parameter"&gt;
+&lt;h3&gt;The state parameter&lt;/h3&gt;
+&lt;p&gt;When the user is redirected to the OAuth2 provider (e.g., Google),
+the application can include a state parameter in the URL (as you can see in step 2 above),
+which is then returned by the OAuth2 provider in the callback URL (as you can see in step 4 above).&lt;/p&gt;
+&lt;p&gt;What's the point of returning the same value in the callback URL? you might ask.
+The state parameter is used to prevent &lt;a class="reference external" href="https://en.wikipedia.org/wiki/Cross-site_request_forgery"&gt;CSRF&lt;/a&gt; attacks,
+in other words, it ensures that the user who initiated the OAuth2 flow is the same user who completed it,
+preventing an attacker from tricking a user into logging in with a different account
+(&lt;a class="reference external" href="https://support.detectify.com/support/solutions/articles/48001048951-login-csrf"&gt;login CSRF&lt;/a&gt;).&lt;/p&gt;
+&lt;p&gt;In order to do that, the application must verify that the state parameter in the callback URL matches the one it sent.
+The state should be unique for each OAuth2 flow, hard to guess, and bound to the user that initiated the flow,
+as the &lt;a class="reference external" href="https://www.rfc-editor.org/rfc/rfc6749#section-10.12"&gt;OAuth2 RFC&lt;/a&gt; states.&lt;/p&gt;
+&lt;/section&gt;
+&lt;/section&gt;
+&lt;section id="the-vulnerability"&gt;
+&lt;h2&gt;The vulnerability&lt;/h2&gt;
+&lt;p&gt;The site was generating a random state value for each OAuth2 flow, and correctly verifying it later in the callback URL.
+But there was a small problem, the state wasn't bound to the user that initiated the flow.&lt;/p&gt;
+&lt;p&gt;The OAuth2 flow looked like this:&lt;/p&gt;
+&lt;ul class="simple"&gt;
+&lt;li&gt;&lt;p&gt;User starts the OAuth2 flow.&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;The application generates a random value and stores it in the database.&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;The application redirects the user to the OAuth2 provider with the state parameter.&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;The OAuth2 provider redirects the user back to the application with the state parameter.&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;The application retrieves the state parameter from the URL and checks that the value
+exists in the database but doesn't check which user it belongs to.&lt;/p&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;This allows for an attacker to start an OAuth2 flow and then trick the victim into completing it,
+leading to a login CSRF attack.&lt;/p&gt;
+&lt;/section&gt;
+&lt;section id="from-login-csrf-to-account-takeover"&gt;
+&lt;h2&gt;From login CSRF to account takeover&lt;/h2&gt;
+&lt;p&gt;The bad implementation of the state parameter allows for a login CSRF attack,
+but depending on the application, this type of attack might not be very impactful.
+But the application had the following behavior:&lt;/p&gt;
+&lt;ul class="simple"&gt;
+&lt;li&gt;&lt;p&gt;If the user isn't logged in and starts the OAuth process with a new provider,
+a new account is created and linked to that provider.&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;If the user is logged in and starts the OAuth process with a new provider,
+that provider is linked to the existing account.
+Allowing the user to log in with any of the linked providers.&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;If the user, logged in or not, starts the OAuth process with a provider already linked to another account,
+the application logs the user out, and logs him into the account linked to that provider.&lt;/p&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;If an attacker tricks the victim into completing the OAuth2 flow from another provider while logged in,
+the attacker can link the victim's account to its own.&lt;/p&gt;
+&lt;/section&gt;
+&lt;section id="exploitation"&gt;
+&lt;h2&gt;Exploitation&lt;/h2&gt;
+&lt;p&gt;Let's say the application allows users to log in with Google and Facebook,
+and the victim is logged in with Facebook.
+The attacker starts the OAuth2 flow with Google but doesn't complete it;
+instead, it intercepts the response. The attack would look like this:&lt;/p&gt;
+&lt;ol class="arabic simple"&gt;
+&lt;li&gt;&lt;p&gt;The attacker goes to &lt;code class="docutils literal"&gt;&lt;span class="pre"&gt;https://example.com&lt;/span&gt;&lt;/code&gt; and clicks "Log in with Google".&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;The attacker is redirected to Google's login/authorization page
+with a state parameter generated by the application (e.g., &lt;code class="docutils literal"&gt;&lt;span class="pre"&gt;https://accounts.google.com/o/oauth2/auth?client_id=1234&amp;amp;scope=email&amp;amp;state=c3VwZXItc2VjcmV0&lt;/span&gt;&lt;/code&gt;).&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;The attacker logs in and authorizes the application.&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;Google redirects the attacker back to the application with an authorization code.
+But the attacker intercepts the response and doesn't let the browser follow the redirect.
+The intercepted redirect would look like this: &lt;code class="docutils literal"&gt;&lt;span class="pre"&gt;https://example.com/login/callback?code=12345&amp;amp;state=c3VwZXItc2VjcmV0&lt;/span&gt;&lt;/code&gt;.&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;Since the redirect wasn't followed, the application didn't create a new account linked to Google,
+but it kept track of the generated state in the database, waiting to be validated.&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;While logged in with his Facebook account, the victim follows the attacker's link.&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;The application retrieves the state parameter from the URL and checks that the value exists in the database.&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;Then it uses the code from the URL to exchange it for an access token of the attacker's Google account.&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;Since the Google account doesn't exist in the application and the victim is already logged in,
+the application will link the victim's account to the attacker's Google account.&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;The attacker can now log in with his Google account and gain access to the victim's account.&lt;/p&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;aside class="admonition note"&gt;
+&lt;p class="admonition-title"&gt;Note&lt;/p&gt;
+&lt;p&gt;If the user is logged out, the attacker can also exploit this vulnerability,
+but it requires more interaction from the user.&lt;/p&gt;
+&lt;p&gt;This would be done by first exploiting the login CSRF vulnerability to log the user into the attacker's Google account,
+and then tricking the user into linking a new provider to the attacker's account (e.g., Facebook).
+The exact steps are left as an exercise to the reader :)&lt;/p&gt;
+&lt;/aside&gt;
+&lt;/section&gt;
+&lt;section id="mitigation"&gt;
+&lt;h2&gt;Mitigation&lt;/h2&gt;
+&lt;p&gt;To prevent this,
+the application should bind the state parameter to the user who initiated the OAuth2 flow.
+This can be done by storing the state parameter in the user's session instead of a separate database.
+This way, the intercepted state from one user wouldn't be valid for another user.&lt;/p&gt;
+&lt;/section&gt;
+&lt;section id="timeline"&gt;
+&lt;h2&gt;Timeline&lt;/h2&gt;
+&lt;ul class="simple"&gt;
+&lt;li&gt;&lt;p&gt;&lt;strong&gt;12/02/2024&lt;/strong&gt;: Reported the vulnerability to the company.&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;&lt;strong&gt;13/02/2024&lt;/strong&gt;: The company acknowledged the report.&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;&lt;strong&gt;28/02/2024&lt;/strong&gt;: The company asked for clarification on how the vulnerability could be exploited.&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;&lt;strong&gt;01/03/2024&lt;/strong&gt;: The company confirmed the vulnerability and awarded a bounty of $1000.&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;&lt;strong&gt;13/03/2024&lt;/strong&gt;: The vulnerability was fixed.&lt;/p&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/section&gt;</description><category>authentication</category><category>oauth2</category><category>security</category><guid>https://stsewd.dev/posts/exploiting-a-bad-implementation-of-oauth2/</guid><pubDate>Thu, 20 Feb 2025 05:00:00 GMT</pubDate></item></channel></rss>
