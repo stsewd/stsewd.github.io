@@ -10,6 +10,7 @@ I have responsibly reported several security vulnerabilities; some of the public
 2025
 ----
 
+- Write access to project repositories in Read the Docs for Businesses: `GHSA-jqm9-f79c-8wx6 <https://github.com/readthedocs/readthedocs.org/security/advisories/GHSA-jqm9-f79c-8wx6>`__.
 - Email verification bypass in Read the Docs: `GHSA-h73w-m588-h9r6 <https://github.com/readthedocs/readthedocs.org/security/advisories/GHSA-h73w-m588-h9r6>`__.
 - XSS in Read the Docs: `GHSA-gg7x-cc2v-mcp3 <https://github.com/readthedocs/readthedocs.org/security/advisories/GHSA-gg7x-cc2v-mcp3>`__.
 
