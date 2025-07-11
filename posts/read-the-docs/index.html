@@ -119,25 +119,25 @@ probably one fo the most obvious options that we check before executing a comman
 and that most of the tools have.
 Here you can see the list of options and a short description of what that option does.</p>
 <p>Its common usage is:</p>
-<div class="code"><pre class="code bash"><a id="rest_code_c8038fc3d3564c4dbb8938669899d827-1" name="rest_code_c8038fc3d3564c4dbb8938669899d827-1" href="#rest_code_c8038fc3d3564c4dbb8938669899d827-1"></a><span class="nb">command</span><span class="w"> </span>--help
+<div class="code"><pre class="code bash"><a id="rest_code_c0f26d58fd114011a2ef8855a914e94a-1" name="rest_code_c0f26d58fd114011a2ef8855a914e94a-1" href="#rest_code_c0f26d58fd114011a2ef8855a914e94a-1"></a><span class="nb">command</span><span class="w"> </span>--help
 </pre></div>
 <p>Example:</p>
-<div class="code"><pre class="code bash"><a id="rest_code_d7da9b443f414116b9793ea72fcf49c8-1" name="rest_code_d7da9b443f414116b9793ea72fcf49c8-1" href="#rest_code_d7da9b443f414116b9793ea72fcf49c8-1"></a>ls<span class="w"> </span>--help
+<div class="code"><pre class="code bash"><a id="rest_code_adcec25b5aa040169b21ce824b2b0378-1" name="rest_code_adcec25b5aa040169b21ce824b2b0378-1" href="#rest_code_adcec25b5aa040169b21ce824b2b0378-1"></a>ls<span class="w"> </span>--help
 </pre></div>
 <p>or</p>
-<div class="code"><pre class="code bash"><a id="rest_code_4295a50afe0f4924b0a4a373bbd4f3a9-1" name="rest_code_4295a50afe0f4924b0a4a373bbd4f3a9-1" href="#rest_code_4295a50afe0f4924b0a4a373bbd4f3a9-1"></a><span class="nb">command</span><span class="w"> </span>subcommand<span class="w"> </span>--help
+<div class="code"><pre class="code bash"><a id="rest_code_f684b80487b0458c8e507dea2f71cb71-1" name="rest_code_f684b80487b0458c8e507dea2f71cb71-1" href="#rest_code_f684b80487b0458c8e507dea2f71cb71-1"></a><span class="nb">command</span><span class="w"> </span>subcommand<span class="w"> </span>--help
 </pre></div>
 <p>Example:</p>
-<div class="code"><pre class="code bash"><a id="rest_code_f52f652ce217447ba3c95eddd53de879-1" name="rest_code_f52f652ce217447ba3c95eddd53de879-1" href="#rest_code_f52f652ce217447ba3c95eddd53de879-1"></a>git<span class="w"> </span>add<span class="w"> </span>--help
+<div class="code"><pre class="code bash"><a id="rest_code_c449236268664398891b8910088a6e72-1" name="rest_code_c449236268664398891b8910088a6e72-1" href="#rest_code_c449236268664398891b8910088a6e72-1"></a>git<span class="w"> </span>add<span class="w"> </span>--help
 </pre></div>
 <p>Man pages,
 most of the Linux tools has a respective man page (apart from the <code class="docutils literal"><span class="pre">--help</span></code> option).
 Man pages have a more detailed documentation than the <code class="docutils literal"><span class="pre">--help</span></code> option from the command.</p>
 <p>Most of the time you'll need to run:</p>
-<div class="code"><pre class="code bash"><a id="rest_code_95b59f49bfba461f9b217022979eb499-1" name="rest_code_95b59f49bfba461f9b217022979eb499-1" href="#rest_code_95b59f49bfba461f9b217022979eb499-1"></a>man<span class="w"> </span><span class="nb">command</span>
+<div class="code"><pre class="code bash"><a id="rest_code_0968ddf86bd744f890912786a5ce3b8b-1" name="rest_code_0968ddf86bd744f890912786a5ce3b8b-1" href="#rest_code_0968ddf86bd744f890912786a5ce3b8b-1"></a>man<span class="w"> </span><span class="nb">command</span>
 </pre></div>
 <p>Example</p>
-<div class="code"><pre class="code bash"><a id="rest_code_acbda55e23ae4cf6be14fc81272623b1-1" name="rest_code_acbda55e23ae4cf6be14fc81272623b1-1" href="#rest_code_acbda55e23ae4cf6be14fc81272623b1-1"></a>man<span class="w"> </span>ls
+<div class="code"><pre class="code bash"><a id="rest_code_4a43d23733714b23839bb04a6367bcb6-1" name="rest_code_4a43d23733714b23839bb04a6367bcb6-1" href="#rest_code_4a43d23733714b23839bb04a6367bcb6-1"></a>man<span class="w"> </span>ls
 </pre></div>
 <p>But not only commands have man pages,
 it also includes documentation of the format used in some configuration files,
@@ -155,13 +155,13 @@ each section is represented by a number:</p>
 8   System administration commands (usually only for root)
 9   Kernel routines [Non standard]</pre>
 <p>Knowing the section you can get the man page with:</p>
-<div class="code"><pre class="code bash"><a id="rest_code_5acfbd4dcdce49ff9711eb5a61c04532-1" name="rest_code_5acfbd4dcdce49ff9711eb5a61c04532-1" href="#rest_code_5acfbd4dcdce49ff9711eb5a61c04532-1"></a>man<span class="w"> </span>&lt;section&gt;<span class="w"> </span>keyword
+<div class="code"><pre class="code bash"><a id="rest_code_222111e8df3b4239b7cd4d6a71d61a1b-1" name="rest_code_222111e8df3b4239b7cd4d6a71d61a1b-1" href="#rest_code_222111e8df3b4239b7cd4d6a71d61a1b-1"></a>man<span class="w"> </span>&lt;section&gt;<span class="w"> </span>keyword
 </pre></div>
 <p>Example:</p>
-<div class="code"><pre class="code bash"><a id="rest_code_2f82c36399a845a4ab1139db2ffbbb47-1" name="rest_code_2f82c36399a845a4ab1139db2ffbbb47-1" href="#rest_code_2f82c36399a845a4ab1139db2ffbbb47-1"></a>man<span class="w"> </span><span class="m">1</span><span class="w"> </span>ls
-<a id="rest_code_2f82c36399a845a4ab1139db2ffbbb47-2" name="rest_code_2f82c36399a845a4ab1139db2ffbbb47-2" href="#rest_code_2f82c36399a845a4ab1139db2ffbbb47-2"></a>man<span class="w"> </span><span class="m">2</span><span class="w"> </span>fork
-<a id="rest_code_2f82c36399a845a4ab1139db2ffbbb47-3" name="rest_code_2f82c36399a845a4ab1139db2ffbbb47-3" href="#rest_code_2f82c36399a845a4ab1139db2ffbbb47-3"></a>man<span class="w"> </span><span class="m">3</span><span class="w"> </span><span class="nb">printf</span>
-<a id="rest_code_2f82c36399a845a4ab1139db2ffbbb47-4" name="rest_code_2f82c36399a845a4ab1139db2ffbbb47-4" href="#rest_code_2f82c36399a845a4ab1139db2ffbbb47-4"></a>man<span class="w"> </span><span class="m">5</span><span class="w"> </span>/etc/passwd
+<div class="code"><pre class="code bash"><a id="rest_code_269016effbb8474eb693c7f9ee196cc7-1" name="rest_code_269016effbb8474eb693c7f9ee196cc7-1" href="#rest_code_269016effbb8474eb693c7f9ee196cc7-1"></a>man<span class="w"> </span><span class="m">1</span><span class="w"> </span>ls
+<a id="rest_code_269016effbb8474eb693c7f9ee196cc7-2" name="rest_code_269016effbb8474eb693c7f9ee196cc7-2" href="#rest_code_269016effbb8474eb693c7f9ee196cc7-2"></a>man<span class="w"> </span><span class="m">2</span><span class="w"> </span>fork
+<a id="rest_code_269016effbb8474eb693c7f9ee196cc7-3" name="rest_code_269016effbb8474eb693c7f9ee196cc7-3" href="#rest_code_269016effbb8474eb693c7f9ee196cc7-3"></a>man<span class="w"> </span><span class="m">3</span><span class="w"> </span><span class="nb">printf</span>
+<a id="rest_code_269016effbb8474eb693c7f9ee196cc7-4" name="rest_code_269016effbb8474eb693c7f9ee196cc7-4" href="#rest_code_269016effbb8474eb693c7f9ee196cc7-4"></a>man<span class="w"> </span><span class="m">5</span><span class="w"> </span>/etc/passwd
 </pre></div>
 <p>Some times the result from the <code class="docutils literal"><span class="pre">--help</span></code> option or
 from the man pages can be very extensive,
@@ -170,21 +170,21 @@ or missing clear examples.</p>
 <p>Fortunately there is the <a class="reference external" href="https://github.com/tldr-pages/tldr">tldr</a> project,
 which has community-driven simplified man pages with common usage examples.</p>
 <p>Did you always forget the correct options to untar a file?</p>
-<div class="code"><pre class="code bash"><a id="rest_code_bf88cd2b1fea462392ef2b5e26512bcb-1" name="rest_code_bf88cd2b1fea462392ef2b5e26512bcb-1" href="#rest_code_bf88cd2b1fea462392ef2b5e26512bcb-1"></a>tldr<span class="w"> </span>tar
-<a id="rest_code_bf88cd2b1fea462392ef2b5e26512bcb-2" name="rest_code_bf88cd2b1fea462392ef2b5e26512bcb-2" href="#rest_code_bf88cd2b1fea462392ef2b5e26512bcb-2"></a>
-<a id="rest_code_bf88cd2b1fea462392ef2b5e26512bcb-3" name="rest_code_bf88cd2b1fea462392ef2b5e26512bcb-3" href="#rest_code_bf88cd2b1fea462392ef2b5e26512bcb-3"></a><span class="w">  </span>Archiving<span class="w"> </span>utility.
-<a id="rest_code_bf88cd2b1fea462392ef2b5e26512bcb-4" name="rest_code_bf88cd2b1fea462392ef2b5e26512bcb-4" href="#rest_code_bf88cd2b1fea462392ef2b5e26512bcb-4"></a><span class="w">  </span>Often<span class="w"> </span>combined<span class="w"> </span>with<span class="w"> </span>a<span class="w"> </span>compression<span class="w"> </span>method,<span class="w"> </span>such<span class="w"> </span>as<span class="w"> </span>gzip<span class="w"> </span>or<span class="w"> </span>bzip.
-<a id="rest_code_bf88cd2b1fea462392ef2b5e26512bcb-5" name="rest_code_bf88cd2b1fea462392ef2b5e26512bcb-5" href="#rest_code_bf88cd2b1fea462392ef2b5e26512bcb-5"></a><span class="w">  </span>More<span class="w"> </span>information:<span class="w"> </span>&lt;https://www.gnu.org/software/tar&gt;.
-<a id="rest_code_bf88cd2b1fea462392ef2b5e26512bcb-6" name="rest_code_bf88cd2b1fea462392ef2b5e26512bcb-6" href="#rest_code_bf88cd2b1fea462392ef2b5e26512bcb-6"></a>
-<a id="rest_code_bf88cd2b1fea462392ef2b5e26512bcb-7" name="rest_code_bf88cd2b1fea462392ef2b5e26512bcb-7" href="#rest_code_bf88cd2b1fea462392ef2b5e26512bcb-7"></a>-<span class="w"> </span>Create<span class="w"> </span>an<span class="w"> </span>archive<span class="w"> </span>from<span class="w"> </span>files:
-<a id="rest_code_bf88cd2b1fea462392ef2b5e26512bcb-8" name="rest_code_bf88cd2b1fea462392ef2b5e26512bcb-8" href="#rest_code_bf88cd2b1fea462392ef2b5e26512bcb-8"></a>
-<a id="rest_code_bf88cd2b1fea462392ef2b5e26512bcb-9" name="rest_code_bf88cd2b1fea462392ef2b5e26512bcb-9" href="#rest_code_bf88cd2b1fea462392ef2b5e26512bcb-9"></a><span class="w">  </span>tar<span class="w"> </span>-cf<span class="w"> </span>target.tar<span class="w"> </span>file1<span class="w"> </span>file2<span class="w"> </span>file3
-<a id="rest_code_bf88cd2b1fea462392ef2b5e26512bcb-10" name="rest_code_bf88cd2b1fea462392ef2b5e26512bcb-10" href="#rest_code_bf88cd2b1fea462392ef2b5e26512bcb-10"></a>
-<a id="rest_code_bf88cd2b1fea462392ef2b5e26512bcb-11" name="rest_code_bf88cd2b1fea462392ef2b5e26512bcb-11" href="#rest_code_bf88cd2b1fea462392ef2b5e26512bcb-11"></a>-<span class="w"> </span>Extract<span class="w"> </span>an<span class="w"> </span>archive<span class="w"> </span><span class="k">in</span><span class="w"> </span>a<span class="w"> </span>target<span class="w"> </span>directory:
-<a id="rest_code_bf88cd2b1fea462392ef2b5e26512bcb-12" name="rest_code_bf88cd2b1fea462392ef2b5e26512bcb-12" href="#rest_code_bf88cd2b1fea462392ef2b5e26512bcb-12"></a>
-<a id="rest_code_bf88cd2b1fea462392ef2b5e26512bcb-13" name="rest_code_bf88cd2b1fea462392ef2b5e26512bcb-13" href="#rest_code_bf88cd2b1fea462392ef2b5e26512bcb-13"></a><span class="w">  </span>tar<span class="w"> </span>-xf<span class="w"> </span>source.tar<span class="w"> </span>-C<span class="w"> </span>directory
-<a id="rest_code_bf88cd2b1fea462392ef2b5e26512bcb-14" name="rest_code_bf88cd2b1fea462392ef2b5e26512bcb-14" href="#rest_code_bf88cd2b1fea462392ef2b5e26512bcb-14"></a>
-<a id="rest_code_bf88cd2b1fea462392ef2b5e26512bcb-15" name="rest_code_bf88cd2b1fea462392ef2b5e26512bcb-15" href="#rest_code_bf88cd2b1fea462392ef2b5e26512bcb-15"></a>...
+<div class="code"><pre class="code bash"><a id="rest_code_d99cb97242c84ec98605115e7c9c2ac6-1" name="rest_code_d99cb97242c84ec98605115e7c9c2ac6-1" href="#rest_code_d99cb97242c84ec98605115e7c9c2ac6-1"></a>tldr<span class="w"> </span>tar
+<a id="rest_code_d99cb97242c84ec98605115e7c9c2ac6-2" name="rest_code_d99cb97242c84ec98605115e7c9c2ac6-2" href="#rest_code_d99cb97242c84ec98605115e7c9c2ac6-2"></a>
+<a id="rest_code_d99cb97242c84ec98605115e7c9c2ac6-3" name="rest_code_d99cb97242c84ec98605115e7c9c2ac6-3" href="#rest_code_d99cb97242c84ec98605115e7c9c2ac6-3"></a><span class="w">  </span>Archiving<span class="w"> </span>utility.
+<a id="rest_code_d99cb97242c84ec98605115e7c9c2ac6-4" name="rest_code_d99cb97242c84ec98605115e7c9c2ac6-4" href="#rest_code_d99cb97242c84ec98605115e7c9c2ac6-4"></a><span class="w">  </span>Often<span class="w"> </span>combined<span class="w"> </span>with<span class="w"> </span>a<span class="w"> </span>compression<span class="w"> </span>method,<span class="w"> </span>such<span class="w"> </span>as<span class="w"> </span>gzip<span class="w"> </span>or<span class="w"> </span>bzip.
+<a id="rest_code_d99cb97242c84ec98605115e7c9c2ac6-5" name="rest_code_d99cb97242c84ec98605115e7c9c2ac6-5" href="#rest_code_d99cb97242c84ec98605115e7c9c2ac6-5"></a><span class="w">  </span>More<span class="w"> </span>information:<span class="w"> </span>&lt;https://www.gnu.org/software/tar&gt;.
+<a id="rest_code_d99cb97242c84ec98605115e7c9c2ac6-6" name="rest_code_d99cb97242c84ec98605115e7c9c2ac6-6" href="#rest_code_d99cb97242c84ec98605115e7c9c2ac6-6"></a>
+<a id="rest_code_d99cb97242c84ec98605115e7c9c2ac6-7" name="rest_code_d99cb97242c84ec98605115e7c9c2ac6-7" href="#rest_code_d99cb97242c84ec98605115e7c9c2ac6-7"></a>-<span class="w"> </span>Create<span class="w"> </span>an<span class="w"> </span>archive<span class="w"> </span>from<span class="w"> </span>files:
+<a id="rest_code_d99cb97242c84ec98605115e7c9c2ac6-8" name="rest_code_d99cb97242c84ec98605115e7c9c2ac6-8" href="#rest_code_d99cb97242c84ec98605115e7c9c2ac6-8"></a>
+<a id="rest_code_d99cb97242c84ec98605115e7c9c2ac6-9" name="rest_code_d99cb97242c84ec98605115e7c9c2ac6-9" href="#rest_code_d99cb97242c84ec98605115e7c9c2ac6-9"></a><span class="w">  </span>tar<span class="w"> </span>-cf<span class="w"> </span>target.tar<span class="w"> </span>file1<span class="w"> </span>file2<span class="w"> </span>file3
+<a id="rest_code_d99cb97242c84ec98605115e7c9c2ac6-10" name="rest_code_d99cb97242c84ec98605115e7c9c2ac6-10" href="#rest_code_d99cb97242c84ec98605115e7c9c2ac6-10"></a>
+<a id="rest_code_d99cb97242c84ec98605115e7c9c2ac6-11" name="rest_code_d99cb97242c84ec98605115e7c9c2ac6-11" href="#rest_code_d99cb97242c84ec98605115e7c9c2ac6-11"></a>-<span class="w"> </span>Extract<span class="w"> </span>an<span class="w"> </span>archive<span class="w"> </span><span class="k">in</span><span class="w"> </span>a<span class="w"> </span>target<span class="w"> </span>directory:
+<a id="rest_code_d99cb97242c84ec98605115e7c9c2ac6-12" name="rest_code_d99cb97242c84ec98605115e7c9c2ac6-12" href="#rest_code_d99cb97242c84ec98605115e7c9c2ac6-12"></a>
+<a id="rest_code_d99cb97242c84ec98605115e7c9c2ac6-13" name="rest_code_d99cb97242c84ec98605115e7c9c2ac6-13" href="#rest_code_d99cb97242c84ec98605115e7c9c2ac6-13"></a><span class="w">  </span>tar<span class="w"> </span>-xf<span class="w"> </span>source.tar<span class="w"> </span>-C<span class="w"> </span>directory
+<a id="rest_code_d99cb97242c84ec98605115e7c9c2ac6-14" name="rest_code_d99cb97242c84ec98605115e7c9c2ac6-14" href="#rest_code_d99cb97242c84ec98605115e7c9c2ac6-14"></a>
+<a id="rest_code_d99cb97242c84ec98605115e7c9c2ac6-15" name="rest_code_d99cb97242c84ec98605115e7c9c2ac6-15" href="#rest_code_d99cb97242c84ec98605115e7c9c2ac6-15"></a>...
 </pre></div>
 <p>If you use Python,
 you can install it using <code class="docutils literal">pip install tldr</code>.</p>
@@ -200,12 +200,12 @@ which runs a program to lookup the keyword under the cursor.
 This program can be setup for different file types,
 see <code class="docutils literal">:help K</code>.</p>
 <p>For instance, try this C code and press <code class="docutils literal">K</code> under the <code class="docutils literal">printf</code> function.</p>
-<div class="code"><pre class="code c"><a id="rest_code_78821d41b6a64204978ca4e847cf3d4b-1" name="rest_code_78821d41b6a64204978ca4e847cf3d4b-1" href="#rest_code_78821d41b6a64204978ca4e847cf3d4b-1"></a><span class="cp">#import &lt;stdio.h&gt;</span>
-<a id="rest_code_78821d41b6a64204978ca4e847cf3d4b-2" name="rest_code_78821d41b6a64204978ca4e847cf3d4b-2" href="#rest_code_78821d41b6a64204978ca4e847cf3d4b-2"></a>
-<a id="rest_code_78821d41b6a64204978ca4e847cf3d4b-3" name="rest_code_78821d41b6a64204978ca4e847cf3d4b-3" href="#rest_code_78821d41b6a64204978ca4e847cf3d4b-3"></a><span class="kt">int</span><span class="w"> </span><span class="nf">main</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
-<a id="rest_code_78821d41b6a64204978ca4e847cf3d4b-4" name="rest_code_78821d41b6a64204978ca4e847cf3d4b-4" href="#rest_code_78821d41b6a64204978ca4e847cf3d4b-4"></a><span class="w">    </span><span class="n">printf</span><span class="p">(</span><span class="s">"Hello, world</span><span class="se">\n</span><span class="s">"</span><span class="p">);</span>
-<a id="rest_code_78821d41b6a64204978ca4e847cf3d4b-5" name="rest_code_78821d41b6a64204978ca4e847cf3d4b-5" href="#rest_code_78821d41b6a64204978ca4e847cf3d4b-5"></a><span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
-<a id="rest_code_78821d41b6a64204978ca4e847cf3d4b-6" name="rest_code_78821d41b6a64204978ca4e847cf3d4b-6" href="#rest_code_78821d41b6a64204978ca4e847cf3d4b-6"></a><span class="p">}</span>
+<div class="code"><pre class="code c"><a id="rest_code_86ca8b0bc8bc4ce3a37d3991a2202c38-1" name="rest_code_86ca8b0bc8bc4ce3a37d3991a2202c38-1" href="#rest_code_86ca8b0bc8bc4ce3a37d3991a2202c38-1"></a><span class="cp">#import &lt;stdio.h&gt;</span>
+<a id="rest_code_86ca8b0bc8bc4ce3a37d3991a2202c38-2" name="rest_code_86ca8b0bc8bc4ce3a37d3991a2202c38-2" href="#rest_code_86ca8b0bc8bc4ce3a37d3991a2202c38-2"></a>
+<a id="rest_code_86ca8b0bc8bc4ce3a37d3991a2202c38-3" name="rest_code_86ca8b0bc8bc4ce3a37d3991a2202c38-3" href="#rest_code_86ca8b0bc8bc4ce3a37d3991a2202c38-3"></a><span class="kt">int</span><span class="w"> </span><span class="nf">main</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<a id="rest_code_86ca8b0bc8bc4ce3a37d3991a2202c38-4" name="rest_code_86ca8b0bc8bc4ce3a37d3991a2202c38-4" href="#rest_code_86ca8b0bc8bc4ce3a37d3991a2202c38-4"></a><span class="w">    </span><span class="n">printf</span><span class="p">(</span><span class="s">"Hello, world</span><span class="se">\n</span><span class="s">"</span><span class="p">);</span>
+<a id="rest_code_86ca8b0bc8bc4ce3a37d3991a2202c38-5" name="rest_code_86ca8b0bc8bc4ce3a37d3991a2202c38-5" href="#rest_code_86ca8b0bc8bc4ce3a37d3991a2202c38-5"></a><span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
+<a id="rest_code_86ca8b0bc8bc4ce3a37d3991a2202c38-6" name="rest_code_86ca8b0bc8bc4ce3a37d3991a2202c38-6" href="#rest_code_86ca8b0bc8bc4ce3a37d3991a2202c38-6"></a><span class="p">}</span>
 </pre></div>
 <p>For a general and <em>nicer</em> solution I use the <a class="reference external" href="https://github.com/neoclide/coc.nvim">coc plugin</a>.</p>
 </section><section id="online-documentation"><h2>Online documentation</h2>
@@ -231,16 +231,16 @@ so searching for docs from methods and functions is my daily task.</p>
 <section id="the-help-function"><h3>The help function</h3>
 <p>Python has a built in function called <code class="docutils literal">help</code>,
 you can use it inside the interpreter like this:</p>
-<div class="code"><pre class="code python"><a id="rest_code_c228599cbc254022a811f238f63ecc1c-1" name="rest_code_c228599cbc254022a811f238f63ecc1c-1" href="#rest_code_c228599cbc254022a811f238f63ecc1c-1"></a><span class="o">&gt;&gt;&gt;</span> <span class="n">help</span><span class="p">(</span><span class="nb">open</span><span class="p">)</span>
-<a id="rest_code_c228599cbc254022a811f238f63ecc1c-2" name="rest_code_c228599cbc254022a811f238f63ecc1c-2" href="#rest_code_c228599cbc254022a811f238f63ecc1c-2"></a><span class="o">&gt;&gt;&gt;</span> <span class="n">my_string</span> <span class="o">=</span> <span class="s1">'hello world'</span>
-<a id="rest_code_c228599cbc254022a811f238f63ecc1c-3" name="rest_code_c228599cbc254022a811f238f63ecc1c-3" href="#rest_code_c228599cbc254022a811f238f63ecc1c-3"></a><span class="o">&gt;&gt;&gt;</span> <span class="n">help</span><span class="p">(</span><span class="n">my_string</span><span class="o">.</span><span class="n">upper</span><span class="p">)</span>
+<div class="code"><pre class="code python"><a id="rest_code_fb84416f40f540bcac86bd35444321fe-1" name="rest_code_fb84416f40f540bcac86bd35444321fe-1" href="#rest_code_fb84416f40f540bcac86bd35444321fe-1"></a><span class="o">&gt;&gt;&gt;</span> <span class="n">help</span><span class="p">(</span><span class="nb">open</span><span class="p">)</span>
+<a id="rest_code_fb84416f40f540bcac86bd35444321fe-2" name="rest_code_fb84416f40f540bcac86bd35444321fe-2" href="#rest_code_fb84416f40f540bcac86bd35444321fe-2"></a><span class="o">&gt;&gt;&gt;</span> <span class="n">my_string</span> <span class="o">=</span> <span class="s1">'hello world'</span>
+<a id="rest_code_fb84416f40f540bcac86bd35444321fe-3" name="rest_code_fb84416f40f540bcac86bd35444321fe-3" href="#rest_code_fb84416f40f540bcac86bd35444321fe-3"></a><span class="o">&gt;&gt;&gt;</span> <span class="n">help</span><span class="p">(</span><span class="n">my_string</span><span class="o">.</span><span class="n">upper</span><span class="p">)</span>
 </pre></div>
 <p>The argument can be any function, method, object or module.</p>
 </section><section id="pydoc"><h3>pydoc</h3>
 <p><a class="reference external" href="https://docs.python.org/3/library/pydoc.html">pydoc</a> is a command line tool shipped with Python.
 It's what the <code class="docutils literal">help</code> function uses under it.
 You can use it from your terminal like this:</p>
-<div class="code"><pre class="code bash"><a id="rest_code_d283eb7a2d6548e4990c4ba2a6e252d5-1" name="rest_code_d283eb7a2d6548e4990c4ba2a6e252d5-1" href="#rest_code_d283eb7a2d6548e4990c4ba2a6e252d5-1"></a>pydoc<span class="w"> </span>open
+<div class="code"><pre class="code bash"><a id="rest_code_cac345af7c6e4cdfa8032436a40ebdaf-1" name="rest_code_cac345af7c6e4cdfa8032436a40ebdaf-1" href="#rest_code_cac345af7c6e4cdfa8032436a40ebdaf-1"></a>pydoc<span class="w"> </span>open
 </pre></div>
 </section><section id="the-official-online-docs"><h3>The official online docs</h3>
 <p>For a more extensive documentation,
