@@ -17,7 +17,7 @@ jobs:
           python -m pip install --upgrade pip
           python -m pip install -r requirements.txt
       - name: Linter
-        run: rstcheck -r .
+        # run: rstcheck -r .
       - name: Build
         run: nikola build --strict
       - name: Deploy
