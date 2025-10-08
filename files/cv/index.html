@@ -61,7 +61,7 @@
       <img src="../../images/me.jpg" style="width: 20%" alt="me" />
       <p>
         Hi there! I’m Santos Gallegos, I'm from Ecuador 🇪🇨. I’m passionate about web
-        development, algorithms, Python, Rust, Neovim, cybersecurity, and free and open
+        development, algorithms, Python, Neovim, cybersecurity, and free and open
         source software. I’m always eager to learn new things, when I’m not working I
         like to read, watch movies, draw and paint.
       </p>
@@ -71,9 +71,7 @@
       <h2 id="overview">📋 Overview</h2>
       <p>
         I’m currently working at
-        <a href="https://readthedocs.org">Read the Docs</a> as a backend developer and
-        application security engineer, in my free time I also work as a freelancer Rust developer,
-        and pentester for several companies.
+        <a href="https://readthedocs.org">Read the Docs</a> as a backend developer and application security engineer.
         I have participated in several programming competitions, CTFs, and hackathons, I
         actively contribute to open source projects, and report security vulnerabilities
         for fun and in bug bounty programs.
@@ -90,7 +88,7 @@
       </p>
 
       <blockquote>
-        The most up to date version of this document can be found at
+        The most up to date (and long) version of this document can be found at
         <a href="https://stsewd.dev/cv/">https://stsewd.dev/cv/</a>.
       </blockquote>
 
@@ -167,8 +165,8 @@
           <p>
           <ul>
             <li>
-              Support for searching all documentation pages and per-user access using
-              Elasticsearch and Django REST Framework
+              Improving the search experience with custom rankings, filtering syntax,
+              an a new API using Elasticsearch and Django REST Framework
             </li>
             <li>Configuration file parsing and validation</li>
             <li>Documentation serving and caching using nginx, S3, and Cloudflare</li>
@@ -186,6 +184,10 @@
             <li>Found and fixed several security vulnerabilities in the codebase</li>
             <li>Improved the redirects feature allowing wildcards, explicit ordering and more</li>
             <li>Consolidating our code base from private and public repositories into one</li>
+            <li>Added support for SAML authentication</li>
+            <li>Replacing the old GitHub OAuth app integration with a GitHub App</li>
+            <li>Migrating the custom stripe integration to use dj-stripe</li>
+            <li>File tree diff, to show the changes between documentation versions</li>
           </ul>
           </p>
         </li>
@@ -404,6 +406,33 @@
       <p>I’ve given several talks in local meetups and events (mostly in Spanish):</p>
       <ul>
         <li>
+          <a href="https://github.com/stsewd/charla-csp-xss">
+            Content Security Policy (CSP): ¿El fin de XSS?
+          </a>
+          <small>
+           - pwn or die, Quito
+            <i>(2025)</i>
+          </small>
+        </li>
+        <li>
+          <a href="https://stsewd.dev/charla-seguridad-python-apps/">
+            Seguridad en aplicaciones Python de un developer a otro
+          </a>
+          <small>
+            - PyDay Piura, online
+            <i>(2024)</i>
+          </small>
+        </li>
+        <li>
+          <a href="https://stsewd.dev/charla-documenta-tu-proyecto/">
+            Documenta tu proyecto con herramientas open source
+          </a>
+          <small>
+            - FLISoL Quito, Quito
+            <i>(2024)</i>
+          </small>
+        </li>
+        <li>
           <a href="https://stsewd.dev/charla-reportando-vulnerabilidades-en-proyectos-open-source/">
             Reportando vulnerabilidades en proyectos Open Source
           </a>
@@ -497,8 +526,7 @@
     <section>
       <h2 id="technical-knowledge-and-skills">📚 Technical knowledge and skills</h2>
       <p>
-        This is a non-exhaustive list of the technologies/tools/skills I actively use and
-        have experience with:
+        This is a non-exhaustive list of the technologies/tools/skills I actively use or have experience with:
       </p>
       <ul>
         <li>
@@ -596,6 +624,7 @@
             <li>Security best practices</li>
             <li>Secure coding</li>
             <li>Web security</li>
+            <li>Vulnerability reporting and disclosure</li>
           </ul>
         </li>
       </ul>
@@ -609,7 +638,103 @@
         I have responsibly reported several security vulnerabilities;
         some of the public ones are listed below.
       </p>
+
+      <blockquote>
+        You can find the full list of vulnerabilities I’ve reported at
+        <a href="https://stsewd.dev/disclosed-vulnerabilities/">https://stsewd.dev/disclosed-vulnerabilities/</a>.
+      </blockquote>
+
       <ul>
+        <li>
+          <p>
+            <strong>
+              Write access to GitHub repositories using deploy key in Read the Docs for Business
+            </strong>
+            <small>
+              -
+              <a href="https://github.com/readthedocs/readthedocs.org/security/advisories/GHSA-jqm9-f79c-8wx6">
+                GHSA-jqm9-f79c-8wx6
+              </a>
+              <i>(2025)</i>
+            </small>
+          </p>
+          <p>
+            This vulnerability could have allowed an attacker to gain write access to a GitHub repository if the repository was connected to a project in Read the Docs.
+          </p>
+        </li>
+        <li>
+          <p>
+            <strong>
+              Email verification bypass in Read the Docs
+            </strong>
+            <small>
+              -
+              <a href="https://github.com/readthedocs/readthedocs.org/security/advisories/GHSA-h73w-m588-h9r6">
+                GHSA-h73w-m588-h9r6
+              </a>
+              <i>(2025)</i>
+            </small>
+          </p>
+          <p>
+            This vulnerability could have allowed an attacker to mark any email address as verified.
+          </p>
+        </li>
+        <li>
+          <p>
+            <strong>
+              XSS in Read the Docs
+            </strong>
+            <small>
+              -
+              <a href="https://github.com/readthedocs/readthedocs.org/security/advisories/GHSA-gg7x-cc2v-mcp3">
+                GHSA-gg7x-cc2v-mcp3
+              </a>
+              <i>(2025)</i>
+            </small>
+          </p>
+          <p>
+            This vulnerability could have allowed an attacker to execute arbitrary
+            JavaScript code on the dashboard by performing an action that created
+            a notification with a malicious payload.
+          </p>
+        </li>
+        <li>
+          <p>
+            <strong>
+              XSS in Read the Docs for Business
+            </strong>
+            <small>
+              -
+              <a href="https://github.com/readthedocs/readthedocs.org/security/advisories/GHSA-v4vm-q9fw-x237">
+                GHSA-v4vm-q9fw-x237
+              </a>
+              <i>(2024)</i>
+            </small>
+          </p>
+          <p>
+            This vulnerability could have allowed an attacker to execute arbitrary
+            JavaScript code on the dashboard of Read the Docs for Business when a user visited a
+            page and clicked on a malicious link.
+          </p>
+        </li>
+        <li>
+          <p>
+            <strong>
+              XSS in django-gravatar2
+            </strong>
+            <small>
+              -
+              <a href="https://github.com/twaddington/django-gravatar/commit/b08820112f062b40521c6f07fb9657f4204f6cf1">
+                Fixed in 1.4.5
+              </a>
+              <i>(2024)</i>
+            </small>
+          </p>
+          <p>
+            This vulnerability could have allowed an attacker to execute arbitrary
+            JavaScript code on any where the gravatar template tag was used with user input as alt text.
+          </p>
+        </li>
         <li>
           <p>
             <strong>
@@ -1359,27 +1484,8 @@
           <a href="https://github.com/stsewd">https://github.com/stsewd</a>
         </li>
         <li>
-          <strong>GitLab</strong>:
-          <a href="https://gitlab.com/stsewd">https://gitlab.com/stsewd</a>
-        </li>
-        <li>
           <strong>Hackerone</strong>:
           <a href="https://hackerone.com/stsewd">https://hackerone.com/stsewd</a>
-        </li>
-        <li>
-          <strong>Hackerrank</strong>:
-          <a href="https://www.hackerrank.com/stsewd">https://www.hackerrank.com/stsewd
-          </a>
-        </li>
-        <li>
-          <strong>HackerEarth</strong>:
-          <a href="https://www.hackerearth.com/@stsewd">https://www.hackerearth.com/@stsewd
-          </a>
-        </li>
-        <li>
-          <strong>Stack Overflow</strong>:
-          <a href="https://stackoverflow.com/users/5689214/">https://stackoverflow.com/users/5689214/
-          </a>
         </li>
         <li>
           <strong>LinkedIn</strong>:
