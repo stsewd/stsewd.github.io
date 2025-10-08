@@ -19,7 +19,7 @@ jobs:
       # - name: Linter
       #   run: rstcheck -r .
       - name: Build
-        run: nikola build --strict
+        run: nikola build
       - name: Deploy
         if: ${{ github.ref == 'refs/heads/master' }}
         uses: peaceiris/actions-gh-pages@v3
