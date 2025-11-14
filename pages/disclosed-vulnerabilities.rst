@@ -10,6 +10,7 @@ I have responsibly reported several security vulnerabilities; some of the public
 2025
 ----
 
+- Bypass of domain hijacking protections in Read the Docs: `GHSA-gx98-95mq-3jx6 <https://github.com/readthedocs/readthedocs.org/security/advisories/GHSA-gx98-95mq-3jx6>`__.
 - Write access to project repositories in Read the Docs for Businesses: `GHSA-jqm9-f79c-8wx6 <https://github.com/readthedocs/readthedocs.org/security/advisories/GHSA-jqm9-f79c-8wx6>`__.
 - Email verification bypass in Read the Docs: `GHSA-h73w-m588-h9r6 <https://github.com/readthedocs/readthedocs.org/security/advisories/GHSA-h73w-m588-h9r6>`__.
 - XSS in Read the Docs: `GHSA-gg7x-cc2v-mcp3 <https://github.com/readthedocs/readthedocs.org/security/advisories/GHSA-gg7x-cc2v-mcp3>`__.
@@ -50,12 +51,13 @@ I have responsibly reported several security vulnerabilities; some of the public
 ----
 
 - Arbitrary command execution in simple-git: `CVE-2022-25860 <https://www.cve.org/CVERecord?id=CVE-2022-25860>`__
-- Arbitrary command execution in GitPython: `Fixed in 3.1.30 <https://github.com/gitpython-developers/GitPython/releases/tag/3.1.30>`__
-- Symlink following: arbitrary file access from builder server in Read the Docs: `GHSA-368m-86q9-m99w <https://github.com/readthedocs/readthedocs.org/security/advisories/GHSA-368m-86q9-m99w>`__
-- Allow serving of arbitrary HTML files from the main domain in Read the Docs: `GHSA-98pf-gfh3-x3mp <https://github.com/readthedocs/readthedocs.org/security/advisories/GHSA-98pf-gfh3-x3mp>`__
+- Arbitrary command execution in GitPython: `Fixed in 3.1.30 <https://github.com/gitpython-developers/GitPython/releases/tag/3.1.30>`__.
+- Symlink following: arbitrary file access from builder server in Read the Docs: `GHSA-368m-86q9-m99w <https://github.com/readthedocs/readthedocs.org/security/advisories/GHSA-368m-86q9-m99w>`__.
+- Allow serving of arbitrary HTML files from the main domain in Read the Docs: `GHSA-98pf-gfh3-x3mp <https://github.com/readthedocs/readthedocs.org/security/advisories/GHSA-98pf-gfh3-x3mp>`__.
 
 2018 - 2021
 -----------
 
-- CSRF from documentation domains in Read the Docs: `GHSA-3v5m-qmm9-3c6c <https://github.com/readthedocs/readthedocs.org/security/advisories/GHSA-3v5m-qmm9-3c6c>`__ (2021)
-- Serving arbitrary files in domains of other projects in Read the Docs: https://docs.readthedocs.io/en/stable/security.html#release-2-3-0 (2018)
+- SQL injection in FirmaEC service: Fixed in `firmaec/firmadigital-servicio@fd738287 <https://minka.gob.ec/mintel/ge/firmaec/firmadigital-servicio/-/commit/fd738287d49335f2c6a405af6f09efeb6b2460cb>`__ (uncredited) (2021).
+- CSRF from documentation domains in Read the Docs: `GHSA-3v5m-qmm9-3c6c <https://github.com/readthedocs/readthedocs.org/security/advisories/GHSA-3v5m-qmm9-3c6c>`__ (2021).
+- Serving arbitrary files in domains of other projects in Read the Docs: https://docs.readthedocs.io/en/stable/security.html#release-2-3-0 (2018).
