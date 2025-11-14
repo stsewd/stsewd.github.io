@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<?xml-stylesheet type="text/xsl" href="../assets/xml/rss.xsl" media="all"?><rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Santos Gallegos (Posts about github)</title><link>https://stsewd.dev/</link><description></description><atom:link href="https://stsewd.dev/categories/github.xml" rel="self" type="application/rss+xml"></atom:link><language>en</language><copyright>Contents © 2025 &lt;a href="mailto:stsewd@proton.me"&gt;Santos Gallegos&lt;/a&gt; </copyright><lastBuildDate>Fri, 14 Nov 2025 03:04:15 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Finding security-related commits on GitHub</title><link>https://stsewd.dev/posts/github-search-security-commits/</link><dc:creator>Santos Gallegos</dc:creator><description>&lt;p&gt;Did you know you can easily search for commits that fix security issues on GitHub?
+Just search for commits with "Merge commit from fork" or "Merge pull request from GHSA".&lt;/p&gt;
+&lt;p&gt;Why this works?
+When there is a security issue, some projects use &lt;a class="reference external" href="https://docs.github.com/en/code-security/security-advisories/guidance-on-reporting-and-writing-information-about-vulnerabilities/privately-reporting-a-security-vulnerability"&gt;GitHub Advisories&lt;/a&gt; to manage them.
+GitHub allows you to create private pull requests to fix the issue in private.
+However, when the pull request is merged,
+GitHub strips the original commit message and replaces it with "Merge commit from fork", this can't be changed when using the GitHub UI.
+In the past, it used to include a link to the advisory, so you can also search for "Merge pull request from GHSA", which is less generic.&lt;/p&gt;
+&lt;p&gt;How can this be useful?&lt;/p&gt;
+&lt;ul class="simple"&gt;
+&lt;li&gt;&lt;p&gt;If you're a nerd like me who enjoys reading code and learning about security issues, you can find interesting commits to read. Some big projects appear in the results ;)&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;If you're a government-backed hacker looking for 0-days, you can monitor commits with these messages to find security issues that are not yet disclosed. Please don't...&lt;/p&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Try it:&lt;/p&gt;
+&lt;ul class="simple"&gt;
+&lt;li&gt;&lt;p&gt;Search for &lt;a class="reference external" href="https://github.com/search?q=%22Merge+commit+from+fork%22&amp;amp;type=commits"&gt;Merge commit from fork&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;Search for &lt;a class="reference external" href="https://github.com/search?q=%22Merge+pull+request+from+GHSA%22&amp;amp;type=commits"&gt;Merge pull request from GHSA&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Note: Did you find a commit from me? Don't worry, those are already fixed and disclosed issues ;)&lt;/p&gt;
+&lt;p&gt;If you are paranoid about people monitoring your project for commits like this,
+you can merge the private pull request via the command line to preserve your original commit message.
+Hopefully GitHub will allow customizing the commit message in the future from the UI.
+This is the workflow I use when handling fixes from a security advisory:&lt;/p&gt;
+&lt;ul class="simple"&gt;
+&lt;li&gt;&lt;p&gt;Create a private fork from the advisory.&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;Set the fork as a remote: &lt;code class="docutils literal"&gt;git remote add &lt;span class="pre"&gt;security-{advisory-id}&lt;/span&gt; &lt;span class="pre"&gt;&amp;lt;advisory-fork-url&amp;gt;&lt;/span&gt;&lt;/code&gt;.&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;Create a new branch: &lt;code class="docutils literal"&gt;git checkout &lt;span class="pre"&gt;-b&lt;/span&gt; &lt;span class="pre"&gt;fix-security-issue-{advisory-id}&lt;/span&gt;&lt;/code&gt;.&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;Push the branch to the advisory fork: &lt;code class="docutils literal"&gt;git push &lt;span class="pre"&gt;-u&lt;/span&gt; &lt;span class="pre"&gt;security-{advisory-id}&lt;/span&gt;&lt;/code&gt;.&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;Create a pull request in the advisory fork.&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;When the fix is ready to be merged, do it via the command line:
+&lt;code class="docutils literal"&gt;git checkout main &amp;amp;&amp;amp; git merge &lt;span class="pre"&gt;security-{advisory-id}&lt;/span&gt; &amp;amp;&amp;amp; git push origin main&lt;/code&gt;.&lt;/p&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;That's all, hope you found this useful!&lt;/p&gt;</description><category>github</category><category>security</category><guid>https://stsewd.dev/posts/github-search-security-commits/</guid><pubDate>Thu, 13 Nov 2025 05:00:00 GMT</pubDate></item></channel></rss>
