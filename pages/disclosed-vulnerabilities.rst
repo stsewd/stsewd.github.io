@@ -7,6 +7,11 @@ Publicly disclosed security vulnerabilities
 
 I have responsibly reported several security vulnerabilities; some of the public ones are listed below.
 
+2026
+----
+
+- Path traversal in django-s3file: `CVE-2026-42196 <https://github.com/codingjoe/django-s3file/security/advisories/GHSA-67qg-7284-2277>`__.
+
 2025
 ----
 
