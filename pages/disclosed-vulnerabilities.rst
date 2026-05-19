@@ -11,6 +11,7 @@ I have responsibly reported several security vulnerabilities; some of the public
 ----
 
 - Path traversal in django-s3file: `CVE-2026-42196 <https://github.com/codingjoe/django-s3file/security/advisories/GHSA-67qg-7284-2277>`__.
+- Arbitrary code execution in GitHub action workflow in authentik: Fixed in `goauthentik/authentik@36ef00f <https://github.com/goauthentik/authentik/commit/36ef00f54853d4ed776f2544dffdc0cf819da98a>`__.
 
 2025
 ----
