@@ -10,6 +10,10 @@ I have responsibly reported several security vulnerabilities; some of the public
 2026
 ----
 
+- Cross-build code execution in Read the Docs: `GHSA-ph72-r8p8-3w4r <https://github.com/readthedocs/readthedocs.org/security/advisories/GHSA-ph72-r8p8-3w4r>`__.
+- Exposure of private SSH key in Read the Docs Business: `GHSA-25r3-xvp9-h3vj <https://github.com/readthedocs/readthedocs.org/security/advisories/GHSA-25r3-xvp9-h3vj>`__. 
+- Untrusted search path in Read the Docs: `GHSA-hgqj-8p83-33rf <https://github.com/readthedocs/readthedocs.org/security/advisories/GHSA-hgqj-8p83-33rf>`__.
+- XSS in Readthe Docs: `GHSA-h72w-5vfj-j24q <https://github.com/readthedocs/readthedocs.org/security/advisories/GHSA-h72w-5vfj-j24q>`__.
 - Path traversal in django-s3file: `CVE-2026-42196 <https://github.com/codingjoe/django-s3file/security/advisories/GHSA-67qg-7284-2277>`__.
 - Arbitrary code execution in GitHub action workflow in authentik: Fixed in `goauthentik/authentik@36ef00f <https://github.com/goauthentik/authentik/commit/36ef00f54853d4ed776f2544dffdc0cf819da98a>`__.
 
